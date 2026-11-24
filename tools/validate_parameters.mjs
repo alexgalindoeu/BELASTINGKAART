@@ -20,14 +20,18 @@ const errors = [];
 let count = 0;
 
 function officialHost(url) {
-  if (typeof url !== 'string' || !url.startsWith('https://')) return null;
-  const host = new URL(url).hostname.toLowerCase();
+  if (typeof url !== 'string') return null;
+  let parsed;
+  try { parsed = new URL(url); } catch { return null; } // malformed URL: reject, don't crash
+  if (parsed.protocol !== 'https:') return null;
+  const host = parsed.hostname.toLowerCase();
   return ALLOWED_HOSTS.some(a => host === a || host.endsWith('.' + a)) ? host : null;
 }
 
 function checkParameter(p, path) {
   count++;
-  for (const k of REQUIRED) if (p[k] === undefined) errors.push(`${path}: missing ${k}`);
+  for (const k of REQUIRED)
+    if (p[k] === undefined || p[k] === null || p[k] === '') errors.push(`${path}: missing ${k}`);
   if (!STATUSES.includes(p.status)) errors.push(`${path}: invalid status '${p.status}'`);
   for (const [k, v] of Object.entries(p))
     if (k.endsWith('_url') && v !== null && !officialHost(v))
