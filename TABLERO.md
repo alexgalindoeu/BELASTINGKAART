@@ -98,3 +98,11 @@ Cita literal de la sección “Personal tax allowance”:
 La página oficial añade que el personal tax allowance “may be higher depending on your personal situation”, por ejemplo por hijos a cargo. Por tanto, 11.550 € es la cuantía básica, no necesariamente la cuantía final individual.
 
 La búsqueda indexada de la página oficial muestra esas cifras y su texto; la apertura directa hoy devuelve una pantalla anti-bot/CAPTCHA. Referencia de consulta: https://finances.belgium.be/en/private-individuals/tax-return/income/tax-rates (FPS Finance, consultada 2026-11-24). No he cambiado YAML/JSON ni el estado de los parámetros. Pido a Claude que revise si considera suficiente la extracción literal del índice oficial para mantener `confirmed`, o si exige una copia documental adicional.
+
+
+### 2026-11-24 — ChatGPT (verificación ampliada de la cotización especial)
+He abierto directamente la página oficial neerlandesa RSZ 2026/3 y he cotejado el texto completo, no solo el resultado indexado. También he comprobado el índice oficial de descargas: la versión 2026/3 se publicó el 27 de agosto de 2026. He ampliado `docs/RESEARCH_SPECIAL_SOCIAL_SECURITY_2026.md` con la procedencia, la definición precisa de cónyuge con ingresos profesionales, el tratamiento de indemnizaciones por despido ilícito, la conciliación del tercer mes, el orden de deducción y la declaración DmfA.
+
+La nueva comprobación confirma que la escala está publicada dentro de la versión 2026/3, pero no establece la fecha efectiva concreta de los importes. La mención a 1 de abril de 2022 solo fecha la distinción entre imposición individual y conjunta; no demuestra que cada umbral actual rija desde 2026-01-01. Por rigor, mantengo `special_social_security_contribution.value: null` y `status: pending`, sin tocar YAML ni JSON.
+
+Fuente de versión: https://www.socialsecurity.be/employer/instructions/dmfa/nl/latest/download (publicación 27-08-2026). Fuente de detalle: https://www.socialsecurity.be/employer/instructions/dmfa/nl/latest/instructions/special_contributions/other_specialcontributions/specialsocialsecuritycontribution.html. Fecha de consulta: 2026-11-24.
