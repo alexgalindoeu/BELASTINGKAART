@@ -8,10 +8,22 @@
     "personal_income_tax": {
       "brackets": {
         "value": [
-          { "upper": 16720, "rate": 0.25 },
-          { "upper": 29510, "rate": 0.4 },
-          { "upper": 51070, "rate": 0.45 },
-          { "upper": null, "rate": 0.5 }
+          {
+            "upper": 16720,
+            "rate": 0.25
+          },
+          {
+            "upper": 29510,
+            "rate": 0.4
+          },
+          {
+            "upper": 51070,
+            "rate": 0.45
+          },
+          {
+            "upper": null,
+            "rate": 0.5
+          }
         ],
         "status": "confirmed",
         "jurisdiction": "federal",
@@ -46,23 +58,40 @@
     }
   },
   "social_security": {
-    "employee_contribution_rate": {
-      "value": 0.1307,
-      "status": "provisional",
-      "jurisdiction": "federal",
-      "income_year": 2026,
-      "assessment_year": null,
-      "effective_from": null,
-      "effective_to": null,
-      "source_name": "RSZ / ONSS",
-      "source_url": "https://www.socialsecurity.be/site_nl/employer/infos/employers_nsso/which-contributions.htm",
-      "source_title": "Welke soorten bijdragen bestaan er?",
-      "retrieved_at": "2026-11-24",
-      "unit": "fraction_of_gross_remuneration",
-      "rounding": "not_applicable_to_rate",
-      "notes": "13.07% for private-sector employees; exact year validity and work-bonus interactions still require implementation."
-    },
-    "work_bonus": { "value": null, "status": "pending" }
+    "employee_contribution": {
+      "rate": {
+        "value": 0.1307,
+        "status": "provisional",
+        "jurisdiction": "federal",
+        "income_year": 2026,
+        "assessment_year": null,
+        "effective_from": null,
+        "effective_to": null,
+        "source_name": "RSZ / ONSS",
+        "source_url": "https://www.socialsecurity.be/site_nl/employer/infos/employers_nsso/which-contributions.htm",
+        "source_title": "Welke soorten bijdragen bestaan er?",
+        "retrieved_at": "2026-11-24",
+        "unit": "fraction_of_gross_remuneration",
+        "rounding": "not_applicable_to_rate",
+        "notes": "Official RSZ page states 13.07% for employees in the private sector. Low-wage employees do not pay the full amount where the work bonus applies. Confirm exact year-specific validity and covered remuneration before release. Do not generalise this rate to all public-sector categories or special regimes."
+      },
+      "work_bonus": {
+        "value": null,
+        "status": "pending",
+        "jurisdiction": "federal",
+        "income_year": 2026,
+        "assessment_year": null,
+        "effective_from": "2026-09-01",
+        "effective_to": null,
+        "source_name": "RSZ / ONSS",
+        "source_url": "https://www.socialsecurity.be/employer/instructions/dmfa/nl/latest/instructions/deductions/workers_reductions/workbonus.html",
+        "source_title": "Administratieve instructies RSZ 2026/3 — Werkbonus",
+        "retrieved_at": "2026-11-24",
+        "unit": "EUR_per_reference_month",
+        "rounding": "official_rounding_to_eurocent",
+        "notes": "Work bonus has two components and differentiated rules for employees and workers. Official thresholds and coefficients change during 2026; the complete applicable calculation and annual cap must be transcribed and tested before use."
+      }
+    }
   },
   "calculation_status": "blocked_until_all_required_parameters_confirmed"
 }

@@ -16,7 +16,7 @@ payload <- list(
   income_year = as.integer(year),
   assessment_year = federal$meta$assessment_year,
   generated_from = paste0("params/", year, "/*.yaml"),
-  generated_at = as.character(Sys.Date()),
+  generated_at = as.character(max(c(federal$personal_income_tax$brackets$retrieved_at, social$employee_contribution$rate$retrieved_at))),
   federal = federal[names(federal) != "meta"],
   social_security = social[names(social) != "meta"],
   calculation_status = "blocked_until_all_required_parameters_confirmed"
