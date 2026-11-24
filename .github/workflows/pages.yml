@@ -1,16 +1,7 @@
 name: Publish Belastingkaart
 
 on:
-  push:
-    branches: [main]
-    paths:
-      - "web/**"
-      - "params/**"
-      - "R/**"
-      - "tools/**"
-      - "test/**"
-      - "tests/**"
-      - ".github/workflows/pages.yml"
+  # Deployment stays manual until GitHub Pages / custom domain settings are deliberately configured.
   workflow_dispatch:
 
 permissions:

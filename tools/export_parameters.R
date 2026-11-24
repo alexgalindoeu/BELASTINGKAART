@@ -27,7 +27,7 @@ json <- jsonlite::toJSON(payload, auto_unbox = TRUE, pretty = TRUE, null = "null
 out <- file.path("web", "data", "parameters.json")
 if (check_only) {
   if (!file.exists(out)) stop(out, " is missing; run Rscript tools/export_parameters.R")
-  actual <- jsonlite::fromJSON(paste(readLines(out, warn = FALSE), collapse = "\\n"), simplifyVector = FALSE)
+  actual <- jsonlite::fromJSON(paste(readLines(out, warn = FALSE), collapse = "\n"), simplifyVector = FALSE)
   expected <- jsonlite::fromJSON(json, simplifyVector = FALSE)
   if (!identical(actual, expected)) stop(out, " is stale; run Rscript tools/export_parameters.R")
   message("Generated parameter JSON is up to date.")

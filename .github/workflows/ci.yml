@@ -27,3 +27,4 @@ jobs:
       - name: Install R dependencies
         run: Rscript -e 'install.packages(c("yaml", "testthat"), repos="https://cloud.r-project.org")'
       - run: Rscript tests/testthat.R
+      - run: Rscript tools/export_parameters.R --check
