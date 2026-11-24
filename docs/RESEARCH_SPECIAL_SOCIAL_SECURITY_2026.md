@@ -78,3 +78,27 @@ The page also states that the deduction is made after employee social-security c
 7. Keep annual final liability separate from monthly payroll withholding.
 
 **Decision:** leave the parameter value null and status `pending`. This research note is not a substitute for a validated parameter file or a tested calculation engine.
+
+
+## Additional verification — official page opened on 2026-11-24
+
+The Dutch RSZ page is now directly accessible and exposes the full text (not only search-index snippets). Its page heading identifies the content as **Administratieve instructies RSZ 2026/3**. The official download index states that version 2026/3 was published on **27 August 2026**:
+
+- Version index: https://www.socialsecurity.be/employer/instructions/dmfa/nl/latest/download
+- Contribution page (NL): https://www.socialsecurity.be/employer/instructions/dmfa/nl/latest/instructions/special_contributions/other_specialcontributions/specialsocialsecuritycontribution.html
+- Contribution page (FR): https://www.socialsecurity.be/employer/instructions/dmfa/fr/latest/instructions/special_contributions/other_specialcontributions/specialsocialsecuritycontribution.html
+
+This improves provenance: the complete schedule is verifiably present in the official 2026/3 administrative instructions, and the version publication date is known. However, neither the contribution page nor the version index says that these particular amounts take effect on 1 January 2026 (or gives another effective date). The page's explicit historical statement that the distinction between individual and joint assessment applies from 1 April 2022 refers to that distinction, not to the effective date of every current amount. Do not infer a 2026 effective period from the version label alone.
+
+### Further rules confirmed in the full page
+
+- The definition of a spouse with professional income is tied to the professional-withholding rules: the spouse's professional income must exceed the threshold connected with the reduction for other family burdens. A simple employed/unemployed flag is insufficient.
+- Legally cohabiting partners are fully equated with married spouses for this purpose.
+- For an indemnity for unlawful termination, the withholding is made at payment for the entire period covered. The portion attributable to the termination quarter is first added to ordinary wages for that quarter; the remainder is allocated across the covered quarters according to the duration, and the contribution is then determined on each resulting quarterly amount.
+- At the final payroll payment of the quarter, the employer calculates the correct quarterly amount. Any excess withheld in months one and two is refunded; any shortfall is withheld from month three.
+- Each withholding is made after employee social-security contributions and after professional withholding.
+- The total contribution withheld is reported on the employee's tax form. RSZ also identifies DmfA employee-line block 90001, worker characteristic 856, type 0.
+
+### Implication for the parameter file
+
+The page is now sufficiently accessible to transcribe the complete schedule into a research specification, but it still does not support assigning effective dates for income year 2026. The exact schedule therefore remains **research-documented, not year-confirmed**. Keep the existing special contribution value null and status pending; do not copy the research figures into the generated JSON or activate a calculation. A future parameterisation should keep the quarterly liability schedule, the first/second-month advance schedule, and the third-month reconciliation as distinct structures, with household assessment and spouse-income classification explicit.
