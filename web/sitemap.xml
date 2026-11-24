@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url><loc>https://belastingkaart.be/nl/</loc><xhtml:link rel="alternate" hreflang="fr-BE" href="https://belastingkaart.be/fr/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://belastingkaart.be/nl/"/></url>
+  <url><loc>https://belastingkaart.be/fr/</loc><xhtml:link rel="alternate" hreflang="nl-BE" href="https://belastingkaart.be/nl/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://belastingkaart.be/nl/"/></url>
+  <url><loc>https://belastingkaart.be/nl/methodologie/</loc><xhtml:link rel="alternate" hreflang="fr-BE" href="https://belastingkaart.be/fr/methodologie/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://belastingkaart.be/nl/"/></url>
+  <url><loc>https://belastingkaart.be/fr/methodologie/</loc><xhtml:link rel="alternate" hreflang="nl-BE" href="https://belastingkaart.be/nl/methodologie/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://belastingkaart.be/nl/"/></url>
+  <url><loc>https://belastingkaart.be/nl/bronnen/</loc><xhtml:link rel="alternate" hreflang="fr-BE" href="https://belastingkaart.be/fr/bronnen/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://belastingkaart.be/nl/"/></url>
+  <url><loc>https://belastingkaart.be/fr/sources/</loc><xhtml:link rel="alternate" hreflang="nl-BE" href="https://belastingkaart.be/nl/sources/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://belastingkaart.be/nl/"/></url>
+  <url><loc>https://belastingkaart.be/nl/contact/</loc><xhtml:link rel="alternate" hreflang="fr-BE" href="https://belastingkaart.be/fr/contact/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://belastingkaart.be/nl/"/></url>
+  <url><loc>https://belastingkaart.be/fr/contact/</loc><xhtml:link rel="alternate" hreflang="nl-BE" href="https://belastingkaart.be/nl/contact/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://belastingkaart.be/nl/"/></url>
+  <url><loc>https://belastingkaart.be/nl/privacy/</loc><xhtml:link rel="alternate" hreflang="fr-BE" href="https://belastingkaart.be/fr/privacy/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://belastingkaart.be/nl/"/></url>
+  <url><loc>https://belastingkaart.be/fr/confidentialite/</loc><xhtml:link rel="alternate" hreflang="nl-BE" href="https://belastingkaart.be/nl/confidentialite/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://belastingkaart.be/nl/"/></url>
+</urlset>
