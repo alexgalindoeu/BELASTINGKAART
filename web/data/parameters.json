@@ -37,7 +37,7 @@
         "retrieved_at": "2026-11-24",
         "unit": "EUR_taxable_income_and_marginal_rate",
         "rounding": "pending_official_calculation_rule",
-        "notes": "Rates apply to taxable income, not directly to gross salary."
+        "notes": "Official brackets: 25% up to EUR 16,720; 40% from EUR 16,720 to 29,510; 45% from EUR 29,510 to 51,070; 50% above EUR 51,070. Applied to taxable income, not directly to gross salary."
       },
       "basic_personal_tax_allowance": {
         "value": 11550,
@@ -53,7 +53,7 @@
         "retrieved_at": "2026-11-24",
         "unit": "EUR",
         "rounding": "not_applicable_to_threshold",
-        "notes": "Basic amount; may increase depending on personal circumstances."
+        "notes": "Basic allowance only. It may increase depending on personal circumstances. Do not treat this amount alone as the final tax reduction; the legal calculation of the tax on the allowance and family increases must be modelled."
       }
     }
   },

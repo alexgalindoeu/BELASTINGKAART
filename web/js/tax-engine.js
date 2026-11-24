@@ -9,17 +9,23 @@
       throw new RangeError("Taxable income must be a non-negative finite number.");
     if (!Array.isArray(brackets) || brackets.length === 0)
       throw new Error("Official federal tax brackets are unavailable.");
+    // No rounding here: the official rounding rule is still pending
+    // (params rounding: pending_official_calculation_rule). Mirrors
+    // apply_progressive_scale() in R/00_utils.R, including the requirement of
+    // a final open-ended bracket.
     let tax = 0;
     let lower = 0;
     for (const bracket of brackets) {
       const upper = bracket.upper ?? Infinity;
-      if (!Number.isFinite(bracket.rate) || bracket.rate < 0 || upper <= lower)
-        throw new Error("Invalid progressive tax bracket definition.");
-      if (base <= upper) return Math.round((tax + (base-lower)*bracket.rate + Number.EPSILON)*100)/100;
+      if (!Number.isFinite(bracket.rate) || bracket.rate < 0)
+        throw new Error("Invalid marginal tax rate.");
+      if (upper <= lower)
+        throw new Error("Progressive tax thresholds must be strictly increasing.");
+      if (base <= upper) return tax + (base-lower)*bracket.rate;
       tax += (upper-lower)*bracket.rate;
       lower = upper;
     }
-    return Math.round((tax + Number.EPSILON)*100)/100;
+    throw new Error("Progressive scale must include a final open-ended bracket.");
   }
 
   function calculateFederalTaxBeforeAllowances(taxableIncome, parameters) {
