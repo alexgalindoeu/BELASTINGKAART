@@ -5,6 +5,15 @@
   const copy = (window.BK_I18N && window.BK_I18N[lang]) || window.BK_I18N.nl;
   const result = document.querySelector("#result");
 
+  // Load the versioned dataset, but do not expose an incomplete net-pay estimate.
+  window.BKParameters.load().then((parameters) => {
+    window.BK_TAX_PARAMETERS = parameters;
+    document.documentElement.dataset.parameterYear = String(parameters.income_year);
+    document.documentElement.dataset.parameterStatus = parameters.calculation_status;
+  }).catch(() => {
+    document.documentElement.dataset.parameterStatus = "unavailable";
+  });
+
   form.addEventListener("submit", (event) => {
     event.preventDefault();
     const data = new FormData(form);
@@ -27,11 +36,3 @@
     result.querySelector("p").textContent = copy.noEstimate;
   });
 })();
-
-  // Load the generated, versioned dataset without enabling an incomplete net-pay result.
-  window.BKParameters.load().then((parameters) => {
-    window.BK_TAX_PARAMETERS = parameters;
-    document.documentElement.dataset.parameterYear = String(parameters.income_year);
-  }).catch(() => {
-    document.documentElement.dataset.parameterStatus = "unavailable";
-  });
