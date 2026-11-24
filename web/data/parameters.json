@@ -93,7 +93,6 @@
       }
     }
   },
-  "calculation_status": "blocked_until_all_required_parameters_confirmed",
   "payroll": {
     "professional_withholding": {
       "value": null,
@@ -145,5 +144,6 @@
       "rounding": "pending_official_rule",
       "notes": "Applicable scale, household-income conditions, periodicity and annual reconciliation have not yet been transcribed from a specific official source. No estimate is permitted."
     }
-  }
+  },
+  "calculation_status": "blocked_until_all_required_parameters_confirmed"
 }
