@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Calculez votre salaire net en Belgique. Un simulateur brut-net clair, conçu pour la fiscalité belge.">
+  <title>Belastingkaart — Calculez votre salaire net en Belgique</title>
+  <link rel="stylesheet" href="../assets/css/site.css">
+  <script defer src="../assets/js/i18n.js"></script>
+  <script defer src="../assets/js/tax-engine.js"></script>
+  <script defer src="../assets/js/app.js"></script>
+</head>
+<body data-lang="fr">
+  <header class="topbar">
+    <a class="brand" href="./index.html" aria-label="Accueil Belastingkaart"><span class="brand-mark">B</span><span>belastingkaart</span></a>
+    <nav><a href="#simulator">Simulateur</a><a href="#methodologie">Méthodologie</a><a class="lang-switch" href="../nl/index.html" lang="nl">NL</a></nav>
+  </header>
+  <main>
+    <section class="hero">
+      <div class="eyebrow">LA FISCALITÉ BELGE, EN TOUTE CLARTÉ</div>
+      <h1>Que reste-t-il<br><span>de votre salaire brut&nbsp;?</span></h1>
+      <p class="hero-copy">Comprenez l’impact des impôts et des cotisations sociales sur votre salaire net. Une approche claire et adaptée à la Belgique.</p>
+      <a class="primary-link" href="#simulator">Calculer votre salaire net <span>→</span></a>
+      <div class="hero-note"><span class="dot"></span> Projet indépendant · En développement</div>
+    </section>
+    <section class="calculator-section" id="simulator">
+      <div class="section-heading">
+        <div><div class="eyebrow">BRUT → NET</div><h2>Simuler votre salaire</h2></div>
+        <span class="tag">Première version</span>
+      </div>
+      <div class="calculator-card">
+        <form id="salary-form">
+          <div class="field-grid">
+            <label class="field"><span>Salaire brut mensuel (€)</span><input name="grossMonthly" type="number" min="0" max="100000" step="0.01" placeholder="Ex. 3 500" required></label>
+            <label class="field"><span>Région</span><select name="region"><option value="flanders">Région flamande</option><option value="brussels">Région de Bruxelles-Capitale</option><option value="wallonia">Région wallonne</option></select></label>
+            <label class="field"><span>Commune</span><input name="municipality" type="text" placeholder="Ex. Louvain"></label>
+            <label class="field"><span>Situation familiale</span><select name="family"><option value="single">Isolé, sans enfant à charge</option><option value="partner">Marié / cohabitant légal</option><option value="children">Enfants à charge</option></select></label>
+            <label class="field"><span>Statut professionnel</span><select name="employment"><option value="employee">Salarié</option><option value="other" disabled>Indépendant — bientôt</option></select></label>
+            <label class="field"><span>Année</span><select name="taxYear"><option value="2026">2026</option></select></label>
+          </div>
+          <button class="submit-button" type="submit">Préparer le calcul <span>→</span></button>
+          <p class="form-footnote">Le simulateur est en cours de développement. Aucun salaire net n’est calculé ni affiché pour le moment.</p>
+        </form>
+        <div class="result-panel" id="result" aria-live="polite">
+          <div class="result-icon">€</div><h3>Un calcul transparent</h3>
+          <p>Nous construisons d’abord les règles fiscales belges et les confrontons aux sources officielles afin d’éviter des résultats nets trompeurs.</p>
+        </div>
+      </div>
+    </section>
+    <section class="principles" id="methodologie">
+      <div><span>01</span><h3>Règles belges</h3><p>Impôts fédéraux, cotisations sociales et additionnels communaux seront traités séparément.</p></div>
+      <div><span>02</span><h3>Méthode vérifiable</h3><p>Chaque paramètre sera associé à une source, une année fiscale et un test.</p></div>
+      <div><span>03</span><h3>NL & FR</h3><p>Un même moteur de calcul, disponible en néerlandais et en français.</p></div>
+    </section>
+  </main>
+  <footer><a class="brand" href="./index.html"><span class="brand-mark">B</span><span>belastingkaart</span></a><span>Projet d’information indépendant. Pas un site officiel du gouvernement.</span></footer>
+</body>
+</html>
