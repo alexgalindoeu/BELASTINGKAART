@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
 import vm from 'node:vm';
 
-const source = await readFile(new URL('../web/assets/js/tax-engine.js', import.meta.url), 'utf8');
+const source = await readFile(new URL('../web/js/tax-engine.js', import.meta.url), 'utf8');
 const context = { window: {} };
 vm.runInNewContext(source, context);
 const engine = context.window.BKTaxEngine;
