@@ -52,10 +52,13 @@
           <div class="field-grid">
             <label class="field"><span>Salaire brut mensuel (€)</span><input name="grossMonthly" type="number" min="0" max="100000" step="0.01" placeholder="Ex. 3 500" required></label>
             <label class="field"><span>Région</span><select name="region"><option value="flanders">Région flamande</option><option value="brussels">Région de Bruxelles-Capitale</option><option value="wallonia">Région wallonne</option></select></label>
-            <label class="field"><span>Commune</span><input name="municipality" type="text" placeholder="Ex. Louvain"></label>
-            <label class="field"><span>Situation familiale</span><select name="family"><option value="single">Isolé, sans enfant à charge</option><option value="partner">Marié / cohabitant légal</option><option value="children">Enfants à charge</option></select></label>
+            <label class="field"><span>Commune</span><input name="municipality" type="text" placeholder="Ex. Louvain" required></label>
+            <label class="field"><span>Situation familiale</span><select name="familyStatus"><option value="single">Isolé</option><option value="married">Marié</option><option value="legal_cohabitant">Cohabitant légal</option><option value="separated">Séparé / divorcé</option><option value="widowed">Veuf / veuve</option></select></label>
+            <label class="field"><span>Enfants à charge</span><input name="children" type="number" min="0" max="20" step="1" value="0" required></label>
             <label class="field"><span>Statut professionnel</span><select name="employment"><option value="employee">Salarié</option><option value="other" disabled>Indépendant — bientôt</option></select></label>
-            <label class="field"><span>Année</span><select name="taxYear"><option value="2026">2026</option></select></label>
+            <label class="field"><span>Année des revenus</span><select name="incomeYear"><option value="2026">2026</option></select></label>
+            <label class="field"><span>Paiements par an</span><select name="paidMonths"><option value="12">12 mois</option><option value="13">13 paiements</option><option value="14">14 paiements</option></select></label>
+            <input type="hidden" name="assessmentYear" value="2027">
           </div>
           <button class="submit-button" type="submit">Préparer le calcul <span>→</span></button>
           <p class="form-footnote">Le simulateur est en cours de développement. Aucun salaire net n’est calculé ni affiché pour le moment.</p>

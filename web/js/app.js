@@ -1,6 +1,7 @@
 (() => {
   const form = document.querySelector("#salary-form");
   if (!form) return;
+
   const lang = document.body.dataset.lang || window.BK_CONFIG?.defaultLanguage || "nl";
   const copy = (window.BK_I18N && window.BK_I18N[lang]) || window.BK_I18N.nl;
   const result = document.querySelector("#result");
@@ -20,20 +21,35 @@
     try {
       gross = window.BKGross.parseMonthlyGross(data.get("grossMonthly"));
     } catch (_) {
-      window.BKUI.setText("h3",copy.invalidSalary,result);
-      window.BKUI.setText("p",copy.noEstimate,result);
+      window.BKUI.setText("h3", copy.invalidSalary, result);
+      window.BKUI.setText("p", copy.noEstimate, result);
       return;
     }
+
     const payload = {
       grossMonthly: gross,
       region: data.get("region"),
       municipality: String(data.get("municipality") || "").trim(),
-      family: data.get("family"),
+      familyStatus: data.get("familyStatus"),
+      children: Number(data.get("children")),
       employment: data.get("employment"),
-      incomeYear: Number(data.get("taxYear"))
+      incomeYear: Number(data.get("incomeYear")),
+      assessmentYear: Number(data.get("assessmentYear")),
+      paidMonths: Number(data.get("paidMonths"))
     };
+    const validation = window.BKForm.validate(payload);
+    if (!validation.valid) {
+      result.dataset.validation = "invalid";
+      result.dataset.validationErrors = validation.errors.join(",");
+      window.BKUI.setText("h3", copy.invalidForm, result);
+      window.BKUI.setText("p", copy.noEstimate, result);
+      return;
+    }
+
+    result.dataset.validation = "valid";
+    result.dataset.validationErrors = "";
     result.dataset.input = JSON.stringify(payload);
-    window.BKUI.setText("h3",copy.ready,result);
-    window.BKUI.setText("p",copy.noEstimate,result);
+    window.BKUI.setText("h3", copy.ready, result);
+    window.BKUI.setText("p", copy.noEstimate, result);
   });
 })();
