@@ -93,5 +93,57 @@
       }
     }
   },
-  "calculation_status": "blocked_until_all_required_parameters_confirmed"
+  "calculation_status": "blocked_until_all_required_parameters_confirmed",
+  "payroll": {
+    "professional_withholding": {
+      "value": null,
+      "status": "pending",
+      "jurisdiction": "federal",
+      "income_year": 2026,
+      "assessment_year": 2027,
+      "effective_from": "2026-01-01",
+      "effective_to": null,
+      "source_name": "FPS Finance / SPF Finances",
+      "source_url": "https://finances.belgium.fr/fr/entreprises/personnel_et_remuneration/precompte_professionnel/calcul",
+      "source_title": "Calcul du précompte professionnel — règles et formule-clé 2026",
+      "retrieved_at": "2026-11-24",
+      "unit": "EUR_per_pay_period",
+      "rounding": "pending_official_rule",
+      "notes": "The official FPS Finance page lists 2026 rules effective 1 January, a key formula and a 2026 simulator. The formula and underlying rules must be extracted and implemented before estimating monthly withholding.",
+      "official_rules_url": "https://www.minfin.fgov.be/myminfin-web/pages/public/fisconet/compare/f547b584-9f46-46df-801b-3c059548f76b/536a741e-81d6-4605-ad11-8e07ebc4a440/536a741e-81d6-4605-ad11-8e07ebc4a440",
+      "official_formula_url": "https://www.minfin.fgov.be/myminfin-web/pages/public/fisconet/compare/f547b584-9f46-46df-801b-3c059548f76b/389035ca-432e-422b-859d-2d32fbdaa4cf/389035ca-432e-422b-859d-2d32fbdaa4cf"
+    },
+    "professional_expenses": {
+      "value": null,
+      "status": "pending",
+      "jurisdiction": "federal",
+      "income_year": 2026,
+      "assessment_year": 2027,
+      "effective_from": null,
+      "effective_to": null,
+      "source_name": "FPS Finance / FOD Financiën",
+      "source_url": "https://finances.belgium.be/en/private-individuals/tax-return/income/tax-rates",
+      "source_title": "Tax rates — professional expenses are deducted from professional income",
+      "retrieved_at": "2026-11-24",
+      "unit": "EUR_per_income_year",
+      "rounding": "pending_official_rule",
+      "notes": "The official tax page confirms that flat-rate professional expenses are deducted from most professional income, including wages, but does not provide the 2026 calculation details in the page summary. Amounts, ceilings and conditions remain pending until an exact official source is documented."
+    },
+    "special_social_security_contribution": {
+      "value": null,
+      "status": "pending",
+      "jurisdiction": "federal",
+      "income_year": 2026,
+      "assessment_year": null,
+      "effective_from": null,
+      "effective_to": null,
+      "source_name": "RSZ / ONSS",
+      "source_url": "https://www.socialsecurity.be/",
+      "source_title": "Official social-security information",
+      "retrieved_at": "2026-11-24",
+      "unit": "EUR_per_pay_period",
+      "rounding": "pending_official_rule",
+      "notes": "Applicable scale, household-income conditions, periodicity and annual reconciliation have not yet been transcribed from a specific official source. No estimate is permitted."
+    }
+  }
 }
