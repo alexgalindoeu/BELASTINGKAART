@@ -1,0 +1,12 @@
+Fonts self-hosted by Belastingkaart (Latin subset, WOFF2, unmodified, as distributed by Google Fonts).
+All are licensed under the SIL Open Font License, Version 1.1. The full licence text is in OFL-1.1.txt
+in this directory and at https://openfontlicense.org
+
+- Archivo (archivo-latin-var.woff2)
+  Copyright 2020 The Archivo Project Authors (https://github.com/Omnibus-Type/Archivo)
+- Public Sans (public-sans-latin-var.woff2)
+  Copyright 2015 The Public Sans Project Authors (https://github.com/uswds/public-sans)
+- IBM Plex Mono (ibm-plex-mono-latin-500.woff2)
+  Copyright © 2017 IBM Corp., with Reserved Font Name "Plex" (https://github.com/IBM/plex)
+
+The font files are served as-is; they are not sold on their own and are not renamed.
