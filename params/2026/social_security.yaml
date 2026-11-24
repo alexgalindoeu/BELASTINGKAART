@@ -1,0 +1,48 @@
+meta:
+  country: BE
+  jurisdiction: federal
+  income_year: 2026
+  assessment_year: null
+  status: partial
+  notes: >
+    General employee contribution rate is documented for private-sector employees.
+    This is not sufficient to calculate net pay: work bonus, employment category,
+    remuneration base and special cases must also be modelled.
+
+employee_contribution:
+  rate:
+    value: 0.1307
+    status: confirmed
+    jurisdiction: federal
+    income_year: 2026
+    assessment_year: null
+    effective_from: null
+    effective_to: null
+    source_name: RSZ / ONSS
+    source_url: https://www.socialsecurity.be/site_nl/employer/infos/employers_nsso/which-contributions.htm
+    source_title: Welke soorten bijdragen bestaan er?
+    retrieved_at: 2026-11-24
+    unit: fraction_of_gross_remuneration
+    rounding: not_applicable_to_rate
+    notes: >
+      Official RSZ page states 13.07% for employees in the private sector.
+      Low-wage employees do not pay the full amount where the work bonus applies.
+      Do not generalise this rate to all public-sector categories or special regimes.
+  work_bonus:
+    value: null
+    status: pending
+    jurisdiction: federal
+    income_year: 2026
+    assessment_year: null
+    effective_from: 2026-09-01
+    effective_to: null
+    source_name: RSZ / ONSS
+    source_url: https://www.socialsecurity.be/employer/instructions/dmfa/nl/latest/instructions/deductions/workers_reductions/workbonus.html
+    source_title: Administratieve instructies RSZ 2026/3 — Werkbonus
+    retrieved_at: 2026-11-24
+    unit: EUR_per_reference_month
+    rounding: official_rounding_to_eurocent
+    notes: >
+      Work bonus has two components and differentiated rules for employees and
+      workers. Official thresholds and coefficients change during 2026; the complete
+      applicable calculation and annual cap must be transcribed and tested before use.

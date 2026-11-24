@@ -1,41 +1,38 @@
 # Belastingkaart
 
-Bilingual Belgian tax calculator project scaffold.
+Calculadora fiscal belga bilingüe (NL/FR), con arquitectura modular inspirada en la de Mapafiscal y reglas fiscales belgas independientes.
 
-## Product decisions
-- Independent project: do not modify or deploy from `MAPAFISCAL`.
-- Languages: Dutch (`/nl/`) and French (`/fr/`).
-- One calculation engine shared by both language layers.
-- Initial geographic scope: Flanders, with the architecture ready for Wallonia and Brussels.
-- First product: gross-to-net salary calculator.
+## Estado real
+El repositorio contiene la primera maqueta de interfaz y el esqueleto técnico. **Todavía no calcula el salario neto**: faltan reglas federales completas, retención profesional, situación familiar, bonus à l'emploi/werkbonus, recargos municipales y reglas regionales que correspondan. No publicar resultados hasta cerrar esas piezas.
 
-## Current status
-This is the initial product/UI scaffold, not a tax calculator ready for public use.
-The salary form validates input and captures the intended inputs, but it deliberately
-does not produce a net-salary figure until the Belgian tax and social-security rules
-have been implemented and validated against official examples.
+## Principios
+- Fuentes fiscales exclusivamente oficiales.
+- Parámetros versionados en YAML, con trazabilidad normativa completa.
+- Motor de referencia R y motor JavaScript con paridad comprobada.
+- Una lógica de cálculo común para NL y FR.
+- Separación estricta entre año de ingresos y año de evaluación.
+- Flandes primero; Bruselas y Valonia se incorporan cuando sus reglas estén documentadas.
 
-## Structure
-- `nl/index.html`: Dutch landing page and calculator shell.
-- `fr/index.html`: French equivalent.
-- `assets/css/site.css`: shared responsive design.
-- `assets/js/app.js`: shared form behaviour and validation.
-- `assets/js/i18n.js`: small translation dictionary.
-- `assets/js/tax-engine.js`: explicit placeholder for the verified Belgian calculation engine.
-- `data/`: place official, dated tax parameters here once sourced and reviewed.
+## Arquitectura
+- `R/`: motor de referencia y reglas de cálculo.
+- `params/`: parámetros oficiales por año de ingresos.
+- `tools/`: exportación, generación y validación.
+- `web/`: aplicación estática, motores JS, recursos y datos generados.
+- `test/`: pruebas Node y de navegador.
+- `tests/`: pruebas R/testthat.
+- `docs/`: diseño, fuentes, cobertura, validación y decisiones.
+- `.github/workflows/`: CI y publicación.
+- `supabase/`: backend opcional; sin secretos ni configuración de producción en el repositorio.
 
-## Run locally
-Open `nl/index.html` or `fr/index.html` in a browser. No build step is required.
+## Comandos
+Requiere Node.js 20+ y R con los paquetes `yaml`, `jsonlite` y `testthat`.
 
-## Next implementation milestones
-1. Establish the tax year (initial target: income year 2026 / assessment year 2027, subject to confirmation).
-2. Document the official federal, social-security, regional and municipal rules.
-3. Implement employee social-security contributions and gross taxable income.
-4. Implement federal income tax, tax-free allowance, professional expenses and family situation.
-5. Add municipal surcharge and relevant regional/communal distinctions.
-6. Build a validation set from official examples and independent payroll calculations.
-7. Only then enable net salary results and publish a methodology page.
+```bash
+npm test
+npm run validate:params
+Rscript tests/testthat.R
+Rscript tools/export_parameters.R --check
+```
 
-## Important
-Never copy Spanish IRPF parameters or formulas into this project.
-Do not present estimates as official or guaranteed payroll results.
+## Fuentes
+Ver [docs/SOURCES.md](docs/SOURCES.md) y [docs/PARAMETER_POLICY.md](docs/PARAMETER_POLICY.md).

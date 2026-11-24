@@ -1,0 +1,26 @@
+meta:
+  country: BE
+  jurisdiction: federal
+  income_year: 2026
+  assessment_year: null
+  status: pending
+  notes: >
+    Federal personal income tax parameters for income year 2026 / assessment year
+    2027 have not yet been fully verified from official primary sources. No tax
+    brackets or tax-free allowance are entered until the exact official rules and
+    effective dates are documented.
+
+personal_income_tax:
+  status: pending
+  value: null
+  source_name: FOD Financiën
+  source_url: https://fin.belgium.be/
+  source_title: Official personal income tax information
+  retrieved_at: 2026-11-24
+  income_year: 2026
+  assessment_year: 2027
+  effective_from: null
+  effective_to: null
+  unit: EUR
+  rounding: pending
+  notes: Exact rates, brackets, tax-free allowance and reductions require official verification.

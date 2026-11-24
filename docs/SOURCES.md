@@ -1,0 +1,21 @@
+# Official source register
+
+Last reviewed: 2026-11-24. Only official public authorities are permitted as tax sources.
+
+| Authority | Official domain | Primary use |
+|---|---|---|
+| FOD / SPF Financiën | https://fin.belgium.be/ | Federal personal income tax, tax return, tax reductions and official guidance |
+| RSZ / ONSS | https://www.socialsecurity.be/ | Employee and employer social-security contributions, work bonus / bonus à l'emploi |
+| Vlaamse overheid | https://www.vlaanderen.be/ | Flemish taxes and regional rules |
+| Vlaamse Belastingdienst | https://www.belasting.vlaanderen.be/ | Flemish tax administration and official rules |
+| Brussels Fiscaliteit | https://fiscaliteit.brussels/ | Brussels regional taxes |
+| SPW Finances | https://finances.wallonie.be/ | Walloon regional taxes |
+| Belgisch Staatsblad / Moniteur belge | https://www.ejustice.just.fgov.be/ | Official legislation and amendments |
+
+Additional official public bodies may be added when their legal competence is relevant (for example Statbel for official statistics). A source is not accepted merely because it is government-related: the page must support the exact parameter or rule being implemented.
+
+## Excluded sources
+No private tax firms, accountants, law firms, commercial publishers, comparison sites, blogs, newspapers, forums or private tax calculators. They are not used even as a secondary validation source.
+
+## Source review
+For every parameter, store the exact official URL, authority, source title, date retrieved, applicable income year, assessment year, effective dates and a short explanation of the rule. Where legislation and administrative guidance differ, record the legislation and resolve the interpretation before implementation.
