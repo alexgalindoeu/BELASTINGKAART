@@ -1,11 +1,10 @@
 (() => {
   const form = document.querySelector("#salary-form");
   if (!form) return;
-  const lang = document.body.dataset.lang || "nl";
+  const lang = document.body.dataset.lang || window.BK_CONFIG?.defaultLanguage || "nl";
   const copy = (window.BK_I18N && window.BK_I18N[lang]) || window.BK_I18N.nl;
   const result = document.querySelector("#result");
 
-  // Load the versioned dataset, but do not expose an incomplete net-pay estimate.
   window.BKParameters.load().then((parameters) => {
     window.BK_TAX_PARAMETERS = parameters;
     document.documentElement.dataset.parameterYear = String(parameters.income_year);
@@ -17,10 +16,12 @@
   form.addEventListener("submit", (event) => {
     event.preventDefault();
     const data = new FormData(form);
-    const gross = Number(data.get("grossMonthly"));
-    if (!Number.isFinite(gross) || gross <= 0 || gross > 100000) {
-      result.querySelector("h3").textContent = copy.invalidSalary;
-      result.querySelector("p").textContent = copy.noEstimate;
+    let gross;
+    try {
+      gross = window.BKGross.parseMonthlyGross(data.get("grossMonthly"));
+    } catch (_) {
+      window.BKUI.setText("h3",copy.invalidSalary,result);
+      window.BKUI.setText("p",copy.noEstimate,result);
       return;
     }
     const payload = {
@@ -29,10 +30,10 @@
       municipality: String(data.get("municipality") || "").trim(),
       family: data.get("family"),
       employment: data.get("employment"),
-      taxYear: Number(data.get("taxYear"))
+      incomeYear: Number(data.get("taxYear"))
     };
     result.dataset.input = JSON.stringify(payload);
-    result.querySelector("h3").textContent = copy.ready;
-    result.querySelector("p").textContent = copy.noEstimate;
+    window.BKUI.setText("h3",copy.ready,result);
+    window.BKUI.setText("p",copy.noEstimate,result);
   });
 })();
