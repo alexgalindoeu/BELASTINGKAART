@@ -1,14 +1,15 @@
-# Official tax parameters
+# Generated tax data
 
-Store versioned, source-backed Belgian parameters here.
+The active deployable dataset is `web/data/parameters.json`. It is generated from the authoritative YAML files in `params/<income-year>/` by:
 
-Each dataset should record:
-- tax year / income year and assessment year;
-- source institution and direct URL;
-- publication or effective date;
-- date retrieved;
-- unit and rounding convention;
-- a short note explaining the rule;
-- at least one validation case.
+```bash
+Rscript tools/export_parameters.R
+```
 
-Do not add figures until the source and applicable year have been checked.
+Do not edit the generated JSON by hand. Check that it is up to date with:
+
+```bash
+Rscript tools/export_parameters.R --check
+```
+
+The original root-level `data/` folder is retained only for repository compatibility during the initial scaffold migration.
