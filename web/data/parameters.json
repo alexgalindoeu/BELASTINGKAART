@@ -103,7 +103,7 @@
       "effective_from": "2026-01-01",
       "effective_to": null,
       "source_name": "FPS Finance / SPF Finances",
-      "source_url": "https://finances.belgium.fr/fr/entreprises/personnel_et_remuneration/precompte_professionnel/calcul",
+      "source_url": "https://finances.belgium.be/fr/entreprises/personnel_et_remuneration/precompte_professionnel/calcul",
       "source_title": "Calcul du précompte professionnel — règles et formule-clé 2026",
       "retrieved_at": "2026-11-24",
       "unit": "EUR_per_pay_period",
