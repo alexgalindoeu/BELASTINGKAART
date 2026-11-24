@@ -1,12 +1,12 @@
 {
   "name": "belastingkaart",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
-  "description": "Belgian tax calculator, Dutch and French",
+  "description": "Belgian tax information and calculator, Dutch and French",
   "scripts": {
     "test": "node --test test/*.test.mjs",
     "validate:params": "node tools/validate_parameters.mjs",
-    "test:e2e": "node test/e2e/web.e2e.mjs"
+    "build:sitemap": "node tools/generate_sitemap.mjs"
   },
   "engines": { "node": ">=20" }
 }
