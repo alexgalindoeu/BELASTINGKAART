@@ -58,3 +58,10 @@ validate_parameter_provenance <- function(parameter, path = "parameter") {
 }
 
 parameter_is_usable <- function(parameter) identical(parameter$status, "confirmed")
+
+# Half-up rounding as written in the RSZ instructions ("0,005 wordt 0,01").
+# Base R round() rounds half to even, which is not the official rule.
+round_half_up <- function(x, digits = 2L) {
+  m <- 10^digits
+  sign(x) * floor(abs(x) * m + 0.5 + 1e-9) / m
+}

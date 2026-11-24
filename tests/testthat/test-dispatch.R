@@ -3,7 +3,7 @@ testthat::test_that("salary dispatcher fails closed when official payroll parame
   p <- list(income_year=2026,assessment_year=2027,
     social_security=list(employee_contribution=list(
       rate=list(status="provisional",value=0.1307),
-      work_bonus=list(status="pending",value=NULL))),
+      work_bonus=list(method=list(status="provisional"),periods=list(x=list(status="pending",value=NULL))))),
     payroll=list(professional_withholding=list(status="pending"),
       professional_expenses=list(status="pending")))
   result <- calculate_salary(h,3500,p)

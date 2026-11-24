@@ -17,7 +17,8 @@ test('money parser handles Dutch and French-style decimal input without guessing
 });
 
 test('household form requires municipality and valid year pair',()=>{
- const state={...context.window.BKForm.initialState(),municipality:'Leuven'};
+ const state={...context.window.BKForm.initialState(),grossMonthly:'3500',municipality:'Leuven'};
+ assert.equal(context.window.BKForm.validate({...state,grossMonthly:''}).valid,false);
  assert.equal(context.window.BKForm.validate(state).valid,true);
  assert.equal(context.window.BKForm.validate({...state,assessmentYear:2026}).valid,false);
 });

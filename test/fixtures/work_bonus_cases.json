@@ -1,0 +1,279 @@
+{
+ "description": "Shared R/JS parity cases for the sociale werkbonus. Periods '2026_*' are read from params/2026/social_security.yaml. 'hist' reproduces the two worked examples on the RSZ werkbonus page, which use figures valid from 1 June 2001 with a single component; it tests the method only and is not a 2026 parameter set. Expected values computed independently (Python Decimal, half-up).",
+ "historical_2001_period": {
+  "key": "hist",
+  "status": "confirmed",
+  "value": {
+   "luik_a": {
+    "threshold": 2013.64,
+    "upper": 3030.15,
+    "bedienden": {
+     "max": 262.16,
+     "slope": 0.2579
+    },
+    "arbeiders": {
+     "max": 283.13,
+     "slope": null
+    }
+   },
+   "luik_b": {
+    "threshold": 0,
+    "upper": 0,
+    "bedienden": {
+     "max": 0,
+     "slope": 0
+    },
+    "arbeiders": {
+     "max": 0,
+     "slope": 0
+    }
+   }
+  }
+ },
+ "period_selection": [
+  {
+   "date": "2026-01-31",
+   "key": "2026_01"
+  },
+  {
+   "date": "2026-02-28",
+   "key": "2026_01"
+  },
+  {
+   "date": "2026-03-15",
+   "key": "2026_03"
+  },
+  {
+   "date": "2026-06-30",
+   "key": "2026_04"
+  },
+  {
+   "date": "2026-07-01",
+   "key": "2026_07"
+  },
+  {
+   "date": "2026-09-30",
+   "key": "2026_09"
+  },
+  {
+   "date": "2026-10-01",
+   "key": "2026_10"
+  },
+  {
+   "date": "2026-12-31",
+   "key": "2026_10"
+  }
+ ],
+ "cases": [
+  {
+   "name": "RSZ voorbeeld 1 (bediende, cijfers 2001)",
+   "period": "hist",
+   "wage": {
+    "W": 2015.0,
+    "regime": "full_time",
+    "J": 19,
+    "D": 22
+   },
+   "category": "bedienden",
+   "contribution_due": 263.36,
+   "expected": {
+    "S": 2333.1,
+    "fraction": 0.86,
+    "RA": 179.77,
+    "RB": 0.0,
+    "PA": 154.6,
+    "PB": 0.0,
+    "P": 154.6
+   }
+  },
+  {
+   "name": "RSZ voorbeeld 2 (arbeider, cijfers 2001)",
+   "period": "hist",
+   "wage": {
+    "W": 1336.0,
+    "regime": "full_time",
+    "J": 15,
+    "D": 22
+   },
+   "category": "arbeiders",
+   "contribution_due": 188.58,
+   "expected": {
+    "S": 1959.54,
+    "fraction": 0.68,
+    "RA": 283.13,
+    "RB": 0.0,
+    "PA": 188.58,
+    "PB": 0.0,
+    "P": 188.58
+   }
+  },
+  {
+   "name": "jan 2026, bediende, onvolledige prestaties, aftopping op luik B",
+   "period": "2026_01",
+   "wage": {
+    "W": 2000.0,
+    "regime": "full_time",
+    "J": 20,
+    "D": 22
+   },
+   "category": "bedienden",
+   "contribution_due": 261.4,
+   "expected": {
+    "S": 2200.0,
+    "fraction": 0.91,
+    "RA": 123.0,
+    "RB": 165.87,
+    "PA": 111.93,
+    "PB": 149.47,
+    "P": 261.4
+   }
+  },
+  {
+   "name": "sep 2026, bediende, S=2000, aftopping op luik B",
+   "period": "2026_09",
+   "wage": {
+    "W": 2000.0,
+    "regime": "full_time",
+    "J": 22,
+    "D": 22
+   },
+   "category": "bedienden",
+   "contribution_due": 261.4,
+   "expected": {
+    "S": 2000.0,
+    "fraction": 1,
+    "RA": 127.54,
+    "RB": 171.99,
+    "PA": 127.54,
+    "PB": 133.86,
+    "P": 261.4
+   }
+  },
+  {
+   "name": "sep 2026, bediende, S=2600 (luik B dalend)",
+   "period": "2026_09",
+   "wage": {
+    "W": 2600.0,
+    "regime": "full_time",
+    "J": 22,
+    "D": 22
+   },
+   "category": "bedienden",
+   "contribution_due": 339.82,
+   "expected": {
+    "S": 2600.0,
+    "fraction": 1,
+    "RA": 127.54,
+    "RB": 91.19,
+    "PA": 127.54,
+    "PB": 91.19,
+    "P": 218.73
+   }
+  },
+  {
+   "name": "sep 2026, bediende, S=2937.93 (grens luik B)",
+   "period": "2026_09",
+   "wage": {
+    "W": 2937.93,
+    "regime": "full_time",
+    "J": 22,
+    "D": 22
+   },
+   "category": "bedienden",
+   "contribution_due": 383.99,
+   "expected": {
+    "S": 2937.93,
+    "fraction": 1,
+    "RA": 127.54,
+    "RB": 0.0,
+    "PA": 127.54,
+    "PB": 0.0,
+    "P": 127.54
+   }
+  },
+  {
+   "name": "sep 2026, bediende, S=3200 (luik A dalend)",
+   "period": "2026_09",
+   "wage": {
+    "W": 3200.0,
+    "regime": "full_time",
+    "J": 22,
+    "D": 22
+   },
+   "category": "bedienden",
+   "contribution_due": 418.24,
+   "expected": {
+    "S": 3200.0,
+    "fraction": 1,
+    "RA": 55.76,
+    "RB": 0.0,
+    "PA": 55.76,
+    "PB": 0.0,
+    "P": 55.76
+   }
+  },
+  {
+   "name": "sep 2026, bediende, S=3403.62 (bovengrens luik A)",
+   "period": "2026_09",
+   "wage": {
+    "W": 3403.62,
+    "regime": "full_time",
+    "J": 22,
+    "D": 22
+   },
+   "category": "bedienden",
+   "contribution_due": 444.85,
+   "expected": {
+    "S": 3403.62,
+    "fraction": 1,
+    "RA": 0.0,
+    "RB": 0.0,
+    "PA": 0.0,
+    "PB": 0.0,
+    "P": 0.0
+   }
+  },
+  {
+   "name": "sep 2026, arbeider, S=2600",
+   "period": "2026_09",
+   "wage": {
+    "W": 2600.0,
+    "regime": "full_time",
+    "J": 22,
+    "D": 22
+   },
+   "category": "arbeiders",
+   "contribution_due": 367.0,
+   "expected": {
+    "S": 2600.0,
+    "fraction": 1,
+    "RA": 137.74,
+    "RB": 98.48,
+    "PA": 137.74,
+    "PB": 98.48,
+    "P": 236.22
+   }
+  },
+  {
+   "name": "sep 2026, bediende, deeltijds H/U=80/160",
+   "period": "2026_09",
+   "wage": {
+    "W": 1500.0,
+    "regime": "part_time",
+    "H": 80,
+    "U": 160
+   },
+   "category": "bedienden",
+   "contribution_due": 196.05,
+   "expected": {
+    "S": 3000.0,
+    "fraction": 0.5,
+    "RA": 110.54,
+    "RB": 0.0,
+    "PA": 55.27,
+    "PB": 0.0,
+    "P": 55.27
+   }
+  }
+ ]
+}
