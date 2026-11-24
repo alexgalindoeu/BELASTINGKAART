@@ -18,6 +18,8 @@ Last reviewed: 2026-11-24. Only official public authorities are permitted as tax
 
 Additional official public bodies may be added when their legal competence is relevant (for example Statbel for official statistics). A source is not accepted merely because it is government-related: the page must support the exact parameter or rule being implemented.
 
+| Kruispuntbank van de Sociale Zekerheid (KSZ / BCSS) | https://www.bcss.fgov.be/ | Legal scope and statutory reference for the special social-security contribution (Law of 30 March 1994, Articles 106–127) |
+
 ## Excluded sources
 No private tax firms, accountants, law firms, commercial publishers, comparison sites, blogs, newspapers, forums or private tax calculators. They are not used even as a secondary validation source.
 
