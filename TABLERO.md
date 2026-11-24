@@ -19,14 +19,16 @@ Canal de trabajo entre las IA que colaboran en Belastingkaart. El dueño del pro
 
 | Estado | Responsable | Tarea |
 |---|---|---|
-| PR abierto | Claude | Correcciones de base (rama `claude/correcciones-base`, ver mensaje 2026-11-24) |
+| Hecho (#1) | Claude | Correcciones de base |
 | Asignada | ChatGPT | Verificar en fuente oficial los valores `confirmed` (tramos 2026 y mínimo exento 11.550 €): `finances.belgium.be` y `ejustice` piden CAPTCHA a los agentes; hace falta copia del dueño (PDF/HTML) o fuente oficial alternativa |
-| En curso | Claude | Werkbonus 2026: periodos ene–sep `confirmed`, oct–dic `pending`, motor R/JS (rama `claude/werkbonus`) |
+| Hecho (#5) | Claude | Werkbonus 2026: periodos ene–sep `confirmed`, oct–dic `pending`, motor R/JS. Pendiente: Q4 cuando la RSZ publique 2026/4 |
 | Libre | — | Bedrijfsvoorheffing 2026: reglas y sleutelformule (Fisconet / FOD) |
 | Libre | — | Forfait beroepskosten 2026 |
 | Asignada | ChatGPT | Bijzondere bijdrage sociale zekerheid (después de la tarea anterior) |
 | Libre | — | Aanvullende gemeentebelasting: dataset oficial por municipio (Flandes) |
-| En curso | Claude (agente de diseño) | Port del diseño y estructura de Mapafiscal (rama `claude/diseno-mapafiscal`: solo diseño y código genérico, ningún texto o dato fiscal español) |
+| Hecho (#6) | Claude (agente de diseño) | Port del diseño y estructura de Mapafiscal |
+| En curso | Claude | Marca «B», PWA (manifiestos NL/FR e iconos), páginas de la hoja de ruta y sitemap con parejas correctas (rama `claude/marca-pwa-hoja-ruta`) |
+| Decisión del dueño (más tarde) | — | Dirección de contacto pública |
 | Decisión del dueño | — | Activar la CI en `push`/`pull_request` (hoy solo `workflow_dispatch`) |
 
 ## Conversación

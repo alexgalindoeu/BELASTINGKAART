@@ -11,7 +11,12 @@ const PAIRS = [
   ['nl/methodologie/', 'fr/methodologie/'],
   ['nl/bronnen/', 'fr/sources/'],
   ['nl/contact/', 'fr/contact/'],
-  ['nl/privacy/', 'fr/confidentialite/']
+  ['nl/privacy/', 'fr/confidentialite/'],
+  ['nl/gezin-en-bedrijfsvoorheffing/', 'fr/famille-et-precompte-professionnel/'],
+  ['nl/gemeentebelasting/', 'fr/taxe-communale/'],
+  ['nl/zelfstandigen/', 'fr/independants/'],
+  ['nl/pensioenen/', 'fr/pensions/'],
+  ['nl/scenarios/', 'fr/scenarios/']
 ];
 const read = route => readFile(path.join(WEB, route, 'index.html'), 'utf8');
 const all = (html, re) => Array.from(html.matchAll(re), m => m[1]);
@@ -127,4 +132,49 @@ test('optional integrations stay disabled in the public config', async () => {
   const config = await readFile(path.join(WEB, 'config.js'), 'utf8');
   for (const feature of ['scenarios', 'csvExport', 'accounts', 'paidReports', 'advertising', 'analytics'])
     assert.match(config, new RegExp(`${feature}: false`), feature);
+});
+
+test('sitemap lists every NL/FR pair, only existing pages, with the right alternates', async () => {
+  const xml = await readFile(path.join(WEB, 'sitemap.xml'), 'utf8');
+  const locs = all(xml, /<loc>https:\/\/belastingkaart\.be\/([^<]*)<\/loc>/g);
+  assert.deepEqual(new Set(locs), new Set(PAIRS.flat()));
+  for (const loc of locs) await access(path.join(WEB, loc, 'index.html'));
+  for (const [nl, fr] of PAIRS) for (const loc of [nl, fr]) {
+    const entry = xml.match(new RegExp(`<url><loc>https://belastingkaart\\.be/${loc}</loc>.*?</url>`))[0];
+    assert.match(entry, new RegExp(`hreflang="nl-BE" href="https://belastingkaart\\.be/${nl}"`), loc);
+    assert.match(entry, new RegExp(`hreflang="fr-BE" href="https://belastingkaart\\.be/${fr}"`), loc);
+  }
+});
+
+test('NL/FR web manifests are valid and their icons exist with the declared size', async () => {
+  for (const lang of ['nl', 'fr']) {
+    const man = JSON.parse(await readFile(path.join(WEB, lang, 'manifest.webmanifest'), 'utf8'));
+    assert.equal(man.short_name, 'Belastingkaart');
+    assert.equal(man.lang, lang + '-BE');
+    assert.ok(man.icons.some(i => i.purpose === 'maskable'), 'maskable icon');
+    for (const icon of man.icons) {
+      const file = path.resolve(WEB, lang, icon.src);
+      const buf = await readFile(file);
+      if (icon.type === 'image/png') {
+        const [w, h] = [buf.readUInt32BE(16), buf.readUInt32BE(20)];
+        assert.equal(`${w}x${h}`, icon.sizes, icon.src);
+      }
+    }
+  }
+  for (const pair of PAIRS) for (const route of pair) {
+    const html = await read(route);
+    assert.match(html, new RegExp(`<link rel="manifest" href="(\\.\\./)+${route.slice(0, 2)}/manifest\\.webmanifest">`), route);
+    assert.match(html, /<link rel="apple-touch-icon" href="(\.\.\/)+icons\/apple-touch-icon\.png">/, route);
+  }
+});
+
+test('roadmap pages are reachable from the home page and show no amounts', async () => {
+  for (const [nl, fr] of PAIRS.slice(5)) for (const route of [nl, fr]) {
+    const lang = route.slice(0, 2);
+    const home = await read(lang + '/');
+    assert.ok(home.includes(`href="${route.slice(3)}"`), `${route} linked from home`);
+    const text = (await read(route)).replace(/<[^>]+>/g, ' ');
+    assert.doesNotMatch(text, /\d[\d.,]*\s?(€|EUR|%)/, `${route} shows an amount`);
+    assert.match(text, lang === 'nl' ? /In ontwikkeling/ : /En développement/, route);
+  }
 });

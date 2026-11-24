@@ -1,0 +1,39 @@
+{
+ "name": "Belastingkaart — brut-net en Belgique",
+ "short_name": "Belastingkaart",
+ "description": "La fiscalité belge, expliquée clairement. En développement : aucun salaire net n’est encore calculé.",
+ "lang": "fr-BE",
+ "dir": "ltr",
+ "start_url": "./",
+ "scope": "../",
+ "display": "standalone",
+ "background_color": "#edf1f0",
+ "theme_color": "#1f3fc4",
+ "categories": [
+  "finance",
+  "utilities"
+ ],
+ "icons": [
+  {
+   "src": "../icons/icon-192.png",
+   "sizes": "192x192",
+   "type": "image/png"
+  },
+  {
+   "src": "../icons/icon-512.png",
+   "sizes": "512x512",
+   "type": "image/png"
+  },
+  {
+   "src": "../icons/icon-maskable-512.png",
+   "sizes": "512x512",
+   "type": "image/png",
+   "purpose": "maskable"
+  },
+  {
+   "src": "../favicon.svg",
+   "sizes": "any",
+   "type": "image/svg+xml"
+  }
+ ]
+}
