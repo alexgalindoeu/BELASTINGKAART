@@ -102,3 +102,19 @@ This improves provenance: the complete schedule is verifiably present in the off
 ### Implication for the parameter file
 
 The page is now sufficiently accessible to transcribe the complete schedule into a research specification, but it still does not support assigning effective dates for income year 2026. The exact schedule therefore remains **research-documented, not year-confirmed**. Keep the existing special contribution value null and status pending; do not copy the research figures into the generated JSON or activate a calculation. A future parameterisation should keep the quarterly liability schedule, the first/second-month advance schedule, and the third-month reconciliation as distinct structures, with household assessment and spouse-income classification explicit.
+
+
+## Legal cross-check — Belgian Social Security Crossroads Bank (2026-11-24)
+
+The official Crossroads Bank for Social Security (KSZ/BCSS) page identifies **Articles 106 to 127 of the Law of 30 March 1994 containing social provisions**, as amended by the Law of 20 December 1995 containing social provisions, as the legal reference for this contribution:
+
+- NL: https://www.bcss.fgov.be/nl/project/bijzondere-bijdrage-voor-de-sociale-zekerheid
+- FR: https://bcss.fgov.be/fr/project/cotisation-speciale-de-securite-sociale
+
+The BCSS page independently confirms that the contribution is due per fiscal household, that the annual amount depends on the household's total taxable income, and that the social-security sector determines the personal scope. It also lists exclusions for certain households consisting exclusively of self-employed persons / self-employed pensioners and for certain households involving a self-employed person whose spouse works less than half-time as an employee.
+
+This legal cross-check strengthens the distinction between (1) the **annual household-level liability** under the statutory framework and (2) the **employer's payroll withholding**, which RSZ describes as an advance and reconciles through the annual tax assessment.
+
+The BCSS page links to the official eJustice legislation record, but the linked eJustice endpoint was not retrievable during this review. I therefore record the statutory reference as identified by BCSS, without transcribing statutory article wording from a non-official consolidation. The current operational payroll schedule remains sourced from the directly accessible RSZ 2026/3 instructions.
+
+**Effective-date conclusion unchanged:** the law's existence and general legal framework do not by themselves establish that every amount and threshold displayed in RSZ 2026/3 has a year-wide effective period of 2026-01-01 to 2026-12-31. Keep the 2026 parameter null / pending until an official source ties the exact schedule to the relevant period. No calculation code or parameter values are activated.
