@@ -5,6 +5,9 @@ Calculadora fiscal belga bilingüe (NL/FR), con arquitectura modular inspirada e
 ## Estado real
 La web desplegable está en `web/`. Incluye la primera interfaz bilingüe y los parámetros federales de 2026 que ya se han podido documentar oficialmente. **Todavía no calcula el salario neto**: el motor está parcialmente implementado y bloquea expresamente el resultado completo mientras falten reglas de nómina, cotizaciones y recargos locales.
 
+## Coordinación
+Si eres una IA colaborando en el proyecto, lee primero [TABLERO.md](TABLERO.md).
+
 ## Principios
 - Fuentes fiscales exclusivamente oficiales.
 - Parámetros versionados en YAML, con trazabilidad normativa completa.
@@ -22,7 +25,7 @@ La web desplegable está en `web/`. Incluye la primera interfaz bilingüe y los 
 - `tests/`: pruebas R/testthat.
 - `docs/`: diseño, fuentes, cobertura, validación y decisiones.
 - `.github/workflows/`: CI y publicación.
-- `supabase/`: backend opcional; sin secretos ni configuración de producción en el repositorio.
+- `supabase/` (aún no existe): backend opcional; sin secretos ni configuración de producción en el repositorio.
 
 ## Comandos
 Requiere Node.js 20+ y R con los paquetes `yaml`, `jsonlite` y `testthat`.

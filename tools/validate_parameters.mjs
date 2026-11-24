@@ -1,106 +1,65 @@
-import { readFile, readdir } from 'node:fs/promises';
+// Validate provenance of every parameter in the generated browser dataset.
+// web/data/parameters.json is generated from params/<year>/*.yaml by
+// tools/export_parameters.R, and `Rscript tools/export_parameters.R --check`
+// guarantees it is in sync, so checking the JSON checks the YAML.
+// Mirrors validate_parameter_provenance() and official_source_host() in R/00_utils.R.
+import { readFile } from 'node:fs/promises';
 
-const root = new URL('../params/', import.meta.url);
-const years = (await readdir(root, { withFileTypes: true }))
-  .filter(entry => entry.isDirectory() && /^\\d{4}$/.test(entry.name));
-const allowedHosts = [
-  'fin.belgium.be','finances.belgium.be','socialsecurity.be',
-  'vlaanderen.be','belasting.vlaanderen.be','fiscaliteit.brussels',
-  'finances.wallonie.be','ejustice.just.fgov.be','statbel.fgov.be',
-  'emploi.belgique.be','werk.belgie.be','minfin.fgov.be'
-];
-const required = [
-  'status','jurisdiction','income_year','source_name','source_url',
-  'source_title','retrieved_at','unit','rounding','notes'
-];
+const REQUIRED = ['status', 'jurisdiction', 'income_year', 'source_name', 'source_url',
+  'source_title', 'retrieved_at', 'unit', 'rounding', 'notes'];
+const STATUSES = ['confirmed', 'provisional', 'pending'];
+const ALLOWED_HOSTS = ['fin.belgium.be', 'finances.belgium.be', 'minfin.fgov.be',
+  'socialsecurity.be', 'vlaanderen.be', 'belasting.vlaanderen.be',
+  'fiscaliteit.brussels', 'finances.wallonie.be', 'ejustice.just.fgov.be',
+  'statbel.fgov.be', 'emploi.belgique.be', 'werk.belgie.be'];
+const DATE = /^\d{4}-\d{2}-\d{2}$/;
+
+const file = process.argv[2] ?? new URL('../web/data/parameters.json', import.meta.url);
+const data = JSON.parse(await readFile(file, 'utf8'));
 const errors = [];
+let count = 0;
 
-function parseScalar(line) {
-  const match = line.match(/^\\s*([\\w-]+):\\s*(.*?)\\s*$/);
-  return match ? { key: match[1], value: match[2].replace(/^['"]|['"]$/g, '') } : null;
+function officialHost(url) {
+  if (typeof url !== 'string' || !url.startsWith('https://')) return null;
+  const host = new URL(url).hostname.toLowerCase();
+  return ALLOWED_HOSTS.some(a => host === a || host.endsWith('.' + a)) ? host : null;
 }
-function isOfficialUrl(raw, path, key) {
-  let parsed;
-  try { parsed = new URL(raw); }
-  catch { errors.push(path + ': malformed ' + key + ' URL: ' + raw); return; }
-  if (parsed.protocol !== 'https:') {
-    errors.push(path + ': ' + key + ' must use HTTPS: ' + raw);
-    return;
+
+function checkParameter(p, path) {
+  count++;
+  for (const k of REQUIRED) if (p[k] === undefined) errors.push(`${path}: missing ${k}`);
+  if (!STATUSES.includes(p.status)) errors.push(`${path}: invalid status '${p.status}'`);
+  for (const [k, v] of Object.entries(p))
+    if (k.endsWith('_url') && v !== null && !officialHost(v))
+      errors.push(`${path}: ${k} is not HTTPS on an official-source domain (${v})`);
+  if (p.retrieved_at !== undefined && !DATE.test(String(p.retrieved_at)))
+    errors.push(`${path}: retrieved_at must be YYYY-MM-DD`);
+  if (p.income_year !== undefined && p.income_year !== data.income_year)
+    errors.push(`${path}: income_year ${p.income_year} differs from dataset ${data.income_year}`);
+  if (p.status === 'confirmed') {
+    if (!DATE.test(String(p.effective_from ?? ''))) errors.push(`${path}: confirmed parameter needs effective_from`);
+    if (p.value === null || p.value === undefined) errors.push(`${path}: confirmed parameter has no value`);
   }
-  const host = parsed.hostname.toLowerCase();
-  if (!allowedHosts.some(domain => host === domain || host.endsWith('.' + domain))) {
-    errors.push(path + ': non-approved ' + key + ' domain: ' + host);
-  }
+  if (p.status === 'pending' && p.value !== null && p.value !== undefined)
+    errors.push(`${path}: pending parameter must not carry a value`);
 }
-function parameterBlocks(content) {
-  const lines = content.split(/\\r?\\n/);
-  const starts = [];
-  for (let i=0;i<lines.length;i++) {
-    const match = lines[i].match(/^(  )(?! )(\\w[\\w-]*):\\s*$/);
-    if (match) starts.push({ key: match[2], start: i, indent: 2 });
-  }
-  return starts.map((item,index) => {
-    const end = index+1<starts.length ? starts[index+1].start : lines.length;
-    const blockLines = lines.slice(item.start+1,end);
-    const fields = new Map();
-    for (const line of blockLines) {
-      const parsed = parseScalar(line);
-      if (parsed) fields.set(parsed.key,parsed.value);
-    }
-    return { ...item, fields };
-  });
+
+// A parameter is any object carrying a `status` and a `source_url`.
+function walk(node, path) {
+  if (!node || typeof node !== 'object' || Array.isArray(node)) return;
+  if ('status' in node && 'source_url' in node) return checkParameter(node, path);
+  for (const [k, v] of Object.entries(node)) walk(v, path ? `${path}.${k}` : k);
 }
-for (const year of years) {
-  const dir = new URL(year.name + '/', root);
-  const files = (await readdir(dir)).filter(file => file.endsWith('.yaml'));
-  for (const file of files) {
-    const path = year.name + '/' + file;
-    const content = await readFile(new URL(file,dir),'utf8');
-    const blocks = parameterBlocks(content);
-    if (!blocks.length) errors.push(path + ': no parameter blocks found');
-    for (const block of blocks) {
-      const label = path + ':' + block.key;
-      for (const field of required) {
-        if (!block.fields.has(field) || block.fields.get(field) === '') {
-          errors.push(label + ': missing ' + field);
-        }
-      }
-      const status = block.fields.get('status');
-      if (status && !['confirmed','provisional','pending','partial'].includes(status)) {
-        errors.push(label + ': invalid status ' + status);
-      }
-      const incomeYear = block.fields.get('income_year');
-      if (incomeYear && incomeYear !== 'null' && Number(incomeYear) !== Number(year.name)) {
-        errors.push(label + ': income_year does not match directory ' + year.name);
-      }
-      const retrieved = block.fields.get('retrieved_at');
-      if (retrieved && !/^\\d{4}-\\d{2}-\\d{2}$/.test(retrieved)) {
-        errors.push(label + ': retrieved_at must be YYYY-MM-DD');
-      }
-      const sourceUrl = block.fields.get('source_url');
-      if (sourceUrl && sourceUrl !== 'null') isOfficialUrl(sourceUrl,path,'source_url');
-      for (const [key,value] of block.fields) {
-        if (key.endsWith('_url') && key !== 'source_url' && value && value !== 'null') {
-          isOfficialUrl(value,path,key);
-        }
-      }
-      if (status === 'confirmed') {
-        const from = block.fields.get('effective_from');
-        if (!from || !/^\\d{4}-\\d{2}-\\d{2}$/.test(from)) {
-          errors.push(label + ': confirmed parameter requires effective_from YYYY-MM-DD');
-        }
-        if (!sourceUrl || sourceUrl === 'null') errors.push(label + ': confirmed parameter requires source_url');
-      }
-      const to = block.fields.get('effective_to');
-      if (to && to !== 'null' && !/^\\d{4}-\\d{2}-\\d{2}$/.test(to)) {
-        errors.push(label + ': effective_to must be a date or null');
-      }
-    }
-  }
+
+for (const section of ['federal', 'social_security', 'payroll']) {
+  if (!data[section]) errors.push(`missing section ${section}`);
+  else walk(data[section], section);
 }
+if (count === 0) errors.push('no parameters found');
+
 if (errors.length) {
-  console.error(errors.join('\\n'));
+  console.error(errors.join('\n'));
   process.exitCode = 1;
 } else {
-  console.log('Parameter provenance checks passed for every parameter block (official HTTPS domains only).');
+  console.log(`Parameter provenance checks passed (${count} parameters).`);
 }

@@ -4,7 +4,7 @@ meta:
   income_year: 2026
   assessment_year: 2027
   status: partial
-  notes: >
+  notes: >-
     The progressive federal personal income tax scale and basic personal tax
     allowance are sourced from FPS Finance for income year 2026 / assessment year
     2027. This is not a complete salary-net calculation: professional expenses,
@@ -34,7 +34,7 @@ personal_income_tax:
     retrieved_at: 2026-11-24
     unit: EUR_taxable_income_and_marginal_rate
     rounding: pending_official_calculation_rule
-    notes: >
+    notes: >-
       Official brackets: 25% up to EUR 16,720; 40% from EUR 16,720 to 29,510;
       45% from EUR 29,510 to 51,070; 50% above EUR 51,070. Applied to taxable
       income, not directly to gross salary.
@@ -52,7 +52,7 @@ personal_income_tax:
     retrieved_at: 2026-11-24
     unit: EUR
     rounding: not_applicable_to_threshold
-    notes: >
+    notes: >-
       Basic allowance only. It may increase depending on personal circumstances.
       Do not treat this amount alone as the final tax reduction; the legal
       calculation of the tax on the allowance and family increases must be modelled.

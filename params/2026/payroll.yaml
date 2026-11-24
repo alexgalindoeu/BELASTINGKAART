@@ -4,7 +4,7 @@ meta:
   income_year: 2026
   assessment_year: 2027
   status: pending
-  notes: >
+  notes: >-
     Payroll withholding and annual tax liability are different concepts.
     This file will hold official payroll-specific rules once the 2026 rules and
     key formula have been transcribed and checked.
@@ -23,7 +23,7 @@ professional_withholding:
   retrieved_at: 2026-11-24
   unit: EUR_per_pay_period
   rounding: pending_official_rule
-  notes: >
+  notes: >-
     The official FPS Finance page lists 2026 rules effective 1 January, a key
     formula and a 2026 simulator. The formula and underlying rules must be
     extracted and implemented before estimating monthly withholding.
@@ -44,7 +44,7 @@ professional_expenses:
   retrieved_at: 2026-11-24
   unit: EUR_per_income_year
   rounding: pending_official_rule
-  notes: >
+  notes: >-
     The official tax page confirms that flat-rate professional expenses are
     deducted from most professional income, including wages, but does not provide
     the 2026 calculation details in the page summary. Amounts, ceilings and
@@ -64,7 +64,7 @@ special_social_security_contribution:
   retrieved_at: 2026-11-24
   unit: EUR_per_pay_period
   rounding: pending_official_rule
-  notes: >
+  notes: >-
     Applicable scale, household-income conditions, periodicity and annual
     reconciliation have not yet been transcribed from a specific official
     source. No estimate is permitted.

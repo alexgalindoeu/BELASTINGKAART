@@ -30,7 +30,7 @@ official_source_host <- function(url) {
   if (length(url)!=1L || is.na(url) || !grepl("^https://",url))
     stop("Source URL must use HTTPS",call.=FALSE)
   host <- tolower(sub("^https://([^/:]+).*$","\\1",url))
-  allowed <- c("fin.belgium.be","finances.belgium.be","finances.belgium.fr",
+  allowed <- c("fin.belgium.be","finances.belgium.be","minfin.fgov.be",
     "socialsecurity.be","vlaanderen.be","belasting.vlaanderen.be",
     "fiscaliteit.brussels","finances.wallonie.be","ejustice.just.fgov.be",
     "statbel.fgov.be","emploi.belgique.be","werk.belgie.be")

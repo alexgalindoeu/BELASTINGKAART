@@ -12,3 +12,12 @@ testthat::test_that("Belgian federal progressive scale is applied marginally", {
 testthat::test_that("negative taxable income is rejected", {
   testthat::expect_error(calculate_tax_on_taxable_income(-1, list()), "non-negative")
 })
+
+testthat::test_that("R engine matches the shared R/JS parity fixture", {
+  fx <- jsonlite::fromJSON(file.path("..", "..", "test", "fixtures", "progressive_scale_cases.json"),
+                           simplifyVector = FALSE)
+  for (c in fx$cases) {
+    testthat::expect_equal(calculate_tax_on_taxable_income(c$base, fx$brackets), c$expected,
+                           tolerance = 1e-9, label = paste("base", c$base))
+  }
+})

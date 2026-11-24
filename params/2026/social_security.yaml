@@ -4,7 +4,7 @@ meta:
   income_year: 2026
   assessment_year: null
   status: partial
-  notes: >
+  notes: >-
     General employee contribution rate is published by RSZ for private-sector
     employees. The official page does not state the exact effective date in the
     cited summary, so the parameter is marked provisional for year-specific use.
@@ -25,7 +25,7 @@ employee_contribution:
     retrieved_at: 2026-11-24
     unit: fraction_of_gross_remuneration
     rounding: not_applicable_to_rate
-    notes: >
+    notes: >-
       Official RSZ page states 13.07% for employees in the private sector.
       Low-wage employees do not pay the full amount where the work bonus applies.
       Confirm exact year-specific validity and covered remuneration before release.
@@ -44,7 +44,7 @@ employee_contribution:
     retrieved_at: 2026-11-24
     unit: EUR_per_reference_month
     rounding: official_rounding_to_eurocent
-    notes: >
+    notes: >-
       Work bonus has two components and differentiated rules for employees and
       workers. Official thresholds and coefficients change during 2026; the complete
       applicable calculation and annual cap must be transcribed and tested before use.

@@ -3,6 +3,9 @@
 ## Regla principal
 Belastingkaart es un proyecto independiente. No modificar, desplegar ni importar datos fiscales de `MAPAFISCAL`. Se puede reutilizar arquitectura y código genérico, nunca reglas, parámetros, textos fiscales ni resultados españoles.
 
+## Coordinación
+Varias IA trabajan en este repo. Leer y actualizar `TABLERO.md` antes de empezar cualquier tarea.
+
 ## Producto
 - Calculadora fiscal belga con arquitectura modular equivalente a Mapafiscal.
 - Idiomas: neerlandés (`/nl/`) y francés (`/fr/`), mismo motor y mismos resultados.

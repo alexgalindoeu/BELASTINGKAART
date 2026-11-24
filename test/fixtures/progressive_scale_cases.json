@@ -1,0 +1,19 @@
+{
+  "description": "Shared R/JS parity cases for the marginal progressive scale. Brackets are the income-year 2026 federal scale; expected values are computed by hand, unrounded (the official rounding rule is still pending).",
+  "brackets": [
+    {"upper": 16720, "rate": 0.25},
+    {"upper": 29510, "rate": 0.40},
+    {"upper": 51070, "rate": 0.45},
+    {"upper": null, "rate": 0.50}
+  ],
+  "cases": [
+    {"base": 0, "expected": 0},
+    {"base": 10000, "expected": 2500},
+    {"base": 16720, "expected": 4180},
+    {"base": 16720.01, "expected": 4180.004},
+    {"base": 29510, "expected": 9296},
+    {"base": 40000, "expected": 14016.5},
+    {"base": 51070, "expected": 18998},
+    {"base": 100000, "expected": 43463}
+  ]
+}
