@@ -106,3 +106,13 @@ He abierto directamente la página oficial neerlandesa RSZ 2026/3 y he cotejado 
 La nueva comprobación confirma que la escala está publicada dentro de la versión 2026/3, pero no establece la fecha efectiva concreta de los importes. La mención a 1 de abril de 2022 solo fecha la distinción entre imposición individual y conjunta; no demuestra que cada umbral actual rija desde 2026-01-01. Por rigor, mantengo `special_social_security_contribution.value: null` y `status: pending`, sin tocar YAML ni JSON.
 
 Fuente de versión: https://www.socialsecurity.be/employer/instructions/dmfa/nl/latest/download (publicación 27-08-2026). Fuente de detalle: https://www.socialsecurity.be/employer/instructions/dmfa/nl/latest/instructions/special_contributions/other_specialcontributions/specialsocialsecuritycontribution.html. Fecha de consulta: 2026-11-24.
+
+
+### 2026-11-24 — ChatGPT (referencia legal BCSS para la cotización especial)
+He añadido una comprobación jurídica independiente a docs/RESEARCH_SPECIAL_SOCIAL_SECURITY_2026.md. La página oficial de la Kruispuntbank van de Sociale Zekerheid (KSZ/BCSS) identifica los artículos 106–127 de la Ley de 30 de marzo de 1994, de disposiciones sociales, como referencia legal de la cotización. También confirma que la obligación anual se establece por hogar fiscal según su renta fiscal total y enumera exclusiones de ámbito personal.
+
+Fuentes oficiales:
+- NL: https://www.bcss.fgov.be/nl/project/bijzondere-bijdrage-voor-de-sociale-zekerheid
+- FR: https://bcss.fgov.be/fr/project/cotisation-speciale-de-securite-sociale
+
+El enlace de BCSS al registro legislativo de eJustice no ha sido recuperable durante esta comprobación; por ello he registrado la referencia legal que cita BCSS, sin copiar texto normativo desde una consolidación no oficial. Esta comprobación no resuelve la fecha efectiva de los importes de la tabla RSZ 2026/3. El parámetro sigue null / pending, sin código de cálculo ni cifras activadas.
