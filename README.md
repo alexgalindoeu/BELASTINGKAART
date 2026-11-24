@@ -3,7 +3,7 @@
 Calculadora fiscal belga bilingüe (NL/FR), con arquitectura modular inspirada en la de Mapafiscal y reglas fiscales belgas independientes.
 
 ## Estado real
-El repositorio contiene la primera maqueta de interfaz y el esqueleto técnico. **Todavía no calcula el salario neto**: faltan reglas federales completas, retención profesional, situación familiar, bonus à l'emploi/werkbonus, recargos municipales y reglas regionales que correspondan. No publicar resultados hasta cerrar esas piezas.
+La web desplegable está en `web/`. Incluye la primera interfaz bilingüe y los parámetros federales de 2026 que ya se han podido documentar oficialmente. **Todavía no calcula el salario neto**: el motor está parcialmente implementado y bloquea expresamente el resultado completo mientras falten reglas de nómina, cotizaciones y recargos locales.
 
 ## Principios
 - Fuentes fiscales exclusivamente oficiales.
@@ -35,4 +35,4 @@ Rscript tools/export_parameters.R --check
 ```
 
 ## Fuentes
-Ver [docs/SOURCES.md](docs/SOURCES.md) y [docs/PARAMETER_POLICY.md](docs/PARAMETER_POLICY.md).
+Ver [docs/SOURCES.md](docs/SOURCES.md), [docs/PARAMETER_POLICY.md](docs/PARAMETER_POLICY.md) y [docs/CALCULATION_SCOPE.md](docs/CALCULATION_SCOPE.md).

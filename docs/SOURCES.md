@@ -5,6 +5,8 @@ Last reviewed: 2026-11-24. Only official public authorities are permitted as tax
 | Authority | Official domain | Primary use |
 |---|---|---|
 | FOD / SPF Financiën | https://fin.belgium.be/ | Federal personal income tax, tax return, tax reductions and official guidance |
+| FPS Finance tax rates | https://finances.belgium.be/en/private-individuals/tax-return/income/tax-rates | Income-year tax brackets and basic personal tax allowance |
+| FPS Finance professional withholding | https://finances.belgium.fr/fr/entreprises/personnel_et_remuneration/precompte_professionnel/calcul | Official 2026 withholding rules, key formula and simulator |
 | RSZ / ONSS | https://www.socialsecurity.be/ | Employee and employer social-security contributions, work bonus / bonus à l'emploi |
 | Vlaamse overheid | https://www.vlaanderen.be/ | Flemish taxes and regional rules |
 | Vlaamse Belastingdienst | https://www.belasting.vlaanderen.be/ | Flemish tax administration and official rules |

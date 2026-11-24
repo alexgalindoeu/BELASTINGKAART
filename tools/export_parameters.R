@@ -11,6 +11,7 @@ base <- file.path("params", year)
 if (!dir.exists(base)) stop("No parameter directory for income year ", year)
 federal <- yaml::read_yaml(file.path(base, "federal.yaml"))
 social <- yaml::read_yaml(file.path(base, "social_security.yaml"))
+payroll <- yaml::read_yaml(file.path(base, "payroll.yaml"))
 payload <- list(
   country = "BE",
   income_year = as.integer(year),
@@ -19,6 +20,7 @@ payload <- list(
   generated_at = as.character(max(c(federal$personal_income_tax$brackets$retrieved_at, social$employee_contribution$rate$retrieved_at))),
   federal = federal[names(federal) != "meta"],
   social_security = social[names(social) != "meta"],
+  payroll = payroll[names(payroll) != "meta"],
   calculation_status = "blocked_until_all_required_parameters_confirmed"
 )
 json <- jsonlite::toJSON(payload, auto_unbox = TRUE, pretty = TRUE, null = "null", na = "null")
