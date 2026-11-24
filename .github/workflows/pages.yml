@@ -1,0 +1,48 @@
+name: Publish Belastingkaart
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "web/**"
+      - "params/**"
+      - "R/**"
+      - "tools/**"
+      - "test/**"
+      - "tests/**"
+      - ".github/workflows/pages.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm test
+      - run: npm run validate:params
+      - uses: r-lib/actions/setup-r@v2
+      - name: Install R dependencies
+        run: Rscript -e 'install.packages(c("yaml", "jsonlite", "testthat"), repos="https://cloud.r-project.org")'
+      - run: Rscript tests/testthat.R
+      - run: Rscript tools/export_parameters.R --check
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: web
+      - id: deployment
+        uses: actions/deploy-pages@v4

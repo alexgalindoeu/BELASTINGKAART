@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Bereken je nettoloon in België. Een duidelijke bruto-netto simulator, met aandacht voor de Belgische fiscaliteit.">
+  <title>Belastingkaart — Bereken je nettoloon in België</title>
+  <link rel="stylesheet" href="../assets/css/site.css">
+  <script defer src="../assets/js/i18n.js"></script>
+  <script defer src="../assets/js/tax-engine.js"></script>
+  <script defer src="../assets/js/app.js"></script>
+  <script defer src="../assets/js/parameters.js"></script>
+</head>
+<body data-lang="nl">
+  <header class="topbar">
+    <a class="brand" href="./index.html" aria-label="Belastingkaart startpagina"><span class="brand-mark">B</span><span>belastingkaart</span></a>
+    <nav><a href="#simulator">Simulator</a><a href="#methodologie">Methodologie</a><a class="lang-switch" href="../fr/index.html" lang="fr">FR</a></nav>
+  </header>
+  <main>
+    <section class="hero">
+      <div class="eyebrow">BELGISCHE FISCALITEIT, HELDER UITGELEGD</div>
+      <h1>Wat blijft er over<br><span>van je brutoloon?</span></h1>
+      <p class="hero-copy">Ontdek hoe belastingen en sociale bijdragen je nettoloon beïnvloeden. Helder, transparant en afgestemd op België.</p>
+      <a class="primary-link" href="#simulator">Bereken je nettoloon <span>→</span></a>
+      <div class="hero-note"><span class="dot"></span> Onafhankelijk project · In ontwikkeling</div>
+    </section>
+    <section class="calculator-section" id="simulator">
+      <div class="section-heading">
+        <div><div class="eyebrow">BRUTO → NETTO</div><h2>Jouw loon simuleren</h2></div>
+        <span class="tag">Eerste versie</span>
+      </div>
+      <div class="calculator-card">
+        <form id="salary-form">
+          <div class="field-grid">
+            <label class="field"><span>Bruto maandloon (€)</span><input name="grossMonthly" type="number" min="0" max="100000" step="0.01" placeholder="Bijv. 3.500" required></label>
+            <label class="field"><span>Gewest</span><select name="region"><option value="flanders">Vlaams Gewest</option><option value="brussels">Brussels Hoofdstedelijk Gewest</option><option value="wallonia">Waals Gewest</option></select></label>
+            <label class="field"><span>Gemeente</span><input name="municipality" type="text" placeholder="Bijv. Leuven"></label>
+            <label class="field"><span>Gezinssituatie</span><select name="family"><option value="single">Alleenstaand, geen kinderen ten laste</option><option value="partner">Gehuwd / wettelijk samenwonend</option><option value="children">Kinderen ten laste</option></select></label>
+            <label class="field"><span>Arbeidsregime</span><select name="employment"><option value="employee">Werknemer</option><option value="other" disabled>Zelfstandige — binnenkort</option></select></label>
+            <label class="field"><span>Jaar</span><select name="taxYear"><option value="2026">2026</option></select></label>
+          </div>
+          <button class="submit-button" type="submit">Berekening voorbereiden <span>→</span></button>
+          <p class="form-footnote">De simulator wordt momenteel opgebouwd. Er wordt nog geen nettoloon berekend of weergegeven.</p>
+        </form>
+        <div class="result-panel" id="result" aria-live="polite">
+          <div class="result-icon">€</div><h3>Een transparante berekening</h3>
+          <p>We bouwen eerst de Belgische berekeningsregels op en toetsen ze aan officiële bronnen. Zo vermijden we misleidende nettoloonbedragen.</p>
+        </div>
+      </div>
+    </section>
+    <section class="principles" id="methodologie">
+      <div><span>01</span><h3>Belgische regels</h3><p>Federale belastingen, sociale bijdragen en lokale opcentiemen worden afzonderlijk behandeld.</p></div>
+      <div><span>02</span><h3>Controleerbare methode</h3><p>Elke parameter krijgt een bron, een belastingjaar en een test.</p></div>
+      <div><span>03</span><h3>NL & FR</h3><p>Dezelfde berekening, beschikbaar in het Nederlands en het Frans.</p></div>
+    </section>
+  </main>
+  <footer><a class="brand" href="./index.html"><span class="brand-mark">B</span><span>belastingkaart</span></a><span>Een onafhankelijk informatieproject. Geen officieel overheidsplatform.</span></footer>
+</body>
+</html>

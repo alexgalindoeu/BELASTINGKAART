@@ -22,14 +22,14 @@ payload <- list(
   calculation_status = "blocked_until_all_required_parameters_confirmed"
 )
 json <- jsonlite::toJSON(payload, auto_unbox = TRUE, pretty = TRUE, null = "null", na = "null")
-out <- file.path("data", "parameters.json")
+out <- file.path("web", "data", "parameters.json")
 if (check_only) {
   if (!file.exists(out) || !identical(trimws(readLines(out, warn = FALSE)), trimws(strsplit(json, "\n")[[1]]))) {
     stop(out, " is stale; run Rscript tools/export_parameters.R")
   }
   message("Generated parameter JSON is up to date.")
 } else {
-  dir.create("data", showWarnings = FALSE, recursive = TRUE)
+  dir.create(file.path("web", "data"), showWarnings = FALSE, recursive = TRUE)
   writeLines(json, out, useBytes = TRUE)
   message("Wrote ", out)
 }

@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
 
 const yaml = await readFile(new URL('../params/2026/social_security.yaml', import.meta.url), 'utf8');
-const data = JSON.parse(await readFile(new URL('../data/parameters.json', import.meta.url), 'utf8'));
+const data = JSON.parse(await readFile(new URL('../web/data/parameters.json', import.meta.url), 'utf8'));
 
 test('2026 social-security rate is sourced but remains provisional for year-specific use', () => {
   assert.match(yaml, /value: 0\.1307/);
