@@ -11,7 +11,7 @@ calculate_salary <- function(household, gross_monthly, parameters) {
   social <- parameters$social_security$employee_contribution
   if (is.null(social$rate) || !identical(social$rate$status,"confirmed"))
     missing <- c(missing,"confirmed employee social-security rate")
-  if (is.null(social$work_bonus) || !identical(social$work_bonus$status,"confirmed"))
+  if (!work_bonus_is_confirmed(social$work_bonus))
     missing <- c(missing,"work bonus")
   if (is.null(parameters$payroll$professional_withholding) ||
       !identical(parameters$payroll$professional_withholding$status,"confirmed"))

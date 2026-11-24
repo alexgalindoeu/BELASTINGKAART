@@ -31,20 +31,195 @@ employee_contribution:
       Confirm exact year-specific validity and covered remuneration before release.
       Do not generalise this rate to all public-sector categories or special regimes.
   work_bonus:
-    value: null
-    status: pending
-    jurisdiction: federal
-    income_year: 2026
-    assessment_year: null
-    effective_from: 2026-09-01
-    effective_to: null
-    source_name: RSZ / ONSS
-    source_url: https://www.socialsecurity.be/employer/instructions/dmfa/nl/latest/instructions/deductions/workers_reductions/workbonus.html
-    source_title: Administratieve instructies RSZ 2026/3 — Werkbonus
-    retrieved_at: 2026-11-24
-    unit: EUR_per_reference_month
-    rounding: official_rounding_to_eurocent
-    notes: >-
-      Work bonus has two components and differentiated rules for employees and
-      workers. Official thresholds and coefficients change during 2026; the complete
-      applicable calculation and annual cap must be transcribed and tested before use.
+    # Sociale werkbonus (reduction of the 13.07% personal contribution), RSZ DmfA
+    # administrative instructions. Transcribed from www.socialsecurity.be on 2026-11-24;
+    # NL and FR versions and the tussentijdse instructies agree on every amount.
+    method:
+      value:
+        reference_wage: 'S = W (J = D); S = (W/J) x D (J < D); part-time: S = (W/H) x U'
+        wage_fraction_rounding: half_up_eurocent
+        prestation_fraction_rounding: half_up_two_decimals
+        prestation_fraction_cap: 1
+        wage_base_percentage: 100
+        basic_amount_rounding: half_up_eurocent
+        reduction_rounding: eurocent_per_official_examples
+        contribution_cap_order: [luik_b, luik_a]
+        annual_cap_application: null
+      status: provisional
+      jurisdiction: federal
+      income_year: 2026
+      assessment_year: null
+      effective_from: 2026-01-01
+      effective_to: null
+      source_name: RSZ / ONSS
+      source_url: https://www.socialsecurity.be/employer/instructions/dmfa/nl/latest/instructions/deductions/workers_reductions/workbonus.html
+      source_title: Administratieve instructies RSZ 2026/3 — Werkbonus, berekening in drie stappen
+      retrieved_at: 2026-11-24
+      unit: method
+      rounding: "W/J and W/H: nearest eurocent (0,005 EUR wordt 0,01 EUR); J/D and H/U: two decimals (0,005 wordt 0,01), max 1; R: rekenkundig afgerond op de dichtstbijzijnde eurocent"
+      notes: >-
+        Verbatim rules: S is based on the gross wage at 100% for both arbeiders and
+        bedienden; P = R (full prestaties), P = (J/D) x R or P = (H/U) x R; P may not exceed
+        the personal social-security contributions due, and any shortfall is cut first from
+        luik B and then from luik A. J and H count prestatiecodes 1, 3, 4, 5, 20 and, from
+        version 2026/3, 38. Provisional because (1) rounding P to the eurocent is only
+        shown in the official worked examples, not stated as a rule; (2) how the annual cap
+        applies when it changes within the year is not stated; (3) the meaning and effective
+        date of prestatiecode 38 are not given. Exclusions from W (looncodes 3, 6, 13, 14,
+        15, 16, 22, 23, end-of-year premiums up to S, departure holiday pay) and the flat
+        80,57 EUR reduction of S for a limited group of employers are not modelled.
+    periods:
+      '2026_01':
+        value:
+          luik_a:
+            threshold: 2833.36
+            upper: 3271.48
+            bedienden: {max: 123.00, slope: 0.2807}
+            arbeiders: {max: 132.84, slope: 0.3032}
+          luik_b:
+            threshold: 2218.73
+            upper: 2833.36
+            bedienden: {max: 165.87, slope: 0.2699}
+            arbeiders: {max: 179.14, slope: 0.2915}
+          annual_cap_per_calendar_year: 3466.44
+        status: confirmed
+        jurisdiction: federal
+        income_year: 2026
+        assessment_year: null
+        effective_from: 2026-01-01
+        effective_to: 2026-02-28
+        source_name: RSZ / ONSS
+        source_url: https://www.socialsecurity.be/employer/instructions/dmfa/nl/2026-1/instructions/deductions/workers_reductions/workbonus.html
+        source_title: Administratieve instructies RSZ 2026/1 — Werkbonus, loonschijven januari en februari 2026
+        retrieved_at: 2026-11-24
+        unit: EUR_per_month_reference_wage_S
+        rounding: R rekenkundig afgerond op de dichtstbijzijnde eurocent
+        notes: >-
+          Loonschijven en verminderingsbedragen die gelden voor januari en februari 2026. R = max if S <= threshold; R = max - slope x (S - threshold) if threshold < S <= upper; R = 0 above upper. 'Bedienden' = declared at 100%; 'arbeiders' = declared at 108%.
+      '2026_03':
+        value:
+          luik_a:
+            threshold: 2833.36
+            upper: 3336.98
+            bedienden: {max: 123.00, slope: 0.2442}
+            arbeiders: {max: 132.84, slope: 0.2638}
+          luik_b:
+            threshold: 2218.73
+            upper: 2833.36
+            bedienden: {max: 165.87, slope: 0.2699}
+            arbeiders: {max: 179.14, slope: 0.2915}
+          annual_cap_per_calendar_year: 3466.44
+        status: confirmed
+        jurisdiction: federal
+        income_year: 2026
+        assessment_year: null
+        effective_from: 2026-03-01
+        effective_to: 2026-03-31
+        source_name: RSZ / ONSS
+        source_url: https://www.socialsecurity.be/employer/instructions/dmfa/nl/2026-1/instructions/deductions/workers_reductions/workbonus.html
+        source_title: Administratieve instructies RSZ 2026/1 — Werkbonus, loonschijven vanaf 1 maart 2026
+        retrieved_at: 2026-11-24
+        unit: EUR_per_month_reference_wage_S
+        rounding: R rekenkundig afgerond op de dichtstbijzijnde eurocent
+        notes: >-
+          Loonschijven en verminderingsbedragen die gelden vanaf 1 maart 2026. Effective_to is the end of quarter 2026/1; the next table applies from 1 April 2026. R = max if S <= threshold; R = max - slope x (S - threshold) if threshold < S <= upper; R = 0 above upper. 'Bedienden' = declared at 100%; 'arbeiders' = declared at 108%.
+      '2026_04':
+        value:
+          luik_a:
+            threshold: 2880.32
+            upper: 3336.98
+            bedienden: {max: 125.04, slope: 0.2738}
+            arbeiders: {max: 135.04, slope: 0.2957}
+          luik_b:
+            threshold: 2255.50
+            upper: 2880.32
+            bedienden: {max: 168.62, slope: 0.2699}
+            arbeiders: {max: 182.11, slope: 0.2915}
+          annual_cap_per_calendar_year: 3523.92
+        status: confirmed
+        jurisdiction: federal
+        income_year: 2026
+        assessment_year: null
+        effective_from: 2026-04-01
+        effective_to: 2026-06-30
+        source_name: RSZ / ONSS
+        source_url: https://www.socialsecurity.be/employer/instructions/dmfa/nl/2026-2/instructions/deductions/workers_reductions/workbonus.html
+        source_title: Administratieve instructies RSZ 2026/2 — Werkbonus, loonschijven vanaf 1 april 2026
+        retrieved_at: 2026-11-24
+        unit: EUR_per_month_reference_wage_S
+        rounding: R rekenkundig afgerond op de dichtstbijzijnde eurocent
+        notes: >-
+          Loonschijven en verminderingsbedragen die gelden vanaf 1 april 2026 (GGMMI-verhoging, cao nr. 43-18). Cross-checked against tussentijdse instructies 2026/1 (01/04/2026). R = max if S <= threshold; R = max - slope x (S - threshold) if threshold < S <= upper; R = 0 above upper. 'Bedienden' = declared at 100%; 'arbeiders' = declared at 108%.
+      '2026_07':
+        value:
+          luik_a:
+            threshold: 2937.93
+            upper: 3336.98
+            bedienden: {max: 127.54, slope: 0.3196}
+            arbeiders: {max: 137.74, slope: 0.3452}
+          luik_b:
+            threshold: 2300.62
+            upper: 2937.93
+            bedienden: {max: 171.99, slope: 0.2699}
+            arbeiders: {max: 185.75, slope: 0.2915}
+          annual_cap_per_calendar_year: 3594.36
+        status: confirmed
+        jurisdiction: federal
+        income_year: 2026
+        assessment_year: null
+        effective_from: 2026-07-01
+        effective_to: 2026-08-31
+        source_name: RSZ / ONSS
+        source_url: https://www.socialsecurity.be/employer/instructions/dmfa/nl/latest/instructions/deductions/workers_reductions/workbonus.html
+        source_title: Administratieve instructies RSZ 2026/3 — Werkbonus, loonschijven juli en augustus 2026
+        retrieved_at: 2026-11-24
+        unit: EUR_per_month_reference_wage_S
+        rounding: R rekenkundig afgerond op de dichtstbijzijnde eurocent
+        notes: >-
+          Loonschijven en verminderingsbedragen die gelden voor juli en augustus 2026. The 2026/3 version is only reachable through the `latest` URL. Cross-checked against tussentijdse instructies 2026/2 (03/07/2026). R = max if S <= threshold; R = max - slope x (S - threshold) if threshold < S <= upper; R = 0 above upper. 'Bedienden' = declared at 100%; 'arbeiders' = declared at 108%.
+      '2026_09':
+        value:
+          luik_a:
+            threshold: 2937.93
+            upper: 3403.62
+            bedienden: {max: 127.54, slope: 0.2739}
+            arbeiders: {max: 137.74, slope: 0.2958}
+          luik_b:
+            threshold: 2300.62
+            upper: 2937.93
+            bedienden: {max: 171.99, slope: 0.2699}
+            arbeiders: {max: 185.75, slope: 0.2915}
+          annual_cap_per_calendar_year: 3594.36
+        status: confirmed
+        jurisdiction: federal
+        income_year: 2026
+        assessment_year: null
+        effective_from: 2026-09-01
+        effective_to: null
+        source_name: RSZ / ONSS
+        source_url: https://www.socialsecurity.be/employer/instructions/dmfa/nl/latest/instructions/deductions/workers_reductions/workbonus.html
+        source_title: Administratieve instructies RSZ 2026/3 — Werkbonus, bedragen vanaf 1 september 2026
+        retrieved_at: 2026-11-24
+        unit: EUR_per_month_reference_wage_S
+        rounding: R rekenkundig afgerond op de dichtstbijzijnde eurocent
+        notes: >-
+          De volgende bedragen gelden vanaf 1 september 2026. The source gives no end date; whether it still applies from October 2026 is pending (see period 2026_10). The annual cap is the one stated 'vanaf 1 juli 2026'; no separate cap is given for September. R = max if S <= threshold; R = max - slope x (S - threshold) if threshold < S <= upper; R = 0 above upper. 'Bedienden' = declared at 100%; 'arbeiders' = declared at 108%.
+      '2026_10':
+        value: null
+        status: pending
+        jurisdiction: federal
+        income_year: 2026
+        assessment_year: null
+        effective_from: 2026-10-01
+        effective_to: 2026-12-31
+        source_name: RSZ / ONSS
+        source_url: https://www.socialsecurity.be/employer/instructions/dmfa/nl/latest/intermediates
+        source_title: Administratieve instructies RSZ 2026/4 — not yet published
+        retrieved_at: 2026-11-24
+        unit: EUR_per_month_reference_wage_S
+        rounding: R rekenkundig afgerond op de dichtstbijzijnde eurocent
+        notes: >-
+          The 2026/4 DmfA instructions return 404 and the 2026/3 tussentijdse instructies
+          (last item 20/10/2026) contain no werkbonus item. Do not assume that the
+          September 2026 table still applies; this period blocks any October–December
+          calculation until an official text is published.

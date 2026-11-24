@@ -8,6 +8,7 @@ Last reviewed: 2026-11-24. Only official public authorities are permitted as tax
 | FPS Finance tax rates | https://finances.belgium.be/en/private-individuals/tax-return/income/tax-rates | Income-year tax brackets and basic personal tax allowance |
 | FPS Finance professional withholding | https://finances.belgium.be/fr/entreprises/personnel_et_remuneration/precompte_professionnel/calcul | Official 2026 withholding rules, key formula and simulator |
 | RSZ / ONSS | https://www.socialsecurity.be/ | Employee and employer social-security contributions, work bonus / bonus à l'emploi |
+| RSZ werkbonus | https://www.socialsecurity.be/employer/instructions/dmfa/nl/latest/instructions/deductions/workers_reductions/workbonus.html (and `2026-1`, `2026-2` versions) | Social work bonus tables per period; verbatim transcription in [sources/werkbonus_2026_rsz.md](sources/werkbonus_2026_rsz.md) |
 | Vlaamse overheid | https://www.vlaanderen.be/ | Flemish taxes and regional rules |
 | Vlaamse Belastingdienst | https://www.belasting.vlaanderen.be/ | Flemish tax administration and official rules |
 | Brussels Fiscaliteit | https://fiscaliteit.brussels/ | Brussels regional taxes |
