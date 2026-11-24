@@ -11,6 +11,11 @@ for (const language of ['nl', 'fr']) {
     for (const path of required) assert.ok(html.includes(path), language + ' missing ' + path);
     assert.ok(html.indexOf('parameters.js') < html.indexOf('app.js'));
     assert.ok(html.indexOf('bruto.js') < html.indexOf('app.js'));
+    for (const field of ['grossMonthly','region','municipality','familyStatus','children','employment','incomeYear','assessmentYear','paidMonths']) {
+      assert.ok(html.includes('name=\"' + field + '\"'), language + ' missing form field ' + field);
+    }
+    assert.ok(!html.includes('name=\"family\"'), language + ' still uses the legacy family field');
+    assert.ok(!html.includes('name=\"taxYear\"'), language + ' still uses the legacy taxYear field');
     assert.match(html, /data-lang=/);
   });
 }
