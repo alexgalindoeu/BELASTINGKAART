@@ -2,25 +2,57 @@ meta:
   country: BE
   jurisdiction: federal
   income_year: 2026
-  assessment_year: null
-  status: pending
+  assessment_year: 2027
+  status: partial
   notes: >
-    Federal personal income tax parameters for income year 2026 / assessment year
-    2027 have not yet been fully verified from official primary sources. No tax
-    brackets or tax-free allowance are entered until the exact official rules and
-    effective dates are documented.
+    The progressive federal personal income tax scale and basic personal tax
+    allowance are sourced from FPS Finance for income year 2026 / assessment year
+    2027. This is not a complete salary-net calculation: professional expenses,
+    family increases, tax reductions, municipal surcharge and withholding rules
+    still need separate official documentation.
 
 personal_income_tax:
-  status: pending
-  value: null
-  source_name: FOD Financiën
-  source_url: https://fin.belgium.be/
-  source_title: Official personal income tax information
-  retrieved_at: 2026-11-24
-  income_year: 2026
-  assessment_year: 2027
-  effective_from: null
-  effective_to: null
-  unit: EUR
-  rounding: pending
-  notes: Exact rates, brackets, tax-free allowance and reductions require official verification.
+  brackets:
+    value:
+      - upper: 16720
+        rate: 0.25
+      - upper: 29510
+        rate: 0.40
+      - upper: 51070
+        rate: 0.45
+      - upper: null
+        rate: 0.50
+    status: confirmed
+    jurisdiction: federal
+    income_year: 2026
+    assessment_year: 2027
+    effective_from: 2026-01-01
+    effective_to: 2026-12-31
+    source_name: FPS Finance / FOD Financiën
+    source_url: https://finances.belgium.be/en/private-individuals/tax-return/income/tax-rates
+    source_title: Tax rates — income tax year 2026 (assessment year 2027)
+    retrieved_at: 2026-11-24
+    unit: EUR_taxable_income_and_marginal_rate
+    rounding: pending_official_calculation_rule
+    notes: >
+      Official brackets: 25% up to EUR 16,720; 40% from EUR 16,720 to 29,510;
+      45% from EUR 29,510 to 51,070; 50% above EUR 51,070. Applied to taxable
+      income, not directly to gross salary.
+  basic_personal_tax_allowance:
+    value: 11550
+    status: confirmed
+    jurisdiction: federal
+    income_year: 2026
+    assessment_year: 2027
+    effective_from: 2026-01-01
+    effective_to: 2026-12-31
+    source_name: FPS Finance / FOD Financiën
+    source_url: https://finances.belgium.be/en/private-individuals/tax-return/income/tax-rates
+    source_title: Tax rates — personal tax allowance, income tax year 2026
+    retrieved_at: 2026-11-24
+    unit: EUR
+    rounding: not_applicable_to_threshold
+    notes: >
+      Basic allowance only. It may increase depending on personal circumstances.
+      Do not treat this amount alone as the final tax reduction; the legal
+      calculation of the tax on the allowance and family increases must be modelled.

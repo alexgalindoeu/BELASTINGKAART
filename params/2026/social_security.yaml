@@ -5,14 +5,15 @@ meta:
   assessment_year: null
   status: partial
   notes: >
-    General employee contribution rate is documented for private-sector employees.
-    This is not sufficient to calculate net pay: work bonus, employment category,
-    remuneration base and special cases must also be modelled.
+    General employee contribution rate is published by RSZ for private-sector
+    employees. The official page does not state the exact effective date in the
+    cited summary, so the parameter is marked provisional for year-specific use.
+    This is not sufficient to calculate net pay.
 
 employee_contribution:
   rate:
     value: 0.1307
-    status: confirmed
+    status: provisional
     jurisdiction: federal
     income_year: 2026
     assessment_year: null
@@ -27,6 +28,7 @@ employee_contribution:
     notes: >
       Official RSZ page states 13.07% for employees in the private sector.
       Low-wage employees do not pay the full amount where the work bonus applies.
+      Confirm exact year-specific validity and covered remuneration before release.
       Do not generalise this rate to all public-sector categories or special regimes.
   work_bonus:
     value: null

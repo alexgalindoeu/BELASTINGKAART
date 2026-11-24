@@ -1,0 +1,68 @@
+{
+  "country": "BE",
+  "income_year": 2026,
+  "assessment_year": 2027,
+  "generated_from": "params/2026/*.yaml",
+  "generated_at": "2026-11-24",
+  "federal": {
+    "personal_income_tax": {
+      "brackets": {
+        "value": [
+          { "upper": 16720, "rate": 0.25 },
+          { "upper": 29510, "rate": 0.4 },
+          { "upper": 51070, "rate": 0.45 },
+          { "upper": null, "rate": 0.5 }
+        ],
+        "status": "confirmed",
+        "jurisdiction": "federal",
+        "income_year": 2026,
+        "assessment_year": 2027,
+        "effective_from": "2026-01-01",
+        "effective_to": "2026-12-31",
+        "source_name": "FPS Finance / FOD Financiën",
+        "source_url": "https://finances.belgium.be/en/private-individuals/tax-return/income/tax-rates",
+        "source_title": "Tax rates — income tax year 2026 (assessment year 2027)",
+        "retrieved_at": "2026-11-24",
+        "unit": "EUR_taxable_income_and_marginal_rate",
+        "rounding": "pending_official_calculation_rule",
+        "notes": "Rates apply to taxable income, not directly to gross salary."
+      },
+      "basic_personal_tax_allowance": {
+        "value": 11550,
+        "status": "confirmed",
+        "jurisdiction": "federal",
+        "income_year": 2026,
+        "assessment_year": 2027,
+        "effective_from": "2026-01-01",
+        "effective_to": "2026-12-31",
+        "source_name": "FPS Finance / FOD Financiën",
+        "source_url": "https://finances.belgium.be/en/private-individuals/tax-return/income/tax-rates",
+        "source_title": "Tax rates — personal tax allowance, income tax year 2026",
+        "retrieved_at": "2026-11-24",
+        "unit": "EUR",
+        "rounding": "not_applicable_to_threshold",
+        "notes": "Basic amount; may increase depending on personal circumstances."
+      }
+    }
+  },
+  "social_security": {
+    "employee_contribution_rate": {
+      "value": 0.1307,
+      "status": "provisional",
+      "jurisdiction": "federal",
+      "income_year": 2026,
+      "assessment_year": null,
+      "effective_from": null,
+      "effective_to": null,
+      "source_name": "RSZ / ONSS",
+      "source_url": "https://www.socialsecurity.be/site_nl/employer/infos/employers_nsso/which-contributions.htm",
+      "source_title": "Welke soorten bijdragen bestaan er?",
+      "retrieved_at": "2026-11-24",
+      "unit": "fraction_of_gross_remuneration",
+      "rounding": "not_applicable_to_rate",
+      "notes": "13.07% for private-sector employees; exact year validity and work-bonus interactions still require implementation."
+    },
+    "work_bonus": { "value": null, "status": "pending" }
+  },
+  "calculation_status": "blocked_until_all_required_parameters_confirmed"
+}
