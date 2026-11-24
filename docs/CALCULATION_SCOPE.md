@@ -27,7 +27,7 @@ They are not interchangeable. The UI must state which result it displays.
 | Work bonus | Pending full formula and conditions |
 | Professional withholding 2026 | Pending extraction of official rules and key formula |
 | Flat-rate professional expenses | Pending exact official 2026 parameters |
-| Special social-security contribution | Pending |
+| Special social-security contribution | Official RSZ 2026/3 research documented; effective dates, spouse classification and quarterly-to-monthly withholding still pending |
 | Municipal surcharge | Pending official municipality-level dataset |
 | Family-specific tax allowance | Pending detailed official parameters |
 | Full monthly net salary | Blocked |
