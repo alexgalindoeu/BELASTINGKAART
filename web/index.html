@@ -1,5 +1,24 @@
 <!doctype html>
-<html lang="en">
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="refresh" content="0; url=nl/"><link rel="canonical" href="nl/"><link rel="icon" href="favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="icons/apple-touch-icon.png"><title>Belastingkaart</title></head>
-<body><p><a href="nl/">Nederlands</a> · <a href="fr/">Français</a></p></body>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Belastingkaart</title>
+<meta name="description" content="Belastingkaart: Belgische loonfiscaliteit in het Nederlands of het Frans. Belastingkaart : la fiscalité belge des salaires en néerlandais ou en français.">
+<link rel="canonical" href="https://belastingkaart.be/nl/">
+<link rel="alternate" hreflang="nl-BE" href="https://belastingkaart.be/nl/">
+<link rel="alternate" hreflang="fr-BE" href="https://belastingkaart.be/fr/">
+<link rel="alternate" hreflang="x-default" href="https://belastingkaart.be/nl/">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<script src="js/taal.js"></script>
+<script>
+// Language choice, client side only (crawlers follow the links below): saved choice, then browser languages, then Dutch.
+try { location.replace(window.BKTaal.detect() + "/" + location.search + location.hash); } catch (e) { location.replace("nl/"); }
+</script>
+<style>body{font-family:system-ui,sans-serif;margin:48px 16px;text-align:center}a{display:inline-block;margin:8px 12px;font-size:18px}</style>
+</head>
+<body>
+<p><a href="nl/" hreflang="nl-BE" lang="nl">Nederlands</a> <a href="fr/" hreflang="fr-BE" lang="fr">Français</a></p>
+</body>
 </html>
