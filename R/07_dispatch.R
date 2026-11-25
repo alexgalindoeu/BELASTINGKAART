@@ -19,6 +19,8 @@ calculate_salary <- function(household, gross_monthly, parameters) {
   if (is.null(parameters$payroll$professional_expenses) ||
       !identical(parameters$payroll$professional_expenses$status,"confirmed"))
     missing <- c(missing,"professional expenses")
+  if (!special_contribution_is_confirmed(parameters$payroll$special_social_security_contribution))
+    missing <- c(missing,"special social-security contribution")
   if (is.null(parameters$regional_rules) || is.null(parameters$regional_rules[[household$region]]))
     missing <- c(missing,"regional rules")
   if (is.null(parameters$municipal_rules) ||
