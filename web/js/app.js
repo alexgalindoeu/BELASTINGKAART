@@ -5,6 +5,9 @@
   const lang = document.body.dataset.lang || window.BK_CONFIG?.defaultLanguage || "nl";
   const copy = (window.BK_I18N && window.BK_I18N[lang]) || window.BK_I18N.nl;
   const result = document.querySelector("#result");
+  // The panel's markup already shows the pending state without JavaScript; the renderer
+  // redraws it from the engine's own answer (today always "blocked": no figure is shown).
+  if (window.BKResult && window.BKTaxEngine) window.BKResult.render(result, window.BKTaxEngine.calculate(), lang);
 
   window.BKParameters.load().then((parameters) => {
     window.BK_TAX_PARAMETERS = parameters;

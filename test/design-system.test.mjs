@@ -90,13 +90,15 @@ test('NL and FR pages have the same structure', async () => {
   for (const [nl, fr] of PAIRS) assert.deepEqual(shape(await read(fr)), shape(await read(nl)), `${nl} vs ${fr}`);
 });
 
-test('the home result panel announces a blocked calculation and shows no amount', async () => {
+test('the home result panel shows a calm pending state, the rules in a <details> and no amount', async () => {
   for (const route of ['nl/', 'fr/']) {
     const html = await read(route);
-    const result = html.match(/<div class="result" id="result"[\s\S]*?<\/ul>\s*<\/div>/)?.[0];
+    const result = html.match(/<div class="result" id="result"[\s\S]*?<\/details>\s*<\/div>/)?.[0];
     assert.ok(result, route + ' result panel');
     assert.match(result, /aria-live="polite"/);
-    assert.match(result, /<h3>/);
+    assert.match(result, /<h3[\s>]/);
+    assert.match(result, /<details class="result-rules"><summary>[^<]+<\/summary><ul class="result-list">/);
+    assert.doesNotMatch(result, /chip warn|geblokkeerd|bloqué/i, route + ' no warning banner');
     assert.doesNotMatch(result, /\d[\d.,\s]*€|€\s*\d/, route + ' result shows an amount');
     assert.match(html, /<form id="salary-form"/);
   }
@@ -168,13 +170,21 @@ test('NL/FR web manifests are valid and their icons exist with the declared size
   }
 });
 
-test('roadmap pages are reachable from the home page and show no amounts', async () => {
+test('roadmap pages are reachable from the home page, show no amounts and no development labels', async () => {
   for (const [nl, fr] of PAIRS.slice(5)) for (const route of [nl, fr]) {
     const lang = route.slice(0, 2);
     const home = await read(lang + '/');
     assert.ok(home.includes(`href="${route.slice(3)}"`), `${route} linked from home`);
     const text = (await read(route)).replace(/<[^>]+>/g, ' ');
     assert.doesNotMatch(text, /\d[\d.,]*\s?(€|EUR|%)/, `${route} shows an amount`);
-    assert.match(text, lang === 'nl' ? /In ontwikkeling/ : /En développement/, route);
+    assert.doesNotMatch(text, /in ontwikkeling|en développement|eerste versie|première version/i, route);
+  }
+});
+
+test('no page shows development labels (owner decision 2026-11-25)', async () => {
+  for (const file of await walk(WEB)) {
+    if (!/\.html$/.test(file)) continue;
+    const text = (await readFile(file, 'utf8')).replace(/<[^>]+>/g, ' ');
+    assert.doesNotMatch(text, /in ontwikkeling|en développement|eerste versie|première version|binnenkort|bientôt/i, path.relative(WEB, file));
   }
 });

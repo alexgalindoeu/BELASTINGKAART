@@ -1,0 +1,456 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Guide de style | Belastingkaart</title>
+<meta name="description" content="Guide de style interne de Belastingkaart : tous les éléments de l’interface avec un texte d’exemple neutre.">
+<meta name="robots" content="noindex">
+<link rel="canonical" href="https://belastingkaart.be/fr/guide-de-style/">
+<link rel="alternate" hreflang="nl-BE" href="https://belastingkaart.be/nl/stijlgids/">
+<link rel="alternate" hreflang="fr-BE" href="https://belastingkaart.be/fr/guide-de-style/">
+<link rel="alternate" hreflang="x-default" href="https://belastingkaart.be/nl/">
+<meta name="theme-color" content="#1f3fc4">
+<meta name="color-scheme" content="light dark">
+<script>try{var t=localStorage.getItem("bk-theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
+<link rel="preload" href="../../fonts/public-sans-latin-var.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../../fonts/archivo-latin-var.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../../icons/apple-touch-icon.png">
+<link rel="manifest" href="../../fr/manifest.webmanifest">
+<link rel="stylesheet" href="../../css/site.css">
+<link rel="stylesheet" href="../../css/components.css">
+<script defer src="../../config.js"></script>
+<script defer src="../../js/menu.js"></script>
+<script defer src="../../js/ui.js"></script>
+<script defer src="../../js/componenten.js"></script>
+</head>
+<body class="page" data-lang="fr">
+<a class="skip-link" href="#content">Aller au contenu</a>
+<header class="appbar">
+  <div class="appbar-in">
+    <a class="brand" href="../../fr/" aria-label="Belastingkaart, accueil"><svg class="brand-icon" viewBox="0 -2 102 86" aria-hidden="true" focusable="false"><path class="p" fill-rule="evenodd" d="M16,4H62L77,18V28L68,37L84,52V66L70,80H2Z M28,16L25,33H57L62,28V21L57,16Z M23,47L19,68H64L70,62V54L63,47Z"/><polygon class="p2" points="46,80 60,80 99,30 91,18"/></svg><span class="brand-name">Belastingkaart</span></a>
+    <nav class="nav" aria-label="Sections">
+      <a href="../../fr/#simulator">Simulateur</a>
+      <a href="../../fr/methodologie/">Méthodologie</a>
+      <a href="../../fr/sources/">Sources</a>
+      <a href="../../fr/contact/">Contact</a>
+    </nav>
+    <div class="appbar-end">
+      <button class="btn-icon theme-btn" id="theme-toggle" type="button" aria-label="Thème : automatique (comme le système). Passer en mode clair" title="Thème : automatique (comme le système)"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="8"/><path class="fill" d="M12 4a8 8 0 0 1 0 16z"/></svg></button>
+      <a class="lang-switch" href="../../nl/stijlgids/" hreflang="nl-BE" lang="nl" aria-label="Nederlandse versie">NL</a>
+      <a class="btn btn-primary btn-sm btn-cta" href="../../fr/#simulator">Vers le simulateur</a>
+    </div>
+  </div>
+</header>
+<main class="container page-main" id="content" tabindex="-1">
+  <p class="breadcrumbs"><a href="../../fr/">Accueil</a> › Guide de style</p>
+  <p class="eyebrow">Interne · non indexé</p>
+  <h1>Guide de style</h1>
+  <p class="updated">Mis à jour le <time datetime="2026-11-25">25 novembre 2026</time></p>
+  <p class="lead">Tous les éléments de l’interface de Belastingkaart sur une seule page, en thème clair et sombre. Les textes sont des exemples neutres ; le tiret « — » figure là où viendra plus tard un montant confirmé.</p>
+  <div class="prose sg-wide">
+    <p class="summary-box slash">Cette page n’affiche aucun montant ni pourcentage fiscal. Elle sert uniquement à vérifier la mise en forme.</p>
+
+    <nav class="toc" aria-labelledby="sg-toc-title">
+      <p class="toc-title" id="sg-toc-title">Sur cette page</p>
+      <ol>
+        <li><a href="#sg-basis">Couleurs et typographie</a></li>
+        <li><a href="#sg-knoppen">Boutons et étiquettes</a></li>
+        <li><a href="#sg-formulier">Formulaire</a></li>
+        <li><a href="#sg-resultaat">Résultat du simulateur</a></li>
+        <li><a href="#sg-uitklappen">Volets et onglets</a></li>
+        <li><a href="#sg-tabellen">Tableaux</a></li>
+        <li><a href="#sg-meldingen">Messages</a></li>
+        <li><a href="#sg-gids">Article de guide</a></li>
+        <li><a href="#sg-woordenlijst">Glossaire</a></li>
+        <li><a href="#sg-juridisch">Page juridique</a></li>
+        <li><a href="#sg-navigatie">Navigation</a></li>
+        <li><a href="#sg-kaarten">Cartes et graphiques</a></li>
+      </ol>
+    </nav>
+
+    <section class="sg-section" id="sg-basis">
+      <h2>Couleurs et typographie</h2>
+      <p class="sg-desc">Chaque couleur est un jeton avec une valeur pour le thème clair et le thème sombre. Le jaune reste un accent : jamais de texte jaune ni de grandes surfaces jaunes.</p>
+      <div class="sg-demo plain">
+        <ul class="sg-swatches">
+          <li><i style="background:var(--bg)"></i><code>--bg</code></li>
+          <li><i style="background:var(--surface)"></i><code>--surface</code></li>
+          <li><i style="background:var(--surface-2)"></i><code>--surface-2</code></li>
+          <li><i style="background:var(--ink)"></i><code>--ink</code></li>
+          <li><i style="background:var(--ink-3)"></i><code>--ink-3</code></li>
+          <li><i style="background:var(--brand)"></i><code>--brand</code></li>
+          <li><i style="background:var(--brand-soft)"></i><code>--brand-soft</code></li>
+          <li><i style="background:var(--accent)"></i><code>--accent</code></li>
+          <li><i style="background:var(--ok)"></i><code>--ok</code></li>
+          <li><i style="background:var(--bad)"></i><code>--bad</code></li>
+          <li><i style="background:var(--warn)"></i><code>--warn</code></li>
+          <li><i style="background:var(--c-social)"></i><code>--c-social</code></li>
+        </ul>
+      </div>
+      <div class="sg-demo plain sg-type">
+        <p class="eyebrow">Surtitre en mono</p>
+        <p class="hero-like" style="font-family:var(--display);font-stretch:112%;font-weight:800;font-size:clamp(28px,4vw,40px);letter-spacing:-.03em;line-height:1.06">Titre en Archivo, <span style="background:linear-gradient(transparent 66%,var(--accent) 66%,var(--accent) 90%,transparent 90%)">avec surlignage</span></p>
+        <h3>Intertitre d’un paragraphe</h3>
+        <p>Texte courant en Public Sans. Une phrase qui montre l’aspect d’un paragraphe ordinaire, avec <a href="#sg-basis">un lien</a> et <b>des mots en gras</b>.</p>
+        <p class="lead">Paragraphe d’introduction en caractères un peu plus grands.</p>
+        <p class="help">Texte d’aide sous un champ.</p>
+        <p class="note">Note de bas de page ou mention de source.</p>
+      </div>
+    </section>
+
+    <section class="sg-section" id="sg-knoppen">
+      <h2>Boutons et étiquettes</h2>
+      <p class="sg-desc">Une seule action principale par bloc. Sur un écran tactile, chaque élément cliquable mesure au moins 44 pixels de haut.</p>
+      <div class="sg-demo">
+        <div class="sg-row">
+          <button class="btn btn-primary" type="button">Action principale <span class="arrow" aria-hidden="true">→</span></button>
+          <button class="btn btn-secondary" type="button">Action secondaire</button>
+          <button class="btn btn-text" type="button">Bouton texte</button>
+          <button class="btn btn-danger" type="button">Supprimer</button>
+          <button class="btn btn-primary btn-sm" type="button">Petit</button>
+          <button class="btn btn-primary" type="button" disabled>Indisponible</button>
+        </div>
+      </div>
+      <div class="sg-demo">
+        <div class="sg-row">
+          <span class="chip">Neutre</span>
+          <span class="chip warn">Attention</span>
+          <span class="chip ok">Confirmé</span>
+          <span class="chip bad">Écart</span>
+          <span class="chip info">Information</span>
+          <span class="chip yours">Votre situation</span>
+          <span>Ligne d’exemple<span class="tag provisional">provisoire</span></span>
+          <span><span class="tag category">Catégorie</span>Ligne d’exemple</span>
+          <span class="code">ABC</span>
+          <span class="eyebrow" style="margin:0">Surtitre</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="sg-section" id="sg-formulier">
+      <h2>Formulaire</h2>
+      <p class="sg-desc">Des blocs numérotés ; le bloc qui a le focus s’éclaire et son numéro devient jaune. Les erreurs figurent à côté du champ, en texte et pas seulement en couleur.</p>
+      <form class="form" action="#" onsubmit="return false">
+        <fieldset class="block">
+          <legend><span class="step">1</span>Bloc d’exemple</legend>
+          <div class="grid2">
+            <label class="field"><span>Champ avec unité</span><span class="with-suffix"><input type="text" inputmode="decimal" placeholder="—" aria-describedby="sg-help"><span class="suffix" aria-hidden="true">€</span></span></label>
+            <label class="field"><span>Liste de choix</span><select><option>Premier choix</option><option>Deuxième choix</option><option disabled>Indisponible</option></select></label>
+          </div>
+          <p class="help" id="sg-help">Texte d’aide sous le champ.</p>
+          <label class="checkbox"><input type="checkbox"> Case à cocher avec une explication sur une ligne</label>
+          <div class="field"><span id="sg-seg-label">Choix segmenté</span>
+            <div class="segmented" role="radiogroup" aria-labelledby="sg-seg-label">
+              <label><input type="radio" name="sg-seg" checked><span>Premier</span></label>
+              <label><input type="radio" name="sg-seg"><span>Deuxième</span></label>
+              <label><input type="radio" name="sg-seg" disabled><span>Indisponible</span></label>
+            </div>
+          </div>
+          <details class="more">
+            <summary>Plus de données</summary>
+            <div class="sub-block">
+              <label class="field"><span>Texte libre</span><textarea placeholder="Texte d’exemple"></textarea></label>
+              <label class="field"><span>Curseur</span><input class="range" type="range" min="0" max="10" value="5"></label>
+            </div>
+          </details>
+        </fieldset>
+        <fieldset class="block">
+          <legend><span class="step">2</span>États</legend>
+          <div class="grid2">
+            <label class="field has-error"><span>Champ en erreur</span><input type="text" value="Saisie non valable" aria-invalid="true" aria-describedby="sg-err"></label>
+            <label class="field is-disabled"><span>Champ désactivé</span><input type="text" value="Non modifiable" disabled></label>
+          </div>
+          <p class="field-error" id="sg-err">Saisissez une valeur valable.</p>
+          <div class="form-warnings" role="status">
+            <p class="form-warnings-title">Vérifiez ces données</p>
+            <ul><li>Message d’exemple sur un champ.</li><li>Deuxième message d’exemple.</li></ul>
+          </div>
+          <p class="message ok" style="margin-top:12px">Enregistré.</p>
+          <p class="message error">Une erreur s’est produite.</p>
+        </fieldset>
+      </form>
+    </section>
+
+    <section class="sg-section" id="sg-resultaat">
+      <h2>Résultat du simulateur</h2>
+      <p class="sg-desc">Carte de résultat avec ruban et coin biseauté, chiffres clés, barres de répartition, détail, explication et scénarios. Le simulateur utilise <code>js/resultaat.js</code> : tant qu’une règle n’est pas confirmée, il n’affiche que l’état d’attente.</p>
+      <div class="sg-calc">
+        <div class="result-stack">
+          <div class="result">
+            <div class="result-head"><h3 class="card-title">Résultat</h3><span class="chip">Étiquette d’exemple</span></div>
+            <div class="result-label">Ligne d’exemple</div>
+            <p class="result-figure pending">—</p>
+            <p class="result-sub">Explication du chiffre principal, avec <b>—</b> comme emplacement réservé.</p>
+            <dl class="kpis">
+              <div><dt>Chiffre clé</dt><dd>—</dd></div>
+              <div><dt>Chiffre clé</dt><dd>—</dd></div>
+              <div><dt>Chiffre clé</dt><dd>—</dd></div>
+            </dl>
+            <div class="result-charts">
+              <div><div class="chart-title"><span>Répartition (exemple)</span><span>—</span></div>
+                <div class="split-bar" role="img" aria-label="Répartition d’exemple sans montants"><i class="net"></i><i class="tax"></i><i class="social"></i></div>
+                <ul class="split-legend"><li><i class="net"></i>Exemple <b>—</b></li><li><i class="tax"></i>Exemple <b>—</b></li><li><i class="social"></i>Exemple <b>—</b></li></ul></div>
+              <div><div class="chart-title"><span>Répartition (exemple)</span><span>—</span></div>
+                <div class="split-bar" role="img" aria-label="Répartition d’exemple sans montants"><i class="federal"></i><i class="regional"></i></div>
+                <ul class="split-legend"><li><i class="federal"></i>Exemple <b>—</b></li><li><i class="regional"></i>Exemple <b>—</b></li></ul></div>
+            </div>
+            <p class="result-note"><b>Remarque :</b> phrase d’exemple neutre sous le résultat.</p>
+            <p class="result-hint">Astuce : exemple d’indication pour l’utilisateur.</p>
+            <div class="result-actions"><button class="btn btn-primary" type="button">Action principale</button><button class="btn btn-secondary" type="button">Action secondaire</button></div>
+          </div>
+          <div class="card">
+            <h3 class="card-title">Détail du calcul</h3>
+            <table class="breakdown">
+              <tbody>
+                <tr><td>Ligne d’exemple</td><td class="code-cell"><span class="code">ABC</span></td><td class="amount">—</td></tr>
+                <tr class="minus"><td>Ligne d’exemple déduite</td><td class="code-cell"></td><td class="amount">—</td></tr>
+                <tr class="info"><td>Ligne d’exemple informative</td><td class="code-cell"></td><td class="amount">—</td></tr>
+                <tr class="sub"><td>Sous-total</td><td class="code-cell"></td><td class="amount">—</td></tr>
+                <tr class="total"><td>Total</td><td class="code-cell"></td><td class="amount">—</td></tr>
+              </tbody>
+            </table>
+            <details class="explain">
+              <summary>Comment ce montant a-t-il été calculé ?</summary>
+              <ol class="explain-steps">
+                <li class="explain-step"><h4>Première étape</h4>
+                  <table class="explain-rows"><tbody><tr><td>Ligne d’exemple<span class="explain-source">Source : source officielle d’exemple</span></td><td class="num">—</td></tr><tr class="minus"><td>Ligne d’exemple déduite</td><td class="num">—</td></tr><tr class="sub"><td>Sous-total</td><td class="num">—</td></tr></tbody></table>
+                  <p class="explain-note">Remarque sur cette étape.</p></li>
+                <li class="explain-step"><h4>Deuxième étape</h4>
+                  <table class="explain-rows"><tbody><tr class="total"><td>Total</td><td class="num">—</td></tr></tbody></table></li>
+              </ol>
+            </details>
+          </div>
+        </div>
+        <div class="result-stack">
+          <div class="result">
+            <div class="result-head"><div class="card-title">Résultat</div></div>
+            <h3 class="result-label">État d’attente</h3>
+            <p class="result-sub">Voici le résultat tant qu’une règle nécessaire n’est pas confirmée : aucun montant, un message calme et les règles dans un volet dépliable.</p>
+            <details class="result-rules"><summary>Règles en cours de confirmation</summary><ul class="result-list"><li>Ligne d’exemple</li><li>Ligne d’exemple</li><li>Ligne d’exemple</li></ul></details>
+          </div>
+          <div class="card">
+            <h3 class="card-title">Règles appliquées</h3>
+            <ul class="rule-list">
+              <li><span class="rule-name">Ligne d’exemple</span><span class="rule-source">Source : source officielle d’exemple</span><span class="rule-amount">—</span></li>
+              <li><span class="rule-name">Ligne d’exemple<span class="tag provisional">provisoire</span></span><span class="rule-source">Source : source officielle d’exemple</span><span class="rule-amount">—</span></li>
+            </ul>
+            <p class="empty" style="margin-top:8px">Aucune règle applicable avec ces données.</p>
+          </div>
+          <div class="card">
+            <h3 class="card-title">Scénarios</h3>
+            <ul class="scenario-list"><li>Scénario d’exemple <button class="btn btn-text btn-sm" type="button">Supprimer</button></li><li class="empty-item">Ajoutez un scénario pour comparer.</li></ul>
+            <div class="scenario-bars" style="margin-top:14px">
+              <div class="scenario-bar yours"><div class="chart-title"><span>Votre situation</span><span><b>—</b></span></div><div class="split-bar empty-bar"></div></div>
+              <div class="scenario-bar"><div class="chart-title"><span>Scénario d’exemple</span><span><b>—</b></span></div><div class="split-bar empty-bar"></div></div>
+            </div>
+            <ul class="levers" style="margin-top:10px">
+              <li><div class="lever-head"><span class="lever-title">Exemple de levier</span><span class="lever-amount review">à vérifier</span></div><p class="lever-detail">Brève explication sans montant.</p></li>
+            </ul>
+            <details class="warnings"><summary>Points d’attention</summary><ul><li>Remarque d’exemple.</li><li>Deuxième remarque d’exemple.</li></ul></details>
+          </div>
+          <p class="result-foot"><a href="../../fr/methodologie/">Notre méthode de calcul</a> · <a href="../../fr/sources/">Sources</a></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="sg-section" id="sg-uitklappen">
+      <h2>Volets et onglets</h2>
+      <p class="sg-desc">Questions fréquentes en volets dépliables ; les onglets suivent le modèle accessible (flèches, Début et Fin).</p>
+      <div class="sg-demo plain">
+        <div class="faq">
+          <details><summary>Question d’exemple un ?</summary><p>Réponse avec un texte d’exemple neutre.</p></details>
+          <details><summary>Question d’exemple deux ?</summary><p>Réponse avec un texte d’exemple neutre.</p></details>
+          <details><summary>Question d’exemple trois ?</summary><p>Réponse avec un texte d’exemple neutre.</p></details>
+        </div>
+      </div>
+      <div class="sg-demo plain">
+        <div class="tabs">
+          <div class="tab-list" role="tablist" aria-label="Onglets d’exemple">
+            <button type="button" role="tab" id="sg-tab-a" aria-controls="sg-panel-a" aria-selected="true">Premier</button>
+            <button type="button" role="tab" id="sg-tab-b" aria-controls="sg-panel-b" aria-selected="false" tabindex="-1">Deuxième</button>
+            <button type="button" role="tab" id="sg-tab-c" aria-controls="sg-panel-c" aria-selected="false" tabindex="-1">Troisième</button>
+          </div>
+          <div role="tabpanel" id="sg-panel-a" aria-labelledby="sg-tab-a" tabindex="0"><p>Contenu du premier onglet.</p></div>
+          <div role="tabpanel" id="sg-panel-b" aria-labelledby="sg-tab-b" tabindex="0" hidden><p>Contenu du deuxième onglet.</p></div>
+          <div role="tabpanel" id="sg-panel-c" aria-labelledby="sg-tab-c" tabindex="0" hidden><p>Contenu du troisième onglet.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="sg-section" id="sg-tabellen">
+      <h2>Tableaux</h2>
+      <p class="sg-desc">En-tête souligné d’un trait épais, lignes aérées et chiffres alignés à droite. Les tableaux larges défilent dans leur cadre, jamais la page entière.</p>
+      <div class="table-scroll">
+        <table class="data-table">
+          <caption>Tableau d’exemple</caption>
+          <thead><tr><th scope="col">Description</th><th scope="col" class="num">Colonne</th><th scope="col" class="num">Colonne</th><th scope="col" class="num">Colonne</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">Ligne d’exemple</th><td class="num">—</td><td class="num">—</td><td class="num">—</td></tr>
+            <tr class="highlight"><th scope="row">Votre situation</th><td class="num">—</td><td class="num">—</td><td class="num">—</td></tr>
+            <tr><th scope="row">Ligne d’exemple</th><td class="num">—</td><td class="num">—</td><td class="num">—</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="card table-card" style="margin-top:24px">
+        <h3 class="card-title">Tableau comparatif</h3>
+        <div class="table-scroll">
+          <table class="compare-table">
+            <thead><tr><th scope="col">Caractéristique</th><th scope="col" class="yours">Option A</th><th scope="col">Option B</th><th scope="col">Option C</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">Caractéristique d’exemple</th><td class="yours"><span class="yes"><span class="sr-only">Oui</span></span></td><td><span class="yes"><span class="sr-only">Oui</span></span></td><td><span class="no"><span class="sr-only">Non</span></span></td></tr>
+              <tr><th scope="row">Caractéristique d’exemple</th><td class="yours"><span class="yes"><span class="sr-only">Oui</span></span></td><td><span class="no"><span class="sr-only">Non</span></span></td><td><span class="no"><span class="sr-only">Non</span></span></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="help">Explication sous le tableau.</p>
+      </div>
+      <dl class="compare-summary" style="margin-top:24px">
+        <div class="yours"><dt>Votre situation</dt><dd><span class="figure-xl">—</span><small>Brève explication</small></dd></div>
+        <div><dt>Exemple</dt><dd><span class="figure-xl">—</span><small>Brève explication</small></dd></div>
+        <div><dt>Exemple</dt><dd><span class="figure-xl">—</span><small>Brève explication</small></dd></div>
+        <div><dt>Exemple</dt><dd><span class="figure-xl">—</span><small>Brève explication</small></dd></div>
+      </dl>
+      <div class="table-scroll">
+        <table class="data-table text-table">
+          <thead><tr><th scope="col">Terme</th><th scope="col">Explication</th></tr></thead>
+          <tbody><tr><td>Terme d’exemple</td><td>Explication plus longue, sur plusieurs lignes, qui reste alignée en haut.</td></tr><tr><td>Terme d’exemple</td><td>Deuxième explication.</td></tr></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="sg-section" id="sg-meldingen">
+      <h2>Messages</h2>
+      <p class="sg-desc">Un filet à gauche dans la couleur du message et la barre oblique devant le titre.</p>
+      <p class="notice"><b>Attention :</b> court avertissement dans le style de l’avis existant.</p>
+      <div class="callout"><p class="callout-title">Information</p><p>Texte d’exemple neutre.</p></div>
+      <div class="callout warn"><p class="callout-title">Avertissement</p><p>Texte d’exemple neutre.</p></div>
+      <div class="callout ok"><p class="callout-title">Confirmé</p><p>Texte d’exemple neutre.</p></div>
+      <div class="callout bad"><p class="callout-title">Erreur</p><p>Texte d’exemple neutre.</p></div>
+      <div class="callout neutral"><p class="callout-title">Remarque</p><p>Texte d’exemple neutre.</p></div>
+      <div class="limit-note"><h3 class="card-title">Ce que le simulateur ne fait pas encore</h3><p>Exemple d’une limite du calcul.</p></div>
+      <div class="card empty-state" style="margin-top:24px"><h3>Rien à afficher pour l’instant</h3><p>État vide d’une vue, avec une brève explication et une seule action.</p><button class="btn btn-primary" type="button">Action</button></div>
+      <div class="locked" style="margin-top:24px">
+        <div class="locked-back" aria-hidden="true"><div class="card"><p>Contenu d’exemple derrière le verrou.</p><p>Contenu d’exemple.</p><p>Contenu d’exemple.</p></div></div>
+        <div class="card locked-card"><span class="locked-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg></span><h3>Vue verrouillée</h3><p>Explication de la raison pour laquelle ce contenu n’est pas encore disponible.</p></div>
+      </div>
+    </section>
+
+    <section class="sg-section" id="sg-gids">
+      <h2>Article de guide</h2>
+      <p class="sg-desc">Colonne de lecture d’environ soixante-dix caractères, table des matières, chiffre clé, conditions numérotées, citation, figure et ligne de confiance.</p>
+      <div class="sg-demo plain">
+        <h3>Intertitre dans un guide</h3>
+        <p>Paragraphe ordinaire dans la colonne de lecture. Un <a href="#sg-gids">lien vers un autre guide</a> et un <code>fragment de code</code>.</p>
+        <div class="key-figure"><p class="key-figure-label">Exemple</p><p class="key-figure-value">Chiffre clé d’un cas : —</p></div>
+        <p class="req-title">Conditions</p>
+        <ol class="req-list"><li>Première condition en texte neutre.</li><li>Deuxième condition en texte neutre.</li><li>Troisième condition en texte neutre.</li></ol>
+        <blockquote><p>Citation d’une source officielle d’exemple.</p></blockquote>
+        <p class="engine-fact">Ce que le moteur de calcul indique pour ce cas : —</p>
+        <ul class="guide-list">
+          <li><a href="#sg-gids">Guide d’exemple</a><span>Brève description du guide.</span></li>
+          <li><a href="#sg-gids">Guide d’exemple</a><span>Brève description du guide.</span></li>
+        </ul>
+        <ul class="trust"><li>Année des revenus : —</li><li>Révisé le : —</li><li><a href="../../fr/sources/">Sources</a></li><li><a href="../../fr/methodologie/">Méthodologie</a></li></ul>
+        <nav class="pager" aria-label="Guide précédent et suivant">
+          <a href="#sg-gids"><span>Précédent</span><b>Guide d’exemple</b></a>
+          <a class="next-link" href="#sg-gids"><span>Suivant</span><b>Guide d’exemple</b></a>
+        </nav>
+      </div>
+    </section>
+
+    <section class="sg-section" id="sg-woordenlijst">
+      <h2>Glossaire</h2>
+      <p class="sg-desc">Index alphabétique de A à Z (les lettres sans terme sont grisées), lettrines et fiches de termes.</p>
+      <div class="sg-demo plain">
+        <nav aria-label="Index alphabétique"><ul class="az-index"><li><a href="#sg-letter-a">A</a></li><li><a href="#sg-letter-b">B</a></li><li><span aria-hidden="true">C</span></li><li><span aria-hidden="true">D</span></li><li><span aria-hidden="true">E</span></li></ul></nav>
+        <div class="letter-group" id="sg-letter-a"><h2>A</h2><ul class="guide-list"><li><a href="#sg-woordenlijst">Terme d’exemple</a><span>Brève définition en une phrase.</span></li><li><a href="#sg-woordenlijst">Terme d’exemple</a><span>Brève définition en une phrase.</span></li></ul></div>
+        <div class="letter-group" id="sg-letter-b"><h2>B</h2><ul class="guide-list"><li><a href="#sg-woordenlijst">Terme d’exemple</a><span>Brève définition en une phrase.</span></li></ul></div>
+        <dl class="term-grid" style="margin-top:28px">
+          <div class="term-card"><dt>Terme d’exemple</dt><dd><span class="term-alt" lang="nl">Terme d’exemple</span>Définition sur une fiche de terme.</dd></div>
+          <div class="term-card"><dt>Terme d’exemple</dt><dd><span class="term-alt" lang="nl">Terme d’exemple</span>Définition sur une fiche de terme.</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <section class="sg-section" id="sg-juridisch">
+      <h2>Page juridique</h2>
+      <p class="sg-desc">Résumé en tête, bloc de données, tableau encadré et texte type.</p>
+      <div class="card legal-text">
+        <h3>Titre d’exemple d’un texte juridique</h3>
+        <p class="legal-date">Dernière modification : —</p>
+        <div class="legal-summary"><p><b>En résumé :</b></p><ul><li>Premier point essentiel.</li><li>Deuxième point essentiel.</li></ul></div>
+        <dl class="legal-facts"><dt>Responsable</dt><dd>Nom d’exemple</dd><dt>Contact</dt><dd>Adresse d’exemple</dd></dl>
+        <div class="legal-table"><table><thead><tr><th scope="col">Donnée</th><th scope="col">Finalité</th><th scope="col">Conservation</th></tr></thead><tbody><tr><td>Exemple</td><td>Finalité d’exemple</td><td>—</td></tr><tr><td>Exemple</td><td>Finalité d’exemple</td><td>—</td></tr></tbody></table></div>
+        <div class="legal-model"><p>Texte type dans un cadre avec filet à gauche.</p></div>
+      </div>
+    </section>
+
+    <section class="sg-section" id="sg-navigatie">
+      <h2>Navigation</h2>
+      <p class="sg-desc">Fil d’Ariane en haut de chaque page de contenu et pagination pour les longues listes.</p>
+      <div class="sg-demo plain">
+        <p class="breadcrumbs" style="margin:0"><a href="../../fr/">Accueil</a> › <a href="#sg-navigatie">Rubrique</a> › Page actuelle</p>
+        <nav class="pagination" aria-label="Pagination">
+          <a class="prev" href="#sg-navigatie" aria-disabled="true"><span aria-hidden="true">←</span> Précédent</a>
+          <ol><li><a href="#sg-navigatie" aria-current="page">1</a></li><li><a href="#sg-navigatie">2</a></li><li><a href="#sg-navigatie">3</a></li><li><span class="gap" aria-hidden="true">…</span></li><li><a href="#sg-navigatie">9</a></li></ol>
+          <a class="next" href="#sg-navigatie">Suivant <span aria-hidden="true">→</span></a>
+        </nav>
+      </div>
+    </section>
+
+    <section class="sg-section" id="sg-kaarten">
+      <h2>Cartes et graphiques</h2>
+      <p class="sg-desc">Grille de cartes (toute la carte est cliquable), une carte mise en avant, un cadre de graphique, une infobulle et une boîte de dialogue.</p>
+      <ul class="card-grid">
+        <li class="card link-card"><h3 class="card-title"><a href="#sg-kaarten">Carte d’exemple</a></h3><p>Brève description du contenu.</p><span class="chip info">Guide</span></li>
+        <li class="card link-card"><h3 class="card-title"><a href="#sg-kaarten">Carte d’exemple</a></h3><p>Brève description du contenu.</p><span class="chip">Neutre</span></li>
+        <li class="card highlight"><h3 class="card-title">Carte mise en avant</h3><p>Carte avec une bordure plus épaisse dans la couleur de la marque.</p></li>
+      </ul>
+      <figure class="chart" style="margin-top:24px">
+        <div class="chart-frame">
+          <svg class="chart-svg" viewBox="0 0 1000 240" role="img" aria-label="Graphique d’exemple sans montants">
+            <line class="grid-line" x1="40" y1="30" x2="990" y2="30"/><line class="grid-line" x1="40" y1="90" x2="990" y2="90"/><line class="grid-line" x1="40" y1="150" x2="990" y2="150"/>
+            <line class="axis-line" x1="40" y1="190" x2="990" y2="190"/>
+            <path class="area" d="M40 190 L40 170 C250 150 400 120 530 100 S800 50 990 40 L990 190 Z"/>
+            <path class="line muted" d="M40 160 C250 140 400 130 530 120 S800 100 990 90"/>
+            <path class="line" d="M40 170 C250 150 400 120 530 100 S800 50 990 40"/>
+            <circle class="dot" cx="530" cy="100" r="6"/>
+            <text class="value" x="542" y="92">—</text>
+            <text class="axis" x="40" y="212">Bas</text><text class="axis" x="990" y="212" text-anchor="end">Haut</text>
+          </svg>
+        </div>
+        <figcaption>Légende de la figure.</figcaption>
+        <ul class="chart-legend"><li><i class="yours"></i>Votre situation</li><li><i></i>Pour comparaison</li></ul>
+        <details class="chart-data"><summary>Voir le graphique sous forme de tableau</summary><div class="table-scroll"><table class="data-table"><thead><tr><th scope="col">Point</th><th scope="col" class="num">Valeur</th></tr></thead><tbody><tr><td>Exemple</td><td class="num">—</td></tr></tbody></table></div></details>
+      </figure>
+      <div class="sg-demo plain" style="margin-top:24px">
+        <p>Terme avec explication
+          <span class="tooltip"><button class="tooltip-trigger" type="button" aria-describedby="sg-tip">?</button><span class="tooltip-bubble" role="tooltip" id="sg-tip"><b>Terme d’exemple</b>Brève explication qui apparaît au survol ou au focus.</span></span>
+        </p>
+        <button class="btn btn-secondary" type="button" data-dialog-open="sg-dialog">Ouvrir la boîte de dialogue</button>
+        <dialog class="dialog" id="sg-dialog" aria-labelledby="sg-dialog-title">
+          <form class="dialog-in" method="dialog">
+            <h2 id="sg-dialog-title">Dialogue d’exemple</h2>
+            <p>Court texte dans une boîte de dialogue.</p>
+            <div class="dialog-actions"><button class="btn btn-secondary" value="cancel">Annuler</button><button class="btn btn-primary" value="ok">Confirmer</button></div>
+          </form>
+        </dialog>
+      </div>
+    </section>
+  </div>
+</main>
+<footer class="footer">
+  <div class="container footer-in">
+    <p><b>Belastingkaart</b> est un projet d’information indépendant. Ce n’est pas un site officiel des pouvoirs publics ni un conseil fiscal.</p>
+    <nav class="footer-nav" aria-label="En savoir plus sur Belastingkaart">
+      <div><p class="footer-title">Simulateur</p><ul><li><a href="../../fr/#simulator">Brut-net pour salariés</a></li></ul></div>
+      <div><p class="footer-title">À propos de Belastingkaart</p><ul><li><a href="../../fr/methodologie/">Méthodologie</a></li><li><a href="../../fr/sources/">Sources</a></li><li><a href="../../fr/contact/">Contact</a></li><li><a href="../../fr/confidentialite/">Confidentialité</a></li></ul></div>
+      <div><p class="footer-title">Langue</p><ul><li><a href="../../nl/stijlgids/" hreflang="nl-BE" lang="nl">Nederlands</a></li><li><a href="../../fr/guide-de-style/" hreflang="fr-BE" lang="fr">Français</a></li></ul></div>
+    </nav>
+    <p class="footer-small">Revenus 2026 · exercice d’imposition 2027</p>
+  </div>
+</footer>
+</body>
+</html>
