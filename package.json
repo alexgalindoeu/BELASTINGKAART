@@ -6,7 +6,8 @@
   "scripts": {
     "test": "node --test test/*.test.mjs",
     "validate:params": "node tools/validate_parameters.mjs",
-    "build:sitemap": "node tools/generate_sitemap.mjs"
+    "build:sitemap": "node tools/generate_sitemap.mjs",
+    "test:smoke": "node test/browser/tools.smoke.mjs"
   },
   "engines": { "node": ">=20" }
 }

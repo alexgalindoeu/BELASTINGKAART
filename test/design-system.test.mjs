@@ -175,6 +175,8 @@ test('roadmap pages are reachable from the home page and show no amounts', async
     assert.ok(home.includes(`href="${route.slice(3)}"`), `${route} linked from home`);
     const text = (await read(route)).replace(/<[^>]+>/g, ' ');
     assert.doesNotMatch(text, /\d[\d.,]*\s?(€|EUR|%)/, `${route} shows an amount`);
-    assert.match(text, lang === 'nl' ? /In ontwikkeling/ : /En développement/, route);
+    // The scenario page is a finished tool (owner decision, 2026-11-25): no development label;
+    // its pending net result is covered by test/tools.test.mjs.
+    if (!route.endsWith('/scenarios/')) assert.match(text, lang === 'nl' ? /In ontwikkeling/ : /En développement/, route);
   }
 });

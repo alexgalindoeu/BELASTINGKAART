@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Widget Belastingkaart</title>
+<meta name="color-scheme" content="light dark">
+<script>(function(){var m=/[?&]theme=(light|dark)(&|$)/.exec(location.search);if(m)document.documentElement.setAttribute("data-theme",m[1])})()</script>
+<link rel="stylesheet" href="../../css/site.css">
+<link rel="stylesheet" href="../../css/tools.css">
+<script defer src="../../js/importe.js"></script>
+<script defer src="../../js/formulario.js"></script>
+<script defer src="../../js/tax-engine.js"></script>
+<script defer src="../../js/tool-kit.js"></script>
+<script defer src="../../js/widget.js"></script>
+<script defer src="../../js/widget-tool.js"></script>
+</head>
+<body class="widget-frame" data-lang="fr">
+<main id="content">
+  <form id="wf-form" class="form" novalidate autocomplete="off">
+    <div class="grid2">
+      <label class="field"><span>Salaire mensuel brut (€)</span><input name="grossMonthly" id="wf-gross" type="text" inputmode="decimal" autocomplete="off" placeholder="Ex. 3500"></label>
+      <label class="field"><span>Région</span><select name="region" id="wf-region"><option value="flanders" selected>Région flamande</option><option value="brussels">Région de Bruxelles-Capitale</option><option value="wallonia">Région wallonne</option></select></label>
+    </div>
+    <p class="form-error" id="wf-error" role="alert" hidden></p>
+    <button class="btn btn-primary" type="submit">Calculer mon salaire net</button>
+  </form>
+  <div class="result" id="wf-net" aria-live="polite" data-result="blocked" style="margin-top:14px">
+    <div class="result-status"><span class="chip">Résultat à venir</span></div><h3>Le résultat s’affichera lorsque toutes les règles seront confirmées</h3><p>Belastingkaart n’affiche un résultat fiscal que lorsque chaque règle nécessaire provient d’une source officielle et a été testée.</p><details class="tool-pending"><summary>Quelles règles sont encore à confirmer</summary><ul class="result-list"><li>Bonus à l’emploi et cotisations des travailleurs</li><li>Précompte professionnel</li><li>Frais professionnels forfaitaires</li><li>Avantages fiscaux liés à la situation familiale</li><li>Règles régionales</li><li>Additionnels communaux</li><li>Cotisation spéciale pour la sécurité sociale</li></ul></details>
+  </div>
+  <p class="brand-line"><a href="https://belastingkaart.be/fr/" target="_blank" rel="noopener">Belastingkaart</a> · projet d’information indépendant, pas un conseil fiscal</p>
+</main>
+</body>
+</html>

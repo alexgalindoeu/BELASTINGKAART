@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Widget voor je website | Belastingkaart</title>
+<meta name="description" content="Zet de bruto-nettosimulator van Belastingkaart gratis op je website. Het resultaat volgt zodra alle Belgische regels bevestigd zijn.">
+<link rel="canonical" href="https://belastingkaart.be/nl/widget/">
+<link rel="alternate" hreflang="nl-BE" href="https://belastingkaart.be/nl/widget/">
+<link rel="alternate" hreflang="fr-BE" href="https://belastingkaart.be/fr/widget/">
+<link rel="alternate" hreflang="x-default" href="https://belastingkaart.be/nl/">
+<meta name="theme-color" content="#1f3fc4">
+<meta name="color-scheme" content="light dark">
+<script>try{var t=localStorage.getItem("bk-theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
+<link rel="preload" href="../../fonts/public-sans-latin-var.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../../fonts/archivo-latin-var.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../../icons/apple-touch-icon.png">
+<link rel="manifest" href="../../nl/manifest.webmanifest">
+<link rel="stylesheet" href="../../css/site.css">
+<link rel="stylesheet" href="../../css/tools.css">
+<script defer src="../../config.js"></script>
+<script defer src="../../js/ui.js"></script>
+<script defer src="../../js/importe.js"></script>
+<script defer src="../../js/formulario.js"></script>
+<script defer src="../../js/widget.js"></script>
+<script defer src="../../js/tax-engine.js"></script>
+<script defer src="../../js/tool-kit.js"></script>
+<script defer src="../../js/widget-tool.js"></script>
+</head>
+<body data-lang="nl">
+<a class="skip-link" href="#content">Naar de inhoud</a>
+<header class="appbar">
+  <div class="appbar-in">
+    <a class="brand" href="../../nl/" aria-label="Belastingkaart, startpagina"><svg class="brand-icon" viewBox="0 -2 102 86" aria-hidden="true" focusable="false"><path class="p" fill-rule="evenodd" d="M16,4H62L77,18V28L68,37L84,52V66L70,80H2Z M28,16L25,33H57L62,28V21L57,16Z M23,47L19,68H64L70,62V54L63,47Z"/><polygon class="p2" points="46,80 60,80 99,30 91,18"/></svg><span class="brand-name">Belastingkaart</span></a>
+    <nav class="nav" aria-label="Secties">
+      <a href="../../nl/#simulator">Simulator</a>
+      <a href="../../nl/methodologie/">Methodologie</a>
+      <a href="../../nl/bronnen/">Bronnen</a>
+      <a href="../../nl/contact/">Contact</a>
+    </nav>
+    <div class="appbar-end">
+      <button class="btn-icon theme-btn" id="theme-toggle" type="button" aria-label="Thema: automatisch (zoals het systeem). Wijzigen naar licht" title="Thema: automatisch (zoals het systeem)"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="8"/><path class="fill" d="M12 4a8 8 0 0 1 0 16z"/></svg></button>
+      <a class="lang-switch" href="../../fr/widget/" hreflang="fr-BE" lang="fr" aria-label="Version française">FR</a>
+      <a class="btn btn-primary btn-sm btn-cta" href="../../nl/#simulator">Naar de simulator</a>
+    </div>
+  </div>
+</header>
+<main class="container page-main tool-page" id="content" tabindex="-1">
+  <p class="breadcrumbs"><a href="../../nl/">Startpagina</a> › Widget</p>
+  <p class="eyebrow">Voor websites · widget</p>
+  <h1>De simulator op je eigen website</h1>
+  <p class="updated">Bijgewerkt op <time datetime="2026-11-25">25 november 2026</time></p>
+  <p class="lead">Kopieer een stukje code en je bezoekers zien de bruto-nettosimulator van Belastingkaart op je website. Gratis, zonder cookies en zonder advertenties.</p>
+  <div class="calc">
+    <form id="wg-form" class="form" novalidate autocomplete="off">
+      <fieldset class="block">
+        <legend><span class="step">1</span>Stel de widget in</legend>
+        <label class="field"><span>Taal van de widget</span><select name="widgetLanguage" id="wg-language"><option value="nl" selected>Nederlands</option><option value="fr">Français</option></select></label>
+        <fieldset class="field-group">
+          <legend>Thema</legend>
+          <div class="segmented"><label><input type="radio" name="widgetTheme" value="auto" checked><span>Automatisch</span></label><label><input type="radio" name="widgetTheme" value="light"><span>Licht</span></label><label><input type="radio" name="widgetTheme" value="dark"><span>Donker</span></label></div>
+        </fieldset>
+      </fieldset>
+      <fieldset class="block">
+        <legend><span class="step">2</span>Kopieer de code</legend>
+        <label class="field"><span>HTML-code van de widget</span><textarea name="widgetCode" id="wg-code" class="widget-code" rows="6" readonly spellcheck="false">&lt;iframe src=&quot;https://belastingkaart.be/nl/widget/kader.html&quot; title=&quot;Belastingkaart: bruto-netto voor werknemers in België&quot; width=&quot;100%&quot; height=&quot;460&quot; style=&quot;border:0;max-width:480px;display:block&quot; loading=&quot;lazy&quot;&gt;&lt;/iframe&gt;
+&lt;p style=&quot;font-size:13px;margin:4px 0 0&quot;&gt;Informatie van &lt;a href=&quot;https://belastingkaart.be/nl/&quot;&gt;Belastingkaart&lt;/a&gt;&lt;/p&gt;</textarea></label>
+        <p><button class="btn btn-primary" type="button" id="wg-copy">Kopieer de code</button> <span class="help" id="wg-copied" role="status"></span></p>
+        <p class="help">De regel met de link naar Belastingkaart onder het kader hoort bij de code en moet zichtbaar blijven.</p>
+      </fieldset>
+    </form>
+    <div class="tool-results">
+      <div class="card">
+        <h2 class="card-title">Voorbeeld</h2>
+        <div class="widget-preview"><iframe id="wg-preview" src="kader.html" title="Voorbeeld van de Belastingkaart-widget" loading="lazy"></iframe></div>
+        <p class="help">Tot alle regels bevestigd zijn, meldt de widget dat het resultaat volgt; er wordt geen nettoloon berekend.</p>
+      </div>
+    </div>
+  </div>
+  <div class="prose">
+    <p class="summary-box slash">De widget is gratis en zonder cookies of trackers.</p>
+    <section>
+      <h2>Voorwaarden</h2>
+      <ul><li>Gratis voor elke website, zonder registratie.</li><li>Laat de vermelding van Belastingkaart onder het kader zichtbaar en ongewijzigd.</li><li>Stel de widget niet voor als een officiële overheidstool of als fiscaal advies.</li><li>Belastingkaart kan het uitzicht van de widget aanpassen of hem stopzetten.</li></ul>
+    </section>
+    <section>
+      <h2>Hoogte automatisch aanpassen</h2>
+      <p>De widget stuurt alleen zijn hoogte naar de pagina die hem toont. Wie dat wil, kan het kader daarmee laten meegroeien; zonder script gebruikt het kader de hoogte uit de code.</p>
+    </section>
+    <section class="faq">
+      <h2>Veelgestelde vragen</h2>
+      <details><summary>Wat toont de widget nu?</summary><p>Een eenvoudig formulier en de melding dat het resultaat volgt zodra alle regels bevestigd zijn, met de lijst van die regels. Er wordt geen nettoloon getoond.</p></details>
+      <details><summary>Verzamelt de widget gegevens?</summary><p>Nee. Wat bezoekers invullen, blijft in hun browser. Er zijn geen cookies, geen advertenties en geen trackers.</p></details>
+    </section>
+  </div>
+  <div class="prose tool-more">
+    <section>
+      <h2>Andere tools</h2>
+      <ul class="link-list"><li><a href="../../nl/maandloon/">Maandloon en uitbetalingen</a><span>Je brutojaarloon per maand, in 12, 13 of 14 uitbetalingen, of vanaf een uurloon.</span></li><li><a href="../../nl/marginaal-tarief/">Marginaal tarief</a><span>Wat blijft er netto over van een brutoverhoging?</span></li><li><a href="../../nl/jobaanbiedingen-vergelijken/">Twee jobaanbiedingen vergelijken</a><span>Twee aanbiedingen naast elkaar, eerst in bruto.</span></li><li><a href="../../nl/gemeenschappelijke-aanslag/">Gemeenschappelijke aanslag</a><span>Voor gehuwden en wettelijk samenwonenden.</span></li><li><a href="../../nl/twee-werkgevers/">Twee werkgevers in één jaar</a><span>Moet je bijbetalen als je bij twee werkgevers werkte?</span></li><li><a href="../../nl/scenarios/">Scenario’s en vergelijkingen</a><span>Wat als je loon, gemeente of gezin verandert?</span></li><li><a href="../../nl/methodologie/">Hoe we rekenen</a><span>Waarom we nog geen nettoloon tonen.</span></li></ul>
+    </section>
+  </div>
+</main>
+<footer class="footer">
+  <div class="container footer-in">
+    <p><b>Belastingkaart</b> is een onafhankelijk informatieproject. Geen officiële overheidswebsite en geen fiscaal advies.</p>
+    <nav class="footer-nav" aria-label="Meer over Belastingkaart">
+      <div><p class="footer-title">Simulator</p><ul><li><a href="../../nl/#simulator">Bruto-netto voor werknemers</a></li></ul></div>
+      <div><p class="footer-title">Over Belastingkaart</p><ul><li><a href="../../nl/methodologie/">Methodologie</a></li><li><a href="../../nl/bronnen/">Bronnen</a></li><li><a href="../../nl/contact/">Contact</a></li><li><a href="../../nl/privacy/">Privacy</a></li></ul></div>
+      <div><p class="footer-title">Taal</p><ul><li><a href="../../nl/widget/" hreflang="nl-BE" lang="nl">Nederlands</a></li><li><a href="../../fr/widget/" hreflang="fr-BE" lang="fr">Français</a></li></ul></div>
+    </nav>
+    <p class="footer-small">Inkomstenjaar 2026 · aanslagjaar 2027 · Er wordt nog geen nettoloon berekend of getoond.</p>
+  </div>
+</footer>
+</body>
+</html>
