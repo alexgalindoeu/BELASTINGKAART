@@ -1,0 +1,30 @@
+# Belastingkaart
+
+> Belastingkaart is an independent information site about Belgian payroll taxation for employees, in Dutch (/nl/) and French (/fr/), with a gross-to-net salary simulator. It only shows a result when every rule it needs is confirmed in an official Belgian government source and tested; otherwise it shows no net salary and no partial result. It is not an official government website and does not give tax advice.
+
+- Nederlands: Belastingkaart is een onafhankelijke informatiewebsite over de Belgische loonfiscaliteit voor werknemers, met een bruto-netto simulator. Die toont alleen een resultaat als elke noodzakelijke regel officieel bevestigd en getest is. Geen overheidswebsite en geen fiscaal advies.
+- Français : Belastingkaart est un site d'information indépendant sur la fiscalité belge des salaires, avec un simulateur brut-net. Il n'affiche un résultat que si chaque règle nécessaire est confirmée officiellement et testée. Ce n'est pas un site des pouvoirs publics ni un conseil fiscal.
+- Scope: income year 2026 (assessment year 2027), Flanders first. Coverage of Brussels and Wallonia is only claimed once their rules are confirmed.
+- Sources: only official public sources (FOD Financiën / SPF Finances, RSZ / ONSS, Vlaamse overheid, Brussel Fiscaliteit / Bruxelles Fiscalité, SPW Finances, Belgisch Staatsblad / Moniteur belge). Parameters that cannot be verified stay "pending" and are never estimated; the validation pages list the status and source of each one.
+
+## Nederlands
+
+- [Startpagina](https://belastingkaart.be/nl/): bruto-netto simulator voor werknemers.
+- [Methodologie](https://belastingkaart.be/nl/methodologie/): hoe de berekening wordt opgebouwd.
+- [Validatie](https://belastingkaart.be/nl/validatie/): status en officiële bron van elke fiscale parameter.
+- [Officiële bronnen](https://belastingkaart.be/nl/bronnen/)
+- [Over Belastingkaart](https://belastingkaart.be/nl/over-belastingkaart/)
+- [Disclaimer](https://belastingkaart.be/nl/disclaimer/)
+
+## Français
+
+- [Accueil](https://belastingkaart.be/fr/) : simulateur brut-net pour salariés.
+- [Méthodologie](https://belastingkaart.be/fr/methodologie/) : comment le calcul est construit.
+- [Validation](https://belastingkaart.be/fr/validation/) : statut et source officielle de chaque paramètre fiscal.
+- [Sources officielles](https://belastingkaart.be/fr/sources/)
+- [À propos](https://belastingkaart.be/fr/a-propos/)
+- [Avertissement](https://belastingkaart.be/fr/avertissement/)
+
+## Optional
+
+- [Sitemap](https://belastingkaart.be/sitemap.xml): every page in both languages with hreflang alternates.
