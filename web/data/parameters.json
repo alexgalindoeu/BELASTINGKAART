@@ -369,20 +369,479 @@
       "notes": "The official tax page confirms that flat-rate professional expenses are deducted from most professional income, including wages, but does not provide the 2026 calculation details in the page summary. Amounts, ceilings and conditions remain pending until an exact official source is documented."
     },
     "special_social_security_contribution": {
-      "value": null,
-      "status": "pending",
-      "jurisdiction": "federal",
-      "income_year": 2026,
-      "assessment_year": null,
-      "effective_from": null,
-      "effective_to": null,
-      "source_name": "RSZ / ONSS",
-      "source_url": "https://www.socialsecurity.be/",
-      "source_title": "Official social-security information",
-      "retrieved_at": "2026-11-24",
-      "unit": "EUR_per_pay_period",
-      "rounding": "pending_official_rule",
-      "notes": "Applicable scale, household-income conditions, periodicity and annual reconciliation have not yet been transcribed from a specific official source. No estimate is permitted."
+      "method": {
+        "value": {
+          "basis": "declared quarterly wage subject to ordinary contributions, per employer, arbeiders at 108%",
+          "excluded_from_basis": ["double holiday pay", "other employers", "arrears not known at declaration"],
+          "included_in_basis": "wage paid by a third party (fondsen voor bestaanszekerheid)",
+          "categories": ["individual", "joint_spouse_with_income", "joint_spouse_without_income"],
+          "legal_cohabitants_equal_to_spouses": true,
+          "order": "after employee social-security contributions and after bedrijfsvoorheffing",
+          "quarter_end_reconciliation": "at the last pay of the quarter the quarterly amount is fixed; excess refunded, shortfall withheld in month 3",
+          "rate_base_interpretation": null,
+          "rounding": null
+        },
+        "status": "provisional",
+        "jurisdiction": "federal",
+        "income_year": 2026,
+        "assessment_year": null,
+        "effective_from": "2026-01-01",
+        "effective_to": null,
+        "source_name": "RSZ / ONSS",
+        "source_url": "https://www.socialsecurity.be/employer/instructions/dmfa/nl/latest/instructions/special_contributions/other_specialcontributions/specialsocialsecuritycontribution.html",
+        "source_title": "Administratieve instructies RSZ 2026/3 — Bijzondere bijdrage voor de sociale zekerheid",
+        "retrieved_at": "2026-11-24",
+        "unit": "method",
+        "rounding": "not stated in the RSZ instructions",
+        "notes": "Provisional because: (1) the quarterly bands apply a rate to 'het gedeelte van het maandloon dat ... overschrijdt'. Read literally (once per quarter on the monthly excess) the amount jumps at the band limits (e.g. 14.44 vs 43.32); applied to the quarterly excess (3 x monthly) the bands join exactly (43.32 = 3 x 14.44; 5836.14 = 3 x 1945.38; 6570.54 = 3 x 2190.18). The latter is almost certainly intended but is an inference; it must be settled from the legal text (wet van 30 maart 1994, art. 106 e.v.). (2) No rounding rule is stated. (3) 'Echtgenoot met beroepsinkomsten' follows the bedrijfsvoorheffing definition (limit linked to the reduction for other family burdens), which is not yet modelled. (4) Monthly advances are published only for one category. The final annual settlement by the tax administration is a separate calculation."
+      },
+      "periods": {
+        "2026_q1": {
+          "value": {
+            "quarterly": {
+              "joint_spouse_with_income": [
+                {
+                  "q_from": 3285.29,
+                  "q_from_inclusive": true,
+                  "q_to": 5836.14,
+                  "q_to_inclusive": false,
+                  "fixed": 15.45
+                },
+                {
+                  "q_from": 5836.14,
+                  "q_from_inclusive": true,
+                  "q_to": 6570.54,
+                  "q_to_inclusive": true,
+                  "fixed": 0,
+                  "rate": 0.059,
+                  "rate_above_monthly": 1945.38,
+                  "rate_up_to_monthly": 2190.18,
+                  "minimum": 15.45
+                },
+                {
+                  "q_from": 6570.54,
+                  "q_from_inclusive": false,
+                  "q_to": null,
+                  "fixed": 43.32,
+                  "rate": 0.011,
+                  "rate_above_monthly": 2190.18,
+                  "maximum": 154.92
+                }
+              ],
+              "joint_spouse_without_income": [
+                {
+                  "q_from": 5836.14,
+                  "q_from_inclusive": true,
+                  "q_to": 6570.54,
+                  "q_to_inclusive": true,
+                  "fixed": 0,
+                  "rate": 0.059,
+                  "rate_above_monthly": 1945.38,
+                  "rate_up_to_monthly": 2190.18
+                },
+                {
+                  "q_from": 6570.54,
+                  "q_from_inclusive": false,
+                  "q_to": null,
+                  "fixed": 43.32,
+                  "rate": 0.011,
+                  "rate_above_monthly": 2190.18,
+                  "maximum": 182.82
+                }
+              ],
+              "individual": [
+                {
+                  "q_from": 5836.14,
+                  "q_from_inclusive": true,
+                  "q_to": 6570.54,
+                  "q_to_inclusive": true,
+                  "fixed": 0,
+                  "rate": 0.0422,
+                  "rate_above_monthly": 1945.38,
+                  "rate_up_to_monthly": 2190.18
+                },
+                {
+                  "q_from": 6570.54,
+                  "q_from_inclusive": false,
+                  "q_to": 11211,
+                  "q_to_inclusive": true,
+                  "fixed": 30.99,
+                  "rate": 0.011,
+                  "rate_above_monthly": 2190.18,
+                  "rate_up_to_monthly": 3737
+                },
+                {
+                  "q_from": 11211,
+                  "q_from_inclusive": false,
+                  "q_to": 12300,
+                  "q_to_inclusive": true,
+                  "fixed": 82.05,
+                  "rate": 0.0338,
+                  "rate_above_monthly": 3737,
+                  "rate_up_to_monthly": 4100
+                },
+                {
+                  "q_from": 12300,
+                  "q_from_inclusive": false,
+                  "q_to": 18116.46,
+                  "q_to_inclusive": true,
+                  "fixed": 118.83,
+                  "rate": 0.011,
+                  "rate_above_monthly": 4100,
+                  "rate_up_to_monthly": 6038.82
+                },
+                {
+                  "q_from": 18116.46,
+                  "q_from_inclusive": false,
+                  "q_to": null,
+                  "fixed": 182.82
+                }
+              ]
+            },
+            "monthly_advance": {
+              "joint_spouse_with_income": [
+                {
+                  "m_from": 1095.1,
+                  "m_to": 1945.38,
+                  "fixed": 5.15
+                },
+                {
+                  "m_from": 1945.38,
+                  "m_to": 2190.18,
+                  "fixed": 0,
+                  "rate": 0.059,
+                  "rate_above_monthly": 1945.38,
+                  "minimum": 5.9
+                },
+                {
+                  "m_from": 2190.18,
+                  "m_to": null,
+                  "fixed": 14.44,
+                  "rate": 0.011,
+                  "rate_above_monthly": 2190.18,
+                  "maximum": 51.64
+                }
+              ],
+              "other_categories": null
+            }
+          },
+          "status": "confirmed",
+          "jurisdiction": "federal",
+          "income_year": 2026,
+          "assessment_year": null,
+          "effective_from": "2026-01-01",
+          "effective_to": "2026-03-31",
+          "source_name": "RSZ / ONSS",
+          "source_url": "https://www.socialsecurity.be/employer/instructions/dmfa/nl/2026-1/instructions/special_contributions/other_specialcontributions/specialsocialsecuritycontribution.html",
+          "source_title": "Administratieve instructies RSZ 2026/1 — Bijzondere bijdrage voor de sociale zekerheid",
+          "retrieved_at": "2026-11-24",
+          "unit": "EUR_per_quarter_and_EUR_per_month_advance",
+          "rounding": "not stated in the RSZ instructions",
+          "notes": "Schedule as published in the RSZ instructions for quarter 2026/1. Identical in NL and FR and in versions 2025/4 to 2026/3. Amounts are not indexed between these versions."
+        },
+        "2026_q2": {
+          "value": {
+            "quarterly": {
+              "joint_spouse_with_income": [
+                {
+                  "q_from": 3285.29,
+                  "q_from_inclusive": true,
+                  "q_to": 5836.14,
+                  "q_to_inclusive": false,
+                  "fixed": 15.45
+                },
+                {
+                  "q_from": 5836.14,
+                  "q_from_inclusive": true,
+                  "q_to": 6570.54,
+                  "q_to_inclusive": true,
+                  "fixed": 0,
+                  "rate": 0.059,
+                  "rate_above_monthly": 1945.38,
+                  "rate_up_to_monthly": 2190.18,
+                  "minimum": 15.45
+                },
+                {
+                  "q_from": 6570.54,
+                  "q_from_inclusive": false,
+                  "q_to": null,
+                  "fixed": 43.32,
+                  "rate": 0.011,
+                  "rate_above_monthly": 2190.18,
+                  "maximum": 154.92
+                }
+              ],
+              "joint_spouse_without_income": [
+                {
+                  "q_from": 5836.14,
+                  "q_from_inclusive": true,
+                  "q_to": 6570.54,
+                  "q_to_inclusive": true,
+                  "fixed": 0,
+                  "rate": 0.059,
+                  "rate_above_monthly": 1945.38,
+                  "rate_up_to_monthly": 2190.18
+                },
+                {
+                  "q_from": 6570.54,
+                  "q_from_inclusive": false,
+                  "q_to": null,
+                  "fixed": 43.32,
+                  "rate": 0.011,
+                  "rate_above_monthly": 2190.18,
+                  "maximum": 182.82
+                }
+              ],
+              "individual": [
+                {
+                  "q_from": 5836.14,
+                  "q_from_inclusive": true,
+                  "q_to": 6570.54,
+                  "q_to_inclusive": true,
+                  "fixed": 0,
+                  "rate": 0.0422,
+                  "rate_above_monthly": 1945.38,
+                  "rate_up_to_monthly": 2190.18
+                },
+                {
+                  "q_from": 6570.54,
+                  "q_from_inclusive": false,
+                  "q_to": 11211,
+                  "q_to_inclusive": true,
+                  "fixed": 30.99,
+                  "rate": 0.011,
+                  "rate_above_monthly": 2190.18,
+                  "rate_up_to_monthly": 3737
+                },
+                {
+                  "q_from": 11211,
+                  "q_from_inclusive": false,
+                  "q_to": 12300,
+                  "q_to_inclusive": true,
+                  "fixed": 82.05,
+                  "rate": 0.0338,
+                  "rate_above_monthly": 3737,
+                  "rate_up_to_monthly": 4100
+                },
+                {
+                  "q_from": 12300,
+                  "q_from_inclusive": false,
+                  "q_to": 18116.46,
+                  "q_to_inclusive": true,
+                  "fixed": 118.83,
+                  "rate": 0.011,
+                  "rate_above_monthly": 4100,
+                  "rate_up_to_monthly": 6038.82
+                },
+                {
+                  "q_from": 18116.46,
+                  "q_from_inclusive": false,
+                  "q_to": null,
+                  "fixed": 182.82
+                }
+              ]
+            },
+            "monthly_advance": {
+              "joint_spouse_with_income": [
+                {
+                  "m_from": 1095.1,
+                  "m_to": 1945.38,
+                  "fixed": 5.15
+                },
+                {
+                  "m_from": 1945.38,
+                  "m_to": 2190.18,
+                  "fixed": 0,
+                  "rate": 0.059,
+                  "rate_above_monthly": 1945.38,
+                  "minimum": 5.9
+                },
+                {
+                  "m_from": 2190.18,
+                  "m_to": null,
+                  "fixed": 14.44,
+                  "rate": 0.011,
+                  "rate_above_monthly": 2190.18,
+                  "maximum": 51.64
+                }
+              ],
+              "other_categories": null
+            }
+          },
+          "status": "confirmed",
+          "jurisdiction": "federal",
+          "income_year": 2026,
+          "assessment_year": null,
+          "effective_from": "2026-04-01",
+          "effective_to": "2026-06-30",
+          "source_name": "RSZ / ONSS",
+          "source_url": "https://www.socialsecurity.be/employer/instructions/dmfa/nl/2026-2/instructions/special_contributions/other_specialcontributions/specialsocialsecuritycontribution.html",
+          "source_title": "Administratieve instructies RSZ 2026/2 — Bijzondere bijdrage voor de sociale zekerheid",
+          "retrieved_at": "2026-11-24",
+          "unit": "EUR_per_quarter_and_EUR_per_month_advance",
+          "rounding": "not stated in the RSZ instructions",
+          "notes": "Schedule as published in the RSZ instructions for quarter 2026/2. Identical in NL and FR and in versions 2025/4 to 2026/3. Amounts are not indexed between these versions."
+        },
+        "2026_q3": {
+          "value": {
+            "quarterly": {
+              "joint_spouse_with_income": [
+                {
+                  "q_from": 3285.29,
+                  "q_from_inclusive": true,
+                  "q_to": 5836.14,
+                  "q_to_inclusive": false,
+                  "fixed": 15.45
+                },
+                {
+                  "q_from": 5836.14,
+                  "q_from_inclusive": true,
+                  "q_to": 6570.54,
+                  "q_to_inclusive": true,
+                  "fixed": 0,
+                  "rate": 0.059,
+                  "rate_above_monthly": 1945.38,
+                  "rate_up_to_monthly": 2190.18,
+                  "minimum": 15.45
+                },
+                {
+                  "q_from": 6570.54,
+                  "q_from_inclusive": false,
+                  "q_to": null,
+                  "fixed": 43.32,
+                  "rate": 0.011,
+                  "rate_above_monthly": 2190.18,
+                  "maximum": 154.92
+                }
+              ],
+              "joint_spouse_without_income": [
+                {
+                  "q_from": 5836.14,
+                  "q_from_inclusive": true,
+                  "q_to": 6570.54,
+                  "q_to_inclusive": true,
+                  "fixed": 0,
+                  "rate": 0.059,
+                  "rate_above_monthly": 1945.38,
+                  "rate_up_to_monthly": 2190.18
+                },
+                {
+                  "q_from": 6570.54,
+                  "q_from_inclusive": false,
+                  "q_to": null,
+                  "fixed": 43.32,
+                  "rate": 0.011,
+                  "rate_above_monthly": 2190.18,
+                  "maximum": 182.82
+                }
+              ],
+              "individual": [
+                {
+                  "q_from": 5836.14,
+                  "q_from_inclusive": true,
+                  "q_to": 6570.54,
+                  "q_to_inclusive": true,
+                  "fixed": 0,
+                  "rate": 0.0422,
+                  "rate_above_monthly": 1945.38,
+                  "rate_up_to_monthly": 2190.18
+                },
+                {
+                  "q_from": 6570.54,
+                  "q_from_inclusive": false,
+                  "q_to": 11211,
+                  "q_to_inclusive": true,
+                  "fixed": 30.99,
+                  "rate": 0.011,
+                  "rate_above_monthly": 2190.18,
+                  "rate_up_to_monthly": 3737
+                },
+                {
+                  "q_from": 11211,
+                  "q_from_inclusive": false,
+                  "q_to": 12300,
+                  "q_to_inclusive": true,
+                  "fixed": 82.05,
+                  "rate": 0.0338,
+                  "rate_above_monthly": 3737,
+                  "rate_up_to_monthly": 4100
+                },
+                {
+                  "q_from": 12300,
+                  "q_from_inclusive": false,
+                  "q_to": 18116.46,
+                  "q_to_inclusive": true,
+                  "fixed": 118.83,
+                  "rate": 0.011,
+                  "rate_above_monthly": 4100,
+                  "rate_up_to_monthly": 6038.82
+                },
+                {
+                  "q_from": 18116.46,
+                  "q_from_inclusive": false,
+                  "q_to": null,
+                  "fixed": 182.82
+                }
+              ]
+            },
+            "monthly_advance": {
+              "joint_spouse_with_income": [
+                {
+                  "m_from": 1095.1,
+                  "m_to": 1945.38,
+                  "fixed": 5.15
+                },
+                {
+                  "m_from": 1945.38,
+                  "m_to": 2190.18,
+                  "fixed": 0,
+                  "rate": 0.059,
+                  "rate_above_monthly": 1945.38,
+                  "minimum": 5.9
+                },
+                {
+                  "m_from": 2190.18,
+                  "m_to": null,
+                  "fixed": 14.44,
+                  "rate": 0.011,
+                  "rate_above_monthly": 2190.18,
+                  "maximum": 51.64
+                }
+              ],
+              "other_categories": null
+            }
+          },
+          "status": "confirmed",
+          "jurisdiction": "federal",
+          "income_year": 2026,
+          "assessment_year": null,
+          "effective_from": "2026-07-01",
+          "effective_to": "2026-09-30",
+          "source_name": "RSZ / ONSS",
+          "source_url": "https://www.socialsecurity.be/employer/instructions/dmfa/nl/latest/instructions/special_contributions/other_specialcontributions/specialsocialsecuritycontribution.html",
+          "source_title": "Administratieve instructies RSZ 2026/3 — Bijzondere bijdrage voor de sociale zekerheid",
+          "retrieved_at": "2026-11-24",
+          "unit": "EUR_per_quarter_and_EUR_per_month_advance",
+          "rounding": "not stated in the RSZ instructions",
+          "notes": "Schedule as published in the RSZ instructions for quarter 2026/3 (reachable only via the `latest` URL). Identical in NL and FR and in versions 2025/4 to 2026/3. Amounts are not indexed between these versions."
+        },
+        "2026_q4": {
+          "value": null,
+          "status": "pending",
+          "jurisdiction": "federal",
+          "income_year": 2026,
+          "assessment_year": null,
+          "effective_from": "2026-10-01",
+          "effective_to": "2026-12-31",
+          "source_name": "RSZ / ONSS",
+          "source_url": "https://www.socialsecurity.be/employer/instructions/dmfa/nl/latest/download",
+          "source_title": "Administratieve instructies RSZ 2026/4 — not yet published",
+          "retrieved_at": "2026-11-24",
+          "unit": "EUR_per_quarter_and_EUR_per_month_advance",
+          "rounding": "not stated in the RSZ instructions",
+          "notes": "The 2026/4 instructions are not published (2026-11-24). Do not assume the 2026/3 schedule applies to Q4."
+        }
+      }
     }
   },
   "calculation_status": "blocked_until_all_required_parameters_confirmed"

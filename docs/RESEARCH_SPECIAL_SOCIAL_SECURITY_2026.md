@@ -102,3 +102,16 @@ This improves provenance: the complete schedule is verifiably present in the off
 ### Implication for the parameter file
 
 The page is now sufficiently accessible to transcribe the complete schedule into a research specification, but it still does not support assigning effective dates for income year 2026. The exact schedule therefore remains **research-documented, not year-confirmed**. Keep the existing special contribution value null and status pending; do not copy the research figures into the generated JSON or activate a calculation. A future parameterisation should keep the quarterly liability schedule, the first/second-month advance schedule, and the third-month reconciliation as distinct structures, with household assessment and spouse-income classification explicit.
+
+
+## Update 2026-11-25 (Claude): effective periods and parameterisation
+
+The page text is **identical word for word** (NL and FR) in the RSZ instruction versions 2025/4, 2026/1, 2026/2 and 2026/3. As with the werkbonus, each quarterly version of the administrative instructions governs its own quarter, so the schedule is now parameterised in `params/2026/payroll.yaml → special_social_security_contribution.periods` as `confirmed` for 2026 Q1–Q3, each period citing the URL of its own version, and `pending` for Q4 (2026/4 not yet published).
+
+`method` stays `provisional`. Open points:
+1. **Rate base ambiguity.** The quarterly bands apply a rate to "het gedeelte van het maandloon dat … overschrijdt". Read literally, the quarterly amount jumps at the band limits (14.44 vs 43.32). Applied to the quarterly excess (3 × the monthly excess), the bands join exactly: 0.059 × (6,570.54 − 5,836.14) = 43.33 ≈ 43.32. The quarterly limits are also exactly three times the monthly ones. This is almost certainly the intended rule, but it is an inference. It must be settled from the legal text (wet van 30 maart 1994, art. 106 e.v., Belgisch Staatsblad), which is behind a CAPTCHA for agents.
+2. No rounding rule is stated.
+3. "Echtgenoot met beroepsinkomsten" follows the bedrijfsvoorheffing definition, which is not modelled yet.
+4. Monthly advances are published for only one category.
+
+No calculation engine has been written. The R dispatcher now lists the contribution as missing until the method and all periods are confirmed.

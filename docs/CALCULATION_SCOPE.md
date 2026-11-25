@@ -27,7 +27,7 @@ They are not interchangeable. The UI must state which result it displays.
 | Work bonus (social) | Jan–Sep 2026 tables confirmed from RSZ DmfA instructions 2026/1–2026/3, engine in R and JS with shared fixture; Oct–Dec 2026 pending (2026/4 not published); method provisional (P rounding, annual-cap application, prestatiecode 38); annual cap not applied; fiscal work bonus not covered |
 | Professional withholding 2026 | Pending extraction of official rules and key formula |
 | Flat-rate professional expenses | Pending exact official 2026 parameters |
-| Special social-security contribution | Official RSZ 2026/3 research documented; effective dates, spouse classification and quarterly-to-monthly withholding still pending |
+| Special social-security contribution | Q1–Q3 2026 schedule confirmed (RSZ instructions 2026/1, 2026/2, 2026/3; text identical NL/FR and since 2025/4); Q4 pending (2026/4 not published); method provisional: rate base (monthly vs quarterly excess) and rounding to be settled from the law of 30 March 1994; spouse-income classification not modelled; no engine yet |
 | Municipal surcharge | Pending official municipality-level dataset |
 | Family-specific tax allowance | Pending detailed official parameters |
 | Full monthly net salary | Blocked |
