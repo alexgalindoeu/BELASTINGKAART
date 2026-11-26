@@ -6,7 +6,9 @@
 .prose h3 { font-family: var(--display); font-stretch: 108%; font-size: 17px; font-weight: 700; letter-spacing: -.01em; line-height: 1.3; margin: 0 0 10px; }
 .prose code { font-family: var(--mono); font-size: .86em; overflow-wrap: anywhere; }
 
-.param-list { list-style: none; padding: 0; margin: 16px 0 0; display: grid; gap: 12px; }
+.param-list { list-style: none; padding: 0; margin: 16px 0 0; display: grid; grid-template-columns: minmax(0, 1fr); gap: 12px; }
+.param { min-width: 0; }
+.param h3, .param code { overflow-wrap: anywhere; }
 .param { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 16px 18px; }
 .param dl { margin: 0; display: grid; gap: 6px; }
 .param dl > div { display: grid; grid-template-columns: minmax(0, 13em) minmax(0, 1fr); gap: 12px; }
