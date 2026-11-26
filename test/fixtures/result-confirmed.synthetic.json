@@ -1,0 +1,32 @@
+{
+  "_comment": "Synthetic, test-only result object for js/resultaat.js. Not a Belgian calculation: labels are placeholders and the amounts are arbitrary. Never copy into web/.",
+  "status": "complete",
+  "confirmed": true,
+  "chip": "Voorbeeldlabel",
+  "headline": { "label": "Voorbeeldregel", "amount": 1234.5, "tone": "ok" },
+  "sub": "Voorbeeldzin",
+  "kpis": [
+    { "label": "Kerncijfer A", "value": 0.25, "format": "percent" },
+    { "label": "Kerncijfer B", "value": 99, "format": "eur" },
+    { "label": "Kerncijfer C", "value": "Voorbeeld", "format": "text" }
+  ],
+  "bars": [
+    { "title": "Verdeling", "note": "Voorbeeld", "parts": [
+      { "label": "Deel A", "amount": 600, "tone": "net" },
+      { "label": "Deel B", "amount": 300, "tone": "tax" },
+      { "label": "Deel <C>", "amount": 100, "tone": "unknown" }
+    ] }
+  ],
+  "breakdown": [
+    { "label": "Voorbeeldregel 1", "amount": 2000, "code": "ABC" },
+    { "label": "Voorbeeldregel 2", "amount": -765.5, "kind": "minus" },
+    { "label": "Voorbeeldregel 3", "amount": 10, "kind": "info" },
+    { "label": "Tussentotaal", "amount": 1234.5, "kind": "sub" },
+    { "label": "Totaal", "amount": 1234.5, "kind": "total" }
+  ],
+  "explanation": { "steps": [
+    { "title": "Stap A", "rows": [ { "label": "Rij A", "amount": 2000 }, { "label": "Rij B", "amount": -765.5, "kind": "minus" } ], "note": "Notitie", "source": "Voorbeeldbron" }
+  ] },
+  "scenarios": [ { "label": "Scenario A", "amount": 1234.5, "yours": true }, { "label": "Scenario B", "amount": 1000 } ],
+  "notes": [ "Opmerking A" ]
+}
