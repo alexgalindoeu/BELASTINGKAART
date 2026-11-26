@@ -7,11 +7,11 @@
     return '<iframe src="'+src+'" loading="lazy" title="Belastingkaart — Belgian gross-to-net information" width="100%" height="680" style="border:0" loading="lazy"></iframe>';
   }
 
-  // Dedicated widget frame (web/nl/widget/kader.html, web/fr/widget/cadre.html), with a visible
+  // Dedicated widget frame (web/widget/nl.html, web/widget/fr.html), with a visible
   // attribution link outside the frame. The frame shows the blocked state until the calculation
   // is enabled.
   const SITE="https://belastingkaart.be/";
-  const FRAMES=Object.freeze({nl:"nl/widget/kader.html",fr:"fr/widget/cadre.html"});
+  const FRAMES=Object.freeze({nl:"widget/nl.html",fr:"widget/fr.html"});
   const FRAME_TITLES=Object.freeze({nl:"Belastingkaart: bruto-netto voor werknemers in België",fr:"Belastingkaart : brut-net pour salariés en Belgique"});
   const ATTRIBUTION=Object.freeze({nl:"Informatie van",fr:"Informations de"});
   const esc=s=>String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));

@@ -25,6 +25,8 @@ test('federal 2026 brackets and basic allowance have official provenance', () =>
 
 test('a full net salary result remains blocked', () => {
   assert.equal(data.calculation_status, 'blocked_until_all_required_parameters_confirmed');
-  assert.equal(data.payroll.professional_withholding.status, 'pending');
-  assert.equal(data.payroll.professional_expenses.status, 'pending');
+  // The withholding container deliberately has no top-level status, so the dispatcher
+  // (which checks professional_withholding.status === 'confirmed') keeps blocking.
+  assert.equal(data.payroll.professional_withholding.status, undefined);
+  assert.equal(data.payroll.professional_expenses.status, 'confirmed');
 });

@@ -50,7 +50,7 @@ const TOOLS = [
       await page.fill('[name=changeMunicipality]', 'Elsene'); await page.click('#sc-form button[type=submit]'); } },
   { name: 'widget', nl: 'nl/widget/', fr: 'fr/widget/', form: '#wg-form', net: null,
     fill: async page => { await page.check('[name=widgetTheme][value="dark"]'); } },
-  { name: 'widget-frame', nl: 'nl/widget/kader.html', fr: 'fr/widget/cadre.html', form: '#wf-form', net: '#wf-net',
+  { name: 'widget-frame', nl: 'widget/nl.html', fr: 'widget/fr.html', form: '#wf-form', net: '#wf-net',
     fill: async (page, l) => { await page.fill('[name=grossMonthly]', amount[l]); } }
 ];
 
@@ -102,7 +102,7 @@ try {
       check(!/(netto|nets?|belasting|impôt|bijdrage|cotisation)\w*[ \t]*:?[ \t]*€?[ \t]*\d/i.test(body) && !/\d[\d.,   ]*€[ \t]*(netto|nets?\b)/i.test(body), `${label}: page text pairs a figure with a net/tax word`);
       check(!/In ontwikkeling|En développement|Berekening geblokkeerd|Calcul bloqué/.test(body.replace(/\(in ontwikkeling\)|\(en développement\)/g, '')), `${label}: development label visible`);
       if (tool.name === 'scenarios') check(await page.locator('#sc-table tbody tr').count() === 3, `${label}: expected base + 2 scenarios`);
-      if (tool.name === 'widget') check(/cadre\.html|kader\.html/.test(await page.inputValue('#wg-code')) && /theme=dark/.test(await page.inputValue('#wg-code')), `${label}: widget code not updated`);
+      if (tool.name === 'widget') check(/widget\/(nl|fr)\.html/.test(await page.inputValue('#wg-code')) && /theme=dark/.test(await page.inputValue('#wg-code')), `${label}: widget code not updated`);
       // Every table shows all its columns, or sits in a focusable, named scroll wrapper.
       const tables = await page.evaluate(() => [...document.querySelectorAll('table')].map(t => {
         const wrap = t.closest('.table-wrap'), box = wrap || t.parentElement;

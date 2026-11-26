@@ -1,5 +1,5 @@
 // Widget page configurator (/nl/widget/, /fr/widget/) and the embeddable frame itself
-// (kader.html / cadre.html). The frame only ever shows the blocked state: no fiscal figure.
+// (web/widget/nl.html, web/widget/fr.html). The frame only ever shows the blocked state: no fiscal figure.
 (() => {
   const K = window.BKToolKit;
   const THEMES = ["auto", "light", "dark"];
@@ -10,7 +10,7 @@
       invalid: "Saisissez un salaire mensuel brut valide, par exemple 3500 ou 3.500,00." }
   };
   // Preview paths relative to the widget page (web/<lang>/widget/).
-  const PREVIEW = { nl: "../../nl/widget/kader.html", fr: "../../fr/widget/cadre.html" };
+  const PREVIEW = { nl: "../../widget/nl.html", fr: "../../widget/fr.html" };
 
   function previewSrc({ language = "nl", theme = "auto" } = {}) {
     if (!PREVIEW[language]) throw new Error("Unsupported language.");

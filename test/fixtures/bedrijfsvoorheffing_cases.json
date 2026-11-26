@@ -1,0 +1,2606 @@
+{
+ "_source": "Expected values computed independently with exact decimal arithmetic (half-up to the cent at every step) from params/2026/payroll.yaml professional_withholding, which is transcribed from Fisconet: Bijlage III KB/WIB 92 (Regels 1 januari 2026; gecoordineerde versie) and Sleutelformule vanaf 1 januari / 1 november 2026, retrieved 2026-11-25. Fisconet publishes no worked examples for the 2026 key formula.",
+ "cases": [
+  {
+   "name": "jan single taxable 1000",
+   "period": "2026_01",
+   "input": {
+    "pay_date": "2026-03-15",
+    "social_contributions": 0,
+    "gross_monthly": 1000
+   },
+   "expected": {
+    "taxable_monthly": 1000.0,
+    "annual_gross": 12000.0,
+    "professional_expenses": 3600.0,
+    "net_annual": 8400.0,
+    "scale_tax": 2247.0,
+    "basic_tax": -740.98,
+    "children_reduction": 0.0,
+    "other_family_reduction": 0.0,
+    "family_reductions_applied": 0.0,
+    "annual_tax": 0.0,
+    "monthly_withholding_before_other_reductions": 0.0,
+    "group_insurance_reduction_applied": 0.0,
+    "work_bonus_reduction": 0.0,
+    "work_bonus_reduction_applied": 0.0,
+    "withholding": 0.0
+   }
+  },
+  {
+   "name": "jan single taxable 1329.76",
+   "period": "2026_01",
+   "input": {
+    "pay_date": "2026-03-15",
+    "social_contributions": 0,
+    "gross_monthly": 1329.76
+   },
+   "expected": {
+    "taxable_monthly": 1329.76,
+    "annual_gross": 15957.12,
+    "professional_expenses": 4787.14,
+    "net_annual": 11169.98,
+    "scale_tax": 2987.97,
+    "basic_tax": -0.01,
+    "children_reduction": 0.0,
+    "other_family_reduction": 0.0,
+    "family_reductions_applied": 0.0,
+    "annual_tax": 0.0,
+    "monthly_withholding_before_other_reductions": 0.0,
+    "group_insurance_reduction_applied": 0.0,
+    "work_bonus_reduction": 0.0,
+    "work_bonus_reduction_applied": 0.0,
+    "withholding": 0.0
+   }
+  },
+  {
+   "name": "jan single taxable 1329.77",
+   "period": "2026_01",
+   "input": {
+    "pay_date": "2026-03-15",
+    "social_contributions": 0,
+    "gross_monthly": 1329.77
+   },
+   "expected": {
+    "taxable_monthly": 1329.77,
+    "annual_gross": 15957.24,
+    "professional_expenses": 4787.17,
+    "net_annual": 11170.07,
+    "scale_tax": 2987.99,
+    "basic_tax": 0.01,
+    "children_reduction": 0.0,
+    "other_family_reduction": 0.0,
+    "family_reductions_applied": 0.0,
+    "annual_tax": 0.01,
+    "monthly_withholding_before_other_reductions": 0.0,
+    "group_insurance_reduction_applied": 0.0,
+    "work_bonus_reduction": 0.0,
+    "work_bonus_reduction_applied": 0.0,
+    "withholding": 0.0
+   }
+  },
+  {
+   "name": "jan single taxable 1686.1",
+   "period": "2026_01",
+   "input": {
+    "pay_date": "2026-03-15",
+    "social_contributions": 0,
+    "gross_monthly": 1686.1
+   },
+   "expected": {
+    "taxable_monthly": 1686.1,
+    "annual_gross": 20233.2,
+    "professional_expenses": 6069.96,
+    "net_annual": 14163.24,
+    "scale_tax": 3788.67,
+    "basic_tax": 800.69,
+    "children_reduction": 0.0,
+    "other_family_reduction": 0.0,
+    "family_reductions_applied": 0.0,
+    "annual_tax": 800.69,
+    "monthly_withholding_before_other_reductions": 66.72,
+    "group_insurance_reduction_applied": 0.0,
+    "work_bonus_reduction": 0.0,
+    "work_bonus_reduction_applied": 0.0,
+    "withholding": 66.72
+   }
+  },
+  {
+   "name": "jan single taxable 1686.11",
+   "period": "2026_01",
+   "input": {
+    "pay_date": "2026-03-15",
+    "social_contributions": 0,
+    "gross_monthly": 1686.11
+   },
+   "expected": {
+    "taxable_monthly": 1686.11,
+    "annual_gross": 20233.32,
+    "professional_expenses": 6070.0,
+    "net_annual": 14163.32,
+    "scale_tax": 3788.69,
+    "basic_tax": 800.71,
+    "children_reduction": 0.0,
+    "other_family_reduction": 0.0,
+    "family_reductions_applied": 0.0,
+    "annual_tax": 800.71,
+    "monthly_withholding_before_other_reductions": 66.73,
+    "group_insurance_reduction_applied": 0.0,
+    "work_bonus_reduction": 0.0,
+    "work_bonus_reduction_applied": 0.0,
+    "withholding": 66.73
+   }
+  },
+  {
+   "name": "jan single taxable 1898.33",
+   "period": "2026_01",
+   "input": {
+    "pay_date": "2026-03-15",
+    "social_contributions": 0,
+    "gross_monthly": 1898.33
+   },
+   "expected": {
+    "taxable_monthly": 1898.33,
+    "annual_gross": 22779.96,
+    "professional_expenses": 6070.0,
+    "net_annual": 16709.96,
+    "scale_tax": 4469.91,
+    "basic_tax": 1481.93,
+    "children_reduction": 0.0,
+    "other_family_reduction": 0.0,
+    "family_reductions_applied": 0.0,
+    "annual_tax": 1481.93,
+    "monthly_withholding_before_other_reductions": 123.49,
+    "group_insurance_reduction_applied": 0.0,
+    "work_bonus_reduction": 0.0,
+    "work_bonus_reduction_applied": 0.0,
+    "withholding": 123.49
+   }
+  },
+  {
+   "name": "jan single taxable 1898.34",
+   "period": "2026_01",
+   "input": {
+    "pay_date": "2026-03-15",
+    "social_contributions": 0,
+    "gross_monthly": 1898.34
+   },
+   "expected": {
+    "taxable_monthly": 1898.34,
+    "annual_gross": 22780.08,
+    "professional_expenses": 6070.0,
+    "net_annual": 16710.08,
+    "scale_tax": 4469.96,
+    "basic_tax": 1481.98,
+    "children_reduction": 0.0,
+    "other_family_reduction": 0.0,
+    "family_reductions_applied": 0.0,
+    "annual_tax": 1481.98,
+    "monthly_withholding_before_other_reductions": 123.5,
+    "group_insurance_reduction_applied": 0.0,
+    "work_bonus_reduction": 0.0,
+    "work_bonus_reduction_applied": 0.0,
+    "withholding": 123.5
+   }
+  },
+  {
+   "name": "jan single taxable 2964.16",
+   "period": "2026_01",
+   "input": {
+    "pay_date": "2026-03-15",
+    "social_contributions": 0,
+    "gross_monthly": 2964.16
+   },
+   "expected": {
+    "taxable_monthly": 2964.16,
+    "annual_gross": 35569.92,
+    "professional_expenses": 6070.0,
+    "net_annual": 29499.92,
+    "scale_tax": 9944.02,
+    "basic_tax": 6956.04,
+    "children_reduction": 0.0,
+    "other_family_reduction": 0.0,
+    "family_reductions_applied": 0.0,
+    "annual_tax": 6956.04,
+    "monthly_withholding_before_other_reductions": 579.67,
+    "group_insurance_reduction_applied": 0.0,
+    "work_bonus_reduction": 0.0,
+    "work_bonus_reduction_applied": 0.0,
+    "withholding": 579.67
+   }
+  },
+  {
+   "name": "jan single taxable 2964.17",
+   "period": "2026_01",
+   "input": {
+    "pay_date": "2026-03-15",
+    "social_contributions": 0,
+    "gross_monthly": 2964.17
+   },
+   "expected": {
+    "taxable_monthly": 2964.17,
+    "annual_gross": 35570.04,
+    "professional_expenses": 6070.0,
+    "net_annual": 29500.04,
+    "scale_tax": 9944.07,
+    "basic_tax": 6956.09,
+    "children_reduction": 0.0,
+    "other_family_reduction": 0.0,
+    "family_reductions_applied": 0.0,
+    "annual_tax": 6956.09,
+    "monthly_withholding_before_other_reductions": 579.67,
+    "group_insurance_reduction_applied": 0.0,
+    "work_bonus_reduction": 0.0,
+    "work_bonus_reduction_applied": 0.0,
+    "withholding": 579.67
+   }
+  },
+  {
+   "name": "jan single taxable 4760",
+   "period": "2026_01",
+   "input": {
+    "pay_date": "2026-03-15",
+    "social_contributions": 0,
+    "gross_monthly": 4760
+   },
+   "expected": {
+    "taxable_monthly": 4760.0,
+    "annual_gross": 57120.0,
+    "professional_expenses": 6070.0,
+    "net_annual": 51050.0,
+    "scale_tax": 20320.38,
+    "basic_tax": 17332.4,
+    "children_reduction": 0.0,
+    "other_family_reduction": 0.0,
+    "family_reductions_applied": 0.0,
+    "annual_tax": 17332.4,
+    "monthly_withholding_before_other_reductions": 1444.37,
+    "group_insurance_reduction_applied": 0.0,
+    "work_bonus_reduction": 0.0,
+    "work_bonus_reduction_applied": 0.0,
+    "withholding": 1444.37
+   }
+  },
+  {
+   "name": "jan single taxable 4760.01",
+   "period": "2026_01",
+   "input": {
+    "pay_date": "2026-03-15",
+    "social_contributions": 0,
+    "gross_monthly": 4760.01
+   },
+   "expected": {
+    "taxable_monthly": 4760.01,
+    "annual_gross": 57120.12,
+    "professional_expenses": 6070.0,
+    "net_annual": 51050.12,
+    "scale_tax": 20320.44,
+    "basic_tax": 17332.46,
+    "children_reduction": 0.0,
+    "other_family_reduction": 0.0,
+    "family_reductions_applied": 0.0,
+    "annual_tax": 17332.46,
+    "monthly_withholding_before_other_reductions": 1444.37,
+    "group_insurance_reduction_applied": 0.0,
+    "work_bonus_reduction": 0.0,
+    "work_bonus_reduction_applied": 0.0,
+    "withholding": 1444.37
+   }
+  },
+  {
+   "name": "jan single taxable 8000",
+   "period": "2026_01",
+   "input": {
+    "pay_date": "2026-03-15",
+    "social_contributions": 0,
+    "gross_monthly": 8000
+   },
+   "expected": {
+    "taxable_monthly": 8000.0,
+    "annual_gross": 96000.0,
+    "professional_expenses": 6070.0,
+    "net_annual": 89930.0,
+    "scale_tax": 41121.18,
+    "basic_tax": 38133.2,
+    "children_reduction": 0.0,
+    "other_family_reduction": 0.0,
+    "family_reductions_applied": 0.0,
+    "annual_tax": 38133.2,
+    "monthly_withholding_before_other_reductions": 3177.77,
+    "group_insurance_reduction_applied": 0.0,
+    "work_bonus_reduction": 0.0,
+    "work_bonus_reduction_applied": 0.0,
+    "withholding": 3177.77
+   }
+  },
+  {
+   "name": "jan gross 3000 minus social 392.10",
+   "period": "2026_01",
+   "input": {
+    "pay_date": "2026-03-15",
+    "social_contributions": 392.1,
+    "gross_monthly": 3000
+   },
+   "expected": {
+    "taxable_monthly": 2607.9,
+    "annual_gross": 31294.8,
+    "professional_expenses": 6070.0,
+    "net_annual": 25224.8,
+    "scale_tax": 8114.26,
+    "basic_tax": 5126.28,
+    "children_reduction": 0.0,
+    "other_family_reduction": 0.0,
+    "family_reductions_applied": 0.0,
+    "annual_tax": 5126.28,
+    "monthly_withholding_before_other_reductions": 427.19,
+    "group_insurance_reduction_applied": 0.0,
+    "work_bonus_reduction": 0.0,
+    "work_bonus_reduction_applied": 0.0,
+    "withholding": 427.19
+   }
+  },
+  {
+   "name": "jan single 1 children",
+   "period": "2026_01",
+   "input": {
+    "pay_date": "2026-03-15",
+    "social_contributions": 0,
+    "gross_monthly": 3500,
+    "children": 1
+   },
+   "expected": {
+    "taxable_monthly": 3500.0,
+    "annual_gross": 42000.0,
+    "professional_expenses": 6070.0,
+    "net_annual": 35930.0,
+    "scale_tax": 13040.1,
+    "basic_tax": 10052.12,
+    "children_reduction": 624.0,
+    "other_family_reduction": 0.0,
+    "family_reductions_applied": 624.0,
+    "annual_tax": 9428.12,
+    "monthly_withholding_before_other_reductions": 785.68,
+    "group_insurance_reduction_applied": 0.0,
+    "work_bonus_reduction": 0.0,
+    "work_bonus_reduction_applied": 0.0,
+    "withholding": 785.68
+   }
+  },
+  {
+   "name": "jan single 2 children",
+   "period": "2026_01",
+   "input": {
+    "pay_date": "2026-03-15",
+    "social_contributions": 0,
+    "gross_monthly": 3500,
+    "children": 2
+   },
+   "expected": {
+    "taxable_monthly": 3500.0,
+    "annual_gross": 42000.0,
+    "professional_expenses": 6070.0,
+    "net_annual": 35930.0,
+    "scale_tax": 13040.1,
+    "basic_tax": 10052.12,
+    "children_reduction": 1656.0,
+    "other_family_reduction": 0.0,
+    "family_reductions_applied": 1656.0,
+    "annual_tax": 8396.12,
+    "monthly_withholding_before_other_reductions": 699.68,
+    "group_insurance_reduction_applied": 0.0,
+    "work_bonus_reduction": 0.0,
+    "work_bonus_reduction_applied": 0.0,
+    "withholding": 699.68
+   }
+  },
+  {
+   "name": "jan single 3 children",
+   "period": "2026_01",
+   "input": {
+    "pay_date": "2026-03-15",
+    "social_contributions": 0,
+    "gross_monthly": 3500,
+    "children": 3
+   },
+   "expected": {
+    "taxable_monthly": 3500.0,
+    "annual_gross": 42000.0,
+    "professional_expenses": 6070.0,
+    "net_annual": 35930.0,
+    "scale_tax": 13040.1,
+    "basic_tax": 10052.12,
+    "children_reduction": 4404.0,
+    "other_family_reduction": 0.0,
+    "family_reductions_applied": 4404.0,
+    "annual_tax": 5648.12,
+    "monthly_withholding_before_other_reductions": 470.68,
+    "group_insurance_reduction_applied": 0.0,
+    "work_bonus_reduction": 0.0,
+    "work_bonus_reduction_applied": 0.0,
+    "withholding": 470.68
+   }
+  },
+  {
+   "name": "jan single 4 children",
+   "period": "2026_01",
+   "input": {
+    "pay_date": "2026-03-15",
+    "social_contributions": 0,
+    "gross_monthly": 3500,
+    "children": 4
+   },
+   "expected": {
+    "taxable_monthly": 3500.0,
+    "annual_gross": 42000.0,
+    "professional_expenses": 6070.0,
+    "net_annual": 35930.0,
+    "scale_tax": 13040.1,
+    "basic_tax": 10052.12,
+    "children_reduction": 7620.0,
+    "other_family_reduction": 0.0,
+    "family_reductions_applied": 7620.0,
+    "annual_tax": 2432.12,
+    "monthly_withholding_before_other_reductions": 202.68,
+    "group_insurance_reduction_applied": 0.0,
+    "work_bonus_reduction": 0.0,
+    "work_bonus_reduction_applied": 0.0,
+    "withholding": 202.68
+   }
+  },
+  {
+   "name": "jan single 5 children",
+   "period": "2026_01",
+   "input": {
+    "pay_date": "2026-03-15",
+    "social_contributions": 0,
+    "gross_monthly": 3500,
+    "children": 5
+   },
+   "expected": {
+    "taxable_monthly": 3500.0,
+    "annual_gross": 42000.0,
+    "professional_expenses": 6070.0,
+    "net_annual": 35930.0,
+    "scale_tax": 13040.1,
+    "basic_tax": 10052.12,
+    "children_reduction": 11100.0,
+    "other_family_reduction": 0.0,
+    "family_reductions_applied": 10052.12,
+    "annual_tax": 0.0,
+    "monthly_withholding_before_other_reductions": 0.0,
+    "group_insurance_reduction_applied": 0.0,
+    "work_bonus_reduction": 0.0,
+    "work_bonus_reduction_applied": 0.0,
+    "withholding": 0.0
+   }
+  },
+  {
+   "name": "jan single 6 children",
+   "period": "2026_01",
+   "input": {
+    "pay_date": "2026-03-15",
+    "social_contributions": 0,
+    "gross_monthly": 3500,
+    "children": 6
+   },
+   "expected": {
+    "taxable_monthly": 3500.0,
+    "annual_gross": 42000.0,
+    "professional_expenses": 6070.0,
+    "net_annual": 35930.0,
+    "scale_tax": 13040.1,
+    "basic_tax": 10052.12,
+    "children_reduction": 14592.0,
+    "other_family_reduction": 0.0,
+    "family_reductions_applied": 10052.12,
+    "annual_tax": 0.0,
+    "monthly_withholding_before_other_reductions": 0.0,
+    "group_insurance_reduction_applied": 0.0,
+    "work_bonus_reduction": 0.0,
+    "work_bonus_reduction_applied": 0.0,
+    "withholding": 0.0
+   }
+  },
+  {
+   "name": "jan single 7 children",
+   "period": "2026_01",
+   "input": {
+    "pay_date": "2026-03-15",
+    "social_contributions": 0,
+    "gross_monthly": 3500,
+    "children": 7
+   },
+   "expected": {
+    "taxable_monthly": 3500.0,
+    "annual_gross": 42000.0,
+    "professional_expenses": 6070.0,
+    "net_annual": 35930.0,
+    "scale_tax": 13040.1,
+    "basic_tax": 10052.12,
+    "children_reduction": 18120.0,
+    "other_family_reduction": 0.0,
+    "family_reductions_applied": 10052.12,
+    "annual_tax": 0.0,
+    "monthly_withholding_before_other_reductions": 0.0,
+    "group_insurance_reduction_applied": 0.0,
+    "work_bonus_reduction": 0.0,
+    "work_bonus_reduction_applied": 0.0,
+    "withholding": 0.0
+   }
+  },
+  {
+   "name": "jan single 8 children",
+   "period": "2026_01",
+   "input": {
+    "pay_date": "2026-03-15",
+    "social_contributions": 0,
+    "gross_monthly": 3500,
+    "children": 8
+   },
+   "expected": {
+    "taxable_monthly": 3500.0,
+    "annual_gross": 42000.0,
+    "professional_expenses": 6070.0,
+    "net_annual": 35930.0,
+    "scale_tax": 13040.1,
+    "basic_tax": 10052.12,
+    "children_reduction": 21996.0,
+    "other_family_reduction": 0.0,
+    "family_reductions_applied": 10052.12,
+    "annual_tax": 0.0,
+    "monthly_withholding_before_other_reductions": 0.0,
+    "group_insurance_reduction_applied": 0.0,
+    "work_bonus_reduction": 0.0,
+    "work_bonus_reduction_applied": 0.0,
+    "withholding": 0.0
+   }
+  },
+  {
+   "name": "jan single 9 children",
+   "period": "2026_01",
+   "input": {
+    "pay_date": "2026-03-15",
+    "social_contributions": 0,
+    "gross_monthly": 3500,
+    "children": 9
+   },
+   "expected": {
+    "taxable_monthly": 3500.0,
+    "annual_gross": 42000.0,
+    "professional_expenses": 6070.0,
+    "net_annual": 35930.0,
+    "scale_tax": 13040.1,
+    "basic_tax": 10052.12,
+    "children_reduction": 25860.0,
+    "other_family_reduction": 0.0,
+    "family_reductions_applied": 10052.12,
+    "annual_tax": 0.0,
+    "monthly_withholding_before_other_reductions": 0.0,
+    "group_insurance_reduction_applied": 0.0,
+    "work_bonus_reduction": 0.0,
+    "work_bonus_reduction_applied": 0.0,
+    "withholding": 0.0
+   }
+  },
+  {
+   "name": "jan 2 children, 1 disabled (counts 3)",
+   "period": "2026_01",
+   "input": {
+    "pay_date": "2026-03-15",
+    "social_contributions": 0,
+    "gross_monthly": 3500,
+    "children": 2,
+    "children_disabled": 1
+   },
+   "expected": {
+    "taxable_monthly": 3500.0,
+    "annual_gross": 42000.0,
+    "professional_expenses": 6070.0,
+    "net_annual": 35930.0,
+    "scale_tax": 13040.1,
+    "basic_tax": 10052.12,
+    "children_reduction": 4404.0,
+    "other_family_reduction": 0.0,
+    "family_reductions_applied": 4404.0,
+    "annual_tax": 5648.12,
+    "monthly_withholding_before_other_reductions": 470.68,
+    "group_insurance_reduction_applied": 0.0,
+    "work_bonus_reduction": 0.0,
+    "work_bonus_reduction_applied": 0.0,
+    "withholding": 470.68
+   }
+  },
+  {
+   "name": "jan single parent 1 child",
+   "period": "2026_01",
+   "input": {
+    "pay_date": "2026-03-15",
+    "social_contributions": 0,
+    "gross_monthly": 3000,
+    "children": 1,
+    "single_parent": true
+   },
+   "expected": {
+    "taxable_monthly": 3000.0,
+    "annual_gross": 36000.0,
+    "professional_expenses": 6070.0,
+    "net_annual": 29930.0,
+    "scale_tax": 10151.1,
+    "basic_tax": 7163.12,
+    "children_reduction": 624.0,
+    "other_family_reduction": 624.0,
+    "family_reductions_applied": 1248.0,
+    "annual_tax": 5915.12,
+    "monthly_withholding_before_other_reductions": 492.93,
+    "group_insurance_reduction_applied": 0.0,
+    "work_bonus_reduction": 0.0,
+    "work_bonus_reduction_applied": 0.0,
+    "withholding": 492.93
+   }
+  },
+  {
+   "name": "jan self disabled",
+   "period": "2026_01",
+   "input": {
+    "pay_date": "2026-03-15",
+    "social_contributions": 0,
+    "gross_monthly": 3000,
+    "self_disabled": true
+   },
+   "expected": {
+    "taxable_monthly": 3000.0,
+    "annual_gross": 36000.0,
+    "professional_expenses": 6070.0,
+    "net_annual": 29930.0,
+    "scale_tax": 10151.1,
+    "basic_tax": 7163.12,
+    "children_reduction": 0.0,
+    "other_family_reduction": 624.0,
+    "family_reductions_applied": 624.0,
+    "annual_tax": 6539.12,
+    "monthly_withholding_before_other_reductions": 544.93,
+    "group_insurance_reduction_applied": 0.0,
+    "work_bonus_reduction": 0.0,
+    "work_bonus_reduction_applied": 0.0,
+    "withholding": 544.93
+   }
+  },
+  {
+   "name": "jan dependant 66+ in care",
+   "period": "2026_01",
+   "input": {
+    "pay_date": "2026-03-15",
+    "social_contributions": 0,
+    "gross_monthly": 3000,
+    "dependents_66_care": 1
+   },
+   "expected": {
+    "taxable_monthly": 3000.0,
+    "annual_gross": 36000.0,
+    "professional_expenses": 6070.0,
+    "net_annual": 29930.0,
+    "scale_tax": 10151.1,
+    "basic_tax": 7163.12,
+    "children_reduction": 0.0,
+    "other_family_reduction": 1992.0,
+    "family_reductions_applied": 1992.0,
+    "annual_tax": 5171.12,
+    "monthly_withholding_before_other_reductions": 430.93,
+    "group_insurance_reduction_applied": 0.0,
+    "work_bonus_reduction": 0.0,
+    "work_bonus_reduction_applied": 0.0,
+    "withholding": 430.93
+   }
+  },
+  {
+   "name": "jan 2 other dependants, 1 disabled",
+   "period": "2026_01",
+   "input": {
+    "pay_date": "2026-03-15",
+    "social_contributions": 0,
+    "gross_monthly": 3000,
+    "other_dependents": 2,
+    "other_dependents_disabled": 1
+   },
+   "expected": {
+    "taxable_monthly": 3000.0,
+    "annual_gross": 36000.0,
+    "professional_expenses": 6070.0,
+    "net_annual": 29930.0,
+    "scale_tax": 10151.1,
+    "basic_tax": 7163.12,
+    "children_reduction": 0.0,
+    "other_family_reduction": 1872.0,
+    "family_reductions_applied": 1872.0,
+    "annual_tax": 5291.12,
+    "monthly_withholding_before_other_reductions": 440.93,
+    "group_insurance_reduction_applied": 0.0,
+    "work_bonus_reduction": 0.0,
+    "work_bonus_reduction_applied": 0.0,
+    "withholding": 440.93
+   }
+  },
+  {
+   "name": "jan spouse with income",
+   "period": "2026_01",
+   "input": {
+    "pay_date": "2026-03-15",
+    "social_contributions": 0,
+    "gross_monthly": 3000,
+    "spouse_situation": "spouse_with_income",
+    "children": 2
+   },
+   "expected": {
+    "taxable_monthly": 3000.0,
+    "annual_gross": 36000.0,
+    "professional_expenses": 6070.0,
+    "net_annual": 29930.0,
+    "scale_tax": 10151.1,
+    "basic_tax": 7163.12,
+    "children_reduction": 1656.0,
+    "other_family_reduction": 0.0,
+    "family_reductions_applied": 1656.0,
+    "annual_tax": 5507.12,
+    "monthly_withholding_before_other_reductions": 458.93,
+    "group_insurance_reduction_applied": 0.0,
+    "work_bonus_reduction": 0.0,
+    "work_bonus_reduction_applied": 0.0,
+    "withholding": 458.93
+   }
+  },
+  {
+   "name": "jan spouse other income <= 290",
+   "period": "2026_01",
+   "input": {
+    "pay_date": "2026-03-15",
+    "social_contributions": 0,
+    "gross_monthly": 3000,
+    "spouse_situation": "spouse_other_income_le_290"
+   },
+   "expected": {
+    "taxable_monthly": 3000.0,
+    "annual_gross": 36000.0,
+    "professional_expenses": 6070.0,
+    "net_annual": 29930.0,
+    "scale_tax": 10151.1,
+    "basic_tax": 7163.12,
+    "children_reduction": 0.0,
+    "other_family_reduction": 1740.0,
+    "family_reductions_applied": 1740.0,
+    "annual_tax": 5423.12,
+    "monthly_withholding_before_other_reductions": 451.93,
+    "group_insurance_reduction_applied": 0.0,
+    "work_bonus_reduction": 0.0,
+    "work_bonus_reduction_applied": 0.0,
+    "withholding": 451.93
+   }
+  },
+  {
+   "name": "jan spouse pension <= 579",
+   "period": "2026_01",
+   "input": {
+    "pay_date": "2026-03-15",
+    "social_contributions": 0,
+    "gross_monthly": 3000,
+    "spouse_situation": "spouse_pension_le_579"
+   },
+   "expected": {
+    "taxable_monthly": 3000.0,
+    "annual_gross": 36000.0,
+    "professional_expenses": 6070.0,
+    "net_annual": 29930.0,
+    "scale_tax": 10151.1,
+    "basic_tax": 7163.12,
+    "children_reduction": 0.0,
+    "other_family_reduction": 3474.0,
+    "family_reductions_applied": 3474.0,
+    "annual_tax": 3689.12,
+    "monthly_withholding_before_other_reductions": 307.43,
+    "group_insurance_reduction_applied": 0.0,
+    "work_bonus_reduction": 0.0,
+    "work_bonus_reduction_applied": 0.0,
+    "withholding": 307.43
+   }
+  },
+  {
+   "name": "jan spouse pension <= 174 (quotient)",
+   "period": "2026_01",
+   "input": {
+    "pay_date": "2026-03-15",
+    "social_contributions": 0,
+    "gross_monthly": 3000,
+    "spouse_situation": "spouse_pension_le_174"
+   },
+   "expected": {
+    "taxable_monthly": 3000.0,
+    "annual_gross": 36000.0,
+    "professional_expenses": 6070.0,
+    "net_annual": 29930.0,
+    "allocated_to_spouse": 8979.0,
+    "tax_a": 2401.88,
+    "tax_b": 6285.08,
+    "basic_tax": 2711.0,
+    "children_reduction": 0.0,
+    "other_family_reduction": 0.0,
+    "family_reductions_applied": 0.0,
+    "annual_tax": 2711.0,
+    "monthly_withholding_before_other_reductions": 225.92,
+    "group_insurance_reduction_applied": 0.0,
+    "work_bonus_reduction": 0.0,
+    "work_bonus_reduction_applied": 0.0,
+    "withholding": 225.92
+   }
+  },
+  {
+   "name": "jan spouse no income",
+   "period": "2026_01",
+   "input": {
+    "pay_date": "2026-03-15",
+    "social_contributions": 0,
+    "gross_monthly": 3000,
+    "spouse_situation": "spouse_no_income"
+   },
+   "expected": {
+    "taxable_monthly": 3000.0,
+    "annual_gross": 36000.0,
+    "professional_expenses": 6070.0,
+    "net_annual": 29930.0,
+    "allocated_to_spouse": 8979.0,
+    "tax_a": 2401.88,
+    "tax_b": 6285.08,
+    "basic_tax": 2711.0,
+    "children_reduction": 0.0,
+    "other_family_reduction": 0.0,
+    "family_reductions_applied": 0.0,
+    "annual_tax": 2711.0,
+    "monthly_withholding_before_other_reductions": 225.92,
+    "group_insurance_reduction_applied": 0.0,
+    "work_bonus_reduction": 0.0,
+    "work_bonus_reduction_applied": 0.0,
+    "withholding": 225.92
+   }
+  },
+  {
+   "name": "jan spouse no income, disabled spouse, self disabled, 1 child",
+   "period": "2026_01",
+   "input": {
+    "pay_date": "2026-03-15",
+    "social_contributions": 0,
+    "gross_monthly": 3000,
+    "spouse_situation": "spouse_no_income",
+    "spouse_disabled": true,
+    "self_disabled": true,
+    "children": 1
+   },
+   "expected": {
+    "taxable_monthly": 3000.0,
+    "annual_gross": 36000.0,
+    "professional_expenses": 6070.0,
+    "net_annual": 29930.0,
+    "allocated_to_spouse": 8979.0,
+    "tax_a": 2401.88,
+    "tax_b": 6285.08,
+    "basic_tax": 2711.0,
+    "children_reduction": 624.0,
+    "other_family_reduction": 1248.0,
+    "family_reductions_applied": 1872.0,
+    "annual_tax": 839.0,
+    "monthly_withholding_before_other_reductions": 69.92,
+    "group_insurance_reduction_applied": 0.0,
+    "work_bonus_reduction": 0.0,
+    "work_bonus_reduction_applied": 0.0,
+    "withholding": 69.92
+   }
+  },
+  {
+   "name": "jan reductions capped at basic tax",
+   "period": "2026_01",
+   "input": {
+    "pay_date": "2026-03-15",
+    "social_contributions": 0,
+    "gross_monthly": 2000,
+    "children": 4
+   },
+   "expected": {
+    "taxable_monthly": 2000.0,
+    "annual_gross": 24000.0,
+    "professional_expenses": 6070.0,
+    "net_annual": 17930.0,
+    "scale_tax": 4992.09,
+    "basic_tax": 2004.11,
+    "children_reduction": 7620.0,
+    "other_family_reduction": 0.0,
+    "family_reductions_applied": 2004.11,
+    "annual_tax": 0.0,
+    "monthly_withholding_before_other_reductions": 0.0,
+    "group_insurance_reduction_applied": 0.0,
+    "work_bonus_reduction": 0.0,
+    "work_bonus_reduction_applied": 0.0,
+    "withholding": 0.0
+   }
+  },
+  {
+   "name": "jan quotient, low wage -> 0",
+   "period": "2026_01",
+   "input": {
+    "pay_date": "2026-03-15",
+    "social_contributions": 0,
+    "gross_monthly": 1800,
+    "spouse_situation": "spouse_no_income"
+   },
+   "expected": {
+    "taxable_monthly": 1800.0,
+    "annual_gross": 21600.0,
+    "professional_expenses": 6070.0,
+    "net_annual": 15530.0,
+    "allocated_to_spouse": 4659.0,
+    "tax_a": 1246.28,
+    "tax_b": 2907.99,
+    "basic_tax": -1821.69,
+    "children_reduction": 0.0,
+    "other_family_reduction": 0.0,
+    "family_reductions_applied": 0.0,
+    "annual_tax": 0.0,
+    "monthly_withholding_before_other_reductions": 0.0,
+    "group_insurance_reduction_applied": 0.0,
+    "work_bonus_reduction": 0.0,
+    "work_bonus_reduction_applied": 0.0,
+    "withholding": 0.0
+   }
+  },
+  {
+   "name": "jan group insurance 50",
+   "period": "2026_01",
+   "input": {
+    "pay_date": "2026-03-15",
+    "social_contributions": 0,
+    "gross_monthly": 3000,
+    "group_insurance_contributions": 50
+   },
+   "expected": {
+    "taxable_monthly": 3000.0,
+    "annual_gross": 36000.0,
+    "professional_expenses": 6070.0,
+    "net_annual": 29930.0,
+    "scale_tax": 10151.1,
+    "basic_tax": 7163.12,
+    "children_reduction": 0.0,
+    "other_family_reduction": 0.0,
+    "family_reductions_applied": 0.0,
+    "annual_tax": 7163.12,
+    "monthly_withholding_before_other_reductions": 596.93,
+    "group_insurance_reduction_applied": 15.0,
+    "work_bonus_reduction": 0.0,
+    "work_bonus_reduction_applied": 0.0,
+    "withholding": 581.93
+   }
+  },
+  {
+   "name": "jan work bonus A 100 B 150",
+   "period": "2026_01",
+   "input": {
+    "pay_date": "2026-03-15",
+    "social_contributions": 0,
+    "gross_monthly": 2200,
+    "work_bonus_luik_a": 100,
+    "work_bonus_luik_b": 150
+   },
+   "expected": {
+    "taxable_monthly": 2200.0,
+    "annual_gross": 26400.0,
+    "professional_expenses": 6070.0,
+    "net_annual": 20330.0,
+    "scale_tax": 6019.29,
+    "basic_tax": 3031.31,
+    "children_reduction": 0.0,
+    "other_family_reduction": 0.0,
+    "family_reductions_applied": 0.0,
+    "annual_tax": 3031.31,
+    "monthly_withholding_before_other_reductions": 252.61,
+    "group_insurance_reduction_applied": 0.0,
+    "work_bonus_reduction": 111.95,
+    "work_bonus_reduction_applied": 111.95,
+    "withholding": 140.66
+   }
+  },
+  {
+   "name": "jan work bonus clamps to zero",
+   "period": "2026_01",
+   "input": {
+    "pay_date": "2026-03-15",
+    "social_contributions": 0,
+    "gross_monthly": 1750,
+    "work_bonus_luik_a": 150,
+    "work_bonus_luik_b": 250
+   },
+   "expected": {
+    "taxable_monthly": 1750.0,
+    "annual_gross": 21000.0,
+    "professional_expenses": 6070.0,
+    "net_annual": 14930.0,
+    "scale_tax": 3993.78,
+    "basic_tax": 1005.8,
+    "children_reduction": 0.0,
+    "other_family_reduction": 0.0,
+    "family_reductions_applied": 0.0,
+    "annual_tax": 1005.8,
+    "monthly_withholding_before_other_reductions": 83.82,
+    "group_insurance_reduction_applied": 0.0,
+    "work_bonus_reduction": 181.06,
+    "work_bonus_reduction_applied": 83.82,
+    "withholding": 0.0
+   }
+  },
+  {
+   "name": "nov single taxable 1000",
+   "period": "2026_11",
+   "input": {
+    "pay_date": "2026-11-25",
+    "social_contributions": 0,
+    "gross_monthly": 1000
+   },
+   "expected": {
+    "taxable_monthly": 1000.0,
+    "annual_gross": 12000.0,
+    "professional_expenses": 3600.0,
+    "net_annual": 8400.0,
+    "scale_tax": 2247.0,
+    "basic_tax": -842.63,
+    "children_reduction": 0.0,
+    "other_family_reduction": 0.0,
+    "family_reductions_applied": 0.0,
+    "annual_tax": 0.0,
+    "monthly_withholding_before_other_reductions": 0.0,
+    "group_insurance_reduction_applied": 0.0,
+    "work_bonus_reduction": 0.0,
+    "work_bonus_reduction_applied": 0.0,
+    "withholding": 0.0
+   }
+  },
+  {
+   "name": "nov single taxable 1329.76",
+   "period": "2026_11",
+   "input": {
+    "pay_date": "2026-11-25",
+    "social_contributions": 0,
+    "gross_monthly": 1329.76
+   },
+   "expected": {
+    "taxable_monthly": 1329.76,
+    "annual_gross": 15957.12,
+    "professional_expenses": 4787.14,
+    "net_annual": 11169.98,
+    "scale_tax": 2987.97,
+    "basic_tax": -101.66,
+    "children_reduction": 0.0,
+    "other_family_reduction": 0.0,
+    "family_reductions_applied": 0.0,
+    "annual_tax": 0.0,
+    "monthly_withholding_before_other_reductions": 0.0,
+    "group_insurance_reduction_applied": 0.0,
+    "work_bonus_reduction": 0.0,
+    "work_bonus_reduction_applied": 0.0,
+    "withholding": 0.0
+   }
+  },
+  {
+   "name": "nov single taxable 1329.77",
+   "period": "2026_11",
+   "input": {
+    "pay_date": "2026-11-25",
+    "social_contributions": 0,
+    "gross_monthly": 1329.77
+   },
+   "expected": {
+    "taxable_monthly": 1329.77,
+    "annual_gross": 15957.24,
+    "professional_expenses": 4787.17,
+    "net_annual": 11170.07,
+    "scale_tax": 2987.99,
+    "basic_tax": -101.64,
+    "children_reduction": 0.0,
+    "other_family_reduction": 0.0,
+    "family_reductions_applied": 0.0,
+    "annual_tax": 0.0,
+    "monthly_withholding_before_other_reductions": 0.0,
+    "group_insurance_reduction_applied": 0.0,
+    "work_bonus_reduction": 0.0,
+    "work_bonus_reduction_applied": 0.0,
+    "withholding": 0.0
+   }
+  },
+  {
+   "name": "nov single taxable 1686.1",
+   "period": "2026_11",
+   "input": {
+    "pay_date": "2026-11-25",
+    "social_contributions": 0,
+    "gross_monthly": 1686.1
+   },
+   "expected": {
+    "taxable_monthly": 1686.1,
+    "annual_gross": 20233.2,
+    "professional_expenses": 6069.96,
+    "net_annual": 14163.24,
+    "scale_tax": 3788.67,
+    "basic_tax": 699.04,
+    "children_reduction": 0.0,
+    "other_family_reduction": 0.0,
+    "family_reductions_applied": 0.0,
+    "annual_tax": 699.04,
+    "monthly_withholding_before_other_reductions": 58.25,
+    "group_insurance_reduction_applied": 0.0,
+    "work_bonus_reduction": 0.0,
+    "work_bonus_reduction_applied": 0.0,
+    "withholding": 58.25
+   }
+  },
+  {
+   "name": "nov single taxable 1686.11",
+   "period": "2026_11",
+   "input": {
+    "pay_date": "2026-11-25",
+    "social_contributions": 0,
+    "gross_monthly": 1686.11
+   },
+   "expected": {
+    "taxable_monthly": 1686.11,
+    "annual_gross": 20233.32,
+    "professional_expenses": 6070.0,
+    "net_annual": 14163.32,
+    "scale_tax": 3788.69,
+    "basic_tax": 699.06,
+    "children_reduction": 0.0,
+    "other_family_reduction": 0.0,
+    "family_reductions_applied": 0.0,
+    "annual_tax": 699.06,
+    "monthly_withholding_before_other_reductions": 58.26,
+    "group_insurance_reduction_applied": 0.0,
+    "work_bonus_reduction": 0.0,
+    "work_bonus_reduction_applied": 0.0,
+    "withholding": 58.26
+   }
+  },
+  {
+   "name": "nov single taxable 1898.33",
+   "period": "2026_11",
+   "input": {
+    "pay_date": "2026-11-25",
+    "social_contributions": 0,
+    "gross_monthly": 1898.33
+   },
+   "expected": {
+    "taxable_monthly": 1898.33,
+    "annual_gross": 22779.96,
+    "professional_expenses": 6070.0,
+    "net_annual": 16709.96,
+    "scale_tax": 4469.91,
+    "basic_tax": 1380.28,
+    "children_reduction": 0.0,
+    "other_family_reduction": 0.0,
+    "family_reductions_applied": 0.0,
+    "annual_tax": 1380.28,
+    "monthly_withholding_before_other_reductions": 115.02,
+    "group_insurance_reduction_applied": 0.0,
+    "work_bonus_reduction": 0.0,
+    "work_bonus_reduction_applied": 0.0,
+    "withholding": 115.02
+   }
+  },
+  {
+   "name": "nov single taxable 1898.34",
+   "period": "2026_11",
+   "input": {
+    "pay_date": "2026-11-25",
+    "social_contributions": 0,
+    "gross_monthly": 1898.34
+   },
+   "expected": {
+    "taxable_monthly": 1898.34,
+    "annual_gross": 22780.08,
+    "professional_expenses": 6070.0,
+    "net_annual": 16710.08,
+    "scale_tax": 4469.96,
+    "basic_tax": 1380.33,
+    "children_reduction": 0.0,
+    "other_family_reduction": 0.0,
+    "family_reductions_applied": 0.0,
+    "annual_tax": 1380.33,
+    "monthly_withholding_before_other_reductions": 115.03,
+    "group_insurance_reduction_applied": 0.0,
+    "work_bonus_reduction": 0.0,
+    "work_bonus_reduction_applied": 0.0,
+    "withholding": 115.03
+   }
+  },
+  {
+   "name": "nov single taxable 2964.16",
+   "period": "2026_11",
+   "input": {
+    "pay_date": "2026-11-25",
+    "social_contributions": 0,
+    "gross_monthly": 2964.16
+   },
+   "expected": {
+    "taxable_monthly": 2964.16,
+    "annual_gross": 35569.92,
+    "professional_expenses": 6070.0,
+    "net_annual": 29499.92,
+    "scale_tax": 9944.02,
+    "basic_tax": 6854.39,
+    "children_reduction": 0.0,
+    "other_family_reduction": 0.0,
+    "family_reductions_applied": 0.0,
+    "annual_tax": 6854.39,
+    "monthly_withholding_before_other_reductions": 571.2,
+    "group_insurance_reduction_applied": 0.0,
+    "work_bonus_reduction": 0.0,
+    "work_bonus_reduction_applied": 0.0,
+    "withholding": 571.2
+   }
+  },
+  {
+   "name": "nov single taxable 2964.17",
+   "period": "2026_11",
+   "input": {
+    "pay_date": "2026-11-25",
+    "social_contributions": 0,
+    "gross_monthly": 2964.17
+   },
+   "expected": {
+    "taxable_monthly": 2964.17,
+    "annual_gross": 35570.04,
+    "professional_expenses": 6070.0,
+    "net_annual": 29500.04,
+    "scale_tax": 9944.07,
+    "basic_tax": 6854.44,
+    "children_reduction": 0.0,
+    "other_family_reduction": 0.0,
+    "family_reductions_applied": 0.0,
+    "annual_tax": 6854.44,
+    "monthly_withholding_before_other_reductions": 571.2,
+    "group_insurance_reduction_applied": 0.0,
+    "work_bonus_reduction": 0.0,
+    "work_bonus_reduction_applied": 0.0,
+    "withholding": 571.2
+   }
+  },
+  {
+   "name": "nov single taxable 4760",
+   "period": "2026_11",
+   "input": {
+    "pay_date": "2026-11-25",
+    "social_contributions": 0,
+    "gross_monthly": 4760
+   },
+   "expected": {
+    "taxable_monthly": 4760.0,
+    "annual_gross": 57120.0,
+    "professional_expenses": 6070.0,
+    "net_annual": 51050.0,
+    "scale_tax": 20320.38,
+    "basic_tax": 17230.75,
+    "children_reduction": 0.0,
+    "other_family_reduction": 0.0,
+    "family_reductions_applied": 0.0,
+    "annual_tax": 17230.75,
+    "monthly_withholding_before_other_reductions": 1435.9,
+    "group_insurance_reduction_applied": 0.0,
+    "work_bonus_reduction": 0.0,
+    "work_bonus_reduction_applied": 0.0,
+    "withholding": 1435.9
+   }
+  },
+  {
+   "name": "nov single taxable 4760.01",
+   "period": "2026_11",
+   "input": {
+    "pay_date": "2026-11-25",
+    "social_contributions": 0,
+    "gross_monthly": 4760.01
+   },
+   "expected": {
+    "taxable_monthly": 4760.01,
+    "annual_gross": 57120.12,
+    "professional_expenses": 6070.0,
+    "net_annual": 51050.12,
+    "scale_tax": 20320.44,
+    "basic_tax": 17230.81,
+    "children_reduction": 0.0,
+    "other_family_reduction": 0.0,
+    "family_reductions_applied": 0.0,
+    "annual_tax": 17230.81,
+    "monthly_withholding_before_other_reductions": 1435.9,
+    "group_insurance_reduction_applied": 0.0,
+    "work_bonus_reduction": 0.0,
+    "work_bonus_reduction_applied": 0.0,
+    "withholding": 1435.9
+   }
+  },
+  {
+   "name": "nov single taxable 8000",
+   "period": "2026_11",
+   "input": {
+    "pay_date": "2026-11-25",
+    "social_contributions": 0,
+    "gross_monthly": 8000
+   },
+   "expected": {
+    "taxable_monthly": 8000.0,
+    "annual_gross": 96000.0,
+    "professional_expenses": 6070.0,
+    "net_annual": 89930.0,
+    "scale_tax": 41121.18,
+    "basic_tax": 38031.55,
+    "children_reduction": 0.0,
+    "other_family_reduction": 0.0,
+    "family_reductions_applied": 0.0,
+    "annual_tax": 38031.55,
+    "monthly_withholding_before_other_reductions": 3169.3,
+    "group_insurance_reduction_applied": 0.0,
+    "work_bonus_reduction": 0.0,
+    "work_bonus_reduction_applied": 0.0,
+    "withholding": 3169.3
+   }
+  },
+  {
+   "name": "nov gross 3000 minus social 392.10",
+   "period": "2026_11",
+   "input": {
+    "pay_date": "2026-11-25",
+    "social_contributions": 392.1,
+    "gross_monthly": 3000
+   },
+   "expected": {
+    "taxable_monthly": 2607.9,
+    "annual_gross": 31294.8,
+    "professional_expenses": 6070.0,
+    "net_annual": 25224.8,
+    "scale_tax": 8114.26,
+    "basic_tax": 5024.63,
+    "children_reduction": 0.0,
+    "other_family_reduction": 0.0,
+    "family_reductions_applied": 0.0,
+    "annual_tax": 5024.63,
+    "monthly_withholding_before_other_reductions": 418.72,
+    "group_insurance_reduction_applied": 0.0,
+    "work_bonus_reduction": 0.0,
+    "work_bonus_reduction_applied": 0.0,
+    "withholding": 418.72
+   }
+  },
+  {
+   "name": "nov single 1 children",
+   "period": "2026_11",
+   "input": {
+    "pay_date": "2026-11-25",
+    "social_contributions": 0,
+    "gross_monthly": 3500,
+    "children": 1
+   },
+   "expected": {
+    "taxable_monthly": 3500.0,
+    "annual_gross": 42000.0,
+    "professional_expenses": 6070.0,
+    "net_annual": 35930.0,
+    "scale_tax": 13040.1,
+    "basic_tax": 9950.47,
+    "children_reduction": 684.0,
+    "other_family_reduction": 0.0,
+    "family_reductions_applied": 684.0,
+    "annual_tax": 9266.47,
+    "monthly_withholding_before_other_reductions": 772.21,
+    "group_insurance_reduction_applied": 0.0,
+    "work_bonus_reduction": 0.0,
+    "work_bonus_reduction_applied": 0.0,
+    "withholding": 772.21
+   }
+  },
+  {
+   "name": "nov single 2 children",
+   "period": "2026_11",
+   "input": {
+    "pay_date": "2026-11-25",
+    "social_contributions": 0,
+    "gross_monthly": 3500,
+    "children": 2
+   },
+   "expected": {
+    "taxable_monthly": 3500.0,
+    "annual_gross": 42000.0,
+    "professional_expenses": 6070.0,
+    "net_annual": 35930.0,
+    "scale_tax": 13040.1,
+    "basic_tax": 9950.47,
+    "children_reduction": 1644.0,
+    "other_family_reduction": 0.0,
+    "family_reductions_applied": 1644.0,
+    "annual_tax": 8306.47,
+    "monthly_withholding_before_other_reductions": 692.21,
+    "group_insurance_reduction_applied": 0.0,
+    "work_bonus_reduction": 0.0,
+    "work_bonus_reduction_applied": 0.0,
+    "withholding": 692.21
+   }
+  },
+  {
+   "name": "nov single 3 children",
+   "period": "2026_11",
+   "input": {
+    "pay_date": "2026-11-25",
+    "social_contributions": 0,
+    "gross_monthly": 3500,
+    "children": 3
+   },
+   "expected": {
+    "taxable_monthly": 3500.0,
+    "annual_gross": 42000.0,
+    "professional_expenses": 6070.0,
+    "net_annual": 35930.0,
+    "scale_tax": 13040.1,
+    "basic_tax": 9950.47,
+    "children_reduction": 4344.0,
+    "other_family_reduction": 0.0,
+    "family_reductions_applied": 4344.0,
+    "annual_tax": 5606.47,
+    "monthly_withholding_before_other_reductions": 467.21,
+    "group_insurance_reduction_applied": 0.0,
+    "work_bonus_reduction": 0.0,
+    "work_bonus_reduction_applied": 0.0,
+    "withholding": 467.21
+   }
+  },
+  {
+   "name": "nov single 4 children",
+   "period": "2026_11",
+   "input": {
+    "pay_date": "2026-11-25",
+    "social_contributions": 0,
+    "gross_monthly": 3500,
+    "children": 4
+   },
+   "expected": {
+    "taxable_monthly": 3500.0,
+    "annual_gross": 42000.0,
+    "professional_expenses": 6070.0,
+    "net_annual": 35930.0,
+    "scale_tax": 13040.1,
+    "basic_tax": 9950.47,
+    "children_reduction": 7488.0,
+    "other_family_reduction": 0.0,
+    "family_reductions_applied": 7488.0,
+    "annual_tax": 2462.47,
+    "monthly_withholding_before_other_reductions": 205.21,
+    "group_insurance_reduction_applied": 0.0,
+    "work_bonus_reduction": 0.0,
+    "work_bonus_reduction_applied": 0.0,
+    "withholding": 205.21
+   }
+  },
+  {
+   "name": "nov single 5 children",
+   "period": "2026_11",
+   "input": {
+    "pay_date": "2026-11-25",
+    "social_contributions": 0,
+    "gross_monthly": 3500,
+    "children": 5
+   },
+   "expected": {
+    "taxable_monthly": 3500.0,
+    "annual_gross": 42000.0,
+    "professional_expenses": 6070.0,
+    "net_annual": 35930.0,
+    "scale_tax": 13040.1,
+    "basic_tax": 9950.47,
+    "children_reduction": 10884.0,
+    "other_family_reduction": 0.0,
+    "family_reductions_applied": 9950.47,
+    "annual_tax": 0.0,
+    "monthly_withholding_before_other_reductions": 0.0,
+    "group_insurance_reduction_applied": 0.0,
+    "work_bonus_reduction": 0.0,
+    "work_bonus_reduction_applied": 0.0,
+    "withholding": 0.0
+   }
+  },
+  {
+   "name": "nov single 6 children",
+   "period": "2026_11",
+   "input": {
+    "pay_date": "2026-11-25",
+    "social_contributions": 0,
+    "gross_monthly": 3500,
+    "children": 6
+   },
+   "expected": {
+    "taxable_monthly": 3500.0,
+    "annual_gross": 42000.0,
+    "professional_expenses": 6070.0,
+    "net_annual": 35930.0,
+    "scale_tax": 13040.1,
+    "basic_tax": 9950.47,
+    "children_reduction": 14292.0,
+    "other_family_reduction": 0.0,
+    "family_reductions_applied": 9950.47,
+    "annual_tax": 0.0,
+    "monthly_withholding_before_other_reductions": 0.0,
+    "group_insurance_reduction_applied": 0.0,
+    "work_bonus_reduction": 0.0,
+    "work_bonus_reduction_applied": 0.0,
+    "withholding": 0.0
+   }
+  },
+  {
+   "name": "nov single 7 children",
+   "period": "2026_11",
+   "input": {
+    "pay_date": "2026-11-25",
+    "social_contributions": 0,
+    "gross_monthly": 3500,
+    "children": 7
+   },
+   "expected": {
+    "taxable_monthly": 3500.0,
+    "annual_gross": 42000.0,
+    "professional_expenses": 6070.0,
+    "net_annual": 35930.0,
+    "scale_tax": 13040.1,
+    "basic_tax": 9950.47,
+    "children_reduction": 17712.0,
+    "other_family_reduction": 0.0,
+    "family_reductions_applied": 9950.47,
+    "annual_tax": 0.0,
+    "monthly_withholding_before_other_reductions": 0.0,
+    "group_insurance_reduction_applied": 0.0,
+    "work_bonus_reduction": 0.0,
+    "work_bonus_reduction_applied": 0.0,
+    "withholding": 0.0
+   }
+  },
+  {
+   "name": "nov single 8 children",
+   "period": "2026_11",
+   "input": {
+    "pay_date": "2026-11-25",
+    "social_contributions": 0,
+    "gross_monthly": 3500,
+    "children": 8
+   },
+   "expected": {
+    "taxable_monthly": 3500.0,
+    "annual_gross": 42000.0,
+    "professional_expenses": 6070.0,
+    "net_annual": 35930.0,
+    "scale_tax": 13040.1,
+    "basic_tax": 9950.47,
+    "children_reduction": 21492.0,
+    "other_family_reduction": 0.0,
+    "family_reductions_applied": 9950.47,
+    "annual_tax": 0.0,
+    "monthly_withholding_before_other_reductions": 0.0,
+    "group_insurance_reduction_applied": 0.0,
+    "work_bonus_reduction": 0.0,
+    "work_bonus_reduction_applied": 0.0,
+    "withholding": 0.0
+   }
+  },
+  {
+   "name": "nov single 9 children",
+   "period": "2026_11",
+   "input": {
+    "pay_date": "2026-11-25",
+    "social_contributions": 0,
+    "gross_monthly": 3500,
+    "children": 9
+   },
+   "expected": {
+    "taxable_monthly": 3500.0,
+    "annual_gross": 42000.0,
+    "professional_expenses": 6070.0,
+    "net_annual": 35930.0,
+    "scale_tax": 13040.1,
+    "basic_tax": 9950.47,
+    "children_reduction": 25272.0,
+    "other_family_reduction": 0.0,
+    "family_reductions_applied": 9950.47,
+    "annual_tax": 0.0,
+    "monthly_withholding_before_other_reductions": 0.0,
+    "group_insurance_reduction_applied": 0.0,
+    "work_bonus_reduction": 0.0,
+    "work_bonus_reduction_applied": 0.0,
+    "withholding": 0.0
+   }
+  },
+  {
+   "name": "nov 2 children, 1 disabled (counts 3)",
+   "period": "2026_11",
+   "input": {
+    "pay_date": "2026-11-25",
+    "social_contributions": 0,
+    "gross_monthly": 3500,
+    "children": 2,
+    "children_disabled": 1
+   },
+   "expected": {
+    "taxable_monthly": 3500.0,
+    "annual_gross": 42000.0,
+    "professional_expenses": 6070.0,
+    "net_annual": 35930.0,
+    "scale_tax": 13040.1,
+    "basic_tax": 9950.47,
+    "children_reduction": 4344.0,
+    "other_family_reduction": 0.0,
+    "family_reductions_applied": 4344.0,
+    "annual_tax": 5606.47,
+    "monthly_withholding_before_other_reductions": 467.21,
+    "group_insurance_reduction_applied": 0.0,
+    "work_bonus_reduction": 0.0,
+    "work_bonus_reduction_applied": 0.0,
+    "withholding": 467.21
+   }
+  },
+  {
+   "name": "nov single parent 1 child",
+   "period": "2026_11",
+   "input": {
+    "pay_date": "2026-11-25",
+    "social_contributions": 0,
+    "gross_monthly": 3000,
+    "children": 1,
+    "single_parent": true
+   },
+   "expected": {
+    "taxable_monthly": 3000.0,
+    "annual_gross": 36000.0,
+    "professional_expenses": 6070.0,
+    "net_annual": 29930.0,
+    "scale_tax": 10151.1,
+    "basic_tax": 7061.47,
+    "children_reduction": 684.0,
+    "other_family_reduction": 636.0,
+    "family_reductions_applied": 1320.0,
+    "annual_tax": 5741.47,
+    "monthly_withholding_before_other_reductions": 478.46,
+    "group_insurance_reduction_applied": 0.0,
+    "work_bonus_reduction": 0.0,
+    "work_bonus_reduction_applied": 0.0,
+    "withholding": 478.46
+   }
+  },
+  {
+   "name": "nov self disabled",
+   "period": "2026_11",
+   "input": {
+    "pay_date": "2026-11-25",
+    "social_contributions": 0,
+    "gross_monthly": 3000,
+    "self_disabled": true
+   },
+   "expected": {
+    "taxable_monthly": 3000.0,
+    "annual_gross": 36000.0,
+    "professional_expenses": 6070.0,
+    "net_annual": 29930.0,
+    "scale_tax": 10151.1,
+    "basic_tax": 7061.47,
+    "children_reduction": 0.0,
+    "other_family_reduction": 648.0,
+    "family_reductions_applied": 648.0,
+    "annual_tax": 6413.47,
+    "monthly_withholding_before_other_reductions": 534.46,
+    "group_insurance_reduction_applied": 0.0,
+    "work_bonus_reduction": 0.0,
+    "work_bonus_reduction_applied": 0.0,
+    "withholding": 534.46
+   }
+  },
+  {
+   "name": "nov dependant 66+ in care",
+   "period": "2026_11",
+   "input": {
+    "pay_date": "2026-11-25",
+    "social_contributions": 0,
+    "gross_monthly": 3000,
+    "dependents_66_care": 1
+   },
+   "expected": {
+    "taxable_monthly": 3000.0,
+    "annual_gross": 36000.0,
+    "professional_expenses": 6070.0,
+    "net_annual": 29930.0,
+    "scale_tax": 10151.1,
+    "basic_tax": 7061.47,
+    "children_reduction": 0.0,
+    "other_family_reduction": 1992.0,
+    "family_reductions_applied": 1992.0,
+    "annual_tax": 5069.47,
+    "monthly_withholding_before_other_reductions": 422.46,
+    "group_insurance_reduction_applied": 0.0,
+    "work_bonus_reduction": 0.0,
+    "work_bonus_reduction_applied": 0.0,
+    "withholding": 422.46
+   }
+  },
+  {
+   "name": "nov 2 other dependants, 1 disabled",
+   "period": "2026_11",
+   "input": {
+    "pay_date": "2026-11-25",
+    "social_contributions": 0,
+    "gross_monthly": 3000,
+    "other_dependents": 2,
+    "other_dependents_disabled": 1
+   },
+   "expected": {
+    "taxable_monthly": 3000.0,
+    "annual_gross": 36000.0,
+    "professional_expenses": 6070.0,
+    "net_annual": 29930.0,
+    "scale_tax": 10151.1,
+    "basic_tax": 7061.47,
+    "children_reduction": 0.0,
+    "other_family_reduction": 1908.0,
+    "family_reductions_applied": 1908.0,
+    "annual_tax": 5153.47,
+    "monthly_withholding_before_other_reductions": 429.46,
+    "group_insurance_reduction_applied": 0.0,
+    "work_bonus_reduction": 0.0,
+    "work_bonus_reduction_applied": 0.0,
+    "withholding": 429.46
+   }
+  },
+  {
+   "name": "nov spouse with income",
+   "period": "2026_11",
+   "input": {
+    "pay_date": "2026-11-25",
+    "social_contributions": 0,
+    "gross_monthly": 3000,
+    "spouse_situation": "spouse_with_income",
+    "children": 2
+   },
+   "expected": {
+    "taxable_monthly": 3000.0,
+    "annual_gross": 36000.0,
+    "professional_expenses": 6070.0,
+    "net_annual": 29930.0,
+    "scale_tax": 10151.1,
+    "basic_tax": 7061.47,
+    "children_reduction": 1644.0,
+    "other_family_reduction": 0.0,
+    "family_reductions_applied": 1644.0,
+    "annual_tax": 5417.47,
+    "monthly_withholding_before_other_reductions": 451.46,
+    "group_insurance_reduction_applied": 0.0,
+    "work_bonus_reduction": 0.0,
+    "work_bonus_reduction_applied": 0.0,
+    "withholding": 451.46
+   }
+  },
+  {
+   "name": "nov spouse other income <= 290",
+   "period": "2026_11",
+   "input": {
+    "pay_date": "2026-11-25",
+    "social_contributions": 0,
+    "gross_monthly": 3000,
+    "spouse_situation": "spouse_other_income_le_290"
+   },
+   "expected": {
+    "taxable_monthly": 3000.0,
+    "annual_gross": 36000.0,
+    "professional_expenses": 6070.0,
+    "net_annual": 29930.0,
+    "scale_tax": 10151.1,
+    "basic_tax": 7061.47,
+    "children_reduction": 0.0,
+    "other_family_reduction": 1740.0,
+    "family_reductions_applied": 1740.0,
+    "annual_tax": 5321.47,
+    "monthly_withholding_before_other_reductions": 443.46,
+    "group_insurance_reduction_applied": 0.0,
+    "work_bonus_reduction": 0.0,
+    "work_bonus_reduction_applied": 0.0,
+    "withholding": 443.46
+   }
+  },
+  {
+   "name": "nov spouse pension <= 579",
+   "period": "2026_11",
+   "input": {
+    "pay_date": "2026-11-25",
+    "social_contributions": 0,
+    "gross_monthly": 3000,
+    "spouse_situation": "spouse_pension_le_579"
+   },
+   "expected": {
+    "taxable_monthly": 3000.0,
+    "annual_gross": 36000.0,
+    "professional_expenses": 6070.0,
+    "net_annual": 29930.0,
+    "scale_tax": 10151.1,
+    "basic_tax": 7061.47,
+    "children_reduction": 0.0,
+    "other_family_reduction": 3474.0,
+    "family_reductions_applied": 3474.0,
+    "annual_tax": 3587.47,
+    "monthly_withholding_before_other_reductions": 298.96,
+    "group_insurance_reduction_applied": 0.0,
+    "work_bonus_reduction": 0.0,
+    "work_bonus_reduction_applied": 0.0,
+    "withholding": 298.96
+   }
+  },
+  {
+   "name": "nov spouse pension <= 174 (quotient)",
+   "period": "2026_11",
+   "input": {
+    "pay_date": "2026-11-25",
+    "social_contributions": 0,
+    "gross_monthly": 3000,
+    "spouse_situation": "spouse_pension_le_174"
+   },
+   "expected": {
+    "taxable_monthly": 3000.0,
+    "annual_gross": 36000.0,
+    "professional_expenses": 6070.0,
+    "net_annual": 29930.0,
+    "allocated_to_spouse": 8979.0,
+    "tax_a": 2401.88,
+    "tax_b": 6285.08,
+    "basic_tax": 2507.7,
+    "children_reduction": 0.0,
+    "other_family_reduction": 0.0,
+    "family_reductions_applied": 0.0,
+    "annual_tax": 2507.7,
+    "monthly_withholding_before_other_reductions": 208.98,
+    "group_insurance_reduction_applied": 0.0,
+    "work_bonus_reduction": 0.0,
+    "work_bonus_reduction_applied": 0.0,
+    "withholding": 208.98
+   }
+  },
+  {
+   "name": "nov spouse no income",
+   "period": "2026_11",
+   "input": {
+    "pay_date": "2026-11-25",
+    "social_contributions": 0,
+    "gross_monthly": 3000,
+    "spouse_situation": "spouse_no_income"
+   },
+   "expected": {
+    "taxable_monthly": 3000.0,
+    "annual_gross": 36000.0,
+    "professional_expenses": 6070.0,
+    "net_annual": 29930.0,
+    "allocated_to_spouse": 8979.0,
+    "tax_a": 2401.88,
+    "tax_b": 6285.08,
+    "basic_tax": 2507.7,
+    "children_reduction": 0.0,
+    "other_family_reduction": 0.0,
+    "family_reductions_applied": 0.0,
+    "annual_tax": 2507.7,
+    "monthly_withholding_before_other_reductions": 208.98,
+    "group_insurance_reduction_applied": 0.0,
+    "work_bonus_reduction": 0.0,
+    "work_bonus_reduction_applied": 0.0,
+    "withholding": 208.98
+   }
+  },
+  {
+   "name": "nov spouse no income, disabled spouse, self disabled, 1 child",
+   "period": "2026_11",
+   "input": {
+    "pay_date": "2026-11-25",
+    "social_contributions": 0,
+    "gross_monthly": 3000,
+    "spouse_situation": "spouse_no_income",
+    "spouse_disabled": true,
+    "self_disabled": true,
+    "children": 1
+   },
+   "expected": {
+    "taxable_monthly": 3000.0,
+    "annual_gross": 36000.0,
+    "professional_expenses": 6070.0,
+    "net_annual": 29930.0,
+    "allocated_to_spouse": 8979.0,
+    "tax_a": 2401.88,
+    "tax_b": 6285.08,
+    "basic_tax": 2507.7,
+    "children_reduction": 684.0,
+    "other_family_reduction": 1284.0,
+    "family_reductions_applied": 1968.0,
+    "annual_tax": 539.7,
+    "monthly_withholding_before_other_reductions": 44.98,
+    "group_insurance_reduction_applied": 0.0,
+    "work_bonus_reduction": 0.0,
+    "work_bonus_reduction_applied": 0.0,
+    "withholding": 44.98
+   }
+  },
+  {
+   "name": "nov reductions capped at basic tax",
+   "period": "2026_11",
+   "input": {
+    "pay_date": "2026-11-25",
+    "social_contributions": 0,
+    "gross_monthly": 2000,
+    "children": 4
+   },
+   "expected": {
+    "taxable_monthly": 2000.0,
+    "annual_gross": 24000.0,
+    "professional_expenses": 6070.0,
+    "net_annual": 17930.0,
+    "scale_tax": 4992.09,
+    "basic_tax": 1902.46,
+    "children_reduction": 7488.0,
+    "other_family_reduction": 0.0,
+    "family_reductions_applied": 1902.46,
+    "annual_tax": 0.0,
+    "monthly_withholding_before_other_reductions": 0.0,
+    "group_insurance_reduction_applied": 0.0,
+    "work_bonus_reduction": 0.0,
+    "work_bonus_reduction_applied": 0.0,
+    "withholding": 0.0
+   }
+  },
+  {
+   "name": "nov quotient, low wage -> 0",
+   "period": "2026_11",
+   "input": {
+    "pay_date": "2026-11-25",
+    "social_contributions": 0,
+    "gross_monthly": 1800,
+    "spouse_situation": "spouse_no_income"
+   },
+   "expected": {
+    "taxable_monthly": 1800.0,
+    "annual_gross": 21600.0,
+    "professional_expenses": 6070.0,
+    "net_annual": 15530.0,
+    "allocated_to_spouse": 4659.0,
+    "tax_a": 1246.28,
+    "tax_b": 2907.99,
+    "basic_tax": -2024.99,
+    "children_reduction": 0.0,
+    "other_family_reduction": 0.0,
+    "family_reductions_applied": 0.0,
+    "annual_tax": 0.0,
+    "monthly_withholding_before_other_reductions": 0.0,
+    "group_insurance_reduction_applied": 0.0,
+    "work_bonus_reduction": 0.0,
+    "work_bonus_reduction_applied": 0.0,
+    "withholding": 0.0
+   }
+  },
+  {
+   "name": "nov group insurance 50",
+   "period": "2026_11",
+   "input": {
+    "pay_date": "2026-11-25",
+    "social_contributions": 0,
+    "gross_monthly": 3000,
+    "group_insurance_contributions": 50
+   },
+   "expected": {
+    "taxable_monthly": 3000.0,
+    "annual_gross": 36000.0,
+    "professional_expenses": 6070.0,
+    "net_annual": 29930.0,
+    "scale_tax": 10151.1,
+    "basic_tax": 7061.47,
+    "children_reduction": 0.0,
+    "other_family_reduction": 0.0,
+    "family_reductions_applied": 0.0,
+    "annual_tax": 7061.47,
+    "monthly_withholding_before_other_reductions": 588.46,
+    "group_insurance_reduction_applied": 15.0,
+    "work_bonus_reduction": 0.0,
+    "work_bonus_reduction_applied": 0.0,
+    "withholding": 573.46
+   }
+  },
+  {
+   "name": "nov work bonus A 100 B 150",
+   "period": "2026_11",
+   "input": {
+    "pay_date": "2026-11-25",
+    "social_contributions": 0,
+    "gross_monthly": 2200,
+    "work_bonus_luik_a": 100,
+    "work_bonus_luik_b": 150
+   },
+   "expected": {
+    "taxable_monthly": 2200.0,
+    "annual_gross": 26400.0,
+    "professional_expenses": 6070.0,
+    "net_annual": 20330.0,
+    "scale_tax": 6019.29,
+    "basic_tax": 2929.66,
+    "children_reduction": 0.0,
+    "other_family_reduction": 0.0,
+    "family_reductions_applied": 0.0,
+    "annual_tax": 2929.66,
+    "monthly_withholding_before_other_reductions": 244.14,
+    "group_insurance_reduction_applied": 0.0,
+    "work_bonus_reduction": 127.64,
+    "work_bonus_reduction_applied": 127.64,
+    "withholding": 116.5
+   }
+  },
+  {
+   "name": "nov work bonus clamps to zero",
+   "period": "2026_11",
+   "input": {
+    "pay_date": "2026-11-25",
+    "social_contributions": 0,
+    "gross_monthly": 1750,
+    "work_bonus_luik_a": 150,
+    "work_bonus_luik_b": 250
+   },
+   "expected": {
+    "taxable_monthly": 1750.0,
+    "annual_gross": 21000.0,
+    "professional_expenses": 6070.0,
+    "net_annual": 14930.0,
+    "scale_tax": 3993.78,
+    "basic_tax": 904.15,
+    "children_reduction": 0.0,
+    "other_family_reduction": 0.0,
+    "family_reductions_applied": 0.0,
+    "annual_tax": 904.15,
+    "monthly_withholding_before_other_reductions": 75.35,
+    "group_insurance_reduction_applied": 0.0,
+    "work_bonus_reduction": 207.21,
+    "work_bonus_reduction_applied": 75.35,
+    "withholding": 0.0
+   }
+  },
+  {
+   "name": "jan quotient cap boundary 4336.38",
+   "period": "2026_01",
+   "input": {
+    "pay_date": "2026-03-15",
+    "social_contributions": 0,
+    "gross_monthly": 4336.38,
+    "spouse_situation": "spouse_no_income"
+   },
+   "expected": {
+    "taxable_monthly": 4336.38,
+    "annual_gross": 52036.56,
+    "professional_expenses": 6070.0,
+    "net_annual": 45966.56,
+    "allocated_to_spouse": 13789.97,
+    "tax_a": 3688.82,
+    "tax_b": 11232.83,
+    "basic_tax": 8945.69,
+    "children_reduction": 0.0,
+    "other_family_reduction": 0.0,
+    "family_reductions_applied": 0.0,
+    "annual_tax": 8945.69,
+    "monthly_withholding_before_other_reductions": 745.47,
+    "group_insurance_reduction_applied": 0.0,
+    "work_bonus_reduction": 0.0,
+    "work_bonus_reduction_applied": 0.0,
+    "withholding": 745.47
+   }
+  },
+  {
+   "name": "jan quotient cap boundary 4336.39",
+   "period": "2026_01",
+   "input": {
+    "pay_date": "2026-03-15",
+    "social_contributions": 0,
+    "gross_monthly": 4336.39,
+    "spouse_situation": "spouse_no_income"
+   },
+   "expected": {
+    "taxable_monthly": 4336.39,
+    "annual_gross": 52036.68,
+    "professional_expenses": 6070.0,
+    "net_annual": 45966.68,
+    "allocated_to_spouse": 13790.0,
+    "tax_a": 3688.83,
+    "tax_b": 11232.87,
+    "basic_tax": 8945.74,
+    "children_reduction": 0.0,
+    "other_family_reduction": 0.0,
+    "family_reductions_applied": 0.0,
+    "annual_tax": 8945.74,
+    "monthly_withholding_before_other_reductions": 745.48,
+    "group_insurance_reduction_applied": 0.0,
+    "work_bonus_reduction": 0.0,
+    "work_bonus_reduction_applied": 0.0,
+    "withholding": 745.48
+   }
+  },
+  {
+   "name": "nov quotient cap other cases 3778.05",
+   "period": "2026_11",
+   "input": {
+    "pay_date": "2026-11-25",
+    "social_contributions": 0,
+    "gross_monthly": 3778.05,
+    "spouse_situation": "spouse_no_income"
+   },
+   "expected": {
+    "taxable_monthly": 3778.05,
+    "annual_gross": 45336.6,
+    "professional_expenses": 6070.0,
+    "net_annual": 39266.6,
+    "allocated_to_spouse": 11779.98,
+    "tax_a": 3151.14,
+    "tax_b": 9082.32,
+    "basic_tax": 6054.2,
+    "children_reduction": 0.0,
+    "other_family_reduction": 0.0,
+    "family_reductions_applied": 0.0,
+    "annual_tax": 6054.2,
+    "monthly_withholding_before_other_reductions": 504.52,
+    "group_insurance_reduction_applied": 0.0,
+    "work_bonus_reduction": 0.0,
+    "work_bonus_reduction_applied": 0.0,
+    "withholding": 504.52
+   }
+  },
+  {
+   "name": "nov quotient cap other cases 3778.06",
+   "period": "2026_11",
+   "input": {
+    "pay_date": "2026-11-25",
+    "social_contributions": 0,
+    "gross_monthly": 3778.06,
+    "spouse_situation": "spouse_no_income"
+   },
+   "expected": {
+    "taxable_monthly": 3778.06,
+    "annual_gross": 45336.72,
+    "professional_expenses": 6070.0,
+    "net_annual": 39266.72,
+    "allocated_to_spouse": 11780.0,
+    "tax_a": 3151.15,
+    "tax_b": 9082.37,
+    "basic_tax": 6054.26,
+    "children_reduction": 0.0,
+    "other_family_reduction": 0.0,
+    "family_reductions_applied": 0.0,
+    "annual_tax": 6054.26,
+    "monthly_withholding_before_other_reductions": 504.52,
+    "group_insurance_reduction_applied": 0.0,
+    "work_bonus_reduction": 0.0,
+    "work_bonus_reduction_applied": 0.0,
+    "withholding": 504.52
+   }
+  },
+  {
+   "name": "nov quotient cap both 66 3778.06",
+   "period": "2026_11",
+   "input": {
+    "pay_date": "2026-11-25",
+    "social_contributions": 0,
+    "gross_monthly": 3778.06,
+    "spouse_situation": "spouse_no_income",
+    "both_spouses_66": true
+   },
+   "expected": {
+    "taxable_monthly": 3778.06,
+    "annual_gross": 45336.72,
+    "professional_expenses": 6070.0,
+    "net_annual": 39266.72,
+    "allocated_to_spouse": 11780.02,
+    "tax_a": 3151.16,
+    "tax_b": 9082.36,
+    "basic_tax": 6054.26,
+    "children_reduction": 0.0,
+    "other_family_reduction": 0.0,
+    "family_reductions_applied": 0.0,
+    "annual_tax": 6054.26,
+    "monthly_withholding_before_other_reductions": 504.52,
+    "group_insurance_reduction_applied": 0.0,
+    "work_bonus_reduction": 0.0,
+    "work_bonus_reduction_applied": 0.0,
+    "withholding": 504.52
+   }
+  },
+  {
+   "name": "nov quotient cap both 66 4058.6",
+   "period": "2026_11",
+   "input": {
+    "pay_date": "2026-11-25",
+    "social_contributions": 0,
+    "gross_monthly": 4058.6,
+    "spouse_situation": "spouse_no_income",
+    "both_spouses_66": true
+   },
+   "expected": {
+    "taxable_monthly": 4058.6,
+    "annual_gross": 48703.2,
+    "professional_expenses": 6070.0,
+    "net_annual": 42633.2,
+    "allocated_to_spouse": 12789.96,
+    "tax_a": 3421.31,
+    "tax_b": 10109.32,
+    "basic_tax": 7351.37,
+    "children_reduction": 0.0,
+    "other_family_reduction": 0.0,
+    "family_reductions_applied": 0.0,
+    "annual_tax": 7351.37,
+    "monthly_withholding_before_other_reductions": 612.61,
+    "group_insurance_reduction_applied": 0.0,
+    "work_bonus_reduction": 0.0,
+    "work_bonus_reduction_applied": 0.0,
+    "withholding": 612.61
+   }
+  },
+  {
+   "name": "nov quotient cap both 66 4058.61",
+   "period": "2026_11",
+   "input": {
+    "pay_date": "2026-11-25",
+    "social_contributions": 0,
+    "gross_monthly": 4058.61,
+    "spouse_situation": "spouse_no_income",
+    "both_spouses_66": true
+   },
+   "expected": {
+    "taxable_monthly": 4058.61,
+    "annual_gross": 48703.32,
+    "professional_expenses": 6070.0,
+    "net_annual": 42633.32,
+    "allocated_to_spouse": 12790.0,
+    "tax_a": 3421.33,
+    "tax_b": 10109.36,
+    "basic_tax": 7351.43,
+    "children_reduction": 0.0,
+    "other_family_reduction": 0.0,
+    "family_reductions_applied": 0.0,
+    "annual_tax": 7351.43,
+    "monthly_withholding_before_other_reductions": 612.62,
+    "group_insurance_reduction_applied": 0.0,
+    "work_bonus_reduction": 0.0,
+    "work_bonus_reduction_applied": 0.0,
+    "withholding": 612.62
+   }
+  },
+  {
+   "name": "jan high wage quotient",
+   "period": "2026_01",
+   "input": {
+    "pay_date": "2026-03-15",
+    "social_contributions": 0,
+    "gross_monthly": 9000,
+    "spouse_situation": "spouse_no_income"
+   },
+   "expected": {
+    "taxable_monthly": 9000.0,
+    "annual_gross": 108000.0,
+    "professional_expenses": 6070.0,
+    "net_annual": 101930.0,
+    "allocated_to_spouse": 13790.0,
+    "tax_a": 3688.83,
+    "tax_b": 40163.53,
+    "basic_tax": 37876.4,
+    "children_reduction": 0.0,
+    "other_family_reduction": 0.0,
+    "family_reductions_applied": 0.0,
+    "annual_tax": 37876.4,
+    "monthly_withholding_before_other_reductions": 3156.37,
+    "group_insurance_reduction_applied": 0.0,
+    "work_bonus_reduction": 0.0,
+    "work_bonus_reduction_applied": 0.0,
+    "withholding": 3156.37
+   }
+  },
+  {
+   "name": "nov high wage quotient",
+   "period": "2026_11",
+   "input": {
+    "pay_date": "2026-11-25",
+    "social_contributions": 0,
+    "gross_monthly": 9000,
+    "spouse_situation": "spouse_no_income"
+   },
+   "expected": {
+    "taxable_monthly": 9000.0,
+    "annual_gross": 108000.0,
+    "professional_expenses": 6070.0,
+    "net_annual": 101930.0,
+    "allocated_to_spouse": 11780.0,
+    "tax_a": 3151.15,
+    "tax_b": 41238.88,
+    "basic_tax": 38210.77,
+    "children_reduction": 0.0,
+    "other_family_reduction": 0.0,
+    "family_reductions_applied": 0.0,
+    "annual_tax": 38210.77,
+    "monthly_withholding_before_other_reductions": 3184.23,
+    "group_insurance_reduction_applied": 0.0,
+    "work_bonus_reduction": 0.0,
+    "work_bonus_reduction_applied": 0.0,
+    "withholding": 3184.23
+   }
+  },
+  {
+   "name": "aug work bonus A 100 B 150 (luik B 63 pct)",
+   "period": "2026_08",
+   "input": {
+    "pay_date": "2026-09-15",
+    "social_contributions": 0,
+    "gross_monthly": 2200,
+    "work_bonus_luik_a": 100,
+    "work_bonus_luik_b": 150
+   },
+   "expected": {
+    "taxable_monthly": 2200.0,
+    "annual_gross": 26400.0,
+    "professional_expenses": 6070.0,
+    "net_annual": 20330.0,
+    "scale_tax": 6019.29,
+    "basic_tax": 3031.31,
+    "children_reduction": 0.0,
+    "other_family_reduction": 0.0,
+    "family_reductions_applied": 0.0,
+    "annual_tax": 3031.31,
+    "monthly_withholding_before_other_reductions": 252.61,
+    "group_insurance_reduction_applied": 0.0,
+    "work_bonus_reduction": 127.64,
+    "work_bonus_reduction_applied": 127.64,
+    "withholding": 124.97
+   }
+  },
+  {
+   "name": "aug single 3000",
+   "period": "2026_08",
+   "input": {
+    "pay_date": "2026-09-15",
+    "social_contributions": 0,
+    "gross_monthly": 3000
+   },
+   "expected": {
+    "taxable_monthly": 3000.0,
+    "annual_gross": 36000.0,
+    "professional_expenses": 6070.0,
+    "net_annual": 29930.0,
+    "scale_tax": 10151.1,
+    "basic_tax": 7163.12,
+    "children_reduction": 0.0,
+    "other_family_reduction": 0.0,
+    "family_reductions_applied": 0.0,
+    "annual_tax": 7163.12,
+    "monthly_withholding_before_other_reductions": 596.93,
+    "group_insurance_reduction_applied": 0.0,
+    "work_bonus_reduction": 0.0,
+    "work_bonus_reduction_applied": 0.0,
+    "withholding": 596.93
+   }
+  },
+  {
+   "name": "period edge 2026-01-01",
+   "period": "2026_01",
+   "input": {
+    "pay_date": "2026-01-01",
+    "social_contributions": 0,
+    "gross_monthly": 2200,
+    "work_bonus_luik_b": 100,
+    "children": 2
+   },
+   "expected": {
+    "taxable_monthly": 2200.0,
+    "annual_gross": 26400.0,
+    "professional_expenses": 6070.0,
+    "net_annual": 20330.0,
+    "scale_tax": 6019.29,
+    "basic_tax": 3031.31,
+    "children_reduction": 1656.0,
+    "other_family_reduction": 0.0,
+    "family_reductions_applied": 1656.0,
+    "annual_tax": 1375.31,
+    "monthly_withholding_before_other_reductions": 114.61,
+    "group_insurance_reduction_applied": 0.0,
+    "work_bonus_reduction": 52.54,
+    "work_bonus_reduction_applied": 52.54,
+    "withholding": 62.07
+   }
+  },
+  {
+   "name": "period edge 2026-07-31",
+   "period": "2026_01",
+   "input": {
+    "pay_date": "2026-07-31",
+    "social_contributions": 0,
+    "gross_monthly": 2200,
+    "work_bonus_luik_b": 100,
+    "children": 2
+   },
+   "expected": {
+    "taxable_monthly": 2200.0,
+    "annual_gross": 26400.0,
+    "professional_expenses": 6070.0,
+    "net_annual": 20330.0,
+    "scale_tax": 6019.29,
+    "basic_tax": 3031.31,
+    "children_reduction": 1656.0,
+    "other_family_reduction": 0.0,
+    "family_reductions_applied": 1656.0,
+    "annual_tax": 1375.31,
+    "monthly_withholding_before_other_reductions": 114.61,
+    "group_insurance_reduction_applied": 0.0,
+    "work_bonus_reduction": 52.54,
+    "work_bonus_reduction_applied": 52.54,
+    "withholding": 62.07
+   }
+  },
+  {
+   "name": "period edge 2026-08-01",
+   "period": "2026_08",
+   "input": {
+    "pay_date": "2026-08-01",
+    "social_contributions": 0,
+    "gross_monthly": 2200,
+    "work_bonus_luik_b": 100,
+    "children": 2
+   },
+   "expected": {
+    "taxable_monthly": 2200.0,
+    "annual_gross": 26400.0,
+    "professional_expenses": 6070.0,
+    "net_annual": 20330.0,
+    "scale_tax": 6019.29,
+    "basic_tax": 3031.31,
+    "children_reduction": 1656.0,
+    "other_family_reduction": 0.0,
+    "family_reductions_applied": 1656.0,
+    "annual_tax": 1375.31,
+    "monthly_withholding_before_other_reductions": 114.61,
+    "group_insurance_reduction_applied": 0.0,
+    "work_bonus_reduction": 63.0,
+    "work_bonus_reduction_applied": 63.0,
+    "withholding": 51.61
+   }
+  },
+  {
+   "name": "period edge 2026-10-31",
+   "period": "2026_08",
+   "input": {
+    "pay_date": "2026-10-31",
+    "social_contributions": 0,
+    "gross_monthly": 2200,
+    "work_bonus_luik_b": 100,
+    "children": 2
+   },
+   "expected": {
+    "taxable_monthly": 2200.0,
+    "annual_gross": 26400.0,
+    "professional_expenses": 6070.0,
+    "net_annual": 20330.0,
+    "scale_tax": 6019.29,
+    "basic_tax": 3031.31,
+    "children_reduction": 1656.0,
+    "other_family_reduction": 0.0,
+    "family_reductions_applied": 1656.0,
+    "annual_tax": 1375.31,
+    "monthly_withholding_before_other_reductions": 114.61,
+    "group_insurance_reduction_applied": 0.0,
+    "work_bonus_reduction": 63.0,
+    "work_bonus_reduction_applied": 63.0,
+    "withholding": 51.61
+   }
+  },
+  {
+   "name": "period edge 2026-11-01",
+   "period": "2026_11",
+   "input": {
+    "pay_date": "2026-11-01",
+    "social_contributions": 0,
+    "gross_monthly": 2200,
+    "work_bonus_luik_b": 100,
+    "children": 2
+   },
+   "expected": {
+    "taxable_monthly": 2200.0,
+    "annual_gross": 26400.0,
+    "professional_expenses": 6070.0,
+    "net_annual": 20330.0,
+    "scale_tax": 6019.29,
+    "basic_tax": 2929.66,
+    "children_reduction": 1644.0,
+    "other_family_reduction": 0.0,
+    "family_reductions_applied": 1644.0,
+    "annual_tax": 1285.66,
+    "monthly_withholding_before_other_reductions": 107.14,
+    "group_insurance_reduction_applied": 0.0,
+    "work_bonus_reduction": 63.0,
+    "work_bonus_reduction_applied": 63.0,
+    "withholding": 44.14
+   }
+  },
+  {
+   "name": "period edge 2026-12-31",
+   "period": "2026_11",
+   "input": {
+    "pay_date": "2026-12-31",
+    "social_contributions": 0,
+    "gross_monthly": 2200,
+    "work_bonus_luik_b": 100,
+    "children": 2
+   },
+   "expected": {
+    "taxable_monthly": 2200.0,
+    "annual_gross": 26400.0,
+    "professional_expenses": 6070.0,
+    "net_annual": 20330.0,
+    "scale_tax": 6019.29,
+    "basic_tax": 2929.66,
+    "children_reduction": 1644.0,
+    "other_family_reduction": 0.0,
+    "family_reductions_applied": 1644.0,
+    "annual_tax": 1285.66,
+    "monthly_withholding_before_other_reductions": 107.14,
+    "group_insurance_reduction_applied": 0.0,
+    "work_bonus_reduction": 63.0,
+    "work_bonus_reduction_applied": 63.0,
+    "withholding": 44.14
+   }
+  },
+  {
+   "name": "holiday pay not modelled",
+   "period": "2026_01",
+   "input": {
+    "pay_date": "2026-03-15",
+    "social_contributions": 0,
+    "gross_monthly": 3000,
+    "payment_type": "holiday_pay"
+   },
+   "expected_status": "not_modelled"
+  },
+  {
+   "name": "13th month not modelled",
+   "period": "2026_11",
+   "input": {
+    "pay_date": "2026-11-25",
+    "social_contributions": 0,
+    "gross_monthly": 3000,
+    "payment_type": "thirteenth_month"
+   },
+   "expected_status": "not_modelled"
+  },
+  {
+   "name": "exceptional pay not modelled",
+   "period": "2026_11",
+   "input": {
+    "pay_date": "2026-11-25",
+    "social_contributions": 0,
+    "gross_monthly": 3000,
+    "payment_type": "exceptional"
+   },
+   "expected_status": "not_modelled"
+  },
+  {
+   "name": "non-resident not modelled",
+   "period": "2026_01",
+   "input": {
+    "pay_date": "2026-03-15",
+    "social_contributions": 0,
+    "gross_monthly": 3000,
+    "resident": false
+   },
+   "expected_status": "not_modelled"
+  },
+  {
+   "name": "bedrijfsleider not modelled",
+   "period": "2026_01",
+   "input": {
+    "pay_date": "2026-03-15",
+    "social_contributions": 0,
+    "gross_monthly": 3000,
+    "employee_type": "company_director"
+   },
+   "expected_status": "not_modelled"
+  }
+ ]
+}

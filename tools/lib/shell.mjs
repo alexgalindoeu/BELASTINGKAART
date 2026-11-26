@@ -54,6 +54,17 @@ export const longDate = (iso, lang) => {
   return `${lang === 'fr' && d === 1 ? '1er' : d} ${T[lang].months[m - 1]} ${y}`;
 };
 
+// Footer columns (Simulator, Over Belastingkaart, Juridisch) shared by EVERY NL/FR page; the
+// language column stays page-specific. test/footer.test.mjs checks each page against this.
+export function footerColumns(lang, route) {
+  const t = T[lang];
+  const up = '../'.repeat(route.split('/').length - 1);
+  const L = href => `${up}${lang}/${href}`;
+  return t.footerCols.map(([title, links]) => `<div><p class="footer-title">${title}</p><ul>${links.map(([h, label, small]) =>
+    `<li><a href="${L(h)}"${lang + '/' + h === route ? ' aria-current="page"' : ''}>${label}</a>${small ? ` <span class="footer-small">${small}</span>` : ''}</li>`).join('')}</ul></div>`).join('\n      ');
+}
+export const footerSmall = lang => T[lang].footerSmall;
+
 // page: { lang, route, pair, title, description, eyebrow, h1, updated, lead, summary, body, actions }
 export function renderPage(page) {
   const { lang, route } = page;
@@ -63,8 +74,7 @@ export function renderPage(page) {
   const other = lang === 'nl' ? fr : nl;
   const L = href => `${up}${lang}/${href}`;
   const nav = t.nav.map(([h, label]) => `      <a href="${L(h)}">${label}</a>`).join('\n');
-  const cols = t.footerCols.map(([title, links]) => `<div><p class="footer-title">${title}</p><ul>${links.map(([h, label, small]) =>
-    `<li><a href="${L(h)}"${up + lang + '/' + h === up + route ? ' aria-current="page"' : ''}>${label}</a>${small ? ` <span class="footer-small">${small}</span>` : ''}</li>`).join('')}</ul></div>`).join('\n      ');
+  const cols = footerColumns(lang, route);
   const html = `<!doctype html>
 <html lang="${lang}">
 <head>
@@ -85,8 +95,10 @@ export function renderPage(page) {
 <link rel="apple-touch-icon" href="${up}icons/apple-touch-icon.png">
 <link rel="manifest" href="${up}${lang}/manifest.webmanifest">
 <link rel="stylesheet" href="${up}css/site.css">
+<link rel="stylesheet" href="${up}css/components.css">
 <link rel="stylesheet" href="${up}css/legal.css">
 <script defer src="${up}config.js"></script>
+<script defer src="${up}js/menu.js"></script>
 <script defer src="${up}js/ui.js"></script>
 </head>
 <body class="page" data-lang="${lang}">

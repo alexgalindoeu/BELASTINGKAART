@@ -3,7 +3,7 @@
   "income_year": 2026,
   "assessment_year": 2027,
   "generated_from": "params/2026/*.yaml",
-  "generated_at": "2026-11-24",
+  "generated_at": "2026-11-25",
   "federal": {
     "personal_income_tax": {
       "brackets": {
@@ -31,13 +31,13 @@
         "assessment_year": 2027,
         "effective_from": "2026-01-01",
         "effective_to": "2026-12-31",
-        "source_name": "FPS Finance / FOD Financiën",
-        "source_url": "https://finances.belgium.be/en/private-individuals/tax-return/income/tax-rates",
-        "source_title": "Tax rates — income tax year 2026 (assessment year 2027)",
-        "retrieved_at": "2026-11-24",
+        "source_name": "FOD Financiën / SPF Finances — Fisconet",
+        "source_url": "https://www.minfin.fgov.be/myminfin-web/pages/public/fisconet/document/796a4fc5-340e-4c89-a72a-88caa804ca96",
+        "source_title": "Artikel 130, WIB 92 (inkomsten 2026) — geïndexeerde bedragen, aanslagjaar 2027",
+        "retrieved_at": "2026-11-25",
         "unit": "EUR_taxable_income_and_marginal_rate",
-        "rounding": "pending_official_calculation_rule",
-        "notes": "Official brackets: 25% up to EUR 16,720; 40% from EUR 16,720 to 29,510; 45% from EUR 29,510 to 51,070; 50% above EUR 51,070. Applied to taxable income, not directly to gross salary."
+        "rounding": "not stated in art. 130",
+        "notes": "Verbatim (NL): '25 % voor de inkomensschijf van 0,01 euro tot 16.720 euro; 40 % voor de schijf van 16.720 euro tot 29.510 euro; 45 % voor de schijf van 29.510 euro tot 51.070 euro; 50 % voor de schijf boven 51.070 euro' (all 'geïndexeerd bedrag'). FR Article 130 CIR 92 (aff72054-004a-4858-8747-1d70964c8e3d) is identical. The limits match the indexation table of B.S. 12.08.2026 (base 8.120 / 14.330 / 24.800). Source moved on 2026-11-25 from finances.belgium.be (CAPTCHA, unverifiable) to Fisconet; the values are unchanged. Applied to taxable income of each taxpayer, not to gross salary. NOT the withholding scale (Bijlage III uses 16.710 / 29.500 / 51.050 with a 7% surcharge built in)."
       },
       "basic_personal_tax_allowance": {
         "value": 11550,
@@ -47,13 +47,94 @@
         "assessment_year": 2027,
         "effective_from": "2026-01-01",
         "effective_to": "2026-12-31",
-        "source_name": "FPS Finance / FOD Financiën",
-        "source_url": "https://finances.belgium.be/en/private-individuals/tax-return/income/tax-rates",
-        "source_title": "Tax rates — personal tax allowance, income tax year 2026",
-        "retrieved_at": "2026-11-24",
+        "source_name": "FOD Financiën / SPF Finances — Fisconet",
+        "source_url": "https://www.minfin.fgov.be/myminfin-web/pages/public/fisconet/document/f3c5d665-cac4-4cbd-b714-bd287f791751",
+        "source_title": "Artikel 131, WIB 92 (inkomsten 2026) — geïndexeerde bedragen, aanslagjaar 2027",
+        "retrieved_at": "2026-11-25",
         "unit": "EUR",
         "rounding": "not_applicable_to_threshold",
-        "notes": "Basic allowance only. It may increase depending on personal circumstances. Do not treat this amount alone as the final tax reduction; the legal calculation of the tax on the allowance and family increases must be modelled."
+        "notes": "Verbatim: 'Voor de berekening van de belasting wordt een basisbedrag van 11.550 euro (geïndexeerd bedrag) vrijgesteld van belasting.' Art. 131, first paragraph, applies from assessment year 2027 (art. 2, 1°, and 4, W 15.07.2026 tot hervorming van de personenbelasting, B.S. 29.07.2026). Indexation table: base 4.945 -> 11.550. FR (2fb89ed0-b93e-47d7-816c-85f1ac679b8a): 'un montant de base de 11.550 euros (montant indexé) est exempté d'impôt'. Source moved from finances.belgium.be (CAPTCHA) to Fisconet; value unchanged. The reduction is the tax on this amount at the art. 134 §2 scale (tax_on_tax_free_sum), not at the art. 130 rates."
+      },
+      "disabled_taxpayer_increase": {
+        "value": 2030,
+        "status": "confirmed",
+        "jurisdiction": "federal",
+        "income_year": 2026,
+        "assessment_year": 2027,
+        "effective_from": "2026-01-01",
+        "effective_to": "2026-12-31",
+        "source_name": "FOD Financiën / SPF Finances — Fisconet",
+        "source_url": "https://www.minfin.fgov.be/myminfin-web/pages/public/fisconet/document/f3c5d665-cac4-4cbd-b714-bd287f791751",
+        "source_title": "Artikel 131, tweede lid, WIB 92 (inkomsten 2026)",
+        "retrieved_at": "2026-11-25",
+        "unit": "EUR",
+        "rounding": "not_applicable_to_threshold",
+        "notes": "Verbatim: 'Dit bedrag wordt verhoogd met 2.030 euro (geïndexeerd bedrag) indien de belastingplichtige gehandicapt is.' Indexation table: base 870 -> 2.030."
+      },
+      "dependant_increases": {
+        "value": {
+          "children_total_by_count": {
+            "1": 2130,
+            "2": 5130,
+            "3": 11440,
+            "4": 18510
+          },
+          "per_child_above_four": 7070,
+          "child_under_three_supplement": 740,
+          "dependant_66_plus_in_care_per_person": 5950,
+          "other_dependant_per_person": 1980,
+          "disabled_counts_double": true
+        },
+        "status": "confirmed",
+        "jurisdiction": "federal",
+        "income_year": 2026,
+        "assessment_year": 2027,
+        "effective_from": "2026-01-01",
+        "effective_to": "2026-12-31",
+        "source_name": "FOD Financiën / SPF Finances — Fisconet",
+        "source_url": "https://www.minfin.fgov.be/myminfin-web/pages/public/fisconet/document/caa866c3-8820-4ba4-b5bc-f64ae0cd2869",
+        "source_title": "Artikel 132, WIB 92 (inkomsten 2026) — toeslagen voor personen ten laste",
+        "retrieved_at": "2026-11-25",
+        "unit": "EUR_added_to_tax_free_sum",
+        "rounding": "not_applicable_to_threshold",
+        "notes": "Verbatim: '1° voor een kind: 2.130 euro; 2° voor twee kinderen: 5.130 euro; 3° voor drie kinderen: 11.440 euro; 4° voor vier kinderen: 18.510 euro; 5° voor meer dan vier kinderen: 18.510 euro plus 7.070 euro per kind boven het vierde; 6° een bijkomende toeslag van 740 euro voor ieder kind dat de leeftijd van 3 jaar niet heeft bereikt op 1 januari van het aanslagjaar [not combinable with the kinderoppas reduction]; 7° [...] 66 jaar [...] zorgbehoevend: 5.950 euro; 8° voor iedere andere persoon ten laste: 1.980 euro.' Children totals are cumulative amounts, not per child. Disabled children and other dependants count double for 1°–6° and 8°. Art. 132, 1° and 2°, apply from AJ 2027 (W 15.07.2026). Art. 133 increases and the art. 134 §3 refundable child credit are not covered (pending)."
+      },
+      "tax_on_tax_free_sum": {
+        "value": [
+          {
+            "upper": 11750,
+            "rate": 0.25
+          },
+          {
+            "upper": 16720,
+            "rate": 0.3
+          },
+          {
+            "upper": 27860,
+            "rate": 0.4
+          },
+          {
+            "upper": 51070,
+            "rate": 0.45
+          },
+          {
+            "upper": null,
+            "rate": 0.5
+          }
+        ],
+        "status": "confirmed",
+        "jurisdiction": "federal",
+        "income_year": 2026,
+        "assessment_year": 2027,
+        "effective_from": "2026-01-01",
+        "effective_to": "2026-12-31",
+        "source_name": "FOD Financiën / SPF Finances — Fisconet",
+        "source_url": "https://www.minfin.fgov.be/myminfin-web/pages/public/fisconet/document/20a503a9-4213-4e60-a91c-0ebb907e176a",
+        "source_title": "Artikel 134, § 2, WIB 92 (inkomsten 2026) — belasting op de belastingvrije som",
+        "retrieved_at": "2026-11-25",
+        "unit": "EUR_tax_free_sum_and_marginal_rate",
+        "rounding": "not stated in art. 134",
+        "notes": "Verbatim: '25 % voor de schijf van de belastingvrije som van 0,01 euro tot 11.750 euro; 30 % [...] van 11.750 euro tot 16.720 euro; 40 % [...] van 16.720 euro tot 27.860 euro; 45 % [...] van 27.860 euro tot 51.070 euro; 50 % [...] boven 51.070 euro' (geïndexeerde bedragen). The art. 130 basic tax is reduced by this tax on the tax-free sum (§2). Indexation table: base 5.705 / 8.120 / 13.530 / 24.800. FR 56f7c2a3-94ab-45dd-85d0-2a0c7f6ddebc is identical. §3 (refundable child credit, max. 550 EUR per child, not indexed) and §4 (joint assessment) are not modelled."
       }
     }
   },
@@ -335,38 +416,312 @@
   },
   "payroll": {
     "professional_withholding": {
-      "value": null,
-      "status": "pending",
-      "jurisdiction": "federal",
-      "income_year": 2026,
-      "assessment_year": 2027,
-      "effective_from": "2026-01-01",
-      "effective_to": null,
-      "source_name": "FPS Finance / SPF Finances",
-      "source_url": "https://finances.belgium.be/fr/entreprises/personnel_et_remuneration/precompte_professionnel/calcul",
-      "source_title": "Calcul du précompte professionnel — règles et formule-clé 2026",
-      "retrieved_at": "2026-11-24",
-      "unit": "EUR_per_pay_period",
-      "rounding": "pending_official_rule",
-      "notes": "The official FPS Finance page lists 2026 rules effective 1 January, a key formula and a 2026 simulator. The formula and underlying rules must be extracted and implemented before estimating monthly withholding.",
+      "method": {
+        "value": {
+          "scope": "monthly wages of resident employees (Bijlage III Deel 3; sleutelformule Deel I, Hoofdstuk 1)",
+          "step_a_gross_annual": "(monthly gross paid - compulsory social-security withholdings) x 12",
+          "step_b_net_taxable": "gross annual - flat-rate professional expenses (period table)",
+          "step_c_basic_tax": "base scale on net taxable annual income, minus tax on the tax-free sum; spouse without own professional income -> huwelijksquotiënt (30% share, capped) and twice the tax on the tax-free sum",
+          "step_c_reductions": "children (table) + other family burdens (tables); total reductions capped at the basic tax",
+          "step_d_monthly": "annual tax / 12",
+          "step_e_order": ["group_insurance_30pct", "overtime", "work_bonus", "low_income_public_sector"],
+          "floor_at_zero": true,
+          "rounding": "half_up_eurocent_every_step",
+          "family_situation_reference_date": "1 January of the year of payment (employer may apply a change once informed)",
+          "surcharge_built_in": 0.07,
+          "spouse_pension_only_exception_net_monthly_max": 174,
+          "spouse_net_income_test": "(gross professional income - compulsory social withholdings) x 0.80",
+          "legal_cohabitants_equal_to_spouses": true,
+          "disabled_dependant_counts_double": true
+        },
+        "status": "confirmed",
+        "jurisdiction": "federal",
+        "income_year": 2026,
+        "assessment_year": 2027,
+        "effective_from": "2026-01-01",
+        "effective_to": "2026-12-31",
+        "source_name": "FOD Financiën / SPF Finances — Fisconet",
+        "source_url": "https://www.minfin.fgov.be/myminfin-web/pages/public/fisconet/document/a38f6c59-3ab9-49d3-8844-d39f91387663",
+        "source_title": "Regels 1 januari 2026 — Bijlage III KB/WIB 92 (KB 11.12.2025), nrs. 2, 5, 8, 11, 12, 25.1, 26, 28, 31–34, 37–43",
+        "retrieved_at": "2026-11-25",
+        "unit": "method",
+        "rounding": "nr. 12: alle bedragen, in voorkomend geval in elke stap, afgerond tot de hogere of lagere cent, naargelang het cijfer van de duizendsten al dan niet 5 bereikt",
+        "notes": "Method for regular monthly wages only, identical in the original Bijlage III (KB 11.12.2025) and in the coordinated version after KB 24.07.2026 and KB 27.09.2026 (b14d7617-e298-4210-ab8f-dbb3bced2922), and in both sleutelformules (821b117c-..., 905faa6f-...). Sleutelformule nr. 5: 'reeds rekening gehouden met een verhoging van 7 pct. voor de aanvullende belastingen (gemeente- en agglomeratiebelasting)', so the withholding does not depend on the municipality. Nr. 21: 'De toepassing van de verminderingen kan er niet toe leiden dat de bedrijfsvoorheffing negatief wordt.' The work-bonus reduction uses the SOCIAL work bonus 'dat daadwerkelijk is verleend' (luik A / luik B), which is pending for Oct–Dec 2026 (social_security.yaml). Exceptional pay (nr. 53 and following), group insurance and overtime amounts are not modelled. Effective_to: Bijlage III 'inkomsten 2026'."
+      },
+      "periods": {
+        "2026_01": {
+          "value": {
+            "professional_expenses": {
+              "rate": 0.3,
+              "threshold_annual": 20233.33,
+              "maximum": 6070
+            },
+            "base_scale": [
+              {
+                "upper": 16710,
+                "rate": 0.2675
+              },
+              {
+                "upper": 29500,
+                "rate": 0.428,
+                "tax_at_lower": 4469.93
+              },
+              {
+                "upper": 51050,
+                "rate": 0.4815,
+                "tax_at_lower": 9944.05
+              },
+              {
+                "upper": null,
+                "rate": 0.535,
+                "tax_at_lower": 20320.38
+              }
+            ],
+            "tax_free_sum": 11170,
+            "tax_on_tax_free_sum": 2987.98,
+            "marital_quotient": {
+              "share": 0.3,
+              "maximum": 13790,
+              "maximum_reached_at": 45966.67,
+              "tax_on_two_tax_free_sums": 5975.96
+            },
+            "children_reduction": {
+              "by_count": {
+                "1": 624,
+                "2": 1656,
+                "3": 4404,
+                "4": 7620,
+                "5": 11100,
+                "6": 14592,
+                "7": 18120,
+                "8": 21996
+              },
+              "per_child_above_eight": 3864
+            },
+            "other_family_reductions": {
+              "all": {
+                "disabled_beneficiary": 624,
+                "dependant_66_plus_in_care_per_person": 1992,
+                "other_dependant_per_person": 624
+              },
+              "single_or_spouse_with_income": {
+                "single_parent_with_children": 624,
+                "spouse_income_other_than_pension_net_max_290": 1740,
+                "spouse_pension_only_net_max_579": 3474
+              },
+              "spouse_without_income": {
+                "disabled_spouse": 624
+              }
+            },
+            "work_bonus_reduction": {
+              "luik_a": 0.3314,
+              "luik_b": 0.5254
+            }
+          },
+          "status": "confirmed",
+          "jurisdiction": "federal",
+          "income_year": 2026,
+          "assessment_year": 2027,
+          "effective_from": "2026-01-01",
+          "effective_to": "2026-07-31",
+          "source_name": "FOD Financiën / SPF Finances — Fisconet",
+          "source_url": "https://www.minfin.fgov.be/myminfin-web/pages/public/fisconet/document/a38f6c59-3ab9-49d3-8844-d39f91387663",
+          "source_title": "Regels 1 januari 2026 (Bijlage III KB/WIB 92, KB 11.12.2025) and Sleutelformule vanaf 1 januari 2026 (BEO-DR/2025-0928)",
+          "retrieved_at": "2026-11-25",
+          "unit": "EUR_per_year_and_rates",
+          "rounding": "half-up to the cent at every step (nr. 12)",
+          "notes": "Amounts verbatim from Bijlage III nrs. 28, 31, 32, 34, 38–41, 46.2 (R-NL) and the sleutelformule vanaf 1 januari 2026 (NL 821b117c-eebc-497a-8297-ed2bb1e99d75, FR 389035ca-432e-422b-859d-2d32fbdaa4cf), which agree on every amount. tax_at_lower is the cumulative tax printed in the scale ('4.469,93 EUR + 42,80 pct. op de schijf boven 16.710 EUR'). The period ends on 31.07.2026 because nr. 46.2.2 was amended with effect from 01.08.2026 (KB 24.07.2026, B.S. 30.07.2026, Numac 2026005690)."
+        },
+        "2026_08": {
+          "value": {
+            "professional_expenses": {
+              "rate": 0.3,
+              "threshold_annual": 20233.33,
+              "maximum": 6070
+            },
+            "base_scale": [
+              {
+                "upper": 16710,
+                "rate": 0.2675
+              },
+              {
+                "upper": 29500,
+                "rate": 0.428,
+                "tax_at_lower": 4469.93
+              },
+              {
+                "upper": 51050,
+                "rate": 0.4815,
+                "tax_at_lower": 9944.05
+              },
+              {
+                "upper": null,
+                "rate": 0.535,
+                "tax_at_lower": 20320.38
+              }
+            ],
+            "tax_free_sum": 11170,
+            "tax_on_tax_free_sum": 2987.98,
+            "marital_quotient": {
+              "share": 0.3,
+              "maximum": 13790,
+              "maximum_reached_at": 45966.67,
+              "tax_on_two_tax_free_sums": 5975.96
+            },
+            "children_reduction": {
+              "by_count": {
+                "1": 624,
+                "2": 1656,
+                "3": 4404,
+                "4": 7620,
+                "5": 11100,
+                "6": 14592,
+                "7": 18120,
+                "8": 21996
+              },
+              "per_child_above_eight": 3864
+            },
+            "other_family_reductions": {
+              "all": {
+                "disabled_beneficiary": 624,
+                "dependant_66_plus_in_care_per_person": 1992,
+                "other_dependant_per_person": 624
+              },
+              "single_or_spouse_with_income": {
+                "single_parent_with_children": 624,
+                "spouse_income_other_than_pension_net_max_290": 1740,
+                "spouse_pension_only_net_max_579": 3474
+              },
+              "spouse_without_income": {
+                "disabled_spouse": 624
+              }
+            },
+            "work_bonus_reduction": {
+              "luik_a": 0.3314,
+              "luik_b": 0.63
+            }
+          },
+          "status": "confirmed",
+          "jurisdiction": "federal",
+          "income_year": 2026,
+          "assessment_year": 2027,
+          "effective_from": "2026-08-01",
+          "effective_to": "2026-10-31",
+          "source_name": "FOD Financiën / SPF Finances — Fisconet",
+          "source_url": "https://www.minfin.fgov.be/myminfin-web/pages/public/fisconet/document/7749a105-960f-4635-a817-1a20c15cc0fa",
+          "source_title": "Bijlage III, KB/WIB 92 (inkomsten 2026) — nr. 46.2.2 as amended by KB 24.07.2026 (in force 01.08.2026)",
+          "retrieved_at": "2026-11-25",
+          "unit": "EUR_per_year_and_rates",
+          "rounding": "half-up to the cent at every step (nr. 12)",
+          "notes": "Same as 2026_01 except nr. 46.2.2: '63 pct. van het bedrag van het luik B van de werkbonus dat daadwerkelijk is verleend'. Fisconet: 'Bijlage III, nummer 46.2.2, 139 en 144.1, treedt in werking op 01.08.2026 (art. 4, 6, 1°, en 7, vierde lid, KB 24.07.2026 - B.S. 30.07.2026; Numac: 2026005690)'. DISCREPANCY: the sleutelformule vanaf 1 januari 2026 (nr. 20) still says 52,54 pct.; FOD published no August formula. The regulation prevails. The amendments of the KB 27.09.2026 apply only to income paid from 1.11.2026."
+        },
+        "2026_11": {
+          "value": {
+            "professional_expenses": {
+              "rate": 0.3,
+              "threshold_annual": 20233.33,
+              "maximum": 6070
+            },
+            "base_scale": [
+              {
+                "upper": 16710,
+                "rate": 0.2675
+              },
+              {
+                "upper": 29500,
+                "rate": 0.428,
+                "tax_at_lower": 4469.93
+              },
+              {
+                "upper": 51050,
+                "rate": 0.4815,
+                "tax_at_lower": 9944.05
+              },
+              {
+                "upper": null,
+                "rate": 0.535,
+                "tax_at_lower": 20320.38
+              }
+            ],
+            "tax_free_sum": 11550,
+            "tax_on_tax_free_sum": 3089.63,
+            "marital_quotient": {
+              "share": 0.3,
+              "maximum_both_spouses_66_on_2027_01_01": 12790,
+              "maximum_both_spouses_66_reached_at": 42633.33,
+              "maximum_other_cases": 11780,
+              "maximum_other_cases_reached_at": 39266.67,
+              "tax_on_two_tax_free_sums": 6179.26
+            },
+            "children_reduction": {
+              "by_count": {
+                "1": 684,
+                "2": 1644,
+                "3": 4344,
+                "4": 7488,
+                "5": 10884,
+                "6": 14292,
+                "7": 17712,
+                "8": 21492
+              },
+              "per_child_above_eight": 3780
+            },
+            "other_family_reductions": {
+              "all": {
+                "disabled_beneficiary": 648,
+                "dependant_66_plus_in_care_per_person": 1992,
+                "other_dependant_per_person": 636
+              },
+              "single_or_spouse_with_income": {
+                "single_parent_with_children": 636,
+                "spouse_income_other_than_pension_net_max_290": 1740,
+                "spouse_pension_only_net_max_579": 3474
+              },
+              "spouse_without_income": {
+                "disabled_spouse": 636
+              }
+            },
+            "work_bonus_reduction": {
+              "luik_a": 0.3314,
+              "luik_b": 0.63
+            }
+          },
+          "status": "confirmed",
+          "jurisdiction": "federal",
+          "income_year": 2026,
+          "assessment_year": 2027,
+          "effective_from": "2026-11-01",
+          "effective_to": "2026-12-31",
+          "source_name": "FOD Financiën / SPF Finances — Fisconet",
+          "source_url": "https://www.minfin.fgov.be/myminfin-web/pages/public/fisconet/document/b14d7617-e298-4210-ab8f-dbb3bced2922",
+          "source_title": "Bijlage III, KB/WIB 92 (inkomsten 2026 - gecoördineerde versie), KB 27.09.2026, and Sleutelformule vanaf 1 november 2026 (BEO-DR/2025-0928_v2)",
+          "retrieved_at": "2026-11-25",
+          "unit": "EUR_per_year_and_rates",
+          "rounding": "half-up to the cent at every step (nr. 12)",
+          "notes": "Fisconet: 'Bijlage III, nummer 4.2, [...] 32, en 34.1.1, en 34.2, en 38 (tabel), en 39 (tabel), en 40 (tabel), en 41 (tabel) en 54, is van toepassing op de vanaf 1.11.2026 betaalde of toegekende inkomsten (KB 27.09.2026 - B.S. 02.10.2026; Numac: 2026007167)'. Amounts verbatim from the coordinated Bijlage III (NL b14d7617-..., FR 6c6b27a8-d275-4ab8-bed1-c979ab3d9314) and the sleutelformule vanaf 1 november 2026 (NL 905faa6f-0a50-407b-ad09-ce1c677a6735, FR 93032da8-dfe9-4543-9cdf-778272cb86bc; bijlagen 3bis, 4bis, 5bis), which agree. Marital-quotient cap: 12.790 EUR only 'wanneer beide echtgenoten de leeftijd van 66 jaar hebben bereikt op 1 januari 2027'; otherwise, 'ook wanneer de schuldenaar [...] niet over de nodige informatie beschikt', 11.780 EUR. Child reductions for 2+ children are lower than in January: this is what the text says. Scale, forfait, 174/290/579 EUR thresholds and 1.992 EUR are unchanged."
+        }
+      },
       "official_rules_url": "https://www.minfin.fgov.be/myminfin-web/pages/public/fisconet/compare/f547b584-9f46-46df-801b-3c059548f76b/536a741e-81d6-4605-ad11-8e07ebc4a440/536a741e-81d6-4605-ad11-8e07ebc4a440",
       "official_formula_url": "https://www.minfin.fgov.be/myminfin-web/pages/public/fisconet/compare/f547b584-9f46-46df-801b-3c059548f76b/389035ca-432e-422b-859d-2d32fbdaa4cf/389035ca-432e-422b-859d-2d32fbdaa4cf"
     },
     "professional_expenses": {
-      "value": null,
-      "status": "pending",
+      "value": {
+        "employees_rate": 0.3,
+        "employees_maximum": 6070
+      },
+      "status": "confirmed",
       "jurisdiction": "federal",
       "income_year": 2026,
       "assessment_year": 2027,
-      "effective_from": null,
-      "effective_to": null,
-      "source_name": "FPS Finance / FOD Financiën",
-      "source_url": "https://finances.belgium.be/en/private-individuals/tax-return/income/tax-rates",
-      "source_title": "Tax rates — professional expenses are deducted from professional income",
-      "retrieved_at": "2026-11-24",
-      "unit": "EUR_per_income_year",
-      "rounding": "pending_official_rule",
-      "notes": "The official tax page confirms that flat-rate professional expenses are deducted from most professional income, including wages, but does not provide the 2026 calculation details in the page summary. Amounts, ceilings and conditions remain pending until an exact official source is documented."
+      "effective_from": "2026-01-01",
+      "effective_to": "2026-12-31",
+      "source_name": "FOD Financiën / SPF Finances — Fisconet",
+      "source_url": "https://www.minfin.fgov.be/myminfin-web/pages/public/fisconet/document/e2fb1778-ac33-4e91-8e57-e53c0cac384c",
+      "source_title": "Artikel 51, WIB 92 (inkomsten 2026) — forfaitaire beroepskosten, geïndexeerde bedragen aanslagjaar 2027",
+      "retrieved_at": "2026-11-25",
+      "unit": "fraction_of_gross_and_EUR_per_income_year",
+      "rounding": "not stated in art. 51",
+      "notes": "Verbatim: 'Die percentages bedragen: 1° voor bezoldigingen van werknemers: 30 %; [...] In geen geval mag het forfait meer bedragen dan 6.070 euro (geïndexeerd bedrag) voor het geheel van de inkomsten van éénzelfde categorie als vermeld in het tweede lid, 1° en 5°'. The base is the gross amount 'vooraf verminderd met de voormelde bijdragen en sommen' (art. 52, 7° and 8°: mainly social contributions). The cap is per taxpayer for the whole category, not per employer. Indexation table B.S. 12.08.2026: base 2.950,00 -> 6.070. FR 21dd9b61-2989-4125-a2e0-6142c607eec8 identical. Taxpayers may prove actual expenses instead; not modelled."
     },
     "special_social_security_contribution": {
       "method": {

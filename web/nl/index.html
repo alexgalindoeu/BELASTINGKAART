@@ -39,8 +39,10 @@
 <link rel="apple-touch-icon" href="../icons/apple-touch-icon.png">
 <link rel="manifest" href="../nl/manifest.webmanifest">
 <link rel="stylesheet" href="../css/site.css">
+<link rel="stylesheet" href="../css/components.css">
 <script defer src="../config.js"></script>
 <script defer src="../js/i18n.js"></script>
+<script defer src="../js/menu.js"></script>
 <script defer src="../js/ui.js"></script>
 <script defer src="../js/importe.js"></script>
 <script defer src="../js/formulario.js"></script>
@@ -60,6 +62,7 @@
 <script defer src="../js/anuncios.js"></script>
 <script defer src="../js/tax-engine.js"></script>
 <script defer src="../js/parameters.js"></script>
+<script defer src="../js/resultaat.js"></script>
 <script defer src="../js/app.js"></script>
 </head>
 <body data-lang="nl">
@@ -81,24 +84,65 @@
   </div>
 </header>
 <main class="container home" id="content" tabindex="-1">
-  <section class="hero" aria-labelledby="hero-title">
-    <p class="masthead"><span>Belgische fiscaliteit</span><span>Inkomstenjaar 2026</span><span>Nederlands · Français</span></p>
-    <div class="hero-text">
+  <section class="cover" aria-labelledby="hero-title">
+    <p class="masthead"><span>Belgische fiscaliteit</span><span>Inkomstenjaar 2026 · aanslagjaar 2027</span><span>Nederlands · Français</span></p>
+    <div class="cover-text">
       <h1 id="hero-title">Wat blijft er over van je <span class="marker">brutoloon</span>?</h1>
-      <p class="lead">Ontdek hoe belastingen en sociale bijdragen je nettoloon beïnvloeden. Helder, transparant en afgestemd op België.</p>
-      <div class="hero-actions">
-        <a class="btn btn-primary" href="#simulator">Naar de simulator <span class="arrow" aria-hidden="true">→</span></a>
-        <a class="btn btn-secondary" href="../nl/methodologie/">Hoe we rekenen</a>
-      </div>
+      <p class="lead">Ontdek hoe sociale bijdragen, bedrijfsvoorheffing en gemeentebelasting je nettoloon bepalen. Volgens de Belgische regels van je gewest en je gemeente, gratis, zonder registratie en zonder dat je gegevens je browser verlaten.</p>
     </div>
-    <aside class="hero-panel cut-corner" aria-labelledby="status-title">
-      <h2 id="status-title">Stand van zaken</h2>
-      <p><span class="chip warn">In ontwikkeling</span></p>
-      <p>De Belgische berekeningsregels worden eerst opgebouwd en getoetst aan officiële bronnen. Tot alle regels bevestigd en getest zijn, toont Belastingkaart geen nettoloon.</p>
-    </aside>
+    <form class="quickcalc" id="quickcalc" autocomplete="off" novalidate aria-label="Snelle berekening">
+      <div class="quickcalc-fields">
+        <div class="field"><label for="qc-gross">Je bruto maandloon</label><span class="with-suffix"><input type="text" inputmode="decimal" id="qc-gross" placeholder="3.500"><span class="suffix" aria-hidden="true">€</span></span></div>
+        <div class="field"><label for="qc-region">Waar je woont</label><select id="qc-region"><option value="flanders">Vlaams Gewest</option><option value="brussels">Brussels Hoofdstedelijk Gewest</option><option value="wallonia">Waals Gewest</option></select></div>
+      </div>
+      <div class="quickcalc-res" id="qc-res" aria-live="polite">
+        <div class="quickcalc-figure"><span class="figure-xl" aria-hidden="true">—</span><span class="quickcalc-label">nettoloon per maand</span><span class="quickcalc-pending">Resultaat volgt zodra alle regels bevestigd zijn.</span></div>
+        <div class="ruler" aria-label="Gewesten"><div class="ruler-track"><i data-region="flanders" class="yours"><span>Vlaanderen</span></i><i data-region="brussels"><span>Brussel</span></i><i data-region="wallonia"><span>Wallonië</span></i></div></div>
+        <p class="quickcalc-sentence">De bedragen per gewest verschijnen hier zodra elke regel officieel bevestigd en getest is.</p>
+        <div class="quickcalc-actions"><a class="btn btn-primary" href="#simulator" data-qc-go>Naar de volledige simulator <span class="arrow" aria-hidden="true">→</span></a><a class="btn btn-text" href="methodologie/">Hoe we rekenen</a></div>
+        <p class="quickcalc-note">Snelle berekening voor een werknemer, alleenstaand en zonder kinderen ten laste. In de simulator vul je je gezin, je gemeente en je werkregime in.</p>
+      </div>
+    </form>
+    <div class="cover-map" aria-labelledby="cover-map-title">
+      <h2 class="card-title" id="cover-map-title">Je loon in elk gewest</h2>
+      <div class="map-wrap" id="cover-map" data-map-slot></div>
+      <p class="note">Kies een gewest om je situatie te zien.</p>
+    </div>
+    <p class="cover-fact">Hetzelfde brutoloon geeft niet overal hetzelfde nettoloon: <b>elke gemeente</b> heft haar eigen aanvullende gemeentebelasting op de personenbelasting.</p>
   </section>
 
-  <div class="section-head" id="simulator"><h2>Bruto → netto: jouw loon simuleren</h2><span class="chip">Eerste versie</span></div>
+  <div class="section-head" id="roadmap"><h2>Hulpmiddelen</h2></div>
+  <ul class="tools">
+    <li class="tool"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><polygon points="3,2 17,2 21,6 21,22 3,22"/><polygon class="r" points="7,15 17,15 17,18 7,18"/></svg><h3><a href="#simulator">Bruto-netto voor werknemers</a></h3><p>Maandelijkse en jaarlijkse begrippen duidelijk gescheiden.</p></li>
+    <li class="tool"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><polygon points="3,2 17,2 21,6 21,22 3,22"/><polygon class="r" points="7,15 17,15 17,18 7,18"/></svg><h3><a href="maandloon/">Maandloon en uitbetalingen</a></h3><p>Je brutojaarloon per maand, in 12, 13 of 14 uitbetalingen.</p></li>
+    <li class="tool"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><polygon points="2,9 7,9 7,21 2,21"/><polygon class="r" points="9.5,4 14.5,4 14.5,21 9.5,21"/><polygon points="17,12 22,12 22,21 17,21"/></svg><h3><a href="marginaal-tarief/">Marginaal tarief</a></h3><p>Wat blijft er over van een loonsverhoging?</p></li>
+    <li class="tool"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><polygon points="2,8 22,8 22,21 2,21"/><polygon points="8,3 16,3 16,7 14,7 14,5 10,5 10,7 8,7"/><polygon class="r" points="2,12 22,12 22,14 2,14"/></svg><h3><a href="jobaanbiedingen-vergelijken/">Twee jobaanbiedingen vergelijken</a></h3><p>Twee aanbiedingen naast elkaar, eerst in bruto.</p></li>
+    <li class="tool"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><polygon points="3,9 9,9 9,22 3,22"/><polygon points="11,6 17,6 17,22 11,22"/><polygon class="r" points="19,14 22,14 22,22 19,22"/></svg><h3><a href="gemeenschappelijke-aanslag/">Gemeenschappelijke aanslag</a></h3><p>Voor gehuwden en wettelijk samenwonenden.</p></li>
+    <li class="tool"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><polygon points="3,2 17,2 21,6 21,22 3,22"/><polygon class="r" points="7,15 17,15 17,18 7,18"/></svg><h3><a href="twee-werkgevers/">Twee werkgevers in één jaar</a></h3><p>Moet je bijbetalen als je bij twee werkgevers werkte?</p></li>
+    <li class="tool"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill-rule="evenodd" d="M2 3h20v18H2zM5 6v12h14V6z"/><polygon class="r" points="6.5,12 9,9.5 11,11.5 15.5,7 18,9.5 11,16.5"/></svg><h3><a href="widget/">Widget voor je website</a></h3><p>Zet de simulator op je eigen website.</p></li>
+    <li class="tool"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><polygon points="3,9 9,9 9,22 3,22"/><polygon points="11,6 17,6 17,22 11,22"/><polygon class="r" points="19,14 22,14 22,22 19,22"/></svg><h3><a href="gezin-en-bedrijfsvoorheffing/">Gezinssituatie en bedrijfsvoorheffing</a></h3><p>Gezinslast en inhoudingen op je loon, volgens de Belgische regels.</p></li>
+    <li class="tool"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><polygon points="12,2 21,10 21,22 3,22 3,10"/><polygon class="r" points="10,15 14,15 14,22 10,22"/></svg><h3><a href="gemeentebelasting/">Gemeentebelasting en gewest</a></h3><p>De aanvullende gemeentebelasting en het juiste gewest voor je woonplaats.</p></li>
+    <li class="tool"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><polygon points="2,8 22,8 22,21 2,21"/><polygon points="8,3 16,3 16,7 14,7 14,5 10,5 10,7 8,7"/><polygon class="r" points="2,12 22,12 22,14 2,14"/></svg><h3><a href="zelfstandigen/">Zelfstandigen</a></h3><p>Inkomen en sociale bijdragen, pas nadat de officiële regels gedekt zijn.</p></li>
+    <li class="tool"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><polygon points="2,3 5,3 5,19 19,19 19,3 22,3 22,22 2,22"/><polygon class="r" points="7,17 17,17 17,9 7,9"/></svg><h3><a href="pensioenen/">Pensioenen en andere inkomsten</a></h3><p>Waar de Belgische wetgeving en het toepassingsgebied gedocumenteerd zijn.</p></li>
+    <li class="tool"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><polygon points="2,9 7,9 7,21 2,21"/><polygon class="r" points="9.5,4 14.5,4 14.5,21 9.5,21"/><polygon points="17,12 22,12 22,21 17,21"/></svg><h3><a href="scenarios/">Scenario’s en vergelijkingen</a></h3><p>Wat als je loon, gemeente of gezin verandert?</p></li>
+  </ul>
+
+  <div class="section-head" id="principles"><h2>Waarom je de cijfers kunt vertrouwen</h2></div>
+  <div class="trust-figures">
+    <div><span class="figure-xl">3</span><span>gewesten, elk met hun eigen regels: Vlaanderen, Brussel en Wallonië</span></div>
+    <div><span class="figure-xl">2</span><span>talen, Nederlands en Frans, met dezelfde motor en dezelfde resultaten</span></div>
+    <div><span class="figure-xl">0</span><span>schattingen: een parameter zonder officiële bevestiging blijft open en houdt het resultaat tegen</span></div>
+    <div><span class="figure-xl">0</span><span>gegevens verstuurd: de berekening gebeurt in je browser, zonder registratie</span></div>
+  </div>
+
+  <section class="view" id="simulator" aria-labelledby="simulator-title">
+    <div class="view-head">
+      <div>
+        <p class="eyebrow">Bruto-netto · Inkomstenjaar 2026</p>
+        <h2 class="view-title" id="simulator-title">Bereken je nettoloon</h2>
+        <p class="lead">Met je echte situatie: loon, gewest en gemeente, gezin en werkregime. Federale belasting, sociale bijdragen en gemeentebelasting worden afzonderlijk berekend en toegelicht.</p>
+      </div>
+    </div>
   <div class="calc">
     <form id="salary-form" class="form">
       <fieldset class="block">
@@ -126,58 +170,44 @@
       <fieldset class="block">
         <legend><span class="step">4</span>Werk en jaar</legend>
         <div class="grid2">
-          <label class="field"><span>Arbeidsregime</span><select name="employment"><option value="employee">Werknemer</option><option value="other" disabled>Zelfstandige — binnenkort</option></select></label>
+          <label class="field"><span>Arbeidsregime</span><select name="employment"><option value="employee">Werknemer</option></select></label>
           <label class="field"><span>Inkomstenjaar</span><select name="incomeYear" aria-describedby="year-help"><option value="2026">2026</option></select></label>
         </div>
         <p class="help" id="year-help">Aanslagjaar 2027.</p>
         <input type="hidden" name="assessmentYear" value="2027">
       </fieldset>
       <div class="form-actions">
-        <button class="btn btn-primary" type="submit">Berekening voorbereiden <span class="arrow" aria-hidden="true">→</span></button>
-        <p class="help">De simulator wordt momenteel opgebouwd. Er wordt nog geen nettoloon berekend of weergegeven.</p>
+        <button class="btn btn-primary" type="submit">Berekenen <span class="arrow" aria-hidden="true">→</span></button>
+        <p class="help">Je gegevens blijven in je browser en worden nergens naartoe gestuurd.</p>
       </div>
     </form>
     <div class="result" id="result" aria-live="polite">
-      <div class="result-status"><span class="chip warn">Berekening geblokkeerd</span></div>
-      <h3>Een transparante berekening</h3>
-      <p>We bouwen eerst de Belgische berekeningsregels op en toetsen ze aan officiële bronnen. Zo vermijden we misleidende nettoloonbedragen.</p>
-      <ul class="result-list" aria-label="Nog te bevestigen in officiële bronnen:">
+      <div class="result-head"><div class="card-title">Resultaat</div></div>
+      <h3 class="result-label">Resultaat volgt zodra alle regels bevestigd zijn</h3>
+      <p class="result-sub">Elke regel komt uit een officiële bron en wordt getest voordat er een bedrag verschijnt.</p>
+      <details class="result-rules"><summary>Regels die nog bevestigd worden</summary><ul class="result-list">
         <li>Werkbonus en werknemersbijdragen</li>
         <li>Bedrijfsvoorheffing</li>
         <li>Forfaitaire beroepskosten</li>
         <li>Gezinsgebonden belastingvoordelen</li>
+        <li>Gewestelijke regels</li>
         <li>Gemeentelijke opcentiemen</li>
         <li>Bijzondere bijdrage voor de sociale zekerheid</li>
-      </ul>
+      </ul></details>
     </div>
   </div>
-
-  <div class="section-head" id="roadmap"><h2>Wat komt er</h2></div>
-  <ul class="tools">
-    <li class="tool"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><polygon points="3,2 17,2 21,6 21,22 3,22"/><polygon class="r" points="7,15 17,15 17,18 7,18"/></svg><h3><a href="#simulator">Bruto-netto voor werknemers</a></h3><p>Maandelijkse en jaarlijkse begrippen duidelijk gescheiden.</p><span class="chip warn">In ontwikkeling</span></li>
-    <li class="tool"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><polygon points="3,9 9,9 9,22 3,22"/><polygon points="11,6 17,6 17,22 11,22"/><polygon class="r" points="19,14 22,14 22,22 19,22"/></svg><h3><a href="gezin-en-bedrijfsvoorheffing/">Gezinssituatie en bedrijfsvoorheffing</a></h3><p>Gezinslast en inhoudingen op je loon, volgens de Belgische regels.</p><span class="chip warn">In ontwikkeling</span></li>
-    <li class="tool"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><polygon points="12,2 21,10 21,22 3,22 3,10"/><polygon class="r" points="10,15 14,15 14,22 10,22"/></svg><h3><a href="gemeentebelasting/">Gemeentebelasting en gewest</a></h3><p>De aanvullende gemeentebelasting en het juiste gewest voor je woonplaats.</p><span class="chip warn">In ontwikkeling</span></li>
-    <li class="tool"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><polygon points="2,8 22,8 22,21 2,21"/><polygon points="8,3 16,3 16,7 14,7 14,5 10,5 10,7 8,7"/><polygon class="r" points="2,12 22,12 22,14 2,14"/></svg><h3><a href="zelfstandigen/">Zelfstandigen</a></h3><p>Inkomen en sociale bijdragen, pas nadat de officiële regels gedekt zijn.</p><span class="chip warn">In ontwikkeling</span></li>
-    <li class="tool"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><polygon points="2,3 5,3 5,19 19,19 19,3 22,3 22,22 2,22"/><polygon class="r" points="7,17 17,17 17,9 7,9"/></svg><h3><a href="pensioenen/">Pensioenen en andere inkomsten</a></h3><p>Waar de Belgische wetgeving en het toepassingsgebied gedocumenteerd zijn.</p><span class="chip warn">In ontwikkeling</span></li>
-    <li class="tool"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><polygon points="2,9 7,9 7,21 2,21"/><polygon class="r" points="9.5,4 14.5,4 14.5,21 9.5,21"/><polygon points="17,12 22,12 22,21 17,21"/></svg><h3><a href="scenarios/">Scenario’s en vergelijkingen</a></h3><p>Toelichtingen, verslagen en vergelijkingen voor Belgische situaties.</p><span class="chip warn">In ontwikkeling</span></li>
-  </ul>
-
-  <div class="section-head" id="principles"><h2>Onze principes</h2></div>
-  <ul class="promises">
-    <li><b>Belgische regels</b>Federale belastingen, sociale bijdragen en lokale opcentiemen worden afzonderlijk behandeld.</li>
-    <li><b>Controleerbare methode</b>Elke parameter krijgt een officiële bron, een inkomstenjaar en een test.</li>
-    <li><b>NL & FR</b>Dezelfde berekening, beschikbaar in het Nederlands en het Frans.</li>
-  </ul>
+  </section>
 </main>
 <footer class="footer">
   <div class="container footer-in">
     <p><b>Belastingkaart</b> is een onafhankelijk informatieproject. Geen officiële overheidswebsite en geen fiscaal advies.</p>
     <nav class="footer-nav" aria-label="Meer over Belastingkaart">
-      <div><p class="footer-title">Simulator</p><ul><li><a href="#simulator">Bruto-netto voor werknemers</a> <span class="footer-small">(in ontwikkeling)</span></li></ul></div>
-      <div><p class="footer-title">Over Belastingkaart</p><ul><li><a href="../nl/methodologie/">Methodologie</a></li><li><a href="../nl/bronnen/">Bronnen</a></li><li><a href="../nl/contact/">Contact</a></li><li><a href="../nl/privacy/">Privacy</a></li></ul></div>
+      <div><p class="footer-title">Simulator</p><ul><li><a href="../nl/#simulator">Bruto-netto voor werknemers</a></li></ul></div>
+      <div><p class="footer-title">Over Belastingkaart</p><ul><li><a href="../nl/over-belastingkaart/">Over ons</a></li><li><a href="../nl/methodologie/">Methodologie</a></li><li><a href="../nl/validatie/">Validatie</a></li><li><a href="../nl/bronnen/">Bronnen</a></li><li><a href="../nl/contact/">Contact</a></li></ul></div>
+      <div><p class="footer-title">Juridisch</p><ul><li><a href="../nl/juridische-informatie/">Juridische informatie</a></li><li><a href="../nl/disclaimer/">Disclaimer</a></li><li><a href="../nl/privacy/">Privacy</a></li><li><a href="../nl/cookies/">Cookies</a></li></ul></div>
       <div><p class="footer-title">Taal</p><ul><li><a href="../nl/" hreflang="nl-BE" lang="nl">Nederlands</a></li><li><a href="../fr/" hreflang="fr-BE" lang="fr">Français</a></li></ul></div>
     </nav>
-    <p class="footer-small">Inkomstenjaar 2026 · aanslagjaar 2027 · Er wordt nog geen nettoloon berekend of getoond.</p>
+    <p class="footer-small">Inkomstenjaar 2026 · aanslagjaar 2027 · Alleen officiële bronnen.</p>
   </div>
 </footer>
 </body>

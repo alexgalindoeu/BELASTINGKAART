@@ -223,11 +223,11 @@ test('tools stay pending even if the engine is missing, throws or claims a compl
 });
 
 test('the widget code points to the dedicated Belastingkaart frame', () => {
-  assert.match(W.BKWidget.frameCode({ language: 'nl' }), /src="https:\/\/belastingkaart\.be\/nl\/widget\/kader\.html"/);
-  assert.match(W.BKWidget.frameCode({ language: 'fr', theme: 'dark' }), /fr\/widget\/cadre\.html\?theme=dark/);
+  assert.match(W.BKWidget.frameCode({ language: 'nl' }), /src="https:\/\/belastingkaart\.be\/widget\/nl\.html"/);
+  assert.match(W.BKWidget.frameCode({ language: 'fr', theme: 'dark' }), /widget\/fr\.html\?theme=dark/);
   assert.match(W.BKWidget.frameCode({ language: 'fr' }), /<a href="https:\/\/belastingkaart\.be\/fr\/">Belastingkaart<\/a>/);
   assert.throws(() => W.BKWidget.frameCode({ language: 'en' }), /Unsupported/);
-  assert.equal(W.BKWidgetTool.previewSrc({ language: 'fr', theme: 'light' }), '../../fr/widget/cadre.html?theme=light');
+  assert.equal(W.BKWidgetTool.previewSrc({ language: 'fr', theme: 'light' }), '../../widget/fr.html?theme=light');
   assert.equal(W.BKWidgetTool.themeFromSearch('?theme=dark'), 'dark');
   assert.equal(W.BKWidgetTool.themeFromSearch('?theme=evil'), 'auto');
 });
@@ -260,7 +260,7 @@ test('tool pages use the shared shell, canonical, hreflang pairs and a working l
 });
 
 test('local links, scripts and stylesheets of tool pages and widget frames resolve', async () => {
-  const files = [...TOOLS.flatMap(([nl, fr]) => [nl + 'index.html', fr + 'index.html']), 'nl/widget/kader.html', 'fr/widget/cadre.html'];
+  const files = [...TOOLS.flatMap(([nl, fr]) => [nl + 'index.html', fr + 'index.html']), 'widget/nl.html', 'widget/fr.html'];
   for (const file of files) {
     const html = await readFile(path.join(WEB, file), 'utf8');
     for (const ref of all(html, /(?:href|src)="([^"]+)"/g)) {
@@ -284,7 +284,7 @@ test('the static pending panel of every tool shows no fiscal amount, and pages h
     const gross = html.match(new RegExp(`<div class="result is-gross" id="${px}-gross"[\\s\\S]*?</div>\\s*</div>`))?.[0] ?? '';
     assert.doesNotMatch(gross.replace(/<[^>]+>/g, ' '), /€|EUR/, route + ' gross panel starts empty');
   }
-  for (const file of ['nl/widget/kader.html', 'fr/widget/cadre.html']) {
+  for (const file of ['widget/nl.html', 'widget/fr.html']) {
     const html = await readFile(path.join(WEB, file), 'utf8');
     assert.match(html, /<meta name="robots" content="noindex">/);
     const panel = html.match(/<div class="result" id="wf-net"[\s\S]*?<\/details>\s*<\/div>/)[0];

@@ -39,8 +39,10 @@
 <link rel="apple-touch-icon" href="../../icons/apple-touch-icon.png">
 <link rel="manifest" href="../../nl/manifest.webmanifest">
 <link rel="stylesheet" href="../../css/site.css">
+<link rel="stylesheet" href="../../css/components.css">
 <link rel="stylesheet" href="../../css/tools.css">
 <script defer src="../../config.js"></script>
+<script defer src="../../js/menu.js"></script>
 <script defer src="../../js/ui.js"></script>
 <script defer src="../../js/importe.js"></script>
 <script defer src="../../js/formulario.js"></script>
@@ -86,13 +88,13 @@
         </div>
       </form>
       <h3>Voorbeeld</h3>
-      <div class="widget-preview"><iframe id="wg-preview" src="kader.html" title="Voorbeeld van de Belastingkaart-widget" loading="lazy"></iframe></div>
+      <div class="widget-preview"><iframe id="wg-preview" src="../../widget/nl.html" title="Voorbeeld van de Belastingkaart-widget" loading="lazy"></iframe></div>
       <p class="help">Tot alle regels bevestigd zijn, meldt de widget dat het resultaat volgt; er wordt geen nettoloon berekend.</p>
     </section>
     <section class="card tool-card">
       <h2 class="card-title">Code om te kopiëren</h2>
       <p>Plak deze code in je pagina, waar de widget moet verschijnen. De link onder het kader hoort bij de code en moet zichtbaar blijven.</p>
-      <label class="field"><span>HTML-code van de widget</span><textarea id="wg-code" class="widget-code" rows="6" readonly spellcheck="false">&lt;iframe src=&quot;https://belastingkaart.be/nl/widget/kader.html&quot; title=&quot;Belastingkaart: bruto-netto voor werknemers in België&quot; width=&quot;100%&quot; height=&quot;460&quot; style=&quot;border:0;max-width:480px;display:block&quot; loading=&quot;lazy&quot;&gt;&lt;/iframe&gt;
+      <label class="field"><span>HTML-code van de widget</span><textarea id="wg-code" class="widget-code" rows="6" readonly spellcheck="false">&lt;iframe src=&quot;https://belastingkaart.be/widget/nl.html&quot; title=&quot;Belastingkaart: bruto-netto voor werknemers in België&quot; width=&quot;100%&quot; height=&quot;460&quot; style=&quot;border:0;max-width:480px;display:block&quot; loading=&quot;lazy&quot;&gt;&lt;/iframe&gt;
 &lt;p style=&quot;font-size:13px;margin:4px 0 0&quot;&gt;Informatie van &lt;a href=&quot;https://belastingkaart.be/nl/&quot;&gt;Belastingkaart&lt;/a&gt;&lt;/p&gt;</textarea></label>
       <p><button class="btn btn-primary" type="button" id="wg-copy">Kopieer de code</button> <span class="help" id="wg-copied" role="status"></span></p>
       <details><summary>Optioneel: het kader zijn hoogte zelf laten aanpassen</summary><p>De widget stuurt alleen zijn hoogte naar de pagina die hem toont. Voeg dit script één keer toe aan je pagina om het kader te laten meegroeien; zonder script geldt de hoogte uit de code.</p><pre class="widget-code"><code>&lt;script&gt;
@@ -123,10 +125,11 @@ addEventListener(&quot;message&quot;, function (e) {
     <p><b>Belastingkaart</b> is een onafhankelijk informatieproject. Geen officiële overheidswebsite en geen fiscaal advies.</p>
     <nav class="footer-nav" aria-label="Meer over Belastingkaart">
       <div><p class="footer-title">Simulator</p><ul><li><a href="../../nl/#simulator">Bruto-netto voor werknemers</a></li></ul></div>
-      <div><p class="footer-title">Over Belastingkaart</p><ul><li><a href="../../nl/methodologie/">Methodologie</a></li><li><a href="../../nl/bronnen/">Bronnen</a></li><li><a href="../../nl/contact/">Contact</a></li><li><a href="../../nl/privacy/">Privacy</a></li></ul></div>
+      <div><p class="footer-title">Over Belastingkaart</p><ul><li><a href="../../nl/over-belastingkaart/">Over ons</a></li><li><a href="../../nl/methodologie/">Methodologie</a></li><li><a href="../../nl/validatie/">Validatie</a></li><li><a href="../../nl/bronnen/">Bronnen</a></li><li><a href="../../nl/contact/">Contact</a></li></ul></div>
+      <div><p class="footer-title">Juridisch</p><ul><li><a href="../../nl/juridische-informatie/">Juridische informatie</a></li><li><a href="../../nl/disclaimer/">Disclaimer</a></li><li><a href="../../nl/privacy/">Privacy</a></li><li><a href="../../nl/cookies/">Cookies</a></li></ul></div>
       <div><p class="footer-title">Taal</p><ul><li><a href="../../nl/widget/" hreflang="nl-BE" lang="nl">Nederlands</a></li><li><a href="../../fr/widget/" hreflang="fr-BE" lang="fr">Français</a></li></ul></div>
     </nav>
-    <p class="footer-small">Inkomstenjaar 2026 · aanslagjaar 2027 · Er wordt nog geen nettoloon berekend of getoond.</p>
+    <p class="footer-small">Inkomstenjaar 2026 · aanslagjaar 2027 · Alleen officiële bronnen.</p>
   </div>
 </footer>
 </body>
