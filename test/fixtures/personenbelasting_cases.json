@@ -1,0 +1,419 @@
+{
+ "description": "Shared R/JS parity cases for the annual personenbelasting method (R/10_personenbelasting.R, web/js/tax-engine.js). 'synthetic_parameters' is a SYNTHETIC parameter set (synthetic, not 2026): round numbers chosen to exercise the WIB 92 method (art. 51, 130, 131, 132, 134 par. 2, 466, 468), not the 2026 values. Expected values computed independently with Python Decimal. No official worked example with figures was found in the Fisconet texts consulted (the 'Commentaar van artikel 134' is a documentary index without examples).",
+ "synthetic_parameters": {
+  "label": "synthetic, not 2026",
+  "federal": {
+   "personal_income_tax": {
+    "brackets": {
+     "value": [
+      {
+       "upper": 10000,
+       "rate": 0.2
+      },
+      {
+       "upper": 20000,
+       "rate": 0.4
+      },
+      {
+       "upper": 40000,
+       "rate": 0.45
+      },
+      {
+       "upper": null,
+       "rate": 0.5
+      }
+     ],
+     "status": "confirmed"
+    },
+    "basic_personal_tax_allowance": {
+     "value": 6000,
+     "status": "confirmed"
+    },
+    "disabled_taxpayer_increase": {
+     "value": 900,
+     "status": "confirmed"
+    },
+    "dependant_increases": {
+     "value": {
+      "children_total_by_count": {
+       "1": 1000,
+       "2": 2500,
+       "3": 5000,
+       "4": 8000
+      },
+      "per_child_above_four": 3000,
+      "child_under_three_supplement": 300,
+      "dependant_66_plus_in_care_per_person": 2500,
+      "other_dependant_per_person": 800,
+      "disabled_counts_double": true
+     },
+     "status": "confirmed"
+    },
+    "tax_on_tax_free_sum": {
+     "value": [
+      {
+       "upper": 6000,
+       "rate": 0.2
+      },
+      {
+       "upper": 10000,
+       "rate": 0.25
+      },
+      {
+       "upper": 20000,
+       "rate": 0.4
+      },
+      {
+       "upper": null,
+       "rate": 0.5
+      }
+     ],
+     "status": "confirmed"
+    }
+   }
+  },
+  "payroll": {
+   "professional_expenses": {
+    "value": {
+     "employees_rate": 0.3,
+     "employees_maximum": 4000
+    },
+    "status": "confirmed"
+   }
+  },
+  "social_security": {
+   "employee_contribution": {
+    "rate": {
+     "value": 0.1,
+     "status": "confirmed"
+    },
+    "work_bonus": {
+     "method": {
+      "status": "confirmed"
+     },
+     "periods": {
+      "x": {
+       "status": "confirmed",
+       "value": {}
+      }
+     }
+    }
+   }
+  },
+  "municipal": {
+   "aanvullende_gemeentebelasting": {
+    "Synthetica": {
+     "value": 7.5,
+     "status": "confirmed"
+    }
+   }
+  }
+ },
+ "net_professional_income": [
+  {
+   "name": "cap reached",
+   "taxable_wages": 20000,
+   "social_contributions": 2000,
+   "expected": {
+    "wages_less_contributions": 18000.0,
+    "professional_expenses": 4000.0,
+    "net_professional_income": 14000.0
+   }
+  },
+  {
+   "name": "below cap",
+   "taxable_wages": 10000,
+   "social_contributions": 1307,
+   "expected": {
+    "wages_less_contributions": 8693.0,
+    "professional_expenses": 2607.9,
+    "net_professional_income": 6085.1
+   }
+  },
+  {
+   "name": "below cap round",
+   "taxable_wages": 13000,
+   "social_contributions": 0,
+   "expected": {
+    "wages_less_contributions": 13000.0,
+    "professional_expenses": 3900.0,
+    "net_professional_income": 9100.0
+   }
+  },
+  {
+   "name": "zero",
+   "taxable_wages": 0,
+   "social_contributions": 0,
+   "expected": {
+    "wages_less_contributions": 0.0,
+    "professional_expenses": 0.0,
+    "net_professional_income": 0.0
+   }
+  }
+ ],
+ "basic_tax": [
+  {
+   "base": 0,
+   "expected": 0.0
+  },
+  {
+   "base": 0.01,
+   "expected": 0.002
+  },
+  {
+   "base": 9999.99,
+   "expected": 1999.998
+  },
+  {
+   "base": 10000,
+   "expected": 2000.0
+  },
+  {
+   "base": 10000.01,
+   "expected": 2000.004
+  },
+  {
+   "base": 20000,
+   "expected": 6000.0
+  },
+  {
+   "base": 40000,
+   "expected": 15000.0
+  },
+  {
+   "base": 40000.01,
+   "expected": 15000.005
+  },
+  {
+   "base": 50000,
+   "expected": 20000.0
+  }
+ ],
+ "tax_free_sum": [
+  {
+   "name": "single",
+   "person": {},
+   "expected": {
+    "basic_amount": 6000,
+    "children_increases": 0,
+    "other_dependant_increases": 0,
+    "tax_free_sum": 6000
+   }
+  },
+  {
+   "name": "T2",
+   "person": {
+    "taxpayer_disabled": true,
+    "children": 2,
+    "children_disabled": 1,
+    "children_under_3": 1
+   },
+   "expected": {
+    "basic_amount": 6900,
+    "children_increases": 5300,
+    "other_dependant_increases": 0,
+    "tax_free_sum": 12200
+   }
+  },
+  {
+   "name": "T3",
+   "person": {
+    "children": 6,
+    "children_disabled": 1,
+    "children_under_3": 2,
+    "children_under_3_disabled": 1,
+    "dependants_66_care": 1,
+    "other_dependants": 2,
+    "other_dependants_disabled": 1
+   },
+   "expected": {
+    "basic_amount": 6000,
+    "children_increases": 17900,
+    "other_dependant_increases": 4900,
+    "tax_free_sum": 28800
+   }
+  },
+  {
+   "name": "one_child",
+   "person": {
+    "children": 1
+   },
+   "expected": {
+    "basic_amount": 6000,
+    "children_increases": 1000,
+    "other_dependant_increases": 0,
+    "tax_free_sum": 7000
+   }
+  }
+ ],
+ "reduction": [
+  {
+   "name": "within first bracket",
+   "basic_tax": 3000,
+   "tax_free_sum": 6000,
+   "expected": {
+    "tax_on_tax_free_sum": 1200.0,
+    "reduction_applied": 1200.0,
+    "not_deductible": 0.0,
+    "tax_after_reduction": 1800.0
+   }
+  },
+  {
+   "name": "tax-free sum spanning three brackets",
+   "basic_tax": 6000,
+   "tax_free_sum": 12200,
+   "expected": {
+    "tax_on_tax_free_sum": 3080.0,
+    "reduction_applied": 3080.0,
+    "not_deductible": 0.0,
+    "tax_after_reduction": 2920.0
+   }
+  },
+  {
+   "name": "reduction larger than the tax",
+   "basic_tax": 500,
+   "tax_free_sum": 12200,
+   "expected": {
+    "tax_on_tax_free_sum": 3080.0,
+    "reduction_applied": 500.0,
+    "not_deductible": 2580.0,
+    "tax_after_reduction": 0.0
+   }
+  },
+  {
+   "name": "tax-free sum spanning four brackets",
+   "basic_tax": 15000,
+   "tax_free_sum": 28800,
+   "expected": {
+    "tax_on_tax_free_sum": 10600.0,
+    "reduction_applied": 10600.0,
+    "not_deductible": 0.0,
+    "tax_after_reduction": 4400.0
+   }
+  },
+  {
+   "name": "tax-free sum on a bracket boundary",
+   "basic_tax": 3000,
+   "tax_free_sum": 10000,
+   "expected": {
+    "tax_on_tax_free_sum": 2200.0,
+    "reduction_applied": 2200.0,
+    "not_deductible": 0.0,
+    "tax_after_reduction": 800.0
+   }
+  },
+  {
+   "name": "zero basic tax",
+   "basic_tax": 0,
+   "tax_free_sum": 6000,
+   "expected": {
+    "tax_on_tax_free_sum": 1200.0,
+    "reduction_applied": 0.0,
+    "not_deductible": 1200.0,
+    "tax_after_reduction": 0.0
+   }
+  }
+ ],
+ "municipal": [
+  {
+   "total_tax": 2920,
+   "rate": 7.5,
+   "expected": 219.0
+  },
+  {
+   "total_tax": 0,
+   "rate": 7.5,
+   "expected": 0.0
+  },
+  {
+   "total_tax": 1234.56,
+   "rate": 8,
+   "expected": 98.7648
+  },
+  {
+   "total_tax": 1000,
+   "rate": 0,
+   "expected": 0.0
+  }
+ ],
+ "municipal_invalid_rates": [
+  7.35,
+  -1
+ ],
+ "full": [
+  {
+   "name": "single, cap reached",
+   "input": {
+    "taxable_wages": 20000.0,
+    "social_contributions": 2000.0,
+    "municipality": "Synthetica"
+   },
+   "expected_status": "not_modelled",
+   "expected_steps": {
+    "wages_less_contributions": 18000.0,
+    "professional_expenses": 4000.0,
+    "net_professional_income": 14000.0,
+    "taxable_income": 14000.0,
+    "basic_tax": 3600.0,
+    "tax_free_sum": 6000,
+    "tax_on_tax_free_sum": 1200.0,
+    "tax_free_sum_reduction_applied": 1200.0,
+    "tax_after_tax_free_sum": 2400.0,
+    "tax_free_sum_not_deductible": 0.0
+   }
+  },
+  {
+   "name": "low wage, reduction larger than tax",
+   "input": {
+    "taxable_wages": 10000.0,
+    "social_contributions": 1307.0,
+    "municipality": "Synthetica",
+    "taxpayer_disabled": true,
+    "children": 2,
+    "children_disabled": 1,
+    "children_under_3": 1
+   },
+   "expected_status": "not_modelled",
+   "expected_steps": {
+    "wages_less_contributions": 8693.0,
+    "professional_expenses": 2607.9,
+    "net_professional_income": 6085.1,
+    "taxable_income": 6085.1,
+    "basic_tax": 1217.02,
+    "tax_free_sum": 12200,
+    "tax_on_tax_free_sum": 3080.0,
+    "tax_free_sum_reduction_applied": 1217.02,
+    "tax_after_tax_free_sum": 0.0,
+    "tax_free_sum_not_deductible": 1862.98
+   }
+  },
+  {
+   "name": "high wage, large family",
+   "input": {
+    "taxable_wages": 60000.0,
+    "social_contributions": 7842.0,
+    "municipality": "Synthetica",
+    "children": 6,
+    "children_disabled": 1,
+    "children_under_3": 2,
+    "children_under_3_disabled": 1,
+    "dependants_66_care": 1,
+    "other_dependants": 2,
+    "other_dependants_disabled": 1
+   },
+   "expected_status": "not_modelled",
+   "expected_steps": {
+    "wages_less_contributions": 52158.0,
+    "professional_expenses": 4000.0,
+    "net_professional_income": 48158.0,
+    "taxable_income": 48158.0,
+    "basic_tax": 19079.0,
+    "tax_free_sum": 28800,
+    "tax_on_tax_free_sum": 10600.0,
+    "tax_free_sum_reduction_applied": 10600.0,
+    "tax_after_tax_free_sum": 8479.0,
+    "tax_free_sum_not_deductible": 0.0
+   }
+  }
+ ]
+}
