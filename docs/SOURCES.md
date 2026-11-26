@@ -1,12 +1,13 @@
 # Official source register
 
-Last reviewed: 2026-11-24. Only official public authorities are permitted as tax sources.
+Last reviewed: 2026-11-25. Only official public authorities are permitted as tax sources.
 
 | Authority | Official domain | Primary use |
 |---|---|---|
 | FOD / SPF Financiën | https://fin.belgium.be/ | Federal personal income tax, tax return, tax reductions and official guidance |
 | FPS Finance tax rates | https://finances.belgium.be/en/private-individuals/tax-return/income/tax-rates | Income-year tax brackets and basic personal tax allowance |
 | FPS Finance professional withholding | https://finances.belgium.be/fr/entreprises/personnel_et_remuneration/precompte_professionnel/calcul | Official 2026 withholding rules, key formula and simulator |
+| Fisconet (FOD Financiën) | https://www.minfin.fgov.be/myminfin-web/pages/public/fisconet (documents via the public endpoint `https://www.minfin.fgov.be/myminfin-rest/fisconetPlus/public/document/<guid>`, no CAPTCHA) | Bijlage III KB/WIB 92, sleutelformules, codified WIB 92 articles and indexation notices; transcriptions in [sources/bedrijfsvoorheffing_2026_fisconet.md](sources/bedrijfsvoorheffing_2026_fisconet.md) and [sources/personenbelasting_2026_fisconet.md](sources/personenbelasting_2026_fisconet.md) |
 | RSZ / ONSS | https://www.socialsecurity.be/ | Employee and employer social-security contributions, work bonus / bonus à l'emploi |
 | RSZ werkbonus | https://www.socialsecurity.be/employer/instructions/dmfa/nl/latest/instructions/deductions/workers_reductions/workbonus.html (and `2026-1`, `2026-2` versions) | Social work bonus tables per period; verbatim transcription in [sources/werkbonus_2026_rsz.md](sources/werkbonus_2026_rsz.md) |
 | RSZ special social-security contribution (NL) | https://www.socialsecurity.be/employer/instructions/dmfa/nl/latest/instructions/special_contributions/other_specialcontributions/specialsocialsecuritycontribution.html | Quarterly special employee social-security contribution and payroll withholding |
