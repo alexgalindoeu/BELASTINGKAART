@@ -18,6 +18,9 @@ jobs:
           node-version: 22
       - run: npm test
       - run: npm run validate:params
+      - run: npm run check:sitemap
+      - run: npm run check:head
+      - run: npm run check:validation
 
   r:
     runs-on: ubuntu-latest

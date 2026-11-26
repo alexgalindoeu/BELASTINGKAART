@@ -6,7 +6,14 @@
   "scripts": {
     "test": "node --test test/*.test.mjs",
     "validate:params": "node tools/validate_parameters.mjs",
-    "build:sitemap": "node tools/generate_sitemap.mjs"
+    "build:sitemap": "node tools/generate_sitemap.mjs",
+    "check:sitemap": "node tools/generate_sitemap.mjs --check",
+    "build:head": "node tools/build_head.mjs",
+    "check:head": "node tools/build_head.mjs --check",
+    "build:validation": "node tools/generate_validation_page.mjs",
+    "check:validation": "node tools/generate_validation_page.mjs --check",
+    "build:og": "node tools/generate_og_image.mjs",
+    "test:browser": "node test/browser/site.browser.mjs"
   },
   "engines": { "node": ">=20" }
 }
