@@ -14,7 +14,13 @@
     "check:validation": "node tools/generate_validation_page.mjs --check",
     "build:og": "node tools/generate_og_image.mjs",
     "test:browser": "node test/browser/site.browser.mjs",
-    "test:smoke": "node test/browser/tools.smoke.mjs"
+    "test:smoke": "node test/browser/tools.smoke.mjs",
+    "build:kaart": "node tools/build_kaart.mjs",
+    "check:kaart": "node tools/check_kaart.mjs",
+    "test:browser:kaart": "node test/browser/kaart.browser.mjs"
   },
-  "engines": { "node": ">=20" }
+  "engines": { "node": ">=20" },
+  "devDependencies": {
+    "mapshaper": "0.6.102"
+  }
 }
