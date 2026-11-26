@@ -5,11 +5,12 @@ meta:
   assessment_year: 2027
   status: partial
   notes: >-
-    The progressive federal personal income tax scale and basic personal tax
-    allowance are sourced from FPS Finance for income year 2026 / assessment year
-    2027. This is not a complete salary-net calculation: professional expenses,
-    family increases, tax reductions, municipal surcharge and withholding rules
-    still need separate official documentation.
+    Federal personal income tax for income year 2026 / assessment year 2027, transcribed
+    from the codified WIB 92 articles on Fisconet (FOD Financiën) and the indexation notice
+    of B.S. 12.08.2026 (Numac 2026006085). Verbatim quotes:
+    docs/sources/personenbelasting_2026_fisconet.md. This is not a complete salary-net
+    calculation: huwelijksquotiënt, art. 133 increases, tax credits, regional rules and
+    the municipal surcharge are not covered here.
 
 personal_income_tax:
   brackets:
@@ -28,16 +29,22 @@ personal_income_tax:
     assessment_year: 2027
     effective_from: 2026-01-01
     effective_to: 2026-12-31
-    source_name: FPS Finance / FOD Financiën
-    source_url: https://finances.belgium.be/en/private-individuals/tax-return/income/tax-rates
-    source_title: Tax rates — income tax year 2026 (assessment year 2027)
-    retrieved_at: 2026-11-24
+    source_name: FOD Financiën / SPF Finances — Fisconet
+    source_url: https://www.minfin.fgov.be/myminfin-web/pages/public/fisconet/document/796a4fc5-340e-4c89-a72a-88caa804ca96
+    source_title: Artikel 130, WIB 92 (inkomsten 2026) — geïndexeerde bedragen, aanslagjaar 2027
+    retrieved_at: 2026-11-25
     unit: EUR_taxable_income_and_marginal_rate
-    rounding: pending_official_calculation_rule
+    rounding: not stated in art. 130
     notes: >-
-      Official brackets: 25% up to EUR 16,720; 40% from EUR 16,720 to 29,510;
-      45% from EUR 29,510 to 51,070; 50% above EUR 51,070. Applied to taxable
-      income, not directly to gross salary.
+      Verbatim (NL): '25 % voor de inkomensschijf van 0,01 euro tot 16.720 euro; 40 % voor
+      de schijf van 16.720 euro tot 29.510 euro; 45 % voor de schijf van 29.510 euro tot
+      51.070 euro; 50 % voor de schijf boven 51.070 euro' (all 'geïndexeerd bedrag'). FR
+      Article 130 CIR 92 (aff72054-004a-4858-8747-1d70964c8e3d) is identical. The limits
+      match the indexation table of B.S. 12.08.2026 (base 8.120 / 14.330 / 24.800). Source
+      moved on 2026-11-25 from finances.belgium.be (CAPTCHA, unverifiable) to Fisconet;
+      the values are unchanged. Applied to taxable income of each taxpayer, not to gross
+      salary. NOT the withholding scale (Bijlage III uses 16.710 / 29.500 / 51.050 with a
+      7% surcharge built in).
   basic_personal_tax_allowance:
     value: 11550
     status: confirmed
@@ -46,13 +53,98 @@ personal_income_tax:
     assessment_year: 2027
     effective_from: 2026-01-01
     effective_to: 2026-12-31
-    source_name: FPS Finance / FOD Financiën
-    source_url: https://finances.belgium.be/en/private-individuals/tax-return/income/tax-rates
-    source_title: Tax rates — personal tax allowance, income tax year 2026
-    retrieved_at: 2026-11-24
+    source_name: FOD Financiën / SPF Finances — Fisconet
+    source_url: https://www.minfin.fgov.be/myminfin-web/pages/public/fisconet/document/f3c5d665-cac4-4cbd-b714-bd287f791751
+    source_title: Artikel 131, WIB 92 (inkomsten 2026) — geïndexeerde bedragen, aanslagjaar 2027
+    retrieved_at: 2026-11-25
     unit: EUR
     rounding: not_applicable_to_threshold
     notes: >-
-      Basic allowance only. It may increase depending on personal circumstances.
-      Do not treat this amount alone as the final tax reduction; the legal
-      calculation of the tax on the allowance and family increases must be modelled.
+      Verbatim: 'Voor de berekening van de belasting wordt een basisbedrag van 11.550 euro
+      (geïndexeerd bedrag) vrijgesteld van belasting.' Art. 131, first paragraph, applies
+      from assessment year 2027 (art. 2, 1°, and 4, W 15.07.2026 tot hervorming van de
+      personenbelasting, B.S. 29.07.2026). Indexation table: base 4.945 -> 11.550.
+      FR (2fb89ed0-b93e-47d7-816c-85f1ac679b8a): 'un montant de base de 11.550 euros
+      (montant indexé) est exempté d'impôt'. Source moved from finances.belgium.be
+      (CAPTCHA) to Fisconet; value unchanged. The reduction is the tax on this amount at
+      the art. 134 §2 scale (tax_on_tax_free_sum), not at the art. 130 rates.
+  disabled_taxpayer_increase:
+    value: 2030
+    status: confirmed
+    jurisdiction: federal
+    income_year: 2026
+    assessment_year: 2027
+    effective_from: 2026-01-01
+    effective_to: 2026-12-31
+    source_name: FOD Financiën / SPF Finances — Fisconet
+    source_url: https://www.minfin.fgov.be/myminfin-web/pages/public/fisconet/document/f3c5d665-cac4-4cbd-b714-bd287f791751
+    source_title: Artikel 131, tweede lid, WIB 92 (inkomsten 2026)
+    retrieved_at: 2026-11-25
+    unit: EUR
+    rounding: not_applicable_to_threshold
+    notes: >-
+      Verbatim: 'Dit bedrag wordt verhoogd met 2.030 euro (geïndexeerd bedrag) indien de
+      belastingplichtige gehandicapt is.' Indexation table: base 870 -> 2.030.
+  dependant_increases:
+    value:
+      children_total_by_count: {1: 2130, 2: 5130, 3: 11440, 4: 18510}
+      per_child_above_four: 7070
+      child_under_three_supplement: 740
+      dependant_66_plus_in_care_per_person: 5950
+      other_dependant_per_person: 1980
+      disabled_counts_double: true
+    status: confirmed
+    jurisdiction: federal
+    income_year: 2026
+    assessment_year: 2027
+    effective_from: 2026-01-01
+    effective_to: 2026-12-31
+    source_name: FOD Financiën / SPF Finances — Fisconet
+    source_url: https://www.minfin.fgov.be/myminfin-web/pages/public/fisconet/document/caa866c3-8820-4ba4-b5bc-f64ae0cd2869
+    source_title: Artikel 132, WIB 92 (inkomsten 2026) — toeslagen voor personen ten laste
+    retrieved_at: 2026-11-25
+    unit: EUR_added_to_tax_free_sum
+    rounding: not_applicable_to_threshold
+    notes: >-
+      Verbatim: '1° voor een kind: 2.130 euro; 2° voor twee kinderen: 5.130 euro; 3° voor
+      drie kinderen: 11.440 euro; 4° voor vier kinderen: 18.510 euro; 5° voor meer dan vier
+      kinderen: 18.510 euro plus 7.070 euro per kind boven het vierde; 6° een bijkomende
+      toeslag van 740 euro voor ieder kind dat de leeftijd van 3 jaar niet heeft bereikt
+      op 1 januari van het aanslagjaar [not combinable with the kinderoppas reduction];
+      7° [...] 66 jaar [...] zorgbehoevend: 5.950 euro; 8° voor iedere andere persoon ten
+      laste: 1.980 euro.' Children totals are cumulative amounts, not per child. Disabled
+      children and other dependants count double for 1°–6° and 8°. Art. 132, 1° and 2°,
+      apply from AJ 2027 (W 15.07.2026). Art. 133 increases and the art. 134 §3 refundable
+      child credit are not covered (pending).
+  tax_on_tax_free_sum:
+    value:
+      - upper: 11750
+        rate: 0.25
+      - upper: 16720
+        rate: 0.30
+      - upper: 27860
+        rate: 0.40
+      - upper: 51070
+        rate: 0.45
+      - upper: null
+        rate: 0.50
+    status: confirmed
+    jurisdiction: federal
+    income_year: 2026
+    assessment_year: 2027
+    effective_from: 2026-01-01
+    effective_to: 2026-12-31
+    source_name: FOD Financiën / SPF Finances — Fisconet
+    source_url: https://www.minfin.fgov.be/myminfin-web/pages/public/fisconet/document/20a503a9-4213-4e60-a91c-0ebb907e176a
+    source_title: Artikel 134, § 2, WIB 92 (inkomsten 2026) — belasting op de belastingvrije som
+    retrieved_at: 2026-11-25
+    unit: EUR_tax_free_sum_and_marginal_rate
+    rounding: not stated in art. 134
+    notes: >-
+      Verbatim: '25 % voor de schijf van de belastingvrije som van 0,01 euro tot 11.750 euro;
+      30 % [...] van 11.750 euro tot 16.720 euro; 40 % [...] van 16.720 euro tot 27.860 euro;
+      45 % [...] van 27.860 euro tot 51.070 euro; 50 % [...] boven 51.070 euro' (geïndexeerde
+      bedragen). The art. 130 basic tax is reduced by this tax on the tax-free sum (§2).
+      Indexation table: base 5.705 / 8.120 / 13.530 / 24.800. FR 56f7c2a3-94ab-45dd-85d0-2a0c7f6ddebc
+      is identical. §3 (refundable child credit, max. 550 EUR per child, not indexed) and
+      §4 (joint assessment) are not modelled.

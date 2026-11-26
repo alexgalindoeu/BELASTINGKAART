@@ -1,3 +1,3 @@
 # Income year 2026
 
-Assessment year is not inferred. Each tax parameter must declare its own applicable assessment year and effective dates. At present only the general employee social-security contribution rate is entered as confirmed; all other calculation components remain pending.
+Assessment year is not inferred. Each tax parameter must declare its own applicable assessment year and effective dates. Each parameter carries its own status (`confirmed`, `provisional`, `pending`); see `docs/CALCULATION_SCOPE.md` for the current coverage. Sources are transcribed verbatim in `docs/sources/`.
