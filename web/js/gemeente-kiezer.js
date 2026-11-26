@@ -1,6 +1,6 @@
 // Municipality picker (gemeente / commune): an ARIA 1.2 combobox with a listbox popup and
 // list autocomplete. Data: web/data/gemeenten.json, generated from Statbel REFNIS 2025.
-// It only identifies the municipality (NIS code and region); it never uses tax rates.
+// It only identifies the municipality (NIS code and region); it reads no fiscal data.
 (() => {
   const TEXT = {
     nl: {
