@@ -716,3 +716,97 @@ details.result-rules .result-list { margin-top: 6px; padding-top: 0; border-top:
 .segmented, .tab-list { align-self: flex-start; }
 .data-table td { vertical-align: baseline; }
 .compare-table thead th:first-child { text-align: left; }
+
+/* ---- home: cover (same composition as the reference home page) -------------------------
+   masthead, headline and lead left, the map plate right, the quick calculator as a band
+   between rules across the full width, then a large fact with an ink rule. */
+.home { padding-top: 32px; }
+.cover { position: relative; display: grid; grid-template-columns: minmax(0, 1fr); align-items: start; padding: 0 0 8px; }
+.cover::before { content: ""; position: absolute; inset: -32px -16px -20px; z-index: -1; pointer-events: none;
+  background-image: linear-gradient(var(--grid) 1px, transparent 1px), linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+  background-size: 44px 44px; background-position: -1px -1px;
+  -webkit-mask-image: radial-gradient(ellipse 60% 70% at 20% 30%, #000 25%, transparent 75%);
+  mask-image: radial-gradient(ellipse 60% 70% at 20% 30%, #000 25%, transparent 75%); }
+.cover-text h1 { font-size: clamp(34px, 5.6vw, 62px); font-weight: 800; letter-spacing: -.035em; line-height: 1.02; }
+.cover-text h1 .marker { background: linear-gradient(transparent 66%, var(--accent) 66%, var(--accent) 90%, transparent 90%);
+  padding: 0 .06em; -webkit-box-decoration-break: clone; box-decoration-break: clone; }
+.cover-text .lead { font-size: 17px; line-height: 1.55; margin-top: 20px; max-width: 46ch; }
+/* quick calculator: a band between rules under the headline (no box, no shadow) */
+.quickcalc { position: relative; margin-top: 28px; border-top: 2px solid var(--ink); border-bottom: 1px solid var(--line-2); }
+.quickcalc-fields { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr); gap: 12px; padding: 16px 0 14px; }
+.quickcalc-fields .field { margin: 0; }
+.quickcalc-fields label { font-size: 13px; font-weight: 600; color: var(--ink-2); }
+.quickcalc-fields input { font-family: var(--display); font-stretch: 112%; font-weight: 700; font-size: 19px; text-align: right; }
+.quickcalc-res { padding: 14px 0 18px; border-top: 1px solid var(--line); }
+.quickcalc-figure { display: flex; align-items: baseline; flex-wrap: wrap; gap: 4px 12px; }
+.quickcalc-figure .figure-xl { font-stretch: 125%; font-size: clamp(40px, 5vw, 56px); letter-spacing: -.045em; color: var(--ink-3); }
+.quickcalc-label { font-size: 14px; color: var(--ink-2); }
+.quickcalc-pending { flex-basis: 100%; font-size: 14px; font-weight: 600; color: var(--ink); }
+.quickcalc-sentence { margin: 8px 0 0; font-size: 14px; color: var(--ink-2); }
+.quickcalc-actions { display: flex; gap: 8px 14px; flex-wrap: wrap; align-items: center; margin-top: 14px; }
+.quickcalc-note { font-size: 12px; color: var(--ink-3); margin: 10px 0 0; }
+/* ruler: the regions side by side, yours marked (no figures until the rules are confirmed) */
+.ruler { position: relative; margin: 14px 0 4px; padding-top: 4px; }
+.ruler-track { display: flex; gap: 2px; }
+.ruler-track i { flex: 1; min-width: 0; font-style: normal; cursor: pointer; }
+.ruler-track i::before { content: ""; display: block; height: 22px; border-radius: 2px 2px 0 0; background: var(--line);
+  transition: background-color var(--dur); }
+.ruler-track i.yours::before { background: var(--accent); box-shadow: 0 0 0 1.5px var(--ink); }
+.ruler-track i span { display: block; font-size: 12px; color: var(--ink-3); margin-top: 6px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.ruler-track i.yours span { color: var(--ink-2); font-weight: 600; }
+/* the map plate: a brand tint with the slanted left leg, its blue stroke, the yellow slash
+   rising from its foot and the cut corner */
+.cover-map { --leg: 30px; --stroke: 34px; position: relative; isolation: isolate; margin-top: 32px; padding: 20px 18px 44px calc(var(--leg) + 22px); }
+.cover-map::before { content: ""; position: absolute; inset: 0; z-index: -1; background: var(--brand-50);
+  clip-path: polygon(0 0, calc(100% - var(--cut)) 0, 100% var(--cut), 100% 100%, var(--leg) 100%); }
+.cover-map::after { content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none;
+  background: linear-gradient(to right, var(--brand) calc(var(--leg) + 11px), transparent calc(var(--leg) + 11px) calc(var(--leg) + 15px), var(--accent) calc(var(--leg) + 15px));
+  clip-path: polygon(0 0, 9px 0, calc(var(--leg) + 9px) 100%, calc(var(--leg) + 16px) 100%,
+    calc(var(--leg) + 16px + var(--stroke)) calc(100% - var(--stroke)), calc(var(--leg) + 30px + var(--stroke)) calc(100% - var(--stroke)),
+    calc(var(--leg) + 30px) 100%, var(--leg) 100%); }
+.cover-map .card-title { margin-bottom: 6px; font-stretch: 112%; font-size: 17px; }
+.cover-map .map-wrap { position: relative; min-height: 220px; }
+.cover-map .note { margin: 8px 0 0; }
+.cover-fact { margin: 40px 0 0; padding: 2px 0 2px 22px; border-left: 4px solid var(--brand);
+  font-size: clamp(18px, 2.1vw, 23px); line-height: 1.4; color: var(--ink-2); max-width: 46em; text-wrap: pretty; }
+.cover-fact b { color: var(--ink); }
+@media (min-width: 960px) {
+  .cover { grid-template-columns: minmax(0, 1fr) minmax(0, 1.04fr); column-gap: 36px; }
+  .cover > .masthead, .quickcalc, .cover-fact { grid-column: 1 / -1; }
+  .cover-text { grid-column: 1; grid-row: 2; align-self: center; padding-bottom: 12px; }
+  .cover-map { --leg: 64px; --stroke: 56px; grid-column: 2; grid-row: 2; margin-top: 0; padding: 24px 22px 66px calc(var(--leg) + 26px); }
+  .cover-map .map-wrap { min-height: 300px; }
+  .cover-text h1 { font-size: clamp(34px, 4.5vw, 62px); }
+  .quickcalc { display: grid; grid-template-columns: minmax(240px, 290px) minmax(0, 1fr); margin-top: 0; }
+  .quickcalc-fields { grid-template-columns: minmax(0, 1fr); align-content: start; padding: 18px 28px 18px 0; }
+  .quickcalc-res { border-top: 0; border-left: 1px solid var(--line-2); padding: 18px 0 20px 28px;
+    display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); column-gap: 32px; align-items: start; }
+  .quickcalc-res > * { grid-column: 1 / -1; }
+  .quickcalc-res > .quickcalc-figure { grid-column: 1; grid-row: 1 / span 2; flex-direction: column; gap: 6px; }
+  .quickcalc-res > .ruler { grid-column: 2; grid-row: 1; margin-top: 8px; }
+  .quickcalc-res > .quickcalc-sentence { grid-column: 2; grid-row: 2; }
+}
+@media (max-width: 760px) { .quickcalc-fields { grid-template-columns: minmax(0, 1fr); } }
+@media (max-width: 480px) {
+  .cover > .masthead span:last-child { display: none; }
+  .cover > .masthead span:nth-last-child(2)::after { content: none; }
+  .cover-map { --leg: 20px; --stroke: 30px; margin-left: -4px; margin-right: -8px; padding: 18px 12px 40px calc(var(--leg) + 14px); }
+  .cover-text h1 { font-size: 34px; }
+}
+/* "Why you can trust the figures": large figures in columns separated by rules, no boxes */
+.trust-figures { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); margin: 0 0 32px; }
+.trust-figures > div { padding: 20px 20px 4px 0; min-width: 0; }
+.trust-figures > div:nth-child(even) { padding-left: 20px; border-left: 1px solid var(--line-2); }
+@media (max-width: 859.98px) { .trust-figures > div:nth-child(n + 3) { border-top: 1px solid var(--line-2); margin-top: 16px; } }
+@media (min-width: 860px) {
+  .trust-figures { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .trust-figures > div + div { padding-left: 24px; border-left: 1px solid var(--line-2); }
+}
+.trust-figures .figure-xl { display: block; font-size: clamp(34px, 4.2vw, 54px); color: var(--ink); overflow-wrap: anywhere; }
+.trust-figures span:not(.figure-xl) { display: block; font-size: 14px; color: var(--ink-2); margin-top: 8px; line-height: 1.45; max-width: 30ch; }
+/* a "view" (the simulator) with its own header, as the reference calculator view */
+.view { padding: 64px 0 0; scroll-margin-top: 60px; }
+.view-head { display: flex; justify-content: space-between; align-items: flex-end; gap: 16px 24px; margin-bottom: 24px; flex-wrap: wrap; }
+.view-title { font-family: var(--display); font-stretch: 112%; font-size: clamp(26px, 3.4vw, 36px); font-weight: 800; letter-spacing: -.025em; line-height: 1.1; }
+.view-head .lead { margin-top: 8px; }
+@media (min-width: 1040px) { .view .calc { grid-template-columns: 440px minmax(0, 1fr); } }
