@@ -5,30 +5,22 @@ import { readFile, readdir, access } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 
+import { discoverPairs, walk } from '../tools/lib/pages.mjs';
+import { sitemapXml } from '../tools/generate_sitemap.mjs';
+
 const WEB = fileURLToPath(new URL('../web/', import.meta.url));
-const PAIRS = [
-  ['nl/', 'fr/'],
-  ['nl/methodologie/', 'fr/methodologie/'],
-  ['nl/bronnen/', 'fr/sources/'],
-  ['nl/contact/', 'fr/contact/'],
-  ['nl/privacy/', 'fr/confidentialite/'],
+// Every NL/FR page under web/nl and web/fr, paired through its own hreflang alternates.
+const PAIRS = await discoverPairs();
+// Roadmap pages announced on the home page ("in development" modules).
+const ROADMAP = [
   ['nl/gezin-en-bedrijfsvoorheffing/', 'fr/famille-et-precompte-professionnel/'],
   ['nl/gemeentebelasting/', 'fr/taxe-communale/'],
   ['nl/zelfstandigen/', 'fr/independants/'],
   ['nl/pensioenen/', 'fr/pensions/'],
   ['nl/scenarios/', 'fr/scenarios/']
 ];
-const read = route => readFile(path.join(WEB, route, 'index.html'), 'utf8');
+const read = route => readFile(path.join(WEB, route.endsWith('/') ? route + 'index.html' : route), 'utf8');
 const all = (html, re) => Array.from(html.matchAll(re), m => m[1]);
-
-async function walk(dir) {
-  const out = [];
-  for (const entry of await readdir(dir, { withFileTypes: true })) {
-    const full = path.join(dir, entry.name);
-    if (entry.isDirectory()) out.push(...await walk(full)); else out.push(full);
-  }
-  return out;
-}
 
 test('every NL/FR page uses the shared shell: stylesheet, theme toggle, skip link, header and footer', async () => {
   for (const pair of PAIRS) for (const route of pair) {
@@ -90,13 +82,15 @@ test('NL and FR pages have the same structure', async () => {
   for (const [nl, fr] of PAIRS) assert.deepEqual(shape(await read(fr)), shape(await read(nl)), `${nl} vs ${fr}`);
 });
 
-test('the home result panel announces a blocked calculation and shows no amount', async () => {
+test('the home result panel shows a calm pending state, the rules in a <details> and no amount', async () => {
   for (const route of ['nl/', 'fr/']) {
     const html = await read(route);
-    const result = html.match(/<div class="result" id="result"[\s\S]*?<\/ul>\s*<\/div>/)?.[0];
+    const result = html.match(/<div class="result" id="result"[\s\S]*?<\/details>\s*<\/div>/)?.[0];
     assert.ok(result, route + ' result panel');
     assert.match(result, /aria-live="polite"/);
-    assert.match(result, /<h3>/);
+    assert.match(result, /<h3[\s>]/);
+    assert.match(result, /<details class="result-rules"><summary>[^<]+<\/summary><ul class="result-list">/);
+    assert.doesNotMatch(result, /chip warn|geblokkeerd|bloqué/i, route + ' no warning banner');
     assert.doesNotMatch(result, /\d[\d.,\s]*€|€\s*\d/, route + ' result shows an amount');
     assert.match(html, /<form id="salary-form"/);
   }
@@ -134,8 +128,16 @@ test('optional integrations stay disabled in the public config', async () => {
     assert.match(config, new RegExp(`${feature}: false`), feature);
 });
 
-test('sitemap lists every NL/FR pair, only existing pages, with the right alternates', async () => {
+test('the known core pages are discovered as NL/FR pairs', () => {
+  const routes = new Set(PAIRS.flat());
+  for (const r of ['nl/', 'fr/', 'nl/methodologie/', 'fr/sources/', 'nl/privacy/', 'fr/confidentialite/', ...ROADMAP.flat()])
+    assert.ok(routes.has(r), r);
+  assert.deepEqual(PAIRS[0], ['nl/', 'fr/']);
+});
+
+test('sitemap is up to date: every NL/FR pair, only existing pages, with the right alternates', async () => {
   const xml = await readFile(path.join(WEB, 'sitemap.xml'), 'utf8');
+  assert.equal(xml, sitemapXml(PAIRS), 'web/sitemap.xml is stale: run npm run build:sitemap');
   const locs = all(xml, /<loc>https:\/\/belastingkaart\.be\/([^<]*)<\/loc>/g);
   assert.deepEqual(new Set(locs), new Set(PAIRS.flat()));
   for (const loc of locs) await access(path.join(WEB, loc, 'index.html'));
@@ -168,13 +170,21 @@ test('NL/FR web manifests are valid and their icons exist with the declared size
   }
 });
 
-test('roadmap pages are reachable from the home page and show no amounts', async () => {
-  for (const [nl, fr] of PAIRS.slice(5)) for (const route of [nl, fr]) {
+test('roadmap pages are reachable from the home page show no amounts and no development labels', async () => {
+  for (const [nl, fr] of ROADMAP) for (const route of [nl, fr]) {
     const lang = route.slice(0, 2);
     const home = await read(lang + '/');
     assert.ok(home.includes(`href="${route.slice(3)}"`), `${route} linked from home`);
     const text = (await read(route)).replace(/<[^>]+>/g, ' ');
     assert.doesNotMatch(text, /\d[\d.,]*\s?(€|EUR|%)/, `${route} shows an amount`);
-    assert.match(text, lang === 'nl' ? /In ontwikkeling/ : /En développement/, route);
+    assert.doesNotMatch(text, /in ontwikkeling|en développement|eerste versie|première version/i, route);
+  }
+});
+
+test('no page shows development labels (owner decision 2026-11-25)', async () => {
+  for (const file of await walk(WEB)) {
+    if (!/\.html$/.test(file)) continue;
+    const text = (await readFile(file, 'utf8')).replace(/<[^>]+>/g, ' ');
+    assert.doesNotMatch(text, /in ontwikkeling|en développement|eerste versie|première version|binnenkort|bientôt/i, path.relative(WEB, file));
   }
 });

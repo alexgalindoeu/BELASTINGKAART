@@ -1,0 +1,458 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Stijlgids | Belastingkaart</title>
+<meta name="description" content="Interne stijlgids van Belastingkaart: alle bouwstenen van de interface met neutrale voorbeeldtekst.">
+<meta name="robots" content="noindex">
+<link rel="canonical" href="https://belastingkaart.be/nl/stijlgids/">
+<link rel="alternate" hreflang="nl-BE" href="https://belastingkaart.be/nl/stijlgids/">
+<link rel="alternate" hreflang="fr-BE" href="https://belastingkaart.be/fr/guide-de-style/">
+<link rel="alternate" hreflang="x-default" href="https://belastingkaart.be/nl/">
+<script src="../../js/taal.js"></script>
+<meta name="theme-color" content="#1f3fc4">
+<meta name="color-scheme" content="light dark">
+<script>try{var t=localStorage.getItem("bk-theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
+<link rel="preload" href="../../fonts/public-sans-latin-var.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../../fonts/archivo-latin-var.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../../icons/apple-touch-icon.png">
+<link rel="manifest" href="../../nl/manifest.webmanifest">
+<link rel="stylesheet" href="../../css/site.css">
+<link rel="stylesheet" href="../../css/components.css">
+<script defer src="../../config.js"></script>
+<script defer src="../../js/menu.js"></script>
+<script defer src="../../js/ui.js"></script>
+<script defer src="../../js/componenten.js"></script>
+</head>
+<body class="page" data-lang="nl">
+<a class="skip-link" href="#content">Naar de inhoud</a>
+<header class="appbar">
+  <div class="appbar-in">
+    <a class="brand" href="../../nl/" aria-label="Belastingkaart, startpagina"><svg class="brand-icon" viewBox="0 -2 102 86" aria-hidden="true" focusable="false"><path class="p" fill-rule="evenodd" d="M16,4H62L77,18V28L68,37L84,52V66L70,80H2Z M28,16L25,33H57L62,28V21L57,16Z M23,47L19,68H64L70,62V54L63,47Z"/><polygon class="p2" points="46,80 60,80 99,30 91,18"/></svg><span class="brand-name">Belastingkaart</span></a>
+    <nav class="nav" aria-label="Secties">
+      <a href="../../nl/#simulator">Simulator</a>
+      <a href="../../nl/methodologie/">Methodologie</a>
+      <a href="../../nl/bronnen/">Bronnen</a>
+      <a href="../../nl/contact/">Contact</a>
+    </nav>
+    <div class="appbar-end">
+      <button class="btn-icon theme-btn" id="theme-toggle" type="button" aria-label="Thema: automatisch (zoals het systeem). Wijzigen naar licht" title="Thema: automatisch (zoals het systeem)"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="8"/><path class="fill" d="M12 4a8 8 0 0 1 0 16z"/></svg></button>
+      <a class="lang-switch" href="../../fr/guide-de-style/" hreflang="fr-BE" lang="fr" aria-label="Version française">FR</a>
+      <a class="btn btn-primary btn-sm btn-cta" href="../../nl/#simulator">Naar de simulator</a>
+    </div>
+  </div>
+</header>
+<main class="container page-main" id="content" tabindex="-1">
+  <p class="breadcrumbs"><a href="../../nl/">Startpagina</a> › Stijlgids</p>
+  <p class="eyebrow">Intern · niet geïndexeerd</p>
+  <h1>Stijlgids</h1>
+  <p class="updated">Bijgewerkt op <time datetime="2026-11-25">25 november 2026</time></p>
+  <p class="lead">Alle bouwstenen van de Belastingkaart-interface op één pagina, in licht en donker thema. De teksten zijn neutrale voorbeelden; de streep «—» staat waar later een bevestigd bedrag komt.</p>
+  <div class="prose sg-wide">
+    <p class="summary-box slash">Deze pagina toont geen enkel fiscaal bedrag of percentage. Ze dient alleen om de vormgeving te controleren.</p>
+
+    <nav class="toc" aria-labelledby="sg-toc-title">
+      <p class="toc-title" id="sg-toc-title">Op deze pagina</p>
+      <ol>
+        <li><a href="#sg-basis">Kleuren en typografie</a></li>
+        <li><a href="#sg-knoppen">Knoppen en labels</a></li>
+        <li><a href="#sg-formulier">Formulier</a></li>
+        <li><a href="#sg-resultaat">Resultaat van de simulator</a></li>
+        <li><a href="#sg-uitklappen">Uitklappers en tabbladen</a></li>
+        <li><a href="#sg-tabellen">Tabellen</a></li>
+        <li><a href="#sg-meldingen">Meldingen</a></li>
+        <li><a href="#sg-gids">Gidsartikel</a></li>
+        <li><a href="#sg-woordenlijst">Woordenlijst</a></li>
+        <li><a href="#sg-juridisch">Juridische pagina</a></li>
+        <li><a href="#sg-navigatie">Navigatie</a></li>
+        <li><a href="#sg-kaarten">Kaarten en grafieken</a></li>
+      </ol>
+    </nav>
+
+    <section class="sg-section" id="sg-basis">
+      <h2>Kleuren en typografie</h2>
+      <p class="sg-desc">Elke kleur is een token met een waarde voor het lichte en het donkere thema. Geel blijft een accent: nooit gele tekst of grote gele vlakken.</p>
+      <div class="sg-demo plain">
+        <ul class="sg-swatches">
+          <li><i style="background:var(--bg)"></i><code>--bg</code></li>
+          <li><i style="background:var(--surface)"></i><code>--surface</code></li>
+          <li><i style="background:var(--surface-2)"></i><code>--surface-2</code></li>
+          <li><i style="background:var(--ink)"></i><code>--ink</code></li>
+          <li><i style="background:var(--ink-3)"></i><code>--ink-3</code></li>
+          <li><i style="background:var(--brand)"></i><code>--brand</code></li>
+          <li><i style="background:var(--brand-soft)"></i><code>--brand-soft</code></li>
+          <li><i style="background:var(--accent)"></i><code>--accent</code></li>
+          <li><i style="background:var(--ok)"></i><code>--ok</code></li>
+          <li><i style="background:var(--bad)"></i><code>--bad</code></li>
+          <li><i style="background:var(--warn)"></i><code>--warn</code></li>
+          <li><i style="background:var(--c-social)"></i><code>--c-social</code></li>
+        </ul>
+      </div>
+      <div class="sg-demo plain sg-type">
+        <p class="eyebrow">Bovenschrift in mono</p>
+        <p class="hero-like" style="font-family:var(--display);font-stretch:112%;font-weight:800;font-size:clamp(28px,4vw,40px);letter-spacing:-.03em;line-height:1.06">Titel in Archivo, <span style="background:linear-gradient(transparent 66%,var(--accent) 66%,var(--accent) 90%,transparent 90%)">met markering</span></p>
+        <h3>Tussentitel van een paragraaf</h3>
+        <p>Lopende tekst in Public Sans. Een zin die toont hoe een gewone alinea eruitziet, met <a href="#sg-basis">een link</a> en <b>vet gezette woorden</b>.</p>
+        <p class="lead">Inleidende alinea met iets grotere letter.</p>
+        <p class="help">Hulptekst onder een veld.</p>
+        <p class="note">Voetnoot of bronvermelding.</p>
+      </div>
+    </section>
+
+    <section class="sg-section" id="sg-knoppen">
+      <h2>Knoppen en labels</h2>
+      <p class="sg-desc">Eén primaire actie per blok. Op een aanraakscherm is elk klikbaar element minstens 44 pixels hoog.</p>
+      <div class="sg-demo">
+        <div class="sg-row">
+          <button class="btn btn-primary" type="button">Primaire actie <span class="arrow" aria-hidden="true">→</span></button>
+          <button class="btn btn-secondary" type="button">Secundaire actie</button>
+          <button class="btn btn-text" type="button">Tekstknop</button>
+          <button class="btn btn-danger" type="button">Verwijderen</button>
+          <button class="btn btn-primary btn-sm" type="button">Klein</button>
+          <button class="btn btn-primary" type="button" disabled>Niet beschikbaar</button>
+        </div>
+      </div>
+      <div class="sg-demo">
+        <div class="sg-row">
+          <span class="chip">Neutraal</span>
+          <span class="chip warn">Let op</span>
+          <span class="chip ok">Bevestigd</span>
+          <span class="chip bad">Afwijking</span>
+          <span class="chip info">Informatie</span>
+          <span class="chip yours">Jouw situatie</span>
+          <span>Voorbeeldregel<span class="tag provisional">voorlopig</span></span>
+          <span><span class="tag category">Categorie</span>Voorbeeldregel</span>
+          <span class="code">ABC</span>
+          <span class="eyebrow" style="margin:0">Bovenschrift</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="sg-section" id="sg-formulier">
+      <h2>Formulier</h2>
+      <p class="sg-desc">Genummerde blokken; het blok met de focus licht op en zijn nummer wordt geel. Fouten staan bij het veld, in tekst en niet alleen in kleur.</p>
+      <form class="form" action="#" onsubmit="return false">
+        <fieldset class="block">
+          <legend><span class="step">1</span>Voorbeeldblok</legend>
+          <div class="grid2">
+            <label class="field"><span>Veld met eenheid</span><span class="with-suffix"><input type="text" inputmode="decimal" placeholder="—" aria-describedby="sg-help"><span class="suffix" aria-hidden="true">€</span></span></label>
+            <label class="field"><span>Keuzelijst</span><select><option>Eerste keuze</option><option>Tweede keuze</option><option disabled>Niet beschikbaar</option></select></label>
+          </div>
+          <p class="help" id="sg-help">Hulptekst onder het veld.</p>
+          <label class="checkbox"><input type="checkbox"> Aankruisvak met een uitleg over één regel</label>
+          <div class="field"><span id="sg-seg-label">Gesegmenteerde keuze</span>
+            <div class="segmented" role="radiogroup" aria-labelledby="sg-seg-label">
+              <label><input type="radio" name="sg-seg" checked><span>Eerste</span></label>
+              <label><input type="radio" name="sg-seg"><span>Tweede</span></label>
+              <label><input type="radio" name="sg-seg" disabled><span>Niet beschikbaar</span></label>
+            </div>
+          </div>
+          <details class="more">
+            <summary>Meer gegevens</summary>
+            <div class="sub-block">
+              <label class="field"><span>Vrije tekst</span><textarea placeholder="Voorbeeldtekst"></textarea></label>
+              <label class="field"><span>Schuifregelaar</span><input class="range" type="range" min="0" max="10" value="5"></label>
+            </div>
+          </details>
+        </fieldset>
+        <fieldset class="block">
+          <legend><span class="step">2</span>Toestanden</legend>
+          <div class="grid2">
+            <label class="field has-error"><span>Veld met fout</span><input type="text" value="Ongeldige invoer" aria-invalid="true" aria-describedby="sg-err"></label>
+            <label class="field is-disabled"><span>Uitgeschakeld veld</span><input type="text" value="Niet bewerkbaar" disabled></label>
+          </div>
+          <p class="field-error" id="sg-err">Vul een geldige waarde in.</p>
+          <div class="form-warnings" role="status">
+            <p class="form-warnings-title">Controleer deze gegevens</p>
+            <ul><li>Voorbeeldmelding over een veld.</li><li>Tweede voorbeeldmelding.</li></ul>
+          </div>
+          <p class="message ok" style="margin-top:12px">Opgeslagen.</p>
+          <p class="message error">Er ging iets mis.</p>
+        </fieldset>
+      </form>
+    </section>
+
+    <section class="sg-section" id="sg-resultaat">
+      <h2>Resultaat van de simulator</h2>
+      <p class="sg-desc">Resultaatkaart met lint en schuine hoek, kerncijfers, verdeelbalken, overzicht, toelichting en scenario’s. De simulator gebruikt <code>js/resultaat.js</code>: zolang een regel niet bevestigd is, toont hij alleen de wachtende toestand.</p>
+      <div class="sg-calc">
+        <div class="result-stack">
+          <div class="result">
+            <div class="result-head"><h3 class="card-title">Resultaat</h3><span class="chip">Voorbeeldlabel</span></div>
+            <div class="result-label">Voorbeeldregel</div>
+            <p class="result-figure pending">—</p>
+            <p class="result-sub">Toelichting bij het hoofdcijfer, met <b>—</b> als plaatshouder.</p>
+            <dl class="kpis">
+              <div><dt>Kerncijfer</dt><dd>—</dd></div>
+              <div><dt>Kerncijfer</dt><dd>—</dd></div>
+              <div><dt>Kerncijfer</dt><dd>—</dd></div>
+            </dl>
+            <div class="result-charts">
+              <div><div class="chart-title"><span>Verdeling (voorbeeld)</span><span>—</span></div>
+                <div class="split-bar" role="img" aria-label="Voorbeeldverdeling zonder bedragen"><i class="net"></i><i class="tax"></i><i class="social"></i></div>
+                <ul class="split-legend"><li><i class="net"></i>Voorbeeld <b>—</b></li><li><i class="tax"></i>Voorbeeld <b>—</b></li><li><i class="social"></i>Voorbeeld <b>—</b></li></ul></div>
+              <div><div class="chart-title"><span>Verdeling (voorbeeld)</span><span>—</span></div>
+                <div class="split-bar" role="img" aria-label="Voorbeeldverdeling zonder bedragen"><i class="federal"></i><i class="regional"></i></div>
+                <ul class="split-legend"><li><i class="federal"></i>Voorbeeld <b>—</b></li><li><i class="regional"></i>Voorbeeld <b>—</b></li></ul></div>
+            </div>
+            <p class="result-note"><b>Opmerking:</b> neutrale voorbeeldzin onder het resultaat.</p>
+            <p class="result-hint">Tip: voorbeeld van een hint voor de gebruiker.</p>
+            <div class="result-actions"><button class="btn btn-primary" type="button">Primaire actie</button><button class="btn btn-secondary" type="button">Secundaire actie</button></div>
+          </div>
+          <div class="card">
+            <h3 class="card-title">Overzicht van de berekening</h3>
+            <table class="breakdown">
+              <tbody>
+                <tr><td>Voorbeeldregel</td><td class="code-cell"><span class="code">ABC</span></td><td class="amount">—</td></tr>
+                <tr class="minus"><td>Voorbeeldregel die aftrekt</td><td class="code-cell"></td><td class="amount">—</td></tr>
+                <tr class="info"><td>Informatieve voorbeeldregel</td><td class="code-cell"></td><td class="amount">—</td></tr>
+                <tr class="sub"><td>Tussentotaal</td><td class="code-cell"></td><td class="amount">—</td></tr>
+                <tr class="total"><td>Totaal</td><td class="code-cell"></td><td class="amount">—</td></tr>
+              </tbody>
+            </table>
+            <details class="explain">
+              <summary>Hoe is dit bedrag berekend?</summary>
+              <ol class="explain-steps">
+                <li class="explain-step"><h4>Eerste stap</h4>
+                  <table class="explain-rows"><tbody><tr><td>Voorbeeldregel<span class="explain-source">Bron: officiële voorbeeldbron</span></td><td class="num">—</td></tr><tr class="minus"><td>Voorbeeldregel die aftrekt</td><td class="num">—</td></tr><tr class="sub"><td>Tussentotaal</td><td class="num">—</td></tr></tbody></table>
+                  <p class="explain-note">Opmerking bij deze stap.</p></li>
+                <li class="explain-step"><h4>Tweede stap</h4>
+                  <table class="explain-rows"><tbody><tr class="total"><td>Totaal</td><td class="num">—</td></tr></tbody></table></li>
+              </ol>
+            </details>
+          </div>
+        </div>
+        <div class="result-stack">
+          <div class="result">
+            <div class="result-head"><div class="card-title">Resultaat</div></div>
+            <h3 class="result-label">Wachtende toestand</h3>
+            <p class="result-sub">Zo ziet het resultaat eruit zolang een noodzakelijke regel niet bevestigd is: geen bedrag, een rustige melding en de regels in een uitklapper.</p>
+            <details class="result-rules"><summary>Regels die nog bevestigd worden</summary><ul class="result-list"><li>Voorbeeldregel</li><li>Voorbeeldregel</li><li>Voorbeeldregel</li></ul></details>
+          </div>
+          <div class="card">
+            <h3 class="card-title">Toegepaste regels</h3>
+            <ul class="rule-list">
+              <li><span class="rule-name">Voorbeeldregel</span><span class="rule-source">Bron: officiële voorbeeldbron</span><span class="rule-amount">—</span></li>
+              <li><span class="rule-name">Voorbeeldregel<span class="tag provisional">voorlopig</span></span><span class="rule-source">Bron: officiële voorbeeldbron</span><span class="rule-amount">—</span></li>
+            </ul>
+            <p class="empty" style="margin-top:8px">Geen regels van toepassing met deze gegevens.</p>
+          </div>
+          <div class="card">
+            <h3 class="card-title">Scenario’s</h3>
+            <ul class="scenario-list"><li>Voorbeeldscenario <button class="btn btn-text btn-sm" type="button">Verwijderen</button></li><li class="empty-item">Voeg een scenario toe om te vergelijken.</li></ul>
+            <div class="scenario-bars" style="margin-top:14px">
+              <div class="scenario-bar yours"><div class="chart-title"><span>Jouw situatie</span><span><b>—</b></span></div><div class="split-bar empty-bar"></div></div>
+              <div class="scenario-bar"><div class="chart-title"><span>Voorbeeldscenario</span><span><b>—</b></span></div><div class="split-bar empty-bar"></div></div>
+            </div>
+            <ul class="levers" style="margin-top:10px">
+              <li><div class="lever-head"><span class="lever-title">Voorbeeld van een hefboom</span><span class="lever-amount review">na te kijken</span></div><p class="lever-detail">Korte uitleg zonder bedrag.</p></li>
+            </ul>
+            <details class="warnings"><summary>Waar je op moet letten</summary><ul><li>Voorbeeldopmerking.</li><li>Tweede voorbeeldopmerking.</li></ul></details>
+          </div>
+          <p class="result-foot"><a href="../../nl/methodologie/">Hoe we rekenen</a> · <a href="../../nl/bronnen/">Bronnen</a></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="sg-section" id="sg-uitklappen">
+      <h2>Uitklappers en tabbladen</h2>
+      <p class="sg-desc">Veelgestelde vragen als uitklappers; tabbladen volgen het toegankelijke patroon (pijltjestoetsen, Home en End).</p>
+      <div class="sg-demo plain">
+        <div class="faq">
+          <details><summary>Voorbeeldvraag één?</summary><p>Antwoord met neutrale voorbeeldtekst.</p></details>
+          <details><summary>Voorbeeldvraag twee?</summary><p>Antwoord met neutrale voorbeeldtekst.</p></details>
+          <details><summary>Voorbeeldvraag drie?</summary><p>Antwoord met neutrale voorbeeldtekst.</p></details>
+        </div>
+      </div>
+      <div class="sg-demo plain">
+        <div class="tabs">
+          <div class="tab-list" role="tablist" aria-label="Voorbeeldtabbladen">
+            <button type="button" role="tab" id="sg-tab-a" aria-controls="sg-panel-a" aria-selected="true">Eerste</button>
+            <button type="button" role="tab" id="sg-tab-b" aria-controls="sg-panel-b" aria-selected="false" tabindex="-1">Tweede</button>
+            <button type="button" role="tab" id="sg-tab-c" aria-controls="sg-panel-c" aria-selected="false" tabindex="-1">Derde</button>
+          </div>
+          <div role="tabpanel" id="sg-panel-a" aria-labelledby="sg-tab-a" tabindex="0"><p>Inhoud van het eerste tabblad.</p></div>
+          <div role="tabpanel" id="sg-panel-b" aria-labelledby="sg-tab-b" tabindex="0" hidden><p>Inhoud van het tweede tabblad.</p></div>
+          <div role="tabpanel" id="sg-panel-c" aria-labelledby="sg-tab-c" tabindex="0" hidden><p>Inhoud van het derde tabblad.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="sg-section" id="sg-tabellen">
+      <h2>Tabellen</h2>
+      <p class="sg-desc">Kop met een stevige lijn, rijen met lucht en cijfers rechts uitgelijnd. Brede tabellen scrollen binnen hun kader, nooit de hele pagina.</p>
+      <div class="table-scroll">
+        <table class="data-table">
+          <caption>Voorbeeldtabel</caption>
+          <thead><tr><th scope="col">Omschrijving</th><th scope="col" class="num">Kolom</th><th scope="col" class="num">Kolom</th><th scope="col" class="num">Kolom</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">Voorbeeldregel</th><td class="num">—</td><td class="num">—</td><td class="num">—</td></tr>
+            <tr class="highlight"><th scope="row">Jouw situatie</th><td class="num">—</td><td class="num">—</td><td class="num">—</td></tr>
+            <tr><th scope="row">Voorbeeldregel</th><td class="num">—</td><td class="num">—</td><td class="num">—</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="card table-card" style="margin-top:24px">
+        <h3 class="card-title">Vergelijkingstabel</h3>
+        <div class="table-scroll">
+          <table class="compare-table">
+            <thead><tr><th scope="col">Kenmerk</th><th scope="col" class="yours">Optie A</th><th scope="col">Optie B</th><th scope="col">Optie C</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">Voorbeeldkenmerk</th><td class="yours"><span class="yes"><span class="sr-only">Ja</span></span></td><td><span class="yes"><span class="sr-only">Ja</span></span></td><td><span class="no"><span class="sr-only">Nee</span></span></td></tr>
+              <tr><th scope="row">Voorbeeldkenmerk</th><td class="yours"><span class="yes"><span class="sr-only">Ja</span></span></td><td><span class="no"><span class="sr-only">Nee</span></span></td><td><span class="no"><span class="sr-only">Nee</span></span></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="help">Toelichting onder de tabel.</p>
+      </div>
+      <dl class="compare-summary" style="margin-top:24px">
+        <div class="yours"><dt>Jouw situatie</dt><dd><span class="figure-xl">—</span><small>Korte toelichting</small></dd></div>
+        <div><dt>Voorbeeld</dt><dd><span class="figure-xl">—</span><small>Korte toelichting</small></dd></div>
+        <div><dt>Voorbeeld</dt><dd><span class="figure-xl">—</span><small>Korte toelichting</small></dd></div>
+        <div><dt>Voorbeeld</dt><dd><span class="figure-xl">—</span><small>Korte toelichting</small></dd></div>
+      </dl>
+      <div class="table-scroll">
+        <table class="data-table text-table">
+          <thead><tr><th scope="col">Begrip</th><th scope="col">Uitleg</th></tr></thead>
+          <tbody><tr><td>Voorbeeldbegrip</td><td>Langere uitleg die over meerdere regels loopt en bovenaan uitgelijnd blijft.</td></tr><tr><td>Voorbeeldbegrip</td><td>Tweede uitleg.</td></tr></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="sg-section" id="sg-meldingen">
+      <h2>Meldingen</h2>
+      <p class="sg-desc">Een linkerlijn in de kleur van de betekenis en de schuine streep voor de titel.</p>
+      <p class="notice"><b>Let op:</b> korte waarschuwing in de stijl van de bestaande melding.</p>
+      <div class="callout"><p class="callout-title">Informatie</p><p>Neutrale voorbeeldtekst.</p></div>
+      <div class="callout warn"><p class="callout-title">Waarschuwing</p><p>Neutrale voorbeeldtekst.</p></div>
+      <div class="callout ok"><p class="callout-title">Bevestigd</p><p>Neutrale voorbeeldtekst.</p></div>
+      <div class="callout bad"><p class="callout-title">Fout</p><p>Neutrale voorbeeldtekst.</p></div>
+      <div class="callout neutral"><p class="callout-title">Opmerking</p><p>Neutrale voorbeeldtekst.</p></div>
+      <div class="limit-note"><h3 class="card-title">Wat de simulator nog niet doet</h3><p>Voorbeeld van een grens van de berekening.</p></div>
+      <div class="card empty-state" style="margin-top:24px"><h3>Nog niets te tonen</h3><p>Lege toestand van een weergave, met een korte uitleg en één actie.</p><button class="btn btn-primary" type="button">Actie</button></div>
+      <div class="locked" style="margin-top:24px">
+        <div class="locked-back" aria-hidden="true"><div class="card"><p>Voorbeeldinhoud achter de vergrendeling.</p><p>Voorbeeldinhoud.</p><p>Voorbeeldinhoud.</p></div></div>
+        <div class="card locked-card"><span class="locked-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg></span><h3>Vergrendelde weergave</h3><p>Uitleg waarom deze inhoud nog niet beschikbaar is.</p></div>
+      </div>
+    </section>
+
+    <section class="sg-section" id="sg-gids">
+      <h2>Gidsartikel</h2>
+      <p class="sg-desc">Leeskolom van ongeveer zeventig tekens, inhoudstafel, kerncijfer, genummerde voorwaarden, citaat, figuur en vertrouwensregel.</p>
+      <div class="sg-demo plain">
+        <h3>Tussentitel in een gids</h3>
+        <p>Gewone alinea in de leeskolom. Een <a href="#sg-gids">link naar een andere gids</a> en een <code>codefragment</code>.</p>
+        <div class="key-figure"><p class="key-figure-label">Voorbeeld</p><p class="key-figure-value">Kerncijfer van een geval: —</p></div>
+        <p class="req-title">Voorwaarden</p>
+        <ol class="req-list"><li>Eerste voorwaarde in neutrale tekst.</li><li>Tweede voorwaarde in neutrale tekst.</li><li>Derde voorwaarde in neutrale tekst.</li></ol>
+        <blockquote><p>Citaat uit een officiële voorbeeldbron.</p></blockquote>
+        <p class="engine-fact">Wat de rekenmotor over dit geval zegt: —</p>
+        <ul class="guide-list">
+          <li><a href="#sg-gids">Voorbeeldgids</a><span>Korte beschrijving van de gids.</span></li>
+          <li><a href="#sg-gids">Voorbeeldgids</a><span>Korte beschrijving van de gids.</span></li>
+        </ul>
+        <ul class="trust"><li>Inkomstenjaar: —</li><li>Herzien op: —</li><li><a href="../../nl/bronnen/">Bronnen</a></li><li><a href="../../nl/methodologie/">Methodologie</a></li></ul>
+        <nav class="pager" aria-label="Vorige en volgende gids">
+          <a href="#sg-gids"><span>Vorige</span><b>Voorbeeldgids</b></a>
+          <a class="next-link" href="#sg-gids"><span>Volgende</span><b>Voorbeeldgids</b></a>
+        </nav>
+      </div>
+    </section>
+
+    <section class="sg-section" id="sg-woordenlijst">
+      <h2>Woordenlijst</h2>
+      <p class="sg-desc">Letterindex van A tot Z (letters zonder begrippen zijn uitgegrijsd), letters als kapitalen en begripkaarten.</p>
+      <div class="sg-demo plain">
+        <nav aria-label="Letterindex"><ul class="az-index"><li><a href="#sg-letter-a">A</a></li><li><a href="#sg-letter-b">B</a></li><li><span aria-hidden="true">C</span></li><li><span aria-hidden="true">D</span></li><li><span aria-hidden="true">E</span></li></ul></nav>
+        <div class="letter-group" id="sg-letter-a"><h2>A</h2><ul class="guide-list"><li><a href="#sg-woordenlijst">Voorbeeldbegrip</a><span>Korte definitie in één zin.</span></li><li><a href="#sg-woordenlijst">Voorbeeldbegrip</a><span>Korte definitie in één zin.</span></li></ul></div>
+        <div class="letter-group" id="sg-letter-b"><h2>B</h2><ul class="guide-list"><li><a href="#sg-woordenlijst">Voorbeeldbegrip</a><span>Korte definitie in één zin.</span></li></ul></div>
+        <dl class="term-grid" style="margin-top:28px">
+          <div class="term-card"><dt>Voorbeeldbegrip</dt><dd><span class="term-alt" lang="fr">Terme d’exemple</span>Definitie op een begripkaart.</dd></div>
+          <div class="term-card"><dt>Voorbeeldbegrip</dt><dd><span class="term-alt" lang="fr">Terme d’exemple</span>Definitie op een begripkaart.</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <section class="sg-section" id="sg-juridisch">
+      <h2>Juridische pagina</h2>
+      <p class="sg-desc">Samenvatting bovenaan, gegevensblok, tabel met kader en modeltekst.</p>
+      <div class="card legal-text">
+        <h3>Voorbeeldtitel van een juridische tekst</h3>
+        <p class="legal-date">Laatst gewijzigd: —</p>
+        <div class="legal-summary"><p><b>Samengevat:</b></p><ul><li>Eerste kernpunt.</li><li>Tweede kernpunt.</li></ul></div>
+        <dl class="legal-facts"><dt>Verantwoordelijke</dt><dd>Voorbeeldnaam</dd><dt>Contact</dt><dd>Voorbeeldadres</dd></dl>
+        <div class="legal-table"><table><thead><tr><th scope="col">Gegeven</th><th scope="col">Doel</th><th scope="col">Bewaring</th></tr></thead><tbody><tr><td>Voorbeeld</td><td>Voorbeelddoel</td><td>—</td></tr><tr><td>Voorbeeld</td><td>Voorbeelddoel</td><td>—</td></tr></tbody></table></div>
+        <div class="legal-model"><p>Modeltekst in een kader met linkerlijn.</p></div>
+      </div>
+    </section>
+
+    <section class="sg-section" id="sg-navigatie">
+      <h2>Navigatie</h2>
+      <p class="sg-desc">Kruimelpad bovenaan elke inhoudspagina en paginering voor lange lijsten.</p>
+      <div class="sg-demo plain">
+        <p class="breadcrumbs" style="margin:0"><a href="../../nl/">Startpagina</a> › <a href="#sg-navigatie">Rubriek</a> › Huidige pagina</p>
+        <nav class="pagination" aria-label="Paginering">
+          <a class="prev" href="#sg-navigatie" aria-disabled="true"><span aria-hidden="true">←</span> Vorige</a>
+          <ol><li><a href="#sg-navigatie" aria-current="page">1</a></li><li><a href="#sg-navigatie">2</a></li><li><a href="#sg-navigatie">3</a></li><li><span class="gap" aria-hidden="true">…</span></li><li><a href="#sg-navigatie">9</a></li></ol>
+          <a class="next" href="#sg-navigatie">Volgende <span aria-hidden="true">→</span></a>
+        </nav>
+      </div>
+    </section>
+
+    <section class="sg-section" id="sg-kaarten">
+      <h2>Kaarten en grafieken</h2>
+      <p class="sg-desc">Rooster van kaarten (de hele kaart is klikbaar), een uitgelichte kaart, een grafiekkader, een tooltip en een dialoogvenster.</p>
+      <ul class="card-grid">
+        <li class="card link-card"><h3 class="card-title"><a href="#sg-kaarten">Voorbeeldkaart</a></h3><p>Korte beschrijving van de inhoud.</p><span class="chip info">Gids</span></li>
+        <li class="card link-card"><h3 class="card-title"><a href="#sg-kaarten">Voorbeeldkaart</a></h3><p>Korte beschrijving van de inhoud.</p><span class="chip">Neutraal</span></li>
+        <li class="card highlight"><h3 class="card-title">Uitgelichte kaart</h3><p>Kaart met een dikkere rand in de merkkleur.</p></li>
+      </ul>
+      <figure class="chart" style="margin-top:24px">
+        <div class="chart-frame">
+          <svg class="chart-svg" viewBox="0 0 1000 240" role="img" aria-label="Voorbeeldgrafiek zonder bedragen">
+            <line class="grid-line" x1="40" y1="30" x2="990" y2="30"/><line class="grid-line" x1="40" y1="90" x2="990" y2="90"/><line class="grid-line" x1="40" y1="150" x2="990" y2="150"/>
+            <line class="axis-line" x1="40" y1="190" x2="990" y2="190"/>
+            <path class="area" d="M40 190 L40 170 C250 150 400 120 530 100 S800 50 990 40 L990 190 Z"/>
+            <path class="line muted" d="M40 160 C250 140 400 130 530 120 S800 100 990 90"/>
+            <path class="line" d="M40 170 C250 150 400 120 530 100 S800 50 990 40"/>
+            <circle class="dot" cx="530" cy="100" r="6"/>
+            <text class="value" x="542" y="92">—</text>
+            <text class="axis" x="40" y="212">Laag</text><text class="axis" x="990" y="212" text-anchor="end">Hoog</text>
+          </svg>
+        </div>
+        <figcaption>Bijschrift van de figuur.</figcaption>
+        <ul class="chart-legend"><li><i class="yours"></i>Jouw situatie</li><li><i></i>Ter vergelijking</li></ul>
+        <details class="chart-data"><summary>De grafiek als tabel bekijken</summary><div class="table-scroll"><table class="data-table"><thead><tr><th scope="col">Punt</th><th scope="col" class="num">Waarde</th></tr></thead><tbody><tr><td>Voorbeeld</td><td class="num">—</td></tr></tbody></table></div></details>
+      </figure>
+      <div class="sg-demo plain" style="margin-top:24px">
+        <p>Begrip met uitleg
+          <span class="tooltip"><button class="tooltip-trigger" type="button" aria-describedby="sg-tip">?</button><span class="tooltip-bubble" role="tooltip" id="sg-tip"><b>Voorbeeldbegrip</b>Korte uitleg die verschijnt bij aanwijzen of focus.</span></span>
+        </p>
+        <button class="btn btn-secondary" type="button" data-dialog-open="sg-dialog">Dialoogvenster openen</button>
+        <dialog class="dialog" id="sg-dialog" aria-labelledby="sg-dialog-title">
+          <form class="dialog-in" method="dialog">
+            <h2 id="sg-dialog-title">Voorbeelddialoog</h2>
+            <p>Korte tekst in een dialoogvenster.</p>
+            <div class="dialog-actions"><button class="btn btn-secondary" value="cancel">Annuleren</button><button class="btn btn-primary" value="ok">Bevestigen</button></div>
+          </form>
+        </dialog>
+      </div>
+    </section>
+  </div>
+</main>
+<footer class="footer">
+  <div class="container footer-in">
+    <p><b>Belastingkaart</b> is een onafhankelijk informatieproject. Geen officiële overheidswebsite en geen fiscaal advies.</p>
+    <nav class="footer-nav" aria-label="Meer over Belastingkaart">
+      <div><p class="footer-title">Simulator</p><ul><li><a href="../../nl/#simulator">Bruto-netto voor werknemers</a></li></ul></div>
+      <div><p class="footer-title">Over Belastingkaart</p><ul><li><a href="../../nl/over-belastingkaart/">Over ons</a></li><li><a href="../../nl/methodologie/">Methodologie</a></li><li><a href="../../nl/validatie/">Validatie</a></li><li><a href="../../nl/bronnen/">Bronnen</a></li><li><a href="../../nl/contact/">Contact</a></li></ul></div>
+      <div><p class="footer-title">Juridisch</p><ul><li><a href="../../nl/juridische-informatie/">Juridische informatie</a></li><li><a href="../../nl/disclaimer/">Disclaimer</a></li><li><a href="../../nl/privacy/">Privacy</a></li><li><a href="../../nl/cookies/">Cookies</a></li></ul></div>
+      <div><p class="footer-title">Taal</p><ul><li><a href="../../nl/stijlgids/" hreflang="nl-BE" lang="nl">Nederlands</a></li><li><a href="../../fr/guide-de-style/" hreflang="fr-BE" lang="fr">Français</a></li></ul></div>
+    </nav>
+    <p class="footer-small">Inkomstenjaar 2026 · aanslagjaar 2027 · Alleen officiële bronnen.</p>
+  </div>
+</footer>
+</body>
+</html>

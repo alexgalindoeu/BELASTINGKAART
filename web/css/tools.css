@@ -1,0 +1,112 @@
+/* =============================================================================
+   Belastingkaart — tool pages (maandloon, marginaal tarief, jobaanbiedingen, gemeenschappelijke
+   aanslag, twee werkgevers, scenario's, widget). Linked only from those pages; it builds on the
+   tokens and components of site.css and adds nothing global.
+   ========================================================================== */
+
+/* Wider column for the form + results grid; editorial text keeps the site.css measure. */
+.tool-page > .calc, .tool-page > .tool-wide { max-width: 1120px; }
+.tool-page > .calc { margin-top: 28px; }
+
+/* Results column: gross panel, tables and the blocked net panel stacked; sticky as one block. */
+.tool-results { display: grid; grid-template-columns: minmax(0, 1fr); gap: 16px; min-width: 0; align-content: start; }
+.tool-results .result { position: relative; top: auto; }
+@media (min-width: 1040px) { .tool-results { position: sticky; top: 84px; } .calc.calc-even { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); } }
+.result.is-gross::after { background: linear-gradient(112deg, var(--accent) 0 22px, transparent 22px 24px, var(--brand) 24px); }
+.tool-figure-label { font-size: 14px; color: var(--ink-2); margin: 12px 0 2px !important; }
+.tool-figure { font-family: var(--display); font-stretch: 112%; font-size: clamp(28px, 4vw, 38px); font-weight: 800;
+  letter-spacing: -.025em; line-height: 1.1; color: var(--ink) !important; margin: 0 0 12px !important; font-variant-numeric: tabular-nums; overflow-wrap: anywhere; }
+.tool-figure small { font-family: var(--sans); font-size: 15px; font-weight: 600; letter-spacing: 0; color: var(--ink-3); }
+.tool-kpis { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; margin: 14px 0; padding: 14px 0 0; border-top: 1px solid var(--line); }
+.tool-kpis div { min-width: 0; }
+.tool-kpis dt { font-size: 12.5px; color: var(--ink-3); }
+.tool-kpis dd { margin: 2px 0 0; font-weight: 700; font-variant-numeric: tabular-nums; color: var(--ink); overflow-wrap: anywhere; }
+.tool-kpis dd.help { font-weight: 400; color: var(--ink-3); }
+.tool-extra-label { margin: 14px 0 0 !important; font-size: 13px; font-weight: 600; }
+.result-list.tool-extra { margin-top: 6px; border-top: 0; padding-top: 0; }
+
+/* Data tables (result-table layout): tight numeric columns with tabular figures; when a
+   table is still wider than its card, its wrapper scrolls (never the page), is keyboard-focusable
+   with an accessible name, and shows shadows at the edge that has more columns. */
+.table-wrap { position: relative; overflow-x: auto; -webkit-overflow-scrolling: touch; max-width: 100%; border-radius: 6px;
+  background: linear-gradient(to right, var(--surface) 30%, transparent) left / 24px 100% no-repeat local,
+    linear-gradient(to left, var(--surface) 30%, transparent) right / 24px 100% no-repeat local,
+    radial-gradient(farthest-side at 0 50%, color-mix(in srgb, var(--ink) 22%, transparent), transparent) left / 10px 100% no-repeat scroll,
+    radial-gradient(farthest-side at 100% 50%, color-mix(in srgb, var(--ink) 22%, transparent), transparent) right / 10px 100% no-repeat scroll; }
+.table-wrap:focus-visible { outline: 3px solid var(--ring); outline-offset: 2px; }
+.data-table { width: 100%; border-collapse: collapse; font-size: 13.5px; font-variant-numeric: tabular-nums; }
+.data-table th, .data-table td { padding: 7px 6px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; }
+.data-table th:first-child, .data-table td:first-child { padding-left: 0; }
+.data-table th:last-child, .data-table td:last-child { padding-right: 2px; }
+.data-table thead th { font-size: 12px; font-weight: 600; line-height: 1.25; color: var(--ink-3); border-bottom: 2px solid var(--line-2); vertical-align: bottom; }
+.data-table th[scope="row"] { font-weight: 600; color: var(--ink-2); min-width: 7.5em; }
+.data-table .num { text-align: right; white-space: nowrap; }
+.data-table thead .num, .data-table .num.wrap { white-space: normal; }
+.data-table .is-yours { background: var(--accent-soft); }
+.data-table tr.total th, .data-table tr.total td { font-weight: 800; color: var(--ink); border-top: 2px solid var(--line-2); }
+.data-table tr.is-base th, .data-table tr.is-base td { background: var(--surface-2); }
+.data-table a { color: var(--brand-ink); }
+.data-table .chip { font-size: 11.5px; padding: 2px 8px; }
+.card .data-table th[scope="row"] { min-width: 6.5em; }
+@media (max-width: 520px) {
+  .data-table { font-size: 12.5px; }
+  .data-table th, .data-table td { padding: 6px 4px; }
+  .data-table th[scope="row"] { min-width: 6em; }
+}
+
+/* Segmented radio group (12 / 13 / 14 payments, theme). */
+.segmented { display: inline-flex; flex-wrap: wrap; border: 1px solid var(--line-2); border-radius: 8px; overflow: hidden; background: var(--surface); }
+.segmented label { position: relative; display: inline-flex; }
+.segmented input { position: absolute; opacity: 0; inset: 0; margin: 0; cursor: pointer; }
+.segmented span { display: inline-flex; align-items: center; min-height: 42px; padding: 0 16px; font-weight: 600; font-size: 14px; color: var(--ink-2); border-right: 1px solid var(--line-2); }
+.segmented label:last-child span { border-right: 0; }
+.segmented input:checked + span { background: var(--brand); color: var(--on-brand); }
+.segmented input:focus-visible + span { box-shadow: inset 0 0 0 3px var(--ring); }
+.field-group { border: 0; margin: 0 0 14px; padding: 0; min-width: 0; }
+.field-group legend { font-size: 13px; font-weight: 600; color: var(--ink-2); margin-bottom: 6px; float: none !important; display: block !important; font-family: var(--sans) !important; }
+
+.check { display: flex; align-items: flex-start; gap: 8px; font-size: 14px; color: var(--ink-2); margin: 0 0 8px; cursor: pointer; }
+.check input { width: 18px; height: 18px; margin: 2px 0 0; flex: none; accent-color: var(--brand); }
+.checks { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 0 12px; }
+
+.form-error { background: var(--bad-soft); color: var(--bad); border-left: 3px solid currentColor; border-radius: 0 8px 8px 0; padding: 10px 14px; font-size: 14px; }
+.form-error p { margin: 0 0 4px; font-weight: 600; }
+.form-error ul { margin: 0; padding-left: 18px; }
+
+/* Share link / copy rows. */
+.share { margin-top: 14px; padding-top: 14px; border-top: 1px solid var(--line); }
+.share label { display: block; font-size: 13px; font-weight: 600; color: var(--ink-2); margin-bottom: 6px; }
+.share-row { display: flex; gap: 8px; }
+.share-row input { flex: 1; min-width: 0; font-size: 13px !important; }
+@media (max-width: 420px) { .share-row { flex-direction: column; } }
+
+/* Placeholder where a chart will appear once the calculation is released. */
+.chart-placeholder { margin: 14px 0 0; border: 1px dashed var(--line-2); border-radius: var(--radius); padding: 22px 16px; text-align: center;
+  color: var(--ink-3); font-size: 14px; background: repeating-linear-gradient(135deg, transparent 0 10px, var(--surface-2) 10px 20px); }
+
+/* Scenario list. */
+.scenario-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+.scenario-list li { display: flex; justify-content: space-between; align-items: center; gap: 10px; flex-wrap: wrap; padding: 8px 0; border-bottom: 1px solid var(--line); }
+.scenario-list li span { min-width: 0; overflow-wrap: anywhere; }
+
+/* FAQ and editorial blocks under the tool. */
+.faq details { border-bottom: 1px solid var(--line); padding: 10px 0; }
+.faq summary { cursor: pointer; font-weight: 600; color: var(--ink); min-height: 32px; display: flex; align-items: center; }
+.faq details p { margin: 8px 0 0; }
+.prose .data-table td, .prose .data-table th { color: var(--ink-2); }
+
+/* Widget page. */
+.widget-preview { margin: 12px 0; padding: 12px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface-2); }
+.widget-preview iframe { width: 100%; max-width: 480px; height: 460px; border: 0; display: block; background: var(--surface); border-radius: 8px; }
+.widget-code { font-family: var(--mono); font-size: 12.5px !important; line-height: 1.5; white-space: pre-wrap; word-break: break-all; min-height: 120px; }
+
+/* The embeddable frame (kader.html / cadre.html). */
+body.widget-frame { margin: 0; padding: 12px; background: var(--surface); font: 15px/1.5 var(--sans); color: var(--ink); }
+.widget-frame .result { box-shadow: none; padding: 20px 16px 16px; }
+.widget-frame .brand-line { font-size: 12.5px; color: var(--ink-3); margin: 10px 0 0; }
+.widget-frame .brand-line a { color: var(--brand-ink); }
+
+/* Pending fiscal result: neutral, with the rules still to confirm folded away. */
+.tool-pending { margin-top: 14px; border-top: 1px solid var(--line); padding-top: 10px; }
+.tool-pending summary { cursor: pointer; font-size: 14px; font-weight: 600; color: var(--ink-2); min-height: 32px; display: flex; align-items: center; }
+.tool-pending .result-list { margin-top: 8px; border-top: 0; padding-top: 0; }

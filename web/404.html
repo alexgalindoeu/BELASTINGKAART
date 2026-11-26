@@ -3,42 +3,56 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Pagina niet gevonden · Page introuvable | Belastingkaart</title>
+<!-- Served for any missing URL, at any depth. All links are relative to <base>: "/" on the
+     custom domain, or the project path (e.g. /BELASTINGKAART/) on another host. -->
+<base href="/">
+<script>(function(){var h=location.hostname,s=location.pathname.split("/")[1]||"";if(!/(^|\.)belastingkaart\.be$/i.test(h)&&/^belastingkaart$/i.test(s))document.querySelector("base").setAttribute("href","/"+s+"/")})()</script>
+<title>Pagina niet gevonden | Belastingkaart</title>
 <meta name="robots" content="noindex">
 <meta name="theme-color" content="#1f3fc4">
 <meta name="color-scheme" content="light dark">
 <script>try{var t=localStorage.getItem("bk-theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
-<link rel="icon" href="/favicon.svg" type="image/svg+xml">
-<link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
-<link rel="manifest" href="/nl/manifest.webmanifest">
-<link rel="stylesheet" href="/css/site.css">
-<script defer src="/js/ui.js"></script>
+<script src="js/taal.js"></script>
+<script>(function(){try{if(window.BKTaal.detect()==="fr"){document.documentElement.setAttribute("lang","fr");document.title="Page introuvable | Belastingkaart"}}catch(e){}})()</script>
+<style>html:not([lang="fr"]) .l-fr,html[lang="fr"] .l-nl{display:none!important}</style>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<link rel="stylesheet" href="css/site.css">
+<link rel="stylesheet" href="css/components.css">
+<script defer src="js/menu.js"></script>
+<script defer src="js/ui.js"></script>
 </head>
 <body class="page">
+<a class="skip-link l-nl" href="#content">Naar de inhoud</a>
+<a class="skip-link l-fr" href="#content">Aller au contenu</a>
 <header class="appbar">
   <div class="appbar-in">
-    <a class="brand" href="/nl/" aria-label="Belastingkaart, startpagina"><svg class="brand-icon" viewBox="0 -2 102 86" aria-hidden="true" focusable="false"><path class="p" fill-rule="evenodd" d="M16,4H62L77,18V28L68,37L84,52V66L70,80H2Z M28,16L25,33H57L62,28V21L57,16Z M23,47L19,68H64L70,62V54L63,47Z"/><polygon class="p2" points="46,80 60,80 99,30 91,18"/></svg><span class="brand-name">Belastingkaart</span></a>
+    <a class="brand l-nl" href="nl/" aria-label="Belastingkaart, startpagina"><svg class="brand-icon" viewBox="0 -2 102 86" aria-hidden="true" focusable="false"><path class="p" fill-rule="evenodd" d="M16,4H62L77,18V28L68,37L84,52V66L70,80H2Z M28,16L25,33H57L62,28V21L57,16Z M23,47L19,68H64L70,62V54L63,47Z"/><polygon class="p2" points="46,80 60,80 99,30 91,18"/></svg><span class="brand-name">Belastingkaart</span></a>
+    <a class="brand l-fr" href="fr/" aria-label="Belastingkaart, accueil"><svg class="brand-icon" viewBox="0 -2 102 86" aria-hidden="true" focusable="false"><path class="p" fill-rule="evenodd" d="M16,4H62L77,18V28L68,37L84,52V66L70,80H2Z M28,16L25,33H57L62,28V21L57,16Z M23,47L19,68H64L70,62V54L63,47Z"/><polygon class="p2" points="46,80 60,80 99,30 91,18"/></svg><span class="brand-name">Belastingkaart</span></a>
     <div class="appbar-end">
       <button class="btn-icon theme-btn" id="theme-toggle" type="button" aria-label="Thema: automatisch (zoals het systeem). Wijzigen naar licht" title="Thema"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="8"/><path class="fill" d="M12 4a8 8 0 0 1 0 16z"/></svg></button>
     </div>
   </div>
 </header>
-<main class="container page-main" id="content">
-  <p class="eyebrow">Fout 404</p>
-  <h1>Pagina niet gevonden</h1>
-  <p class="lead">Deze pagina bestaat niet of is verplaatst.</p>
-  <div class="page-actions"><a class="btn btn-primary" href="/nl/">Naar de startpagina</a></div>
-  <div lang="fr">
-    <p class="eyebrow" style="margin-top:48px">Erreur 404</p>
+<main class="container page-main" id="content" tabindex="-1">
+  <div class="l-nl">
+    <p class="eyebrow">Fout 404</p>
+    <h1>Pagina niet gevonden</h1>
+    <p class="lead">Deze pagina bestaat niet of is verplaatst. Misschien is de link verkeerd getypt.</p>
+    <div class="page-actions"><a class="btn btn-primary" href="nl/">Naar de startpagina</a> <a class="btn btn-secondary" href="nl/methodologie/">Hoe we rekenen</a> <a class="btn btn-secondary" href="nl/bronnen/">Onze officiële bronnen</a></div>
+    <noscript><p class="footer-small"><a href="fr/" hreflang="fr-BE" lang="fr">Version française</a></p></noscript>
+  </div>
+  <div class="l-fr" lang="fr">
+    <p class="eyebrow">Erreur 404</p>
     <h1>Page introuvable</h1>
-    <p class="lead">Cette page n’existe pas ou a été déplacée.</p>
-    <div class="page-actions"><a class="btn btn-secondary" href="/fr/">Vers la page d’accueil</a></div>
+    <p class="lead">Cette page n’existe pas ou a été déplacée. Le lien est peut-être mal saisi.</p>
+    <div class="page-actions"><a class="btn btn-primary" href="fr/">Vers la page d’accueil</a> <a class="btn btn-secondary" href="fr/methodologie/">Notre méthode de calcul</a> <a class="btn btn-secondary" href="fr/sources/">Nos sources officielles</a></div>
   </div>
 </main>
 <footer class="footer">
   <div class="container footer-in">
-    <p><b>Belastingkaart</b> is een onafhankelijk informatieproject. Geen officiële overheidswebsite en geen fiscaal advies.</p>
-    <p lang="fr"><b>Belastingkaart</b> est un projet d’information indépendant. Ce n’est pas un site officiel des pouvoirs publics ni un conseil fiscal.</p>
+    <p class="l-nl"><b>Belastingkaart</b> is een onafhankelijk informatieproject. Geen officiële overheidswebsite en geen fiscaal advies.</p>
+    <p class="l-fr" lang="fr"><b>Belastingkaart</b> est un projet d’information indépendant. Ce n’est pas un site officiel des pouvoirs publics ni un conseil fiscal.</p>
   </div>
 </footer>
 </body>
