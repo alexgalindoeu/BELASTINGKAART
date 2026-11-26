@@ -1,0 +1,95 @@
+/* =============================================================================
+   Belastingkaart — the map (web/js/kaart.js)
+   The same blocks as the sister site's territory map, with Belgian geography. The plate, title,
+   wrapper and hint are the shared .cover-map / .card-title / .map-wrap / .note (components.css).
+     .kaart-svg       the SVG: .gem (municipality), .gem.yours, .gem.focus, borders, label
+     .kaart-tip       tooltip that follows the pointer (or the keyboard focus)
+     .legend          legend: scale bar with end labels, "your municipality" swatch
+   Map tokens (light and dark):
+     --m-g3..--m-g1 --m-0 --m-r1..--m-r3   diverging ramp (lower ← yours → higher), only with confirmed rates
+     --m-vlg --m-bru --m-wal                neutral region tint (colour-blind safe: blue / orange / bluish green,
+                                            also distinct in lightness)
+     --m-tu --m-border
+   ========================================================================== */
+:root {
+  --m-g3: #2b7a5f; --m-g2: #6fb197; --m-g1: #bfdfd1;
+  --m-0: #e1e5ee;
+  --m-r1: #f0d2c7; --m-r2: #dc967f; --m-r3: #b45640;
+  --m-vlg: #b9c9ee; --m-bru: #efc49d; --m-wal: #a9dcc9;
+  --m-tu: #ffd23f;
+  --m-border: #ffffff;
+  --m-region-line: #0e1a2c;
+  --m-prov-line: rgba(14, 26, 44, .45);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --m-g3: #4fa888; --m-g2: #2f6b57; --m-g1: #21403a; --m-0: #1f2838;
+    --m-r1: #4a2c27; --m-r2: #8c4a3a; --m-r3: #d9826a;
+    --m-vlg: #2c3f6e; --m-bru: #6b4626; --m-wal: #1f5547;
+    --m-tu: #ffd84d; --m-border: #0b1019; --m-region-line: #e7ebf3; --m-prov-line: rgba(231, 235, 243, .4);
+  }
+}
+:root[data-theme="dark"] {
+  --m-g3: #4fa888; --m-g2: #2f6b57; --m-g1: #21403a; --m-0: #1f2838;
+  --m-r1: #4a2c27; --m-r2: #8c4a3a; --m-r3: #d9826a;
+  --m-vlg: #2c3f6e; --m-bru: #6b4626; --m-wal: #1f5547;
+  --m-tu: #ffd84d; --m-border: #0b1019; --m-region-line: #e7ebf3; --m-prov-line: rgba(231, 235, 243, .4);
+}
+
+/* The plate (.cover-map), its title (.card-title), .map-wrap and .note come from components.css,
+   the same blocks as the home cover; this file adds the SVG, tooltip, legend and the full-page extras. */
+.cover-map .map-wrap:has(.kaart-svg) { min-height: 0; }
+
+/* ---- the SVG ----------------------------------------------------------------- */
+.kaart-svg { width: 100%; height: auto; display: block; overflow: hidden; touch-action: manipulation; }
+.kaart-svg:focus { outline: none; }
+.kaart-svg .gem { stroke: none; cursor: pointer; transition: opacity var(--dur), fill var(--dur-slow); }
+.kaart-svg .gem:hover, .kaart-svg .gem.focus { opacity: .78; }
+.kaart-svg .gem:focus { outline: none; }
+.kaart-svg .gem:focus-visible { stroke: var(--ring); stroke-width: 3; vector-effect: non-scaling-stroke; paint-order: stroke; opacity: 1; }
+.kaart-svg .gem.yours { stroke: var(--ink); stroke-width: 2; vector-effect: non-scaling-stroke; paint-order: stroke; }
+.kaart-svg .gem.yours:hover { opacity: 1; }
+.kaart-svg .b-gem { fill: none; stroke: var(--m-border); stroke-width: .6; vector-effect: non-scaling-stroke; pointer-events: none; stroke-linejoin: round; }
+.kaart-svg .b-prov { fill: none; stroke: var(--m-prov-line); stroke-width: .9; vector-effect: non-scaling-stroke; pointer-events: none; stroke-linejoin: round; }
+.kaart-svg .b-reg { fill: none; stroke: var(--m-region-line); stroke-width: 1.4; vector-effect: non-scaling-stroke; pointer-events: none; stroke-linejoin: round; }
+.kaart-svg .b-nat { fill: none; stroke: var(--m-region-line); stroke-width: 2; vector-effect: non-scaling-stroke; pointer-events: none; stroke-linejoin: round; }
+.kaart-svg .kaart-label { font-family: var(--display); font-stretch: 115%; font-size: 15px; font-weight: 800; fill: var(--on-accent);
+  stroke: var(--m-tu); stroke-width: 3px; paint-order: stroke; stroke-linejoin: round; pointer-events: none; }
+.kaart-tip { position: absolute; pointer-events: none; background: var(--surface); border: 1px solid var(--line-2); color: var(--ink);
+  box-shadow: var(--shadow-high); border-radius: 8px; padding: 8px 10px; font-size: 13px; min-width: 170px; max-width: 240px; z-index: 5; }
+.kaart-tip b { display: block; font-size: 14px; }
+.kaart-tip-hint { display: block; margin-top: 4px; font-size: 12px; color: var(--ink-3); }
+
+/* ---- legend and hint ------------------------------------------------------- */
+.cover-map .legend { margin-top: 8px; }
+.legend { display: flex; align-items: center; gap: 8px 16px; flex-wrap: wrap; margin-top: 14px; font-size: 12px; color: var(--ink-2); }
+.legend-group { display: inline-flex; align-items: center; gap: 8px; white-space: nowrap; }
+.legend-ramp { display: flex; border-radius: 4px; overflow: hidden; border: 1px solid var(--line); }
+.legend-ramp span { width: 28px; height: 12px; }
+.legend-yours { width: 14px; height: 12px; border-radius: 3px; background: var(--m-tu); display: inline-block; box-shadow: 0 0 0 1.5px var(--ink); }
+
+/* ---- full-page map: search, live status and the list alternative ------------ */
+.kaart-page .cover-map { max-width: 1080px; }
+.kaart-zoek { display: flex; flex-wrap: wrap; gap: 8px 12px; align-items: end; margin: 0 0 12px; }
+.kaart-svg.zoomed .kaart-label { font-size: 6px; stroke-width: 1.2px; }
+.kaart-zoek select { font: inherit; font-size: 15px; min-height: 40px; padding: 8px 10px; border: 1px solid var(--line-2); border-radius: 8px; background: var(--surface); color: var(--ink); width: 100%; }
+.kaart-zoek label { display: grid; gap: 4px; font-size: 13px; font-weight: 600; color: var(--ink-2); flex: 1 1 220px; max-width: 360px; }
+.kaart-zoek input { font: inherit; font-size: 15px; min-height: 40px; padding: 8px 10px; border: 1px solid var(--line-2); border-radius: 8px;
+  background: var(--surface); color: var(--ink); width: 100%; }
+.kaart-zoek input:focus-visible { outline: 2px solid var(--ring); outline-offset: 1px; }
+.kaart-status { font-size: 14px; color: var(--ink-2); margin: 0; min-height: 1.5em; }
+.kaart-status b { color: var(--ink); }
+.kaart-lijst { max-width: 1080px; margin: 40px auto 0; }
+.kaart-lijst h2 { font-family: var(--display); font-stretch: 108%; font-size: clamp(20px, 2.3vw, 24px); font-weight: 800; letter-spacing: -.02em; margin: 0 0 6px; }
+.kaart-lijst h3 { font-size: 15px; margin: 22px 0 8px; padding-bottom: 6px; border-bottom: 1.5px solid var(--ink); }
+.kaart-lijst ul { list-style: none; margin: 0; padding: 0; columns: 4 170px; column-gap: 20px; font-size: 14px; }
+.kaart-lijst li { break-inside: avoid; }
+.kaart-lijst button { font: inherit; color: var(--brand); background: none; border: 0; padding: 3px 0; cursor: pointer; text-align: left;
+  text-decoration: underline; text-decoration-color: color-mix(in srgb, var(--brand) 35%, transparent); text-underline-offset: 2px; }
+.kaart-lijst button:hover { color: var(--brand-hover); }
+.kaart-lijst button[aria-pressed="true"] { color: var(--on-accent); background: var(--accent); text-decoration: none; padding: 3px 6px; margin-left: -6px; border-radius: 4px; }
+
+@media (prefers-reduced-motion: reduce) {
+  .kaart-svg .gem, .legend-ramp span { transition: none; }
+}
+@media print { .kaart-tip { display: none !important; } }
