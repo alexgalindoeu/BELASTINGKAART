@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<title>Belastingkaart, social image template (1200×630)</title>
+<!-- Rendered by tools/generate_og_image.mjs into web/og-nl.png (?lang=nl) and web/og-fr.png (?lang=fr). -->
+<style>
+@font-face { font-family: "Archivo"; font-weight: 100 900; font-stretch: 62% 125%; src: url("../../web/fonts/archivo-latin-var.woff2") format("woff2"); }
+@font-face { font-family: "Public Sans"; font-weight: 100 900; src: url("../../web/fonts/public-sans-latin-var.woff2") format("woff2"); }
+@font-face { font-family: "IBM Plex Mono"; font-weight: 500; src: url("../../web/fonts/ibm-plex-mono-latin-500.woff2") format("woff2"); }
+html, body { margin: 0; width: 1200px; height: 630px; overflow: hidden; }
+body { background: #eef1f6; color: #0e1a2c; font-family: "Public Sans", sans-serif; position: relative;
+  background-image: linear-gradient(rgba(14,26,44,.065) 1px, transparent 1px), linear-gradient(90deg, rgba(14,26,44,.065) 1px, transparent 1px);
+  background-size: 40px 40px; }
+.slash { position: absolute; right: -150px; top: -40px; width: 360px; height: 720px; background: #1f3fc4; transform: skewX(-32deg); }
+.slash::after { content: ""; position: absolute; left: -46px; top: 0; width: 26px; height: 100%; background: #ffd23f; }
+.box { position: absolute; inset: 64px 72px; display: flex; flex-direction: column; justify-content: space-between; max-width: 860px; }
+.brand { display: flex; align-items: center; gap: 20px; }
+.brand svg { width: 84px; height: 76px; }
+.brand span { font-family: "Archivo"; font-stretch: 118%; font-weight: 800; font-size: 48px; letter-spacing: -.02em; }
+.eyebrow { font-family: "IBM Plex Mono"; font-weight: 500; font-size: 22px; letter-spacing: .06em; text-transform: uppercase; color: #1a36a8; margin: 0 0 18px; }
+h1 { font-family: "Archivo"; font-stretch: 112%; font-weight: 800; font-size: 80px; line-height: 1.04; letter-spacing: -.035em; margin: 0; }
+h1 b { background: linear-gradient(transparent 60%, #ffd23f 60%); font-weight: 800; }
+.foot { display: flex; justify-content: space-between; align-items: flex-end; gap: 24px; font-size: 26px; color: #354156; }
+[data-lang] { display: none; }
+html[lang="nl"] [data-lang="nl"], html[lang="fr"] [data-lang="fr"] { display: revert; }
+</style>
+<script>document.documentElement.lang = new URLSearchParams(location.search).get("lang") === "fr" ? "fr" : "nl";</script>
+</head>
+<body>
+<div class="slash"></div>
+<div class="box">
+  <div class="brand">
+    <svg viewBox="0 -2 102 86" aria-hidden="true"><path fill="#1f3fc4" fill-rule="evenodd" d="M16,4H62L77,18V28L68,37L84,52V66L70,80H2Z M28,16L25,33H57L62,28V21L57,16Z M23,47L19,68H64L70,62V54L63,47Z"/><polygon fill="#ffd23f" points="46,80 60,80 99,30 91,18"/></svg>
+    <span>Belastingkaart</span>
+  </div>
+  <div>
+    <p class="eyebrow" data-lang="nl">Bruto-netto voor werknemers</p>
+    <p class="eyebrow" data-lang="fr">Brut-net pour salariés</p>
+    <h1 data-lang="nl">Belgische fiscaliteit, <b>helder uitgelegd</b></h1>
+    <h1 data-lang="fr">La fiscalité belge, <b>expliquée clairement</b></h1>
+  </div>
+  <div class="foot">
+    <span data-lang="nl">Alleen officiële bronnen. Geen fiscaal advies.</span>
+    <span data-lang="fr">Uniquement des sources officielles. Pas de conseil fiscal.</span>
+  </div>
+</div>
+</body>
+</html>

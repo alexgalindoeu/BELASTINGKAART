@@ -24,7 +24,17 @@
     // an envelope cut by the slant
     contact: '<polygon points="2,4 22,4 12,12"/><polygon points="2,7 12,15 22,7 22,20 2,20"/><polygon class="r" points="15,20 22,20 22,14"/>',
     // a shield with a straight top
-    privacy: '<polygon points="4,3 20,3 20,13 12,22 4,13"/><polygon class="r" points="9,9 15,9 15,13 9,13"/>'
+    privacy: '<polygon points="4,3 20,3 20,13 12,22 4,13"/><polygon class="r" points="9,9 15,9 15,13 9,13"/>',
+    // a card with a portrait block and two lines
+    about: '<path fill-rule="evenodd" d="M2 4h20v16H2zM5 8v6h5V8zM12 8v2h7V8zM12 12v2h5v-2z"/><polygon class="r" points="5,16 19,16 19,18 5,18"/>',
+    // a tick on the slant inside a frame
+    validation: '<path fill-rule="evenodd" d="M2 3h20v18H2zM5 6v12h14V6z"/><polygon class="r" points="6.5,12 9,9.5 11,11.5 15.5,7 18,9.5 11,16.5"/>',
+    // a paragraph sign built from blocks: a sheet with a section mark
+    legal: '<polygon points="5,2 19,2 19,22 5,22"/><polygon class="r" points="9,6 15,6 15,9 9,9"/><polygon class="r" points="9,15 15,15 15,18 9,18"/>',
+    // a triangle sign with its bar
+    disclaimer: '<polygon points="12,2 23,22 1,22"/><polygon class="r" points="10.75,9 13.25,9 13.25,16 10.75,16"/>',
+    // a browser window with its stored item
+    cookies: '<path fill-rule="evenodd" d="M2 3h20v18H2zM4 8v11h16V8z"/><polygon class="r" points="7,11 13,11 13,16 7,16"/>'
   };
 
   const COPY = {
@@ -62,10 +72,17 @@
         { label: "Scenario’s en vergelijkingen", text: "Toelichtingen, verslagen en vergelijkingen voor Belgische situaties.", href: "scenarios/", icon: "scenarios" }
       ] },
       { group: "Over Belastingkaart", items: [
-        { label: "Hoe we rekenen", text: "De rekenmotor, de officiële bronnen en wat nog niet gedekt is.", href: "methodologie/", icon: "method" },
+        { label: "Over ons", text: "Wat Belastingkaart is, wat het berekent en hoe we werken.", href: "over-belastingkaart/", icon: "about" },
+        { label: "Hoe we rekenen", text: "De rekenmotor, de officiële bronnen en wat gedekt is.", href: "methodologie/", icon: "method" },
+        { label: "Validatie", text: "Hoe elke fiscale parameter wordt gecontroleerd.", href: "validatie/", icon: "validation" },
         { label: "Bronnen", text: "De officiële bronnen achter elke parameter.", href: "bronnen/", icon: "sources" },
-        { label: "Contact", text: "Hoe je Belastingkaart kunt bereiken.", href: "contact/", icon: "contact" },
-        { label: "Privacy", text: "Hoe we met je gegevens omgaan.", href: "privacy/", icon: "privacy" }
+        { label: "Contact", text: "Hoe je Belastingkaart kunt bereiken.", href: "contact/", icon: "contact" }
+      ] },
+      { group: "Juridisch", items: [
+        { label: "Juridische informatie", text: "De voorwaarden waaronder je Belastingkaart kunt gebruiken.", href: "juridische-informatie/", icon: "legal" },
+        { label: "Disclaimer", text: "Wat je van Belastingkaart kunt verwachten, en wat niet.", href: "disclaimer/", icon: "disclaimer" },
+        { label: "Privacy", text: "Hoe we met je gegevens omgaan.", href: "privacy/", icon: "privacy" },
+        { label: "Cookies", text: "Wat Belastingkaart in je browser bewaart, en wat niet.", href: "cookies/", icon: "cookies" }
       ] }
     ],
     fr: [
@@ -80,10 +97,17 @@
         { label: "Scénarios et comparaisons", text: "Explications, rapports et comparaisons pour des situations belges.", href: "scenarios/", icon: "scenarios" }
       ] },
       { group: "À propos de Belastingkaart", items: [
-        { label: "Notre méthode de calcul", text: "Le moteur de calcul, les sources officielles et ce qui n’est pas encore couvert.", href: "methodologie/", icon: "method" },
+        { label: "À propos", text: "Ce qu’est Belastingkaart, ce qu’il calcule et comment nous travaillons.", href: "a-propos/", icon: "about" },
+        { label: "Notre méthode de calcul", text: "Le moteur de calcul, les sources officielles et ce qui est couvert.", href: "methodologie/", icon: "method" },
+        { label: "Validation", text: "Comment chaque paramètre fiscal est vérifié.", href: "validation/", icon: "validation" },
         { label: "Sources", text: "Les sources officielles derrière chaque paramètre.", href: "sources/", icon: "sources" },
-        { label: "Contact", text: "Comment joindre Belastingkaart.", href: "contact/", icon: "contact" },
-        { label: "Confidentialité", text: "Comment nous traitons vos données.", href: "confidentialite/", icon: "privacy" }
+        { label: "Contact", text: "Comment joindre Belastingkaart.", href: "contact/", icon: "contact" }
+      ] },
+      { group: "Juridique", items: [
+        { label: "Mentions légales", text: "Les conditions dans lesquelles vous pouvez utiliser Belastingkaart.", href: "mentions-legales/", icon: "legal" },
+        { label: "Avertissement", text: "Ce que vous pouvez attendre de Belastingkaart, et ce que vous ne pouvez pas en attendre.", href: "avertissement/", icon: "disclaimer" },
+        { label: "Confidentialité", text: "Comment nous traitons vos données.", href: "confidentialite/", icon: "privacy" },
+        { label: "Cookies", text: "Ce que Belastingkaart conserve dans votre navigateur, et ce qu’il ne conserve pas.", href: "cookies/", icon: "cookies" }
       ] }
     ]
   };

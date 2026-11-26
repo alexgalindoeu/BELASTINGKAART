@@ -109,7 +109,8 @@
   function mountMenu(doc, win) {
     const menu = win.BKMenu;
     const bar = doc.querySelector(".appbar-in");
-    const brand = bar && bar.querySelector(".brand");
+    const lang0 = pageLang(doc);
+    const brand = bar && (bar.querySelector(".brand.l-" + lang0) || bar.querySelector(".brand"));
     if (!menu || !bar || !brand) return;
     const lang = pageLang(doc);
     const root = new URL(brand.getAttribute("href") || "/" + lang + "/", win.location.href).href;

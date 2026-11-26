@@ -1,0 +1,23 @@
+/* Information pages (about, legal, cookies, disclaimer, validation). Loaded after site.css,
+   only by those pages; uses the design tokens defined in site.css. */
+.chip.ok { background: var(--ok-soft); color: var(--ok); border-color: transparent; }
+.chip.bad { background: var(--bad-soft); color: var(--bad); border-color: transparent; }
+
+.prose h3 { font-family: var(--display); font-stretch: 108%; font-size: 17px; font-weight: 700; letter-spacing: -.01em; line-height: 1.3; margin: 0 0 10px; }
+.prose code { font-family: var(--mono); font-size: .86em; overflow-wrap: anywhere; }
+
+.param-list { list-style: none; padding: 0; margin: 16px 0 0; display: grid; gap: 12px; }
+.param { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 16px 18px; }
+.param dl { margin: 0; display: grid; gap: 6px; }
+.param dl > div { display: grid; grid-template-columns: minmax(0, 13em) minmax(0, 1fr); gap: 12px; }
+.param dt { color: var(--ink-3); font-size: 14px; }
+.param dd { margin: 0; min-width: 0; overflow-wrap: anywhere; }
+.param-host { color: var(--ink-3); font-size: 14px; }
+@media (max-width: 560px) {
+  .param dl > div { grid-template-columns: minmax(0, 1fr); gap: 0; }
+  .param dl > div + div { margin-top: 6px; }
+}
+
+.storage-list { list-style: none; padding: 0; margin: 12px 0; display: grid; gap: 12px; }
+.storage-list li { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 14px 16px; }
+.storage-list code { font-weight: 600; }
