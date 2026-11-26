@@ -69,7 +69,10 @@ test('the language switch and hreflang alternates point to the equivalent page',
 });
 
 test('NL and FR pages have the same structure', async () => {
-  const shape = html => ({
+  // A-Z indexes (woordenlijst/lexique) have different letters per language: their letter
+  // groups are left out of the comparison; every other element must still match.
+  const noLetters = html => html.replace(/<div class="letter-group" id="letter-[a-z]"><h2>[A-Z]<\/h2>/g, '<div class="letter-group">');
+  const shape = raw => { const html = noLetters(raw); return {
     h2: (html.match(/<h2[\s>]/g) || []).length,
     sections: (html.match(/<section[\s>]/g) || []).length,
     navLinks: (html.match(/<nav class="nav"[\s\S]*?<\/nav>/)?.[0].match(/<a /g) || []).length,
@@ -78,7 +81,7 @@ test('NL and FR pages have the same structure', async () => {
     options: all(html, /<option value="([^"]+)"/g).join(','),
     scripts: all(html, /<script defer src="([^"]+)"/g).join(','),
     ids: all(html, /\sid="([^"]+)"/g).join(',')
-  });
+  }; };
   for (const [nl, fr] of PAIRS) assert.deepEqual(shape(await read(fr)), shape(await read(nl)), `${nl} vs ${fr}`);
 });
 
