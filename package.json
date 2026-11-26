@@ -13,7 +13,8 @@
     "build:validation": "node tools/generate_validation_page.mjs",
     "check:validation": "node tools/generate_validation_page.mjs --check",
     "build:og": "node tools/generate_og_image.mjs",
-    "test:browser": "node test/browser/site.browser.mjs"
+    "test:browser": "node test/browser/site.browser.mjs",
+    "test:smoke": "node test/browser/tools.smoke.mjs"
   },
   "engines": { "node": ">=20" }
 }

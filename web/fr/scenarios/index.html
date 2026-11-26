@@ -40,11 +40,17 @@
 <link rel="manifest" href="../../fr/manifest.webmanifest">
 <link rel="stylesheet" href="../../css/site.css">
 <link rel="stylesheet" href="../../css/components.css">
+<link rel="stylesheet" href="../../css/tools.css">
 <script defer src="../../config.js"></script>
 <script defer src="../../js/menu.js"></script>
 <script defer src="../../js/ui.js"></script>
+<script defer src="../../js/importe.js"></script>
+<script defer src="../../js/formulario.js"></script>
+<script defer src="../../js/tax-engine.js"></script>
+<script defer src="../../js/tool-kit.js"></script>
+<script defer src="../../js/scenario-tool.js"></script>
 </head>
-<body class="page" data-lang="fr">
+<body data-lang="fr">
 <a class="skip-link" href="#content">Aller au contenu</a>
 <header class="appbar">
   <div class="appbar-in">
@@ -62,36 +68,71 @@
     </div>
   </div>
 </header>
-<main class="container page-main" id="content" tabindex="-1">
+<main class="container page-main tool-page" id="content" tabindex="-1">
   <p class="breadcrumbs"><a href="../../fr/">Accueil</a> › Scénarios et comparaisons</p>
-  <p class="eyebrow">Fiscalité belge</p>
-  <h1>Scénarios et comparaisons</h1>
-  <p class="updated">Mis à jour le <time datetime="2026-11-24">24 novembre 2026</time></p>
-  <p class="lead">Comparer des situations : une augmentation de salaire, une autre situation familiale ou une autre commune.</p>
-  <div class="prose">
-    <p class="summary-box slash">Les montants s’afficheront ici lorsque toutes les règles seront officiellement confirmées et testées.</p>
-    <section>
-      <h2>Ce que couvre ce module</h2>
-      <ul>
-        <li>Calculer plusieurs scénarios côte à côte avec le même moteur.</li>
-        <li>Expliquer d’où vient la différence, étape par étape.</li>
-        <li>Exporter les résultats pour votre propre usage.</li>
-      </ul>
-    </section>
-    <section>
-      <h2>Les règles sur lesquelles il s’appuie</h2>
-      <ul>
-        <li>Un calcul brut-net entièrement confirmé et testé.</li>
-        <li>Pour les comparaisons entre communes : les taux officiels par commune.</li>
-        <li>Les mêmes résultats en néerlandais et en français.</li>
-      </ul>
-    </section>
-    <section>
-      <h2>Quand un résultat s’affiche-t-il ?</h2>
-      <p>Belastingkaart n’affiche un résultat que lorsque chaque règle nécessaire provient d’une source officielle, est confirmée et testée. D’ici là, aucun montant n’est affiché.</p>
-    </section>
+  <p class="eyebrow">Simulateur · et si ?</p>
+  <h1>Et si ? Comparez vos scénarios</h1>
+  <p class="updated">Mis à jour le <time datetime="2026-11-26">26 novembre 2026</time></p>
+  <p class="lead">Partez de votre situation actuelle et essayez des changements : une augmentation, un autre nombre de paiements, un déménagement ou une autre situation familiale. Vous voyez déjà le salaire brut de chaque scénario ; le salaire net suivra.</p>
+  <div class="calc calc-even">
+    <form id="sc-form" class="form" novalidate autocomplete="off">
+      <fieldset class="block">
+        <legend><span class="step">1</span>Votre situation actuelle</legend>
+        <div class="grid2">
+          <label class="field"><span>Salaire mensuel brut (€)</span><input name="grossMonthly" id="sc-grossMonthly" type="text" inputmode="decimal" autocomplete="off" spellcheck="false" placeholder="Ex. 3500" value="" aria-describedby="sc-grossMonthly-help"></label>
+          <label class="field"><span>Paiements par an</span><select name="paidMonths" id="sc-paidMonths"><option value="12" selected>12 paiements</option><option value="13">13 paiements</option><option value="14">14 paiements</option></select></label>
+        </div>
+        <p class="help" id="sc-grossMonthly-help">Écrivez par exemple 3500, 3.500 ou 3.500,00.</p>
+        <div class="grid2">
+          <label class="field"><span>Région</span><select name="region" id="sc-region"><option value="flanders" selected>Région flamande</option><option value="brussels">Région de Bruxelles-Capitale</option><option value="wallonia">Région wallonne</option></select></label>
+          <label class="field"><span>Commune</span><input name="municipality" id="sc-municipality" type="text" autocomplete="address-level2" placeholder="Ex. Louvain"></label>
+        </div>
+        <div class="grid2">
+          <label class="field"><span>Situation familiale</span><select name="familyStatus" id="sc-family"><option value="single" selected>Isolé</option><option value="married">Marié</option><option value="legal_cohabitant">Cohabitant légal</option><option value="separated">Divorcé / séparé de fait</option><option value="widowed">Veuf / veuve</option></select></label>
+          <label class="field"><span>Enfants à charge</span><input name="children" id="sc-children" type="number" inputmode="numeric" min="0" max="20" step="1" value="0"></label>
+        </div>
+        <div class="grid2">
+          <label class="field"><span>Année de revenus</span><select name="incomeYear" id="sc-year" aria-describedby="sc-year-help"><option value="2026">2026</option></select></label>
+        </div>
+        <p class="help" id="sc-year-help">Exercice d’imposition 2027. Belastingkaart couvre d’abord la Flandre. Bruxelles et la Wallonie suivront ; rien n’y est calculé.</p>
+        <input type="hidden" name="assessmentYear" value="2027">
+      </fieldset>
+      <fieldset class="block">
+        <legend><span class="step">2</span>Ajoutez un scénario</legend>
+        <label class="field"><span>Qu’est-ce qui change ?</span><select name="change" id="sc-change"><option value="raise" selected>Augmentation (brut par mois)</option><option value="gross">Autre salaire brut par mois</option><option value="payments">Autre nombre de paiements</option><option value="move">Déménagement dans une autre commune</option><option value="family">Autre situation familiale</option><option value="children">Autre nombre d’enfants à charge</option></select></label>
+        <div id="sc-f-amount"><label class="field"><span>Montant brut par mois (€)</span><input name="changeAmount" id="sc-changeAmount" type="text" inputmode="decimal" autocomplete="off" spellcheck="false" placeholder="Ex. 200" value=""></label></div>
+        <div id="sc-f-payments" hidden><label class="field"><span>Paiements par an</span><select name="changePayments" id="sc-changePayments"><option value="12">12 paiements</option><option value="13" selected>13 paiements</option><option value="14">14 paiements</option></select></label></div>
+        <div id="sc-f-move" class="grid2" hidden>
+          <label class="field"><span>Nouvelle région</span><select name="changeRegion" id="sc-changeRegion"><option value="flanders" selected>Région flamande</option><option value="brussels">Région de Bruxelles-Capitale</option><option value="wallonia">Région wallonne</option></select></label>
+          <label class="field"><span>Nouvelle commune</span><input name="changeMunicipality" id="sc-changeMunicipality" type="text" autocomplete="off" placeholder="Ex. Gand"></label>
+        </div>
+        <div id="sc-f-family" hidden><label class="field"><span>Nouvelle situation familiale</span><select name="changeFamily" id="sc-changeFamily"><option value="single">Isolé</option><option value="married" selected>Marié</option><option value="legal_cohabitant">Cohabitant légal</option><option value="separated">Divorcé / séparé de fait</option><option value="widowed">Veuf / veuve</option></select></label></div>
+        <div id="sc-f-children" hidden><label class="field"><span>Nouveau nombre d’enfants à charge</span><input name="changeChildren" id="sc-changeChildren" type="number" inputmode="numeric" min="0" max="20" step="1" value="1"></label></div>
+      <div class="form-actions">
+        <button class="btn btn-primary" type="submit">Ajouter le scénario <span class="arrow" aria-hidden="true">→</span></button>
+        <div class="form-error" id="sc-errors" role="alert" aria-label="Erreurs dans le formulaire" hidden></div>
+        <p class="help">Vous pouvez comparer jusqu’à six scénarios. Ils ne sont pas enregistrés.</p>
+      </div>
+        <p class="help" id="sc-msg" role="status"></p>
+      </fieldset>
+      <fieldset class="block">
+        <legend><span class="step">3</span>Vos scénarios</legend>
+        <ul class="scenario-list" id="sc-list"><li class="help">Pas encore de scénario. Ajoutez un changement ci-dessus.</li></ul>
+      </fieldset>
+    </form>
+    <div class="tool-results">
+      <div class="result" id="sc-net" aria-live="polite" data-result="blocked">
+        <div class="result-status"><span class="chip">Résultat à venir</span></div><h3>Le résultat s’affichera lorsque toutes les règles seront confirmées</h3><p>Belastingkaart n’affiche un résultat fiscal que lorsque chaque règle nécessaire provient d’une source officielle et a été testée.</p><details class="tool-pending"><summary>Quelles règles sont encore à confirmer</summary><ul class="result-list"><li>Bonus à l’emploi et cotisations des travailleurs</li><li>Précompte professionnel</li><li>Frais professionnels forfaitaires</li><li>Avantages fiscaux liés à la situation familiale</li><li>Règles régionales</li><li>Additionnels communaux</li><li>Cotisation spéciale pour la sécurité sociale</li></ul><p class="tool-extra-label">Également nécessaire pour ce calcul :</p><ul class="result-list tool-extra"><li>Le même calcul complet pour chaque scénario</li></ul></details>
+      </div>
+      <div class="result is-gross" id="sc-gross" aria-live="polite">
+        <div class="result-status"><span class="chip">Brut</span><span class="chip" id="sc-chip">0 scénarios</span></div>
+        <h3>En chiffres</h3>
+        <div class="table-wrap" tabindex="0" role="region" aria-label="Comparaison des scénarios, en brut"><table class="data-table" id="sc-table"><tbody><tr><td>Complétez votre situation actuelle pour voir la comparaison.</td></tr></tbody></table></div>
+      </div>
+    </div>
   </div>
-  <div class="page-actions"><a class="btn btn-primary" href="../../fr/#simulator">Vers le simulateur <span class="arrow" aria-hidden="true">→</span></a> <a class="btn btn-secondary" href="../../fr/sources/">Nos sources officielles</a></div>
+  <p class="help tool-note" id="sc-note">Revenus 2026. Chaque scénario change une seule chose par rapport à votre situation actuelle. Les montants du tableau sont bruts ; le salaire net de chaque scénario s’affichera lorsque toutes les règles seront confirmées et testées. Vos scénarios ne sont pas enregistrés.</p>
+  <p class="help tool-more">Plus : <a href="../../fr/salaire-mensuel/">salaire mensuel et paiements</a> · <a href="../../fr/taux-marginal/">taux marginal</a> · <a href="../../fr/comparer-offres-emploi/">comparer deux offres d’emploi</a> · <a href="../../fr/imposition-commune/">imposition commune</a> · <a href="../../fr/deux-employeurs/">deux employeurs la même année</a> · <a href="../../fr/widget/">widget pour votre site</a> · <a href="../../fr/methodologie/">notre méthode de calcul</a></p>
 </main>
 <footer class="footer">
   <div class="container footer-in">
