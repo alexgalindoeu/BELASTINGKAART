@@ -70,14 +70,14 @@ testthat::test_that("top-level with synthetic parameters: amounts match, status 
 })
 
 testthat::test_that("top-level with the real 2026 parameters is blocked and shows no amount", {
-  r <- pb_calculate(list(taxable_wages = 40000, social_contributions = 5228, municipality = "Leuven", children = 1), real)
+  r <- pb_calculate(list(taxable_wages = 40000, social_contributions = 5228, municipality = "24062", children = 1), real)
   testthat::expect_identical(r$status, "blocked")
   testthat::expect_true(any(grepl("municipal surcharge rate", r$missing)))
   testthat::expect_true(any(grepl("social-security rate", r$missing)))
   testthat::expect_true(any(grepl("werkbonus", r$missing)))
   testthat::expect_false(any(grepl("art. 130|art. 131|art. 132|art. 134|professional expenses", r$missing)))
   testthat::expect_true(all(vapply(r$steps, function(s) is.null(s$amount), TRUE)))
-  rb <- pb_calculate(list(taxable_wages = 1, municipality = "Leuven"),
+  rb <- pb_calculate(list(taxable_wages = 1, municipality = "24062"),
     within(real, federal$personal_income_tax$tax_on_tax_free_sum$status <- "pending"))
   testthat::expect_true(any(grepl("art. 134", rb$missing)))
 })

@@ -74,7 +74,7 @@ test('top-level with synthetic parameters: amounts match, status stays not_model
 });
 
 test('top-level with the real 2026 parameters is blocked and shows no amount', () => {
-  const r = pb.calculate({ taxable_wages: 40000, social_contributions: 5228, municipality: 'Leuven', children: 1 }, real);
+  const r = pb.calculate({ taxable_wages: 40000, social_contributions: 5228, municipality: '24062', children: 1 }, real);
   assert.equal(r.status, 'blocked');
   assert.ok(r.missing.some(m => /municipal surcharge rate/.test(m)));
   assert.ok(r.missing.some(m => /social-security rate/.test(m)));
@@ -83,7 +83,7 @@ test('top-level with the real 2026 parameters is blocked and shows no amount', (
   assert.ok(r.steps.every(s => s.amount === null));
   const p2 = structuredClone(real);
   p2.federal.personal_income_tax.tax_on_tax_free_sum.status = 'pending';
-  assert.ok(pb.calculate({ taxable_wages: 1, municipality: 'Leuven' }, p2).missing.some(m => /art\. 134/.test(m)));
+  assert.ok(pb.calculate({ taxable_wages: 1, municipality: '24062' }, p2).missing.some(m => /art\. 134/.test(m)));
   assert.equal(context.window.BKTaxEngine.calculate().status, 'blocked');
 });
 

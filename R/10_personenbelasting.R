@@ -137,7 +137,8 @@ pb_not_modelled_reductions <- function() {
 # 'totale belasting' (art. 466; the term has the meaning given in BFW 16.01.1989, Titel
 # III/1, per art. 2, § 3). The percentage may have at most one decimal (art. 468, second
 # paragraph); no reduction, exemption or exception applies (third paragraph). `entry` is
-# one municipality's parameter: value = percentage (e.g. 7.3). Pending or absent -> stop.
+# one municipality's parameter (municipal.aanvullende_gemeentebelasting.<NIS code>):
+# value = percentage (e.g. 7.3). Pending or absent -> stop.
 # The part of art. 466, second paragraph (certain movable and miscellaneous income) does
 # not arise for wage income only and is not modelled.
 pb_municipal_surcharge <- function(total_tax, entry) {
