@@ -1,0 +1,8679 @@
+{
+ "schema_version": 1,
+ "source": {
+  "publisher": "Statbel (Algemene Directie Statistiek - Statistics Belgium)",
+  "page_url": "https://statbel.fgov.be/nl/over-statbel/methodologie/classificaties/geografie",
+  "file_url": "https://statbel.fgov.be/sites/default/files/Over_Statbel_FR/Nomenclaturen/REFNIS_2025.csv",
+  "file_name": "REFNIS_2025.csv",
+  "file_last_modified": "Thu, 28 Nov 2024 13:56:13 GMT",
+  "file_sha256": "5e88a229cdbe1356e01ca950802d8eeaa04a1ab5c0dab0ab393c74cdf7c7879d",
+  "retrieved": "2026-11-25",
+  "statement": "Nomenclatuur geldig vanaf 1/01/2025 (565 gemeenten)",
+  "reference_date": "2025-01-01",
+  "official_count": 565,
+  "record_count": 565,
+  "generator": "tools/build_gemeenten.mjs",
+  "note": "Generated file. Do not edit by hand; run node tools/build_gemeenten.mjs."
+ },
+ "regions": {
+  "brussels": {
+   "nis": "04000",
+   "name_fr": "RÉGION DE BRUXELLES-CAPITALE",
+   "name_nl": "BRUSSELS HOOFDSTEDELIJK GEWEST"
+  },
+  "flanders": {
+   "nis": "02000",
+   "name_fr": "RÉGION FLAMANDE",
+   "name_nl": "VLAAMS GEWEST"
+  },
+  "wallonia": {
+   "nis": "03000",
+   "name_fr": "RÉGION WALLONNE",
+   "name_nl": "WAALS GEWEST"
+  }
+ },
+ "provinces": [
+  {
+   "nis": "10000",
+   "region": "flanders",
+   "name_fr": "Province d'Anvers",
+   "name_nl": "Provincie Antwerpen"
+  },
+  {
+   "nis": "20001",
+   "region": "flanders",
+   "name_fr": "Province du Brabant Flamand",
+   "name_nl": "Provincie Vlaams-Brabant"
+  },
+  {
+   "nis": "30000",
+   "region": "flanders",
+   "name_fr": "Province de Flandre Occidentale",
+   "name_nl": "Provincie West-Vlaanderen"
+  },
+  {
+   "nis": "40000",
+   "region": "flanders",
+   "name_fr": "Province de Flandre Orientale",
+   "name_nl": "Provincie Oost-Vlaanderen"
+  },
+  {
+   "nis": "70000",
+   "region": "flanders",
+   "name_fr": "Province du Limbourg",
+   "name_nl": "Provincie Limburg"
+  },
+  {
+   "nis": "20002",
+   "region": "wallonia",
+   "name_fr": "Province du Brabant Wallon",
+   "name_nl": "Provincie Waals-Brabant"
+  },
+  {
+   "nis": "50000",
+   "region": "wallonia",
+   "name_fr": "Province du Hainaut",
+   "name_nl": "Provincie Henegouwen"
+  },
+  {
+   "nis": "60000",
+   "region": "wallonia",
+   "name_fr": "Province de Liège",
+   "name_nl": "Provincie Luik"
+  },
+  {
+   "nis": "80000",
+   "region": "wallonia",
+   "name_fr": "Province du Luxembourg",
+   "name_nl": "Provincie Luxemburg"
+  },
+  {
+   "nis": "90000",
+   "region": "wallonia",
+   "name_fr": "Province de Namur",
+   "name_nl": "Provincie Namen"
+  }
+ ],
+ "arrondissements": [
+  {
+   "nis": "21000",
+   "region": "brussels",
+   "province_nis": null,
+   "name_fr": "Arrondissement de Bruxelles-Capitale",
+   "name_nl": "Arrondissement Brussel Hoofdstad"
+  },
+  {
+   "nis": "11000",
+   "region": "flanders",
+   "province_nis": "10000",
+   "name_fr": "Arrondissement d'Anvers",
+   "name_nl": "Arrondissement Antwerpen"
+  },
+  {
+   "nis": "12000",
+   "region": "flanders",
+   "province_nis": "10000",
+   "name_fr": "Arrondissement de Malines",
+   "name_nl": "Arrondissement Mechelen"
+  },
+  {
+   "nis": "13000",
+   "region": "flanders",
+   "province_nis": "10000",
+   "name_fr": "Arrondissement de Turnhout",
+   "name_nl": "Arrondissement Turnhout"
+  },
+  {
+   "nis": "23000",
+   "region": "flanders",
+   "province_nis": "20001",
+   "name_fr": "Arrondissement de Hal-Vilvorde",
+   "name_nl": "Arrondissement Halle-Vilvoorde"
+  },
+  {
+   "nis": "24000",
+   "region": "flanders",
+   "province_nis": "20001",
+   "name_fr": "Arrondissement de Louvain",
+   "name_nl": "Arrondissement Leuven"
+  },
+  {
+   "nis": "31000",
+   "region": "flanders",
+   "province_nis": "30000",
+   "name_fr": "Arrondissement de Bruges",
+   "name_nl": "Arrondissement Brugge"
+  },
+  {
+   "nis": "34000",
+   "region": "flanders",
+   "province_nis": "30000",
+   "name_fr": "Arrondissement de Courtrai",
+   "name_nl": "Arrondissement Kortrijk"
+  },
+  {
+   "nis": "32000",
+   "region": "flanders",
+   "province_nis": "30000",
+   "name_fr": "Arrondissement de Dixmude",
+   "name_nl": "Arrondissement Diksmuide"
+  },
+  {
+   "nis": "38000",
+   "region": "flanders",
+   "province_nis": "30000",
+   "name_fr": "Arrondissement de Furnes",
+   "name_nl": "Arrondissement Veurne"
+  },
+  {
+   "nis": "35000",
+   "region": "flanders",
+   "province_nis": "30000",
+   "name_fr": "Arrondissement d'Ostende",
+   "name_nl": "Arrondissement Oostende"
+  },
+  {
+   "nis": "36000",
+   "region": "flanders",
+   "province_nis": "30000",
+   "name_fr": "Arrondissement de Roulers",
+   "name_nl": "Arrondissement Roeselare"
+  },
+  {
+   "nis": "37000",
+   "region": "flanders",
+   "province_nis": "30000",
+   "name_fr": "Arrondissement de Tielt",
+   "name_nl": "Arrondissement Tielt"
+  },
+  {
+   "nis": "33000",
+   "region": "flanders",
+   "province_nis": "30000",
+   "name_fr": "Arrondissement d'Ypres",
+   "name_nl": "Arrondissement Ieper"
+  },
+  {
+   "nis": "41000",
+   "region": "flanders",
+   "province_nis": "40000",
+   "name_fr": "Arrondissement d'Alost",
+   "name_nl": "Arrondissement Aalst"
+  },
+  {
+   "nis": "45000",
+   "region": "flanders",
+   "province_nis": "40000",
+   "name_fr": "Arrondissement d'Audenarde",
+   "name_nl": "Arrondissement Oudenaarde"
+  },
+  {
+   "nis": "43000",
+   "region": "flanders",
+   "province_nis": "40000",
+   "name_fr": "Arrondissement d'Eeklo",
+   "name_nl": "Arrondissement Eeklo"
+  },
+  {
+   "nis": "44000",
+   "region": "flanders",
+   "province_nis": "40000",
+   "name_fr": "Arrondissement de Gand",
+   "name_nl": "Arrondissement Gent"
+  },
+  {
+   "nis": "46000",
+   "region": "flanders",
+   "province_nis": "40000",
+   "name_fr": "Arrondissement de Saint-Nicolas",
+   "name_nl": "Arrondissement Sint-Niklaas"
+  },
+  {
+   "nis": "42000",
+   "region": "flanders",
+   "province_nis": "40000",
+   "name_fr": "Arrondissement de Termonde",
+   "name_nl": "Arrondissement Dendermonde"
+  },
+  {
+   "nis": "71000",
+   "region": "flanders",
+   "province_nis": "70000",
+   "name_fr": "Arrondissement de Hasselt",
+   "name_nl": "Arrondissement Hasselt"
+  },
+  {
+   "nis": "72000",
+   "region": "flanders",
+   "province_nis": "70000",
+   "name_fr": "Arrondissement de Maaseik",
+   "name_nl": "Arrondissement Maaseik"
+  },
+  {
+   "nis": "73000",
+   "region": "flanders",
+   "province_nis": "70000",
+   "name_fr": "Arrondissement de Tongres",
+   "name_nl": "Arrondissement Tongeren"
+  },
+  {
+   "nis": "25000",
+   "region": "wallonia",
+   "province_nis": "20002",
+   "name_fr": "Arrondissement de Nivelles",
+   "name_nl": "Arrondissement Nijvel"
+  },
+  {
+   "nis": "51000",
+   "region": "wallonia",
+   "province_nis": "50000",
+   "name_fr": "Arrondissement d'Ath",
+   "name_nl": "Arrondissement Aat"
+  },
+  {
+   "nis": "52000",
+   "region": "wallonia",
+   "province_nis": "50000",
+   "name_fr": "Arrondissement de Charleroi",
+   "name_nl": "Arrondissement Charleroi"
+  },
+  {
+   "nis": "53000",
+   "region": "wallonia",
+   "province_nis": "50000",
+   "name_fr": "Arrondissement de Mons",
+   "name_nl": "Arrondissement Bergen"
+  },
+  {
+   "nis": "55000",
+   "region": "wallonia",
+   "province_nis": "50000",
+   "name_fr": "Arrondissement de Soignies",
+   "name_nl": "Arrondissement Zinnik"
+  },
+  {
+   "nis": "56000",
+   "region": "wallonia",
+   "province_nis": "50000",
+   "name_fr": "Arrondissement de Thuin",
+   "name_nl": "Arrondissement Thuin"
+  },
+  {
+   "nis": "57000",
+   "region": "wallonia",
+   "province_nis": "50000",
+   "name_fr": "Arrondissement de Tournai-Mouscron",
+   "name_nl": "Arrondissement Doornik-Moeskroen"
+  },
+  {
+   "nis": "58000",
+   "region": "wallonia",
+   "province_nis": "50000",
+   "name_fr": "Arrondissement de La Louvière",
+   "name_nl": "Arrondissement La Louvière"
+  },
+  {
+   "nis": "61000",
+   "region": "wallonia",
+   "province_nis": "60000",
+   "name_fr": "Arrondissement de Huy",
+   "name_nl": "Arrondissement Hoei"
+  },
+  {
+   "nis": "62000",
+   "region": "wallonia",
+   "province_nis": "60000",
+   "name_fr": "Arrondissement de Liège",
+   "name_nl": "Arrondissement Luik"
+  },
+  {
+   "nis": "63000",
+   "region": "wallonia",
+   "province_nis": "60000",
+   "name_fr": "Arrondissement de Verviers",
+   "name_nl": "Arrondissement Verviers"
+  },
+  {
+   "nis": "64000",
+   "region": "wallonia",
+   "province_nis": "60000",
+   "name_fr": "Arrondissement de Waremme",
+   "name_nl": "Arrondissement Borgworm"
+  },
+  {
+   "nis": "81000",
+   "region": "wallonia",
+   "province_nis": "80000",
+   "name_fr": "Arrondissement d'Arlon",
+   "name_nl": "Arrondissement Aarlen"
+  },
+  {
+   "nis": "82000",
+   "region": "wallonia",
+   "province_nis": "80000",
+   "name_fr": "Arrondissement de Bastogne",
+   "name_nl": "Arrondissement Bastenaken"
+  },
+  {
+   "nis": "83000",
+   "region": "wallonia",
+   "province_nis": "80000",
+   "name_fr": "Arrondissement de Marche-en-Famenne",
+   "name_nl": "Arrondissement Marche-en-Famenne"
+  },
+  {
+   "nis": "84000",
+   "region": "wallonia",
+   "province_nis": "80000",
+   "name_fr": "Arrondissement de Neufchâteau",
+   "name_nl": "Arrondissement Neufchâteau"
+  },
+  {
+   "nis": "85000",
+   "region": "wallonia",
+   "province_nis": "80000",
+   "name_fr": "Arrondissement de Virton",
+   "name_nl": "Arrondissement Virton"
+  },
+  {
+   "nis": "91000",
+   "region": "wallonia",
+   "province_nis": "90000",
+   "name_fr": "Arrondissement de Dinant",
+   "name_nl": "Arrondissement Dinant"
+  },
+  {
+   "nis": "92000",
+   "region": "wallonia",
+   "province_nis": "90000",
+   "name_fr": "Arrondissement de Namur",
+   "name_nl": "Arrondissement Namen"
+  },
+  {
+   "nis": "93000",
+   "region": "wallonia",
+   "province_nis": "90000",
+   "name_fr": "Arrondissement de Philippeville",
+   "name_nl": "Arrondissement Philippeville"
+  }
+ ],
+ "mergers": [
+  {
+   "effective_from": "2024-12-02",
+   "new": {
+    "nis": "82039",
+    "name": "Bastenaken"
+   },
+   "merged": [
+    {
+     "nis": "82003",
+     "name": "Bastenaken"
+    },
+    {
+     "nis": "82005",
+     "name": "Bertogne"
+    }
+   ],
+   "text": "Bastenaken (82003) + Bertogne (82005) → Bastenaken (82039)"
+  },
+  {
+   "effective_from": "2025-01-01",
+   "new": {
+    "nis": "11002",
+    "name": "Antwerpen"
+   },
+   "merged": [
+    {
+     "nis": "11002",
+     "name": "Antwerpen"
+    },
+    {
+     "nis": "11007",
+     "name": "Borsbeek"
+    }
+   ],
+   "text": "Antwerpen (11002) + Borsbeek (11007) → Antwerpen (11002)"
+  },
+  {
+   "effective_from": "2025-01-01",
+   "new": {
+    "nis": "23106",
+    "name": "Pajottegem"
+   },
+   "merged": [
+    {
+     "nis": "23023",
+     "name": "Galmaarden"
+    },
+    {
+     "nis": "23024",
+     "name": "Gooik"
+    },
+    {
+     "nis": "23032",
+     "name": "Herne"
+    }
+   ],
+   "text": "Galmaarden (23023) + Gooik (23024) + Herne (23032) → Pajottegem (23106)"
+  },
+  {
+   "effective_from": "2025-01-01",
+   "new": {
+    "nis": "37021",
+    "name": "Wingene"
+   },
+   "merged": [
+    {
+     "nis": "37012",
+     "name": "Ruiselede"
+    },
+    {
+     "nis": "37018",
+     "name": "Wingene"
+    }
+   ],
+   "text": "Ruiselede (37012) + Wingene (37018) → Wingene (37021)"
+  },
+  {
+   "effective_from": "2025-01-01",
+   "new": {
+    "nis": "37022",
+    "name": "Tielt"
+   },
+   "merged": [
+    {
+     "nis": "37007",
+     "name": "Meulebeke"
+    },
+    {
+     "nis": "37015",
+     "name": "Tielt"
+    }
+   ],
+   "text": "Meulebeke (37007) + Tielt (37015) → Tielt (37022)"
+  },
+  {
+   "effective_from": "2025-01-01",
+   "new": {
+    "nis": "44086",
+    "name": "Nazareth-De Pinte"
+   },
+   "merged": [
+    {
+     "nis": "44012",
+     "name": "De Pinte"
+    },
+    {
+     "nis": "44048",
+     "name": "Nazareth"
+    }
+   ],
+   "text": "De Pinte (44012) + Nazareth (44048) → Nazareth-De Pinte (44086)"
+  },
+  {
+   "effective_from": "2025-01-01",
+   "new": {
+    "nis": "44087",
+    "name": "Lochristi"
+   },
+   "merged": [
+    {
+     "nis": "44034",
+     "name": "Lochristi"
+    },
+    {
+     "nis": "44073",
+     "name": "Wachtebeke"
+    }
+   ],
+   "text": "Lochristi (44034) + Wachtebeke (44073) → Lochristi (44087)"
+  },
+  {
+   "effective_from": "2025-01-01",
+   "new": {
+    "nis": "46029",
+    "name": "Lokeren"
+   },
+   "merged": [
+    {
+     "nis": "46014",
+     "name": "Lokeren"
+    },
+    {
+     "nis": "44045",
+     "name": "Moerbeke"
+    }
+   ],
+   "text": "Lokeren (46014) + Moerbeke (44045) → Lokeren (46029)"
+  },
+  {
+   "effective_from": "2025-01-01",
+   "new": {
+    "nis": "44088",
+    "name": "Merelbeke-Melle"
+   },
+   "merged": [
+    {
+     "nis": "44040",
+     "name": "Melle"
+    },
+    {
+     "nis": "44043",
+     "name": "Merelbeke"
+    }
+   ],
+   "text": "Melle (44040) + Merelbeke (44043) → Merelbeke-Melle (44088)"
+  },
+  {
+   "effective_from": "2025-01-01",
+   "new": {
+    "nis": "46030",
+    "name": "Beveren-Kruibeke-Zwijndrecht"
+   },
+   "merged": [
+    {
+     "nis": "46003",
+     "name": "Beveren"
+    },
+    {
+     "nis": "46013",
+     "name": "Kruibeke"
+    },
+    {
+     "nis": "11056",
+     "name": "Zwijndrecht"
+    }
+   ],
+   "text": "Beveren (46003) + Kruibeke (46013) + Zwijndrecht (11056) → Beveren-Kruibeke-Zwijndrecht (46030)"
+  },
+  {
+   "effective_from": "2025-01-01",
+   "new": {
+    "nis": "73110",
+    "name": "Bilzen-Hoeselt"
+   },
+   "merged": [
+    {
+     "nis": "73006",
+     "name": "Bilzen"
+    },
+    {
+     "nis": "73032",
+     "name": "Hoeselt"
+    }
+   ],
+   "text": "Bilzen (73006) + Hoeselt (73032) → Bilzen-Hoeselt (73110)"
+  },
+  {
+   "effective_from": "2025-01-01",
+   "new": {
+    "nis": "73111",
+    "name": "Tongeren-Borgloon"
+   },
+   "merged": [
+    {
+     "nis": "73009",
+     "name": "Borgloon"
+    },
+    {
+     "nis": "73083",
+     "name": "Tongeren"
+    }
+   ],
+   "text": "Borgloon (73009) + Tongeren (73083) → Tongeren-Borgloon (73111)"
+  },
+  {
+   "effective_from": "2025-01-01",
+   "new": {
+    "nis": "71071",
+    "name": "Tessenderlo-Ham"
+   },
+   "merged": [
+    {
+     "nis": "71069",
+     "name": "Ham"
+    },
+    {
+     "nis": "71057",
+     "name": "Tessenderlo"
+    }
+   ],
+   "text": "Ham (71069) + Tessenderlo (71057) → Tessenderlo-Ham (71071)"
+  },
+  {
+   "effective_from": "2025-01-01",
+   "new": {
+    "nis": "71072",
+    "name": "Hasselt"
+   },
+   "merged": [
+    {
+     "nis": "71022",
+     "name": "Hasselt"
+    },
+    {
+     "nis": "73040",
+     "name": "Kortessem"
+    }
+   ],
+   "text": "Hasselt (71022) + Kortessem (73040) → Hasselt (71072)"
+  }
+ ],
+ "municipalities": [
+  {
+   "nis": "21001",
+   "name_nl": "Anderlecht",
+   "name_fr": "Anderlecht",
+   "language": "FN",
+   "official_languages": [
+    "fr",
+    "nl"
+   ],
+   "bilingual": true,
+   "region": "brussels",
+   "province_nis": null,
+   "arrondissement_nis": "21000",
+   "merger": null
+  },
+  {
+   "nis": "21002",
+   "name_nl": "Oudergem",
+   "name_fr": "Auderghem",
+   "language": "FN",
+   "official_languages": [
+    "fr",
+    "nl"
+   ],
+   "bilingual": true,
+   "region": "brussels",
+   "province_nis": null,
+   "arrondissement_nis": "21000",
+   "merger": null
+  },
+  {
+   "nis": "21003",
+   "name_nl": "Sint-Agatha-Berchem",
+   "name_fr": "Berchem-Sainte-Agathe",
+   "language": "FN",
+   "official_languages": [
+    "fr",
+    "nl"
+   ],
+   "bilingual": true,
+   "region": "brussels",
+   "province_nis": null,
+   "arrondissement_nis": "21000",
+   "merger": null
+  },
+  {
+   "nis": "21004",
+   "name_nl": "Brussel",
+   "name_fr": "Bruxelles",
+   "language": "FN",
+   "official_languages": [
+    "fr",
+    "nl"
+   ],
+   "bilingual": true,
+   "region": "brussels",
+   "province_nis": null,
+   "arrondissement_nis": "21000",
+   "merger": null
+  },
+  {
+   "nis": "21005",
+   "name_nl": "Etterbeek",
+   "name_fr": "Etterbeek",
+   "language": "FN",
+   "official_languages": [
+    "fr",
+    "nl"
+   ],
+   "bilingual": true,
+   "region": "brussels",
+   "province_nis": null,
+   "arrondissement_nis": "21000",
+   "merger": null
+  },
+  {
+   "nis": "21006",
+   "name_nl": "Evere",
+   "name_fr": "Evere",
+   "language": "FN",
+   "official_languages": [
+    "fr",
+    "nl"
+   ],
+   "bilingual": true,
+   "region": "brussels",
+   "province_nis": null,
+   "arrondissement_nis": "21000",
+   "merger": null
+  },
+  {
+   "nis": "21007",
+   "name_nl": "Vorst",
+   "name_fr": "Forest",
+   "language": "FN",
+   "official_languages": [
+    "fr",
+    "nl"
+   ],
+   "bilingual": true,
+   "region": "brussels",
+   "province_nis": null,
+   "arrondissement_nis": "21000",
+   "merger": null
+  },
+  {
+   "nis": "21008",
+   "name_nl": "Ganshoren",
+   "name_fr": "Ganshoren",
+   "language": "FN",
+   "official_languages": [
+    "fr",
+    "nl"
+   ],
+   "bilingual": true,
+   "region": "brussels",
+   "province_nis": null,
+   "arrondissement_nis": "21000",
+   "merger": null
+  },
+  {
+   "nis": "21009",
+   "name_nl": "Elsene",
+   "name_fr": "Ixelles",
+   "language": "FN",
+   "official_languages": [
+    "fr",
+    "nl"
+   ],
+   "bilingual": true,
+   "region": "brussels",
+   "province_nis": null,
+   "arrondissement_nis": "21000",
+   "merger": null
+  },
+  {
+   "nis": "21010",
+   "name_nl": "Jette",
+   "name_fr": "Jette",
+   "language": "FN",
+   "official_languages": [
+    "fr",
+    "nl"
+   ],
+   "bilingual": true,
+   "region": "brussels",
+   "province_nis": null,
+   "arrondissement_nis": "21000",
+   "merger": null
+  },
+  {
+   "nis": "21011",
+   "name_nl": "Koekelberg",
+   "name_fr": "Koekelberg",
+   "language": "FN",
+   "official_languages": [
+    "fr",
+    "nl"
+   ],
+   "bilingual": true,
+   "region": "brussels",
+   "province_nis": null,
+   "arrondissement_nis": "21000",
+   "merger": null
+  },
+  {
+   "nis": "21012",
+   "name_nl": "Sint-Jans-Molenbeek",
+   "name_fr": "Molenbeek-Saint-Jean",
+   "language": "FN",
+   "official_languages": [
+    "fr",
+    "nl"
+   ],
+   "bilingual": true,
+   "region": "brussels",
+   "province_nis": null,
+   "arrondissement_nis": "21000",
+   "merger": null
+  },
+  {
+   "nis": "21013",
+   "name_nl": "Sint-Gillis",
+   "name_fr": "Saint-Gilles",
+   "language": "FN",
+   "official_languages": [
+    "fr",
+    "nl"
+   ],
+   "bilingual": true,
+   "region": "brussels",
+   "province_nis": null,
+   "arrondissement_nis": "21000",
+   "merger": null
+  },
+  {
+   "nis": "21014",
+   "name_nl": "Sint-Joost-ten-Node",
+   "name_fr": "Saint-Josse-ten-Noode",
+   "language": "FN",
+   "official_languages": [
+    "fr",
+    "nl"
+   ],
+   "bilingual": true,
+   "region": "brussels",
+   "province_nis": null,
+   "arrondissement_nis": "21000",
+   "merger": null
+  },
+  {
+   "nis": "21015",
+   "name_nl": "Schaarbeek",
+   "name_fr": "Schaerbeek",
+   "language": "FN",
+   "official_languages": [
+    "fr",
+    "nl"
+   ],
+   "bilingual": true,
+   "region": "brussels",
+   "province_nis": null,
+   "arrondissement_nis": "21000",
+   "merger": null
+  },
+  {
+   "nis": "21016",
+   "name_nl": "Ukkel",
+   "name_fr": "Uccle",
+   "language": "FN",
+   "official_languages": [
+    "fr",
+    "nl"
+   ],
+   "bilingual": true,
+   "region": "brussels",
+   "province_nis": null,
+   "arrondissement_nis": "21000",
+   "merger": null
+  },
+  {
+   "nis": "21017",
+   "name_nl": "Watermaal-Bosvoorde",
+   "name_fr": "Watermael-Boitsfort",
+   "language": "FN",
+   "official_languages": [
+    "fr",
+    "nl"
+   ],
+   "bilingual": true,
+   "region": "brussels",
+   "province_nis": null,
+   "arrondissement_nis": "21000",
+   "merger": null
+  },
+  {
+   "nis": "21018",
+   "name_nl": "Sint-Lambrechts-Woluwe",
+   "name_fr": "Woluwe-Saint-Lambert",
+   "language": "FN",
+   "official_languages": [
+    "fr",
+    "nl"
+   ],
+   "bilingual": true,
+   "region": "brussels",
+   "province_nis": null,
+   "arrondissement_nis": "21000",
+   "merger": null
+  },
+  {
+   "nis": "21019",
+   "name_nl": "Sint-Pieters-Woluwe",
+   "name_fr": "Woluwe-Saint-Pierre",
+   "language": "FN",
+   "official_languages": [
+    "fr",
+    "nl"
+   ],
+   "bilingual": true,
+   "region": "brussels",
+   "province_nis": null,
+   "arrondissement_nis": "21000",
+   "merger": null
+  },
+  {
+   "nis": "11001",
+   "name_nl": "Aartselaar",
+   "name_fr": "Aartselaar",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "10000",
+   "arrondissement_nis": "11000",
+   "merger": null
+  },
+  {
+   "nis": "11002",
+   "name_nl": "Antwerpen",
+   "name_fr": "Anvers",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "10000",
+   "arrondissement_nis": "11000",
+   "merger": {
+    "effective_from": "2025-01-01",
+    "merged_from": [
+     "11002",
+     "11007"
+    ]
+   }
+  },
+  {
+   "nis": "11004",
+   "name_nl": "Boechout",
+   "name_fr": "Boechout",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "10000",
+   "arrondissement_nis": "11000",
+   "merger": null
+  },
+  {
+   "nis": "11005",
+   "name_nl": "Boom",
+   "name_fr": "Boom",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "10000",
+   "arrondissement_nis": "11000",
+   "merger": null
+  },
+  {
+   "nis": "11008",
+   "name_nl": "Brasschaat",
+   "name_fr": "Brasschaat",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "10000",
+   "arrondissement_nis": "11000",
+   "merger": null
+  },
+  {
+   "nis": "11009",
+   "name_nl": "Brecht",
+   "name_fr": "Brecht",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "10000",
+   "arrondissement_nis": "11000",
+   "merger": null
+  },
+  {
+   "nis": "11013",
+   "name_nl": "Edegem",
+   "name_fr": "Edegem",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "10000",
+   "arrondissement_nis": "11000",
+   "merger": null
+  },
+  {
+   "nis": "11016",
+   "name_nl": "Essen",
+   "name_fr": "Essen",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "10000",
+   "arrondissement_nis": "11000",
+   "merger": null
+  },
+  {
+   "nis": "11018",
+   "name_nl": "Hemiksem",
+   "name_fr": "Hemiksem",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "10000",
+   "arrondissement_nis": "11000",
+   "merger": null
+  },
+  {
+   "nis": "11021",
+   "name_nl": "Hove",
+   "name_fr": "Hove",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "10000",
+   "arrondissement_nis": "11000",
+   "merger": null
+  },
+  {
+   "nis": "11022",
+   "name_nl": "Kalmthout",
+   "name_fr": "Kalmthout",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "10000",
+   "arrondissement_nis": "11000",
+   "merger": null
+  },
+  {
+   "nis": "11023",
+   "name_nl": "Kapellen",
+   "name_fr": "Kapellen",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "10000",
+   "arrondissement_nis": "11000",
+   "merger": null
+  },
+  {
+   "nis": "11024",
+   "name_nl": "Kontich",
+   "name_fr": "Kontich",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "10000",
+   "arrondissement_nis": "11000",
+   "merger": null
+  },
+  {
+   "nis": "11025",
+   "name_nl": "Lint",
+   "name_fr": "Lint",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "10000",
+   "arrondissement_nis": "11000",
+   "merger": null
+  },
+  {
+   "nis": "11057",
+   "name_nl": "Malle",
+   "name_fr": "Malle",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "10000",
+   "arrondissement_nis": "11000",
+   "merger": null
+  },
+  {
+   "nis": "11029",
+   "name_nl": "Mortsel",
+   "name_fr": "Mortsel",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "10000",
+   "arrondissement_nis": "11000",
+   "merger": null
+  },
+  {
+   "nis": "11030",
+   "name_nl": "Niel",
+   "name_fr": "Niel",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "10000",
+   "arrondissement_nis": "11000",
+   "merger": null
+  },
+  {
+   "nis": "11035",
+   "name_nl": "Ranst",
+   "name_fr": "Ranst",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "10000",
+   "arrondissement_nis": "11000",
+   "merger": null
+  },
+  {
+   "nis": "11037",
+   "name_nl": "Rumst",
+   "name_fr": "Rumst",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "10000",
+   "arrondissement_nis": "11000",
+   "merger": null
+  },
+  {
+   "nis": "11038",
+   "name_nl": "Schelle",
+   "name_fr": "Schelle",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "10000",
+   "arrondissement_nis": "11000",
+   "merger": null
+  },
+  {
+   "nis": "11039",
+   "name_nl": "Schilde",
+   "name_fr": "Schilde",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "10000",
+   "arrondissement_nis": "11000",
+   "merger": null
+  },
+  {
+   "nis": "11040",
+   "name_nl": "Schoten",
+   "name_fr": "Schoten",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "10000",
+   "arrondissement_nis": "11000",
+   "merger": null
+  },
+  {
+   "nis": "11044",
+   "name_nl": "Stabroek",
+   "name_fr": "Stabroek",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "10000",
+   "arrondissement_nis": "11000",
+   "merger": null
+  },
+  {
+   "nis": "11050",
+   "name_nl": "Wijnegem",
+   "name_fr": "Wijnegem",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "10000",
+   "arrondissement_nis": "11000",
+   "merger": null
+  },
+  {
+   "nis": "11052",
+   "name_nl": "Wommelgem",
+   "name_fr": "Wommelgem",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "10000",
+   "arrondissement_nis": "11000",
+   "merger": null
+  },
+  {
+   "nis": "11053",
+   "name_nl": "Wuustwezel",
+   "name_fr": "Wuustwezel",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "10000",
+   "arrondissement_nis": "11000",
+   "merger": null
+  },
+  {
+   "nis": "11054",
+   "name_nl": "Zandhoven",
+   "name_fr": "Zandhoven",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "10000",
+   "arrondissement_nis": "11000",
+   "merger": null
+  },
+  {
+   "nis": "11055",
+   "name_nl": "Zoersel",
+   "name_fr": "Zoersel",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "10000",
+   "arrondissement_nis": "11000",
+   "merger": null
+  },
+  {
+   "nis": "12002",
+   "name_nl": "Berlaar",
+   "name_fr": "Berlaar",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "10000",
+   "arrondissement_nis": "12000",
+   "merger": null
+  },
+  {
+   "nis": "12005",
+   "name_nl": "Bonheiden",
+   "name_fr": "Bonheiden",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "10000",
+   "arrondissement_nis": "12000",
+   "merger": null
+  },
+  {
+   "nis": "12007",
+   "name_nl": "Bornem",
+   "name_fr": "Bornem",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "10000",
+   "arrondissement_nis": "12000",
+   "merger": null
+  },
+  {
+   "nis": "12009",
+   "name_nl": "Duffel",
+   "name_fr": "Duffel",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "10000",
+   "arrondissement_nis": "12000",
+   "merger": null
+  },
+  {
+   "nis": "12014",
+   "name_nl": "Heist-op-den-Berg",
+   "name_fr": "Heist-op-den-Berg",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "10000",
+   "arrondissement_nis": "12000",
+   "merger": null
+  },
+  {
+   "nis": "12021",
+   "name_nl": "Lier",
+   "name_fr": "Lierre",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "10000",
+   "arrondissement_nis": "12000",
+   "merger": null
+  },
+  {
+   "nis": "12025",
+   "name_nl": "Mechelen",
+   "name_fr": "Malines",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "10000",
+   "arrondissement_nis": "12000",
+   "merger": null
+  },
+  {
+   "nis": "12026",
+   "name_nl": "Nijlen",
+   "name_fr": "Nijlen",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "10000",
+   "arrondissement_nis": "12000",
+   "merger": null
+  },
+  {
+   "nis": "12029",
+   "name_nl": "Putte",
+   "name_fr": "Putte",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "10000",
+   "arrondissement_nis": "12000",
+   "merger": null
+  },
+  {
+   "nis": "12041",
+   "name_nl": "Puurs-Sint-Amands",
+   "name_fr": "Puurs-Sint-Amands",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "10000",
+   "arrondissement_nis": "12000",
+   "merger": null
+  },
+  {
+   "nis": "12035",
+   "name_nl": "Sint-Katelijne-Waver",
+   "name_fr": "Sint-Katelijne-Waver",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "10000",
+   "arrondissement_nis": "12000",
+   "merger": null
+  },
+  {
+   "nis": "12040",
+   "name_nl": "Willebroek",
+   "name_fr": "Willebroek",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "10000",
+   "arrondissement_nis": "12000",
+   "merger": null
+  },
+  {
+   "nis": "13001",
+   "name_nl": "Arendonk",
+   "name_fr": "Arendonk",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "10000",
+   "arrondissement_nis": "13000",
+   "merger": null
+  },
+  {
+   "nis": "13002",
+   "name_nl": "Baarle-Hertog",
+   "name_fr": "Baerle-Duc",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "10000",
+   "arrondissement_nis": "13000",
+   "merger": null
+  },
+  {
+   "nis": "13003",
+   "name_nl": "Balen",
+   "name_fr": "Balen",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "10000",
+   "arrondissement_nis": "13000",
+   "merger": null
+  },
+  {
+   "nis": "13004",
+   "name_nl": "Beerse",
+   "name_fr": "Beerse",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "10000",
+   "arrondissement_nis": "13000",
+   "merger": null
+  },
+  {
+   "nis": "13006",
+   "name_nl": "Dessel",
+   "name_fr": "Dessel",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "10000",
+   "arrondissement_nis": "13000",
+   "merger": null
+  },
+  {
+   "nis": "13008",
+   "name_nl": "Geel",
+   "name_fr": "Geel",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "10000",
+   "arrondissement_nis": "13000",
+   "merger": null
+  },
+  {
+   "nis": "13010",
+   "name_nl": "Grobbendonk",
+   "name_fr": "Grobbendonk",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "10000",
+   "arrondissement_nis": "13000",
+   "merger": null
+  },
+  {
+   "nis": "13011",
+   "name_nl": "Herentals",
+   "name_fr": "Herentals",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "10000",
+   "arrondissement_nis": "13000",
+   "merger": null
+  },
+  {
+   "nis": "13012",
+   "name_nl": "Herenthout",
+   "name_fr": "Herenthout",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "10000",
+   "arrondissement_nis": "13000",
+   "merger": null
+  },
+  {
+   "nis": "13013",
+   "name_nl": "Herselt",
+   "name_fr": "Herselt",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "10000",
+   "arrondissement_nis": "13000",
+   "merger": null
+  },
+  {
+   "nis": "13014",
+   "name_nl": "Hoogstraten",
+   "name_fr": "Hoogstraten",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "10000",
+   "arrondissement_nis": "13000",
+   "merger": null
+  },
+  {
+   "nis": "13016",
+   "name_nl": "Hulshout",
+   "name_fr": "Hulshout",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "10000",
+   "arrondissement_nis": "13000",
+   "merger": null
+  },
+  {
+   "nis": "13017",
+   "name_nl": "Kasterlee",
+   "name_fr": "Kasterlee",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "10000",
+   "arrondissement_nis": "13000",
+   "merger": null
+  },
+  {
+   "nis": "13053",
+   "name_nl": "Laakdal",
+   "name_fr": "Laakdal",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "10000",
+   "arrondissement_nis": "13000",
+   "merger": null
+  },
+  {
+   "nis": "13019",
+   "name_nl": "Lille",
+   "name_fr": "Lille",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "10000",
+   "arrondissement_nis": "13000",
+   "merger": null
+  },
+  {
+   "nis": "13021",
+   "name_nl": "Meerhout",
+   "name_fr": "Meerhout",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "10000",
+   "arrondissement_nis": "13000",
+   "merger": null
+  },
+  {
+   "nis": "13023",
+   "name_nl": "Merksplas",
+   "name_fr": "Merksplas",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "10000",
+   "arrondissement_nis": "13000",
+   "merger": null
+  },
+  {
+   "nis": "13025",
+   "name_nl": "Mol",
+   "name_fr": "Mol",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "10000",
+   "arrondissement_nis": "13000",
+   "merger": null
+  },
+  {
+   "nis": "13029",
+   "name_nl": "Olen",
+   "name_fr": "Olen",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "10000",
+   "arrondissement_nis": "13000",
+   "merger": null
+  },
+  {
+   "nis": "13031",
+   "name_nl": "Oud-Turnhout",
+   "name_fr": "Oud-Turnhout",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "10000",
+   "arrondissement_nis": "13000",
+   "merger": null
+  },
+  {
+   "nis": "13035",
+   "name_nl": "Ravels",
+   "name_fr": "Ravels",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "10000",
+   "arrondissement_nis": "13000",
+   "merger": null
+  },
+  {
+   "nis": "13036",
+   "name_nl": "Retie",
+   "name_fr": "Retie",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "10000",
+   "arrondissement_nis": "13000",
+   "merger": null
+  },
+  {
+   "nis": "13037",
+   "name_nl": "Rijkevorsel",
+   "name_fr": "Rijkevorsel",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "10000",
+   "arrondissement_nis": "13000",
+   "merger": null
+  },
+  {
+   "nis": "13040",
+   "name_nl": "Turnhout",
+   "name_fr": "Turnhout",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "10000",
+   "arrondissement_nis": "13000",
+   "merger": null
+  },
+  {
+   "nis": "13044",
+   "name_nl": "Vorselaar",
+   "name_fr": "Vorselaar",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "10000",
+   "arrondissement_nis": "13000",
+   "merger": null
+  },
+  {
+   "nis": "13046",
+   "name_nl": "Vosselaar",
+   "name_fr": "Vosselaar",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "10000",
+   "arrondissement_nis": "13000",
+   "merger": null
+  },
+  {
+   "nis": "13049",
+   "name_nl": "Westerlo",
+   "name_fr": "Westerlo",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "10000",
+   "arrondissement_nis": "13000",
+   "merger": null
+  },
+  {
+   "nis": "23105",
+   "name_nl": "Affligem",
+   "name_fr": "Affligem",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "20001",
+   "arrondissement_nis": "23000",
+   "merger": null
+  },
+  {
+   "nis": "23002",
+   "name_nl": "Asse",
+   "name_fr": "Asse",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "20001",
+   "arrondissement_nis": "23000",
+   "merger": null
+  },
+  {
+   "nis": "23003",
+   "name_nl": "Beersel",
+   "name_fr": "Beersel",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "20001",
+   "arrondissement_nis": "23000",
+   "merger": null
+  },
+  {
+   "nis": "23009",
+   "name_nl": "Bever",
+   "name_fr": "Biévène",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "20001",
+   "arrondissement_nis": "23000",
+   "merger": null
+  },
+  {
+   "nis": "23016",
+   "name_nl": "Dilbeek",
+   "name_fr": "Dilbeek",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "20001",
+   "arrondissement_nis": "23000",
+   "merger": null
+  },
+  {
+   "nis": "23098",
+   "name_nl": "Drogenbos",
+   "name_fr": "Drogenbos",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "20001",
+   "arrondissement_nis": "23000",
+   "merger": null
+  },
+  {
+   "nis": "23025",
+   "name_nl": "Grimbergen",
+   "name_fr": "Grimbergen",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "20001",
+   "arrondissement_nis": "23000",
+   "merger": null
+  },
+  {
+   "nis": "23027",
+   "name_nl": "Halle",
+   "name_fr": "Hal",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "20001",
+   "arrondissement_nis": "23000",
+   "merger": null
+  },
+  {
+   "nis": "23033",
+   "name_nl": "Hoeilaart",
+   "name_fr": "Hoeilaart",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "20001",
+   "arrondissement_nis": "23000",
+   "merger": null
+  },
+  {
+   "nis": "23038",
+   "name_nl": "Kampenhout",
+   "name_fr": "Kampenhout",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "20001",
+   "arrondissement_nis": "23000",
+   "merger": null
+  },
+  {
+   "nis": "23039",
+   "name_nl": "Kapelle-op-den-Bos",
+   "name_fr": "Kapelle-op-den-Bos",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "20001",
+   "arrondissement_nis": "23000",
+   "merger": null
+  },
+  {
+   "nis": "23099",
+   "name_nl": "Kraainem",
+   "name_fr": "Kraainem",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "20001",
+   "arrondissement_nis": "23000",
+   "merger": null
+  },
+  {
+   "nis": "23104",
+   "name_nl": "Lennik",
+   "name_fr": "Lennik",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "20001",
+   "arrondissement_nis": "23000",
+   "merger": null
+  },
+  {
+   "nis": "23044",
+   "name_nl": "Liedekerke",
+   "name_fr": "Liedekerke",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "20001",
+   "arrondissement_nis": "23000",
+   "merger": null
+  },
+  {
+   "nis": "23100",
+   "name_nl": "Linkebeek",
+   "name_fr": "Linkebeek",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "20001",
+   "arrondissement_nis": "23000",
+   "merger": null
+  },
+  {
+   "nis": "23045",
+   "name_nl": "Londerzeel",
+   "name_fr": "Londerzeel",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "20001",
+   "arrondissement_nis": "23000",
+   "merger": null
+  },
+  {
+   "nis": "23047",
+   "name_nl": "Machelen",
+   "name_fr": "Machelen",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "20001",
+   "arrondissement_nis": "23000",
+   "merger": null
+  },
+  {
+   "nis": "23050",
+   "name_nl": "Meise",
+   "name_fr": "Meise",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "20001",
+   "arrondissement_nis": "23000",
+   "merger": null
+  },
+  {
+   "nis": "23052",
+   "name_nl": "Merchtem",
+   "name_fr": "Merchtem",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "20001",
+   "arrondissement_nis": "23000",
+   "merger": null
+  },
+  {
+   "nis": "23060",
+   "name_nl": "Opwijk",
+   "name_fr": "Opwijk",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "20001",
+   "arrondissement_nis": "23000",
+   "merger": null
+  },
+  {
+   "nis": "23062",
+   "name_nl": "Overijse",
+   "name_fr": "Overijse",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "20001",
+   "arrondissement_nis": "23000",
+   "merger": null
+  },
+  {
+   "nis": "23106",
+   "name_nl": "Pajottegem",
+   "name_fr": "Pajottegem",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "20001",
+   "arrondissement_nis": "23000",
+   "merger": {
+    "effective_from": "2025-01-01",
+    "merged_from": [
+     "23023",
+     "23024",
+     "23032"
+    ]
+   }
+  },
+  {
+   "nis": "23064",
+   "name_nl": "Pepingen",
+   "name_fr": "Pepingen",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "20001",
+   "arrondissement_nis": "23000",
+   "merger": null
+  },
+  {
+   "nis": "23101",
+   "name_nl": "Sint-Genesius-Rode",
+   "name_fr": "Rhode-Saint-Genèse",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "20001",
+   "arrondissement_nis": "23000",
+   "merger": null
+  },
+  {
+   "nis": "23097",
+   "name_nl": "Roosdaal",
+   "name_fr": "Roosdaal",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "20001",
+   "arrondissement_nis": "23000",
+   "merger": null
+  },
+  {
+   "nis": "23077",
+   "name_nl": "Sint-Pieters-Leeuw",
+   "name_fr": "Sint-Pieters-Leeuw",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "20001",
+   "arrondissement_nis": "23000",
+   "merger": null
+  },
+  {
+   "nis": "23081",
+   "name_nl": "Steenokkerzeel",
+   "name_fr": "Steenokkerzeel",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "20001",
+   "arrondissement_nis": "23000",
+   "merger": null
+  },
+  {
+   "nis": "23086",
+   "name_nl": "Ternat",
+   "name_fr": "Ternat",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "20001",
+   "arrondissement_nis": "23000",
+   "merger": null
+  },
+  {
+   "nis": "23088",
+   "name_nl": "Vilvoorde",
+   "name_fr": "Vilvorde",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "20001",
+   "arrondissement_nis": "23000",
+   "merger": null
+  },
+  {
+   "nis": "23102",
+   "name_nl": "Wemmel",
+   "name_fr": "Wemmel",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "20001",
+   "arrondissement_nis": "23000",
+   "merger": null
+  },
+  {
+   "nis": "23103",
+   "name_nl": "Wezembeek-Oppem",
+   "name_fr": "Wezembeek-Oppem",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "20001",
+   "arrondissement_nis": "23000",
+   "merger": null
+  },
+  {
+   "nis": "23094",
+   "name_nl": "Zaventem",
+   "name_fr": "Zaventem",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "20001",
+   "arrondissement_nis": "23000",
+   "merger": null
+  },
+  {
+   "nis": "23096",
+   "name_nl": "Zemst",
+   "name_fr": "Zemst",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "20001",
+   "arrondissement_nis": "23000",
+   "merger": null
+  },
+  {
+   "nis": "24001",
+   "name_nl": "Aarschot",
+   "name_fr": "Aarschot",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "20001",
+   "arrondissement_nis": "24000",
+   "merger": null
+  },
+  {
+   "nis": "24007",
+   "name_nl": "Begijnendijk",
+   "name_fr": "Begijnendijk",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "20001",
+   "arrondissement_nis": "24000",
+   "merger": null
+  },
+  {
+   "nis": "24008",
+   "name_nl": "Bekkevoort",
+   "name_fr": "Bekkevoort",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "20001",
+   "arrondissement_nis": "24000",
+   "merger": null
+  },
+  {
+   "nis": "24009",
+   "name_nl": "Bertem",
+   "name_fr": "Bertem",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "20001",
+   "arrondissement_nis": "24000",
+   "merger": null
+  },
+  {
+   "nis": "24011",
+   "name_nl": "Bierbeek",
+   "name_fr": "Bierbeek",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "20001",
+   "arrondissement_nis": "24000",
+   "merger": null
+  },
+  {
+   "nis": "24014",
+   "name_nl": "Boortmeerbeek",
+   "name_fr": "Boortmeerbeek",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "20001",
+   "arrondissement_nis": "24000",
+   "merger": null
+  },
+  {
+   "nis": "24016",
+   "name_nl": "Boutersem",
+   "name_fr": "Boutersem",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "20001",
+   "arrondissement_nis": "24000",
+   "merger": null
+  },
+  {
+   "nis": "24020",
+   "name_nl": "Diest",
+   "name_fr": "Diest",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "20001",
+   "arrondissement_nis": "24000",
+   "merger": null
+  },
+  {
+   "nis": "24028",
+   "name_nl": "Geetbets",
+   "name_fr": "Geetbets",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "20001",
+   "arrondissement_nis": "24000",
+   "merger": null
+  },
+  {
+   "nis": "24137",
+   "name_nl": "Glabbeek",
+   "name_fr": "Glabbeek",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "20001",
+   "arrondissement_nis": "24000",
+   "merger": null
+  },
+  {
+   "nis": "24033",
+   "name_nl": "Haacht",
+   "name_fr": "Haacht",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "20001",
+   "arrondissement_nis": "24000",
+   "merger": null
+  },
+  {
+   "nis": "24038",
+   "name_nl": "Herent",
+   "name_fr": "Herent",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "20001",
+   "arrondissement_nis": "24000",
+   "merger": null
+  },
+  {
+   "nis": "24041",
+   "name_nl": "Hoegaarden",
+   "name_fr": "Hoegaarden",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "20001",
+   "arrondissement_nis": "24000",
+   "merger": null
+  },
+  {
+   "nis": "24043",
+   "name_nl": "Holsbeek",
+   "name_fr": "Holsbeek",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "20001",
+   "arrondissement_nis": "24000",
+   "merger": null
+  },
+  {
+   "nis": "24045",
+   "name_nl": "Huldenberg",
+   "name_fr": "Huldenberg",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "20001",
+   "arrondissement_nis": "24000",
+   "merger": null
+  },
+  {
+   "nis": "24048",
+   "name_nl": "Keerbergen",
+   "name_fr": "Keerbergen",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "20001",
+   "arrondissement_nis": "24000",
+   "merger": null
+  },
+  {
+   "nis": "24054",
+   "name_nl": "Kortenaken",
+   "name_fr": "Kortenaken",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "20001",
+   "arrondissement_nis": "24000",
+   "merger": null
+  },
+  {
+   "nis": "24055",
+   "name_nl": "Kortenberg",
+   "name_fr": "Kortenberg",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "20001",
+   "arrondissement_nis": "24000",
+   "merger": null
+  },
+  {
+   "nis": "24059",
+   "name_nl": "Landen",
+   "name_fr": "Landen",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "20001",
+   "arrondissement_nis": "24000",
+   "merger": null
+  },
+  {
+   "nis": "24130",
+   "name_nl": "Zoutleeuw",
+   "name_fr": "Léau",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "20001",
+   "arrondissement_nis": "24000",
+   "merger": null
+  },
+  {
+   "nis": "24133",
+   "name_nl": "Linter",
+   "name_fr": "Linter",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "20001",
+   "arrondissement_nis": "24000",
+   "merger": null
+  },
+  {
+   "nis": "24062",
+   "name_nl": "Leuven",
+   "name_fr": "Louvain",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "20001",
+   "arrondissement_nis": "24000",
+   "merger": null
+  },
+  {
+   "nis": "24066",
+   "name_nl": "Lubbeek",
+   "name_fr": "Lubbeek",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "20001",
+   "arrondissement_nis": "24000",
+   "merger": null
+  },
+  {
+   "nis": "24134",
+   "name_nl": "Scherpenheuvel-Zichem",
+   "name_fr": "Montaigu-Zichem",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "20001",
+   "arrondissement_nis": "24000",
+   "merger": null
+  },
+  {
+   "nis": "24086",
+   "name_nl": "Oud-Heverlee",
+   "name_fr": "Oud-Heverlee",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "20001",
+   "arrondissement_nis": "24000",
+   "merger": null
+  },
+  {
+   "nis": "24094",
+   "name_nl": "Rotselaar",
+   "name_fr": "Rotselaar",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "20001",
+   "arrondissement_nis": "24000",
+   "merger": null
+  },
+  {
+   "nis": "24104",
+   "name_nl": "Tervuren",
+   "name_fr": "Tervuren",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "20001",
+   "arrondissement_nis": "24000",
+   "merger": null
+  },
+  {
+   "nis": "24135",
+   "name_nl": "Tielt-Winge",
+   "name_fr": "Tielt-Winge",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "20001",
+   "arrondissement_nis": "24000",
+   "merger": null
+  },
+  {
+   "nis": "24107",
+   "name_nl": "Tienen",
+   "name_fr": "Tirlemont",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "20001",
+   "arrondissement_nis": "24000",
+   "merger": null
+  },
+  {
+   "nis": "24109",
+   "name_nl": "Tremelo",
+   "name_fr": "Tremelo",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "20001",
+   "arrondissement_nis": "24000",
+   "merger": null
+  },
+  {
+   "nis": "31003",
+   "name_nl": "Beernem",
+   "name_fr": "Beernem",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "30000",
+   "arrondissement_nis": "31000",
+   "merger": null
+  },
+  {
+   "nis": "31004",
+   "name_nl": "Blankenberge",
+   "name_fr": "Blankenberge",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "30000",
+   "arrondissement_nis": "31000",
+   "merger": null
+  },
+  {
+   "nis": "31005",
+   "name_nl": "Brugge",
+   "name_fr": "Bruges",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "30000",
+   "arrondissement_nis": "31000",
+   "merger": null
+  },
+  {
+   "nis": "31006",
+   "name_nl": "Damme",
+   "name_fr": "Damme",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "30000",
+   "arrondissement_nis": "31000",
+   "merger": null
+  },
+  {
+   "nis": "31012",
+   "name_nl": "Jabbeke",
+   "name_fr": "Jabbeke",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "30000",
+   "arrondissement_nis": "31000",
+   "merger": null
+  },
+  {
+   "nis": "31043",
+   "name_nl": "Knokke-Heist",
+   "name_fr": "Knokke-Heist",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "30000",
+   "arrondissement_nis": "31000",
+   "merger": null
+  },
+  {
+   "nis": "31022",
+   "name_nl": "Oostkamp",
+   "name_fr": "Oostkamp",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "30000",
+   "arrondissement_nis": "31000",
+   "merger": null
+  },
+  {
+   "nis": "31033",
+   "name_nl": "Torhout",
+   "name_fr": "Torhout",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "30000",
+   "arrondissement_nis": "31000",
+   "merger": null
+  },
+  {
+   "nis": "31040",
+   "name_nl": "Zedelgem",
+   "name_fr": "Zedelgem",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "30000",
+   "arrondissement_nis": "31000",
+   "merger": null
+  },
+  {
+   "nis": "31042",
+   "name_nl": "Zuienkerke",
+   "name_fr": "Zuienkerke",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "30000",
+   "arrondissement_nis": "31000",
+   "merger": null
+  },
+  {
+   "nis": "34002",
+   "name_nl": "Anzegem",
+   "name_fr": "Anzegem",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "30000",
+   "arrondissement_nis": "34000",
+   "merger": null
+  },
+  {
+   "nis": "34003",
+   "name_nl": "Avelgem",
+   "name_fr": "Avelgem",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "30000",
+   "arrondissement_nis": "34000",
+   "merger": null
+  },
+  {
+   "nis": "34022",
+   "name_nl": "Kortrijk",
+   "name_fr": "Courtrai",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "30000",
+   "arrondissement_nis": "34000",
+   "merger": null
+  },
+  {
+   "nis": "34009",
+   "name_nl": "Deerlijk",
+   "name_fr": "Deerlijk",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "30000",
+   "arrondissement_nis": "34000",
+   "merger": null
+  },
+  {
+   "nis": "34043",
+   "name_nl": "Spiere-Helkijn",
+   "name_fr": "Espierres-Helchin",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "30000",
+   "arrondissement_nis": "34000",
+   "merger": null
+  },
+  {
+   "nis": "34013",
+   "name_nl": "Harelbeke",
+   "name_fr": "Harelbeke",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "30000",
+   "arrondissement_nis": "34000",
+   "merger": null
+  },
+  {
+   "nis": "34023",
+   "name_nl": "Kuurne",
+   "name_fr": "Kuurne",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "30000",
+   "arrondissement_nis": "34000",
+   "merger": null
+  },
+  {
+   "nis": "34025",
+   "name_nl": "Lendelede",
+   "name_fr": "Lendelede",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "30000",
+   "arrondissement_nis": "34000",
+   "merger": null
+  },
+  {
+   "nis": "34027",
+   "name_nl": "Menen",
+   "name_fr": "Menin",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "30000",
+   "arrondissement_nis": "34000",
+   "merger": null
+  },
+  {
+   "nis": "34040",
+   "name_nl": "Waregem",
+   "name_fr": "Waregem",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "30000",
+   "arrondissement_nis": "34000",
+   "merger": null
+  },
+  {
+   "nis": "34041",
+   "name_nl": "Wevelgem",
+   "name_fr": "Wevelgem",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "30000",
+   "arrondissement_nis": "34000",
+   "merger": null
+  },
+  {
+   "nis": "34042",
+   "name_nl": "Zwevegem",
+   "name_fr": "Zwevegem",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "30000",
+   "arrondissement_nis": "34000",
+   "merger": null
+  },
+  {
+   "nis": "32003",
+   "name_nl": "Diksmuide",
+   "name_fr": "Dixmude",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "30000",
+   "arrondissement_nis": "32000",
+   "merger": null
+  },
+  {
+   "nis": "32006",
+   "name_nl": "Houthulst",
+   "name_fr": "Houthulst",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "30000",
+   "arrondissement_nis": "32000",
+   "merger": null
+  },
+  {
+   "nis": "32010",
+   "name_nl": "Koekelare",
+   "name_fr": "Koekelare",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "30000",
+   "arrondissement_nis": "32000",
+   "merger": null
+  },
+  {
+   "nis": "32011",
+   "name_nl": "Kortemark",
+   "name_fr": "Kortemark",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "30000",
+   "arrondissement_nis": "32000",
+   "merger": null
+  },
+  {
+   "nis": "32030",
+   "name_nl": "Lo-Reninge",
+   "name_fr": "Lo-Reninge",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "30000",
+   "arrondissement_nis": "32000",
+   "merger": null
+  },
+  {
+   "nis": "38002",
+   "name_nl": "Alveringem",
+   "name_fr": "Alveringem",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "30000",
+   "arrondissement_nis": "38000",
+   "merger": null
+  },
+  {
+   "nis": "38025",
+   "name_nl": "Veurne",
+   "name_fr": "Furnes",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "30000",
+   "arrondissement_nis": "38000",
+   "merger": null
+  },
+  {
+   "nis": "38014",
+   "name_nl": "Koksijde",
+   "name_fr": "Koksijde",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "30000",
+   "arrondissement_nis": "38000",
+   "merger": null
+  },
+  {
+   "nis": "38008",
+   "name_nl": "De Panne",
+   "name_fr": "La Panne",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "30000",
+   "arrondissement_nis": "38000",
+   "merger": null
+  },
+  {
+   "nis": "38016",
+   "name_nl": "Nieuwpoort",
+   "name_fr": "Nieuport",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "30000",
+   "arrondissement_nis": "38000",
+   "merger": null
+  },
+  {
+   "nis": "35002",
+   "name_nl": "Bredene",
+   "name_fr": "Bredene",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "30000",
+   "arrondissement_nis": "35000",
+   "merger": null
+  },
+  {
+   "nis": "35029",
+   "name_nl": "De Haan",
+   "name_fr": "De Haan",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "30000",
+   "arrondissement_nis": "35000",
+   "merger": null
+  },
+  {
+   "nis": "35005",
+   "name_nl": "Gistel",
+   "name_fr": "Gistel",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "30000",
+   "arrondissement_nis": "35000",
+   "merger": null
+  },
+  {
+   "nis": "35006",
+   "name_nl": "Ichtegem",
+   "name_fr": "Ichtegem",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "30000",
+   "arrondissement_nis": "35000",
+   "merger": null
+  },
+  {
+   "nis": "35011",
+   "name_nl": "Middelkerke",
+   "name_fr": "Middelkerke",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "30000",
+   "arrondissement_nis": "35000",
+   "merger": null
+  },
+  {
+   "nis": "35013",
+   "name_nl": "Oostende",
+   "name_fr": "Ostende",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "30000",
+   "arrondissement_nis": "35000",
+   "merger": null
+  },
+  {
+   "nis": "35014",
+   "name_nl": "Oudenburg",
+   "name_fr": "Oudenburg",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "30000",
+   "arrondissement_nis": "35000",
+   "merger": null
+  },
+  {
+   "nis": "36006",
+   "name_nl": "Hooglede",
+   "name_fr": "Hooglede",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "30000",
+   "arrondissement_nis": "36000",
+   "merger": null
+  },
+  {
+   "nis": "36007",
+   "name_nl": "Ingelmunster",
+   "name_fr": "Ingelmunster",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "30000",
+   "arrondissement_nis": "36000",
+   "merger": null
+  },
+  {
+   "nis": "36008",
+   "name_nl": "Izegem",
+   "name_fr": "Izegem",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "30000",
+   "arrondissement_nis": "36000",
+   "merger": null
+  },
+  {
+   "nis": "36010",
+   "name_nl": "Ledegem",
+   "name_fr": "Ledegem",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "30000",
+   "arrondissement_nis": "36000",
+   "merger": null
+  },
+  {
+   "nis": "36011",
+   "name_nl": "Lichtervelde",
+   "name_fr": "Lichtervelde",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "30000",
+   "arrondissement_nis": "36000",
+   "merger": null
+  },
+  {
+   "nis": "36012",
+   "name_nl": "Moorslede",
+   "name_fr": "Moorslede",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "30000",
+   "arrondissement_nis": "36000",
+   "merger": null
+  },
+  {
+   "nis": "36015",
+   "name_nl": "Roeselare",
+   "name_fr": "Roulers",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "30000",
+   "arrondissement_nis": "36000",
+   "merger": null
+  },
+  {
+   "nis": "36019",
+   "name_nl": "Staden",
+   "name_fr": "Staden",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "30000",
+   "arrondissement_nis": "36000",
+   "merger": null
+  },
+  {
+   "nis": "37020",
+   "name_nl": "Ardooie",
+   "name_fr": "Ardooie",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "30000",
+   "arrondissement_nis": "37000",
+   "merger": null
+  },
+  {
+   "nis": "37002",
+   "name_nl": "Dentergem",
+   "name_fr": "Dentergem",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "30000",
+   "arrondissement_nis": "37000",
+   "merger": null
+  },
+  {
+   "nis": "37010",
+   "name_nl": "Oostrozebeke",
+   "name_fr": "Oostrozebeke",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "30000",
+   "arrondissement_nis": "37000",
+   "merger": null
+  },
+  {
+   "nis": "37011",
+   "name_nl": "Pittem",
+   "name_fr": "Pittem",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "30000",
+   "arrondissement_nis": "37000",
+   "merger": null
+  },
+  {
+   "nis": "37022",
+   "name_nl": "Tielt",
+   "name_fr": "Tielt",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "30000",
+   "arrondissement_nis": "37000",
+   "merger": {
+    "effective_from": "2025-01-01",
+    "merged_from": [
+     "37007",
+     "37015"
+    ]
+   }
+  },
+  {
+   "nis": "37017",
+   "name_nl": "Wielsbeke",
+   "name_fr": "Wielsbeke",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "30000",
+   "arrondissement_nis": "37000",
+   "merger": null
+  },
+  {
+   "nis": "37021",
+   "name_nl": "Wingene",
+   "name_fr": "Wingene",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "30000",
+   "arrondissement_nis": "37000",
+   "merger": {
+    "effective_from": "2025-01-01",
+    "merged_from": [
+     "37012",
+     "37018"
+    ]
+   }
+  },
+  {
+   "nis": "33039",
+   "name_nl": "Heuvelland",
+   "name_fr": "Heuvelland",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "30000",
+   "arrondissement_nis": "33000",
+   "merger": null
+  },
+  {
+   "nis": "33040",
+   "name_nl": "Langemark-Poelkapelle",
+   "name_fr": "Langemark-Poelkapelle",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "30000",
+   "arrondissement_nis": "33000",
+   "merger": null
+  },
+  {
+   "nis": "33016",
+   "name_nl": "Mesen",
+   "name_fr": "Messines",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "30000",
+   "arrondissement_nis": "33000",
+   "merger": null
+  },
+  {
+   "nis": "33021",
+   "name_nl": "Poperinge",
+   "name_fr": "Poperinge",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "30000",
+   "arrondissement_nis": "33000",
+   "merger": null
+  },
+  {
+   "nis": "33041",
+   "name_nl": "Vleteren",
+   "name_fr": "Vleteren",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "30000",
+   "arrondissement_nis": "33000",
+   "merger": null
+  },
+  {
+   "nis": "33029",
+   "name_nl": "Wervik",
+   "name_fr": "Wervik",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "30000",
+   "arrondissement_nis": "33000",
+   "merger": null
+  },
+  {
+   "nis": "33011",
+   "name_nl": "Ieper",
+   "name_fr": "Ypres",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "30000",
+   "arrondissement_nis": "33000",
+   "merger": null
+  },
+  {
+   "nis": "33037",
+   "name_nl": "Zonnebeke",
+   "name_fr": "Zonnebeke",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "30000",
+   "arrondissement_nis": "33000",
+   "merger": null
+  },
+  {
+   "nis": "41002",
+   "name_nl": "Aalst",
+   "name_fr": "Alost",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "40000",
+   "arrondissement_nis": "41000",
+   "merger": null
+  },
+  {
+   "nis": "41011",
+   "name_nl": "Denderleeuw",
+   "name_fr": "Denderleeuw",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "40000",
+   "arrondissement_nis": "41000",
+   "merger": null
+  },
+  {
+   "nis": "41082",
+   "name_nl": "Erpe-Mere",
+   "name_fr": "Erpe-Mere",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "40000",
+   "arrondissement_nis": "41000",
+   "merger": null
+  },
+  {
+   "nis": "41018",
+   "name_nl": "Geraardsbergen",
+   "name_fr": "Grammont",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "40000",
+   "arrondissement_nis": "41000",
+   "merger": null
+  },
+  {
+   "nis": "41024",
+   "name_nl": "Haaltert",
+   "name_fr": "Haaltert",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "40000",
+   "arrondissement_nis": "41000",
+   "merger": null
+  },
+  {
+   "nis": "41027",
+   "name_nl": "Herzele",
+   "name_fr": "Herzele",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "40000",
+   "arrondissement_nis": "41000",
+   "merger": null
+  },
+  {
+   "nis": "41034",
+   "name_nl": "Lede",
+   "name_fr": "Lede",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "40000",
+   "arrondissement_nis": "41000",
+   "merger": null
+  },
+  {
+   "nis": "41048",
+   "name_nl": "Ninove",
+   "name_fr": "Ninove",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "40000",
+   "arrondissement_nis": "41000",
+   "merger": null
+  },
+  {
+   "nis": "41063",
+   "name_nl": "Sint-Lievens-Houtem",
+   "name_fr": "Sint-Lievens-Houtem",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "40000",
+   "arrondissement_nis": "41000",
+   "merger": null
+  },
+  {
+   "nis": "41081",
+   "name_nl": "Zottegem",
+   "name_fr": "Zottegem",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "40000",
+   "arrondissement_nis": "41000",
+   "merger": null
+  },
+  {
+   "nis": "45035",
+   "name_nl": "Oudenaarde",
+   "name_fr": "Audenarde",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "40000",
+   "arrondissement_nis": "45000",
+   "merger": null
+  },
+  {
+   "nis": "45059",
+   "name_nl": "Brakel",
+   "name_fr": "Brakel",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "40000",
+   "arrondissement_nis": "45000",
+   "merger": null
+  },
+  {
+   "nis": "45062",
+   "name_nl": "Horebeke",
+   "name_fr": "Horebeke",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "40000",
+   "arrondissement_nis": "45000",
+   "merger": null
+  },
+  {
+   "nis": "45060",
+   "name_nl": "Kluisbergen",
+   "name_fr": "Kluisbergen",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "40000",
+   "arrondissement_nis": "45000",
+   "merger": null
+  },
+  {
+   "nis": "45068",
+   "name_nl": "Kruisem",
+   "name_fr": "Kruisem",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "40000",
+   "arrondissement_nis": "45000",
+   "merger": null
+  },
+  {
+   "nis": "45063",
+   "name_nl": "Lierde",
+   "name_fr": "Lierde",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "40000",
+   "arrondissement_nis": "45000",
+   "merger": null
+  },
+  {
+   "nis": "45064",
+   "name_nl": "Maarkedal",
+   "name_fr": "Maarkedal",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "40000",
+   "arrondissement_nis": "45000",
+   "merger": null
+  },
+  {
+   "nis": "45041",
+   "name_nl": "Ronse",
+   "name_fr": "Renaix",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "40000",
+   "arrondissement_nis": "45000",
+   "merger": null
+  },
+  {
+   "nis": "45061",
+   "name_nl": "Wortegem-Petegem",
+   "name_fr": "Wortegem-Petegem",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "40000",
+   "arrondissement_nis": "45000",
+   "merger": null
+  },
+  {
+   "nis": "45065",
+   "name_nl": "Zwalm",
+   "name_fr": "Zwalm",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "40000",
+   "arrondissement_nis": "45000",
+   "merger": null
+  },
+  {
+   "nis": "43002",
+   "name_nl": "Assenede",
+   "name_fr": "Assenede",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "40000",
+   "arrondissement_nis": "43000",
+   "merger": null
+  },
+  {
+   "nis": "43005",
+   "name_nl": "Eeklo",
+   "name_fr": "Eeklo",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "40000",
+   "arrondissement_nis": "43000",
+   "merger": null
+  },
+  {
+   "nis": "43007",
+   "name_nl": "Kaprijke",
+   "name_fr": "Kaprijke",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "40000",
+   "arrondissement_nis": "43000",
+   "merger": null
+  },
+  {
+   "nis": "43010",
+   "name_nl": "Maldegem",
+   "name_fr": "Maldegem",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "40000",
+   "arrondissement_nis": "43000",
+   "merger": null
+  },
+  {
+   "nis": "43014",
+   "name_nl": "Sint-Laureins",
+   "name_fr": "Sint-Laureins",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "40000",
+   "arrondissement_nis": "43000",
+   "merger": null
+  },
+  {
+   "nis": "43018",
+   "name_nl": "Zelzate",
+   "name_fr": "Zelzate",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "40000",
+   "arrondissement_nis": "43000",
+   "merger": null
+  },
+  {
+   "nis": "44084",
+   "name_nl": "Aalter",
+   "name_fr": "Aalter",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "40000",
+   "arrondissement_nis": "44000",
+   "merger": null
+  },
+  {
+   "nis": "44083",
+   "name_nl": "Deinze",
+   "name_fr": "Deinze",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "40000",
+   "arrondissement_nis": "44000",
+   "merger": null
+  },
+  {
+   "nis": "44013",
+   "name_nl": "Destelbergen",
+   "name_fr": "Destelbergen",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "40000",
+   "arrondissement_nis": "44000",
+   "merger": null
+  },
+  {
+   "nis": "44019",
+   "name_nl": "Evergem",
+   "name_fr": "Evergem",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "40000",
+   "arrondissement_nis": "44000",
+   "merger": null
+  },
+  {
+   "nis": "44021",
+   "name_nl": "Gent",
+   "name_fr": "Gand",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "40000",
+   "arrondissement_nis": "44000",
+   "merger": null
+  },
+  {
+   "nis": "44020",
+   "name_nl": "Gavere",
+   "name_fr": "Gavere",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "40000",
+   "arrondissement_nis": "44000",
+   "merger": null
+  },
+  {
+   "nis": "44085",
+   "name_nl": "Lievegem",
+   "name_fr": "Lievegem",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "40000",
+   "arrondissement_nis": "44000",
+   "merger": null
+  },
+  {
+   "nis": "44087",
+   "name_nl": "Lochristi",
+   "name_fr": "Lochristi",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "40000",
+   "arrondissement_nis": "44000",
+   "merger": {
+    "effective_from": "2025-01-01",
+    "merged_from": [
+     "44034",
+     "44073"
+    ]
+   }
+  },
+  {
+   "nis": "44088",
+   "name_nl": "Merelbeke-Melle",
+   "name_fr": "Merelbeke-Melle",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "40000",
+   "arrondissement_nis": "44000",
+   "merger": {
+    "effective_from": "2025-01-01",
+    "merged_from": [
+     "44040",
+     "44043"
+    ]
+   }
+  },
+  {
+   "nis": "44086",
+   "name_nl": "Nazareth-De Pinte",
+   "name_fr": "Nazareth-De Pinte",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "40000",
+   "arrondissement_nis": "44000",
+   "merger": {
+    "effective_from": "2025-01-01",
+    "merged_from": [
+     "44012",
+     "44048"
+    ]
+   }
+  },
+  {
+   "nis": "44052",
+   "name_nl": "Oosterzele",
+   "name_fr": "Oosterzele",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "40000",
+   "arrondissement_nis": "44000",
+   "merger": null
+  },
+  {
+   "nis": "44064",
+   "name_nl": "Sint-Martens-Latem",
+   "name_fr": "Sint-Martens-Latem",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "40000",
+   "arrondissement_nis": "44000",
+   "merger": null
+  },
+  {
+   "nis": "44081",
+   "name_nl": "Zulte",
+   "name_fr": "Zulte",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "40000",
+   "arrondissement_nis": "44000",
+   "merger": null
+  },
+  {
+   "nis": "46030",
+   "name_nl": "Beveren-Kruibeke-Zwijndrecht",
+   "name_fr": "Beveren-Kruibeke-Zwijndrecht",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "40000",
+   "arrondissement_nis": "46000",
+   "merger": {
+    "effective_from": "2025-01-01",
+    "merged_from": [
+     "46003",
+     "46013",
+     "11056"
+    ]
+   }
+  },
+  {
+   "nis": "46029",
+   "name_nl": "Lokeren",
+   "name_fr": "Lokeren",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "40000",
+   "arrondissement_nis": "46000",
+   "merger": {
+    "effective_from": "2025-01-01",
+    "merged_from": [
+     "46014",
+     "44045"
+    ]
+   }
+  },
+  {
+   "nis": "46021",
+   "name_nl": "Sint-Niklaas",
+   "name_fr": "Saint-Nicolas",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "40000",
+   "arrondissement_nis": "46000",
+   "merger": null
+  },
+  {
+   "nis": "46020",
+   "name_nl": "Sint-Gillis-Waas",
+   "name_fr": "Sint-Gillis-Waas",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "40000",
+   "arrondissement_nis": "46000",
+   "merger": null
+  },
+  {
+   "nis": "46024",
+   "name_nl": "Stekene",
+   "name_fr": "Stekene",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "40000",
+   "arrondissement_nis": "46000",
+   "merger": null
+  },
+  {
+   "nis": "46025",
+   "name_nl": "Temse",
+   "name_fr": "Tamise",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "40000",
+   "arrondissement_nis": "46000",
+   "merger": null
+  },
+  {
+   "nis": "42003",
+   "name_nl": "Berlare",
+   "name_fr": "Berlare",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "40000",
+   "arrondissement_nis": "42000",
+   "merger": null
+  },
+  {
+   "nis": "42004",
+   "name_nl": "Buggenhout",
+   "name_fr": "Buggenhout",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "40000",
+   "arrondissement_nis": "42000",
+   "merger": null
+  },
+  {
+   "nis": "42008",
+   "name_nl": "Hamme",
+   "name_fr": "Hamme",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "40000",
+   "arrondissement_nis": "42000",
+   "merger": null
+  },
+  {
+   "nis": "42010",
+   "name_nl": "Laarne",
+   "name_fr": "Laarne",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "40000",
+   "arrondissement_nis": "42000",
+   "merger": null
+  },
+  {
+   "nis": "42011",
+   "name_nl": "Lebbeke",
+   "name_fr": "Lebbeke",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "40000",
+   "arrondissement_nis": "42000",
+   "merger": null
+  },
+  {
+   "nis": "42006",
+   "name_nl": "Dendermonde",
+   "name_fr": "Termonde",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "40000",
+   "arrondissement_nis": "42000",
+   "merger": null
+  },
+  {
+   "nis": "42023",
+   "name_nl": "Waasmunster",
+   "name_fr": "Waasmunster",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "40000",
+   "arrondissement_nis": "42000",
+   "merger": null
+  },
+  {
+   "nis": "42025",
+   "name_nl": "Wetteren",
+   "name_fr": "Wetteren",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "40000",
+   "arrondissement_nis": "42000",
+   "merger": null
+  },
+  {
+   "nis": "42026",
+   "name_nl": "Wichelen",
+   "name_fr": "Wichelen",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "40000",
+   "arrondissement_nis": "42000",
+   "merger": null
+  },
+  {
+   "nis": "42028",
+   "name_nl": "Zele",
+   "name_fr": "Zele",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "40000",
+   "arrondissement_nis": "42000",
+   "merger": null
+  },
+  {
+   "nis": "71002",
+   "name_nl": "As",
+   "name_fr": "As",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "70000",
+   "arrondissement_nis": "71000",
+   "merger": null
+  },
+  {
+   "nis": "71004",
+   "name_nl": "Beringen",
+   "name_fr": "Beringen",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "70000",
+   "arrondissement_nis": "71000",
+   "merger": null
+  },
+  {
+   "nis": "71034",
+   "name_nl": "Leopoldsburg",
+   "name_fr": "Bourg-Léopold",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "70000",
+   "arrondissement_nis": "71000",
+   "merger": null
+  },
+  {
+   "nis": "71011",
+   "name_nl": "Diepenbeek",
+   "name_fr": "Diepenbeek",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "70000",
+   "arrondissement_nis": "71000",
+   "merger": null
+  },
+  {
+   "nis": "71016",
+   "name_nl": "Genk",
+   "name_fr": "Genk",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "70000",
+   "arrondissement_nis": "71000",
+   "merger": null
+  },
+  {
+   "nis": "71017",
+   "name_nl": "Gingelom",
+   "name_fr": "Gingelom",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "70000",
+   "arrondissement_nis": "71000",
+   "merger": null
+  },
+  {
+   "nis": "71020",
+   "name_nl": "Halen",
+   "name_fr": "Halen",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "70000",
+   "arrondissement_nis": "71000",
+   "merger": null
+  },
+  {
+   "nis": "71072",
+   "name_nl": "Hasselt",
+   "name_fr": "Hasselt",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "70000",
+   "arrondissement_nis": "71000",
+   "merger": {
+    "effective_from": "2025-01-01",
+    "merged_from": [
+     "71022",
+     "73040"
+    ]
+   }
+  },
+  {
+   "nis": "71024",
+   "name_nl": "Herk-de-Stad",
+   "name_fr": "Herck-la-Ville",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "70000",
+   "arrondissement_nis": "71000",
+   "merger": null
+  },
+  {
+   "nis": "71070",
+   "name_nl": "Heusden-Zolder",
+   "name_fr": "Heusden-Zolder",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "70000",
+   "arrondissement_nis": "71000",
+   "merger": null
+  },
+  {
+   "nis": "71037",
+   "name_nl": "Lummen",
+   "name_fr": "Lummen",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "70000",
+   "arrondissement_nis": "71000",
+   "merger": null
+  },
+  {
+   "nis": "71045",
+   "name_nl": "Nieuwerkerken",
+   "name_fr": "Nieuwerkerken",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "70000",
+   "arrondissement_nis": "71000",
+   "merger": null
+  },
+  {
+   "nis": "71053",
+   "name_nl": "Sint-Truiden",
+   "name_fr": "Saint-Trond",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "70000",
+   "arrondissement_nis": "71000",
+   "merger": null
+  },
+  {
+   "nis": "71071",
+   "name_nl": "Tessenderlo-Ham",
+   "name_fr": "Tessenderlo-Ham",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "70000",
+   "arrondissement_nis": "71000",
+   "merger": {
+    "effective_from": "2025-01-01",
+    "merged_from": [
+     "71069",
+     "71057"
+    ]
+   }
+  },
+  {
+   "nis": "71066",
+   "name_nl": "Zonhoven",
+   "name_fr": "Zonhoven",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "70000",
+   "arrondissement_nis": "71000",
+   "merger": null
+  },
+  {
+   "nis": "71067",
+   "name_nl": "Zutendaal",
+   "name_fr": "Zutendaal",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "70000",
+   "arrondissement_nis": "71000",
+   "merger": null
+  },
+  {
+   "nis": "72003",
+   "name_nl": "Bocholt",
+   "name_fr": "Bocholt",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "70000",
+   "arrondissement_nis": "72000",
+   "merger": null
+  },
+  {
+   "nis": "72004",
+   "name_nl": "Bree",
+   "name_fr": "Bree",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "70000",
+   "arrondissement_nis": "72000",
+   "merger": null
+  },
+  {
+   "nis": "72041",
+   "name_nl": "Dilsen-Stokkem",
+   "name_fr": "Dilsen-Stokkem",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "70000",
+   "arrondissement_nis": "72000",
+   "merger": null
+  },
+  {
+   "nis": "72037",
+   "name_nl": "Hamont-Achel",
+   "name_fr": "Hamont-Achel",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "70000",
+   "arrondissement_nis": "72000",
+   "merger": null
+  },
+  {
+   "nis": "72038",
+   "name_nl": "Hechtel-Eksel",
+   "name_fr": "Hechtel-Eksel",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "70000",
+   "arrondissement_nis": "72000",
+   "merger": null
+  },
+  {
+   "nis": "72039",
+   "name_nl": "Houthalen-Helchteren",
+   "name_fr": "Houthalen-Helchteren",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "70000",
+   "arrondissement_nis": "72000",
+   "merger": null
+  },
+  {
+   "nis": "72018",
+   "name_nl": "Kinrooi",
+   "name_fr": "Kinrooi",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "70000",
+   "arrondissement_nis": "72000",
+   "merger": null
+  },
+  {
+   "nis": "72020",
+   "name_nl": "Lommel",
+   "name_fr": "Lommel",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "70000",
+   "arrondissement_nis": "72000",
+   "merger": null
+  },
+  {
+   "nis": "72021",
+   "name_nl": "Maaseik",
+   "name_fr": "Maaseik",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "70000",
+   "arrondissement_nis": "72000",
+   "merger": null
+  },
+  {
+   "nis": "72042",
+   "name_nl": "Oudsbergen",
+   "name_fr": "Oudsbergen",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "70000",
+   "arrondissement_nis": "72000",
+   "merger": null
+  },
+  {
+   "nis": "72030",
+   "name_nl": "Peer",
+   "name_fr": "Peer",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "70000",
+   "arrondissement_nis": "72000",
+   "merger": null
+  },
+  {
+   "nis": "72043",
+   "name_nl": "Pelt",
+   "name_fr": "Pelt",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "70000",
+   "arrondissement_nis": "72000",
+   "merger": null
+  },
+  {
+   "nis": "73001",
+   "name_nl": "Alken",
+   "name_fr": "Alken",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "70000",
+   "arrondissement_nis": "73000",
+   "merger": null
+  },
+  {
+   "nis": "73110",
+   "name_nl": "Bilzen-Hoeselt",
+   "name_fr": "Bilzen-Hoeselt",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "70000",
+   "arrondissement_nis": "73000",
+   "merger": {
+    "effective_from": "2025-01-01",
+    "merged_from": [
+     "73006",
+     "73032"
+    ]
+   }
+  },
+  {
+   "nis": "73109",
+   "name_nl": "Voeren",
+   "name_fr": "Fourons",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "70000",
+   "arrondissement_nis": "73000",
+   "merger": null
+  },
+  {
+   "nis": "73022",
+   "name_nl": "Heers",
+   "name_fr": "Heers",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "70000",
+   "arrondissement_nis": "73000",
+   "merger": null
+  },
+  {
+   "nis": "73028",
+   "name_nl": "Herstappe",
+   "name_fr": "Herstappe",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "70000",
+   "arrondissement_nis": "73000",
+   "merger": null
+  },
+  {
+   "nis": "73042",
+   "name_nl": "Lanaken",
+   "name_fr": "Lanaken",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "70000",
+   "arrondissement_nis": "73000",
+   "merger": null
+  },
+  {
+   "nis": "73107",
+   "name_nl": "Maasmechelen",
+   "name_fr": "Maasmechelen",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "70000",
+   "arrondissement_nis": "73000",
+   "merger": null
+  },
+  {
+   "nis": "73066",
+   "name_nl": "Riemst",
+   "name_fr": "Riemst",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "70000",
+   "arrondissement_nis": "73000",
+   "merger": null
+  },
+  {
+   "nis": "73111",
+   "name_nl": "Tongeren-Borgloon",
+   "name_fr": "Tongres-Looz",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "70000",
+   "arrondissement_nis": "73000",
+   "merger": {
+    "effective_from": "2025-01-01",
+    "merged_from": [
+     "73009",
+     "73083"
+    ]
+   }
+  },
+  {
+   "nis": "73098",
+   "name_nl": "Wellen",
+   "name_fr": "Wellen",
+   "language": "N",
+   "official_languages": [
+    "nl"
+   ],
+   "bilingual": false,
+   "region": "flanders",
+   "province_nis": "70000",
+   "arrondissement_nis": "73000",
+   "merger": null
+  },
+  {
+   "nis": "25005",
+   "name_nl": "Bevekom",
+   "name_fr": "Beauvechain",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "20002",
+   "arrondissement_nis": "25000",
+   "merger": null
+  },
+  {
+   "nis": "25014",
+   "name_nl": "Eigenbrakel",
+   "name_fr": "Braine-l'Alleud",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "20002",
+   "arrondissement_nis": "25000",
+   "merger": null
+  },
+  {
+   "nis": "25015",
+   "name_nl": "Kasteelbrakel",
+   "name_fr": "Braine-le-Château",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "20002",
+   "arrondissement_nis": "25000",
+   "merger": null
+  },
+  {
+   "nis": "25117",
+   "name_nl": "Chastre",
+   "name_fr": "Chastre",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "20002",
+   "arrondissement_nis": "25000",
+   "merger": null
+  },
+  {
+   "nis": "25018",
+   "name_nl": "Chaumont-Gistoux",
+   "name_fr": "Chaumont-Gistoux",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "20002",
+   "arrondissement_nis": "25000",
+   "merger": null
+  },
+  {
+   "nis": "25023",
+   "name_nl": "Court-Saint-Etienne",
+   "name_fr": "Court-Saint-Etienne",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "20002",
+   "arrondissement_nis": "25000",
+   "merger": null
+  },
+  {
+   "nis": "25031",
+   "name_nl": "Genepien",
+   "name_fr": "Genappe",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "20002",
+   "arrondissement_nis": "25000",
+   "merger": null
+  },
+  {
+   "nis": "25037",
+   "name_nl": "Graven",
+   "name_fr": "Grez-Doiceau",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "20002",
+   "arrondissement_nis": "25000",
+   "merger": null
+  },
+  {
+   "nis": "25118",
+   "name_nl": "Hélécine",
+   "name_fr": "Hélécine",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "20002",
+   "arrondissement_nis": "25000",
+   "merger": null
+  },
+  {
+   "nis": "25043",
+   "name_nl": "Incourt",
+   "name_fr": "Incourt",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "20002",
+   "arrondissement_nis": "25000",
+   "merger": null
+  },
+  {
+   "nis": "25044",
+   "name_nl": "Itter",
+   "name_fr": "Ittre",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "20002",
+   "arrondissement_nis": "25000",
+   "merger": null
+  },
+  {
+   "nis": "25048",
+   "name_nl": "Geldenaken",
+   "name_fr": "Jodoigne",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "20002",
+   "arrondissement_nis": "25000",
+   "merger": null
+  },
+  {
+   "nis": "25050",
+   "name_nl": "Terhulpen",
+   "name_fr": "La Hulpe",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "20002",
+   "arrondissement_nis": "25000",
+   "merger": null
+  },
+  {
+   "nis": "25119",
+   "name_nl": "Lasne",
+   "name_fr": "Lasne",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "20002",
+   "arrondissement_nis": "25000",
+   "merger": null
+  },
+  {
+   "nis": "25068",
+   "name_nl": "Mont-Saint-Guibert",
+   "name_fr": "Mont-Saint-Guibert",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "20002",
+   "arrondissement_nis": "25000",
+   "merger": null
+  },
+  {
+   "nis": "25072",
+   "name_nl": "Nijvel",
+   "name_fr": "Nivelles",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "20002",
+   "arrondissement_nis": "25000",
+   "merger": null
+  },
+  {
+   "nis": "25120",
+   "name_nl": "Orp-Jauche",
+   "name_fr": "Orp-Jauche",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "20002",
+   "arrondissement_nis": "25000",
+   "merger": null
+  },
+  {
+   "nis": "25121",
+   "name_nl": "Ottignies-Louvain-la-Neuve",
+   "name_fr": "Ottignies-Louvain-la-Neuve",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "20002",
+   "arrondissement_nis": "25000",
+   "merger": null
+  },
+  {
+   "nis": "25084",
+   "name_nl": "Perwijs",
+   "name_fr": "Perwez",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "20002",
+   "arrondissement_nis": "25000",
+   "merger": null
+  },
+  {
+   "nis": "25122",
+   "name_nl": "Ramillies",
+   "name_fr": "Ramillies",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "20002",
+   "arrondissement_nis": "25000",
+   "merger": null
+  },
+  {
+   "nis": "25123",
+   "name_nl": "Rebecq",
+   "name_fr": "Rebecq",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "20002",
+   "arrondissement_nis": "25000",
+   "merger": null
+  },
+  {
+   "nis": "25091",
+   "name_nl": "Rixensart",
+   "name_fr": "Rixensart",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "20002",
+   "arrondissement_nis": "25000",
+   "merger": null
+  },
+  {
+   "nis": "25105",
+   "name_nl": "Tubeke",
+   "name_fr": "Tubize",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "20002",
+   "arrondissement_nis": "25000",
+   "merger": null
+  },
+  {
+   "nis": "25107",
+   "name_nl": "Villers-la-Ville",
+   "name_fr": "Villers-la-Ville",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "20002",
+   "arrondissement_nis": "25000",
+   "merger": null
+  },
+  {
+   "nis": "25124",
+   "name_nl": "Walhain",
+   "name_fr": "Walhain",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "20002",
+   "arrondissement_nis": "25000",
+   "merger": null
+  },
+  {
+   "nis": "25110",
+   "name_nl": "Waterloo",
+   "name_fr": "Waterloo",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "20002",
+   "arrondissement_nis": "25000",
+   "merger": null
+  },
+  {
+   "nis": "25112",
+   "name_nl": "Waver",
+   "name_fr": "Wavre",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "20002",
+   "arrondissement_nis": "25000",
+   "merger": null
+  },
+  {
+   "nis": "51004",
+   "name_nl": "Aat",
+   "name_fr": "Ath",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "50000",
+   "arrondissement_nis": "51000",
+   "merger": null
+  },
+  {
+   "nis": "51008",
+   "name_nl": "Beloeil",
+   "name_fr": "Beloeil",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "50000",
+   "arrondissement_nis": "51000",
+   "merger": null
+  },
+  {
+   "nis": "51009",
+   "name_nl": "Bernissart",
+   "name_fr": "Bernissart",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "50000",
+   "arrondissement_nis": "51000",
+   "merger": null
+  },
+  {
+   "nis": "51012",
+   "name_nl": "Brugelette",
+   "name_fr": "Brugelette",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "50000",
+   "arrondissement_nis": "51000",
+   "merger": null
+  },
+  {
+   "nis": "51014",
+   "name_nl": "Chièvres",
+   "name_fr": "Chièvres",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "50000",
+   "arrondissement_nis": "51000",
+   "merger": null
+  },
+  {
+   "nis": "51017",
+   "name_nl": "Elzele",
+   "name_fr": "Ellezelles",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "50000",
+   "arrondissement_nis": "51000",
+   "merger": null
+  },
+  {
+   "nis": "51067",
+   "name_nl": "Edingen",
+   "name_fr": "Enghien",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "50000",
+   "arrondissement_nis": "51000",
+   "merger": null
+  },
+  {
+   "nis": "51019",
+   "name_nl": "Vloesberg",
+   "name_fr": "Flobecq",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "50000",
+   "arrondissement_nis": "51000",
+   "merger": null
+  },
+  {
+   "nis": "51065",
+   "name_nl": "Frasnes-lez-Anvaing",
+   "name_fr": "Frasnes-lez-Anvaing",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "50000",
+   "arrondissement_nis": "51000",
+   "merger": null
+  },
+  {
+   "nis": "51069",
+   "name_nl": "Lessen",
+   "name_fr": "Lessines",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "50000",
+   "arrondissement_nis": "51000",
+   "merger": null
+  },
+  {
+   "nis": "51068",
+   "name_nl": "Opzullik",
+   "name_fr": "Silly",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "50000",
+   "arrondissement_nis": "51000",
+   "merger": null
+  },
+  {
+   "nis": "52074",
+   "name_nl": "Aiseau-Presles",
+   "name_fr": "Aiseau-Presles",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "50000",
+   "arrondissement_nis": "52000",
+   "merger": null
+  },
+  {
+   "nis": "52010",
+   "name_nl": "Chapelle-lez-Herlaimont",
+   "name_fr": "Chapelle-lez-Herlaimont",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "50000",
+   "arrondissement_nis": "52000",
+   "merger": null
+  },
+  {
+   "nis": "52011",
+   "name_nl": "Charleroi",
+   "name_fr": "Charleroi",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "50000",
+   "arrondissement_nis": "52000",
+   "merger": null
+  },
+  {
+   "nis": "52012",
+   "name_nl": "Châtelet",
+   "name_fr": "Châtelet",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "50000",
+   "arrondissement_nis": "52000",
+   "merger": null
+  },
+  {
+   "nis": "52015",
+   "name_nl": "Courcelles",
+   "name_fr": "Courcelles",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "50000",
+   "arrondissement_nis": "52000",
+   "merger": null
+  },
+  {
+   "nis": "52018",
+   "name_nl": "Farciennes",
+   "name_fr": "Farciennes",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "50000",
+   "arrondissement_nis": "52000",
+   "merger": null
+  },
+  {
+   "nis": "52021",
+   "name_nl": "Fleurus",
+   "name_fr": "Fleurus",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "50000",
+   "arrondissement_nis": "52000",
+   "merger": null
+  },
+  {
+   "nis": "52022",
+   "name_nl": "Fontaine-l'Evêque",
+   "name_fr": "Fontaine-l'Evêque",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "50000",
+   "arrondissement_nis": "52000",
+   "merger": null
+  },
+  {
+   "nis": "52025",
+   "name_nl": "Gerpinnes",
+   "name_fr": "Gerpinnes",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "50000",
+   "arrondissement_nis": "52000",
+   "merger": null
+  },
+  {
+   "nis": "52075",
+   "name_nl": "Les Bons Villers",
+   "name_fr": "Les Bons Villers",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "50000",
+   "arrondissement_nis": "52000",
+   "merger": null
+  },
+  {
+   "nis": "52048",
+   "name_nl": "Montigny-le-Tilleul",
+   "name_fr": "Montigny-le-Tilleul",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "50000",
+   "arrondissement_nis": "52000",
+   "merger": null
+  },
+  {
+   "nis": "52055",
+   "name_nl": "Pont-à-Celles",
+   "name_fr": "Pont-à-Celles",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "50000",
+   "arrondissement_nis": "52000",
+   "merger": null
+  },
+  {
+   "nis": "53014",
+   "name_nl": "Boussu",
+   "name_fr": "Boussu",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "50000",
+   "arrondissement_nis": "53000",
+   "merger": null
+  },
+  {
+   "nis": "53082",
+   "name_nl": "Colfontaine",
+   "name_fr": "Colfontaine",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "50000",
+   "arrondissement_nis": "53000",
+   "merger": null
+  },
+  {
+   "nis": "53020",
+   "name_nl": "Dour",
+   "name_fr": "Dour",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "50000",
+   "arrondissement_nis": "53000",
+   "merger": null
+  },
+  {
+   "nis": "53028",
+   "name_nl": "Frameries",
+   "name_fr": "Frameries",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "50000",
+   "arrondissement_nis": "53000",
+   "merger": null
+  },
+  {
+   "nis": "53039",
+   "name_nl": "Hensies",
+   "name_fr": "Hensies",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "50000",
+   "arrondissement_nis": "53000",
+   "merger": null
+  },
+  {
+   "nis": "53083",
+   "name_nl": "Honnelles",
+   "name_fr": "Honnelles",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "50000",
+   "arrondissement_nis": "53000",
+   "merger": null
+  },
+  {
+   "nis": "53044",
+   "name_nl": "Jurbeke",
+   "name_fr": "Jurbise",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "50000",
+   "arrondissement_nis": "53000",
+   "merger": null
+  },
+  {
+   "nis": "53046",
+   "name_nl": "Lens",
+   "name_fr": "Lens",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "50000",
+   "arrondissement_nis": "53000",
+   "merger": null
+  },
+  {
+   "nis": "53053",
+   "name_nl": "Bergen",
+   "name_fr": "Mons",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "50000",
+   "arrondissement_nis": "53000",
+   "merger": null
+  },
+  {
+   "nis": "53065",
+   "name_nl": "Quaregnon",
+   "name_fr": "Quaregnon",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "50000",
+   "arrondissement_nis": "53000",
+   "merger": null
+  },
+  {
+   "nis": "53084",
+   "name_nl": "Quévy",
+   "name_fr": "Quévy",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "50000",
+   "arrondissement_nis": "53000",
+   "merger": null
+  },
+  {
+   "nis": "53068",
+   "name_nl": "Quiévrain",
+   "name_fr": "Quiévrain",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "50000",
+   "arrondissement_nis": "53000",
+   "merger": null
+  },
+  {
+   "nis": "53070",
+   "name_nl": "Saint-Ghislain",
+   "name_fr": "Saint-Ghislain",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "50000",
+   "arrondissement_nis": "53000",
+   "merger": null
+  },
+  {
+   "nis": "55004",
+   "name_nl": "'s Gravenbrakel",
+   "name_fr": "Braine-le-Comte",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "50000",
+   "arrondissement_nis": "55000",
+   "merger": null
+  },
+  {
+   "nis": "55050",
+   "name_nl": "Ecaussinnes",
+   "name_fr": "Ecaussinnes",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "50000",
+   "arrondissement_nis": "55000",
+   "merger": null
+  },
+  {
+   "nis": "55035",
+   "name_nl": "Le Roeulx",
+   "name_fr": "Le Roeulx",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "50000",
+   "arrondissement_nis": "55000",
+   "merger": null
+  },
+  {
+   "nis": "55086",
+   "name_nl": "Manage",
+   "name_fr": "Manage",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "50000",
+   "arrondissement_nis": "55000",
+   "merger": null
+  },
+  {
+   "nis": "55085",
+   "name_nl": "Seneffe",
+   "name_fr": "Seneffe",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "50000",
+   "arrondissement_nis": "55000",
+   "merger": null
+  },
+  {
+   "nis": "55040",
+   "name_nl": "Zinnik",
+   "name_fr": "Soignies",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "50000",
+   "arrondissement_nis": "55000",
+   "merger": null
+  },
+  {
+   "nis": "56001",
+   "name_nl": "Anderlues",
+   "name_fr": "Anderlues",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "50000",
+   "arrondissement_nis": "56000",
+   "merger": null
+  },
+  {
+   "nis": "56005",
+   "name_nl": "Beaumont",
+   "name_fr": "Beaumont",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "50000",
+   "arrondissement_nis": "56000",
+   "merger": null
+  },
+  {
+   "nis": "56016",
+   "name_nl": "Chimay",
+   "name_fr": "Chimay",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "50000",
+   "arrondissement_nis": "56000",
+   "merger": null
+  },
+  {
+   "nis": "56022",
+   "name_nl": "Erquelinnes",
+   "name_fr": "Erquelinnes",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "50000",
+   "arrondissement_nis": "56000",
+   "merger": null
+  },
+  {
+   "nis": "56029",
+   "name_nl": "Froidchapelle",
+   "name_fr": "Froidchapelle",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "50000",
+   "arrondissement_nis": "56000",
+   "merger": null
+  },
+  {
+   "nis": "56086",
+   "name_nl": "Ham-sur-Heure-Nalinnes",
+   "name_fr": "Ham-sur-Heure-Nalinnes",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "50000",
+   "arrondissement_nis": "56000",
+   "merger": null
+  },
+  {
+   "nis": "56044",
+   "name_nl": "Lobbes",
+   "name_fr": "Lobbes",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "50000",
+   "arrondissement_nis": "56000",
+   "merger": null
+  },
+  {
+   "nis": "56049",
+   "name_nl": "Merbes-le-Château",
+   "name_fr": "Merbes-le-Château",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "50000",
+   "arrondissement_nis": "56000",
+   "merger": null
+  },
+  {
+   "nis": "56051",
+   "name_nl": "Momignies",
+   "name_fr": "Momignies",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "50000",
+   "arrondissement_nis": "56000",
+   "merger": null
+  },
+  {
+   "nis": "56088",
+   "name_nl": "Sivry-Rance",
+   "name_fr": "Sivry-Rance",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "50000",
+   "arrondissement_nis": "56000",
+   "merger": null
+  },
+  {
+   "nis": "56078",
+   "name_nl": "Thuin",
+   "name_fr": "Thuin",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "50000",
+   "arrondissement_nis": "56000",
+   "merger": null
+  },
+  {
+   "nis": "57003",
+   "name_nl": "Antoing",
+   "name_fr": "Antoing",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "50000",
+   "arrondissement_nis": "57000",
+   "merger": null
+  },
+  {
+   "nis": "57093",
+   "name_nl": "Brunehaut",
+   "name_fr": "Brunehaut",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "50000",
+   "arrondissement_nis": "57000",
+   "merger": null
+  },
+  {
+   "nis": "57018",
+   "name_nl": "Celles",
+   "name_fr": "Celles",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "50000",
+   "arrondissement_nis": "57000",
+   "merger": null
+  },
+  {
+   "nis": "57097",
+   "name_nl": "Komen-Waasten",
+   "name_fr": "Comines-Warneton",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "50000",
+   "arrondissement_nis": "57000",
+   "merger": null
+  },
+  {
+   "nis": "57027",
+   "name_nl": "Estaimpuis",
+   "name_fr": "Estaimpuis",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "50000",
+   "arrondissement_nis": "57000",
+   "merger": null
+  },
+  {
+   "nis": "57094",
+   "name_nl": "Leuze-en-Hainaut",
+   "name_fr": "Leuze-en-Hainaut",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "50000",
+   "arrondissement_nis": "57000",
+   "merger": null
+  },
+  {
+   "nis": "57095",
+   "name_nl": "Mont-de-l'Enclus",
+   "name_fr": "Mont-de-l'Enclus",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "50000",
+   "arrondissement_nis": "57000",
+   "merger": null
+  },
+  {
+   "nis": "57096",
+   "name_nl": "Moeskroen",
+   "name_fr": "Mouscron",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "50000",
+   "arrondissement_nis": "57000",
+   "merger": null
+  },
+  {
+   "nis": "57062",
+   "name_nl": "Pecq",
+   "name_fr": "Pecq",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "50000",
+   "arrondissement_nis": "57000",
+   "merger": null
+  },
+  {
+   "nis": "57064",
+   "name_nl": "Péruwelz",
+   "name_fr": "Péruwelz",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "50000",
+   "arrondissement_nis": "57000",
+   "merger": null
+  },
+  {
+   "nis": "57072",
+   "name_nl": "Rumes",
+   "name_fr": "Rumes",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "50000",
+   "arrondissement_nis": "57000",
+   "merger": null
+  },
+  {
+   "nis": "57081",
+   "name_nl": "Doornik",
+   "name_fr": "Tournai",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "50000",
+   "arrondissement_nis": "57000",
+   "merger": null
+  },
+  {
+   "nis": "58001",
+   "name_nl": "La Louvière",
+   "name_fr": "La Louvière",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "50000",
+   "arrondissement_nis": "58000",
+   "merger": null
+  },
+  {
+   "nis": "58002",
+   "name_nl": "Binche",
+   "name_fr": "Binche",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "50000",
+   "arrondissement_nis": "58000",
+   "merger": null
+  },
+  {
+   "nis": "58003",
+   "name_nl": "Estinnes",
+   "name_fr": "Estinnes",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "50000",
+   "arrondissement_nis": "58000",
+   "merger": null
+  },
+  {
+   "nis": "58004",
+   "name_nl": "Morlanwelz",
+   "name_fr": "Morlanwelz",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "50000",
+   "arrondissement_nis": "58000",
+   "merger": null
+  },
+  {
+   "nis": "61003",
+   "name_nl": "Amay",
+   "name_fr": "Amay",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "60000",
+   "arrondissement_nis": "61000",
+   "merger": null
+  },
+  {
+   "nis": "61079",
+   "name_nl": "Anthisnes",
+   "name_fr": "Anthisnes",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "60000",
+   "arrondissement_nis": "61000",
+   "merger": null
+  },
+  {
+   "nis": "61010",
+   "name_nl": "Burdinne",
+   "name_fr": "Burdinne",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "60000",
+   "arrondissement_nis": "61000",
+   "merger": null
+  },
+  {
+   "nis": "61012",
+   "name_nl": "Clavier",
+   "name_fr": "Clavier",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "60000",
+   "arrondissement_nis": "61000",
+   "merger": null
+  },
+  {
+   "nis": "61080",
+   "name_nl": "Engis",
+   "name_fr": "Engis",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "60000",
+   "arrondissement_nis": "61000",
+   "merger": null
+  },
+  {
+   "nis": "61019",
+   "name_nl": "Ferrières",
+   "name_fr": "Ferrières",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "60000",
+   "arrondissement_nis": "61000",
+   "merger": null
+  },
+  {
+   "nis": "61024",
+   "name_nl": "Hamoir",
+   "name_fr": "Hamoir",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "60000",
+   "arrondissement_nis": "61000",
+   "merger": null
+  },
+  {
+   "nis": "61028",
+   "name_nl": "Héron",
+   "name_fr": "Héron",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "60000",
+   "arrondissement_nis": "61000",
+   "merger": null
+  },
+  {
+   "nis": "61031",
+   "name_nl": "Hoei",
+   "name_fr": "Huy",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "60000",
+   "arrondissement_nis": "61000",
+   "merger": null
+  },
+  {
+   "nis": "61039",
+   "name_nl": "Marchin",
+   "name_fr": "Marchin",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "60000",
+   "arrondissement_nis": "61000",
+   "merger": null
+  },
+  {
+   "nis": "61041",
+   "name_nl": "Modave",
+   "name_fr": "Modave",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "60000",
+   "arrondissement_nis": "61000",
+   "merger": null
+  },
+  {
+   "nis": "61043",
+   "name_nl": "Nandrin",
+   "name_fr": "Nandrin",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "60000",
+   "arrondissement_nis": "61000",
+   "merger": null
+  },
+  {
+   "nis": "61048",
+   "name_nl": "Ouffet",
+   "name_fr": "Ouffet",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "60000",
+   "arrondissement_nis": "61000",
+   "merger": null
+  },
+  {
+   "nis": "61081",
+   "name_nl": "Tinlot",
+   "name_fr": "Tinlot",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "60000",
+   "arrondissement_nis": "61000",
+   "merger": null
+  },
+  {
+   "nis": "61063",
+   "name_nl": "Verlaine",
+   "name_fr": "Verlaine",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "60000",
+   "arrondissement_nis": "61000",
+   "merger": null
+  },
+  {
+   "nis": "61068",
+   "name_nl": "Villers-le-Bouillet",
+   "name_fr": "Villers-le-Bouillet",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "60000",
+   "arrondissement_nis": "61000",
+   "merger": null
+  },
+  {
+   "nis": "61072",
+   "name_nl": "Wanze",
+   "name_fr": "Wanze",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "60000",
+   "arrondissement_nis": "61000",
+   "merger": null
+  },
+  {
+   "nis": "62003",
+   "name_nl": "Ans",
+   "name_fr": "Ans",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "60000",
+   "arrondissement_nis": "62000",
+   "merger": null
+  },
+  {
+   "nis": "62006",
+   "name_nl": "Awans",
+   "name_fr": "Awans",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "60000",
+   "arrondissement_nis": "62000",
+   "merger": null
+  },
+  {
+   "nis": "62009",
+   "name_nl": "Aywaille",
+   "name_fr": "Aywaille",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "60000",
+   "arrondissement_nis": "62000",
+   "merger": null
+  },
+  {
+   "nis": "62011",
+   "name_nl": "Bitsingen",
+   "name_fr": "Bassenge",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "60000",
+   "arrondissement_nis": "62000",
+   "merger": null
+  },
+  {
+   "nis": "62015",
+   "name_nl": "Beyne-Heusay",
+   "name_fr": "Beyne-Heusay",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "60000",
+   "arrondissement_nis": "62000",
+   "merger": null
+  },
+  {
+   "nis": "62119",
+   "name_nl": "Blégny",
+   "name_fr": "Blégny",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "60000",
+   "arrondissement_nis": "62000",
+   "merger": null
+  },
+  {
+   "nis": "62022",
+   "name_nl": "Chaudfontaine",
+   "name_fr": "Chaudfontaine",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "60000",
+   "arrondissement_nis": "62000",
+   "merger": null
+  },
+  {
+   "nis": "62026",
+   "name_nl": "Comblain-au-Pont",
+   "name_fr": "Comblain-au-Pont",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "60000",
+   "arrondissement_nis": "62000",
+   "merger": null
+  },
+  {
+   "nis": "62027",
+   "name_nl": "Dalhem",
+   "name_fr": "Dalhem",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "60000",
+   "arrondissement_nis": "62000",
+   "merger": null
+  },
+  {
+   "nis": "62032",
+   "name_nl": "Esneux",
+   "name_fr": "Esneux",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "60000",
+   "arrondissement_nis": "62000",
+   "merger": null
+  },
+  {
+   "nis": "62120",
+   "name_nl": "Flémalle",
+   "name_fr": "Flémalle",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "60000",
+   "arrondissement_nis": "62000",
+   "merger": null
+  },
+  {
+   "nis": "62038",
+   "name_nl": "Fléron",
+   "name_fr": "Fléron",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "60000",
+   "arrondissement_nis": "62000",
+   "merger": null
+  },
+  {
+   "nis": "62118",
+   "name_nl": "Grâce-Hollogne",
+   "name_fr": "Grâce-Hollogne",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "60000",
+   "arrondissement_nis": "62000",
+   "merger": null
+  },
+  {
+   "nis": "62051",
+   "name_nl": "Herstal",
+   "name_fr": "Herstal",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "60000",
+   "arrondissement_nis": "62000",
+   "merger": null
+  },
+  {
+   "nis": "62060",
+   "name_nl": "Juprelle",
+   "name_fr": "Juprelle",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "60000",
+   "arrondissement_nis": "62000",
+   "merger": null
+  },
+  {
+   "nis": "62063",
+   "name_nl": "Luik",
+   "name_fr": "Liège",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "60000",
+   "arrondissement_nis": "62000",
+   "merger": null
+  },
+  {
+   "nis": "62121",
+   "name_nl": "Neupré",
+   "name_fr": "Neupré",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "60000",
+   "arrondissement_nis": "62000",
+   "merger": null
+  },
+  {
+   "nis": "62079",
+   "name_nl": "Oupeye",
+   "name_fr": "Oupeye",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "60000",
+   "arrondissement_nis": "62000",
+   "merger": null
+  },
+  {
+   "nis": "62093",
+   "name_nl": "Saint-Nicolas",
+   "name_fr": "Saint-Nicolas",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "60000",
+   "arrondissement_nis": "62000",
+   "merger": null
+  },
+  {
+   "nis": "62096",
+   "name_nl": "Seraing",
+   "name_fr": "Seraing",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "60000",
+   "arrondissement_nis": "62000",
+   "merger": null
+  },
+  {
+   "nis": "62099",
+   "name_nl": "Soumagne",
+   "name_fr": "Soumagne",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "60000",
+   "arrondissement_nis": "62000",
+   "merger": null
+  },
+  {
+   "nis": "62100",
+   "name_nl": "Sprimont",
+   "name_fr": "Sprimont",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "60000",
+   "arrondissement_nis": "62000",
+   "merger": null
+  },
+  {
+   "nis": "62122",
+   "name_nl": "Trooz",
+   "name_fr": "Trooz",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "60000",
+   "arrondissement_nis": "62000",
+   "merger": null
+  },
+  {
+   "nis": "62108",
+   "name_nl": "Wezet",
+   "name_fr": "Visé",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "60000",
+   "arrondissement_nis": "62000",
+   "merger": null
+  },
+  {
+   "nis": "63001",
+   "name_nl": "Amel",
+   "name_fr": "Amblève",
+   "language": "D",
+   "official_languages": [
+    "de"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "60000",
+   "arrondissement_nis": "63000",
+   "merger": null
+  },
+  {
+   "nis": "63003",
+   "name_nl": "Aubel",
+   "name_fr": "Aubel",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "60000",
+   "arrondissement_nis": "63000",
+   "merger": null
+  },
+  {
+   "nis": "63004",
+   "name_nl": "Baelen",
+   "name_fr": "Baelen",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "60000",
+   "arrondissement_nis": "63000",
+   "merger": null
+  },
+  {
+   "nis": "63012",
+   "name_nl": "Büllingen",
+   "name_fr": "Bullange",
+   "language": "D",
+   "official_languages": [
+    "de"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "60000",
+   "arrondissement_nis": "63000",
+   "merger": null
+  },
+  {
+   "nis": "63087",
+   "name_nl": "Burg-Reuland",
+   "name_fr": "Burg-Reuland",
+   "language": "D",
+   "official_languages": [
+    "de"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "60000",
+   "arrondissement_nis": "63000",
+   "merger": null
+  },
+  {
+   "nis": "63013",
+   "name_nl": "Bütgenbach",
+   "name_fr": "Butgenbach",
+   "language": "D",
+   "official_languages": [
+    "de"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "60000",
+   "arrondissement_nis": "63000",
+   "merger": null
+  },
+  {
+   "nis": "63020",
+   "name_nl": "Dison",
+   "name_fr": "Dison",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "60000",
+   "arrondissement_nis": "63000",
+   "merger": null
+  },
+  {
+   "nis": "63023",
+   "name_nl": "Eupen",
+   "name_fr": "Eupen",
+   "language": "D",
+   "official_languages": [
+    "de"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "60000",
+   "arrondissement_nis": "63000",
+   "merger": null
+  },
+  {
+   "nis": "63035",
+   "name_nl": "Herve",
+   "name_fr": "Herve",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "60000",
+   "arrondissement_nis": "63000",
+   "merger": null
+  },
+  {
+   "nis": "63038",
+   "name_nl": "Jalhay",
+   "name_fr": "Jalhay",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "60000",
+   "arrondissement_nis": "63000",
+   "merger": null
+  },
+  {
+   "nis": "63040",
+   "name_nl": "Kelmis",
+   "name_fr": "La Calamine",
+   "language": "D",
+   "official_languages": [
+    "de"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "60000",
+   "arrondissement_nis": "63000",
+   "merger": null
+  },
+  {
+   "nis": "63045",
+   "name_nl": "Lierneux",
+   "name_fr": "Lierneux",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "60000",
+   "arrondissement_nis": "63000",
+   "merger": null
+  },
+  {
+   "nis": "63046",
+   "name_nl": "Limburg",
+   "name_fr": "Limbourg",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "60000",
+   "arrondissement_nis": "63000",
+   "merger": null
+  },
+  {
+   "nis": "63048",
+   "name_nl": "Lontzen",
+   "name_fr": "Lontzen",
+   "language": "D",
+   "official_languages": [
+    "de"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "60000",
+   "arrondissement_nis": "63000",
+   "merger": null
+  },
+  {
+   "nis": "63049",
+   "name_nl": "Malmedy",
+   "name_fr": "Malmedy",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "60000",
+   "arrondissement_nis": "63000",
+   "merger": null
+  },
+  {
+   "nis": "63057",
+   "name_nl": "Olne",
+   "name_fr": "Olne",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "60000",
+   "arrondissement_nis": "63000",
+   "merger": null
+  },
+  {
+   "nis": "63058",
+   "name_nl": "Pepinster",
+   "name_fr": "Pepinster",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "60000",
+   "arrondissement_nis": "63000",
+   "merger": null
+  },
+  {
+   "nis": "63088",
+   "name_nl": "Plombières",
+   "name_fr": "Plombières",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "60000",
+   "arrondissement_nis": "63000",
+   "merger": null
+  },
+  {
+   "nis": "63061",
+   "name_nl": "Raeren",
+   "name_fr": "Raeren",
+   "language": "D",
+   "official_languages": [
+    "de"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "60000",
+   "arrondissement_nis": "63000",
+   "merger": null
+  },
+  {
+   "nis": "63067",
+   "name_nl": "Sankt Vith",
+   "name_fr": "Saint-Vith",
+   "language": "D",
+   "official_languages": [
+    "de"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "60000",
+   "arrondissement_nis": "63000",
+   "merger": null
+  },
+  {
+   "nis": "63072",
+   "name_nl": "Spa",
+   "name_fr": "Spa",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "60000",
+   "arrondissement_nis": "63000",
+   "merger": null
+  },
+  {
+   "nis": "63073",
+   "name_nl": "Stavelot",
+   "name_fr": "Stavelot",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "60000",
+   "arrondissement_nis": "63000",
+   "merger": null
+  },
+  {
+   "nis": "63075",
+   "name_nl": "Stoumont",
+   "name_fr": "Stoumont",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "60000",
+   "arrondissement_nis": "63000",
+   "merger": null
+  },
+  {
+   "nis": "63076",
+   "name_nl": "Theux",
+   "name_fr": "Theux",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "60000",
+   "arrondissement_nis": "63000",
+   "merger": null
+  },
+  {
+   "nis": "63089",
+   "name_nl": "Thimister-Clermont",
+   "name_fr": "Thimister-Clermont",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "60000",
+   "arrondissement_nis": "63000",
+   "merger": null
+  },
+  {
+   "nis": "63086",
+   "name_nl": "Trois-Ponts",
+   "name_fr": "Trois-Ponts",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "60000",
+   "arrondissement_nis": "63000",
+   "merger": null
+  },
+  {
+   "nis": "63079",
+   "name_nl": "Verviers",
+   "name_fr": "Verviers",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "60000",
+   "arrondissement_nis": "63000",
+   "merger": null
+  },
+  {
+   "nis": "63080",
+   "name_nl": "Weismes",
+   "name_fr": "Waimes",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "60000",
+   "arrondissement_nis": "63000",
+   "merger": null
+  },
+  {
+   "nis": "63084",
+   "name_nl": "Welkenraedt",
+   "name_fr": "Welkenraedt",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "60000",
+   "arrondissement_nis": "63000",
+   "merger": null
+  },
+  {
+   "nis": "64008",
+   "name_nl": "Berloz",
+   "name_fr": "Berloz",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "60000",
+   "arrondissement_nis": "64000",
+   "merger": null
+  },
+  {
+   "nis": "64015",
+   "name_nl": "Braives",
+   "name_fr": "Braives",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "60000",
+   "arrondissement_nis": "64000",
+   "merger": null
+  },
+  {
+   "nis": "64021",
+   "name_nl": "Crisnée",
+   "name_fr": "Crisnée",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "60000",
+   "arrondissement_nis": "64000",
+   "merger": null
+  },
+  {
+   "nis": "64023",
+   "name_nl": "Donceel",
+   "name_fr": "Donceel",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "60000",
+   "arrondissement_nis": "64000",
+   "merger": null
+  },
+  {
+   "nis": "64076",
+   "name_nl": "Faimes",
+   "name_fr": "Faimes",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "60000",
+   "arrondissement_nis": "64000",
+   "merger": null
+  },
+  {
+   "nis": "64025",
+   "name_nl": "Fexhe-le-Haut-Clocher",
+   "name_fr": "Fexhe-le-Haut-Clocher",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "60000",
+   "arrondissement_nis": "64000",
+   "merger": null
+  },
+  {
+   "nis": "64029",
+   "name_nl": "Geer",
+   "name_fr": "Geer",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "60000",
+   "arrondissement_nis": "64000",
+   "merger": null
+  },
+  {
+   "nis": "64034",
+   "name_nl": "Hannuit",
+   "name_fr": "Hannut",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "60000",
+   "arrondissement_nis": "64000",
+   "merger": null
+  },
+  {
+   "nis": "64047",
+   "name_nl": "Lijsem",
+   "name_fr": "Lincent",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "60000",
+   "arrondissement_nis": "64000",
+   "merger": null
+  },
+  {
+   "nis": "64056",
+   "name_nl": "Oerle",
+   "name_fr": "Oreye",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "60000",
+   "arrondissement_nis": "64000",
+   "merger": null
+  },
+  {
+   "nis": "64063",
+   "name_nl": "Remicourt",
+   "name_fr": "Remicourt",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "60000",
+   "arrondissement_nis": "64000",
+   "merger": null
+  },
+  {
+   "nis": "64065",
+   "name_nl": "Saint-Georges-sur-Meuse",
+   "name_fr": "Saint-Georges-sur-Meuse",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "60000",
+   "arrondissement_nis": "64000",
+   "merger": null
+  },
+  {
+   "nis": "64074",
+   "name_nl": "Borgworm",
+   "name_fr": "Waremme",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "60000",
+   "arrondissement_nis": "64000",
+   "merger": null
+  },
+  {
+   "nis": "64075",
+   "name_nl": "Wasseiges",
+   "name_fr": "Wasseiges",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "60000",
+   "arrondissement_nis": "64000",
+   "merger": null
+  },
+  {
+   "nis": "81001",
+   "name_nl": "Aarlen",
+   "name_fr": "Arlon",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "80000",
+   "arrondissement_nis": "81000",
+   "merger": null
+  },
+  {
+   "nis": "81003",
+   "name_nl": "Attert",
+   "name_fr": "Attert",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "80000",
+   "arrondissement_nis": "81000",
+   "merger": null
+  },
+  {
+   "nis": "81004",
+   "name_nl": "Aubange",
+   "name_fr": "Aubange",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "80000",
+   "arrondissement_nis": "81000",
+   "merger": null
+  },
+  {
+   "nis": "81013",
+   "name_nl": "Martelange",
+   "name_fr": "Martelange",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "80000",
+   "arrondissement_nis": "81000",
+   "merger": null
+  },
+  {
+   "nis": "81015",
+   "name_nl": "Messancy",
+   "name_fr": "Messancy",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "80000",
+   "arrondissement_nis": "81000",
+   "merger": null
+  },
+  {
+   "nis": "82039",
+   "name_nl": "Bastenaken",
+   "name_fr": "Bastogne",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "80000",
+   "arrondissement_nis": "82000",
+   "merger": {
+    "effective_from": "2024-12-02",
+    "merged_from": [
+     "82003",
+     "82005"
+    ]
+   }
+  },
+  {
+   "nis": "82009",
+   "name_nl": "Fauvillers",
+   "name_fr": "Fauvillers",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "80000",
+   "arrondissement_nis": "82000",
+   "merger": null
+  },
+  {
+   "nis": "82037",
+   "name_nl": "Gouvy",
+   "name_fr": "Gouvy",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "80000",
+   "arrondissement_nis": "82000",
+   "merger": null
+  },
+  {
+   "nis": "82014",
+   "name_nl": "Houffalize",
+   "name_fr": "Houffalize",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "80000",
+   "arrondissement_nis": "82000",
+   "merger": null
+  },
+  {
+   "nis": "82038",
+   "name_nl": "Sainte-Ode",
+   "name_fr": "Sainte-Ode",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "80000",
+   "arrondissement_nis": "82000",
+   "merger": null
+  },
+  {
+   "nis": "82036",
+   "name_nl": "Vaux-sur-Sûre",
+   "name_fr": "Vaux-sur-Sûre",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "80000",
+   "arrondissement_nis": "82000",
+   "merger": null
+  },
+  {
+   "nis": "82032",
+   "name_nl": "Vielsalm",
+   "name_fr": "Vielsalm",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "80000",
+   "arrondissement_nis": "82000",
+   "merger": null
+  },
+  {
+   "nis": "83012",
+   "name_nl": "Durbuy",
+   "name_fr": "Durbuy",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "80000",
+   "arrondissement_nis": "83000",
+   "merger": null
+  },
+  {
+   "nis": "83013",
+   "name_nl": "Erezée",
+   "name_fr": "Erezée",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "80000",
+   "arrondissement_nis": "83000",
+   "merger": null
+  },
+  {
+   "nis": "83028",
+   "name_nl": "Hotton",
+   "name_fr": "Hotton",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "80000",
+   "arrondissement_nis": "83000",
+   "merger": null
+  },
+  {
+   "nis": "83031",
+   "name_nl": "La Roche-en-Ardenne",
+   "name_fr": "La Roche-en-Ardenne",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "80000",
+   "arrondissement_nis": "83000",
+   "merger": null
+  },
+  {
+   "nis": "83055",
+   "name_nl": "Manhay",
+   "name_fr": "Manhay",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "80000",
+   "arrondissement_nis": "83000",
+   "merger": null
+  },
+  {
+   "nis": "83034",
+   "name_nl": "Marche-en-Famenne",
+   "name_fr": "Marche-en-Famenne",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "80000",
+   "arrondissement_nis": "83000",
+   "merger": null
+  },
+  {
+   "nis": "83040",
+   "name_nl": "Nassogne",
+   "name_fr": "Nassogne",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "80000",
+   "arrondissement_nis": "83000",
+   "merger": null
+  },
+  {
+   "nis": "83044",
+   "name_nl": "Rendeux",
+   "name_fr": "Rendeux",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "80000",
+   "arrondissement_nis": "83000",
+   "merger": null
+  },
+  {
+   "nis": "83049",
+   "name_nl": "Tenneville",
+   "name_fr": "Tenneville",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "80000",
+   "arrondissement_nis": "83000",
+   "merger": null
+  },
+  {
+   "nis": "84009",
+   "name_nl": "Bertrix",
+   "name_fr": "Bertrix",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "80000",
+   "arrondissement_nis": "84000",
+   "merger": null
+  },
+  {
+   "nis": "84010",
+   "name_nl": "Bouillon",
+   "name_fr": "Bouillon",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "80000",
+   "arrondissement_nis": "84000",
+   "merger": null
+  },
+  {
+   "nis": "84016",
+   "name_nl": "Daverdisse",
+   "name_fr": "Daverdisse",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "80000",
+   "arrondissement_nis": "84000",
+   "merger": null
+  },
+  {
+   "nis": "84029",
+   "name_nl": "Herbeumont",
+   "name_fr": "Herbeumont",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "80000",
+   "arrondissement_nis": "84000",
+   "merger": null
+  },
+  {
+   "nis": "84033",
+   "name_nl": "Léglise",
+   "name_fr": "Léglise",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "80000",
+   "arrondissement_nis": "84000",
+   "merger": null
+  },
+  {
+   "nis": "84035",
+   "name_nl": "Libin",
+   "name_fr": "Libin",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "80000",
+   "arrondissement_nis": "84000",
+   "merger": null
+  },
+  {
+   "nis": "84077",
+   "name_nl": "Libramont-Chevigny",
+   "name_fr": "Libramont-Chevigny",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "80000",
+   "arrondissement_nis": "84000",
+   "merger": null
+  },
+  {
+   "nis": "84043",
+   "name_nl": "Neufchâteau",
+   "name_fr": "Neufchâteau",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "80000",
+   "arrondissement_nis": "84000",
+   "merger": null
+  },
+  {
+   "nis": "84050",
+   "name_nl": "Paliseul",
+   "name_fr": "Paliseul",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "80000",
+   "arrondissement_nis": "84000",
+   "merger": null
+  },
+  {
+   "nis": "84059",
+   "name_nl": "Saint-Hubert",
+   "name_fr": "Saint-Hubert",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "80000",
+   "arrondissement_nis": "84000",
+   "merger": null
+  },
+  {
+   "nis": "84068",
+   "name_nl": "Tellin",
+   "name_fr": "Tellin",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "80000",
+   "arrondissement_nis": "84000",
+   "merger": null
+  },
+  {
+   "nis": "84075",
+   "name_nl": "Wellin",
+   "name_fr": "Wellin",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "80000",
+   "arrondissement_nis": "84000",
+   "merger": null
+  },
+  {
+   "nis": "85007",
+   "name_nl": "Chiny",
+   "name_fr": "Chiny",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "80000",
+   "arrondissement_nis": "85000",
+   "merger": null
+  },
+  {
+   "nis": "85009",
+   "name_nl": "Etalle",
+   "name_fr": "Etalle",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "80000",
+   "arrondissement_nis": "85000",
+   "merger": null
+  },
+  {
+   "nis": "85011",
+   "name_nl": "Florenville",
+   "name_fr": "Florenville",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "80000",
+   "arrondissement_nis": "85000",
+   "merger": null
+  },
+  {
+   "nis": "85046",
+   "name_nl": "Habay",
+   "name_fr": "Habay",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "80000",
+   "arrondissement_nis": "85000",
+   "merger": null
+  },
+  {
+   "nis": "85024",
+   "name_nl": "Meix-devant-Virton",
+   "name_fr": "Meix-devant-Virton",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "80000",
+   "arrondissement_nis": "85000",
+   "merger": null
+  },
+  {
+   "nis": "85026",
+   "name_nl": "Musson",
+   "name_fr": "Musson",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "80000",
+   "arrondissement_nis": "85000",
+   "merger": null
+  },
+  {
+   "nis": "85047",
+   "name_nl": "Rouvroy",
+   "name_fr": "Rouvroy",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "80000",
+   "arrondissement_nis": "85000",
+   "merger": null
+  },
+  {
+   "nis": "85034",
+   "name_nl": "Saint-Léger",
+   "name_fr": "Saint-Léger",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "80000",
+   "arrondissement_nis": "85000",
+   "merger": null
+  },
+  {
+   "nis": "85039",
+   "name_nl": "Tintigny",
+   "name_fr": "Tintigny",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "80000",
+   "arrondissement_nis": "85000",
+   "merger": null
+  },
+  {
+   "nis": "85045",
+   "name_nl": "Virton",
+   "name_fr": "Virton",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "80000",
+   "arrondissement_nis": "85000",
+   "merger": null
+  },
+  {
+   "nis": "91005",
+   "name_nl": "Anhée",
+   "name_fr": "Anhée",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "90000",
+   "arrondissement_nis": "91000",
+   "merger": null
+  },
+  {
+   "nis": "91013",
+   "name_nl": "Beauraing",
+   "name_fr": "Beauraing",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "90000",
+   "arrondissement_nis": "91000",
+   "merger": null
+  },
+  {
+   "nis": "91015",
+   "name_nl": "Bièvre",
+   "name_fr": "Bièvre",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "90000",
+   "arrondissement_nis": "91000",
+   "merger": null
+  },
+  {
+   "nis": "91030",
+   "name_nl": "Ciney",
+   "name_fr": "Ciney",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "90000",
+   "arrondissement_nis": "91000",
+   "merger": null
+  },
+  {
+   "nis": "91034",
+   "name_nl": "Dinant",
+   "name_fr": "Dinant",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "90000",
+   "arrondissement_nis": "91000",
+   "merger": null
+  },
+  {
+   "nis": "91054",
+   "name_nl": "Gedinne",
+   "name_fr": "Gedinne",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "90000",
+   "arrondissement_nis": "91000",
+   "merger": null
+  },
+  {
+   "nis": "91059",
+   "name_nl": "Hamois",
+   "name_fr": "Hamois",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "90000",
+   "arrondissement_nis": "91000",
+   "merger": null
+  },
+  {
+   "nis": "91142",
+   "name_nl": "Hastière",
+   "name_fr": "Hastière",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "90000",
+   "arrondissement_nis": "91000",
+   "merger": null
+  },
+  {
+   "nis": "91064",
+   "name_nl": "Havelange",
+   "name_fr": "Havelange",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "90000",
+   "arrondissement_nis": "91000",
+   "merger": null
+  },
+  {
+   "nis": "91072",
+   "name_nl": "Houyet",
+   "name_fr": "Houyet",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "90000",
+   "arrondissement_nis": "91000",
+   "merger": null
+  },
+  {
+   "nis": "91103",
+   "name_nl": "Onhaye",
+   "name_fr": "Onhaye",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "90000",
+   "arrondissement_nis": "91000",
+   "merger": null
+  },
+  {
+   "nis": "91114",
+   "name_nl": "Rochefort",
+   "name_fr": "Rochefort",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "90000",
+   "arrondissement_nis": "91000",
+   "merger": null
+  },
+  {
+   "nis": "91120",
+   "name_nl": "Somme-Leuze",
+   "name_fr": "Somme-Leuze",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "90000",
+   "arrondissement_nis": "91000",
+   "merger": null
+  },
+  {
+   "nis": "91143",
+   "name_nl": "Vresse-sur-Semois",
+   "name_fr": "Vresse-sur-Semois",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "90000",
+   "arrondissement_nis": "91000",
+   "merger": null
+  },
+  {
+   "nis": "91141",
+   "name_nl": "Yvoir",
+   "name_fr": "Yvoir",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "90000",
+   "arrondissement_nis": "91000",
+   "merger": null
+  },
+  {
+   "nis": "92003",
+   "name_nl": "Andenne",
+   "name_fr": "Andenne",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "90000",
+   "arrondissement_nis": "92000",
+   "merger": null
+  },
+  {
+   "nis": "92006",
+   "name_nl": "Assesse",
+   "name_fr": "Assesse",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "90000",
+   "arrondissement_nis": "92000",
+   "merger": null
+  },
+  {
+   "nis": "92035",
+   "name_nl": "Eghezée",
+   "name_fr": "Eghezée",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "90000",
+   "arrondissement_nis": "92000",
+   "merger": null
+  },
+  {
+   "nis": "92138",
+   "name_nl": "Fernelmont",
+   "name_fr": "Fernelmont",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "90000",
+   "arrondissement_nis": "92000",
+   "merger": null
+  },
+  {
+   "nis": "92045",
+   "name_nl": "Floreffe",
+   "name_fr": "Floreffe",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "90000",
+   "arrondissement_nis": "92000",
+   "merger": null
+  },
+  {
+   "nis": "92048",
+   "name_nl": "Fosses-la-Ville",
+   "name_fr": "Fosses-la-Ville",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "90000",
+   "arrondissement_nis": "92000",
+   "merger": null
+  },
+  {
+   "nis": "92142",
+   "name_nl": "Gembloux",
+   "name_fr": "Gembloux",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "90000",
+   "arrondissement_nis": "92000",
+   "merger": null
+  },
+  {
+   "nis": "92054",
+   "name_nl": "Gesves",
+   "name_fr": "Gesves",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "90000",
+   "arrondissement_nis": "92000",
+   "merger": null
+  },
+  {
+   "nis": "92140",
+   "name_nl": "Jemeppe-sur-Sambre",
+   "name_fr": "Jemeppe-sur-Sambre",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "90000",
+   "arrondissement_nis": "92000",
+   "merger": null
+  },
+  {
+   "nis": "92141",
+   "name_nl": "La Bruyère",
+   "name_fr": "La Bruyère",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "90000",
+   "arrondissement_nis": "92000",
+   "merger": null
+  },
+  {
+   "nis": "92087",
+   "name_nl": "Mettet",
+   "name_fr": "Mettet",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "90000",
+   "arrondissement_nis": "92000",
+   "merger": null
+  },
+  {
+   "nis": "92094",
+   "name_nl": "Namen",
+   "name_fr": "Namur",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "90000",
+   "arrondissement_nis": "92000",
+   "merger": null
+  },
+  {
+   "nis": "92097",
+   "name_nl": "Ohey",
+   "name_fr": "Ohey",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "90000",
+   "arrondissement_nis": "92000",
+   "merger": null
+  },
+  {
+   "nis": "92101",
+   "name_nl": "Profondeville",
+   "name_fr": "Profondeville",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "90000",
+   "arrondissement_nis": "92000",
+   "merger": null
+  },
+  {
+   "nis": "92137",
+   "name_nl": "Sambreville",
+   "name_fr": "Sambreville",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "90000",
+   "arrondissement_nis": "92000",
+   "merger": null
+  },
+  {
+   "nis": "92114",
+   "name_nl": "Sombreffe",
+   "name_fr": "Sombreffe",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "90000",
+   "arrondissement_nis": "92000",
+   "merger": null
+  },
+  {
+   "nis": "93010",
+   "name_nl": "Cerfontaine",
+   "name_fr": "Cerfontaine",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "90000",
+   "arrondissement_nis": "93000",
+   "merger": null
+  },
+  {
+   "nis": "93014",
+   "name_nl": "Couvin",
+   "name_fr": "Couvin",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "90000",
+   "arrondissement_nis": "93000",
+   "merger": null
+  },
+  {
+   "nis": "93018",
+   "name_nl": "Doische",
+   "name_fr": "Doische",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "90000",
+   "arrondissement_nis": "93000",
+   "merger": null
+  },
+  {
+   "nis": "93022",
+   "name_nl": "Florennes",
+   "name_fr": "Florennes",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "90000",
+   "arrondissement_nis": "93000",
+   "merger": null
+  },
+  {
+   "nis": "93056",
+   "name_nl": "Philippeville",
+   "name_fr": "Philippeville",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "90000",
+   "arrondissement_nis": "93000",
+   "merger": null
+  },
+  {
+   "nis": "93090",
+   "name_nl": "Viroinval",
+   "name_fr": "Viroinval",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "90000",
+   "arrondissement_nis": "93000",
+   "merger": null
+  },
+  {
+   "nis": "93088",
+   "name_nl": "Walcourt",
+   "name_fr": "Walcourt",
+   "language": "F",
+   "official_languages": [
+    "fr"
+   ],
+   "bilingual": false,
+   "region": "wallonia",
+   "province_nis": "90000",
+   "arrondissement_nis": "93000",
+   "merger": null
+  }
+ ]
+}

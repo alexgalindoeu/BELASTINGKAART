@@ -62,14 +62,20 @@
   const GROUPS = {
     nl: [
       { group: "Berekenen", items: [
-        { label: "Bruto-netto voor werknemers", text: "Maandelijkse en jaarlijkse begrippen duidelijk gescheiden.", href: "#simulator", icon: "payslip" }
+        { label: "Bruto-netto voor werknemers", text: "Maandelijkse en jaarlijkse begrippen duidelijk gescheiden.", href: "#simulator", icon: "payslip" },
+        { label: "Maandloon en uitbetalingen", text: "Je brutojaarloon per maand, in 12, 13 of 14 uitbetalingen.", href: "maandloon/", icon: "payslip" },
+        { label: "Marginaal tarief", text: "Wat blijft er over van een loonsverhoging?", href: "marginaal-tarief/", icon: "scenarios" },
+        { label: "Twee jobaanbiedingen vergelijken", text: "Twee aanbiedingen naast elkaar, eerst in bruto.", href: "jobaanbiedingen-vergelijken/", icon: "selfemployed" },
+        { label: "Gemeenschappelijke aanslag", text: "Voor gehuwden en wettelijk samenwonenden.", href: "gemeenschappelijke-aanslag/", icon: "family" },
+        { label: "Twee werkgevers in één jaar", text: "Moet je bijbetalen als je bij twee werkgevers werkte?", href: "twee-werkgevers/", icon: "payslip" },
+        { label: "Scenario’s en vergelijkingen", text: "Wat als je loon, gemeente of gezin verandert?", href: "scenarios/", icon: "scenarios" },
+        { label: "Widget voor je website", text: "Zet de simulator op je eigen website.", href: "widget/", icon: "validation" }
       ] },
       { group: "Thema’s", items: [
         { label: "Gezinssituatie en bedrijfsvoorheffing", text: "Gezinslast en inhoudingen op je loon, volgens de Belgische regels.", href: "gezin-en-bedrijfsvoorheffing/", icon: "family" },
         { label: "Gemeentebelasting en gewest", text: "De aanvullende gemeentebelasting en het juiste gewest voor je woonplaats.", href: "gemeentebelasting/", icon: "municipality" },
         { label: "Zelfstandigen", text: "Inkomen en sociale bijdragen, pas nadat de officiële regels gedekt zijn.", href: "zelfstandigen/", icon: "selfemployed" },
-        { label: "Pensioenen en andere inkomsten", text: "Waar de Belgische wetgeving en het toepassingsgebied gedocumenteerd zijn.", href: "pensioenen/", icon: "pension" },
-        { label: "Scenario’s en vergelijkingen", text: "Toelichtingen, verslagen en vergelijkingen voor Belgische situaties.", href: "scenarios/", icon: "scenarios" }
+        { label: "Pensioenen en andere inkomsten", text: "Waar de Belgische wetgeving en het toepassingsgebied gedocumenteerd zijn.", href: "pensioenen/", icon: "pension" }
       ] },
       { group: "Over Belastingkaart", items: [
         { label: "Over ons", text: "Wat Belastingkaart is, wat het berekent en hoe we werken.", href: "over-belastingkaart/", icon: "about" },
@@ -87,14 +93,20 @@
     ],
     fr: [
       { group: "Calculer", items: [
-        { label: "Brut-net pour salariés", text: "Notions mensuelles et annuelles clairement séparées.", href: "#simulator", icon: "payslip" }
+        { label: "Brut-net pour salariés", text: "Notions mensuelles et annuelles clairement séparées.", href: "#simulator", icon: "payslip" },
+        { label: "Salaire mensuel et paiements", text: "Votre salaire annuel brut par mois, en 12, 13 ou 14 paiements.", href: "salaire-mensuel/", icon: "payslip" },
+        { label: "Taux marginal", text: "Que vous reste-t-il d’une augmentation ?", href: "taux-marginal/", icon: "scenarios" },
+        { label: "Comparer deux offres d’emploi", text: "Deux offres côte à côte, d’abord en brut.", href: "comparer-offres-emploi/", icon: "selfemployed" },
+        { label: "Imposition commune", text: "Pour les personnes mariées et les cohabitants légaux.", href: "imposition-commune/", icon: "family" },
+        { label: "Deux employeurs la même année", text: "Devrez-vous payer un supplément après deux employeurs ?", href: "deux-employeurs/", icon: "payslip" },
+        { label: "Scénarios et comparaisons", text: "Et si votre salaire, votre commune ou votre famille changeait ?", href: "scenarios/", icon: "scenarios" },
+        { label: "Widget pour votre site", text: "Intégrez le simulateur à votre propre site.", href: "widget/", icon: "validation" }
       ] },
       { group: "Thèmes", items: [
         { label: "Situation familiale et précompte professionnel", text: "Charges de famille et retenues sur votre salaire, selon les règles belges.", href: "famille-et-precompte-professionnel/", icon: "family" },
         { label: "Taxe communale et région", text: "La taxe communale additionnelle et la bonne région pour votre domicile.", href: "taxe-communale/", icon: "municipality" },
         { label: "Indépendants", text: "Revenus et cotisations sociales, seulement lorsque les règles officielles sont couvertes.", href: "independants/", icon: "selfemployed" },
-        { label: "Pensions et autres revenus", text: "Lorsque la législation belge et le champ d’application sont documentés.", href: "pensions/", icon: "pension" },
-        { label: "Scénarios et comparaisons", text: "Explications, rapports et comparaisons pour des situations belges.", href: "scenarios/", icon: "scenarios" }
+        { label: "Pensions et autres revenus", text: "Lorsque la législation belge et le champ d’application sont documentés.", href: "pensions/", icon: "pension" }
       ] },
       { group: "À propos de Belastingkaart", items: [
         { label: "À propos", text: "Ce qu’est Belastingkaart, ce qu’il calcule et comment nous travaillons.", href: "a-propos/", icon: "about" },
