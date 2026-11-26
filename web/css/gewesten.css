@@ -1,0 +1,21 @@
+/* Region pages (web/nl/gewesten/, web/fr/regions/) only. Layout of the region template
+   (summary, cards, tables, FAQ, sources) on top of site.css and components.css; no new tokens. */
+.region-page { max-width: 920px; }
+.region-page > .summary-box { margin: 16px 0 12px; }
+.region-stack { display: grid; gap: 16px; margin-top: 20px; }
+.region-stack > .card + .card { margin-top: 0; }
+.region-stack > * { min-width: 0; }
+.region-stack .card p + p, .region-stack .card p + ul, .region-stack .card ul + p { margin-top: 10px; }
+.region-stack .card ul:not(.link-list) { padding-left: 20px; }
+.region-stack .card ul:not(.link-list) li + li { margin-top: 8px; }
+.region-stack .table-scroll { margin-top: 4px; }
+.data-table td.pending { color: var(--ink-3); font-style: italic; white-space: nowrap; }
+.region-stack .quickcalc-actions { margin-top: 14px; }
+.region-chart { margin: 0; }
+.region-chart .empty-state { padding: 28px 16px; }
+.source-list { grid-template-columns: 1fr; }
+.source-list span { overflow-wrap: anywhere; }
+@media (max-width: 560px) {
+  .region-stack .card { padding: 16px; }
+  .data-table td.pending { white-space: normal; }
+}
