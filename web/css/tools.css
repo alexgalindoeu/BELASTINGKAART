@@ -11,7 +11,7 @@
 /* Results column: gross panel, tables and the blocked net panel stacked; sticky as one block. */
 .tool-results { display: grid; grid-template-columns: minmax(0, 1fr); gap: 16px; min-width: 0; align-content: start; }
 .tool-results .result { position: relative; top: auto; }
-@media (min-width: 1040px) { .tool-results { position: sticky; top: 84px; } }
+@media (min-width: 1040px) { .tool-results { position: sticky; top: 84px; } .calc.calc-even { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); } }
 .result.is-gross::after { background: linear-gradient(112deg, var(--accent) 0 22px, transparent 22px 24px, var(--brand) 24px); }
 .tool-figure-label { font-size: 14px; color: var(--ink-2); margin: 12px 0 2px !important; }
 .tool-figure { font-family: var(--display); font-stretch: 112%; font-size: clamp(28px, 4vw, 38px); font-weight: 800;
@@ -25,17 +25,34 @@
 .tool-extra-label { margin: 14px 0 0 !important; font-size: 13px; font-weight: 600; }
 .result-list.tool-extra { margin-top: 6px; border-top: 0; padding-top: 0; }
 
-/* Data tables: scroll inside their card on narrow screens, never the page. */
-.table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; max-width: 100%; }
-.data-table { width: 100%; border-collapse: collapse; font-size: 14px; font-variant-numeric: tabular-nums; }
-.data-table th, .data-table td { padding: 8px 10px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; }
-.data-table thead th { font-size: 12.5px; font-weight: 600; color: var(--ink-3); border-bottom: 2px solid var(--line-2); }
-.data-table th[scope="row"] { font-weight: 600; color: var(--ink-2); }
+/* Data tables (result-table layout): tight numeric columns with tabular figures; when a
+   table is still wider than its card, its wrapper scrolls (never the page), is keyboard-focusable
+   with an accessible name, and shows shadows at the edge that has more columns. */
+.table-wrap { position: relative; overflow-x: auto; -webkit-overflow-scrolling: touch; max-width: 100%; border-radius: 6px;
+  background: linear-gradient(to right, var(--surface) 30%, transparent) left / 24px 100% no-repeat local,
+    linear-gradient(to left, var(--surface) 30%, transparent) right / 24px 100% no-repeat local,
+    radial-gradient(farthest-side at 0 50%, color-mix(in srgb, var(--ink) 22%, transparent), transparent) left / 10px 100% no-repeat scroll,
+    radial-gradient(farthest-side at 100% 50%, color-mix(in srgb, var(--ink) 22%, transparent), transparent) right / 10px 100% no-repeat scroll; }
+.table-wrap:focus-visible { outline: 3px solid var(--ring); outline-offset: 2px; }
+.data-table { width: 100%; border-collapse: collapse; font-size: 13.5px; font-variant-numeric: tabular-nums; }
+.data-table th, .data-table td { padding: 7px 6px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; }
+.data-table th:first-child, .data-table td:first-child { padding-left: 0; }
+.data-table th:last-child, .data-table td:last-child { padding-right: 2px; }
+.data-table thead th { font-size: 12px; font-weight: 600; line-height: 1.25; color: var(--ink-3); border-bottom: 2px solid var(--line-2); vertical-align: bottom; }
+.data-table th[scope="row"] { font-weight: 600; color: var(--ink-2); min-width: 7.5em; }
 .data-table .num { text-align: right; white-space: nowrap; }
+.data-table thead .num, .data-table .num.wrap { white-space: normal; }
 .data-table .is-yours { background: var(--accent-soft); }
 .data-table tr.total th, .data-table tr.total td { font-weight: 800; color: var(--ink); border-top: 2px solid var(--line-2); }
 .data-table tr.is-base th, .data-table tr.is-base td { background: var(--surface-2); }
 .data-table a { color: var(--brand-ink); }
+.data-table .chip { font-size: 11.5px; padding: 2px 8px; }
+.card .data-table th[scope="row"] { min-width: 6.5em; }
+@media (max-width: 520px) {
+  .data-table { font-size: 12.5px; }
+  .data-table th, .data-table td { padding: 6px 4px; }
+  .data-table th[scope="row"] { min-width: 6em; }
+}
 
 /* Segmented radio group (12 / 13 / 14 payments, theme). */
 .segmented { display: inline-flex; flex-wrap: wrap; border: 1px solid var(--line-2); border-radius: 8px; overflow: hidden; background: var(--surface); }

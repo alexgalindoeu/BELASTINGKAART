@@ -55,6 +55,14 @@ const TOOLS = [
 ];
 
 const failures = [];
+// Full-page captures: start at the top, blur, and unstick the top bar so it is not painted
+// halfway down the stitched image (a capture artefact of position: sticky/fixed).
+async function shoot(page, file) {
+  await page.evaluate(() => { document.activeElement?.blur?.(); window.scrollTo(0, 0); });
+  await page.addStyleTag({ content: '.appbar{position:static!important;transform:none!important}' });
+  await page.waitForTimeout(50);
+  await page.screenshot({ path: file, fullPage: true });
+}
 const check = (ok, msg) => { if (!ok) failures.push(msg); };
 
 await new Promise(r => server.listen(PORT, '127.0.0.1', r));
@@ -95,7 +103,18 @@ try {
       check(!/In ontwikkeling|En développement|Berekening geblokkeerd|Calcul bloqué/.test(body.replace(/\(in ontwikkeling\)|\(en développement\)/g, '')), `${label}: development label visible`);
       if (tool.name === 'scenarios') check(await page.locator('#sc-table tbody tr').count() === 3, `${label}: expected base + 2 scenarios`);
       if (tool.name === 'widget') check(/cadre\.html|kader\.html/.test(await page.inputValue('#wg-code')) && /theme=dark/.test(await page.inputValue('#wg-code')), `${label}: widget code not updated`);
-      await page.screenshot({ path: path.join(SHOTS, `${tool.name}-${lang}-${viewport.tag}.png`), fullPage: true });
+      // Every table shows all its columns, or sits in a focusable, named scroll wrapper.
+      const tables = await page.evaluate(() => [...document.querySelectorAll('table')].map(t => {
+        const wrap = t.closest('.table-wrap'), box = wrap || t.parentElement;
+        return { id: t.id || t.querySelector('caption')?.textContent || 'table', fits: t.scrollWidth <= box.clientWidth + 1,
+          scrollable: !!wrap && wrap.getAttribute('tabindex') === '0' && !!wrap.getAttribute('aria-label') && getComputedStyle(wrap).overflowX === 'auto' };
+      }));
+      for (const t of tables) check(t.fits || t.scrollable, `${label}: table ${t.id} is clipped`);
+      const fitting = tables.filter(t => t.fits).length;
+      if (viewport.tag === 'desktop') check(fitting === tables.length, `${label}: ${tables.length - fitting} table(s) need horizontal scroll at desktop width`);
+      check(await page.evaluate(() => !document.activeElement?.classList.contains('skip-link')), `${label}: skip link left focused`);
+      check(await page.evaluate(() => document.querySelector('.skip-link') ? document.querySelector('.skip-link').getBoundingClientRect().bottom <= 0 : true), `${label}: skip link visible without focus`);
+      await shoot(page, path.join(SHOTS, `${tool.name}-${lang}-${viewport.tag}.png`));
       await page.close();
     }
     // Invalid input shows field errors and still no fiscal figure.
@@ -105,7 +124,7 @@ try {
     await page.click('#ml-form button[type=submit]');
     check(await page.locator('#ml-errors').isVisible(), `maandloon invalid/${viewport.tag}: no error shown`);
     check(await page.locator('[name=amount][aria-invalid="true"]').count() === 1, `maandloon invalid/${viewport.tag}: field not marked`);
-    await page.screenshot({ path: path.join(SHOTS, `maandloon-nl-${viewport.tag}-invalid.png`), fullPage: false });
+    await shoot(page, path.join(SHOTS, `maandloon-nl-${viewport.tag}-invalid.png`));
     // Share link restores the state.
     await page.goto(`http://127.0.0.1:${PORT}/nl/jobaanbiedingen-vergelijken/#aMonthly=3000&bMonthly=3200&bPayments=14`);
     await page.waitForTimeout(300);

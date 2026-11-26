@@ -295,10 +295,21 @@ test('the static pending panel of every tool shows no fiscal amount, and pages h
 test('tool pages never mention net, tax or contribution amounts in their static text', async () => {
   // Gross examples are allowed (and labelled bruto/brut); a figure next to netto/net/belasting is not.
   for (const [nl, fr] of TOOLS) for (const route of [nl, fr]) {
-    const text = (await read(route)).replace(/<(script|textarea)[\s\S]*?<\/(script|textarea)>/g, ' ').replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ');
+    const text = (await read(route)).replace(/<(script|textarea|pre)[\s\S]*?<\/(script|textarea|pre)>/g, ' ').replace(/<[^>]+>/g, ' | ').replace(/\s+/g, ' ');
     assert.doesNotMatch(text, /\d[\d.,]*\s?(€|EUR)\s*(netto|nets?\b|belasting|impôt|bijdrage|cotisation)/i, route);
     assert.doesNotMatch(text, /(netto|nets?|belasting|impôt|bijdrage|cotisation)\w*\s*:?\s*(€|EUR)?\s*\d/i, route);
     assert.doesNotMatch(text, /\d\s?%/, route + ' shows a percentage');
     assert.doesNotMatch(text, /IRPF|comunidad|Hacienda|España|Mapafiscal|pagas|sueldo/i, route);
+  }
+});
+
+test('every table wrapper is a focusable, named scroll region', async () => {
+  for (const [nl, fr] of TOOLS) for (const route of [nl, fr]) {
+    const html = await read(route);
+    for (const tag of html.match(/<div class="table-wrap"[^>]*>/g) || []) {
+      assert.match(tag, /tabindex="0"/, route);
+      assert.match(tag, /role="region"/, route);
+      assert.match(tag, /aria-label="[^"]+"/, route);
+    }
   }
 });

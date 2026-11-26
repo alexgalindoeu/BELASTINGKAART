@@ -84,7 +84,7 @@
       perMonth: amount => `Gemiddeld ${amount} bruto per maand verschil (jaarbedrag gedeeld door 12).`,
       cols: ["", "Aanbieding A", "Aanbieding B", "Verschil (A min B)"],
       rows: ["Bruto maandloon", "Uitbetalingen per jaar", "Bruto per jaar uit het loon", "Andere brutopremies per jaar", "Totaal bruto per jaar", "Gemiddeld bruto per maand"],
-      benefitRows: { Meal: "Maaltijdcheques", Car: "Bedrijfswagen", Group: "Groepsverzekering", Hospital: "Hospitalisatieverzekering" },
+      benefitRows: { Meal: "Maaltijd\u00adcheques", Car: "Bedrijfs\u00adwagen", Group: "Groeps\u00adverzekering", Hospital: "Hospitalisatie\u00adverzekering" },
       yes: "ja, niet gewaardeerd", no: "nee",
       caption: "De twee aanbiedingen, bruto, cijfer per cijfer",
       benefitsNote: "Extralegale voordelen worden niet in euro omgerekend: hun fiscale en sociale behandeling is nog niet bevestigd in officiële bronnen.",
@@ -114,7 +114,7 @@
       perMonth: amount => `En moyenne ${amount} brut de différence par mois (montant annuel divisé par 12).`,
       cols: ["", "Offre A", "Offre B", "Différence (A moins B)"],
       rows: ["Salaire mensuel brut", "Paiements par an", "Brut annuel du salaire", "Autres primes brutes par an", "Total brut par an", "Brut mensuel moyen"],
-      benefitRows: { Meal: "Chèques-repas", Car: "Voiture de société", Group: "Assurance de groupe", Hospital: "Assurance hospitalisation" },
+      benefitRows: { Meal: "Chèques-repas", Car: "Voiture de société", Group: "Assurance de groupe", Hospital: "Assurance hospitali\u00adsation" },
       yes: "oui, non valorisé", no: "non",
       caption: "Les deux offres, en brut, chiffre par chiffre",
       benefitsNote: "Les avantages extralégaux ne sont pas convertis en euros : leur traitement fiscal et social n’est pas encore confirmé dans les sources officielles.",
@@ -159,7 +159,7 @@
       ...BENEFITS.map(b => [T.benefitRows[b], v.a.benefits[b] ? T.yes : T.no, v.b.benefits[b] ? T.yes : T.no, "—"])
     ];
     $("of-table").innerHTML = `<caption class="sr-only">${e(T.caption)}</caption><thead><tr>${T.cols.map((h, i) => `<th scope="col"${i ? ' class="num"' : ""}>${e(h)}</th>`).join("")}</tr></thead><tbody>` +
-      rows.map(r => `<tr${r[4] ? ' class="total"' : ""}><th scope="row">${e(r[0])}</th><td class="num">${e(r[1])}</td><td class="num">${e(r[2])}</td><td class="num">${e(r[3])}</td></tr>`).join("") + "</tbody>";
+      rows.map((r, i) => { const c = i >= 6 ? "num wrap" : "num"; return `<tr${r[4] ? ' class="total"' : ""}><th scope="row">${e(r[0])}</th><td class="${c}">${e(r[1])}</td><td class="${c}">${e(r[2])}</td><td class="${c}">${e(r[3])}</td></tr>`; }).join("") + "</tbody>";
     $("of-gross").innerHTML = `<div class="result-status"><span class="chip yours">${e(T.grossChip)}</span></div>
       <h3>${e(T.headline[c.higher])}</h3>
       <p class="tool-figure-label">${e(T.figureLabel)}</p>

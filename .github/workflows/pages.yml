@@ -1,7 +1,8 @@
 name: Publish Belastingkaart
 
 on:
-  # Deployment stays manual until GitHub Pages / custom domain settings are deliberately configured.
+  # Deployment stays manual: the owner decides when to publish.
+  # Requires Settings → Pages → Build and deployment → Source: "GitHub Actions".
   workflow_dispatch:
 
 permissions:
@@ -14,11 +15,9 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  build-and-deploy:
+  # 1) Verify everything and package web/ as the Pages artifact.
+  build:
     runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -41,5 +40,16 @@ jobs:
       - uses: actions/upload-pages-artifact@v3
         with:
           path: web
+
+  # 2) Deploy in a separate job, after the artifact is fully registered
+  #    (GitHub's recommended layout; deploying in the same job can fail with
+  #    "No artifacts named github-pages were found").
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
       - id: deployment
         uses: actions/deploy-pages@v4
