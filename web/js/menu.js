@@ -81,7 +81,7 @@
         { label: "Gezinssituatie en bedrijfsvoorheffing", text: "Gezinslast en inhoudingen op je loon, volgens de Belgische regels.", href: "gezin-en-bedrijfsvoorheffing/", icon: "family" },
         { label: "Gemeentebelasting en gewest", text: "De aanvullende gemeentebelasting en het juiste gewest voor je woonplaats.", href: "gemeentebelasting/", icon: "municipality" },
         { label: "Belastingen per gewest", text: "Wat Vlaanderen, Brussel en Wallonië regelen in je personenbelasting en voor je woning.", href: "gewesten/", icon: "regions" },
-        { label: "Zelfstandigen", text: "Inkomen en sociale bijdragen, pas nadat de officiële regels gedekt zijn.", href: "zelfstandigen/", icon: "selfemployed" },
+        { label: "Zelfstandigen", text: "Statuut, sociale bijdragen 2026, sociaal statuut en personenbelasting.", href: "zelfstandigen/", icon: "selfemployed" },
         { label: "Pensioenen en andere inkomsten", text: "Waar de Belgische wetgeving en het toepassingsgebied gedocumenteerd zijn.", href: "pensioenen/", icon: "pension" },
         { label: "Gidsen", text: "Van bruto naar netto, werkbonus, vakantiegeld en de belastingaangifte, stap voor stap.", href: "gidsen/", icon: "guides" },
         { label: "Woordenlijst", text: "Loon- en belastingbegrippen van A tot Z, met officiële bronnen.", href: "woordenlijst/", icon: "glossary" }
@@ -115,7 +115,7 @@
         { label: "Situation familiale et précompte professionnel", text: "Charges de famille et retenues sur votre salaire, selon les règles belges.", href: "famille-et-precompte-professionnel/", icon: "family" },
         { label: "Taxe communale et région", text: "La taxe communale additionnelle et la bonne région pour votre domicile.", href: "taxe-communale/", icon: "municipality" },
         { label: "Impôts par région", text: "Ce que la Flandre, Bruxelles et la Wallonie règlent dans votre impôt et pour votre logement.", href: "regions/", icon: "regions" },
-        { label: "Indépendants", text: "Revenus et cotisations sociales, seulement lorsque les règles officielles sont couvertes.", href: "independants/", icon: "selfemployed" },
+        { label: "Indépendants", text: "Statut, cotisations sociales 2026, statut social et impôt sur les revenus.", href: "independants/", icon: "selfemployed" },
         { label: "Pensions et autres revenus", text: "Lorsque la législation belge et le champ d’application sont documentés.", href: "pensions/", icon: "pension" },
         { label: "Guides", text: "Du brut au net, bonus à l’emploi, pécule de vacances et déclaration d’impôt, pas à pas.", href: "guides/", icon: "guides" },
         { label: "Lexique", text: "Les termes du salaire et de l’impôt de A à Z, avec sources officielles.", href: "lexique/", icon: "glossary" }

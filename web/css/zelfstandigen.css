@@ -1,0 +1,9 @@
+/* Self-employed section (web/nl/zelfstandigen/, web/fr/independants/). Loaded after
+   site.css and components.css; uses their design tokens only. */
+.zs-calc { margin-top: 24px; }
+.zs-calc-title { font-family: var(--display); font-stretch: 108%; font-size: 17px; font-weight: 700; margin: 14px 0 0; }
+.zs-prose { margin-top: 28px; }
+.zs-prose > .card + .card, .zs-prose > .page-actions + .card, .zs-prose > .card + .page-actions { margin-top: 16px; }
+.zs-table .help + .table-wrap { margin-top: 10px; }
+.zs-table .table-wrap + .help { margin-top: 10px; }
+.zs-sources .link-list span { white-space: nowrap; }

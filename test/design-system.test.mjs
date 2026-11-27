@@ -11,11 +11,11 @@ import { sitemapXml } from '../tools/generate_sitemap.mjs';
 const WEB = fileURLToPath(new URL('../web/', import.meta.url));
 // Every NL/FR page under web/nl and web/fr, paired through its own hreflang alternates.
 const PAIRS = await discoverPairs();
-// Roadmap pages announced on the home page ("in development" modules).
+// Roadmap pages announced on the home page. The self-employed section left this list on
+// 2026-11-27: it now quotes official 2026 rates (see test/zelfstandigen.test.mjs).
 const ROADMAP = [
   ['nl/gezin-en-bedrijfsvoorheffing/', 'fr/famille-et-precompte-professionnel/'],
   ['nl/gemeentebelasting/', 'fr/taxe-communale/'],
-  ['nl/zelfstandigen/', 'fr/independants/'],
   ['nl/pensioenen/', 'fr/pensions/'],
   ['nl/scenarios/', 'fr/scenarios/']
 ];
@@ -133,7 +133,7 @@ test('optional integrations stay disabled in the public config', async () => {
 
 test('the known core pages are discovered as NL/FR pairs', () => {
   const routes = new Set(PAIRS.flat());
-  for (const r of ['nl/', 'fr/', 'nl/methodologie/', 'fr/sources/', 'nl/privacy/', 'fr/confidentialite/', ...ROADMAP.flat()])
+  for (const r of ['nl/', 'fr/', 'nl/methodologie/', 'fr/sources/', 'nl/privacy/', 'fr/confidentialite/', ...ROADMAP.flat(), 'nl/zelfstandigen/', 'fr/independants/'])
     assert.ok(routes.has(r), r);
   assert.deepEqual(PAIRS[0], ['nl/', 'fr/']);
 });

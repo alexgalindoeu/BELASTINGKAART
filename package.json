@@ -6,6 +6,8 @@
   "scripts": {
     "test": "node --test test/*.test.mjs",
     "validate:params": "node tools/validate_parameters.mjs",
+    "build:zelfstandigen": "node tools/build_zelfstandigen.mjs",
+    "check:zelfstandigen": "node tools/build_zelfstandigen.mjs --check",
     "build:sitemap": "node tools/generate_sitemap.mjs",
     "check:sitemap": "node tools/generate_sitemap.mjs --check",
     "build:head": "node tools/build_head.mjs",
