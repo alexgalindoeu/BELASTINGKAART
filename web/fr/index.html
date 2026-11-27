@@ -160,7 +160,7 @@
       <fieldset class="block">
         <legend><span class="step">1</span>Salaire</legend>
         <div class="grid2">
-          <label class="field"><span>Salaire brut mensuel (€)</span><input name="grossMonthly" type="number" inputmode="decimal" min="0" max="100000" step="0.01" placeholder="Ex. 3 500" required aria-describedby="gross-help"></label>
+          <label class="field"><span>Salaire brut mensuel (€)</span><input name="grossMonthly" type="text" inputmode="decimal" autocomplete="off" spellcheck="false" placeholder="Ex. 3 500" required aria-describedby="gross-help"></label>
           <label class="field"><span>Paiements par an</span><select name="paidMonths"><option value="12">12 mois</option><option value="13">13 paiements</option><option value="14">14 paiements</option></select></label>
         </div>
         <p class="help" id="gross-help">Montant avant impôts et cotisations sociales.</p>

@@ -26,7 +26,10 @@
         s=groups.join("");
       } else {
         const [a,b]=s.split(".");
-        if(!/^\d+$/.test(a)||!/^\d{1,2}$/.test(b)) throw new Error("Ambiguous amount format.");
+        // nl-BE / fr-BE: a dot followed by exactly three digits groups thousands ("3.500" = 3500);
+        // a dot followed by one or two digits is a decimal point ("3500.5").
+        if(/^\d{1,3}$/.test(a)&&/^\d{3}$/.test(b)) s=a+b;
+        else if(!/^\d+$/.test(a)||!/^\d{1,2}$/.test(b)) throw new Error("Ambiguous amount format.");
       }
     }
     const n=Number(s);

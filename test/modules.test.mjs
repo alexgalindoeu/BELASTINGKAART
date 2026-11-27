@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
 import vm from 'node:vm';
 
-const files = ['bruto.js','ui.js','escenarios.js','csv.js','analitica.js','anuncios.js'];
+const files = ['importe.js','bruto.js','ui.js','escenarios.js','csv.js','analitica.js','anuncios.js'];
 const context = {window:{BK_CONFIG:{features:{advertising:false},analyticsProvider:null}},document:{querySelector:()=>null},localStorage:{getItem:()=>null,setItem:()=>{}}};
 for (const file of files) {
   const source = await readFile(new URL('../web/js/'+file,import.meta.url),'utf8');
@@ -12,6 +12,13 @@ for (const file of files) {
 
 test('gross input parsing and annualization are explicit',()=>{
   assert.equal(context.window.BKGross.parseMonthlyGross('3500,50'),3500.5);
+  // nl-BE / fr-BE: the dot groups thousands. "3.500" must never become 3.50 (audit P0).
+  assert.equal(context.window.BKGross.parseMonthlyGross('3.500'),3500);
+  assert.equal(context.window.BKGross.parseMonthlyGross('3.500,50'),3500.5);
+  assert.equal(context.window.BKGross.parseMonthlyGross('3 500'),3500);
+  assert.equal(context.window.BKGross.parseMonthlyGross('3500.5'),3500.5);
+  assert.throws(()=>context.window.BKGross.parseMonthlyGross('3,500'),/between/);
+  assert.throws(()=>context.window.BKGross.parseMonthlyGross('abc'),/between/);
   assert.equal(context.window.BKGross.annualize(3500,13),45500);
   assert.throws(()=>context.window.BKGross.parseMonthlyGross(-1),/between/);
 });

@@ -14,6 +14,9 @@ test('money parser handles Dutch and French-style decimal input without guessing
  assert.equal(context.window.BKAmount.parse('3500,50'),3500.5);
  assert.equal(context.window.BKAmount.parse('3500.50'),3500.5);
  assert.throws(()=>context.window.BKAmount.parse('3,500'),/Ambiguous/);
+ assert.equal(context.window.BKAmount.parse('3.500'),3500);
+ assert.equal(context.window.BKAmount.parse('12.345.678'),12345678);
+ assert.equal(context.window.BKAmount.parse('3500.5'),3500.5);
 });
 
 test('household form requires municipality and valid year pair',()=>{
