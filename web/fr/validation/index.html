@@ -66,12 +66,15 @@
 </header>
 <main class="container page-main" id="content" tabindex="-1">
   <p class="breadcrumbs"><a href="../../fr/">Accueil</a> › Validation</p>
-  <p class="eyebrow">Information et transparence</p>
   <h1>Comment nous vérifions les paramètres</h1>
   <p class="updated">Mis à jour le <time datetime="2026-11-25">25 novembre 2026</time></p>
   <p class="lead">Comment chaque paramètre fiscal est vérifié, avec le statut et la source officielle de chacun.</p>
   <div class="prose">
-    <p class="summary-box slash">Belastingkaart calcule uniquement avec des paramètres confirmés issus de sources officielles. Si un paramètre nécessaire n’est pas confirmé, le résultat qui en dépend n’est pas affiché.</p>
+    <section>
+      <h2>Deux moteurs, le même résultat</h2>
+      <p>Le calcul existe deux fois : un moteur de référence en R et le moteur du site en JavaScript, qui tourne dans votre navigateur. Chaque règle est testée dans les deux langages, y compris les seuils, les arrondis et les exceptions, et les deux moteurs doivent donner le même résultat dans ces tests. Le site n’affiche un salaire net que si toutes les règles nécessaires sont confirmées et testées.</p>
+      <p class="help">Belastingkaart calcule uniquement avec des paramètres confirmés issus de sources officielles. Si un paramètre nécessaire n’est pas confirmé, le résultat qui en dépend n’est pas affiché.</p>
+    </section>
     <section>
       <h2>Trois statuts</h2>
       <p>Chaque paramètre fiscal de Belastingkaart a un statut :</p>
@@ -85,10 +88,6 @@
     <section>
       <h2>Uniquement des sources officielles</h2>
       <p>Pour chaque paramètre, nous enregistrons la compétence, l’année de revenus et l’exercice d’imposition (séparément, jamais déduits l’un de l’autre), la période de validité, la source, la date de consultation, l’unité et la règle d’arrondi. Un contrôle automatique refuse toute source qui n’est pas une page HTTPS d’un service public belge, comme le SPF Finances, l’ONSS, les administrations fiscales régionales ou le Moniteur belge.</p>
-    </section>
-    <section>
-      <h2>Deux moteurs, le même résultat</h2>
-      <p>Le calcul existe deux fois : un moteur de référence en R et le moteur du site en JavaScript, qui tourne dans votre navigateur. Chaque règle est testée dans les deux langages, y compris les seuils, les arrondis et les exceptions, et les deux moteurs doivent donner le même résultat dans ces tests. Le site n’affiche un salaire net que si toutes les règles nécessaires sont confirmées et testées.</p>
     </section>
     <section>
       <h2>Liste des paramètres</h2>
@@ -373,14 +372,20 @@
     </li>
       </ol>
     </section>
+    <section>
+      <h2>Plus d’informations</h2>
+      <ul class="link-list">
+        <li><a href="../../fr/sources/">Nos sources officielles</a></li>
+        <li><a href="../../fr/methodologie/">Notre méthode de calcul</a></li>
+      </ul>
+    </section>
   </div>
-  <div class="page-actions"><a class="btn btn-secondary" href="../../fr/sources/">Nos sources officielles <span class="arrow" aria-hidden="true">→</span></a> <a class="btn btn-secondary" href="../../fr/methodologie/">Notre méthode de calcul</a></div>
 </main>
 <footer class="footer">
   <div class="container footer-in">
     <p><b>Belastingkaart</b> est un projet d’information indépendant. Ce n’est pas un site officiel des pouvoirs publics ni un conseil fiscal.</p>
     <nav class="footer-nav" aria-label="En savoir plus sur Belastingkaart"><div class="footer-col"><p class="footer-title">Calculer</p><ul><li><a href="../../fr/#simulator">Brut-net pour salariés</a></li><li><a href="../../fr/salaire-mensuel/">Salaire mensuel et paiements</a></li><li><a href="../../fr/taux-marginal/">Taux marginal</a></li><li><a href="../../fr/comparer-offres-emploi/">Comparer deux offres d’emploi</a></li><li><a href="../../fr/imposition-commune/">Imposition commune</a></li></ul></div><div class="footer-col"><p class="footer-title">Découvrir</p><ul><li><a href="../../fr/logement/">Logement en Flandre</a></li><li><a href="../../fr/independants/">Indépendants</a></li><li><a href="../../fr/pensions/">Pensions et autres revenus</a></li><li><a href="../../fr/guides/">Guides</a></li><li><a href="../../fr/lexique/">Lexique</a></li></ul></div><div class="footer-col"><p class="footer-title">Belastingkaart</p><ul><li><a href="../../fr/a-propos/">À propos</a></li><li><a href="../../fr/methodologie/">Notre méthode de calcul</a></li><li><a href="../../fr/validation/" aria-current="page">Validation</a></li><li><a href="../../fr/sources/">Sources</a></li><li><a href="../../fr/contact/">Contact</a></li></ul></div></nav>
-    <p class="footer-small footer-dates">Revenus 2026 · exercice d’imposition 2027 · Uniquement des sources officielles.</p>
+    <p class="footer-small footer-dates">Revenus 2026 · exercice d’imposition 2027 · Uniquement des sources officielles. · <a href="../../nl/validatie/" hreflang="nl-BE" lang="nl">Nederlands</a> · <a href="../../fr/validation/" hreflang="fr-BE" lang="fr">Français</a></p>
     <p class="footer-small footer-legal"><a href="../../fr/mentions-legales/">Mentions légales</a> · <a href="../../fr/avertissement/">Avertissement</a> · <a href="../../fr/confidentialite/">Confidentialité</a> · <a href="../../fr/cookies/">Cookies</a></p>
   </div>
 </footer>

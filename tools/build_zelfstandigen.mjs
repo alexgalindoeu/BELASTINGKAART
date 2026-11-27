@@ -142,7 +142,7 @@ export function renderSectionPage(key, lang) {
   <p class="summary-box slash"><b>${t.short}</b> ${p.summary}</p>
   ${blocks.map(fill).join('\n  ')}
 </main>
-${footerHtml(lang, route)}
+${footerHtml(lang, route, lang === 'nl' ? fr : nl)}
 </body>
 </html>
 `;

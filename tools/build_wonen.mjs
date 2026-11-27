@@ -782,7 +782,7 @@ ${blocks.join('\n')}
 ${tail.join('\n')}
   </div>
 </main>
-${footerHtml(lang, route)}
+${footerHtml(lang, route, lang === 'nl' ? fr : nl)}
 </body>
 </html>
 `;

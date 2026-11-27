@@ -583,7 +583,10 @@ body.page .data-table tr.highlight :is(td, th):first-child { padding-left: 8px; 
 .term-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr)); gap: 0 32px; margin: 0; }
 
 /* ---- legal pages ------------------------------------------------------------------- */
+.legal { padding-top: 28px; padding-bottom: 48px; }
 .legal-text { max-width: 860px; margin: 0 auto; padding: clamp(20px, 4vw, 44px); }
+.legal-text h2 + p, .legal-text h3 + p { margin-top: 0; }
+.legal-text :is(.storage-list, .legal-table, .legal-facts) { max-width: 74ch; }
 .legal-text h1 { font-size: clamp(24px, 3vw, 30px); font-weight: 700; letter-spacing: -.02em; }
 .legal-date { color: var(--ink-3); font-size: 13px; margin: 6px 0 22px; }
 .legal-text h2 { font-size: 19px; margin: 34px 0 8px; scroll-margin-top: 80px; }
@@ -810,3 +813,6 @@ details.result-rules .result-list { margin-top: 6px; padding-top: 0; border-top:
 .view-title { font-family: var(--display); font-stretch: 112%; font-size: clamp(26px, 3.4vw, 36px); font-weight: 800; letter-spacing: -.025em; line-height: 1.1; }
 .view-head .lead { margin-top: 8px; }
 @media (min-width: 1040px) { .view .calc { grid-template-columns: 440px minmax(0, 1fr); } }
+.legal > .breadcrumbs { max-width: 860px; margin: 0 auto 14px; }
+/* Long button labels inside pages may wrap on phones instead of widening the page (reference). */
+@media (max-width: 600px) { :is(.prose, .page-actions) .btn { white-space: normal; text-align: center; max-width: 100%; } }

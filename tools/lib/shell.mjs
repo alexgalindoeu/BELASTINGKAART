@@ -29,7 +29,7 @@ const T = {
   nl: {
     skip: 'Naar de inhoud', home: 'Belastingkaart, startpagina', sections: 'Secties',
     theme: ['Thema: automatisch (zoals het systeem). Wijzigen naar licht', 'Thema: automatisch (zoals het systeem)'],
-    switchLabel: 'Version française', cta: 'Naar de simulator', crumbHome: 'Startpagina',
+    switchLabel: 'Version française', more: 'Meer informatie', cta: 'Naar de simulator', crumbHome: 'Startpagina',
     updated: 'Bijgewerkt op', months: ['januari', 'februari', 'maart', 'april', 'mei', 'juni', 'juli', 'augustus', 'september', 'oktober', 'november', 'december'],
     footerIntro: '<b>Belastingkaart</b> is een onafhankelijk informatieproject. Geen officiële overheidswebsite en geen fiscaal advies.',
     footerNav: 'Meer over Belastingkaart',
@@ -38,7 +38,7 @@ const T = {
   fr: {
     skip: 'Aller au contenu', home: 'Belastingkaart, accueil', sections: 'Sections',
     theme: ['Thème : automatique (comme le système). Passer en mode clair', 'Thème : automatique (comme le système)'],
-    switchLabel: 'Nederlandse versie', cta: 'Vers le simulateur', crumbHome: 'Accueil',
+    switchLabel: 'Nederlandse versie', more: 'Plus d’informations', cta: 'Vers le simulateur', crumbHome: 'Accueil',
     updated: 'Mis à jour le', months: ['janvier', 'février', 'mars', 'avril', 'mai', 'juin', 'juillet', 'août', 'septembre', 'octobre', 'novembre', 'décembre'],
     footerIntro: '<b>Belastingkaart</b> est un projet d’information indépendant. Ce n’est pas un site officiel des pouvoirs publics ni un conseil fiscal.',
     footerNav: 'En savoir plus sur Belastingkaart',
@@ -67,24 +67,27 @@ export function navHtml(lang, route) {
 // last five topics (guides and glossary included) and the about group; the legal row is the
 // drawer's legal group.
 const FOOTER_COLS = { nl: ['Berekenen', 'Ontdek', 'Belastingkaart'], fr: ['Calculer', 'Découvrir', 'Belastingkaart'] };
-export function footerHtml(lang, route) {
+// pair: the route of the same page in the other language (language links, remembered by js/taal.js).
+export function footerHtml(lang, route, pair) {
   const t = T[lang];
   const groups = MENU.GROUPS[lang];
   const a = it => `<a href="${linkTo(lang, route, it.href)}"${isCurrent(lang, route, it.href) ? ' aria-current="page"' : ''}>${it.label}</a>`;
   const cols = FOOTER_COLS[lang].map((title, i) =>
     `<div class="footer-col"><p class="footer-title">${title}</p><ul>${(i === 1 ? groups[i].items.slice(-5) : groups[i].items.slice(0, 5)).map(it => `<li>${a(it)}</li>`).join('')}</ul></div>`).join('');
   const legal = groups[groups.length - 1].items.map(a).join(' · ');
+  const [nl, fr] = lang === 'nl' ? [route, pair] : [pair, route];
+  const langs = pair ? ` · <a href="${upOf(route)}${nl}" hreflang="nl-BE" lang="nl">Nederlands</a> · <a href="${upOf(route)}${fr}" hreflang="fr-BE" lang="fr">Français</a>` : '';
   return `<footer class="footer">
   <div class="container footer-in">
     <p>${t.footerIntro}</p>
     <nav class="footer-nav" aria-label="${t.footerNav}">${cols}</nav>
-    <p class="footer-small footer-dates">${t.footerSmall}</p>
+    <p class="footer-small footer-dates">${t.footerSmall}${langs}</p>
     <p class="footer-small footer-legal">${legal}</p>
   </div>
 </footer>`;
 }
 
-// page: { lang, route, pair, title, description, eyebrow, h1, updated, lead, summary, body, actions }
+// page: { lang, route, pair, title, description, h1, crumb, updated, lead, summary, body, actions }
 export function renderPage(page) {
   const { lang, route } = page;
   const t = T[lang];
@@ -92,6 +95,12 @@ export function renderPage(page) {
   const nl = lang === 'nl' ? route : page.pair, fr = lang === 'fr' ? route : page.pair;
   const other = lang === 'nl' ? fr : nl;
   const L = href => `${up}${lang}/${href}`;
+  // Reference template (methodology, contact, about, validation): breadcrumbs, title, date,
+  // lead and sections; the summary becomes a note in the first section and the actions a last
+  // "more information" section with a link list.
+  let body = page.body.trim();
+  if (page.summary) body = body.replace('</section>', `  <p class="help">${page.summary}</p>\n</section>`);
+  if (page.actions?.length) body += `\n<section>\n  <h2>${t.more}</h2>\n  <ul class="link-list">\n${page.actions.map(([h, label]) => `    <li><a href="${L(h)}">${label}</a></li>`).join('\n')}\n  </ul>\n</section>`;
   const html = `<!doctype html>
 <html lang="${lang}">
 <head>
@@ -133,17 +142,14 @@ export function renderPage(page) {
 </header>
 <main class="container page-main" id="content" tabindex="-1">
   <p class="breadcrumbs"><a href="${L('')}">${t.crumbHome}</a> › ${page.crumb || page.h1}</p>
-  <p class="eyebrow">${page.eyebrow}</p>
   <h1>${page.h1}</h1>
   <p class="updated">${t.updated} <time datetime="${page.updated}">${longDate(page.updated, lang)}</time></p>
   <p class="lead">${page.lead}</p>
   <div class="prose">
-    <p class="summary-box slash">${page.summary}</p>
-${page.body.trim().split('\n').map(l => '    ' + l).join('\n')}
+${body.split('\n').map(l => '    ' + l).join('\n')}
   </div>
-  <div class="page-actions">${page.actions.map(([h, label], i) => `<a class="btn ${i ? 'btn-secondary' : 'btn-secondary'}" href="${L(h)}">${label}${i === 0 ? ' <span class="arrow" aria-hidden="true">→</span>' : ''}</a>`).join(' ')}</div>
 </main>
-${footerHtml(lang, route)}
+${footerHtml(lang, route, page.pair)}
 </body>
 </html>
 `;
