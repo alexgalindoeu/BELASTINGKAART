@@ -11,10 +11,16 @@
   // Pictograms: solid straight-edged polygons on a 24×24 grid, brand blue with at most one
   // accent piece (class="r"), as on the home page tool index.
   const ICONS = {
+    // an open book: two pages and the slanted bookmark
+    glossary: '<polygon points="2,4 11,6 11,22 2,20"/><polygon points="13,6 22,4 22,20 13,22"/><polygon class="r" points="15,9 20,8 20,10 15,11"/>',
+    // a guide: stacked steps
+    guides: '<polygon points="3,3 21,3 21,7 3,7"/><polygon points="3,10 17,10 17,14 3,14"/><polygon class="r" points="3,17 12,17 12,21 3,21"/>',
     payslip: '<polygon points="3,2 17,2 21,6 21,22 3,22"/><polygon class="r" points="7,15 17,15 17,18 7,18"/>',
     family: '<polygon points="3,9 9,9 9,22 3,22"/><polygon points="11,6 17,6 17,22 11,22"/><polygon class="r" points="19,14 22,14 22,22 19,22"/>',
-    // a folded map: three panels, the middle one on the slant
-    map: '<polygon points="2,4 8,2 8,20 2,22"/><polygon class="r" points="9,2 15,4 15,22 9,20"/><polygon points="16,4 22,2 22,20 16,22"/>',
+    // a map pin with its accent window
+    map: '<polygon points="12,2 20,7 20,13 12,22 4,13 4,7"/><polygon class="r" points="10,8 14,8 14,12 10,12"/>',
+    // a folded map in three strips, the middle strip accented
+    regions: '<polygon points="2,6 8,4 8,20 2,22"/><polygon class="r" points="9,4 15,6 15,22 9,20"/><polygon points="16,6 22,4 22,20 16,22"/>',
     municipality: '<polygon points="12,2 21,10 21,22 3,22 3,10"/><polygon class="r" points="10,15 14,15 14,22 10,22"/>',
     selfemployed: '<polygon points="2,8 22,8 22,21 2,21"/><polygon points="8,3 16,3 16,7 14,7 14,5 10,5 10,7 8,7"/><polygon class="r" points="2,12 22,12 22,14 2,14"/>',
     pension: '<polygon points="2,3 5,3 5,19 19,19 19,3 22,3 22,22 2,22"/><polygon class="r" points="7,17 17,17 17,9 7,9"/>',
@@ -79,8 +85,11 @@
         { label: "Gezinssituatie en bedrijfsvoorheffing", text: "Gezinslast en inhoudingen op je loon, volgens de Belgische regels.", href: "gezin-en-bedrijfsvoorheffing/", icon: "family" },
         { label: "Kaart van de gemeenten", text: "Alle Belgische gemeenten op één kaart: kies de jouwe.", href: "kaart/", icon: "map" },
         { label: "Gemeentebelasting en gewest", text: "De aanvullende gemeentebelasting en het juiste gewest voor je woonplaats.", href: "gemeentebelasting/", icon: "municipality" },
+        { label: "Belastingen per gewest", text: "Wat Vlaanderen, Brussel en Wallonië regelen in je personenbelasting en voor je woning.", href: "gewesten/", icon: "regions" },
         { label: "Zelfstandigen", text: "Inkomen en sociale bijdragen, pas nadat de officiële regels gedekt zijn.", href: "zelfstandigen/", icon: "selfemployed" },
-        { label: "Pensioenen en andere inkomsten", text: "Waar de Belgische wetgeving en het toepassingsgebied gedocumenteerd zijn.", href: "pensioenen/", icon: "pension" }
+        { label: "Pensioenen en andere inkomsten", text: "Waar de Belgische wetgeving en het toepassingsgebied gedocumenteerd zijn.", href: "pensioenen/", icon: "pension" },
+        { label: "Gidsen", text: "Van bruto naar netto, werkbonus, vakantiegeld en de belastingaangifte, stap voor stap.", href: "gidsen/", icon: "guides" },
+        { label: "Woordenlijst", text: "Loon- en belastingbegrippen van A tot Z, met officiële bronnen.", href: "woordenlijst/", icon: "glossary" }
       ] },
       { group: "Over Belastingkaart", items: [
         { label: "Over ons", text: "Wat Belastingkaart is, wat het berekent en hoe we werken.", href: "over-belastingkaart/", icon: "about" },
@@ -111,8 +120,11 @@
         { label: "Situation familiale et précompte professionnel", text: "Charges de famille et retenues sur votre salaire, selon les règles belges.", href: "famille-et-precompte-professionnel/", icon: "family" },
         { label: "Carte des communes", text: "Toutes les communes belges sur une carte : choisissez la vôtre.", href: "carte/", icon: "map" },
         { label: "Taxe communale et région", text: "La taxe communale additionnelle et la bonne région pour votre domicile.", href: "taxe-communale/", icon: "municipality" },
+        { label: "Impôts par région", text: "Ce que la Flandre, Bruxelles et la Wallonie règlent dans votre impôt et pour votre logement.", href: "regions/", icon: "regions" },
         { label: "Indépendants", text: "Revenus et cotisations sociales, seulement lorsque les règles officielles sont couvertes.", href: "independants/", icon: "selfemployed" },
-        { label: "Pensions et autres revenus", text: "Lorsque la législation belge et le champ d’application sont documentés.", href: "pensions/", icon: "pension" }
+        { label: "Pensions et autres revenus", text: "Lorsque la législation belge et le champ d’application sont documentés.", href: "pensions/", icon: "pension" },
+        { label: "Guides", text: "Du brut au net, bonus à l’emploi, pécule de vacances et déclaration d’impôt, pas à pas.", href: "guides/", icon: "guides" },
+        { label: "Lexique", text: "Les termes du salaire et de l’impôt de A à Z, avec sources officielles.", href: "lexique/", icon: "glossary" }
       ] },
       { group: "À propos de Belastingkaart", items: [
         { label: "À propos", text: "Ce qu’est Belastingkaart, ce qu’il calcule et comment nous travaillons.", href: "a-propos/", icon: "about" },
