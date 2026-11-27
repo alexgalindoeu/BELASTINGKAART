@@ -66,12 +66,15 @@
 </header>
 <main class="container page-main" id="content" tabindex="-1">
   <p class="breadcrumbs"><a href="../../nl/">Startpagina</a> › Validatie</p>
-  <p class="eyebrow">Informatie en transparantie</p>
   <h1>Hoe we de parameters controleren</h1>
   <p class="updated">Bijgewerkt op <time datetime="2026-11-25">25 november 2026</time></p>
   <p class="lead">Hoe elke fiscale parameter wordt gecontroleerd, met de status en de officiële bron van elke parameter.</p>
   <div class="prose">
-    <p class="summary-box slash">Belastingkaart berekent alleen met bevestigde parameters uit officiële bronnen. Is een noodzakelijke parameter niet bevestigd, dan wordt het resultaat dat ervan afhangt niet getoond.</p>
+    <section>
+      <h2>Twee motoren, hetzelfde resultaat</h2>
+      <p>De berekening bestaat twee keer: een referentiemotor in R en de motor van de website in JavaScript, die in je browser draait. Elke regel krijgt tests in beide talen, ook voor grenzen, afrondingen en uitzonderingen, en beide motoren moeten in die tests hetzelfde resultaat geven. De website toont een nettoloon alleen als alle noodzakelijke regels bevestigd en getest zijn.</p>
+      <p class="help">Belastingkaart berekent alleen met bevestigde parameters uit officiële bronnen. Is een noodzakelijke parameter niet bevestigd, dan wordt het resultaat dat ervan afhangt niet getoond.</p>
+    </section>
     <section>
       <h2>Drie statussen</h2>
       <p>Elke fiscale parameter in Belastingkaart heeft een status:</p>
@@ -85,10 +88,6 @@
     <section>
       <h2>Alleen officiële bronnen</h2>
       <p>Bij elke parameter noteren we de bevoegdheid, het inkomstenjaar en het aanslagjaar (apart, nooit uit elkaar afgeleid), de geldigheidsperiode, de bron, de raadpleegdatum, de eenheid en de afrondingsregel. Een automatische controle weigert elke bron die geen HTTPS-pagina van een Belgische overheidsdienst is, zoals de FOD Financiën, de RSZ, de gewestelijke belastingdiensten of het Belgisch Staatsblad.</p>
-    </section>
-    <section>
-      <h2>Twee motoren, hetzelfde resultaat</h2>
-      <p>De berekening bestaat twee keer: een referentiemotor in R en de motor van de website in JavaScript, die in je browser draait. Elke regel krijgt tests in beide talen, ook voor grenzen, afrondingen en uitzonderingen, en beide motoren moeten in die tests hetzelfde resultaat geven. De website toont een nettoloon alleen als alle noodzakelijke regels bevestigd en getest zijn.</p>
     </section>
     <section>
       <h2>Overzicht van de parameters</h2>
@@ -373,19 +372,21 @@
     </li>
       </ol>
     </section>
+    <section>
+      <h2>Meer informatie</h2>
+      <ul class="link-list">
+        <li><a href="../../nl/bronnen/">Onze officiële bronnen</a></li>
+        <li><a href="../../nl/methodologie/">Hoe we rekenen</a></li>
+      </ul>
+    </section>
   </div>
-  <div class="page-actions"><a class="btn btn-secondary" href="../../nl/bronnen/">Onze officiële bronnen <span class="arrow" aria-hidden="true">→</span></a> <a class="btn btn-secondary" href="../../nl/methodologie/">Hoe we rekenen</a></div>
 </main>
 <footer class="footer">
   <div class="container footer-in">
     <p><b>Belastingkaart</b> is een onafhankelijk informatieproject. Geen officiële overheidswebsite en geen fiscaal advies.</p>
-    <nav class="footer-nav" aria-label="Meer over Belastingkaart">
-      <div><p class="footer-title">Simulator</p><ul><li><a href="../../nl/#simulator">Bruto-netto voor werknemers</a></li></ul></div>
-      <div><p class="footer-title">Over Belastingkaart</p><ul><li><a href="../../nl/over-belastingkaart/">Over ons</a></li><li><a href="../../nl/methodologie/">Methodologie</a></li><li><a href="../../nl/validatie/" aria-current="page">Validatie</a></li><li><a href="../../nl/bronnen/">Bronnen</a></li><li><a href="../../nl/contact/">Contact</a></li></ul></div>
-      <div><p class="footer-title">Juridisch</p><ul><li><a href="../../nl/juridische-informatie/">Juridische informatie</a></li><li><a href="../../nl/disclaimer/">Disclaimer</a></li><li><a href="../../nl/privacy/">Privacy</a></li><li><a href="../../nl/cookies/">Cookies</a></li></ul></div>
-      <div><p class="footer-title">Taal</p><ul><li><a href="../../nl/validatie/" hreflang="nl-BE" lang="nl">Nederlands</a></li><li><a href="../../fr/validation/" hreflang="fr-BE" lang="fr">Français</a></li></ul></div>
-    </nav>
-    <p class="footer-small">Inkomstenjaar 2026 · aanslagjaar 2027 · Alleen officiële bronnen.</p>
+    <nav class="footer-nav" aria-label="Meer over Belastingkaart"><div class="footer-col"><p class="footer-title">Berekenen</p><ul><li><a href="../../nl/#simulator">Bruto-netto voor werknemers</a></li><li><a href="../../nl/maandloon/">Maandloon en uitbetalingen</a></li><li><a href="../../nl/marginaal-tarief/">Marginaal tarief</a></li><li><a href="../../nl/jobaanbiedingen-vergelijken/">Twee jobaanbiedingen vergelijken</a></li><li><a href="../../nl/gemeenschappelijke-aanslag/">Gemeenschappelijke aanslag</a></li></ul></div><div class="footer-col"><p class="footer-title">Ontdek</p><ul><li><a href="../../nl/wonen/">Wonen in Vlaanderen</a></li><li><a href="../../nl/zelfstandigen/">Zelfstandigen</a></li><li><a href="../../nl/pensioenen/">Pensioenen en andere inkomsten</a></li><li><a href="../../nl/gidsen/">Gidsen</a></li><li><a href="../../nl/woordenlijst/">Woordenlijst</a></li></ul></div><div class="footer-col"><p class="footer-title">Belastingkaart</p><ul><li><a href="../../nl/over-belastingkaart/">Over ons</a></li><li><a href="../../nl/methodologie/">Hoe we rekenen</a></li><li><a href="../../nl/validatie/" aria-current="page">Validatie</a></li><li><a href="../../nl/bronnen/">Bronnen</a></li><li><a href="../../nl/contact/">Contact</a></li></ul></div></nav>
+    <p class="footer-small footer-dates">Inkomstenjaar 2026 · aanslagjaar 2027 · Alleen officiële bronnen. · <a href="../../nl/validatie/" hreflang="nl-BE" lang="nl">Nederlands</a> · <a href="../../fr/validation/" hreflang="fr-BE" lang="fr">Français</a></p>
+    <p class="footer-small footer-legal"><a href="../../nl/juridische-informatie/">Juridische informatie</a> · <a href="../../nl/disclaimer/">Disclaimer</a> · <a href="../../nl/privacy/">Privacy</a> · <a href="../../nl/cookies/">Cookies</a></p>
   </div>
 </footer>
 </body>

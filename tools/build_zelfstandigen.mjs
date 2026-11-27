@@ -8,7 +8,7 @@ import { readFile, writeFile, mkdir } from 'node:fs/promises';
 import path from 'node:path';
 import { WEB, SITE } from './lib/pages.mjs';
 import { applyHead, escapeAttr } from './lib/head.mjs';
-import { footerColumns, footerSmall, longDate } from './lib/shell.mjs';
+import { navHtml, footerHtml, longDate } from './lib/shell.mjs';
 import { PAGES, PAGES_ORDER, SLUGS, ROOT, SOURCES, TERMS, CALC } from './lib/zelfstandigen-content.mjs';
 
 export const UPDATED = '2026-11-27';
@@ -17,7 +17,6 @@ const THEME_SVG = '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"
 
 const T = {
   nl: { skip: 'Naar de inhoud', home: 'Belastingkaart, startpagina', sections: 'Secties', crumbHome: 'Startpagina', section: 'Zelfstandigen',
-    nav: [['#simulator', 'Simulator'], ['kaart/', 'Kaart'], ['methodologie/', 'Methodologie'], ['bronnen/', 'Bronnen'], ['contact/', 'Contact']],
     theme: ['Thema: automatisch (zoals het systeem). Wijzigen naar licht', 'Thema: automatisch (zoals het systeem)'],
     switchLabel: 'Version française', cta: 'Naar de simulator', updated: 'Bijgewerkt op', short: 'In het kort:',
     footerIntro: '<b>Belastingkaart</b> is een onafhankelijk informatieproject. Geen officiële overheidswebsite en geen fiscaal advies.',
@@ -27,7 +26,6 @@ const T = {
     trustLabel: 'Over deze informatie',
     trust: d => [`Bijdragejaar 2026 · inkomsten 2026`, `Nagekeken op <time datetime="${d}">${longDate(d, 'nl')}</time>`, `Bronnen: RSVZ en FOD Financiën · <a href="{L}methodologie/">Methodologie</a>`] },
   fr: { skip: 'Aller au contenu', home: 'Belastingkaart, accueil', sections: 'Sections', crumbHome: 'Accueil', section: 'Indépendants',
-    nav: [['#simulator', 'Simulateur'], ['carte/', 'Carte'], ['methodologie/', 'Méthodologie'], ['sources/', 'Sources'], ['contact/', 'Contact']],
     theme: ['Thème : automatique (comme le système). Passer en mode clair', 'Thème : automatique (comme le système)'],
     switchLabel: 'Nederlandse versie', cta: 'Vers le simulateur', updated: 'Mis à jour le', short: 'En bref :',
     footerIntro: '<b>Belastingkaart</b> est un projet d’information indépendant. Ce n’est pas un site officiel des pouvoirs publics ni un conseil fiscal.',
@@ -98,7 +96,6 @@ export function renderSectionPage(key, lang) {
   blocks.push(`<section class="card"><h2 class="card-title">${t.more}</h2><ul class="link-list">${more}</ul><p>${t.terms}${lang === 'fr' ? ' :' : ':'} ${terms} · <a href="${G}">${t.glossary}</a></p></section>`);
   blocks.push('</div>');
   blocks.push(`<ul class="trust" aria-label="${t.trustLabel}">${t.trust(UPDATED).map(i => `<li>${fill(i)}</li>`).join('')}</ul>`);
-  const nav = t.nav.map(([h, label]) => `      <a href="${L}${h}">${label}</a>`).join('\n');
   const html = `<!doctype html>
 <html lang="${lang}">
 <head>
@@ -130,9 +127,7 @@ export function renderSectionPage(key, lang) {
 <header class="appbar">
   <div class="appbar-in">
     <a class="brand" href="${L}" aria-label="${t.home}">${BRAND_SVG}<span class="brand-name">Belastingkaart</span></a>
-    <nav class="nav" aria-label="${t.sections}">
-${nav}
-    </nav>
+    ${navHtml(lang, route)}
     <div class="appbar-end">
       <button class="btn-icon theme-btn" id="theme-toggle" type="button" aria-label="${t.theme[0]}" title="${t.theme[1]}">${THEME_SVG}</button>
       <a class="lang-switch" href="${up}${other}" hreflang="${lang === 'nl' ? 'fr-BE' : 'nl-BE'}" lang="${lang === 'nl' ? 'fr' : 'nl'}" aria-label="${t.switchLabel}">${lang === 'nl' ? 'FR' : 'NL'}</a>
@@ -147,16 +142,7 @@ ${nav}
   <p class="summary-box slash"><b>${t.short}</b> ${p.summary}</p>
   ${blocks.map(fill).join('\n  ')}
 </main>
-<footer class="footer">
-  <div class="container footer-in">
-    <p>${t.footerIntro}</p>
-    <nav class="footer-nav" aria-label="${t.footerNav}">
-      ${footerColumns(lang, route)}
-      <div><p class="footer-title">${t.lang}</p><ul><li><a href="${up}${nl}" hreflang="nl-BE" lang="nl">Nederlands</a></li><li><a href="${up}${fr}" hreflang="fr-BE" lang="fr">Français</a></li></ul></div>
-    </nav>
-    <p class="footer-small">${footerSmall(lang)}</p>
-  </div>
-</footer>
+${footerHtml(lang, route, lang === 'nl' ? fr : nl)}
 </body>
 </html>
 `;

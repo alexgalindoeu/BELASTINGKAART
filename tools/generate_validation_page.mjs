@@ -116,6 +116,10 @@ function card({ id, p }, lang) {
 
 const BODY = {
   nl: `<section>
+  <h2>Twee motoren, hetzelfde resultaat</h2>
+  <p>De berekening bestaat twee keer: een referentiemotor in R en de motor van de website in JavaScript, die in je browser draait. Elke regel krijgt tests in beide talen, ook voor grenzen, afrondingen en uitzonderingen, en beide motoren moeten in die tests hetzelfde resultaat geven. De website toont een nettoloon alleen als alle noodzakelijke regels bevestigd en getest zijn.</p>
+</section>
+<section>
   <h2>Drie statussen</h2>
   <p>Elke fiscale parameter in Belastingkaart heeft een status:</p>
   <ul>
@@ -128,12 +132,12 @@ const BODY = {
 <section>
   <h2>Alleen officiële bronnen</h2>
   <p>Bij elke parameter noteren we de bevoegdheid, het inkomstenjaar en het aanslagjaar (apart, nooit uit elkaar afgeleid), de geldigheidsperiode, de bron, de raadpleegdatum, de eenheid en de afrondingsregel. Een automatische controle weigert elke bron die geen HTTPS-pagina van een Belgische overheidsdienst is, zoals de FOD Financiën, de RSZ, de gewestelijke belastingdiensten of het Belgisch Staatsblad.</p>
-</section>
-<section>
-  <h2>Twee motoren, hetzelfde resultaat</h2>
-  <p>De berekening bestaat twee keer: een referentiemotor in R en de motor van de website in JavaScript, die in je browser draait. Elke regel krijgt tests in beide talen, ook voor grenzen, afrondingen en uitzonderingen, en beide motoren moeten in die tests hetzelfde resultaat geven. De website toont een nettoloon alleen als alle noodzakelijke regels bevestigd en getest zijn.</p>
 </section>`,
   fr: `<section>
+  <h2>Deux moteurs, le même résultat</h2>
+  <p>Le calcul existe deux fois : un moteur de référence en R et le moteur du site en JavaScript, qui tourne dans votre navigateur. Chaque règle est testée dans les deux langages, y compris les seuils, les arrondis et les exceptions, et les deux moteurs doivent donner le même résultat dans ces tests. Le site n’affiche un salaire net que si toutes les règles nécessaires sont confirmées et testées.</p>
+</section>
+<section>
   <h2>Trois statuts</h2>
   <p>Chaque paramètre fiscal de Belastingkaart a un statut :</p>
   <ul>
@@ -146,10 +150,6 @@ const BODY = {
 <section>
   <h2>Uniquement des sources officielles</h2>
   <p>Pour chaque paramètre, nous enregistrons la compétence, l’année de revenus et l’exercice d’imposition (séparément, jamais déduits l’un de l’autre), la période de validité, la source, la date de consultation, l’unité et la règle d’arrondi. Un contrôle automatique refuse toute source qui n’est pas une page HTTPS d’un service public belge, comme le SPF Finances, l’ONSS, les administrations fiscales régionales ou le Moniteur belge.</p>
-</section>
-<section>
-  <h2>Deux moteurs, le même résultat</h2>
-  <p>Le calcul existe deux fois : un moteur de référence en R et le moteur du site en JavaScript, qui tourne dans votre navigateur. Chaque règle est testée dans les deux langages, y compris les seuils, les arrondis et les exceptions, et les deux moteurs doivent donner le même résultat dans ces tests. Le site n’affiche un salaire net que si toutes les règles nécessaires sont confirmées et testées.</p>
 </section>`
 };
 
@@ -171,7 +171,6 @@ ${params.map(x => card(x, lang)).join('\n')}
     const html = renderPage({
       lang, route, pair: lang === 'nl' ? frRoute : nlRoute,
       title: META[lang][0], description: META[lang][1],
-      eyebrow: lang === 'nl' ? 'Informatie en transparantie' : 'Information et transparence',
       h1: lang === 'nl' ? 'Hoe we de parameters controleren' : 'Comment nous vérifions les paramètres',
       crumb: lang === 'nl' ? 'Validatie' : 'Validation',
       updated: data.generated_at,
