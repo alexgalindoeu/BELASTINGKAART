@@ -13,14 +13,21 @@ export const REGIONS = {
   WAL: { nis: '03000', name: { nl: 'Wallonië', fr: 'Wallonie' }, official: { nl: 'Waals Gewest', fr: 'Région wallonne' } }
 };
 
-// Provinces of the Flemish Region (Constitution art. 5). The municipality's NIS code starts with
-// the province digit (Vlaams-Brabant: 23 and 24).
+// Provinces (Constitution art. 5) with their REFNIS codes, as in web/data/gemeenten.json (province_nis).
+// The Brussels-Capital Region belongs to no province; on the map and in the list it is its own group,
+// keyed by its region code.
 export const PROVINCES = [
-  { nis: '10000', region: 'VLG', name: { nl: 'Antwerpen', fr: 'Anvers' }, match: n => n[0] === '1' },
-  { nis: '20001', region: 'VLG', name: { nl: 'Vlaams-Brabant', fr: 'Brabant flamand' }, match: n => n.startsWith('23') || n.startsWith('24') },
-  { nis: '30000', region: 'VLG', name: { nl: 'West-Vlaanderen', fr: 'Flandre occidentale' }, match: n => n[0] === '3' },
-  { nis: '40000', region: 'VLG', name: { nl: 'Oost-Vlaanderen', fr: 'Flandre orientale' }, match: n => n[0] === '4' },
-  { nis: '70000', region: 'VLG', name: { nl: 'Limburg', fr: 'Limbourg' }, match: n => n[0] === '7' }
+  { nis: '10000', region: 'VLG', name: { nl: 'Antwerpen', fr: 'Anvers' } },
+  { nis: '20001', region: 'VLG', name: { nl: 'Vlaams-Brabant', fr: 'Brabant flamand' } },
+  { nis: '30000', region: 'VLG', name: { nl: 'West-Vlaanderen', fr: 'Flandre occidentale' } },
+  { nis: '40000', region: 'VLG', name: { nl: 'Oost-Vlaanderen', fr: 'Flandre orientale' } },
+  { nis: '70000', region: 'VLG', name: { nl: 'Limburg', fr: 'Limbourg' } },
+  { nis: '04000', region: 'BRU', name: { nl: 'Brussels Hoofdstedelijk Gewest', fr: 'Région de Bruxelles-Capitale' }, group: 'region' },
+  { nis: '20002', region: 'WAL', name: { nl: 'Waals-Brabant', fr: 'Brabant wallon' } },
+  { nis: '50000', region: 'WAL', name: { nl: 'Henegouwen', fr: 'Hainaut' } },
+  { nis: '60000', region: 'WAL', name: { nl: 'Luik', fr: 'Liège' } },
+  { nis: '80000', region: 'WAL', name: { nl: 'Luxemburg', fr: 'Luxembourg' } },
+  { nis: '90000', region: 'WAL', name: { nl: 'Namen', fr: 'Namur' } }
 ];
 
 // Official municipality counts per region on 1 January 2025 (after the mergers), as in Statbel REFNIS 2025

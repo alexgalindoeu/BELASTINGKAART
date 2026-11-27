@@ -17,6 +17,8 @@
     guides: '<polygon points="3,3 21,3 21,7 3,7"/><polygon points="3,10 17,10 17,14 3,14"/><polygon class="r" points="3,17 12,17 12,21 3,21"/>',
     payslip: '<polygon points="3,2 17,2 21,6 21,22 3,22"/><polygon class="r" points="7,15 17,15 17,18 7,18"/>',
     family: '<polygon points="3,9 9,9 9,22 3,22"/><polygon points="11,6 17,6 17,22 11,22"/><polygon class="r" points="19,14 22,14 22,22 19,22"/>',
+    // a map pin with its accent window
+    map: '<polygon points="12,2 20,7 20,13 12,22 4,13 4,7"/><polygon class="r" points="10,8 14,8 14,12 10,12"/>',
     // a folded map in three strips, the middle strip accented
     regions: '<polygon points="2,6 8,4 8,20 2,22"/><polygon class="r" points="9,4 15,6 15,22 9,20"/><polygon points="16,6 22,4 22,20 16,22"/>',
     // a house with a pitched roof and an accented door on the slant side
@@ -54,12 +56,14 @@
   const NAV = {
     nl: [
       { label: "Simulator", href: "#simulator" },
+      { label: "Kaart", href: "kaart/" },
       { label: "Methodologie", href: "methodologie/" },
       { label: "Bronnen", href: "bronnen/" },
       { label: "Contact", href: "contact/" }
     ],
     fr: [
       { label: "Simulateur", href: "#simulator" },
+      { label: "Carte", href: "carte/" },
       { label: "Méthodologie", href: "methodologie/" },
       { label: "Sources", href: "sources/" },
       { label: "Contact", href: "contact/" }
@@ -81,6 +85,7 @@
       ] },
       { group: "Thema’s", items: [
         { label: "Gezinssituatie en bedrijfsvoorheffing", text: "Gezinslast en inhoudingen op je loon, volgens de Belgische regels.", href: "gezin-en-bedrijfsvoorheffing/", icon: "family" },
+        { label: "Kaart van de gemeenten", text: "Alle Belgische gemeenten op één kaart: kies de jouwe.", href: "kaart/", icon: "map" },
         { label: "Gemeentebelasting en gewest", text: "De aanvullende gemeentebelasting en het juiste gewest voor je woonplaats.", href: "gemeentebelasting/", icon: "municipality" },
         { label: "Belastingen per gewest", text: "Wat Vlaanderen, Brussel en Wallonië regelen in je personenbelasting en voor je woning.", href: "gewesten/", icon: "regions" },
         { label: "Wonen in Vlaanderen", text: "Registratiebelasting, woonbonus, kadastraal inkomen en onroerende voorheffing.", href: "wonen/", icon: "home" },
@@ -116,6 +121,7 @@
       ] },
       { group: "Thèmes", items: [
         { label: "Situation familiale et précompte professionnel", text: "Charges de famille et retenues sur votre salaire, selon les règles belges.", href: "famille-et-precompte-professionnel/", icon: "family" },
+        { label: "Carte des communes", text: "Toutes les communes belges sur une carte : choisissez la vôtre.", href: "carte/", icon: "map" },
         { label: "Taxe communale et région", text: "La taxe communale additionnelle et la bonne région pour votre domicile.", href: "taxe-communale/", icon: "municipality" },
         { label: "Impôts par région", text: "Ce que la Flandre, Bruxelles et la Wallonie règlent dans votre impôt et pour votre logement.", href: "regions/", icon: "regions" },
         { label: "Logement en Flandre", text: "Droits d’enregistrement, bonus logement, revenu cadastral et précompte immobilier.", href: "logement/", icon: "home" },

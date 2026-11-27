@@ -42,7 +42,9 @@ test('record count equals the official count stated by the source', () => {
 
 test('source record: official host, attribution in both languages, CRS, retrieval date and checksum', () => {
   const s = kaart.source;
-  assert.match(s.url, /^https:\/\/geo\.api\.vlaanderen\.be\//);
+  assert.match(s.url, /^https:\/\/ac\.ngi\.be\//);
+  assert.equal(s.licence.id, 'CC-BY-4.0');
+  assert.equal(s.licence.status, 'verified');
   assert.ok(s.attribution.nl && s.attribution.fr);
   assert.equal(s.crs, 'EPSG:3812');
   assert.match(s.retrieved, /^\d{4}-\d{2}-\d{2}$/);

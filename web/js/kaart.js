@@ -114,7 +114,7 @@
     if (b.national) h += `<path class="b-nat" d="${b.national}"/>`;
     h += mine;
     const m = yours && kaart.municipalities.find(x => x.nis === yours);
-    if (m) h += `<text class="kaart-label" x="${m.anchor[0]}" y="${m.anchor[1] + 5}" text-anchor="middle" aria-hidden="true">${T[lang].you}</text>`;
+    if (m) h += `<text class="kaart-label" x="${m.anchor[0]}" y="${m.anchor[1] + 9}" text-anchor="middle" aria-hidden="true">${T[lang].you}</text>`;
     return h;
   }
   function legendMarkup(kaart, state, lang) {
@@ -267,7 +267,7 @@
           x0 = Math.min(x0, b.x); y0 = Math.min(y0, b.y); x1 = Math.max(x1, b.x + b.width); y1 = Math.max(y1, b.y + b.height);
         });
         // the province's own shape, but never taller than wide (so the block stays on screen)
-        const pad = 6;
+        const pad = 12;
         let w = x1 - x0 + 2 * pad, h = y1 - y0 + 2 * pad;
         if (w / h < 1.1) w = h * 1.1;
         const cx = (x0 + x1) / 2, cy = (y0 + y1) / 2;

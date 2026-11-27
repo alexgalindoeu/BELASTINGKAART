@@ -40,10 +40,13 @@
 <link rel="manifest" href="../fr/manifest.webmanifest">
 <link rel="stylesheet" href="../css/site.css">
 <link rel="stylesheet" href="../css/components.css">
+<link rel="stylesheet" href="../css/kaart.css">
+<link rel="preload" href="../data/kaart_be.json" as="fetch" type="application/json" crossorigin>
 <script defer src="../config.js"></script>
 <script defer src="../js/i18n.js"></script>
 <script defer src="../js/menu.js"></script>
 <script defer src="../js/ui.js"></script>
+<script defer src="../js/kaart.js"></script>
 <script defer src="../js/importe.js"></script>
 <script defer src="../js/formulario.js"></script>
 <script defer src="../js/sueldo_mes.js"></script>
@@ -72,6 +75,7 @@
     <a class="brand" href="../fr/" aria-label="Belastingkaart, accueil"><svg class="brand-icon" viewBox="0 -2 102 86" aria-hidden="true" focusable="false"><path class="p" fill-rule="evenodd" d="M16,4H62L77,18V28L68,37L84,52V66L70,80H2Z M28,16L25,33H57L62,28V21L57,16Z M23,47L19,68H64L70,62V54L63,47Z"/><polygon class="p2" points="46,80 60,80 99,30 91,18"/></svg><span class="brand-name">Belastingkaart</span></a>
     <nav class="nav" aria-label="Sections">
       <a href="#simulator">Simulateur</a>
+      <a href="../fr/carte/">Carte</a>
       <a href="../fr/methodologie/">Méthodologie</a>
       <a href="../fr/sources/">Sources</a>
       <a href="../fr/contact/">Contact</a>
@@ -103,10 +107,15 @@
         <p class="quickcalc-note">Calcul rapide pour un salarié isolé, sans enfant à charge. Dans le simulateur, vous indiquez votre famille, votre commune et votre régime de travail.</p>
       </div>
     </form>
-    <div class="cover-map" aria-labelledby="cover-map-title">
-      <h2 class="card-title" id="cover-map-title">Votre salaire dans chaque région</h2>
-      <div class="map-wrap" id="cover-map" data-map-slot></div>
-      <p class="note">Choisissez une région pour voir votre situation.</p>
+    <div class="cover-map" data-kaart data-kaart-src="../data/kaart_be.json" data-kaart-params="../data/parameters.json">
+      <h2 class="card-title" id="cover-map-title">Votre commune sur la carte</h2>
+      <div class="map-wrap" id="cover-map">
+        <svg class="kaart-svg" role="group" aria-labelledby="cover-map-title"></svg>
+        <div class="kaart-tip" hidden></div>
+      </div>
+      <div class="legend"></div>
+      <p class="note">Cliquez ou touchez une commune pour la choisir comme la vôtre, ou ouvrez la <a href="carte/">carte complète</a>.</p>
+      <p class="sr-only" aria-live="polite" data-kaart-live></p>
     </div>
     <p class="cover-fact">Un même salaire brut ne donne pas partout le même salaire net : <b>chaque commune</b> fixe sa propre taxe communale additionnelle à l’impôt des personnes physiques.</p>
   </section>

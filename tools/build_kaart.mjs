@@ -6,14 +6,13 @@
 //   npm run build:kaart -- --refresh download again even if the cache exists
 //   npm run check:kaart              schema + staleness check (see tools/lib/kaart.mjs)
 //
-// Source (see docs/sources/kaart_geometrie.md): Digitaal Vlaanderen, "Voorlopig referentiebestand
-// gemeentegrenzen 2025" (VRBG 2025), layer RefgemG10 (generalised to 10 m), WFS 2.0 GetFeature
-// as GeoJSON in EPSG:3812 (ETRS89 / Belgian Lambert 2008). The coordinates are already in Belgian
-// Lambert 2008, so the projection step is only a scale to the viewBox with the y axis flipped.
-//
-// Coverage today: the Flemish Region (285 municipalities). Brussels and Wallonia need a
-// Belgium-wide official file (NGI "Territorial Divisions / AdminVector", served from ac.ngi.be);
-// the data model already carries the three regions, and `coverage` says which are drawn.
+// Source (see docs/sources/kaart_geometrie.md): NGI-IGN, "Territorial Divisions" (AdminVector),
+// layer `municipality` (565 municipalities of Belgium, situation after the 2025 mergers), Esri
+// Shapefile in EPSG:3812 (ETRS89 / Belgian Lambert 2008), free open data under CC BY 4.0.
+// The coordinates are already in Belgian Lambert 2008 (a Lambert conformal conic for Belgium), so the
+// projection step is only a uniform scale to the viewBox with the y axis flipped.
+// Join key: the NIS code, against the official Statbel REFNIS 2025 list (web/data/gemeenten.json),
+// which gives the NL and FR names, the province and the region.
 import { createHash } from 'node:crypto';
 import { mkdir, readFile, writeFile, access } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
@@ -22,39 +21,50 @@ import { REGIONS, PROVINCES, KAART_PAGES, validateKaart, generatorHash, applyLis
 
 const ROOT = fileURLToPath(new URL('../', import.meta.url));
 const OUT = path.join(ROOT, 'web/data/kaart_be.json');
-const CACHE = path.join(ROOT, '.cache/kaart/vrbg2025_refgemg10_3812.geojson');
+export const CACHE = path.join(ROOT, '.cache/kaart/ngi_territorialdivisions_shp_3812.zip');
 const NAMES = path.join(ROOT, 'web/data/gemeenten.json');
 
 export const SOURCE = {
-  id: 'vrbg2025-refgemg10',
-  publisher: { nl: 'Digitaal Vlaanderen (Vlaamse overheid)', fr: 'Digitaal Vlaanderen (Gouvernement flamand)' },
-  title: 'Voorlopig referentiebestand gemeentegrenzen 2025 (VRBG 2025), RefgemG10',
-  url: 'https://geo.api.vlaanderen.be/VRBG2025/wfs?service=WFS&version=2.0.0&request=GetFeature&typeNames=VRBG2025:RefgemG10&outputFormat=application/json&srsName=EPSG:3812',
-  service: 'https://geo.api.vlaanderen.be/VRBG2025/wfs?service=WFS&request=GetCapabilities',
-  terms: 'https://www.vlaanderen.be/digitaal-vlaanderen/onze-diensten-en-platformen/geografische-webdiensten/gebruiksrecht-en-privacyverklaring-geografische-webdiensten',
-  metadata: 'https://metadata.vlaanderen.be/srv/dut/catalog.search#/metadata/72dca52e-b57d-4933-922c-d57ada0e0986',
-  attribution: { nl: 'Bron: Digitaal Vlaanderen, Voorlopig referentiebestand gemeentegrenzen 2025', fr: 'Source : Digitaal Vlaanderen, Voorlopig referentiebestand gemeentegrenzen 2025' },
+  id: 'ngi-territorialdivisions-municipality',
+  publisher: { nl: 'Nationaal Geografisch Instituut (NGI)', fr: 'Institut géographique national (IGN)' },
+  title: 'Territorial Divisions (AdminVector), layer municipality_3812',
+  url: 'https://ac.ngi.be/remoteclient-open/ngi-standard-open/Vectordata/TerritorialDivisions/TerritorialDivisions-All/1cd00540-b0ca-11ec-a863-186571a04de2_x-shapefile_3812.zip',
+  layer: 'municipality_3812',
+  catalogue: 'https://www.geo.be/catalog/details/1cd00540-b0ca-11ec-a863-186571a04de2?l=nl',
+  terms: 'https://ngi.be/beleid-rond-openheid-en-hergebruik-van-geografische-gegevens-van-het-ngi/',
+  licence: { id: 'CC-BY-4.0', url: 'https://creativecommons.org/licenses/by/4.0/', status: 'verified',
+    nl: 'Gratis open data van het NGI, licentie CC BY 4.0 (vermelding van het NGI als bron verplicht).',
+    fr: 'Données ouvertes gratuites de l’IGN, licence CC BY 4.0 (mention de l’IGN comme source obligatoire).' },
+  attribution: { nl: 'Territorial Divisions – © NGI-IGN, 2026, licentie CC BY 4.0', fr: 'Territorial Divisions – © NGI-IGN, 2026, licence CC BY 4.0' },
+  revised: '2026-07-16',
   crs: 'EPSG:3812',
   validFrom: '2025-01-01',
-  expectedCount: 285
+  expectedCount: 565
 };
 
 // Simplification and drawing settings. They are part of the generator hash, so changing
 // them makes check:kaart report the JSON as stale until it is rebuilt.
-export const SETTINGS = { width: 1000, pad: 8, simplify: '14%', decimals: 0 };
+export const SETTINGS = { width: 2000, pad: 16, simplify: 'interval=130', decimals: 0 };
 
 const sha256 = s => createHash('sha256').update(s).digest('hex');
 
+// Downloads the zip once (about 115 MB) into .cache/kaart/ and returns the municipality layer as GeoJSON.
 async function loadSource(refresh) {
   const cached = await access(CACHE).then(() => true, () => false);
-  if (cached && !refresh) return readFile(CACHE, 'utf8');
-  const res = await fetch(SOURCE.url);
-  if (!res.ok) throw new Error(`download failed: HTTP ${res.status} for ${SOURCE.url}`);
-  const text = await res.text();
-  if (!text.startsWith('{')) throw new Error('download is not GeoJSON (bot check or error page?)');
-  await mkdir(path.dirname(CACHE), { recursive: true });
-  await writeFile(CACHE, text);
-  return text;
+  if (!cached || refresh) {
+    const res = await fetch(SOURCE.url);
+    if (!res.ok) throw new Error(`download failed: HTTP ${res.status} for ${SOURCE.url}`);
+    const buf = Buffer.from(await res.arrayBuffer());
+    if (buf.subarray(0, 2).toString() !== 'PK') throw new Error('download is not a zip file (error page?)');
+    await mkdir(path.dirname(CACHE), { recursive: true });
+    await writeFile(CACHE, buf);
+  }
+  const zip = await readFile(CACHE);
+  const mapshaper = (await import('mapshaper')).default;
+  const out = await mapshaper.applyCommands(`-i "${CACHE}" -target ${SOURCE.layer} -o format=geojson`);
+  const name = Object.keys(out).find(k => k.startsWith(SOURCE.layer));
+  if (!name) throw new Error(`layer ${SOURCE.layer} not found in the zip`);
+  return { geojson: JSON.parse(out[name]), sha: sha256(zip) };
 }
 
 // ---- geometry helpers ---------------------------------------------------------------
@@ -93,22 +103,25 @@ const linePath = (geom, pt) => {
 };
 
 export async function buildKaart({ refresh = false } = {}) {
-  const raw = await loadSource(refresh);
-  const src = JSON.parse(raw);
-  const crs = src.crs?.properties?.name || '';
-  if (!/3812$/.test(crs)) throw new Error(`unexpected CRS ${crs}`);
+  const { geojson: src, sha } = await loadSource(refresh);
   // Join key: the NIS code. Names (NL and FR), region and province come from the official Statbel
-  // REFNIS 2025 list in web/data/gemeenten.json; the geometry only contributes the shape.
+  // REFNIS 2025 list in web/data/gemeenten.json; the geometry only contributes the shape. The NGI
+  // Dutch name must match REFNIS apart from accents (NGI writes e.g. Blegny, Genepiën).
   const namesText = await readFile(NAMES, 'utf8');
   const refnis = new Map(JSON.parse(namesText).municipalities.map(m => [m.nis, m]));
   const REGION_KEY = { flanders: 'VLG', brussels: 'BRU', wallonia: 'WAL' };
+  const fold = s => String(s).normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
+  const seen = new Set();
   for (const f of src.features) {
-    const nis = String(f.properties.NISCODE);
+    const nis = String(f.properties.niscode);
     const r = refnis.get(nis);
-    if (!r) throw new Error(`NIS ${nis} (${f.properties.NAAM}) is not in the REFNIS 2025 list`);
-    if (r.name_nl !== f.properties.NAAM) throw new Error(`NIS ${nis}: geometry name ${f.properties.NAAM} differs from REFNIS ${r.name_nl}`);
-    f.properties = { nis, nl: r.name_nl, fr: r.name_fr, prov: r.province_nis, region: REGION_KEY[r.region] };
+    if (!r) throw new Error(`NIS ${nis} (${f.properties.namedut}) is not in the REFNIS 2025 list`);
+    if (fold(r.name_nl) !== fold(f.properties.namedut)) throw new Error(`NIS ${nis}: NGI name ${f.properties.namedut} differs from REFNIS ${r.name_nl}`);
+    seen.add(nis);
+    const region = REGION_KEY[r.region];
+    f.properties = { nis, nl: r.name_nl, fr: r.name_fr, prov: r.province_nis || REGIONS[region].nis, region, all: 'BE' };
   }
+  for (const nis of refnis.keys()) if (!seen.has(nis)) throw new Error(`REFNIS ${nis} has no geometry`);
   const mapshaper = (await import('mapshaper')).default;
   const cmd = [
     '-i gem.json name=gem',
@@ -118,9 +131,11 @@ export async function buildKaart({ refresh = false } = {}) {
     '-dissolve prov target=gem + name=prov',
     '-innerlines target=prov + name=provinces',
     '-dissolve region target=gem + name=reg',
-    '-lines target=reg + name=region',
+    '-innerlines target=reg + name=region',
+    '-dissolve all target=gem + name=be',
+    '-lines target=be + name=national',
     '-points inner target=gem + name=anchors',
-    '-o target=gem,municipal,provinces,region,anchors format=geojson'
+    '-o target=gem,municipal,provinces,region,national,anchors format=geojson'
   ].join(' ');
   const out = await mapshaper.applyCommands(cmd, { 'gem.json': JSON.stringify(src) });
   const layer = n => { const j = JSON.parse(out[`${n}.json`]); return j.features || j.geometries.map(geometry => ({ geometry })); };
@@ -143,25 +158,23 @@ export async function buildKaart({ refresh = false } = {}) {
     schema: 1,
     source: {
       ...SOURCE,
-      licence: { status: 'pending', nl: 'Gebruiksvoorwaarden volgens de metadata van de dataset (metadata.vlaanderen.be); de licentie is nog niet geverifieerd.',
-        fr: 'Conditions d’utilisation selon les métadonnées du jeu de données (metadata.vlaanderen.be) ; la licence n’a pas encore été vérifiée.' },
       retrieved: process.env.KAART_RETRIEVED || new Date().toISOString().slice(0, 10),
-      sha256: sha256(raw)
+      sha256: sha
     },
     projection: { crs: 'EPSG:3812', name: 'ETRS89 / Belgian Lambert 2008', note: 'Coordinates scaled to the viewBox, y axis flipped (SVG).' },
     names: { file: 'web/data/gemeenten.json', source: 'Statbel, REFNIS 2025', sha256: sha256(namesText) },
     build: { generator: 'tools/build_kaart.mjs', generatorSha256: await generatorHash(), settings: SETTINGS, bboxLambert2008: bbox.map(v => Math.round(v)) },
     viewBox: [0, 0, SETTINGS.width, height],
-    coverage: ['VLG'],
+    coverage: ['VLG', 'BRU', 'WAL'],
     regions: REGIONS,
-    provinces: PROVINCES.map(({ nis, name, region }) => ({ nis, name, region })),
+    provinces: PROVINCES.map(({ nis, name, region, group }) => ({ nis, name, region, ...(group ? { group } : {}) })),
     count: municipalities.length,
     municipalities,
     borders: {
       municipal: layer('municipal').map(f => linePath(f.geometry, pt)).join(''),
       provinces: layer('provinces').map(f => linePath(f.geometry, pt)).join(''),
       region: layer('region').map(f => linePath(f.geometry, pt)).join(''),
-      national: ''
+      national: layer('national').map(f => linePath(f.geometry, pt)).join('')
     }
   };
   const errors = validateKaart(kaart);
