@@ -1,0 +1,10 @@
+/* Pensions section (nl/pensioenen/, fr/pensions/). Loaded after site.css and components.css,
+   only by those pages. Guide layout from components.css; only spacing for the stacked cards. */
+.pensioenen .prose > .card + .card,
+.pensioenen .prose > .page-actions + .card,
+.pensioenen .prose > .card + .page-actions { margin-top: 16px; }
+.pensioenen .card p + p, .pensioenen .card .table-scroll + p, .pensioenen .card p + .table-scroll,
+.pensioenen .card ul + p, .pensioenen .card p + ul { margin-top: 10px; }
+.pensioenen .data-table td { vertical-align: top; }
+.pensioenen .source-list { grid-template-columns: 1fr; }
+.pensioenen .source-list span { overflow-wrap: anywhere; }

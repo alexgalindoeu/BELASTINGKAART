@@ -17,7 +17,9 @@
     "test:smoke": "node test/browser/tools.smoke.mjs",
     "build:wonen": "node tools/build_wonen.mjs",
     "check:wonen": "node tools/build_wonen.mjs --check",
-    "build:kaart": "node tools/build_kaart.mjs",
+    "build:pensioenen": "node tools/build_pensioenen.mjs",
+    "check:pensioenen": "node tools/build_pensioenen.mjs --check",
+    "build:kaart":"node tools/build_kaart.mjs",
     "check:kaart": "node tools/check_kaart.mjs",
     "test:browser:kaart": "node test/browser/kaart.browser.mjs"
   },
