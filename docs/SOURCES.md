@@ -12,6 +12,7 @@ Last reviewed: 2026-11-25. Only official public authorities are permitted as tax
 | RSZ werkbonus | https://www.socialsecurity.be/employer/instructions/dmfa/nl/latest/instructions/deductions/workers_reductions/workbonus.html (and `2026-1`, `2026-2` versions) | Social work bonus tables per period; verbatim transcription in [sources/werkbonus_2026_rsz.md](sources/werkbonus_2026_rsz.md) |
 | RSZ special social-security contribution (NL) | https://www.socialsecurity.be/employer/instructions/dmfa/nl/latest/instructions/special_contributions/other_specialcontributions/specialsocialsecuritycontribution.html | Quarterly special employee social-security contribution and payroll withholding |
 | ONSS cotisation spéciale de sécurité sociale (FR) | https://www.socialsecurity.be/employer/instructions/dmfa/fr/latest/instructions/special_contributions/other_specialcontributions/specialsocialsecuritycontribution.html | Same official rule in French; use for NL/FR terminology parity |
+| RSVZ / INASTI | https://www.rsvz.be/ · https://www.inasti.be/ | Social status of the self-employed: who is self-employed, contributions 2026 (brochure "Bijdragen 2026 / Cotisations 2026"), rights; claim log in [sources/zelfstandigen_2026-11-25.md](sources/zelfstandigen_2026-11-25.md) |
 | Vlaamse overheid | https://www.vlaanderen.be/ | Flemish taxes and regional rules |
 | Vlaamse Belastingdienst | https://www.belasting.vlaanderen.be/ | Flemish tax administration and official rules |
 | Brussels Fiscaliteit | https://fiscaliteit.brussels/ | Brussels regional taxes |
