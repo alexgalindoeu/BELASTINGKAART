@@ -7,7 +7,7 @@ import { writeFile, readFile, mkdir } from 'node:fs/promises';
 import path from 'node:path';
 import { SITE, WEB } from './lib/pages.mjs';
 import { applyHead } from './lib/head.mjs';
-import { footerColumns, footerSmall } from './lib/shell.mjs';
+import { navHtml, footerHtml } from './lib/shell.mjs';
 export { S as SOURCES, R as ROUTES };
 const DATE = '2026-11-25';
 const VL = 'https://www.vlaanderen.be/belastingen-en-begroting/vlaamse-belastingen';
@@ -41,7 +41,6 @@ const T = {
     skip: 'Naar de inhoud', home: 'Belastingkaart, startpagina', sections: 'Secties',
     theme: 'aria-label="Thema: automatisch (zoals het systeem). Wijzigen naar licht" title="Thema: automatisch (zoals het systeem)"',
     switchLabel: 'Version française', cta: 'Naar de simulator', crumbHome: 'Startpagina',
-    nav: [['#simulator', 'Simulator'], ['kaart/', 'Kaart'], ['methodologie/', 'Methodologie'], ['bronnen/', 'Bronnen'], ['contact/', 'Contact']],
     updated: 'Bijgewerkt op', updatedLong: '25 november 2026',
     footerIntro: '<b>Belastingkaart</b> is een onafhankelijk informatieproject. Geen officiële overheidswebsite en geen fiscaal advies.', footerNav: 'Meer over Belastingkaart', langTitle: 'Taal',
     sourcesH2: 'Bronnen', consulted: 'geraadpleegd op 25-11-2026',
@@ -52,7 +51,6 @@ const T = {
     skip: 'Aller au contenu', home: 'Belastingkaart, accueil', sections: 'Sections',
     theme: 'aria-label="Thème : automatique (comme le système). Passer en mode clair" title="Thème : automatique (comme le système)"',
     switchLabel: 'Nederlandse versie', cta: 'Vers le simulateur', crumbHome: 'Accueil',
-    nav: [['#simulator', 'Simulateur'], ['carte/', 'Carte'], ['methodologie/', 'Méthodologie'], ['sources/', 'Sources'], ['contact/', 'Contact']],
     updated: 'Mis à jour le', updatedLong: '25 novembre 2026',
     footerIntro: '<b>Belastingkaart</b> est un projet d’information indépendant. Ce n’est pas un site officiel des pouvoirs publics ni un conseil fiscal.', footerNav: 'En savoir plus sur Belastingkaart', langTitle: 'Langue',
     sourcesH2: 'Sources', consulted: 'consulté le 25-11-2026',
@@ -734,7 +732,6 @@ ${faq.map(([q, ans]) => `    <details><summary>${q}</summary><p>${ans}</p></deta
 <ul class="link-list source-list">
 ${page.sources.map(k => `<li><a href="${S[k].url}" rel="noopener">${S[k][lang]}</a><span>${S[k].url} · ${S[k].org} · ${t.consulted}</span></li>`).join('\n')}
 </ul>`));
-  const nav = t.nav.map(([h, l]) => `      <a href="${up}${lang}/${h}">${l}</a>`).join('\n');
   return `<!doctype html>
 <html lang="${lang}">
 <head>
@@ -766,9 +763,7 @@ ${page.sources.map(k => `<li><a href="${S[k].url}" rel="noopener">${S[k][lang]}<
 <header class="appbar">
   <div class="appbar-in">
     <a class="brand" href="${up}${lang}/" aria-label="${t.home}">${BRAND}<span class="brand-name">Belastingkaart</span></a>
-    <nav class="nav" aria-label="${t.sections}">
-${nav}
-    </nav>
+    ${navHtml(lang, route)}
     <div class="appbar-end">
       <button class="btn-icon theme-btn" id="theme-toggle" type="button" ${t.theme}>${THEME}</button>
       <a class="lang-switch" href="${up}${other}" hreflang="${lang === 'nl' ? 'fr-BE' : 'nl-BE'}" lang="${lang === 'nl' ? 'fr' : 'nl'}" aria-label="${t.switchLabel}">${lang === 'nl' ? 'FR' : 'NL'}</a>
@@ -787,16 +782,7 @@ ${blocks.join('\n')}
 ${tail.join('\n')}
   </div>
 </main>
-<footer class="footer">
-  <div class="container footer-in">
-    <p>${t.footerIntro}</p>
-    <nav class="footer-nav" aria-label="${t.footerNav}">
-      ${footerColumns(lang, route)}
-      <div><p class="footer-title">${t.langTitle}</p><ul><li><a href="${up}${nl}" hreflang="nl-BE" lang="nl">Nederlands</a></li><li><a href="${up}${fr}" hreflang="fr-BE" lang="fr">Français</a></li></ul></div>
-    </nav>
-    <p class="footer-small">${footerSmall(lang)}</p>
-  </div>
-</footer>
+${footerHtml(lang, route)}
 </body>
 </html>
 `;
