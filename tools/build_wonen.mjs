@@ -7,7 +7,7 @@ import { writeFile, readFile, mkdir } from 'node:fs/promises';
 import path from 'node:path';
 import { SITE, WEB } from './lib/pages.mjs';
 import { applyHead } from './lib/head.mjs';
-import { navHtml, footerHtml } from './lib/shell.mjs';
+import { navHtml, footerHtml, finalizePage } from './lib/shell.mjs';
 export { S as SOURCES, R as ROUTES };
 const DATE = '2026-11-25';
 const VL = 'https://www.vlaanderen.be/belastingen-en-begroting/vlaamse-belastingen';
@@ -40,7 +40,7 @@ const T = {
   nl: {
     skip: 'Naar de inhoud', home: 'Belastingkaart, startpagina', sections: 'Secties',
     theme: 'aria-label="Thema: automatisch (zoals het systeem). Wijzigen naar licht" title="Thema: automatisch (zoals het systeem)"',
-    switchLabel: 'Version française', cta: 'Naar de simulator', crumbHome: 'Startpagina',
+    switchLabel: 'FR – Version française', cta: 'Naar de simulator', crumbHome: 'Startpagina',
     updated: 'Bijgewerkt op', updatedLong: '25 november 2026',
     footerIntro: '<b>Belastingkaart</b> is een onafhankelijk informatieproject. Geen officiële overheidswebsite en geen fiscaal advies.', footerNav: 'Meer over Belastingkaart', langTitle: 'Taal',
     sourcesH2: 'Bronnen', consulted: 'geraadpleegd op 25-11-2026',
@@ -50,7 +50,7 @@ const T = {
   fr: {
     skip: 'Aller au contenu', home: 'Belastingkaart, accueil', sections: 'Sections',
     theme: 'aria-label="Thème : automatique (comme le système). Passer en mode clair" title="Thème : automatique (comme le système)"',
-    switchLabel: 'Nederlandse versie', cta: 'Vers le simulateur', crumbHome: 'Accueil',
+    switchLabel: 'NL – Nederlandse versie', cta: 'Vers le simulateur', crumbHome: 'Accueil',
     updated: 'Mis à jour le', updatedLong: '25 novembre 2026',
     footerIntro: '<b>Belastingkaart</b> est un projet d’information indépendant. Ce n’est pas un site officiel des pouvoirs publics ni un conseil fiscal.', footerNav: 'En savoir plus sur Belastingkaart', langTitle: 'Langue',
     sourcesH2: 'Sources', consulted: 'consulté le 25-11-2026',
@@ -791,7 +791,7 @@ ${footerHtml(lang, route, lang === 'nl' ? fr : nl)}
 const pages = {};
 for (const page of PAGES) for (const lang of ['nl', 'fr']) {
   const route = R[page.key][lang === 'nl' ? 0 : 1];
-  pages[route] = applyHead(render(page, lang), route);
+  pages[route] = applyHead(finalizePage(render(page, lang), lang), route);
 }
 if (process.argv.includes('--check')) {
   const stale = [];

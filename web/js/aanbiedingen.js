@@ -161,7 +161,7 @@
     $("of-table").innerHTML = `<caption class="sr-only">${e(T.caption)}</caption><thead><tr>${T.cols.map((h, i) => `<th scope="col"${i ? ' class="num"' : ""}>${e(h)}</th>`).join("")}</tr></thead><tbody>` +
       rows.map((r, i) => { const c = i >= 6 ? "num wrap" : "num"; return `<tr${r[4] ? ' class="total"' : ""}><th scope="row">${e(r[0])}</th><td class="${c}">${e(r[1])}</td><td class="${c}">${e(r[2])}</td><td class="${c}">${e(r[3])}</td></tr>`; }).join("") + "</tbody>";
     $("of-gross").innerHTML = `<div class="result-status"><span class="chip yours">${e(T.grossChip)}</span></div>
-      <h3>${e(T.headline[c.higher])}</h3>
+      <h2 class="result-title">${e(T.headline[c.higher])}</h2>
       <p class="tool-figure-label">${e(T.figureLabel)}</p>
       <p class="tool-figure" id="of-diff">${e(eur(Math.abs(c.diff.total)))} <small>${lang === "fr" ? "brut" : "bruto"}</small></p>
       <p>${e(T.perMonth(eur(Math.abs(c.diff.averageMonthly))))}</p>
