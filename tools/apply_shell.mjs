@@ -5,7 +5,7 @@
 // Generators (wonen, zelfstandigen, validation…) call the same helpers, so their --check agrees.
 import { readFile, writeFile } from 'node:fs/promises';
 import { discoverPages, SITE } from './lib/pages.mjs';
-import { navHtml, footerHtml } from './lib/shell.mjs';
+import { navHtml, footerHtml, finalizePage } from './lib/shell.mjs';
 
 const check = process.argv.includes('--check');
 const stale = [];
@@ -13,7 +13,7 @@ for (const page of await discoverPages()) {
   const other = page.alternates[page.lang === 'nl' ? 'fr-BE' : 'nl-BE'];
   const pair = other && other.startsWith(SITE + '/') ? other.slice(SITE.length + 1) : null;
   const html = await readFile(page.file, 'utf8');
-  const out = html
+  const out = finalizePage(html, page.lang)
     .replace(/<nav class="nav"[^>]*>[\s\S]*?<\/nav>/, () => navHtml(page.lang, page.route))
     .replace(/<footer class="footer">[\s\S]*?<\/footer>/, () => footerHtml(page.lang, page.route, pair));
   if (out === html) continue;

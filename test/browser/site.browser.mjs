@@ -69,6 +69,74 @@ try {
     await ctx.close();
   });
 
+  // Audit 2026-11-27, P1-3: WCAG 1.4.10 Reflow at 320 px (no sideways scroll at all).
+  await check('all pages: no horizontal scroll at 320 px', async () => {
+    const ctx = await browser.newContext({ viewport: { width: 320, height: 700 }, locale: 'nl-BE' });
+    const page = await ctx.newPage();
+    const bad = [];
+    for (const route of routes) {
+      await page.goto(`${ORIGIN}/${route}`, { waitUntil: 'networkidle' });
+      const [overflow, scrolled] = await page.evaluate(() => { window.scrollTo(200, 0); return [document.documentElement.scrollWidth - document.documentElement.clientWidth, window.scrollX]; });
+      if (overflow > 0 || scrolled > 0) bad.push(`${route}: ${overflow}px`);
+    }
+    assert.deepEqual(bad, []);
+    await ctx.close();
+  });
+
+  // Audit P1-1: the language switch's accessible name starts with its visible text (2.5.3).
+  await check('language switch: accessible name contains the visible text', async () => {
+    const ctx = await browser.newContext({ viewport: { width: 1280, height: 800 }, locale: 'nl-BE' });
+    const page = await ctx.newPage();
+    for (const route of ['nl/', 'fr/', 'nl/methodologie/', 'fr/logement/']) {
+      await page.goto(`${ORIGIN}/${route}`, { waitUntil: 'networkidle' });
+      const link = page.locator('.lang-switch');
+      const [text, name] = [(await link.innerText()).trim(), await link.getAttribute('aria-label')];
+      assert.ok(name.startsWith(text + ' '), `${route}: "${name}" does not start with "${text}"`);
+    }
+    await ctx.close();
+  });
+
+  // Audit P1-2: the map is no invisible Tab stop, and a focused municipality gets a visible ring.
+  for (const scheme of ['light', 'dark']) {
+    await check(`map (${scheme}): no invisible keyboard stop, two-colour focus ring on the municipality`, async () => {
+      const ctx = await browser.newContext({ viewport: { width: 1280, height: 900 }, locale: 'nl-BE', colorScheme: scheme });
+      const page = await ctx.newPage();
+      await page.goto(`${ORIGIN}/nl/kaart/`, { waitUntil: 'networkidle' });
+      let ring = null;
+      for (let i = 0; i < 60 && !ring; i++) {
+        await page.keyboard.press('Tab');
+        const state = await page.evaluate(() => {
+          const a = document.activeElement;
+          if (a && a.matches('svg.kaart-svg')) return { svg: true };
+          if (!a || !a.matches('.gem')) return null;
+          const halo = document.querySelector('.kaart-svg .gem-ring-halo'), r = document.querySelector('.kaart-svg .gem-ring');
+          return { halo: halo && getComputedStyle(halo).stroke, ring: r && getComputedStyle(r).stroke, d: r && r.getAttribute('d') === a.getAttribute('d') };
+        });
+        assert.ok(!state || !state.svg, 'the SVG itself took the keyboard focus');
+        if (state) ring = state;
+      }
+      assert.ok(ring, 'a municipality received the keyboard focus');
+      assert.ok(ring.halo && ring.ring && ring.halo !== ring.ring && ring.d, JSON.stringify(ring));
+      await ctx.close();
+    });
+  }
+
+  // Audit P1-4: the 404 skip link stays on the 404 page (also under the project path).
+  for (const base of ['', '/BELASTINGKAART']) {
+    await check(`404${base ? ' under ' + base : ''}: the skip link moves focus to the content and stays on the page`, async () => {
+      const ctx = await browser.newContext({ viewport: { width: 1280, height: 800 }, locale: 'nl-BE' });
+      const page = await ctx.newPage();
+      await page.goto(`${ORIGIN}${base}/no/such/page/`, { waitUntil: 'networkidle' });
+      await page.keyboard.press('Tab');
+      assert.match(await page.evaluate(() => document.activeElement.className), /skip-link/);
+      await page.keyboard.press('Enter');
+      await page.waitForTimeout(300);
+      assert.equal(new URL(page.url()).pathname, `${base}/no/such/page/`);
+      assert.equal(await page.evaluate(() => document.activeElement.id), 'content');
+      await ctx.close();
+    });
+  }
+
   for (const base of ['', '/BELASTINGKAART']) {
     await check(`French browser${base ? ' under ' + base : ''}: root goes to /fr/, 404 is French only`, async () => {
       const ctx = await browser.newContext({ locale: 'fr-BE', viewport: { width: 390, height: 844 } });

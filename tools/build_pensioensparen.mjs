@@ -11,7 +11,7 @@ import path from 'node:path';
 import { SITE, WEB } from './lib/pages.mjs';
 import { fillFigures } from './lib/figures.mjs';
 import { applyHead } from './lib/head.mjs';
-import { navHtml, footerHtml } from './lib/shell.mjs';
+import { navHtml, footerHtml, finalizePage } from './lib/shell.mjs';
 export { S as SOURCES, R as ROUTES, CONSULTED };
 
 const DATE = '2026-11-27';
@@ -45,7 +45,7 @@ const T = {
   nl: {
     skip: 'Naar de inhoud', home: 'Belastingkaart, startpagina',
     theme: 'aria-label="Thema: automatisch (zoals het systeem). Wijzigen naar licht" title="Thema: automatisch (zoals het systeem)"',
-    switchLabel: 'Version française', cta: 'Naar de simulator', crumbHome: 'Startpagina', section: 'Pensioensparen',
+    switchLabel: 'FR – Version française', cta: 'Naar de simulator', crumbHome: 'Startpagina', section: 'Pensioensparen',
     updated: 'Bijgewerkt op', updatedLong: '27 november 2026',
     faqH2: 'Veelgestelde vragen', sourcesH2: 'Bronnen', consulted: `geraadpleegd op ${CONSULTED}`, org: 'FOD Financiën, Fisconetplus',
     sourcesNote: 'Alleen officiële teksten van de FOD Financiën (Fisconetplus), alle geraadpleegd op 27 november 2026. De citaten staan in ons bronnenregister.',
@@ -55,7 +55,7 @@ const T = {
   fr: {
     skip: 'Aller au contenu', home: 'Belastingkaart, accueil',
     theme: 'aria-label="Thème : automatique (comme le système). Passer en mode clair" title="Thème : automatique (comme le système)"',
-    switchLabel: 'Nederlandse versie', cta: 'Vers le simulateur', crumbHome: 'Accueil', section: 'Épargne-pension',
+    switchLabel: 'NL – Nederlandse versie', cta: 'Vers le simulateur', crumbHome: 'Accueil', section: 'Épargne-pension',
     updated: 'Mis à jour le', updatedLong: '27 novembre 2026',
     faqH2: 'Questions fréquentes', sourcesH2: 'Sources', consulted: `consulté le ${CONSULTED}`, org: 'SPF Finances, Fisconetplus',
     sourcesNote: 'Uniquement des textes officiels du SPF Finances (Fisconetplus), tous consultés le 27 novembre 2026. Les citations figurent dans notre registre des sources.',
@@ -604,7 +604,7 @@ ${footerHtml(lang, route, other)}
 export const pages = {};
 for (const key of Object.keys(R)) for (const lang of ['nl', 'fr']) {
   const route = R[key][lang === 'nl' ? 0 : 1];
-  pages[route] = applyHead(fillFigures(render(key, lang)), route);
+  pages[route] = applyHead(finalizePage(fillFigures(render(key, lang)), lang), route);
 }
 if (process.argv.includes('--check')) {
   const stale = [];

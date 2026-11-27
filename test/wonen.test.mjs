@@ -44,7 +44,7 @@ test('every housing page ends with official sources consulted on 25-11-2026', as
     const sources = body.match(/<section class="card sources">[\s\S]*?<\/section>/)?.[0];
     assert.ok(sources, route + ' has a sources card');
     assert.ok(body.trimEnd().replace(/\s*<\/div>\s*<\/main>$/, '').endsWith('</section>') && body.lastIndexOf('class="card sources"') > body.lastIndexOf('class="card faq"'), route + ': sources come last');
-    const items = Array.from(sources.matchAll(/<li><a href="([^"]+)"[^>]*>[^<]+<\/a><span>([^<]+)<\/span><\/li>/g));
+    const items = Array.from(sources.matchAll(/<li><a href="([^"]+)"[^>]*>(?:[^<]|<span lang="(?:nl|fr)">[^<]*<\/span>)+<\/a><span>([^<]+)<\/span><\/li>/g));
     assert.ok(items.length >= 3, route);
     for (const [, url, meta] of items) {
       assert.match(url, OFFICIAL, `${route}: ${url}`);
