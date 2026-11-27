@@ -1,0 +1,123 @@
+meta:
+  country: BE
+  jurisdiction: federal
+  income_year: 2026
+  assessment_year: null
+  status: partial
+  notes: >-
+    Social contributions of self-employed persons (RSVZ / INASTI) for contribution year
+    2026, shown on web/nl/zelfstandigen/ and web/fr/independants/. Claim -> quote -> URL log:
+    docs/sources/zelfstandigen_2026-11-25.md. Information only: Belastingkaart does not
+    calculate a personal contribution.
+
+contributions_2026:
+  value:
+    reference_year: 2023
+    revaluation_coefficient: 1.07236269
+    main_occupation:
+      start_quarterly: 890.42
+      primostarter_first_quarter: 771.90
+      rate_low: 0.2050
+      rate_high: 0.1416
+      ceiling_low: 75024.54
+      ceiling_high: 110562.42
+      minimum_income: 17374.08
+      minimum_quarterly: 890.42
+      maximum_quarterly: 5103.05
+    spouse_maxi_status:
+      minimum_income: 7632.44
+      minimum_quarterly: 391.16
+      maximum_quarterly: 5103.05
+    side_occupation:
+      no_contribution_below: 1922.16
+      minimum_quarterly: 98.51
+      maximum_quarterly: 5103.05
+  status: confirmed
+  jurisdiction: federal
+  income_year: 2026
+  assessment_year: null
+  effective_from: 2026-01-01
+  effective_to: 2026-12-31
+  source_name: RSVZ / INASTI
+  source_url: https://www.rsvz.be/sites/rsvz/files/2024-01/folder_sociale_bijdragen.pdf
+  source_url_fr: https://www.rsvz.be/sites/rsvz/files/2024-01/folder_cotisations_sociales.pdf
+  source_title: "RSVZ, Bijdragen 2026 – Voornaamste categorieën van verzekeringsplichtigen, Refertejaar 2023 (januari 2026)"
+  retrieved_at: 2026-11-27
+  unit: EUR_per_quarter_EUR_per_year_and_rates
+  rounding: amounts as published by RSVZ; no calculation
+  notes: >-
+    Verbatim (folder 'Januari 2026', p. 1–4, re-checked 2026-11-27): 'Bijdragen 2026';
+    'Refertejaar 2023 – Herwaarderingscoëfficiënt: 1,07236269'; main occupation 'bij begin
+    van activiteit: tot het einde van het derde volledige kalenderjaar 890,42'; 'eerste
+    kwartaal van een primostarter 771,90'; '20,50 % op het gedeelte van de geherwaardeerde
+    beroepsinkomsten van het refertejaar dat 75.024,54 EUR niet overschrijdt en op een
+    minimuminkomen van 17.374,08 EUR'; '14,16 % op het gedeelte [...] hoger dan 75.024,54 EUR
+    zonder 110.562,42 EUR te overschrijden'; 'minimumbijdrage per kwartaal 890,42';
+    'maximumbijdrage per kwartaal 5.103,05'. Meewerkende echtgenoot, maxistatuut: 'op een
+    minimuminkomen van 7.632,44 EUR'; 'minimumbijdrage per kwartaal 391,16'. Bijberoep:
+    'voor beroepsinkomsten van het bijdragejaar lager dan 1.922,16 EUR 0'; 'minimumbijdrage
+    per kwartaal 98,51'. Definitive contributions use the same rates on 'de
+    beroepsinkomsten van het bijdragejaar'. FR folder 'Janvier 2026' has identical figures.
+    Management fees of the social insurance fund are not included.
+
+spouse_income_limit:
+  value: 3000
+  status: provisional
+  jurisdiction: federal
+  income_year: 2026
+  assessment_year: null
+  effective_from: null
+  effective_to: null
+  source_name: RSVZ / INASTI
+  source_url: https://www.rsvz.be/nl/wat-betekent-dat-juist-meewerkende-echtgenoot
+  source_title: "RSVZ, Wat betekent dat juist: meewerkende echtgenoot?"
+  retrieved_at: 2026-11-27
+  unit: EUR_per_year
+  rounding: not_applicable
+  notes: >-
+    Verbatim: 'geen eigen inkomen van meer dan 3.000 euro per jaar hebt uit een zelfstandige
+    beroepsactiviteit (bruto-inkomsten verminderd met de beroepskosten)'. Provisional: the
+    page states no year or effective date. Not shown as a figure on the pages until a dated
+    official source is found.
+
+affiliation_fine:
+  value:
+    minimum: 500
+    maximum: 2000
+  status: provisional
+  jurisdiction: federal
+  income_year: 2026
+  assessment_year: null
+  effective_from: null
+  effective_to: null
+  source_name: RSVZ / INASTI
+  source_url: https://www.rsvz.be/nl/faq/aansluiten-bij-een-socialeverzekeringsfonds-0
+  source_title: "RSVZ, Aansluiten bij een socialeverzekeringsfonds"
+  retrieved_at: 2026-11-27
+  unit: EUR
+  rounding: not_applicable
+  notes: >-
+    Verbatim: 'riskeer je een administratieve boete van 500 euro tot 2.000 euro'.
+    Provisional: no year or effective date on the page. Not shown as a figure.
+
+side_occupation_reduced_band:
+  value:
+    from: 1922.16
+    below: 17374.08
+  status: provisional
+  jurisdiction: federal
+  income_year: 2026
+  assessment_year: null
+  effective_from: null
+  effective_to: null
+  source_name: RSVZ / INASTI
+  source_url: https://www.rsvz.be/nl/zelfstandige-bijberoep
+  source_title: "RSVZ, Zelfstandige in bijberoep"
+  retrieved_at: 2026-11-27
+  unit: EUR_per_year
+  rounding: not_applicable
+  notes: >-
+    Verbatim: 'inkomen vanaf 1.922,16 euro tot 17.374,08 euro: je betaalt een verminderde
+    bijdrage.' The amounts equal the 2026 folder amounts, but the page itself states no year,
+    and the folder does not describe this band for bijberoep. Provisional; the band is not
+    shown as a figure. The 1.922,16 threshold on the pages comes from contributions_2026.

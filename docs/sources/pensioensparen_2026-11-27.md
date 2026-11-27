@@ -6,6 +6,8 @@
 - **Transcription:** verbatim, whitespace normalised; superscripts of article numbers written as "145/8". The circular 2018/C/72 is quoted for the mechanism of the choice; its euro amounts are the 2018 base amounts (625 / 800) and its examples use assessment year 2019 amounts, so no figure is taken from it.
 - **Not stated by these sources, therefore not on the pages:** the term "taxe anticipative" (no official French source found; the French pages use "taxe sur l’épargne à long terme"), the tax treatment of payments made between 60 and 65, municipal surcharges on separately taxed pension savings, and any amount of tax for a given saver.
 
+- **Parameters (2026-11-27):** the ceilings and rates on these pages now live in `params/2026/pensioensparen.yaml`, all `confirmed`. The generator writes `{{pensioensparen.…}}` tokens (`tools/lib/figures.mjs`). Art. 145/8 was re-checked on 27-11-2026.
+
 ## Documents
 
 | GUID | Title | URL |

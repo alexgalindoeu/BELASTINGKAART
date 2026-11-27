@@ -1,0 +1,172 @@
+meta:
+  country: BE
+  jurisdiction: federal
+  income_year: 2026
+  assessment_year: 2027
+  status: partial
+  notes: >-
+    Pension savings (pensioensparen / épargne-pension) and long-term savings, income year
+    2026 / assessment year 2027, shown on web/nl/pensioensparen/ and web/fr/epargne-pension/.
+    Claim -> quote -> URL log: docs/sources/pensioensparen_2026-11-27.md. Only legal ceilings
+    and rates; Belastingkaart computes no personal amount.
+
+ceilings:
+  value:
+    standard: 1050
+    higher_on_choice: 1350
+    royal_decree_maximum: 1680
+  status: confirmed
+  jurisdiction: federal
+  income_year: 2026
+  assessment_year: 2027
+  effective_from: 2026-01-01
+  effective_to: 2026-12-31
+  source_name: FOD Financiën / SPF Finances — Fisconet
+  source_url: https://www.minfin.fgov.be/myminfin-web/pages/public/fisconet/document/d811dab7-9607-417e-ba02-1c25e129bb8a
+  source_url_fr: https://www.minfin.fgov.be/myminfin-web/pages/public/fisconet/document/62bf4033-a88e-4a46-bd41-a7a9eb2b0a91
+  source_title: "Artikel 145/8, WIB 92 (inkomsten 2026)"
+  retrieved_at: 2026-11-27
+  unit: EUR_per_taxable_period_per_taxpayer
+  rounding: not_applicable
+  notes: >-
+    Verbatim (re-checked 2026-11-27): 'Het bedrag dat voor vermindering in aanmerking komt is
+    beperkt tot 1.050 euro (geïndexeerd bedrag) per belastbaar tijdperk.'; 'met een maximum
+    van 1.350 euro (geïndexeerd bedrag) in aanmerking te nemen voor de belastingvermindering'
+    after an irrevocable prior choice valid for that taxable period only; the King may raise
+    the ceiling 'tot ten hoogste 1.680 euro (geïndexeerd bedrag)'. Each spouse who personally
+    holds a contract is entitled to the reduction.
+
+indexation_base_amounts:
+  value:
+    standard: 625
+    higher_on_choice: 800
+    royal_decree_maximum: 1000
+    long_term_first_slice: 1250
+    long_term_maximum: 1500
+  status: confirmed
+  jurisdiction: federal
+  income_year: 2026
+  assessment_year: 2027
+  effective_from: 2026-01-01
+  effective_to: 2026-12-31
+  source_name: FOD Financiën / SPF Finances — Fisconet
+  source_url: https://www.minfin.fgov.be/myminfin-web/pages/public/fisconet/document/e3a471be-e270-4962-9fbf-67ce0d7571f0
+  source_url_fr: https://www.minfin.fgov.be/myminfin-web/pages/public/fisconet/document/042cb526-403e-4f40-9a45-dbccd0a12583
+  source_title: "Automatische indexering – Inkomsten 2026 – Aanslagjaar 2027"
+  retrieved_at: 2026-11-27
+  unit: EUR_base_amount_before_indexation
+  rounding: not_applicable
+  notes: >-
+    Indexation table (text layer without spaces): 'Beperking van de betalingen voor het
+    pensioensparen/(1):6251.050'; '(1) artikel 63/4bis, KB/WIB 928001.350'; '1.0001.680';
+    'Berekening van het maximale bedrag van levensverzekeringspremies en
+    kapitaalaflossingen:1.2502.040' and 1.500 -> 2.450. Base amounts before indexation, shown
+    for context only.
+
+reduction_rates:
+  value:
+    standard: 0.30
+    higher_ceiling: 0.25
+  status: confirmed
+  jurisdiction: federal
+  income_year: 2026
+  assessment_year: 2027
+  effective_from: 2026-01-01
+  effective_to: 2026-12-31
+  source_name: FOD Financiën / SPF Finances — Fisconet
+  source_url: https://www.minfin.fgov.be/myminfin-web/pages/public/fisconet/document/bbab9898-8738-4184-9278-187768359a3b
+  source_url_fr: https://www.minfin.fgov.be/myminfin-web/pages/public/fisconet/document/2c5852d2-17b5-4dd0-911b-9c55267b20a7
+  source_title: "Artikel 145/2, WIB 92 (inkomsten 2026)"
+  retrieved_at: 2026-11-27
+  unit: fraction_of_payments
+  rounding: not_applicable
+  notes: >-
+    Verbatim: 'De belastingvermindering is gelijk aan 30 % van de werkelijk betaalde
+    uitgaven.'; 'berekend tegen het tarief van 25 %, voor de bedragen vermeld in artikel
+    145/8, § 1, derde lid.' Circular 2018/C/72: the 25 % applies to the whole amount when the
+    higher ceiling is chosen and exceeded.
+
+long_term_savings_ceiling:
+  value:
+    first_slice_rate: 0.15
+    first_slice: 2040
+    remainder_rate: 0.06
+    maximum: 2450
+  status: confirmed
+  jurisdiction: federal
+  income_year: 2026
+  assessment_year: 2027
+  effective_from: 2026-01-01
+  effective_to: 2026-12-31
+  source_name: FOD Financiën / SPF Finances — Fisconet
+  source_url: https://www.minfin.fgov.be/myminfin-web/pages/public/fisconet/document/f3ed8f21-ac56-4810-aeb6-f648afbb7f35
+  source_url_fr: https://www.minfin.fgov.be/myminfin-web/pages/public/fisconet/document/c24c4324-cfc1-4b8e-b4a8-c1b5e5b3f638
+  source_title: "Artikel 145/6, WIB 92 (inkomsten 2026)"
+  retrieved_at: 2026-11-27
+  unit: fraction_of_professional_income_and_EUR
+  rounding: not_applicable
+  notes: >-
+    Verbatim: '15 % van de eerste schijf van 2.040 euro (geïndexeerd bedrag) van het totale
+    beroepsinkomen, met uitsluiting van het beroepsinkomen dat overeenkomstig artikel 171
+    wordt belast, en 6 % van het overige, met een maximum van 2.450 euro (geïndexeerd
+    bedrag);' reduced by the expenses for the own home eligible under art. 145/37 and 145/39.
+
+long_term_savings_tax:
+  value:
+    pension_savings: 0.08
+    general: 0.10
+    article_171_f_g: 0.33
+    advance_levy_2015_2019: 0.01
+  status: confirmed
+  jurisdiction: federal
+  income_year: 2026
+  assessment_year: null
+  effective_from: 2026-01-01
+  effective_to: 2026-12-31
+  source_name: FOD Financiën / SPF Finances — Fisconet
+  source_url: https://www.minfin.fgov.be/myminfin-web/pages/public/fisconet/document/cc7452c2-9a8f-45fd-9853-2661e7699a15
+  source_url_fr: https://www.minfin.fgov.be/myminfin-web/pages/public/fisconet/document/fc8415b7-c41c-43cc-823c-aaa496f01c1b
+  source_title: "Artikel 185, Wetboek diverse rechten en taksen (taks op het lange termijnsparen)"
+  retrieved_at: 2026-11-27
+  unit: fraction_of_savings_or_theoretical_surrender_value
+  rounding: not_applicable
+  notes: >-
+    Verbatim: '§ 2. De taks wordt vastgesteld op 10 pct.:'; '§ 2/1. In afwijking van § 2 wordt
+    de taks vastgesteld op 8 pct. voor de theoretische afkoopwaarde van de spaarverzekeringen
+    in het kader van pensioensparen en op het spaartegoed geplaatst op een collectieve of
+    individuele spaarrekening gevestigd voor het pensioensparen.'; 'wordt de taks vastgesteld
+    op 33 pct.' (payment under art. 171, 1°, f and g); '§ 4. Gedurende de jaren 2015 tot 2019
+    wordt elk jaar een vervroegde inning van 1 pct. uitgevoerd van de taks als bedoeld in §
+    2/1.' The 1 % is a historical levy (2015–2019), shown only as such; it is deducted from the
+    tax due at 60 (art. 186). Long-term savings tax is not tied to an assessment year.
+
+separate_taxation_rates:
+  value:
+    pension_savings_payout: 0.08
+    pension_savings_other_payout: 0.33
+    life_insurance_normal: 0.10
+    life_insurance_other_surrender: 0.33
+  status: confirmed
+  jurisdiction: federal
+  income_year: 2026
+  assessment_year: 2027
+  effective_from: 2026-01-01
+  effective_to: 2026-12-31
+  source_name: FOD Financiën / SPF Finances — Fisconet
+  source_url: https://www.minfin.fgov.be/myminfin-web/pages/public/fisconet/document/c67e2c6d-c7b0-4fef-bf88-70e579734c21
+  source_url_fr: https://www.minfin.fgov.be/myminfin-web/pages/public/fisconet/document/d9683eeb-c029-4bc0-bb2c-b17f7990f2d4
+  source_title: "Artikel 171, WIB 92 (inkomsten 2026)"
+  retrieved_at: 2026-11-27
+  unit: separate_tax_rate
+  rounding: not_applicable
+  notes: >-
+    Verbatim: '1°bis tegen een aanslagvoet van 8 %: spaartegoeden, kapitalen en afkoopwaarden
+    gevormd in het kader van het pensioensparen [...] wanneer zij aan de rechthebbende worden
+    uitgekeerd naar aanleiding van zijn pensionering op de normale datum of in één van de 5
+    jaren die aan die datum voorafgaan, of naar aanleiding van het overlijden'; 'g)
+    spaartegoeden, kapitalen en afkoopwaarden als vermeld in 1°bis, indien anders
+    uitgekeerd;' (33 %); 'd) kapitalen en afkoopwaarden van de levensverzekeringscontracten
+    [...] bij overlijden van de verzekerde of bij het normale verstrijken van het contract,
+    of [...] in één van de 5 jaren die aan het normale verstrijken van het contract
+    voorafgaan' (10 %); 'f) afkoopwaarden als vermeld in 2°, d, indien anders vereffend;'
+    (33 %). Separate taxation unless globalisation is more favourable.

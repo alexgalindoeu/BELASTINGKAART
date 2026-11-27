@@ -1,0 +1,127 @@
+meta:
+  country: BE
+  jurisdiction: flanders
+  income_year: 2026
+  assessment_year: null
+  status: partial
+  notes: >-
+    Flemish registration tax (verkooprecht) and the indexation of the cadastral income, shown
+    on web/nl/wonen/ and web/fr/logement/. Flemish Region only. Claim -> quote -> source log:
+    docs/sources/wonen_2026-11-25.md. Information only; no calculation.
+
+reduced_rate_only_own_home:
+  value:
+    from_2025: 0.02
+    from_2022_to_2024: 0.03
+    from_2020_to_2021: 0.06
+    before_2020: 0.07
+  status: confirmed
+  jurisdiction: flanders
+  income_year: 2026
+  assessment_year: null
+  effective_from: 2025-01-01
+  effective_to: null
+  source_name: Vlaamse Belastingdienst
+  source_url: https://www.vlaanderen.be/belastingen-en-begroting/vlaamse-belastingen/registratiebelasting/verkooprecht/tarieven-in-het-verkooprecht/verlaagd-tarief-in-het-verkooprecht-voor-de-aankoop-van-de-enige-eigen-woning
+  source_title: "Verlaagd tarief in het verkooprecht voor de aankoop van de enige eigen woning"
+  retrieved_at: 2026-11-27
+  unit: fraction_of_purchase_price
+  rounding: not_applicable
+  notes: >-
+    Verbatim (re-checked 2026-11-27): 'Vanaf 1 januari 2025 betaalt u op de aankoop van een
+    enige eigen woning nog maar 2% registratiebelasting. Dit tarief geldt voor authentieke
+    aankoopaktes die verleden worden vanaf 1 januari 2025.'; 'Van 01/01/2022 tot en met
+    31/12/2024 bedraagt het verlaagd tarief bij de aankoop van de enige eigen woning 3
+    procent.'; 'Van 01/01/2020 tot en met 31/12/2021 bedroeg het verlaagd tarief [...] 6
+    procent.'; 'Voor akten die verleden werden vóór 01/01/2020 bedroeg het tarief 7
+    procent.' The period of each historical rate is stated in the quote; effective_from refers
+    to the rate in force in 2026 (2 %). Conditions apply per buyer.
+
+announced_reduced_rate_2027:
+  value: 0.03
+  announced: true
+  status: provisional
+  jurisdiction: flanders
+  income_year: 2026
+  assessment_year: null
+  effective_from: 2027-01-01
+  effective_to: null
+  source_name: Vlaamse Belastingdienst
+  source_url: https://www.vlaanderen.be/belastingen-en-begroting/vlaamse-belastingen/registratiebelasting/verkooprecht/tarieven-in-het-verkooprecht/verlaagd-tarief-in-het-verkooprecht-voor-de-aankoop-van-de-enige-eigen-woning
+  source_title: "Wijziging tarief enige woning naar 3% vanaf 1 januari 2027 (aankondiging)"
+  retrieved_at: 2026-11-27
+  unit: fraction_of_purchase_price
+  rounding: not_applicable
+  notes: >-
+    Verbatim: 'In de Septemberverklaring heeft de Vlaamse Regering de intentie geuit om het
+    verlaagd tarief in het verkooprecht voor de aankoop van de enige eigen woning vanaf 1
+    januari 2027 aan te passen naar 3%. In standpunt 26021 wordt de werkwijze toegelicht,
+    onder voorbehoud dat door de decreetgever geen afwijkende regeling uitgewerkt wordt.'
+    Provisional: an announced intention, not yet a decree. Shown only as an announcement
+    ('announced: true'); never usable in a calculation.
+
+general_rate:
+  value:
+    from_2022: 0.12
+    before_2022: 0.10
+    agricultural_land_and_nature: 0.10
+  status: confirmed
+  jurisdiction: flanders
+  income_year: 2026
+  assessment_year: null
+  effective_from: 2022-01-01
+  effective_to: null
+  source_name: Vlaamse Belastingdienst
+  source_url: https://www.vlaanderen.be/belastingen-en-begroting/vlaamse-belastingen/registratiebelasting/verkooprecht/tarieven-in-het-verkooprecht/algemeen-tarief-in-het-verkooprecht
+  source_title: "Algemeen tarief in het verkooprecht"
+  retrieved_at: 2026-11-27
+  unit: fraction_of_purchase_price
+  rounding: not_applicable
+  notes: >-
+    Verbatim (re-checked 2026-11-27): 'Sinds 01.01.2022 bedraagt het algemeen tarief voor de
+    aankoop van andere dan de enige eigen woning, zoals een tweede eigendom, 12 procent.
+    Vóór 01.01.2022 bedroeg het tarief 10%.'; 'Voor de aankoop van onbebouwde landbouwgronden
+    en natuurgoederen met een beheersplan type 2 of type 3, blijft het tarief van 10 procent
+    behouden.'; 'Het tarief van 12 procent geldt voor de aankopen waarvoor de koopovereenkomst
+    (compromis) gesloten wordt vanaf 2022.'
+
+supplementary_duties_surcharge:
+  value: 0.20
+  status: provisional
+  jurisdiction: flanders
+  income_year: 2026
+  assessment_year: null
+  effective_from: null
+  effective_to: null
+  source_name: Vlaamse Belastingdienst
+  source_url: https://www.vlaanderen.be/belastingen-en-begroting/vlaamse-belastingen/registratiebelasting/verkooprecht/tarieven-in-het-verkooprecht/verlaagd-tarief-in-het-verkooprecht-voor-de-aankoop-van-de-enige-eigen-woning
+  source_title: "Verlaagd tarief in het verkooprecht — voorwaarden niet nageleefd"
+  retrieved_at: 2026-11-27
+  unit: fraction_of_supplementary_duties
+  rounding: not_applicable
+  notes: >-
+    Verbatim: 'Op deze aanvullende rechten wordt ook een belastingverhoging van 20 procent
+    toegepast.' Provisional: the page gives no effective date for this surcharge. Not shown as
+    a figure.
+
+cadastral_income_indexation:
+  value:
+    assessment_year: 2026
+    coefficient: 2.3000
+  status: confirmed
+  jurisdiction: flanders
+  income_year: 2026
+  assessment_year: 2026
+  effective_from: 2026-01-01
+  effective_to: 2026-12-31
+  source_name: Vlaamse Belastingdienst
+  source_url: https://www.vlaanderen.be/belastingen-en-begroting/vlaamse-belastingen/onroerende-voorheffing/berekening-van-de-onroerende-voorheffing
+  source_title: "Berekening van de onroerende voorheffing — indexatiecoëfficiënt"
+  retrieved_at: 2026-11-27
+  unit: coefficient
+  rounding: "indexed KI 'altijd afgerond tot de dichtstbijgelegen euro'"
+  notes: >-
+    Table row 'Aanslagjaar 2026 | Indexatiecoëfficiënt 2,3000'. 'Het geïndexeerd kadastraal
+    inkomen wordt berekend door het kadastraal inkomen te vermenigvuldigen met een
+    indexatiecoëfficiënt [...] Het wordt altijd afgerond tot de dichtstbijgelegen euro.'
+    (source 'ki'). For the onroerende voorheffing the aanslagjaar is the calendar year 2026.

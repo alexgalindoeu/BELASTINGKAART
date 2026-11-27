@@ -74,18 +74,18 @@ export const CALC = {
 // Rows of the official 2026 contribution table for a self-employed person in main occupation.
 const MAIN_2026 = {
   nl: [
-    ['Bijdragepercentage op het beroepsinkomen tot 75.024,54 euro', '20,50 %'],
-    ['Bijdragepercentage op het deel van 75.024,54 tot 110.562,42 euro', '14,16 %'],
-    ['Minimuminkomen waarop de bijdrage minstens wordt berekend', '17.374,08 euro'],
-    ['Minimumbijdrage per kwartaal', '890,42 euro'],
-    ['Maximumbijdrage per kwartaal', '5.103,05 euro']
+    ['Bijdragepercentage op het beroepsinkomen tot {{zelfstandigen.contributions_2026.main_occupation.ceiling_low|eur}} euro', '{{zelfstandigen.contributions_2026.main_occupation.rate_low|pct2}} %'],
+    ['Bijdragepercentage op het deel van {{zelfstandigen.contributions_2026.main_occupation.ceiling_low|eur}} tot {{zelfstandigen.contributions_2026.main_occupation.ceiling_high|eur}} euro', '{{zelfstandigen.contributions_2026.main_occupation.rate_high|pct2}} %'],
+    ['Minimuminkomen waarop de bijdrage minstens wordt berekend', '{{zelfstandigen.contributions_2026.main_occupation.minimum_income|eur}} euro'],
+    ['Minimumbijdrage per kwartaal', '{{zelfstandigen.contributions_2026.main_occupation.minimum_quarterly|eur}} euro'],
+    ['Maximumbijdrage per kwartaal', '{{zelfstandigen.contributions_2026.main_occupation.maximum_quarterly|eur}} euro']
   ],
   fr: [
-    ['Taux de cotisation sur le revenu professionnel jusqu’à 75.024,54 euros', '20,50 %'],
-    ['Taux de cotisation sur la partie de 75.024,54 à 110.562,42 euros', '14,16 %'],
-    ['Revenu minimum sur lequel la cotisation est au moins calculée', '17.374,08 euros'],
-    ['Cotisation trimestrielle minimum', '890,42 euros'],
-    ['Cotisation trimestrielle maximum', '5.103,05 euros']
+    ['Taux de cotisation sur le revenu professionnel jusqu’à {{zelfstandigen.contributions_2026.main_occupation.ceiling_low|eur}} euros', '{{zelfstandigen.contributions_2026.main_occupation.rate_low|pct2}} %'],
+    ['Taux de cotisation sur la partie de {{zelfstandigen.contributions_2026.main_occupation.ceiling_low|eur}} à {{zelfstandigen.contributions_2026.main_occupation.ceiling_high|eur}} euros', '{{zelfstandigen.contributions_2026.main_occupation.rate_high|pct2}} %'],
+    ['Revenu minimum sur lequel la cotisation est au moins calculée', '{{zelfstandigen.contributions_2026.main_occupation.minimum_income|eur}} euros'],
+    ['Cotisation trimestrielle minimum', '{{zelfstandigen.contributions_2026.main_occupation.minimum_quarterly|eur}} euros'],
+    ['Cotisation trimestrielle maximum', '{{zelfstandigen.contributions_2026.main_occupation.maximum_quarterly|eur}} euros']
   ]
 };
 
@@ -96,7 +96,7 @@ export const PAGES = {
       title: 'Zelfstandigen: bijdragen en belasting 2026 | Belastingkaart',
       description: 'Sociale bijdragen van zelfstandigen in 2026: percentages, voorlopige en definitieve bijdragen, sociaal statuut en personenbelasting, uit officiële bronnen.',
       h1: 'Sociale bijdragen en belasting als zelfstandige (2026)', crumb: 'Zelfstandigen',
-      summary: 'Een zelfstandige in hoofdberoep betaalt in 2026 20,50 % sociale bijdragen op zijn beroepsinkomen tot 75.024,54 euro en 14,16 % op het deel tot 110.562,42 euro, met een minimumbijdrage van 890,42 euro per kwartaal. Die bijdragen gaan naar het sociaal statuut; het beroepsinkomen zelf valt onder de personenbelasting.',
+      summary: 'Een zelfstandige in hoofdberoep betaalt in 2026 {{zelfstandigen.contributions_2026.main_occupation.rate_low|pct2}} % sociale bijdragen op zijn beroepsinkomen tot {{zelfstandigen.contributions_2026.main_occupation.ceiling_low|eur}} euro en {{zelfstandigen.contributions_2026.main_occupation.rate_high|pct2}} % op het deel tot {{zelfstandigen.contributions_2026.main_occupation.ceiling_high|eur}} euro, met een minimumbijdrage van {{zelfstandigen.contributions_2026.main_occupation.minimum_quarterly|eur}} euro per kwartaal. Die bijdragen gaan naar het sociaal statuut; het beroepsinkomen zelf valt onder de personenbelasting.',
       cards: [
         ['Hoe een zelfstandige bijdraagt en belast wordt', `<p>Een zelfstandige is volgens het RSVZ een natuurlijk persoon die in België een beroepsactiviteit uitoefent zonder arbeidsovereenkomst of ambtenarenstatuut. Hij moet zich <b>aansluiten bij een socialeverzekeringsfonds</b> en betaalt daar sociale bijdragen. Die bijdragen zijn een percentage van zijn beroepsinkomsten: de brutoberoepsinkomsten, verminderd met de <a href="{G}beroepskosten/">beroepskosten</a> en beroepsverliezen, zoals de belastingadministratie ze vaststelt.</p><p>Dezelfde beroepsinkomsten zijn ook belastbaar in de <a href="{G}personenbelasting/">personenbelasting</a>. Het WIB 92 rekent de persoonlijke bijdragen ter uitvoering van de sociale wetgeving tot de beroepskosten.</p>`]
       ],
@@ -109,11 +109,11 @@ export const PAGES = {
       ],
       table2: { title: 'Bijdragecategorieën in 2026', text: true, head: ['Categorie', 'Definitieve bijdrage 2026', 'Minimum per kwartaal'],
         rows: [
-          ['<a href="wie-is-zelfstandige/">Zelfstandige in hoofdberoep</a>', '20,50 % tot 75.024,54 euro, op minstens 17.374,08 euro', '890,42 euro'],
-          ['<a href="wie-is-zelfstandige/">Zelfstandige in bijberoep</a>', 'geen bijdrage onder 1.922,16 euro; daarboven 20,50 % tot 75.024,54 euro', '98,51 euro'],
-          ['<a href="wie-is-zelfstandige/">Meewerkende echtgenoot (maxistatuut)</a>', '20,50 % tot 75.024,54 euro, op minstens 7.632,44 euro', '391,16 euro']
+          ['<a href="wie-is-zelfstandige/">Zelfstandige in hoofdberoep</a>', '{{zelfstandigen.contributions_2026.main_occupation.rate_low|pct2}} % tot {{zelfstandigen.contributions_2026.main_occupation.ceiling_low|eur}} euro, op minstens {{zelfstandigen.contributions_2026.main_occupation.minimum_income|eur}} euro', '{{zelfstandigen.contributions_2026.main_occupation.minimum_quarterly|eur}} euro'],
+          ['<a href="wie-is-zelfstandige/">Zelfstandige in bijberoep</a>', 'geen bijdrage onder {{zelfstandigen.contributions_2026.side_occupation.no_contribution_below|eur}} euro; daarboven {{zelfstandigen.contributions_2026.main_occupation.rate_low|pct2}} % tot {{zelfstandigen.contributions_2026.main_occupation.ceiling_low|eur}} euro', '{{zelfstandigen.contributions_2026.side_occupation.minimum_quarterly|eur}} euro'],
+          ['<a href="wie-is-zelfstandige/">Meewerkende echtgenoot (maxistatuut)</a>', '{{zelfstandigen.contributions_2026.main_occupation.rate_low|pct2}} % tot {{zelfstandigen.contributions_2026.main_occupation.ceiling_low|eur}} euro, op minstens {{zelfstandigen.contributions_2026.spouse_maxi_status.minimum_income|eur}} euro', '{{zelfstandigen.contributions_2026.spouse_maxi_status.minimum_quarterly|eur}} euro']
         ],
-        help: 'Bron: RSVZ, “Bijdragen 2026”. Boven 75.024,54 euro geldt voor alle drie 14,16 % tot 110.562,42 euro; de maximumbijdrage is 5.103,05 euro per kwartaal.' },
+        help: 'Bron: RSVZ, “Bijdragen 2026”. Boven {{zelfstandigen.contributions_2026.main_occupation.ceiling_low|eur}} euro geldt voor alle drie {{zelfstandigen.contributions_2026.main_occupation.rate_high|pct2}} % tot {{zelfstandigen.contributions_2026.main_occupation.ceiling_high|eur}} euro; de maximumbijdrage is {{zelfstandigen.contributions_2026.main_occupation.maximum_quarterly|eur}} euro per kwartaal.' },
       notCovered: ['Wat deze pagina niet behandelt', [
         'Bijzondere categorieën: primostarters, student-zelfstandigen, gelijkstelling met bijberoep (artikel 37), gepensioneerden en zelfstandigen vanaf de pensioenleeftijd.',
         'De beheerskosten van je socialeverzekeringsfonds.',
@@ -122,10 +122,10 @@ export const PAGES = {
         'De btw, een afzonderlijke belasting.'
       ]],
       faq: [
-        ['Hoeveel sociale bijdragen betaalt een zelfstandige in 2026?', 'Een zelfstandige in hoofdberoep betaalt 20,50 % op zijn beroepsinkomen tot 75.024,54 euro en 14,16 % op het deel tot 110.562,42 euro. De minimumbijdrage is 890,42 euro en de maximumbijdrage 5.103,05 euro per kwartaal (RSVZ, Bijdragen 2026).'],
+        ['Hoeveel sociale bijdragen betaalt een zelfstandige in 2026?', 'Een zelfstandige in hoofdberoep betaalt {{zelfstandigen.contributions_2026.main_occupation.rate_low|pct2}} % op zijn beroepsinkomen tot {{zelfstandigen.contributions_2026.main_occupation.ceiling_low|eur}} euro en {{zelfstandigen.contributions_2026.main_occupation.rate_high|pct2}} % op het deel tot {{zelfstandigen.contributions_2026.main_occupation.ceiling_high|eur}} euro. De minimumbijdrage is {{zelfstandigen.contributions_2026.main_occupation.minimum_quarterly|eur}} euro en de maximumbijdrage {{zelfstandigen.contributions_2026.main_occupation.maximum_quarterly|eur}} euro per kwartaal (RSVZ, Bijdragen 2026).'],
         ['Op welk inkomen worden de bijdragen berekend?', 'Op de brutoberoepsinkomsten, verminderd met de beroepskosten en beroepsverliezen, zoals de belastingadministratie ze vaststelt. De definitieve bijdragen voor een jaar steunen op het inkomen van dat jaar.'],
         ['Waarom betaal ik eerst voorlopige bijdragen?', 'Je socialeverzekeringsfonds kent je inkomen van het jaar pas wanneer de fiscus het vastgesteld heeft, meestal een of twee jaar later. Daarom betaal je eerst voorlopige bijdragen op je inkomen van drie jaar voordien; die worden daarna geregulariseerd.'],
-        ['Betaalt een zelfstandige in bijberoep minder?', 'In 2026 betaalt een zelfstandige in bijberoep geen bijdragen op een beroepsinkomen onder 1.922,16 euro. Daarboven betaalt hij 20,50 %, met een minimumbijdrage van 98,51 euro per kwartaal. Zolang hij geen of verminderde bijdragen betaalt (inkomen onder 17.374,08 euro), bouwt hij geen extra rechten op in het sociaal statuut van de zelfstandigen.'],
+        ['Betaalt een zelfstandige in bijberoep minder?', 'In 2026 betaalt een zelfstandige in bijberoep geen bijdragen op een beroepsinkomen onder {{zelfstandigen.contributions_2026.side_occupation.no_contribution_below|eur}} euro. Daarboven betaalt hij {{zelfstandigen.contributions_2026.main_occupation.rate_low|pct2}} %, met een minimumbijdrage van {{zelfstandigen.contributions_2026.side_occupation.minimum_quarterly|eur}} euro per kwartaal. Zolang hij geen of verminderde bijdragen betaalt, bouwt hij geen extra rechten op in het sociaal statuut van de zelfstandigen.'],
         ['Draagt een zelfstandige bij voor de werkloosheid?', 'Nee. Volgens het RSVZ worden de bijdragen verdeeld over gezinsbijslag, pensioenen, ziekte en invaliditeit en het overbruggingsrecht; voor de werkloosheid draag je niet bij.']
       ],
       sources: ['wie', 'hoeveel', 'folder', 'waarom', 'bij', 'art52'],
@@ -135,7 +135,7 @@ export const PAGES = {
       title: 'Indépendant : cotisations sociales et impôt | Belastingkaart',
       description: 'Cotisations sociales des indépendants en 2026 : taux, cotisations provisoires et définitives, statut social et impôt sur les revenus, sources officielles.',
       h1: 'Cotisations sociales et impôt de l’indépendant (2026)', crumb: 'Indépendants',
-      summary: 'Un indépendant à titre principal paie en 2026 20,50 % de cotisations sociales sur son revenu professionnel jusqu’à 75.024,54 euros et 14,16 % sur la partie jusqu’à 110.562,42 euros, avec une cotisation minimum de 890,42 euros par trimestre. Ces cotisations financent le statut social ; le revenu professionnel lui-même relève de l’impôt des personnes physiques.',
+      summary: 'Un indépendant à titre principal paie en 2026 {{zelfstandigen.contributions_2026.main_occupation.rate_low|pct2}} % de cotisations sociales sur son revenu professionnel jusqu’à {{zelfstandigen.contributions_2026.main_occupation.ceiling_low|eur}} euros et {{zelfstandigen.contributions_2026.main_occupation.rate_high|pct2}} % sur la partie jusqu’à {{zelfstandigen.contributions_2026.main_occupation.ceiling_high|eur}} euros, avec une cotisation minimum de {{zelfstandigen.contributions_2026.main_occupation.minimum_quarterly|eur}} euros par trimestre. Ces cotisations financent le statut social ; le revenu professionnel lui-même relève de l’impôt des personnes physiques.',
       cards: [
         ['Comment un indépendant cotise et est imposé', `<p>Selon l’INASTI, un travailleur indépendant est une personne physique qui exerce une activité professionnelle en Belgique sans être liée par un contrat de travail ou un statut de fonctionnaire. Il doit <b>s’affilier à une caisse d’assurances sociales</b> et y paie des cotisations sociales. Ces cotisations représentent un pourcentage de ses revenus professionnels : les revenus professionnels bruts, diminués des <a href="{G}frais-professionnels/">frais professionnels</a> et des pertes professionnelles, tels que l’administration fiscale les fixe.</p><p>Ces mêmes revenus professionnels sont imposables à l’<a href="{G}impot-des-personnes-physiques/">impôt des personnes physiques</a>. Le CIR 92 range les cotisations personnelles dues en exécution de la législation sociale parmi les frais professionnels.</p>`]
       ],
@@ -148,11 +148,11 @@ export const PAGES = {
       ],
       table2: { title: 'Catégories de cotisation en 2026', text: true, head: ['Catégorie', 'Cotisation définitive 2026', 'Minimum par trimestre'],
         rows: [
-          ['<a href="qui-est-independant/">Indépendant à titre principal</a>', '20,50 % jusqu’à 75.024,54 euros, sur au moins 17.374,08 euros', '890,42 euros'],
-          ['<a href="qui-est-independant/">Indépendant à titre complémentaire</a>', 'aucune cotisation sous 1.922,16 euros ; au-delà 20,50 % jusqu’à 75.024,54 euros', '98,51 euros'],
-          ['<a href="qui-est-independant/">Conjoint aidant (maxi-statut)</a>', '20,50 % jusqu’à 75.024,54 euros, sur au moins 7.632,44 euros', '391,16 euros']
+          ['<a href="qui-est-independant/">Indépendant à titre principal</a>', '{{zelfstandigen.contributions_2026.main_occupation.rate_low|pct2}} % jusqu’à {{zelfstandigen.contributions_2026.main_occupation.ceiling_low|eur}} euros, sur au moins {{zelfstandigen.contributions_2026.main_occupation.minimum_income|eur}} euros', '{{zelfstandigen.contributions_2026.main_occupation.minimum_quarterly|eur}} euros'],
+          ['<a href="qui-est-independant/">Indépendant à titre complémentaire</a>', 'aucune cotisation sous {{zelfstandigen.contributions_2026.side_occupation.no_contribution_below|eur}} euros ; au-delà {{zelfstandigen.contributions_2026.main_occupation.rate_low|pct2}} % jusqu’à {{zelfstandigen.contributions_2026.main_occupation.ceiling_low|eur}} euros', '{{zelfstandigen.contributions_2026.side_occupation.minimum_quarterly|eur}} euros'],
+          ['<a href="qui-est-independant/">Conjoint aidant (maxi-statut)</a>', '{{zelfstandigen.contributions_2026.main_occupation.rate_low|pct2}} % jusqu’à {{zelfstandigen.contributions_2026.main_occupation.ceiling_low|eur}} euros, sur au moins {{zelfstandigen.contributions_2026.spouse_maxi_status.minimum_income|eur}} euros', '{{zelfstandigen.contributions_2026.spouse_maxi_status.minimum_quarterly|eur}} euros']
         ],
-        help: 'Source : INASTI, « Cotisations 2026 ». Au-delà de 75.024,54 euros, le taux est de 14,16 % jusqu’à 110.562,42 euros pour les trois ; la cotisation maximum est de 5.103,05 euros par trimestre.' },
+        help: 'Source : INASTI, « Cotisations 2026 ». Au-delà de {{zelfstandigen.contributions_2026.main_occupation.ceiling_low|eur}} euros, le taux est de {{zelfstandigen.contributions_2026.main_occupation.rate_high|pct2}} % jusqu’à {{zelfstandigen.contributions_2026.main_occupation.ceiling_high|eur}} euros pour les trois ; la cotisation maximum est de {{zelfstandigen.contributions_2026.main_occupation.maximum_quarterly|eur}} euros par trimestre.' },
       notCovered: ['Ce que cette page ne traite pas', [
         'Les catégories particulières : primostarters, étudiants-indépendants, assimilation à une activité complémentaire (article 37), pensionnés et indépendants ayant atteint l’âge de la pension.',
         'Les frais de gestion de votre caisse d’assurances sociales.',
@@ -161,10 +161,10 @@ export const PAGES = {
         'La TVA, qui est un impôt distinct.'
       ]],
       faq: [
-        ['Combien de cotisations sociales un indépendant paie-t-il en 2026 ?', 'Un indépendant à titre principal paie 20,50 % sur son revenu professionnel jusqu’à 75.024,54 euros et 14,16 % sur la partie jusqu’à 110.562,42 euros. La cotisation minimum est de 890,42 euros et la cotisation maximum de 5.103,05 euros par trimestre (INASTI, Cotisations 2026).'],
+        ['Combien de cotisations sociales un indépendant paie-t-il en 2026 ?', 'Un indépendant à titre principal paie {{zelfstandigen.contributions_2026.main_occupation.rate_low|pct2}} % sur son revenu professionnel jusqu’à {{zelfstandigen.contributions_2026.main_occupation.ceiling_low|eur}} euros et {{zelfstandigen.contributions_2026.main_occupation.rate_high|pct2}} % sur la partie jusqu’à {{zelfstandigen.contributions_2026.main_occupation.ceiling_high|eur}} euros. La cotisation minimum est de {{zelfstandigen.contributions_2026.main_occupation.minimum_quarterly|eur}} euros et la cotisation maximum de {{zelfstandigen.contributions_2026.main_occupation.maximum_quarterly|eur}} euros par trimestre (INASTI, Cotisations 2026).'],
         ['Sur quel revenu les cotisations sont-elles calculées ?', 'Sur les revenus professionnels bruts, diminués des frais professionnels et des pertes professionnelles, tels que l’administration fiscale les fixe. Les cotisations définitives d’une année reposent sur le revenu de cette année.'],
         ['Pourquoi est-ce que je paie d’abord des cotisations provisoires ?', 'Votre caisse d’assurances sociales ne connaît votre revenu de l’année qu’une fois fixé par le fisc, généralement un à deux ans plus tard. Vous payez donc d’abord des cotisations provisoires sur vos revenus d’il y a trois ans, régularisées ensuite.'],
-        ['Un indépendant à titre complémentaire paie-t-il moins ?', 'En 2026, un indépendant à titre complémentaire ne paie pas de cotisations sur un revenu professionnel inférieur à 1.922,16 euros. Au-delà, il paie 20,50 %, avec une cotisation minimum de 98,51 euros par trimestre. Tant qu’il ne paie pas de cotisations ou seulement des cotisations réduites (revenu inférieur à 17.374,08 euros), il ne se constitue pas de droits supplémentaires dans le statut social des indépendants.'],
+        ['Un indépendant à titre complémentaire paie-t-il moins ?', 'En 2026, un indépendant à titre complémentaire ne paie pas de cotisations sur un revenu professionnel inférieur à {{zelfstandigen.contributions_2026.side_occupation.no_contribution_below|eur}} euros. Au-delà, il paie {{zelfstandigen.contributions_2026.main_occupation.rate_low|pct2}} %, avec une cotisation minimum de {{zelfstandigen.contributions_2026.side_occupation.minimum_quarterly|eur}} euros par trimestre. Tant qu’il ne paie pas de cotisations ou seulement des cotisations réduites, il ne se constitue pas de droits supplémentaires dans le statut social des indépendants.'],
         ['Un indépendant cotise-t-il pour le chômage ?', 'Non. Selon l’INASTI, les cotisations sont réparties entre les prestations familiales, les pensions, la maladie et l’invalidité et le droit passerelle ; il n’y a pas de cotisation pour le chômage.']
       ],
       sources: ['wie', 'hoeveel', 'folder', 'waarom', 'bij', 'art52'],
@@ -208,7 +208,7 @@ export const PAGES = {
       faq: [
         ['Kan ik voor dezelfde opdracht werknemer en zelfstandige zijn?', 'Nee. Werk je op basis van een arbeidsovereenkomst onder het gezag van een werkgever, dan ben je voor die activiteit werknemer en kan je niet aansluiten als zelfstandige.'],
         ['Moet ik al inkomsten hebben om zelfstandige te zijn?', 'Nee. Het RSVZ vraagt een winstoogmerk: de bedoeling om winst te maken volstaat, of er werkelijk inkomsten zijn maakt niet uit. Een occasionele, geïsoleerde activiteit maakt je wel geen zelfstandige.'],
-        ['Wanneer ben ik meewerkende echtgenoot?', 'Als gehuwde of wettelijk samenwonende partner van een zelfstandige die effectief meehelpt, regelmatig of minstens 90 dagen per jaar, zonder eigen zelfstandig inkomen van meer dan 3.000 euro per jaar en zonder eigen inkomen als werknemer of ambtenaar of vervangingsinkomen dat je volwaardig verzekert.'],
+        ['Wanneer ben ik meewerkende echtgenoot?', 'Als gehuwde of wettelijk samenwonende partner van een zelfstandige die effectief meehelpt, regelmatig of minstens 90 dagen per jaar, zonder eigen zelfstandig inkomen boven de jaarlijkse grens die het RSVZ vermeldt en zonder eigen inkomen als werknemer of ambtenaar of vervangingsinkomen dat je volwaardig verzekert.'],
         ['Moet een helper familie zijn van de zelfstandige?', 'Nee. Een helper staat een zelfstandige bij of vervangt hem zonder arbeidsovereenkomst en mag niet onder zijn gezag werken, maar hoeft geen familie te zijn.'],
         ['Wat als ik twijfel of ik zelfstandige of werknemer ben?', 'Dan kan je je situatie onder bepaalde voorwaarden laten onderzoeken door de Administratieve Commissie ter regeling van de arbeidsrelatie (Commissie Arbeidsrelaties).']
       ],
@@ -249,7 +249,7 @@ export const PAGES = {
       faq: [
         ['Puis-je être salarié et indépendant pour la même mission ?', 'Non. Si vous travaillez en vertu d’un contrat de travail sous l’autorité d’un employeur, vous êtes salarié pour cette activité et vous ne pouvez pas vous affilier en tant qu’indépendant.'],
         ['Dois-je déjà avoir des revenus pour être indépendant ?', 'Non. L’INASTI exige un but lucratif : la volonté de faire du profit suffit, qu’il y ait ou non réellement des revenus. Une activité isolée et ponctuelle ne fait toutefois pas de vous un indépendant.'],
-        ['Quand suis-je conjoint aidant ?', 'Lorsque, partenaire marié ou cohabitant légal d’un indépendant, vous apportez une aide effective, régulièrement ou au moins 90 jours par an, sans revenus propres d’une activité indépendante supérieurs à 3.000 euros par an et sans revenus de salarié, de fonctionnaire ou de remplacement vous ouvrant des droits propres en sécurité sociale.'],
+        ['Quand suis-je conjoint aidant ?', 'Lorsque, partenaire marié ou cohabitant légal d’un indépendant, vous apportez une aide effective, régulièrement ou au moins 90 jours par an, sans revenus propres d’une activité indépendante supérieurs au plafond annuel indiqué par l’INASTI et sans revenus de salarié, de fonctionnaire ou de remplacement vous ouvrant des droits propres en sécurité sociale.'],
         ['Un aidant doit-il être un membre de la famille ?', 'Non. L’aidant assiste ou supplée un indépendant sans contrat de louage de travail et ne peut pas travailler sous son autorité, mais il ne doit pas nécessairement être un membre de sa famille.'],
         ['Que faire si je doute d’être indépendant ou salarié ?', 'Vous pouvez, sous certaines conditions, faire examiner votre situation par la Commission administrative de règlement de la relation de travail (Commission Relations de travail).']
       ],
@@ -267,24 +267,24 @@ export const PAGES = {
       summary: 'Je betaalt je sociale bijdragen per kwartaal aan je socialeverzekeringsfonds. De definitieve bijdragen voor 2026 worden berekend op je beroepsinkomen van 2026; tot de fiscus dat kent, betaal je voorlopige bijdragen op je geherwaardeerde inkomen van het refertejaar 2023.',
       table: { title: 'Zelfstandige in hoofdberoep: de bijdragen voor 2026 stap voor stap', head: ['Stap', 'Bedrag 2026'],
         rows: [
-          ['Voorlopige bijdrage per kwartaal bij begin van activiteit (tot het einde van het derde volledige kalenderjaar)', '890,42 euro'],
-          ['Eerste kwartaal van een primostarter', '771,90 euro'],
-          ['Na het begin: 20,50 % op het geherwaardeerde inkomen van het refertejaar tot 75.024,54 euro, op minstens 17.374,08 euro', '20,50 %'],
-          ['Deel van 75.024,54 tot 110.562,42 euro', '14,16 %'],
-          ['Herwaarderingscoëfficiënt van het refertejaar 2023', '1,07236269'],
-          ['Definitieve bijdrage: dezelfde percentages op het inkomen van 2026', '20,50 % / 14,16 %'],
-          ['Minimum- en maximumbijdrage per kwartaal', '890,42 / 5.103,05 euro']
+          ['Voorlopige bijdrage per kwartaal bij begin van activiteit (tot het einde van het derde volledige kalenderjaar)', '{{zelfstandigen.contributions_2026.main_occupation.start_quarterly|eur}} euro'],
+          ['Eerste kwartaal van een primostarter', '{{zelfstandigen.contributions_2026.main_occupation.primostarter_first_quarter|eur}} euro'],
+          ['Na het begin: {{zelfstandigen.contributions_2026.main_occupation.rate_low|pct2}} % op het geherwaardeerde inkomen van het refertejaar tot {{zelfstandigen.contributions_2026.main_occupation.ceiling_low|eur}} euro, op minstens {{zelfstandigen.contributions_2026.main_occupation.minimum_income|eur}} euro', '{{zelfstandigen.contributions_2026.main_occupation.rate_low|pct2}} %'],
+          ['Deel van {{zelfstandigen.contributions_2026.main_occupation.ceiling_low|eur}} tot {{zelfstandigen.contributions_2026.main_occupation.ceiling_high|eur}} euro', '{{zelfstandigen.contributions_2026.main_occupation.rate_high|pct2}} %'],
+          ['Herwaarderingscoëfficiënt van het refertejaar 2023', '{{zelfstandigen.contributions_2026.revaluation_coefficient|d8}}'],
+          ['Definitieve bijdrage: dezelfde percentages op het inkomen van 2026', '{{zelfstandigen.contributions_2026.main_occupation.rate_low|pct2}} % / {{zelfstandigen.contributions_2026.main_occupation.rate_high|pct2}} %'],
+          ['Minimum- en maximumbijdrage per kwartaal', '{{zelfstandigen.contributions_2026.main_occupation.minimum_quarterly|eur}} / {{zelfstandigen.contributions_2026.main_occupation.maximum_quarterly|eur}} euro']
         ],
         help: 'Uit “Bijdragen 2026 – Refertejaar 2023” van het RSVZ (januari 2026). Geen persoonlijke berekening; beheerskosten niet inbegrepen.' },
       cards: [
-        ['Aansluiten bij een socialeverzekeringsfonds', `<p>Voordat je start als zelfstandige moet je aangesloten zijn bij een socialeverzekeringsfonds naar keuze. Doe je dat niet, dan riskeer je een administratieve boete van 500 tot 2.000 euro en krijg je een aanmaning met 30 dagen om alsnog aan te sluiten. Daarna word je automatisch lid van de Nationale Hulpkas, het socialeverzekeringsfonds van het RSVZ.</p><p>Op 1 januari van elk jaar kan je van fonds veranderen als je minstens 4 jaar bij je huidige fonds bent aangesloten en daar geen schulden hebt.</p>`],
+        ['Aansluiten bij een socialeverzekeringsfonds', `<p>Voordat je start als zelfstandige moet je aangesloten zijn bij een socialeverzekeringsfonds naar keuze. Doe je dat niet, dan riskeer je een administratieve boete en krijg je een aanmaning met 30 dagen om alsnog aan te sluiten. Daarna word je automatisch lid van de Nationale Hulpkas, het socialeverzekeringsfonds van het RSVZ.</p><p>Op 1 januari van elk jaar kan je van fonds veranderen als je minstens 4 jaar bij je huidige fonds bent aangesloten en daar geen schulden hebt.</p>`],
         ['Voorlopige bijdragen en regularisatie', `<p>De definitieve bijdragen worden berekend op de inkomsten van het jaar zelf. De fiscus stelt die meestal pas een of twee jaar later vast; daarom betaal je eerst voorlopige bijdragen op je inkomen van drie jaar voordien. Was je toen nog geen zelfstandige, dan betaal je wettelijk vastgelegde voorlopige bijdragen. Zodra de fiscus je beroepsinkomsten meedeelt, worden de voorlopige bijdragen geregulariseerd.</p>`],
         ['Meer of minder voorlopig betalen', `<p>Verwacht je een hoger inkomen dan drie jaar voordien, dan kan je hogere voorlopige bijdragen betalen om een grote bijbetaling te vermijden. Verwacht je een lager inkomen, dan kan je lagere voorlopige bijdragen vragen; je fonds moet akkoord gaan en je moet dat met objectieve elementen aantonen. Blijkt je werkelijke inkomen toch hoger, dan betaal je bij de eindafrekening een supplement én verhogingen. Een zelfstandige in hoofdberoep, een primostarter en een meewerkende echtgenoot betalen altijd minstens de minimumbijdrage.</p>`]
       ],
       lists: [
         ['Andere bijdragecategorieën', [
-          'Meewerkende echtgenoot: maxistatuut met een minimuminkomen van 7.632,44 euro en een minimumbijdrage van 391,16 euro per kwartaal in 2026.',
-          'Zelfstandige in bijberoep: geen bijdrage onder 1.922,16 euro beroepsinkomen; minimumbijdrage 98,51 euro per kwartaal in 2026.',
+          'Meewerkende echtgenoot: maxistatuut met een minimuminkomen van {{zelfstandigen.contributions_2026.spouse_maxi_status.minimum_income|eur}} euro en een minimumbijdrage van {{zelfstandigen.contributions_2026.spouse_maxi_status.minimum_quarterly|eur}} euro per kwartaal in 2026.',
+          'Zelfstandige in bijberoep: geen bijdrage onder {{zelfstandigen.contributions_2026.side_occupation.no_contribution_below|eur}} euro beroepsinkomen; minimumbijdrage {{zelfstandigen.contributions_2026.side_occupation.minimum_quarterly|eur}} euro per kwartaal in 2026.',
           'Gelijkstelling met bijberoep (artikel 37), student-zelfstandige, gepensioneerde actief als zelfstandige en zelfstandige vanaf pensioenleeftijd zonder rustpensioen: eigen regels in de RSVZ-brochure.'
         ]],
         ['Wat de bijdrage niet omvat', [
@@ -294,10 +294,10 @@ export const PAGES = {
         ]]
       ],
       faq: [
-        ['Op welk inkomen worden mijn bijdragen voor 2026 berekend?', 'De definitieve bijdragen op je beroepsinkomsten van 2026. De voorlopige bijdragen na het begin van je activiteit op je geherwaardeerde beroepsinkomsten van het refertejaar 2023, met herwaarderingscoëfficiënt 1,07236269.'],
+        ['Op welk inkomen worden mijn bijdragen voor 2026 berekend?', 'De definitieve bijdragen op je beroepsinkomsten van 2026. De voorlopige bijdragen na het begin van je activiteit op je geherwaardeerde beroepsinkomsten van het refertejaar 2023, met herwaarderingscoëfficiënt {{zelfstandigen.contributions_2026.revaluation_coefficient|d8}}.'],
         ['Wie stelt mijn beroepsinkomen vast?', 'De belastingadministratie. Je socialeverzekeringsfonds kan je definitieve bijdragen pas bepalen wanneer de fiscus je beroepsinkomsten heeft meegedeeld.'],
         ['Kan ik lagere voorlopige bijdragen betalen?', 'Ja, als je met objectieve elementen aantoont dat je inkomen lager zal zijn en je fonds akkoord gaat. Is je werkelijke inkomen toch hoger, dan volgen een supplement en verhogingen. De minimumbijdrage blijft verschuldigd.'],
-        ['Wat gebeurt er als ik me niet aansluit?', 'Je riskeert een administratieve boete van 500 tot 2.000 euro en krijgt een aanmaning met 30 dagen termijn. Daarna word je automatisch aangesloten bij de Nationale Hulpkas van het RSVZ.'],
+        ['Wat gebeurt er als ik me niet aansluit?', 'Je riskeert een administratieve boete en krijgt een aanmaning met 30 dagen termijn. Daarna word je automatisch aangesloten bij de Nationale Hulpkas van het RSVZ.'],
         ['Hoe vaak betaal ik?', 'Per kwartaal. De bedragen in de RSVZ-brochure zijn kwartaalbijdragen.']
       ],
       sources: ['hoeveel', 'folder', 'aansluiten', 'waarom'],
@@ -310,24 +310,24 @@ export const PAGES = {
       summary: 'Vous payez vos cotisations sociales chaque trimestre à votre caisse d’assurances sociales. Les cotisations définitives 2026 sont calculées sur votre revenu professionnel de 2026 ; tant que le fisc ne le connaît pas, vous payez des cotisations provisoires sur votre revenu réévalué de l’année de référence 2023.',
       table: { title: 'Indépendant à titre principal : les cotisations 2026 pas à pas', head: ['Étape', 'Montant 2026'],
         rows: [
-          ['Cotisation trimestrielle provisoire en début d’activité (jusqu’à la fin de la troisième année civile complète)', '890,42 euros'],
-          ['Premier trimestre d’un primostarter', '771,90 euros'],
-          ['Après le début : 20,50 % sur le revenu réévalué de l’année de référence jusqu’à 75.024,54 euros, sur au moins 17.374,08 euros', '20,50 %'],
-          ['Partie de 75.024,54 à 110.562,42 euros', '14,16 %'],
-          ['Coefficient de réévaluation de l’année de référence 2023', '1,07236269'],
-          ['Cotisation définitive : les mêmes taux sur le revenu de 2026', '20,50 % / 14,16 %'],
-          ['Cotisation trimestrielle minimum et maximum', '890,42 / 5.103,05 euros']
+          ['Cotisation trimestrielle provisoire en début d’activité (jusqu’à la fin de la troisième année civile complète)', '{{zelfstandigen.contributions_2026.main_occupation.minimum_quarterly|eur}} euros'],
+          ['Premier trimestre d’un primostarter', '{{zelfstandigen.contributions_2026.main_occupation.primostarter_first_quarter|eur}} euros'],
+          ['Après le début : {{zelfstandigen.contributions_2026.main_occupation.rate_low|pct2}} % sur le revenu réévalué de l’année de référence jusqu’à {{zelfstandigen.contributions_2026.main_occupation.ceiling_low|eur}} euros, sur au moins {{zelfstandigen.contributions_2026.main_occupation.minimum_income|eur}} euros', '{{zelfstandigen.contributions_2026.main_occupation.rate_low|pct2}} %'],
+          ['Partie de {{zelfstandigen.contributions_2026.main_occupation.ceiling_low|eur}} à {{zelfstandigen.contributions_2026.main_occupation.ceiling_high|eur}} euros', '{{zelfstandigen.contributions_2026.main_occupation.rate_high|pct2}} %'],
+          ['Coefficient de réévaluation de l’année de référence 2023', '{{zelfstandigen.contributions_2026.revaluation_coefficient|d8}}'],
+          ['Cotisation définitive : les mêmes taux sur le revenu de 2026', '{{zelfstandigen.contributions_2026.main_occupation.rate_low|pct2}} % / {{zelfstandigen.contributions_2026.main_occupation.rate_high|pct2}} %'],
+          ['Cotisation trimestrielle minimum et maximum', '{{zelfstandigen.contributions_2026.main_occupation.minimum_quarterly|eur}} / {{zelfstandigen.contributions_2026.main_occupation.maximum_quarterly|eur}} euros']
         ],
         help: 'Extrait de « Cotisations 2026 – Année de référence 2023 » de l’INASTI (janvier 2026). Aucun calcul personnalisé ; frais de gestion non compris.' },
       cards: [
-        ['S’affilier à une caisse d’assurances sociales', `<p>Vous devez être affilié à une caisse d’assurances sociales de votre choix avant le début de votre activité d’indépendant. Sinon, vous risquez une amende administrative de 500 à 2.000 euros et vous recevez une mise en demeure vous laissant 30 jours pour vous affilier. Ensuite, vous êtes automatiquement affilié à la Caisse nationale auxiliaire, la caisse d’assurances sociales de l’INASTI.</p><p>Au 1er janvier de chaque année, vous pouvez changer de caisse si vous y êtes affilié depuis au moins 4 ans et n’y avez pas de dettes.</p>`],
+        ['S’affilier à une caisse d’assurances sociales', `<p>Vous devez être affilié à une caisse d’assurances sociales de votre choix avant le début de votre activité d’indépendant. Sinon, vous risquez une amende administrative et vous recevez une mise en demeure vous laissant 30 jours pour vous affilier. Ensuite, vous êtes automatiquement affilié à la Caisse nationale auxiliaire, la caisse d’assurances sociales de l’INASTI.</p><p>Au 1er janvier de chaque année, vous pouvez changer de caisse si vous y êtes affilié depuis au moins 4 ans et n’y avez pas de dettes.</p>`],
         ['Cotisations provisoires et régularisation', `<p>Les cotisations définitives sont calculées sur les revenus de l’année même. Le fisc les fixe généralement un à deux ans plus tard ; c’est pourquoi vous payez d’abord des cotisations provisoires sur vos revenus d’il y a trois ans. Si vous n’étiez pas encore indépendant à l’époque, vous payez les cotisations provisoires fixées par la loi. Dès que le fisc communique vos revenus professionnels, les cotisations provisoires sont régularisées.</p>`],
         ['Payer plus ou moins à titre provisoire', `<p>Si vous vous attendez à un revenu supérieur à celui d’il y a trois ans, vous pouvez payer des cotisations provisoires plus élevées pour éviter un supplément élevé. Si vous vous attendez à un revenu inférieur, vous pouvez demander des cotisations provisoires réduites ; votre caisse doit marquer son accord et vous devez le démontrer par des éléments objectifs. Si votre revenu réel est quand même plus élevé, vous payez au décompte un supplément et des majorations. L’indépendant à titre principal, le primostarter et le conjoint aidant paient toujours au moins la cotisation minimum.</p>`]
       ],
       lists: [
         ['Autres catégories de cotisation', [
-          'Conjoint aidant : maxi-statut avec un revenu minimum de 7.632,44 euros et une cotisation minimum de 391,16 euros par trimestre en 2026.',
-          'Indépendant à titre complémentaire : aucune cotisation sous 1.922,16 euros de revenu professionnel ; cotisation minimum de 98,51 euros par trimestre en 2026.',
+          'Conjoint aidant : maxi-statut avec un revenu minimum de {{zelfstandigen.contributions_2026.spouse_maxi_status.minimum_income|eur}} euros et une cotisation minimum de {{zelfstandigen.contributions_2026.spouse_maxi_status.minimum_quarterly|eur}} euros par trimestre en 2026.',
+          'Indépendant à titre complémentaire : aucune cotisation sous {{zelfstandigen.contributions_2026.side_occupation.no_contribution_below|eur}} euros de revenu professionnel ; cotisation minimum de {{zelfstandigen.contributions_2026.side_occupation.minimum_quarterly|eur}} euros par trimestre en 2026.',
           'Assimilation à une activité complémentaire (article 37), étudiant-indépendant, pensionné actif comme indépendant et indépendant ayant atteint l’âge de la pension sans pension de retraite : règles propres dans la brochure de l’INASTI.'
         ]],
         ['Ce que la cotisation ne comprend pas', [
@@ -337,10 +337,10 @@ export const PAGES = {
         ]]
       ],
       faq: [
-        ['Sur quel revenu mes cotisations 2026 sont-elles calculées ?', 'Les cotisations définitives sur vos revenus professionnels de 2026. Les cotisations provisoires après le début de l’activité sur vos revenus professionnels réévalués de l’année de référence 2023, avec le coefficient de réévaluation 1,07236269.'],
+        ['Sur quel revenu mes cotisations 2026 sont-elles calculées ?', 'Les cotisations définitives sur vos revenus professionnels de 2026. Les cotisations provisoires après le début de l’activité sur vos revenus professionnels réévalués de l’année de référence 2023, avec le coefficient de réévaluation {{zelfstandigen.contributions_2026.revaluation_coefficient|d8}}.'],
         ['Qui fixe mon revenu professionnel ?', 'L’administration fiscale. Votre caisse d’assurances sociales ne peut fixer vos cotisations définitives qu’une fois que le fisc lui a communiqué vos revenus professionnels.'],
         ['Puis-je payer des cotisations provisoires réduites ?', 'Oui, si vous démontrez par des éléments objectifs que votre revenu sera inférieur et que votre caisse marque son accord. Si votre revenu réel est quand même supérieur, un supplément et des majorations suivent. La cotisation minimum reste due.'],
-        ['Que se passe-t-il si je ne m’affilie pas ?', 'Vous risquez une amende administrative de 500 à 2.000 euros et recevez une mise en demeure avec un délai de 30 jours. Ensuite, vous êtes automatiquement affilié à la Caisse nationale auxiliaire de l’INASTI.'],
+        ['Que se passe-t-il si je ne m’affilie pas ?', 'Vous risquez une amende administrative et recevez une mise en demeure avec un délai de 30 jours. Ensuite, vous êtes automatiquement affilié à la Caisse nationale auxiliaire de l’INASTI.'],
         ['À quelle fréquence est-ce que je paie ?', 'Chaque trimestre. Les montants de la brochure de l’INASTI sont des cotisations trimestrielles.']
       ],
       sources: ['hoeveel', 'folder', 'aansluiten', 'waarom'],

@@ -6,6 +6,7 @@
 import { writeFile, readFile, mkdir } from 'node:fs/promises';
 import path from 'node:path';
 import { SITE, WEB } from './lib/pages.mjs';
+import { fillFigures } from './lib/figures.mjs';
 import { applyHead } from './lib/head.mjs';
 import { navHtml, footerHtml, finalizePage } from './lib/shell.mjs';
 export { S as SOURCES, R as ROUTES };
@@ -22,7 +23,7 @@ const S = {
   waar: { url: `${VL}/registratiebelasting/verkooprecht/wanneer-en-waar-is-het-verkooprecht-verschuldigd`, nl: 'Wanneer en waar is het verkooprecht verschuldigd?', fr: 'Wanneer en waar is het verkooprecht verschuldigd? (en néerlandais)', org: 'Vlaamse Belastingdienst' },
   enig: { url: `${VL}/registratiebelasting/verkooprecht/tarieven-in-het-verkooprecht/verlaagd-tarief-in-het-verkooprecht-voor-de-aankoop-van-de-enige-eigen-woning`, nl: 'Verlaagd tarief in het verkooprecht voor de aankoop van de enige eigen woning', fr: 'Verlaagd tarief … enige eigen woning (taux réduit pour l’habitation propre et unique, en néerlandais)', org: 'Vlaamse Belastingdienst' },
   alg: { url: `${VL}/registratiebelasting/verkooprecht/tarieven-in-het-verkooprecht/algemeen-tarief-in-het-verkooprecht`, nl: 'Algemeen tarief in het verkooprecht', fr: 'Algemeen tarief in het verkooprecht (taux général, en néerlandais)', org: 'Vlaamse Belastingdienst' },
-  sp: { url: 'https://www.vlaanderen.be/vlaamse-belastingdienst/sp26021', nl: 'SP 26021 – Inwerkingtreding tarief 3% enige eigen woning 2027', fr: 'SP 26021 – Inwerkingtreding tarief 3% enige eigen woning 2027 (en néerlandais)', org: 'Vlaamse Belastingdienst' },
+  sp: { url: 'https://www.vlaanderen.be/vlaamse-belastingdienst/sp26021', nl: 'SP 26021 – Inwerkingtreding tarief {{announced:wonen.announced_reduced_rate_2027|pct}}% enige eigen woning 2027', fr: 'SP 26021 – Inwerkingtreding tarief {{announced:wonen.announced_reduced_rate_2027|pct}}% enige eigen woning 2027 (en néerlandais)', org: 'Vlaamse Belastingdienst' },
   btw: { url: 'https://www.vlaanderen.be/bouwen-wonen-en-energie/kopen-en-verkopen/betaal-ik-btw-of-registratierechten-bij-aankoop-van-een-woning-of-bouwgrond', nl: 'Betaal ik btw of registratierechten bij aankoop van een woning of bouwgrond?', fr: 'Betaal ik btw of registratierechten …? (TVA ou droits d’enregistrement, en néerlandais)', org: 'Vlaamse overheid' },
   ov: { url: `${VL}/onroerende-voorheffing`, nl: 'Onroerende voorheffing', fr: 'Onroerende voorheffing (en néerlandais)', org: 'Vlaamse Belastingdienst' },
   ovfr: { url: 'https://www.vlaanderen.be/fr/demenager-et-se-loger/precompte-immobilier', nl: 'Précompte immobilier (Franstalige pagina)', fr: 'Précompte immobilier', org: 'Vlaamse overheid' },
@@ -207,8 +208,8 @@ PAGES.push({
     fr: 'À l’achat d’une maison, d’un appartement ou d’un terrain à bâtir en Flandre, vous payez le droit de vente sur le prix d’achat. Le taux dépend de ce que vous achetez et du fait qu’il s’agit ou non de votre habitation propre et unique.'
   },
   summary: {
-    nl: '<b>Kort:</b> voor authentieke aankoopaktes vanaf 1 januari 2025 bedraagt het verlaagd tarief voor de enige eigen woning 2%. Het algemeen tarief bedraagt sinds 1 januari 2022 12%. Op een nieuwe woning betaalt u btw in plaats van verkooprecht.',
-    fr: '<b>En bref :</b> pour les actes authentiques d’achat passés à partir du 1er janvier 2025, le taux réduit pour l’habitation propre et unique est de 2 %. Le taux général est de 12 % depuis le 1er janvier 2022. Un logement neuf est soumis à la TVA au lieu du droit de vente.'
+    nl: '<b>Kort:</b> voor authentieke aankoopaktes vanaf 1 januari 2025 bedraagt het verlaagd tarief voor de enige eigen woning {{wonen.reduced_rate_only_own_home.from_2025|pct}}%. Het algemeen tarief bedraagt sinds 1 januari 2022 {{wonen.general_rate.from_2022|pct}}%. Op een nieuwe woning betaalt u btw in plaats van verkooprecht.',
+    fr: '<b>En bref :</b> pour les actes authentiques d’achat passés à partir du 1er janvier 2025, le taux réduit pour l’habitation propre et unique est de {{wonen.reduced_rate_only_own_home.from_2025|pct}} %. Le taux général est de {{wonen.general_rate.from_2022|pct}} % depuis le 1er janvier 2022. Un logement neuf est soumis à la TVA au lieu du droit de vente.'
   },
   sections: [
     {
@@ -225,7 +226,7 @@ PAGES.push({
     {
       h2: { nl: 'Het verlaagd tarief voor de enige eigen woning', fr: 'Le taux réduit pour l’habitation propre et unique' },
       body: {
-        nl: `<p>Volgens de Vlaamse Belastingdienst betaalt u vanaf 1 januari 2025 op de aankoop van een enige eigen woning nog maar 2% registratiebelasting. Dit tarief geldt voor authentieke aankoopaktes die vanaf 1 januari 2025 verleden worden. Van 1 januari 2022 tot en met 31 december 2024 bedroeg het verlaagd tarief 3%.</p>
+        nl: `<p>Volgens de Vlaamse Belastingdienst betaalt u vanaf 1 januari 2025 op de aankoop van een enige eigen woning nog maar {{wonen.reduced_rate_only_own_home.from_2025|pct}}% registratiebelasting. Dit tarief geldt voor authentieke aankoopaktes die vanaf 1 januari 2025 verleden worden. Van 1 januari 2022 tot en met 31 december 2024 bedroeg het verlaagd tarief {{wonen.reduced_rate_only_own_home.from_2022_to_2024|pct}}%.</p>
 <p>Alle voorwaarden moeten vervuld zijn; bij een aankoop met meerdere kopers worden ze per koper beoordeeld. De belangrijkste:</p>
 <ul>
 <li>een zuivere aankoop: een verkoop tegen een prijs in geld, geen ruil;</li>
@@ -236,8 +237,8 @@ PAGES.push({
 <li>u laat u binnen drie jaar na de notariële akte inschrijven op het adres van de woning; voor verkoopovereenkomsten vanaf 1 januari 2026 moet die inschrijving minstens één jaar ononderbroken behouden blijven.</li>
 </ul>
 <p>Bent u bij de aankoop nog eigenaar van een andere woning of bouwgrond, dan kan de tolerantie “causaal verband” gelden als u zich ertoe verbindt dat goed binnen de termijn te vervreemden. De notaris zorgt ervoor dat het juiste tarief in de akte wordt toegepast; het verlaagd tarief moet uitdrukkelijk gevraagd worden.</p>
-<p>Blijkt achteraf dat een voorwaarde niet (tijdig) vervuld is, dan betaalt u het verschil met het normale tarief, met een belastingverhoging van 20 procent op die aanvullende rechten.</p>`,
-        fr: `<p>Selon le Vlaamse Belastingdienst, à partir du 1er janvier 2025, vous ne payez plus que 2 % de droits d’enregistrement sur l’achat d’une habitation propre et unique (enige eigen woning). Ce taux s’applique aux actes authentiques d’achat passés à partir du 1er janvier 2025. Du 1er janvier 2022 au 31 décembre 2024 inclus, le taux réduit était de 3 %.</p>
+<p>Blijkt achteraf dat een voorwaarde niet (tijdig) vervuld is, dan betaalt u het verschil met het normale tarief, met een belastingverhoging op die aanvullende rechten.</p>`,
+        fr: `<p>Selon le Vlaamse Belastingdienst, à partir du 1er janvier 2025, vous ne payez plus que {{wonen.reduced_rate_only_own_home.from_2025|pct}} % de droits d’enregistrement sur l’achat d’une habitation propre et unique (enige eigen woning). Ce taux s’applique aux actes authentiques d’achat passés à partir du 1er janvier 2025. Du 1er janvier 2022 au 31 décembre 2024 inclus, le taux réduit était de {{wonen.reduced_rate_only_own_home.from_2022_to_2024|pct}} %.</p>
 <p>Toutes les conditions doivent être remplies ; en cas d’achat par plusieurs acheteurs, elles sont appréciées par acheteur. Les principales :</p>
 <ul>
 <li>un achat pur : une vente contre un prix en argent, pas un échange ;</li>
@@ -248,35 +249,35 @@ PAGES.push({
 <li>vous vous inscrivez à l’adresse du logement dans les trois ans qui suivent l’acte notarié ; pour les conventions de vente à partir du 1er janvier 2026, cette inscription doit être maintenue pendant au moins un an sans interruption.</li>
 </ul>
 <p>Si vous êtes encore propriétaire d’une autre habitation ou d’un terrain à bâtir au moment de l’achat, la tolérance du « lien causal » (causaal verband) peut s’appliquer si vous vous engagez à aliéner ce bien dans le délai prévu. Le notaire veille à ce que le bon taux soit appliqué dans l’acte ; le taux réduit doit être demandé expressément.</p>
-<p>S’il apparaît ensuite qu’une condition n’est pas (ou pas à temps) remplie, vous payez la différence avec le taux normal, majorée d’un accroissement d’impôt de 20 pour cent sur ces droits complémentaires.</p>`
+<p>S’il apparaît ensuite qu’une condition n’est pas (ou pas à temps) remplie, vous payez la différence avec le taux normal, majorée d’un accroissement d’impôt sur ces droits complémentaires.</p>`
       }
     },
     {
       h2: { nl: 'Aangekondigde wijziging vanaf 2027', fr: 'Modification annoncée à partir de 2027' },
       body: {
-        nl: `<p>In de Septemberverklaring heeft de Vlaamse Regering de intentie geuit om het verlaagd tarief voor de enige eigen woning vanaf 1 januari 2027 aan te passen naar 3%. De Vlaamse Belastingdienst licht de werkwijze toe in standpunt 26021 van 1 oktober 2026, onder voorbehoud dat de decreetgever geen afwijkende regeling uitwerkt.</p>
-<p>Volgens dat standpunt is de datum van de verkoopovereenkomst doorslaggevend: onderhandse verkoopovereenkomsten gesloten vóór 1 januari 2027 kunnen nog in aanmerking komen voor het tarief van 2%. Een wederzijdse aankoop- en verkoopbelofte (gekruiste optie) is geen verkoopovereenkomst; dan telt de datum van de authentieke akte.</p>`,
-        fr: `<p>Dans sa Déclaration de septembre (Septemberverklaring), le Gouvernement flamand a exprimé l’intention de porter le taux réduit pour l’habitation propre et unique à 3 % à partir du 1er janvier 2027. Le Vlaamse Belastingdienst en précise les modalités dans sa position administrative 26021 du 1er octobre 2026, sous réserve que le législateur décrétal n’adopte pas une règle différente.</p>
-<p>Selon cette position, c’est la date de la convention de vente qui est déterminante : les conventions de vente sous seing privé conclues avant le 1er janvier 2027 peuvent encore bénéficier du taux de 2 %. Une promesse réciproque d’achat et de vente (option croisée) n’est pas une convention de vente ; c’est alors la date de l’acte authentique qui compte.</p>`
+        nl: `<p>In de Septemberverklaring heeft de Vlaamse Regering de intentie geuit om het verlaagd tarief voor de enige eigen woning vanaf 1 januari 2027 aan te passen naar {{announced:wonen.announced_reduced_rate_2027|pct}}%. De Vlaamse Belastingdienst licht de werkwijze toe in standpunt 26021 van 1 oktober 2026, onder voorbehoud dat de decreetgever geen afwijkende regeling uitwerkt.</p>
+<p>Volgens dat standpunt is de datum van de verkoopovereenkomst doorslaggevend: onderhandse verkoopovereenkomsten gesloten vóór 1 januari 2027 kunnen nog in aanmerking komen voor het tarief van {{wonen.reduced_rate_only_own_home.from_2025|pct}}%. Een wederzijdse aankoop- en verkoopbelofte (gekruiste optie) is geen verkoopovereenkomst; dan telt de datum van de authentieke akte.</p>`,
+        fr: `<p>Dans sa Déclaration de septembre (Septemberverklaring), le Gouvernement flamand a exprimé l’intention de porter le taux réduit pour l’habitation propre et unique à {{announced:wonen.announced_reduced_rate_2027|pct}} % à partir du 1er janvier 2027. Le Vlaamse Belastingdienst en précise les modalités dans sa position administrative 26021 du 1er octobre 2026, sous réserve que le législateur décrétal n’adopte pas une règle différente.</p>
+<p>Selon cette position, c’est la date de la convention de vente qui est déterminante : les conventions de vente sous seing privé conclues avant le 1er janvier 2027 peuvent encore bénéficier du taux de {{wonen.reduced_rate_only_own_home.from_2025|pct}} %. Une promesse réciproque d’achat et de vente (option croisée) n’est pas une convention de vente ; c’est alors la date de l’acte authentique qui compte.</p>`
       }
     },
     {
       h2: { nl: 'Algemeen tarief en nieuwbouw', fr: 'Taux général et logement neuf' },
       body: {
-        nl: `<p>Sinds 1 januari 2022 bedraagt het algemeen tarief in het verkooprecht, bijvoorbeeld bij de aankoop van een tweede verblijf, 12 procent. Dat tarief geldt voor aankopen waarvoor de koopovereenkomst vanaf 2022 gesloten is. Voor onbebouwde landbouwgronden en natuurgoederen met een beheerplan type 2 of type 3 blijft het tarief 10 procent.</p>
+        nl: `<p>Sinds 1 januari 2022 bedraagt het algemeen tarief in het verkooprecht, bijvoorbeeld bij de aankoop van een tweede verblijf, {{wonen.general_rate.from_2022|pct}} procent. Dat tarief geldt voor aankopen waarvoor de koopovereenkomst vanaf 2022 gesloten is. Voor onbebouwde landbouwgronden en natuurgoederen met een beheerplan type 2 of type 3 blijft het tarief {{wonen.general_rate.agricultural_land_and_nature|pct}} procent.</p>
 <p>Op de aankoop van een nieuwe woning betaalt u btw en geen verkooprecht. Een woning geldt als nieuw tot en met 31 december van het tweede jaar na het jaar van de eerste ingebruikname. Wie alleen een bouwgrond koopt, betaalt verkooprecht aan het algemeen tarief.</p>`,
-        fr: `<p>Depuis le 1er janvier 2022, le taux général du droit de vente, par exemple pour l’achat d’une seconde résidence, est de 12 pour cent. Ce taux s’applique aux achats dont le compromis est conclu à partir de 2022. Pour les terres agricoles non bâties et les biens naturels dotés d’un plan de gestion de type 2 ou de type 3, le taux reste de 10 pour cent.</p>
+        fr: `<p>Depuis le 1er janvier 2022, le taux général du droit de vente, par exemple pour l’achat d’une seconde résidence, est de {{wonen.general_rate.from_2022|pct}} pour cent. Ce taux s’applique aux achats dont le compromis est conclu à partir de 2022. Pour les terres agricoles non bâties et les biens naturels dotés d’un plan de gestion de type 2 ou de type 3, le taux reste de {{wonen.general_rate.agricultural_land_and_nature|pct}} pour cent.</p>
 <p>L’achat d’un logement neuf est soumis à la TVA et non au droit de vente. Un logement est considéré comme neuf jusqu’au 31 décembre de la deuxième année qui suit l’année de sa première occupation. Qui achète uniquement un terrain à bâtir paie le droit de vente au taux général.</p>`
       }
     }
   ],
   faq: {
     nl: [
-      ['Telt de datum van het compromis of die van de akte voor het tarief van 2%?', 'Voor de overgang van 3% naar 2% telde de datum van de notariële akte: aktes verleden vanaf 1 januari 2025 krijgen 2%. Voor de aangekondigde overgang naar 3% in 2027 kijkt de Vlaamse Belastingdienst volgens standpunt 26021 naar de datum van de verkoopovereenkomst.'],
+      ['Telt de datum van het compromis of die van de akte voor het tarief van {{wonen.reduced_rate_only_own_home.from_2025|pct}}%?', 'Voor de overgang van {{wonen.reduced_rate_only_own_home.from_2022_to_2024|pct}}% naar {{wonen.reduced_rate_only_own_home.from_2025|pct}}% telde de datum van de notariële akte: aktes verleden vanaf 1 januari 2025 krijgen {{wonen.reduced_rate_only_own_home.from_2025|pct}}%. Voor de aangekondigde overgang naar {{announced:wonen.announced_reduced_rate_2027|pct}}% in 2027 kijkt de Vlaamse Belastingdienst volgens standpunt 26021 naar de datum van de verkoopovereenkomst.'],
       ['Kan ik het verlaagd tarief achteraf nog krijgen?', 'Ja, het verlaagd tarief kan ook via een teruggave worden genoten, bijvoorbeeld als u een verhinderend onroerend goed binnen de gestelde termijn vervreemdt.']
     ],
     fr: [
-      ['Est-ce la date du compromis ou celle de l’acte qui compte pour le taux de 2 % ?', 'Pour le passage de 3 % à 2 %, c’était la date de l’acte notarié : les actes passés à partir du 1er janvier 2025 bénéficient de 2 %. Pour le passage annoncé à 3 % en 2027, le Vlaamse Belastingdienst se fonde, selon la position 26021, sur la date de la convention de vente.'],
+      ['Est-ce la date du compromis ou celle de l’acte qui compte pour le taux de {{wonen.reduced_rate_only_own_home.from_2025|pct}} % ?', 'Pour le passage de {{wonen.reduced_rate_only_own_home.from_2022_to_2024|pct}} % à {{wonen.reduced_rate_only_own_home.from_2025|pct}} %, c’était la date de l’acte notarié : les actes passés à partir du 1er janvier 2025 bénéficient de {{wonen.reduced_rate_only_own_home.from_2025|pct}} %. Pour le passage annoncé à {{announced:wonen.announced_reduced_rate_2027|pct}} % en 2027, le Vlaamse Belastingdienst se fonde, selon la position 26021, sur la date de la convention de vente.'],
       ['Puis-je encore obtenir le taux réduit après coup ?', 'Oui, le taux réduit peut aussi être obtenu par voie de restitution (teruggave), par exemple si vous aliénez dans le délai prévu un bien immobilier qui y faisait obstacle.']
     ]
   },
@@ -377,10 +378,10 @@ PAGES.push({
       body: {
         nl: `<p>Het kadastraal inkomen (KI) is geen reëel inkomen, maar een fictief huurinkomen dat aan elk onroerend goed wordt toegekend, ook als het niet verhuurd wordt. Het komt overeen met het jaarlijkse netto-huurinkomen dat u in 1975 voor het goed zou ontvangen als u het verhuurde.</p>
 <p>Het KI wordt vastgesteld door de Algemene Administratie van de Patrimoniumdocumentatie (Kadaster) van de FOD Financiën. Voor vragen over de vaststelling of herziening ervan moet u bij het Kadaster zijn, niet bij de Vlaamse Belastingdienst.</p>
-<p>Het KI wordt jaarlijks geïndexeerd: het wordt vermenigvuldigd met een indexatiecoëfficiënt en afgerond tot de dichtstbijgelegen euro. Voor aanslagjaar 2026 bedraagt die coëfficiënt volgens de Vlaamse overheid 2,3000. Bouwt of verbouwt u grondig, dan moet u het Kadaster zelf op de hoogte brengen binnen 30 dagen na de ingebruikname of de voltooiing van de werken.</p>`,
+<p>Het KI wordt jaarlijks geïndexeerd: het wordt vermenigvuldigd met een indexatiecoëfficiënt en afgerond tot de dichtstbijgelegen euro. Voor aanslagjaar 2026 bedraagt die coëfficiënt volgens de Vlaamse overheid {{wonen.cadastral_income_indexation.coefficient|d4}}. Bouwt of verbouwt u grondig, dan moet u het Kadaster zelf op de hoogte brengen binnen 30 dagen na de ingebruikname of de voltooiing van de werken.</p>`,
         fr: `<p>Le revenu cadastral (RC, kadastraal inkomen) n’est pas un revenu réel mais un revenu locatif fictif attribué à chaque bien immobilier, même s’il n’est pas loué. Il correspond au revenu locatif net annuel que le bien aurait rapporté en 1975 s’il avait été loué.</p>
 <p>Le RC est fixé par l’Administration générale de la Documentation patrimoniale (Cadastre) du SPF Finances. Pour toute question sur sa fixation ou sa révision, il faut s’adresser au Cadastre, et non au Vlaamse Belastingdienst.</p>
-<p>Le RC est indexé chaque année : il est multiplié par un coefficient d’indexation puis arrondi à l’euro le plus proche. Pour l’exercice d’imposition 2026, ce coefficient est de 2,3000 selon l’Autorité flamande. Si vous construisez ou rénovez en profondeur, vous devez vous-même en informer le Cadastre dans les 30 jours de l’occupation ou de l’achèvement des travaux.</p>`
+<p>Le RC est indexé chaque année : il est multiplié par un coefficient d’indexation puis arrondi à l’euro le plus proche. Pour l’exercice d’imposition 2026, ce coefficient est de {{wonen.cadastral_income_indexation.coefficient|d4}} selon l’Autorité flamande. Si vous construisez ou rénovez en profondeur, vous devez vous-même en informer le Cadastre dans les 30 jours de l’occupation ou de l’achèvement des travaux.</p>`
       }
     },
     {
@@ -529,24 +530,24 @@ const EXTRA = {
       h2: { nl: 'Tarieven van het verkooprecht per periode', fr: 'Taux du droit de vente par période' },
       nl: `<p class="help">Percentages zoals de Vlaamse Belastingdienst ze vermeldt, met de periode waarin ze gelden. Belastingkaart past ze niet toe op een aankoopsom.</p>
 <div class="table-scroll"><table class="data-table"><thead><tr><th scope="col">Tarief</th><th scope="col">Periode</th><th scope="col" class="num">Tarief</th><th scope="col">Bepalende datum</th></tr></thead><tbody>
-<tr><td>Verlaagd tarief enige eigen woning</td><td>akten verleden vóór 01/01/2020</td><td class="num">7%</td><td>notariële akte</td></tr>
-<tr><td>Verlaagd tarief enige eigen woning</td><td>01/01/2020 tot en met 31/12/2021</td><td class="num">6%</td><td>notariële akte</td></tr>
-<tr><td>Verlaagd tarief enige eigen woning</td><td>01/01/2022 tot en met 31/12/2024</td><td class="num">3%</td><td>notariële akte</td></tr>
-<tr><td>Verlaagd tarief enige eigen woning</td><td>vanaf 01/01/2025</td><td class="num">2%</td><td>notariële akte</td></tr>
-<tr><td>Algemeen tarief</td><td>koopovereenkomst vóór 2022</td><td class="num">10%</td><td>koopovereenkomst</td></tr>
-<tr><td>Algemeen tarief</td><td>koopovereenkomst vanaf 2022</td><td class="num">12%</td><td>koopovereenkomst</td></tr>
+<tr><td>Verlaagd tarief enige eigen woning</td><td>akten verleden vóór 01/01/2020</td><td class="num">{{wonen.reduced_rate_only_own_home.before_2020|pct}}%</td><td>notariële akte</td></tr>
+<tr><td>Verlaagd tarief enige eigen woning</td><td>01/01/2020 tot en met 31/12/2021</td><td class="num">{{wonen.reduced_rate_only_own_home.from_2020_to_2021|pct}}%</td><td>notariële akte</td></tr>
+<tr><td>Verlaagd tarief enige eigen woning</td><td>01/01/2022 tot en met 31/12/2024</td><td class="num">{{wonen.reduced_rate_only_own_home.from_2022_to_2024|pct}}%</td><td>notariële akte</td></tr>
+<tr><td>Verlaagd tarief enige eigen woning</td><td>vanaf 01/01/2025</td><td class="num">{{wonen.reduced_rate_only_own_home.from_2025|pct}}%</td><td>notariële akte</td></tr>
+<tr><td>Algemeen tarief</td><td>koopovereenkomst vóór 2022</td><td class="num">{{wonen.general_rate.before_2022|pct}}%</td><td>koopovereenkomst</td></tr>
+<tr><td>Algemeen tarief</td><td>koopovereenkomst vanaf 2022</td><td class="num">{{wonen.general_rate.from_2022|pct}}%</td><td>koopovereenkomst</td></tr>
 </tbody></table></div>
-<p>De aangekondigde verhoging van het verlaagd tarief naar 3% vanaf 2027 staat niet in de tabel: ze steunt op een intentie van de Vlaamse Regering en geldt onder voorbehoud van het decreet.</p>`,
+<p>De aangekondigde verhoging van het verlaagd tarief naar {{announced:wonen.announced_reduced_rate_2027|pct}}% vanaf 2027 staat niet in de tabel: ze steunt op een intentie van de Vlaamse Regering en geldt onder voorbehoud van het decreet.</p>`,
       fr: `<p class="help">Taux tels que les mentionne le Vlaamse Belastingdienst, avec leur période d’application. Belastingkaart ne les applique à aucun prix d’achat.</p>
 <div class="table-scroll"><table class="data-table"><thead><tr><th scope="col">Taux</th><th scope="col">Période</th><th scope="col" class="num">Taux</th><th scope="col">Date déterminante</th></tr></thead><tbody>
-<tr><td>Taux réduit habitation propre et unique</td><td>actes passés avant le 01/01/2020</td><td class="num">7 %</td><td>acte notarié</td></tr>
-<tr><td>Taux réduit habitation propre et unique</td><td>du 01/01/2020 au 31/12/2021 inclus</td><td class="num">6 %</td><td>acte notarié</td></tr>
-<tr><td>Taux réduit habitation propre et unique</td><td>du 01/01/2022 au 31/12/2024 inclus</td><td class="num">3 %</td><td>acte notarié</td></tr>
-<tr><td>Taux réduit habitation propre et unique</td><td>à partir du 01/01/2025</td><td class="num">2 %</td><td>acte notarié</td></tr>
-<tr><td>Taux général</td><td>compromis conclu avant 2022</td><td class="num">10 %</td><td>compromis</td></tr>
-<tr><td>Taux général</td><td>compromis conclu à partir de 2022</td><td class="num">12 %</td><td>compromis</td></tr>
+<tr><td>Taux réduit habitation propre et unique</td><td>actes passés avant le 01/01/2020</td><td class="num">{{wonen.reduced_rate_only_own_home.before_2020|pct}} %</td><td>acte notarié</td></tr>
+<tr><td>Taux réduit habitation propre et unique</td><td>du 01/01/2020 au 31/12/2021 inclus</td><td class="num">{{wonen.reduced_rate_only_own_home.from_2020_to_2021|pct}} %</td><td>acte notarié</td></tr>
+<tr><td>Taux réduit habitation propre et unique</td><td>du 01/01/2022 au 31/12/2024 inclus</td><td class="num">{{wonen.reduced_rate_only_own_home.from_2022_to_2024|pct}} %</td><td>acte notarié</td></tr>
+<tr><td>Taux réduit habitation propre et unique</td><td>à partir du 01/01/2025</td><td class="num">{{wonen.reduced_rate_only_own_home.from_2025|pct}} %</td><td>acte notarié</td></tr>
+<tr><td>Taux général</td><td>compromis conclu avant 2022</td><td class="num">{{wonen.general_rate.before_2022|pct}} %</td><td>compromis</td></tr>
+<tr><td>Taux général</td><td>compromis conclu à partir de 2022</td><td class="num">{{wonen.general_rate.from_2022|pct}} %</td><td>compromis</td></tr>
 </tbody></table></div>
-<p>Le relèvement annoncé du taux réduit à 3 % à partir de 2027 ne figure pas dans le tableau : il repose sur une intention du Gouvernement flamand et reste sous réserve du décret.</p>`
+<p>Le relèvement annoncé du taux réduit à {{announced:wonen.announced_reduced_rate_2027|pct}} % à partir de 2027 ne figure pas dans le tableau : il repose sur une intention du Gouvernement flamand et reste sous réserve du décret.</p>`
     },
     limit: {
       nl: '<p>Belastingkaart berekent geen registratiebelasting op een aankoopsom en controleert niet of u aan de voorwaarden voldoet. Ook de verminderingen van het verkooprecht, zoals de meeneembaarheid, de vermindering voor een bescheiden woning en die voor een beschermd monument, worden hier niet uitgewerkt. De notaris past het tarief toe in de akte.</p>',
@@ -612,7 +613,7 @@ const EXTRA = {
       nl: `<p class="help">Rolverdeling volgens de Vlaamse overheid en de Vlaamse Belastingdienst.</p>
 <div class="table-scroll"><table class="data-table"><thead><tr><th scope="col">Onderdeel</th><th scope="col">Wie</th><th scope="col">Wat</th></tr></thead><tbody>
 <tr><td>Kadastraal inkomen</td><td>Kadaster (Algemene Administratie van de Patrimoniumdocumentatie, FOD Financiën)</td><td>Stelt het KI vast en herziet het</td></tr>
-<tr><td>Indexatie</td><td>Jaarlijkse indexatiecoëfficiënt</td><td>Aanslagjaar 2026: 2,3000</td></tr>
+<tr><td>Indexatie</td><td>Jaarlijkse indexatiecoëfficiënt</td><td>Aanslagjaar 2026: {{wonen.cadastral_income_indexation.coefficient|d4}}</td></tr>
 <tr><td>Basisheffing</td><td>Vlaams Gewest</td><td>Percentage op het geïndexeerde KI</td></tr>
 <tr><td>Provinciale opcentiemen</td><td>Provincie</td><td>Bepaalt zelf de hoogte, berekend op de basisheffing</td></tr>
 <tr><td>Gemeentelijke opcentiemen</td><td>Gemeente</td><td>Bepaalt zelf de hoogte, berekend op de basisheffing; kan differentiëren sinds aanslagjaar 2019</td></tr>
@@ -622,7 +623,7 @@ const EXTRA = {
       fr: `<p class="help">Répartition des rôles selon l’Autorité flamande et le Vlaamse Belastingdienst.</p>
 <div class="table-scroll"><table class="data-table"><thead><tr><th scope="col">Élément</th><th scope="col">Qui</th><th scope="col">Quoi</th></tr></thead><tbody>
 <tr><td>Revenu cadastral</td><td>Cadastre (Administration générale de la Documentation patrimoniale, SPF Finances)</td><td>Fixe et révise le RC</td></tr>
-<tr><td>Indexation</td><td>Coefficient d’indexation annuel</td><td>Exercice d’imposition 2026 : 2,3000</td></tr>
+<tr><td>Indexation</td><td>Coefficient d’indexation annuel</td><td>Exercice d’imposition 2026 : {{wonen.cadastral_income_indexation.coefficient|d4}}</td></tr>
 <tr><td>Montant de base</td><td>Région flamande</td><td>Pourcentage du RC indexé</td></tr>
 <tr><td>Centimes additionnels provinciaux</td><td>Province</td><td>En fixe elle-même le niveau, calculé sur le montant de base</td></tr>
 <tr><td>Centimes additionnels communaux</td><td>Commune</td><td>En fixe elle-même le niveau, calculé sur le montant de base ; différenciation possible depuis l’exercice 2019</td></tr>
@@ -788,10 +789,10 @@ ${footerHtml(lang, route, lang === 'nl' ? fr : nl)}
 `;
 }
 
-const pages = {};
+export const pages = {};
 for (const page of PAGES) for (const lang of ['nl', 'fr']) {
   const route = R[page.key][lang === 'nl' ? 0 : 1];
-  pages[route] = applyHead(finalizePage(render(page, lang), lang), route);
+  pages[route] = applyHead(finalizePage(fillFigures(render(page, lang)), lang), route);
 }
 if (process.argv.includes('--check')) {
   const stale = [];
@@ -799,7 +800,7 @@ if (process.argv.includes('--check')) {
     if (await readFile(path.join(WEB, route, 'index.html'), 'utf8').catch(() => '') !== html) stale.push(route);
   if (stale.length) { console.error('Stale housing pages: ' + stale.join(', ') + '\nRun npm run build:wonen'); process.exit(1); }
   console.log('Housing pages are up to date.');
-} else {
+} else if (process.argv[1] && import.meta.url.endsWith(path.basename(process.argv[1]))) {
   for (const [route, html] of Object.entries(pages)) {
     const file = path.join(WEB, route, 'index.html');
     await mkdir(path.dirname(file), { recursive: true });

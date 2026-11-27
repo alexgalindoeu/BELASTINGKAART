@@ -33,7 +33,7 @@ official_source_host <- function(url) {
   allowed <- c("fin.belgium.be","finances.belgium.be","minfin.fgov.be",
     "socialsecurity.be","vlaanderen.be","belasting.vlaanderen.be",
     "fiscaliteit.brussels","finances.wallonie.be","ejustice.just.fgov.be",
-    "statbel.fgov.be","emploi.belgique.be","werk.belgie.be")
+    "statbel.fgov.be","emploi.belgique.be","werk.belgie.be","rsvz.be","inasti.be")
   if (!any(host==allowed | endsWith(host,paste0(".",allowed))))
     stop("Source domain is not in the Belastingkaart official-source allowlist: ",host,call.=FALSE)
   host

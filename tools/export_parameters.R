@@ -12,6 +12,10 @@ if (!dir.exists(base)) stop("No parameter directory for income year ", year)
 federal <- yaml::read_yaml(file.path(base, "federal.yaml"))
 social <- yaml::read_yaml(file.path(base, "social_security.yaml"))
 payroll <- yaml::read_yaml(file.path(base, "payroll.yaml"))
+# Official figures shown on the content pages (audit P2-16): same provenance schema.
+content_sections <- c("zelfstandigen", "pensioensparen", "wonen")
+content <- lapply(content_sections, function(s) { x <- yaml::read_yaml(file.path(base, paste0(s, ".yaml"))); x[names(x) != "meta"] })
+names(content) <- content_sections
 payload <- list(
   country = "BE",
   income_year = as.integer(year),
@@ -21,9 +25,12 @@ payload <- list(
   federal = federal[names(federal) != "meta"],
   social_security = social[names(social) != "meta"],
   payroll = payroll[names(payroll) != "meta"],
+  zelfstandigen = content$zelfstandigen,
+  pensioensparen = content$pensioensparen,
+  wonen = content$wonen,
   calculation_status = "blocked_until_all_required_parameters_confirmed"
 )
-json <- jsonlite::toJSON(payload, auto_unbox = TRUE, pretty = TRUE, null = "null", na = "null")
+json <- jsonlite::toJSON(payload, auto_unbox = TRUE, pretty = TRUE, null = "null", na = "null", digits = NA)
 out <- file.path("web", "data", "parameters.json")
 if (check_only) {
   if (!file.exists(out)) stop(out, " is missing; run Rscript tools/export_parameters.R")

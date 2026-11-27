@@ -6,6 +6,8 @@
 - **Not usable:** `www.vlaio.be` (HTTP 403 to automated clients), `financien.belgium.be` and `www.belgium.be` (CAPTCHA; not bypassed). No social insurance fund site, accountant, blog or memory was used. The list of funds on the RSVZ site was read but no fund is named on the pages.
 - **Transcription:** quotes verbatim, whitespace normalised. NL quote first; FR equivalent from the INASTI page of the same content.
 
+- **Parameters (2026-11-27):** the figures on these pages now live in `params/2026/zelfstandigen.yaml`. The generator writes `{{zelfstandigen.…}}` tokens and refuses any parameter that is not `confirmed` (`tools/lib/figures.mjs`). The 2026 folder was re-checked on 27-11-2026. The 3.000 euro (meewerkende echtgenoot), the 500–2.000 euro fine and the 1.922,16–17.374,08 euro bijberoep band come only from RSVZ pages without a year. They are `provisional`, so they are no longer shown as figures.
+
 ## Sources (IDs used below)
 
 | ID | NL | FR | Date |
