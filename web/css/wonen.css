@@ -1,0 +1,20 @@
+/* Housing section (nl/wonen/, fr/logement/). Loaded after site.css and components.css,
+   only by those pages; same card layout as the region pages, tokens from site.css. */
+.wonen-stack { display: grid; gap: 16px; margin-top: 20px; }
+.wonen-stack > * { min-width: 0; margin: 0; }
+.wonen-stack > .card + .card { margin-top: 0; }
+.wonen-stack > .lead { margin: 0 0 4px; }
+.wonen-stack .card p + p, .wonen-stack .card p + ul, .wonen-stack .card ul + p,
+.wonen-stack .card .table-scroll + p, .wonen-stack .card .link-list + p { margin-top: 10px; }
+.wonen-stack .card ul { padding-left: 22px; }
+.wonen-stack .card .link-list { padding-left: 0; }
+.wonen-stack .card-title { font-size: 18px; }
+.step-num { color: var(--brand); font-variant-numeric: tabular-nums; margin-right: 2px; }
+.wonen-stack .data-table td { vertical-align: top; }
+.wonen-stack .faq { max-width: none; }
+.cite { font-size: 14px; color: var(--ink-3); }
+.source-list { grid-template-columns: 1fr; }
+.source-list span { overflow-wrap: anywhere; }
+@media (max-width: 560px) {
+  .wonen-stack .card { padding: 16px; }
+}

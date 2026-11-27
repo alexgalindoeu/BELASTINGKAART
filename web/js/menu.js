@@ -19,6 +19,8 @@
     family: '<polygon points="3,9 9,9 9,22 3,22"/><polygon points="11,6 17,6 17,22 11,22"/><polygon class="r" points="19,14 22,14 22,22 19,22"/>',
     // a folded map in three strips, the middle strip accented
     regions: '<polygon points="2,6 8,4 8,20 2,22"/><polygon class="r" points="9,4 15,6 15,22 9,20"/><polygon points="16,6 22,4 22,20 16,22"/>',
+    // a house with a pitched roof and an accented door on the slant side
+    home: '<polygon points="12,2 22,11 22,22 2,22 2,11"/><polygon class="r" points="14,14 19,14 19,22 14,22"/>',
     municipality: '<polygon points="12,2 21,10 21,22 3,22 3,10"/><polygon class="r" points="10,15 14,15 14,22 10,22"/>',
     selfemployed: '<polygon points="2,8 22,8 22,21 2,21"/><polygon points="8,3 16,3 16,7 14,7 14,5 10,5 10,7 8,7"/><polygon class="r" points="2,12 22,12 22,14 2,14"/>',
     pension: '<polygon points="2,3 5,3 5,19 19,19 19,3 22,3 22,22 2,22"/><polygon class="r" points="7,17 17,17 17,9 7,9"/>',
@@ -81,6 +83,7 @@
         { label: "Gezinssituatie en bedrijfsvoorheffing", text: "Gezinslast en inhoudingen op je loon, volgens de Belgische regels.", href: "gezin-en-bedrijfsvoorheffing/", icon: "family" },
         { label: "Gemeentebelasting en gewest", text: "De aanvullende gemeentebelasting en het juiste gewest voor je woonplaats.", href: "gemeentebelasting/", icon: "municipality" },
         { label: "Belastingen per gewest", text: "Wat Vlaanderen, Brussel en Wallonië regelen in je personenbelasting en voor je woning.", href: "gewesten/", icon: "regions" },
+        { label: "Wonen in Vlaanderen", text: "Registratiebelasting, woonbonus, kadastraal inkomen en onroerende voorheffing.", href: "wonen/", icon: "home" },
         { label: "Zelfstandigen", text: "Inkomen en sociale bijdragen, pas nadat de officiële regels gedekt zijn.", href: "zelfstandigen/", icon: "selfemployed" },
         { label: "Pensioenen en andere inkomsten", text: "Waar de Belgische wetgeving en het toepassingsgebied gedocumenteerd zijn.", href: "pensioenen/", icon: "pension" },
         { label: "Gidsen", text: "Van bruto naar netto, werkbonus, vakantiegeld en de belastingaangifte, stap voor stap.", href: "gidsen/", icon: "guides" },
@@ -115,6 +118,7 @@
         { label: "Situation familiale et précompte professionnel", text: "Charges de famille et retenues sur votre salaire, selon les règles belges.", href: "famille-et-precompte-professionnel/", icon: "family" },
         { label: "Taxe communale et région", text: "La taxe communale additionnelle et la bonne région pour votre domicile.", href: "taxe-communale/", icon: "municipality" },
         { label: "Impôts par région", text: "Ce que la Flandre, Bruxelles et la Wallonie règlent dans votre impôt et pour votre logement.", href: "regions/", icon: "regions" },
+        { label: "Logement en Flandre", text: "Droits d’enregistrement, bonus logement, revenu cadastral et précompte immobilier.", href: "logement/", icon: "home" },
         { label: "Indépendants", text: "Revenus et cotisations sociales, seulement lorsque les règles officielles sont couvertes.", href: "independants/", icon: "selfemployed" },
         { label: "Pensions et autres revenus", text: "Lorsque la législation belge et le champ d’application sont documentés.", href: "pensions/", icon: "pension" },
         { label: "Guides", text: "Du brut au net, bonus à l’emploi, pécule de vacances et déclaration d’impôt, pas à pas.", href: "guides/", icon: "guides" },
