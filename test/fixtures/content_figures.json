@@ -1,0 +1,31 @@
+{
+  "comment": "Shared R/JS cases for official figures on content pages (tools/lib/figures.mjs, R/11_content_figures.R). Expected strings are the Belgian notation shown on the pages.",
+  "cases": [
+    {"path": "zelfstandigen.contributions_2026.main_occupation.rate_low", "fmt": "pct2", "expected": "20,50"},
+    {"path": "zelfstandigen.contributions_2026.main_occupation.rate_high", "fmt": "pct2", "expected": "14,16"},
+    {"path": "zelfstandigen.contributions_2026.main_occupation.ceiling_low", "fmt": "eur", "expected": "75.024,54"},
+    {"path": "zelfstandigen.contributions_2026.main_occupation.ceiling_high", "fmt": "eur", "expected": "110.562,42"},
+    {"path": "zelfstandigen.contributions_2026.main_occupation.primostarter_first_quarter", "fmt": "eur", "expected": "771,90"},
+    {"path": "zelfstandigen.contributions_2026.main_occupation.maximum_quarterly", "fmt": "eur", "expected": "5.103,05"},
+    {"path": "zelfstandigen.contributions_2026.revaluation_coefficient", "fmt": "d8", "expected": "1,07236269"},
+    {"path": "pensioensparen.ceilings.standard", "fmt": "eur", "expected": "1.050"},
+    {"path": "pensioensparen.ceilings.higher_on_choice", "fmt": "eur", "expected": "1.350"},
+    {"path": "pensioensparen.reduction_rates.higher_ceiling", "fmt": "pct", "expected": "25"},
+    {"path": "pensioensparen.long_term_savings_tax.pension_savings", "fmt": "pct", "expected": "8"},
+    {"path": "pensioensparen.separate_taxation_rates.pension_savings_other_payout", "fmt": "pct", "expected": "33"},
+    {"path": "pensioensparen.long_term_savings_ceiling.maximum", "fmt": "eur", "expected": "2.450"},
+    {"path": "wonen.reduced_rate_only_own_home.from_2025", "fmt": "pct", "expected": "2"},
+    {"path": "wonen.general_rate.from_2022", "fmt": "pct", "expected": "12"},
+    {"path": "wonen.cadastral_income_indexation.coefficient", "fmt": "d4", "expected": "2,3000"}
+  ],
+  "refused": [
+    {"path": "zelfstandigen.spouse_income_limit", "fmt": "eur", "reason": "provisional"},
+    {"path": "zelfstandigen.affiliation_fine.maximum", "fmt": "eur", "reason": "provisional"},
+    {"path": "wonen.supplementary_duties_surcharge", "fmt": "pct", "reason": "provisional"},
+    {"path": "wonen.announced_reduced_rate_2027", "fmt": "pct", "reason": "provisional (only with announced:)"},
+    {"path": "wonen.no_such_parameter", "fmt": "pct", "reason": "unknown"}
+  ],
+  "announced": [
+    {"path": "wonen.announced_reduced_rate_2027", "fmt": "pct", "expected": "3"}
+  ]
+}

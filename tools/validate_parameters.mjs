@@ -11,7 +11,7 @@ const STATUSES = ['confirmed', 'provisional', 'pending'];
 const ALLOWED_HOSTS = ['fin.belgium.be', 'finances.belgium.be', 'minfin.fgov.be',
   'socialsecurity.be', 'vlaanderen.be', 'belasting.vlaanderen.be',
   'fiscaliteit.brussels', 'finances.wallonie.be', 'ejustice.just.fgov.be',
-  'statbel.fgov.be', 'emploi.belgique.be', 'werk.belgie.be'];
+  'statbel.fgov.be', 'emploi.belgique.be', 'werk.belgie.be', 'rsvz.be', 'inasti.be'];
 const DATE = /^\d{4}-\d{2}-\d{2}$/;
 
 const file = process.argv[2] ?? new URL('../web/data/parameters.json', import.meta.url);
@@ -59,7 +59,7 @@ function walk(node, path) {
   for (const [k, v] of Object.entries(node)) walk(v, path ? `${path}.${k}` : k);
 }
 
-for (const section of ['federal', 'social_security', 'payroll']) {
+for (const section of ['federal', 'social_security', 'payroll', 'zelfstandigen', 'pensioensparen', 'wonen']) {
   if (!data[section]) errors.push(`missing section ${section}`);
   else walk(data[section], section);
 }

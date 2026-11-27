@@ -26,6 +26,21 @@ const LABELS = [
   [/^payroll\.professional_withholding$/, 'Bedrijfsvoorheffing: regels en sleutelformule', 'Précompte professionnel : règles et formule-clé'],
   [/^payroll\.professional_expenses$/, 'Forfaitaire beroepskosten', 'Frais professionnels forfaitaires'],
   [/^payroll\.special_social_security_contribution\.method$/, 'Bijzondere bijdrage voor de sociale zekerheid: methode', 'Cotisation spéciale pour la sécurité sociale : méthode'],
+  [/^zelfstandigen\.contributions_2026$/, 'Zelfstandigen: sociale bijdragen 2026', 'Indépendants : cotisations sociales 2026'],
+  [/^zelfstandigen\.spouse_income_limit$/, 'Meewerkende echtgenoot: inkomensgrens', 'Conjoint aidant : plafond de revenus'],
+  [/^zelfstandigen\.affiliation_fine$/, 'Zelfstandigen: boete bij niet-aansluiting', 'Indépendants : amende pour défaut d’affiliation'],
+  [/^zelfstandigen\.side_occupation_reduced_band$/, 'Zelfstandige in bijberoep: verminderde bijdrage', 'Indépendant complémentaire : cotisation réduite'],
+  [/^pensioensparen\.ceilings$/, 'Pensioensparen: plafonds', 'Épargne-pension : plafonds'],
+  [/^pensioensparen\.indexation_base_amounts$/, 'Pensioensparen: basisbedragen vóór indexering', 'Épargne-pension : montants de base avant indexation'],
+  [/^pensioensparen\.reduction_rates$/, 'Pensioensparen: tarief van de belastingvermindering', 'Épargne-pension : taux de la réduction d’impôt'],
+  [/^pensioensparen\.long_term_savings_ceiling$/, 'Langetermijnsparen: plafond', 'Épargne à long terme : plafond'],
+  [/^pensioensparen\.long_term_savings_tax$/, 'Taks op het langetermijnsparen', 'Taxe sur l’épargne à long terme'],
+  [/^pensioensparen\.separate_taxation_rates$/, 'Pensioensparen en levensverzekering: afzonderlijke aanslagvoeten', 'Épargne-pension et assurance-vie : taux distincts'],
+  [/^wonen\.reduced_rate_only_own_home$/, 'Verkooprecht: verlaagd tarief enige eigen woning', 'Droit de vente : taux réduit habitation propre unique'],
+  [/^wonen\.announced_reduced_rate_2027$/, 'Verkooprecht: aangekondigd tarief vanaf 2027', 'Droit de vente : taux annoncé à partir de 2027'],
+  [/^wonen\.general_rate$/, 'Verkooprecht: algemeen tarief', 'Droit de vente : taux général'],
+  [/^wonen\.supplementary_duties_surcharge$/, 'Verkooprecht: belastingverhoging op aanvullende rechten', 'Droit de vente : majoration des droits complémentaires'],
+  [/^wonen\.cadastral_income_indexation$/, 'Kadastraal inkomen: indexatiecoëfficiënt', 'Revenu cadastral : coefficient d’indexation'],
   [/^payroll\.special_social_security_contribution\.periods\./, 'Bijzondere bijdrage voor de sociale zekerheid: schaal voor de periode', 'Cotisation spéciale pour la sécurité sociale : barème pour la période']
 ];
 const STATUS = {
@@ -46,6 +61,7 @@ const AUTHORITY = [
   [/(^|\.)finances\.wallonie\.be$/, 'SPW Financiën', 'SPW Finances'],
   [/(^|\.)ejustice\.just\.fgov\.be$/, 'Belgisch Staatsblad', 'Moniteur belge'],
   [/(^|\.)statbel\.fgov\.be$/, 'Statbel', 'Statbel'],
+  [/(^|\.)(rsvz\.be|inasti\.be)$/, 'RSVZ', 'INASTI'],
   [/(^|\.)(emploi\.belgique\.be|werk\.belgie\.be)$/, 'FOD Werkgelegenheid', 'SPF Emploi']
 ];
 const TXT = {

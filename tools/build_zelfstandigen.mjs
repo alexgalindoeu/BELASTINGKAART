@@ -7,6 +7,7 @@
 import { readFile, writeFile, mkdir } from 'node:fs/promises';
 import path from 'node:path';
 import { WEB, SITE } from './lib/pages.mjs';
+import { fillFigures } from './lib/figures.mjs';
 import { applyHead, escapeAttr } from './lib/head.mjs';
 import { navHtml, footerHtml, longDate } from './lib/shell.mjs';
 import { PAGES, PAGES_ORDER, SLUGS, ROOT, SOURCES, TERMS, CALC } from './lib/zelfstandigen-content.mjs';
@@ -146,7 +147,7 @@ ${footerHtml(lang, route, lang === 'nl' ? fr : nl)}
 </body>
 </html>
 `;
-  return applyHead(html, route);
+  return applyHead(fillFigures(html), route);
 }
 
 export function allSectionPages() {
