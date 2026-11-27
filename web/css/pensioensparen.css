@@ -1,0 +1,20 @@
+/* Pension-savings section (nl/pensioensparen/, fr/epargne-pension/). Loaded after site.css and
+   components.css, only by those pages; card layout of the section template, tokens from site.css. */
+.ps-stack { display: grid; gap: 16px; margin-top: 20px; }
+.ps-stack > * { min-width: 0; margin: 0; }
+.ps-stack > .card + .card { margin-top: 0; }
+.ps-stack > .lead { margin: 0 0 4px; }
+.ps-stack .card-title { font-size: 18px; }
+.ps-stack .card p + p, .ps-stack .card ol + p, .ps-stack .card .table-scroll + p { margin-top: 10px; }
+.ps-stack .rules .req-list { margin-bottom: 0; }
+.ps-stack .data-table td, .ps-stack .data-table th { vertical-align: top; }
+.ps-stack .data-table tbody th[scope="row"] a { white-space: normal; }
+.ps-stack .faq { max-width: none; }
+.ps-stack .trust { margin: 8px 0 0; }
+.ps-stack .page-actions { display: flex; flex-wrap: wrap; gap: 10px; }
+.cite { font-size: 14px; color: var(--ink-3); }
+.source-list { grid-template-columns: 1fr; }
+.source-list span { overflow-wrap: anywhere; }
+@media (max-width: 560px) {
+  .ps-stack .card { padding: 16px; }
+}
