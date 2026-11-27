@@ -8,6 +8,7 @@ import http from 'node:http';
 import { readFile, mkdir } from 'node:fs/promises';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 import path from 'node:path';
+import assert from 'node:assert/strict';
 
 const WEB = fileURLToPath(new URL('../../web/', import.meta.url));
 const SHOTS = path.resolve(process.env.SHOTS_DIR || 'shots');
@@ -31,23 +32,26 @@ const server = http.createServer(async (req, res) => {
 });
 
 const amount = { nl: '3.500', fr: '3 500,00' };
+// Municipality fields only accept official names in the page language (web/data/gemeenten.json).
+const GEMEENTEN = JSON.parse(await readFile(path.join(WEB, 'data/gemeenten.json'), 'utf8')).municipalities;
+const gem = (l, nlName) => { const m = GEMEENTEN.find(x => x.name_nl === nlName); assert.ok(m, nlName); return m['name_' + l]; };
 const TOOLS = [
   { name: 'maandloon', nl: 'nl/maandloon/', fr: 'fr/salaire-mensuel/', form: '#ml-form', gross: '#ml-gross', net: '#ml-net',
     fill: async (page, l) => { await page.fill('[name=amount]', l === 'nl' ? '42.000' : '42 000'); await page.check('[name=payments][value="14"]'); await page.fill('[name=parttime]', '80'); } },
   { name: 'marginaal', nl: 'nl/marginaal-tarief/', fr: 'fr/taux-marginal/', form: '#mt-form', gross: '#mt-gross', net: '#mt-net',
-    fill: async (page, l) => { await page.fill('[name=grossMonthly]', amount[l]); await page.fill('[name=municipality]', 'Leuven'); } },
+    fill: async (page, l) => { await page.fill('[name=grossMonthly]', amount[l]); await page.fill('[name=municipality]', gem(l, 'Leuven')); } },
   { name: 'aanbiedingen', nl: 'nl/jobaanbiedingen-vergelijken/', fr: 'fr/comparer-offres-emploi/', form: '#of-form', gross: '#of-gross', net: '#of-net',
     fill: async (page, l) => { await page.fill('[name=aMonthly]', amount[l]); await page.selectOption('[name=aPayments]', '13'); await page.fill('[name=bMonthly]', '3700');
-      await page.fill('[name=aBonus]', '1000'); await page.check('[name=aCar]'); await page.fill('[name=municipality]', 'Gent'); } },
+      await page.fill('[name=aBonus]', '1000'); await page.check('[name=aCar]'); await page.fill('[name=municipality]', gem(l, 'Gent')); } },
   { name: 'gemeenschappelijk', nl: 'nl/gemeenschappelijke-aanslag/', fr: 'fr/imposition-commune/', form: '#ga-form', gross: '#ga-gross', net: '#ga-net',
-    fill: async page => { await page.fill('[name=grossA]', '42000'); await page.fill('[name=grossB]', '0'); await page.fill('[name=municipality]', 'Brugge'); } },
+    fill: async (page, l) => { await page.fill('[name=grossA]', '42000'); await page.fill('[name=grossB]', '0'); await page.fill('[name=municipality]', gem(l, 'Brugge')); } },
   { name: 'werkgevers', nl: 'nl/twee-werkgevers/', fr: 'fr/deux-employeurs/', form: '#tw-form', gross: '#tw-gross', net: '#tw-net',
-    fill: async page => { await page.fill('[name=gross1]', '18000'); await page.fill('[name=gross2]', '9000'); await page.fill('[name=withholding1]', '2400');
-      await page.fill('[name=municipality]', 'Antwerpen'); } },
+    fill: async (page, l) => { await page.fill('[name=gross1]', '18000'); await page.fill('[name=gross2]', '9000'); await page.fill('[name=withholding1]', '2400');
+      await page.fill('[name=municipality]', gem(l, 'Antwerpen')); } },
   { name: 'scenarios', nl: 'nl/scenarios/', fr: 'fr/scenarios/', form: '#sc-form', gross: '#sc-gross', net: '#sc-net',
-    fill: async (page, l) => { await page.fill('[name=grossMonthly]', amount[l]); await page.fill('[name=municipality]', 'Leuven'); await page.fill('[name=changeAmount]', '200'); },
-    after: async page => { await page.selectOption('[name=change]', 'move'); await page.selectOption('[name=changeRegion]', 'brussels');
-      await page.fill('[name=changeMunicipality]', 'Elsene'); await page.click('#sc-form button[type=submit]'); } },
+    fill: async (page, l) => { await page.fill('[name=grossMonthly]', amount[l]); await page.fill('[name=municipality]', gem(l, 'Leuven')); await page.fill('[name=changeAmount]', '200'); },
+    after: async (page, l) => { await page.selectOption('[name=change]', 'move'); await page.selectOption('[name=changeRegion]', 'brussels');
+      await page.fill('[name=changeMunicipality]', gem(l, 'Elsene')); await page.click('#sc-form button[type=submit]'); } },
   { name: 'widget', nl: 'nl/widget/', fr: 'fr/widget/', form: '#wg-form', net: null,
     fill: async page => { await page.check('[name=widgetTheme][value="dark"]'); } },
   { name: 'widget-frame', nl: 'widget/nl.html', fr: 'widget/fr.html', form: '#wf-form', net: '#wf-net',
@@ -82,7 +86,7 @@ try {
       await tool.fill(page, lang);
       const submit = page.locator(`${tool.form} button[type=submit]`);
       if (await submit.count()) await submit.first().click();
-      if (tool.after) await tool.after(page);
+      if (tool.after) await tool.after(page, lang);
       await page.waitForTimeout(350);
       check(!errors.length, `${label}: console errors: ${errors.join(' | ')}`);
       const width = await page.evaluate(() => document.documentElement.scrollWidth);

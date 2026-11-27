@@ -181,8 +181,13 @@ class El {
   querySelectorAll(sel) { const out = []; const walk = n => { for (const c of n.children) { if (c.matches(sel)) out.push(c); walk(c); } }; walk(this); return out; }
   querySelector(sel) { return this.querySelectorAll(sel)[0] || null; }
 }
-function mount(lang, withRegionSelect = false) {
-  const doc = { activeElement: null, createElement: tag => new El(doc, tag) };
+function pageDoc() {
+  const listeners = {};
+  return { activeElement: null, listeners, createElement(tag) { return new El(this, tag); },
+    addEventListener(t, f) { (listeners[t] ||= []).push(f); },
+    dispatchEvent(e) { for (const f of listeners[e.type] || []) f(e); return true; } };
+}
+function mount(lang, withRegionSelect = false, { doc = { activeElement: null, createElement: tag => new El(doc, tag) }, sync = false } = {}) {
   const root = new El(doc, 'div', { class: 'field gk', 'data-gemeente-kiezer': '' });
   root.appendChild(new El(doc, 'label', { for: 'f-gemeente', id: 'f-gemeente-label' }));
   const box = root.appendChild(new El(doc, 'div', { class: 'gk-box' }));
@@ -195,7 +200,7 @@ function mount(lang, withRegionSelect = false) {
   if (regionSelect) regionSelect.value = 'flanders';
   const events = [];
   root.addEventListener('gemeente-change', e => events.push(e.detail));
-  const api = K.create(root, { municipalities: data.municipalities, provinces: data.provinces, lang, regionSelect,
+  const api = K.create(root, { municipalities: data.municipalities, provinces: data.provinces, lang, regionSelect, sync,
     Event: Ev, CustomEvent: class extends Ev {} });
   const type = text => { input.value = text; input.dispatchEvent(new Ev('input')); };
   const key = (k, extra = {}) => { const e = new Ev('keydown', { key: k, ...extra }); input.dispatchEvent(e); return e; };
@@ -298,4 +303,34 @@ test('pointer and touch: tapping an option chooses it and keeps the focus in the
 
 test('the component never reads tax rates or parameters', () => {
   assert.doesNotMatch(source, /BK_TAX_PARAMETERS|BKParameters|parameters\.json|opcentiem|centimes|tarief|\btaux\b|\brates?\b/i);
+});
+
+test('synced pickers and the map follow each other through the bk:gemeente event', () => {
+  const doc = pageDoc();
+  const seen = [];
+  doc.addEventListener('bk:gemeente', e => seen.push(e.detail));
+  const a = mount('nl', true, { doc, sync: true }), b = mount('nl', false, { doc, sync: true });
+  const lone = mount('nl', false, { doc });  // e.g. the scenario tool's "new municipality"
+  a.api.select(differentNames.nis);
+  assert.equal(seen.length, 1, 'one event per choice, no echo');
+  assert.equal(seen[0].nis, differentNames.nis);
+  assert.equal(seen[0].source, 'gemeente-kiezer');
+  assert.equal(b.nis.value, differentNames.nis);
+  assert.equal(b.input.value, differentNames.name_nl);
+  assert.equal(lone.nis.value, '', 'an unsynced picker keeps its own value');
+  // the map (kaart.js) dispatches { nis, name, region } when a municipality is clicked
+  doc.dispatchEvent(new Ev('bk:gemeente', { detail: { nis: bxl.nis, name: { nl: bxl.name_nl }, region: 'BRU' } }));
+  assert.equal(a.nis.value, bxl.nis); assert.equal(b.nis.value, bxl.nis);
+  assert.equal(a.regionSelect.value, 'brussels');
+  assert.equal(seen.length, 2, 'a choice that came from the page is not dispatched again');
+  doc.dispatchEvent(new Ev('bk:gemeente', { detail: { nis: '00000' } }));
+  assert.equal(a.nis.value, bxl.nis, 'unknown codes are ignored');
+});
+
+test('changing the region by hand clears a municipality of another region', () => {
+  const c = mount('nl', true);
+  c.api.select(differentNames.nis);
+  c.regionSelect.value = 'wallonia';
+  c.regionSelect.dispatchEvent(new Ev('change'));
+  assert.equal(c.nis.value, ''); assert.equal(c.region.value, ''); assert.equal(c.input.value, '');
 });

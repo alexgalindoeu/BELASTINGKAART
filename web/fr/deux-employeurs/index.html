@@ -40,11 +40,13 @@
 <link rel="manifest" href="../../fr/manifest.webmanifest">
 <link rel="stylesheet" href="../../css/site.css">
 <link rel="stylesheet" href="../../css/components.css">
+<link rel="stylesheet" href="../../css/gemeente-kiezer.css">
 <link rel="stylesheet" href="../../css/tools.css">
 <script defer src="../../config.js"></script>
 <script defer src="../../js/menu.js"></script>
 <script defer src="../../js/ui.js"></script>
 <script defer src="../../js/importe.js"></script>
+<script defer src="../../js/gemeente-kiezer.js"></script>
 <script defer src="../../js/formulario.js"></script>
 <script defer src="../../js/tax-engine.js"></script>
 <script defer src="../../js/tool-kit.js"></script>
@@ -99,7 +101,7 @@
         <legend><span class="step">3</span>Domicile, famille et année</legend>
         <div class="grid2">
           <label class="field"><span>Région</span><select name="region" id="tw-region" aria-describedby="tw-region-help"><option value="flanders" selected>Région flamande</option><option value="brussels">Région de Bruxelles-Capitale</option><option value="wallonia">Région wallonne</option></select></label>
-          <label class="field"><span>Commune</span><input name="municipality" id="tw-municipality" type="text" autocomplete="address-level2" placeholder="Ex. Louvain"></label>
+          <div class="field gk" data-gemeente-kiezer data-src="../../data/gemeenten.json" data-region-select='#tw-region' data-gk-sync><label for="tw-municipality" id="tw-municipality-label">Commune</label><div class="gk-box"><input id="tw-municipality" name="municipality" type="text" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="tw-municipality-list" aria-describedby="tw-municipality-help" autocomplete="off" autocapitalize="off" spellcheck="false" enterkeyhint="done"><ul id="tw-municipality-list" class="gk-list" role="listbox" aria-labelledby="tw-municipality-label" hidden></ul></div><p class="help" id="tw-municipality-help">Tapez le nom de votre commune et choisissez-la dans la liste.</p><input type="hidden" name="municipalityNis" data-gk-nis><input type="hidden" name="municipalityRegion" data-gk-region><p class="gk-status" role="status" data-gk-status></p></div>
         </div>
         <p class="help" id="tw-region-help">Belastingkaart couvre d’abord la Flandre. Bruxelles et la Wallonie suivront ; rien n’y est calculé.</p>
         <div class="grid2">

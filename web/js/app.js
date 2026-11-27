@@ -51,6 +51,9 @@
       grossMonthly: gross,
       region: data.get("region"),
       municipality: String(data.get("municipality") || "").trim(),
+      ...(data.get("municipalityNis") !== null && data.get("municipalityNis") !== undefined
+        ? { municipalityNis: String(data.get("municipalityNis")), municipalityRegion: String(data.get("municipalityRegion") || "") }
+        : {}),
       familyStatus: data.get("familyStatus"),
       children: Number(data.get("children")),
       employment: data.get("employment"),
