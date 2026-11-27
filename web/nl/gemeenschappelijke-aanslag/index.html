@@ -40,11 +40,13 @@
 <link rel="manifest" href="../../nl/manifest.webmanifest">
 <link rel="stylesheet" href="../../css/site.css">
 <link rel="stylesheet" href="../../css/components.css">
+<link rel="stylesheet" href="../../css/gemeente-kiezer.css">
 <link rel="stylesheet" href="../../css/tools.css">
 <script defer src="../../config.js"></script>
 <script defer src="../../js/menu.js"></script>
 <script defer src="../../js/ui.js"></script>
 <script defer src="../../js/importe.js"></script>
+<script defer src="../../js/gemeente-kiezer.js"></script>
 <script defer src="../../js/formulario.js"></script>
 <script defer src="../../js/tax-engine.js"></script>
 <script defer src="../../js/tool-kit.js"></script>
@@ -81,7 +83,7 @@
         <legend><span class="step">1</span>Jullie situatie</legend>
         <div class="grid2">
           <label class="field"><span>Gewest</span><select name="region" id="ga-region" aria-describedby="ga-region-help"><option value="flanders" selected>Vlaams Gewest</option><option value="brussels">Brussels Hoofdstedelijk Gewest</option><option value="wallonia">Waals Gewest</option></select></label>
-          <label class="field"><span>Gemeente</span><input name="municipality" id="ga-municipality" type="text" autocomplete="address-level2" placeholder="Bijv. Leuven"></label>
+          <div class="field gk" data-gemeente-kiezer data-src="../../data/gemeenten.json" data-region-select='#ga-region' data-gk-sync><label for="ga-municipality" id="ga-municipality-label">Gemeente</label><div class="gk-box"><input id="ga-municipality" name="municipality" type="text" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="ga-municipality-list" aria-describedby="ga-municipality-help" autocomplete="off" autocapitalize="off" spellcheck="false" enterkeyhint="done"><ul id="ga-municipality-list" class="gk-list" role="listbox" aria-labelledby="ga-municipality-label" hidden></ul></div><p class="help" id="ga-municipality-help">Typ de naam van je gemeente en kies ze uit de lijst.</p><input type="hidden" name="municipalityNis" data-gk-nis><input type="hidden" name="municipalityRegion" data-gk-region><p class="gk-status" role="status" data-gk-status></p></div>
         </div>
         <p class="help" id="ga-region-help">Belastingkaart dekt eerst Vlaanderen. Brussel en Wallonië volgen; daar wordt niets berekend.</p>
         <div class="grid2">

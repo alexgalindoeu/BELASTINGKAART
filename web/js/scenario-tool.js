@@ -41,6 +41,11 @@
       if (!window.BKForm.regions.includes(raw.changeRegion)) errors.push("changeRegion");
       const municipality = String(raw.changeMunicipality ?? "").trim();
       if (!municipality) errors.push("changeMunicipality");
+      else if (raw.changeMunicipalityNis !== undefined && !errors.length) {
+        const bad = window.BKForm.municipalityErrors(raw.changeMunicipalityNis, raw.changeMunicipalityRegion, raw.changeRegion);
+        if (bad.includes("municipalityNis")) errors.push("changeMunicipality");
+        if (bad.includes("municipalityRegion")) errors.push("changeRegion");
+      }
       return errors.length ? { valid: false, errors, change: null } : { valid: true, errors: [], change: { type, region: raw.changeRegion, municipality } };
     }
     if (type === "family") {

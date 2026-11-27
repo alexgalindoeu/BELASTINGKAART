@@ -142,7 +142,8 @@
       input.removeAttribute('aria-activedescendant');
     }
 
-    function commit(entry) {
+    // silent: the choice came from elsewhere on the page (the map or another synced picker).
+    function commit(entry, silent) {
       selected = entry;
       if (nisField) nisField.value = entry ? entry.m.nis : '';
       if (regionField) regionField.value = entry ? entry.m.region : '';
@@ -153,15 +154,31 @@
           regionSelect.value = entry.m.region;
           regionSelect.dispatchEvent(new options.Event('change', { bubbles: true }));
         }
-        say(text.chosen(entry.name));
+        if (!silent) say(text.chosen(entry.name));
       }
-      root.dispatchEvent(new options.CustomEvent('gemeente-change', {
-        bubbles: true,
-        detail: entry ? { nis: entry.m.nis, region: entry.m.region, name: entry.name } : null
-      }));
+      const detail = entry ? { nis: entry.m.nis, region: entry.m.region, name: entry.name } : null;
+      root.dispatchEvent(new options.CustomEvent('gemeente-change', { bubbles: true, detail }));
+      // Page-wide sync with the map (kaart.js) and the other synced pickers: both listen to
+      // and dispatch "bk:gemeente" on the document, with { nis, name, ... }.
+      if (sync && entry && !silent && typeof doc.dispatchEvent === 'function')
+        doc.dispatchEvent(new options.CustomEvent('bk:gemeente', { detail: { ...detail, source: 'gemeente-kiezer' } }));
     }
 
     function choose(entry) { commit(entry); close(); }
+
+    const sync = Boolean(options.sync);
+    if (sync && typeof doc.addEventListener === 'function') {
+      doc.addEventListener('bk:gemeente', event => {
+        const nis = event.detail && String(event.detail.nis);
+        if (!nis || (selected && selected.m.nis === nis)) return;
+        const entry = list.find(e => e.m.nis === nis);
+        if (entry) { commit(entry, true); close(); }
+      });
+    }
+    // Changing the region by hand after choosing a municipality of another region clears it.
+    if (regionSelect) regionSelect.addEventListener('change', () => {
+      if (selected && regionSelect.value !== selected.m.region) { input.value = ''; commit(null); }
+    });
 
     function exactMatch() {
       const q = normalize(input.value);
@@ -244,10 +261,15 @@
     const lang = (doc.documentElement.lang || 'nl').slice(0, 2);
     const src = roots[0].dataset.src || '../data/gemeenten.json';
     return fetch(src).then(r => { if (!r.ok) throw new Error(String(r.status)); return r.json(); })
+      .then(data => {
+        if (window.BKForm && typeof window.BKForm.registerMunicipalities === 'function')
+          window.BKForm.registerMunicipalities(data.municipalities);
+        return data;
+      })
       .then(data => roots.map(root => {
         const regionSelect = root.dataset.regionSelect ? doc.querySelector(root.dataset.regionSelect) : null;
         return create(root, { municipalities: data.municipalities, provinces: data.provinces, lang, regionSelect,
-          Event: window.Event, CustomEvent: window.CustomEvent });
+          sync: root.hasAttribute('data-gk-sync'), Event: window.Event, CustomEvent: window.CustomEvent });
       }))
       .catch(() => {
         for (const root of roots) {

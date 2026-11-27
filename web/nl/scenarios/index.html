@@ -40,11 +40,13 @@
 <link rel="manifest" href="../../nl/manifest.webmanifest">
 <link rel="stylesheet" href="../../css/site.css">
 <link rel="stylesheet" href="../../css/components.css">
+<link rel="stylesheet" href="../../css/gemeente-kiezer.css">
 <link rel="stylesheet" href="../../css/tools.css">
 <script defer src="../../config.js"></script>
 <script defer src="../../js/menu.js"></script>
 <script defer src="../../js/ui.js"></script>
 <script defer src="../../js/importe.js"></script>
+<script defer src="../../js/gemeente-kiezer.js"></script>
 <script defer src="../../js/formulario.js"></script>
 <script defer src="../../js/tax-engine.js"></script>
 <script defer src="../../js/tool-kit.js"></script>
@@ -86,7 +88,7 @@
         <p class="help" id="sc-grossMonthly-help">Schrijf bijvoorbeeld 3500, 3.500 of 3.500,00.</p>
         <div class="grid2">
           <label class="field"><span>Gewest</span><select name="region" id="sc-region"><option value="flanders" selected>Vlaams Gewest</option><option value="brussels">Brussels Hoofdstedelijk Gewest</option><option value="wallonia">Waals Gewest</option></select></label>
-          <label class="field"><span>Gemeente</span><input name="municipality" id="sc-municipality" type="text" autocomplete="address-level2" placeholder="Bijv. Leuven"></label>
+          <div class="field gk" data-gemeente-kiezer data-src="../../data/gemeenten.json" data-region-select='#sc-region' data-gk-sync><label for="sc-municipality" id="sc-municipality-label">Gemeente</label><div class="gk-box"><input id="sc-municipality" name="municipality" type="text" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="sc-municipality-list" aria-describedby="sc-municipality-help" autocomplete="off" autocapitalize="off" spellcheck="false" enterkeyhint="done"><ul id="sc-municipality-list" class="gk-list" role="listbox" aria-labelledby="sc-municipality-label" hidden></ul></div><p class="help" id="sc-municipality-help">Typ de naam van je gemeente en kies ze uit de lijst.</p><input type="hidden" name="municipalityNis" data-gk-nis><input type="hidden" name="municipalityRegion" data-gk-region><p class="gk-status" role="status" data-gk-status></p></div>
         </div>
         <div class="grid2">
           <label class="field"><span>Gezinssituatie</span><select name="familyStatus" id="sc-family"><option value="single" selected>Alleenstaand</option><option value="married">Gehuwd</option><option value="legal_cohabitant">Wettelijk samenwonend</option><option value="separated">Uit de echt / feitelijk gescheiden</option><option value="widowed">Weduwe / weduwnaar</option></select></label>
@@ -105,7 +107,7 @@
         <div id="sc-f-payments" hidden><label class="field"><span>Uitbetalingen per jaar</span><select name="changePayments" id="sc-changePayments"><option value="12">12 uitbetalingen</option><option value="13" selected>13 uitbetalingen</option><option value="14">14 uitbetalingen</option></select></label></div>
         <div id="sc-f-move" class="grid2" hidden>
           <label class="field"><span>Nieuw gewest</span><select name="changeRegion" id="sc-changeRegion"><option value="flanders" selected>Vlaams Gewest</option><option value="brussels">Brussels Hoofdstedelijk Gewest</option><option value="wallonia">Waals Gewest</option></select></label>
-          <label class="field"><span>Nieuwe gemeente</span><input name="changeMunicipality" id="sc-changeMunicipality" type="text" autocomplete="off" placeholder="Bijv. Gent"></label>
+          <div class="field gk" data-gemeente-kiezer data-src="../../data/gemeenten.json" data-region-select='#sc-changeRegion'><label for="sc-changeMunicipality" id="sc-changeMunicipality-label">Nieuwe gemeente</label><div class="gk-box"><input id="sc-changeMunicipality" name="changeMunicipality" type="text" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="sc-changeMunicipality-list" aria-describedby="sc-changeMunicipality-help" autocomplete="off" autocapitalize="off" spellcheck="false" enterkeyhint="done"><ul id="sc-changeMunicipality-list" class="gk-list" role="listbox" aria-labelledby="sc-changeMunicipality-label" hidden></ul></div><p class="help" id="sc-changeMunicipality-help">Typ de naam van je gemeente en kies ze uit de lijst.</p><input type="hidden" name="changeMunicipalityNis" data-gk-nis><input type="hidden" name="changeMunicipalityRegion" data-gk-region><p class="gk-status" role="status" data-gk-status></p></div>
         </div>
         <div id="sc-f-family" hidden><label class="field"><span>Nieuwe gezinssituatie</span><select name="changeFamily" id="sc-changeFamily"><option value="single">Alleenstaand</option><option value="married" selected>Gehuwd</option><option value="legal_cohabitant">Wettelijk samenwonend</option><option value="separated">Uit de echt / feitelijk gescheiden</option><option value="widowed">Weduwe / weduwnaar</option></select></label></div>
         <div id="sc-f-children" hidden><label class="field"><span>Nieuw aantal kinderen ten laste</span><input name="changeChildren" id="sc-changeChildren" type="number" inputmode="numeric" min="0" max="20" step="1" value="1"></label></div>

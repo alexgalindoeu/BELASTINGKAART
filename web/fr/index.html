@@ -40,6 +40,7 @@
 <link rel="manifest" href="../fr/manifest.webmanifest">
 <link rel="stylesheet" href="../css/site.css">
 <link rel="stylesheet" href="../css/components.css">
+<link rel="stylesheet" href="../css/gemeente-kiezer.css">
 <link rel="stylesheet" href="../css/kaart.css">
 <link rel="preload" href="../data/kaart_be.json" as="fetch" type="application/json" crossorigin>
 <script defer src="../config.js"></script>
@@ -48,6 +49,7 @@
 <script defer src="../js/ui.js"></script>
 <script defer src="../js/kaart.js"></script>
 <script defer src="../js/importe.js"></script>
+<script defer src="../js/gemeente-kiezer.js"></script>
 <script defer src="../js/formulario.js"></script>
 <script defer src="../js/sueldo_mes.js"></script>
 <script defer src="../js/confianza.js"></script>
@@ -97,7 +99,8 @@
     <form class="quickcalc" id="quickcalc" autocomplete="off" novalidate aria-label="Calcul rapide">
       <div class="quickcalc-fields">
         <div class="field"><label for="qc-gross">Votre salaire brut mensuel</label><span class="with-suffix"><input type="text" inputmode="decimal" id="qc-gross" placeholder="3.500"><span class="suffix" aria-hidden="true">€</span></span></div>
-        <div class="field"><label for="qc-region">Où vous habitez</label><select id="qc-region"><option value="flanders">Région flamande</option><option value="brussels">Région de Bruxelles-Capitale</option><option value="wallonia">Région wallonne</option></select></div>
+        <div class="field"><label for="qc-region">Région</label><select id="qc-region"><option value="flanders">Région flamande</option><option value="brussels">Région de Bruxelles-Capitale</option><option value="wallonia">Région wallonne</option></select></div>
+        <div class="field gk qc-gemeente" data-gemeente-kiezer data-src="../data/gemeenten.json" data-region-select='#qc-region' data-gk-sync><label for="qc-gemeente" id="qc-gemeente-label">Où vous habitez</label><div class="gk-box"><input id="qc-gemeente" name="qcMunicipality" type="text" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="qc-gemeente-list" aria-describedby="qc-gemeente-help" autocomplete="off" autocapitalize="off" spellcheck="false" enterkeyhint="done"><ul id="qc-gemeente-list" class="gk-list" role="listbox" aria-labelledby="qc-gemeente-label" hidden></ul></div><p class="help" id="qc-gemeente-help">Tapez le nom de votre commune et choisissez-la dans la liste.</p><input type="hidden" name="qcMunicipalityNis" data-gk-nis><input type="hidden" name="qcMunicipalityRegion" data-gk-region><p class="gk-status" role="status" data-gk-status></p></div>
       </div>
       <div class="quickcalc-res" id="qc-res" aria-live="polite">
         <div class="quickcalc-figure"><span class="figure-xl" aria-hidden="true">—</span><span class="quickcalc-label">salaire net par mois</span><span class="quickcalc-pending">Le résultat s’affichera lorsque toutes les règles seront confirmées.</span></div>
@@ -166,7 +169,7 @@
         <legend><span class="step">2</span>Domicile</legend>
         <div class="grid2">
           <label class="field"><span>Région</span><select name="region"><option value="flanders">Région flamande</option><option value="brussels">Région de Bruxelles-Capitale</option><option value="wallonia">Région wallonne</option></select></label>
-          <label class="field"><span>Commune</span><input name="municipality" type="text" autocomplete="address-level2" placeholder="Ex. Louvain" required></label>
+          <div class="field gk" data-gemeente-kiezer data-src="../data/gemeenten.json" data-region-select='#salary-form select[name="region"]' data-gk-sync><label for="f-gemeente" id="f-gemeente-label">Commune</label><div class="gk-box"><input id="f-gemeente" name="municipality" type="text" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="f-gemeente-list" aria-describedby="f-gemeente-help" autocomplete="off" autocapitalize="off" spellcheck="false" enterkeyhint="done" required><ul id="f-gemeente-list" class="gk-list" role="listbox" aria-labelledby="f-gemeente-label" hidden></ul></div><p class="help" id="f-gemeente-help">Tapez le nom de votre commune et choisissez-la dans la liste.</p><input type="hidden" name="municipalityNis" data-gk-nis><input type="hidden" name="municipalityRegion" data-gk-region><p class="gk-status" role="status" data-gk-status></p></div>
         </div>
       </fieldset>
       <fieldset class="block">

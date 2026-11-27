@@ -313,3 +313,21 @@ test('every table wrapper is a focusable, named scroll region', async () => {
     }
   }
 });
+
+test('tools check the municipality picked from the official list (NIS code and region)', async () => {
+  const list = JSON.parse(await readFile(path.join(WEB, 'data/gemeenten.json'), 'utf8')).municipalities;
+  W.BKForm.registerMunicipalities(list);
+  const fl = list.find(m => m.region === 'flanders'), bx = list.find(m => m.region === 'brussels');
+  const picked = { ...situation, municipality: fl.name_nl, municipalityNis: fl.nis, municipalityRegion: 'flanders' };
+  assert.equal(K.validateSituation(picked).valid, true);
+  assert.equal(K.validateSituation(picked).value.municipalityNis, fl.nis);
+  // typed but not chosen from the list: reported with the tools' existing municipality message
+  assert.deepEqual(Array.from(K.validateSituation({ ...picked, municipalityNis: '' }).errors), ['municipality']);
+  // a municipality of another region than the selected region
+  assert.deepEqual(Array.from(K.validateSituation({ ...picked, region: 'brussels' }).errors), ['region']);
+  const S = W.BKScenarioTool;
+  const move = { change: 'move', changeRegion: 'brussels', changeMunicipality: bx.name_nl, changeMunicipalityNis: bx.nis, changeMunicipalityRegion: 'brussels' };
+  assert.equal(S.readChange(move).valid, true);
+  assert.deepEqual(Array.from(S.readChange({ ...move, changeMunicipalityNis: '' }).errors), ['changeMunicipality']);
+  assert.deepEqual(Array.from(S.readChange({ ...move, changeRegion: 'flanders' }).errors), ['changeRegion']);
+});

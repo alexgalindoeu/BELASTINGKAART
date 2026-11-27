@@ -40,3 +40,9 @@
 @media (forced-colors: active) {
   .gk-list [role="option"][aria-selected="true"] { outline: 2px solid Highlight; }
 }
+
+/* Home quick calculator: the municipality takes its own row under salary and region; the
+   field keeps the plain select look (the big display figures are for the amount only). */
+.quickcalc-fields .qc-gemeente { grid-column: 1 / -1; }
+.quickcalc-fields .gk input[role="combobox"] { font-family: inherit; font-stretch: normal; font-weight: 400; font-size: 15px; text-align: left; }
+@media (pointer: coarse), (max-width: 760px) { .quickcalc-fields .gk input[role="combobox"] { font-size: 16px; } }

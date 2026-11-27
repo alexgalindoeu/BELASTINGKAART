@@ -128,6 +128,26 @@ try {
       });
       if (touch) { await page.touchscreen.tap(x, y); await page.touchscreen.tap(x, y); } else await page.mouse.click(x, y);
       await page.waitForSelector('.cover-map .gem.yours[data-nis="92094"]');
+      // map -> municipality pickers (quick calculator and simulator) and their region selects
+      const names = await page.evaluate(async () => (await (await fetch('../data/gemeenten.json')).json()).municipalities
+        .filter(m => ['92094', '24062'].includes(m.nis)).reduce((o, m) => ({ ...o, [m.nis]: m }), {}));
+      await page.waitForFunction(() => document.querySelector('[name="qcMunicipalityNis"]').value === '92094');
+      assert.equal(await page.inputValue('#qc-gemeente'), names['92094']['name_' + lang]);
+      assert.equal(await page.inputValue('[name="municipalityNis"]'), '92094');
+      assert.equal(await page.inputValue('#qc-region'), 'wallonia');
+      assert.equal(await page.inputValue('#salary-form select[name="region"]'), 'wallonia');
+      // picker -> map: type without accents or case, choose with the keyboard
+      const other = names['24062']['name_' + lang];
+      await page.fill('#qc-gemeente', other.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase());
+      await page.waitForSelector('#qc-gemeente-list [role="option"]');
+      await page.keyboard.press('ArrowDown');
+      assert.equal(await page.getAttribute('#qc-gemeente', 'aria-activedescendant'), 'qc-gemeente-list-24062');
+      await page.keyboard.press('Enter');
+      await page.waitForSelector('.cover-map .gem.yours[data-nis="24062"]');
+      assert.equal(await page.inputValue('#qc-gemeente'), other);
+      assert.equal(await page.inputValue('[name="municipalityNis"]'), '24062');
+      assert.equal(await page.inputValue('#qc-region'), 'flanders');
+      assert.equal(await page.getAttribute('#qc-gemeente', 'aria-expanded'), 'false');
       const scrollW = await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth);
       assert.ok(scrollW <= 0, `horizontal scroll of ${scrollW}px`);
       if (SHOTS) await page.locator('.cover-map').screenshot({ path: `${SHOTS}/hero-${lang}-${width}.png` });

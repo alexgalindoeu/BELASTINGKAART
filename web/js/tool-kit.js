@@ -94,7 +94,15 @@
       region: raw.region, municipality: String(raw.municipality ?? "").trim(), familyStatus: raw.familyStatus,
       children: Number(raw.children), incomeYear: Number(raw.incomeYear), assessmentYear: Number(raw.assessmentYear)
     };
-    const errors = window.BKForm.validate(payload).errors.filter(e => SITUATION_KEYS.includes(e));
+    if (raw.municipalityNis !== undefined) {
+      payload.municipalityNis = String(raw.municipalityNis ?? "");
+      payload.municipalityRegion = String(raw.municipalityRegion ?? "");
+    }
+    // A municipality not chosen from the official list is reported as "municipality"; one from
+    // another region than the selected region as "region" (the tools' existing messages).
+    const fold = { municipalityNis: "municipality", municipalityRegion: "region" };
+    const errors = Array.from(new Set(window.BKForm.validate(payload).errors.map(e => fold[e] || e)))
+      .filter(e => SITUATION_KEYS.includes(e));
     return { valid: errors.length === 0, errors, value: payload };
   }
 
