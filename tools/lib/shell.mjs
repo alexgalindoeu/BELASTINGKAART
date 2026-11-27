@@ -19,7 +19,7 @@ export const INFO_PAGES = {
 const T = {
   nl: {
     skip: 'Naar de inhoud', home: 'Belastingkaart, startpagina', sections: 'Secties',
-    nav: [['#simulator', 'Simulator'], ['methodologie/', 'Methodologie'], ['bronnen/', 'Bronnen'], ['contact/', 'Contact']],
+    nav: [['#simulator', 'Simulator'], ['kaart/', 'Kaart'], ['methodologie/', 'Methodologie'], ['bronnen/', 'Bronnen'], ['contact/', 'Contact']],
     theme: ['Thema: automatisch (zoals het systeem). Wijzigen naar licht', 'Thema: automatisch (zoals het systeem)'],
     switchLabel: 'Version française', cta: 'Naar de simulator', crumbHome: 'Startpagina',
     updated: 'Bijgewerkt op', months: ['januari', 'februari', 'maart', 'april', 'mei', 'juni', 'juli', 'augustus', 'september', 'oktober', 'november', 'december'],
@@ -34,7 +34,7 @@ const T = {
   },
   fr: {
     skip: 'Aller au contenu', home: 'Belastingkaart, accueil', sections: 'Sections',
-    nav: [['#simulator', 'Simulateur'], ['methodologie/', 'Méthodologie'], ['sources/', 'Sources'], ['contact/', 'Contact']],
+    nav: [['#simulator', 'Simulateur'], ['carte/', 'Carte'], ['methodologie/', 'Méthodologie'], ['sources/', 'Sources'], ['contact/', 'Contact']],
     theme: ['Thème : automatique (comme le système). Passer en mode clair', 'Thème : automatique (comme le système)'],
     switchLabel: 'Nederlandse versie', cta: 'Vers le simulateur', crumbHome: 'Accueil',
     updated: 'Mis à jour le', months: ['janvier', 'février', 'mars', 'avril', 'mai', 'juin', 'juillet', 'août', 'septembre', 'octobre', 'novembre', 'décembre'],

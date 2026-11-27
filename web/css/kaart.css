@@ -53,8 +53,8 @@
 .kaart-svg .b-prov { fill: none; stroke: var(--m-prov-line); stroke-width: .9; vector-effect: non-scaling-stroke; pointer-events: none; stroke-linejoin: round; }
 .kaart-svg .b-reg { fill: none; stroke: var(--m-region-line); stroke-width: 1.4; vector-effect: non-scaling-stroke; pointer-events: none; stroke-linejoin: round; }
 .kaart-svg .b-nat { fill: none; stroke: var(--m-region-line); stroke-width: 2; vector-effect: non-scaling-stroke; pointer-events: none; stroke-linejoin: round; }
-.kaart-svg .kaart-label { font-family: var(--display); font-stretch: 115%; font-size: 15px; font-weight: 800; fill: var(--on-accent);
-  stroke: var(--m-tu); stroke-width: 3px; paint-order: stroke; stroke-linejoin: round; pointer-events: none; }
+.kaart-svg .kaart-label { font-family: var(--display); font-stretch: 115%; font-size: 28px; font-weight: 800; fill: var(--on-accent);
+  stroke: var(--m-tu); stroke-width: 5px; paint-order: stroke; stroke-linejoin: round; pointer-events: none; }
 .kaart-tip { position: absolute; pointer-events: none; background: var(--surface); border: 1px solid var(--line-2); color: var(--ink);
   box-shadow: var(--shadow-high); border-radius: 8px; padding: 8px 10px; font-size: 13px; min-width: 170px; max-width: 240px; z-index: 5; }
 .kaart-tip b { display: block; font-size: 14px; }
@@ -71,7 +71,7 @@
 /* ---- full-page map: search, live status and the list alternative ------------ */
 .kaart-page .cover-map { max-width: 1080px; }
 .kaart-zoek { display: flex; flex-wrap: wrap; gap: 8px 12px; align-items: end; margin: 0 0 12px; }
-.kaart-svg.zoomed .kaart-label { font-size: 6px; stroke-width: 1.2px; }
+.kaart-svg.zoomed .kaart-label { font-size: 9px; stroke-width: 2px; }
 .kaart-zoek select { font: inherit; font-size: 15px; min-height: 40px; padding: 8px 10px; border: 1px solid var(--line-2); border-radius: 8px; background: var(--surface); color: var(--ink); width: 100%; }
 .kaart-zoek label { display: grid; gap: 4px; font-size: 13px; font-weight: 600; color: var(--ink-2); flex: 1 1 220px; max-width: 360px; }
 .kaart-zoek input { font: inherit; font-size: 15px; min-height: 40px; padding: 8px 10px; border: 1px solid var(--line-2); border-radius: 8px;

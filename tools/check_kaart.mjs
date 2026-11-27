@@ -36,7 +36,7 @@ export async function checkKaart({ rebuild = true } = {}) {
     const html = await readFile(path.join(ROOT, 'web', route, 'index.html'), 'utf8');
     if (applyList(html, kaart, lang) !== html) errors.push(`${route}: municipality list is stale: run npm run build:kaart`);
   }
-  const cached = await access(path.join(ROOT, '.cache/kaart/vrbg2025_refgemg10_3812.geojson')).then(() => true, () => false);
+  const cached = await access(path.join(ROOT, '.cache/kaart/ngi_territorialdivisions_shp_3812.zip')).then(() => true, () => false);
   if (rebuild && cached && !errors.length) {
     process.env.KAART_RETRIEVED = kaart.source.retrieved;
     const { buildKaart, serialize } = await import('./build_kaart.mjs');

@@ -46,7 +46,7 @@ try {
       page.on('pageerror', e => errors.push(e.message));
       await page.goto(ORIGIN + P.url, { waitUntil: 'networkidle' });
       await page.waitForSelector('.kaart-svg .gem');
-      assert.equal(await page.locator('.kaart-svg .gem').count(), 285);
+      assert.equal(await page.locator('.kaart-svg .gem').count(), 565);
       assert.equal(await page.getAttribute('[data-kaart]', 'data-kaart-state'), 'regions');
       const legend = await page.textContent('.legend');
       assert.ok(legend.includes(P.region) && legend.includes(P.yours), legend);
@@ -96,12 +96,41 @@ try {
       // province zoom
       await page.selectOption('[data-kaart-zoom]', '70000');
       const vb = await page.getAttribute('.kaart-svg', 'viewBox');
-      assert.notEqual(vb, '0 0 1000 394');
+      assert.notEqual(vb, '0 0 2000 1638');
       if (SHOTS) await page.locator('.cover-map').screenshot({ path: `${SHOTS}/kaart-${lang}-${width}-${scheme}-zoom.png` });
       await page.selectOption('[data-kaart-zoom]', '');
       if (SHOTS) await page.locator('.cover-map').screenshot({ path: `${SHOTS}/kaart-${lang}-${width}-${scheme}.png` });
       const scrollW2 = await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth);
       assert.ok(scrollW2 <= 0, `horizontal scroll of ${scrollW2}px after interaction`);
+      assert.deepEqual(errors, []);
+      await ctx.close();
+    });
+  }
+  for (const lang of ['nl', 'fr']) for (const width of [390, 1280]) {
+    await check(`home hero map ${lang} ${width}px`, async () => {
+      const touch = width === 390;
+      const ctx = await browser.newContext({ viewport: { width, height: 900 }, hasTouch: touch, isMobile: touch, locale: lang + '-BE' });
+      const page = await ctx.newPage();
+      const errors = [];
+      page.on('console', m => { if (m.type() === 'error') errors.push(m.text()); });
+      page.on('pageerror', e => errors.push(e.message));
+      await page.goto(`${ORIGIN}/${lang}/`, { waitUntil: 'networkidle' });
+      await page.waitForSelector('.cover-map .kaart-svg .gem');
+      assert.equal(await page.locator('.cover-map .gem').count(), 565);
+      assert.equal(await page.locator('[data-kaart-search]').count(), 0, 'no search field in the hero');
+      await page.locator('.cover-map .kaart-svg').scrollIntoViewIfNeeded();
+      // Namen / Namur, aimed at its label anchor (an interior point) rather than the bounding-box centre
+      const [x, y] = await page.evaluate(async () => {
+        const k = await (await fetch('../data/kaart_be.json')).json();
+        const m = k.municipalities.find(g => g.nis === '92094');
+        const svg = document.querySelector('.cover-map .kaart-svg'), r = svg.getBoundingClientRect(), s = r.width / k.viewBox[2];
+        return [r.left + m.anchor[0] * s, r.top + m.anchor[1] * s];
+      });
+      if (touch) { await page.touchscreen.tap(x, y); await page.touchscreen.tap(x, y); } else await page.mouse.click(x, y);
+      await page.waitForSelector('.cover-map .gem.yours[data-nis="92094"]');
+      const scrollW = await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth);
+      assert.ok(scrollW <= 0, `horizontal scroll of ${scrollW}px`);
+      if (SHOTS) await page.locator('.cover-map').screenshot({ path: `${SHOTS}/hero-${lang}-${width}.png` });
       assert.deepEqual(errors, []);
       await ctx.close();
     });
