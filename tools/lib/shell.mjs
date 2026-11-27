@@ -29,7 +29,7 @@ const T = {
   nl: {
     skip: 'Naar de inhoud', home: 'Belastingkaart, startpagina', sections: 'Secties',
     theme: ['Thema: automatisch (zoals het systeem). Wijzigen naar licht', 'Thema: automatisch (zoals het systeem)'],
-    switchLabel: 'Version française', more: 'Meer informatie', cta: 'Naar de simulator', crumbHome: 'Startpagina',
+    switchLabel: 'FR – Version française', more: 'Meer informatie', cta: 'Naar de simulator', crumbHome: 'Startpagina',
     updated: 'Bijgewerkt op', months: ['januari', 'februari', 'maart', 'april', 'mei', 'juni', 'juli', 'augustus', 'september', 'oktober', 'november', 'december'],
     footerIntro: '<b>Belastingkaart</b> is een onafhankelijk informatieproject. Geen officiële overheidswebsite en geen fiscaal advies.',
     footerNav: 'Meer over Belastingkaart',
@@ -38,7 +38,7 @@ const T = {
   fr: {
     skip: 'Aller au contenu', home: 'Belastingkaart, accueil', sections: 'Sections',
     theme: ['Thème : automatique (comme le système). Passer en mode clair', 'Thème : automatique (comme le système)'],
-    switchLabel: 'Nederlandse versie', more: 'Plus d’informations', cta: 'Vers le simulateur', crumbHome: 'Accueil',
+    switchLabel: 'NL – Nederlandse versie', more: 'Plus d’informations', cta: 'Vers le simulateur', crumbHome: 'Accueil',
     updated: 'Mis à jour le', months: ['janvier', 'février', 'mars', 'avril', 'mai', 'juin', 'juillet', 'août', 'septembre', 'octobre', 'novembre', 'décembre'],
     footerIntro: '<b>Belastingkaart</b> est un projet d’information indépendant. Ce n’est pas un site officiel des pouvoirs publics ni un conseil fiscal.',
     footerNav: 'En savoir plus sur Belastingkaart',
@@ -54,6 +54,34 @@ export const longDate = (iso, lang) => {
 const upOf = route => '../'.repeat(route.split('/').length - 1);
 const linkTo = (lang, route, href) => `${upOf(route)}${lang}/${href}`;
 const isCurrent = (lang, route, href) => !href.includes('#') && `${lang}/${href}` === route;
+
+// Language switch: the accessible name starts with the visible text (WCAG 2.5.3 Label in Name).
+export const LANG_SWITCH_LABEL = { nl: 'FR – Version française', fr: 'NL – Nederlandse versie' };
+export const fixLangSwitch = (html, lang) => html.replace(/(<a class="lang-switch"[^>]*?) aria-label="[^"]*">(FR|NL)<\/a>/g,
+  (m, a, text) => `${a} aria-label="${LANG_SWITCH_LABEL[lang]}">${text}</a>`);
+
+// Source titles in the other language (WCAG 3.1.2 Language of Parts). On French pages a link
+// such as "Verkooprecht (droit de vente, en néerlandais)" or "Onroerende voorheffing, page en
+// néerlandais (…)" names a Dutch page: its title gets lang="nl". On Dutch pages "… (Franstalige
+// pagina)" or "…, pagina in het Frans (…)" gets lang="fr". Links whose text starts with, or whose
+// title contains, words of the page's own language (a call to action such as "Vers MijnVlabel",
+// a translated title) are left alone.
+const FOREIGN = {
+  fr: { other: 'nl', marker: /^(.+?)(,? (?:\([^()]*)?(?:page )?en néerlandais.*)$/, own: /^(Vers|Outil|Voir|Le|La|Les|Pour) /, ownInside: /\s:\s| sur | des | les | du | pour / },
+  nl: { other: 'fr', marker: /^(?:FOD Financiën: )?(.+?)(,? (?:\()?(?:Franstalige pagina|pagina in het Frans).*)$/, own: /^(Naar|Bekijk|De|Het|Een) /, ownInside: / van | het | voor | naar / }
+};
+export function markForeignTitles(html, lang) {
+  const f = FOREIGN[lang];
+  return html.replace(/(<a [^>]*href="https?:[^"]*"[^>]*>)([^<]+)(<\/a>)/g, (m, open, text, close) => {
+    const hit = text.match(f.marker);
+    if (!hit || f.own.test(text) || f.ownInside.test(hit[1])) return m;  // a translated title stays as it is
+    const start = text.indexOf(hit[1]);
+    return `${open}${text.slice(0, start)}<span lang="${f.other}">${hit[1]}</span>${hit[2]}${close}`;
+  });
+}
+// Everything a page gets from the shared shell besides nav and footer (used by every generator
+// and by tools/apply_shell.mjs, so their --check modes agree).
+export const finalizePage = (html, lang) => markForeignTitles(fixLangSwitch(html, lang), lang);
 
 // Static header nav (the no-JavaScript fallback of js/ui.js), from MENU.NAV.
 export function navHtml(lang, route) {
@@ -157,5 +185,5 @@ ${footerHtml(lang, route, page.pair)}
 </body>
 </html>
 `;
-  return applyHead(html, route);
+  return applyHead(finalizePage(html, lang), route);
 }

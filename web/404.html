@@ -55,5 +55,9 @@
     <p class="l-fr" lang="fr"><b>Belastingkaart</b> est un projet d’information indépendant. Ce n’est pas un site officiel des pouvoirs publics ni un conseil fiscal.</p>
   </div>
 </footer>
+<script>
+// <base> makes "#content" point at the home page: keep in-page links on this very URL.
+document.querySelectorAll('a[href^="#"]').forEach(function (a) { a.setAttribute("href", location.pathname + location.search + a.getAttribute("href")); });
+</script>
 </body>
 </html>

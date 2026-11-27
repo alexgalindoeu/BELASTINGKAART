@@ -8,7 +8,7 @@ import { readFile, writeFile, mkdir } from 'node:fs/promises';
 import path from 'node:path';
 import { WEB, SITE } from './lib/pages.mjs';
 import { applyHead, escapeAttr } from './lib/head.mjs';
-import { navHtml, footerHtml, longDate } from './lib/shell.mjs';
+import { navHtml, footerHtml, finalizePage, longDate } from './lib/shell.mjs';
 import { PAGES, PAGES_ORDER, SLUGS, ROOT, SOURCES, TERMS, CALC } from './lib/zelfstandigen-content.mjs';
 
 export const UPDATED = '2026-11-27';
@@ -18,7 +18,7 @@ const THEME_SVG = '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"
 const T = {
   nl: { skip: 'Naar de inhoud', home: 'Belastingkaart, startpagina', sections: 'Secties', crumbHome: 'Startpagina', section: 'Zelfstandigen',
     theme: ['Thema: automatisch (zoals het systeem). Wijzigen naar licht', 'Thema: automatisch (zoals het systeem)'],
-    switchLabel: 'Version française', cta: 'Naar de simulator', updated: 'Bijgewerkt op', short: 'In het kort:',
+    switchLabel: 'FR – Version française', cta: 'Naar de simulator', updated: 'Bijgewerkt op', short: 'In het kort:',
     footerIntro: '<b>Belastingkaart</b> is een onafhankelijk informatieproject. Geen officiële overheidswebsite en geen fiscaal advies.',
     footerNav: 'Meer over Belastingkaart', lang: 'Taal', faq: 'Veelgestelde vragen', sources: 'Bronnen', consulted: 'Geraadpleegd op',
     more: 'Meer over zelfstandigen', terms: 'Begrippen uit deze pagina', glossary: 'Woordenlijst', glossaryRoot: 'woordenlijst/',
@@ -27,7 +27,7 @@ const T = {
     trust: d => [`Bijdragejaar 2026 · inkomsten 2026`, `Nagekeken op <time datetime="${d}">${longDate(d, 'nl')}</time>`, `Bronnen: RSVZ en FOD Financiën · <a href="{L}methodologie/">Methodologie</a>`] },
   fr: { skip: 'Aller au contenu', home: 'Belastingkaart, accueil', sections: 'Sections', crumbHome: 'Accueil', section: 'Indépendants',
     theme: ['Thème : automatique (comme le système). Passer en mode clair', 'Thème : automatique (comme le système)'],
-    switchLabel: 'Nederlandse versie', cta: 'Vers le simulateur', updated: 'Mis à jour le', short: 'En bref :',
+    switchLabel: 'NL – Nederlandse versie', cta: 'Vers le simulateur', updated: 'Mis à jour le', short: 'En bref :',
     footerIntro: '<b>Belastingkaart</b> est un projet d’information indépendant. Ce n’est pas un site officiel des pouvoirs publics ni un conseil fiscal.',
     footerNav: 'En savoir plus sur Belastingkaart', lang: 'Langue', faq: 'Questions fréquentes', sources: 'Sources', consulted: 'Consulté le',
     more: 'En savoir plus sur les indépendants', terms: 'Notions de cette page', glossary: 'Lexique', glossaryRoot: 'lexique/',
@@ -146,7 +146,7 @@ ${footerHtml(lang, route, lang === 'nl' ? fr : nl)}
 </body>
 </html>
 `;
-  return applyHead(html, route);
+  return applyHead(finalizePage(html, lang), route);
 }
 
 export function allSectionPages() {

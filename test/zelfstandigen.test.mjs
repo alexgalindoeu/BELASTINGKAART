@@ -45,7 +45,7 @@ test('every page ends with Bronnen / Sources: official URLs with a consultation 
       const block = p.html.match(/<section class="card zs-sources" id="bronnen"><h2 class="card-title">(Bronnen|Sources)<\/h2>([\s\S]*?)<\/section>/);
       assert.ok(block, p.route);
       assert.equal(block[1], p.lang === 'nl' ? 'Bronnen' : 'Sources');
-      const items = Array.from(block[2].matchAll(/<li><a href="([^"]+)"[^>]*>[^<]+<\/a><span>(Geraadpleegd op|Consulté le) (\d\d-\d\d-2026)<\/span><\/li>/g));
+      const items = Array.from(block[2].matchAll(/<li><a href="([^"]+)"[^>]*>(?:[^<]|<span lang="(?:nl|fr)">[^<]*<\/span>)+<\/a><span>(Geraadpleegd op|Consulté le) (\d\d-\d\d-2026)<\/span><\/li>/g));
       assert.ok(items.length >= 3, p.route);
       for (const [, url] of items) assert.match(url, OFFICIAL, p.route);
       return items.length;

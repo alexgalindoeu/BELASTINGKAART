@@ -59,7 +59,7 @@ test('term and guide pages list official sources with the consultation date, sam
       const html = await read(p[lang]);
       const list = card(html, lang === 'nl' ? 'Bronnen' : 'Sources');
       assert.ok(list, `${p[lang]} has a sources card`);
-      const items = Array.from(list.matchAll(/<li><a href="([^"]+)"[^>]*>[^<]+<\/a><span>([^<]+)<\/span><\/li>/g));
+      const items = Array.from(list.matchAll(/<li><a href="([^"]+)"[^>]*>(?:[^<]|<span lang="(?:nl|fr)">[^<]*<\/span>)+<\/a><span>([^<]+)<\/span><\/li>/g));
       assert.ok(items.length > 0, `${p[lang]}: sources listed`);
       for (const [, url, date] of items) {
         assert.ok(official(url), `${p[lang]}: ${url} is not an official source`);

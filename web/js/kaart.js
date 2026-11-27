@@ -185,6 +185,22 @@
     let pointer = "mouse", armed = null, focusNis = null;
 
     if (!svg.getAttribute("viewBox")) svg.setAttribute("viewBox", kaart.viewBox.join(" "));
+    // The SVG clips its content, so Chromium would make it a keyboard stop of its own (a
+    // "focusable scroller") that shows nothing: only the municipalities take the Tab key.
+    svg.setAttribute("tabindex", "-1");
+    svg.setAttribute("focusable", "false");
+    // Keyboard focus ring drawn on top of every municipality (a neighbour drawn later would
+    // otherwise cover the stroke): a light halo and a dark ring, both following the outline.
+    const NS = "http://www.w3.org/2000/svg";
+    const ring = p => {
+      svg.querySelectorAll(".gem-ring, .gem-ring-halo").forEach(x => x.remove());
+      if (!p) return;
+      for (const cls of ["gem-ring-halo", "gem-ring"]) {
+        const r = doc.createElementNS(NS, "path");
+        r.setAttribute("class", cls); r.setAttribute("d", p.getAttribute("d")); r.setAttribute("aria-hidden", "true");
+        svg.appendChild(r);
+      }
+    };
     const draw = () => {
       const keepFocus = doc.activeElement && doc.activeElement.closest && doc.activeElement.closest(".kaart-svg") === svg ? doc.activeElement.dataset.nis : null;
       svg.innerHTML = svgMarkup(kaart, state, lang, yours, focusNis);
@@ -237,9 +253,11 @@
       focusNis = p.dataset.nis;
       svg.querySelectorAll('.gem[tabindex="0"]').forEach(x => { if (x !== p) x.setAttribute("tabindex", "-1"); });
       p.setAttribute("tabindex", "0");
-      if (p.matches(":focus-visible")) { const [x, y] = anchorPx(byNis.get(p.dataset.nis)); showTip(byNis.get(p.dataset.nis), x, y); }
+      const visible = p.matches(":focus-visible");
+      ring(visible ? p : null);
+      if (visible) { const [x, y] = anchorPx(byNis.get(p.dataset.nis)); showTip(byNis.get(p.dataset.nis), x, y); }
     });
-    svg.addEventListener("focusout", e => { if (!svg.contains(e.relatedTarget)) tip.hidden = true; });
+    svg.addEventListener("focusout", e => { if (!svg.contains(e.relatedTarget)) { tip.hidden = true; ring(null); } });
     svg.addEventListener("keydown", e => {
       const p = e.target.closest(".gem");
       if (!p) return;

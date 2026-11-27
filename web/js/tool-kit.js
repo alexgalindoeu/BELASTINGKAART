@@ -127,7 +127,7 @@
     const li = list => list.map(x => `<li>${escapeHTML(x)}</li>`).join("");
     const more = extra.length ? `<p class="tool-extra-label">${escapeHTML(c.toolLabel)}</p><ul class="result-list tool-extra">${li(extra)}</ul>` : "";
     return `<div class="result-status"><span class="chip">${escapeHTML(c.chip)}</span></div>` +
-      `<h3>${escapeHTML(c.title)}</h3><p>${escapeHTML(c.text)}</p>` +
+      `<h2 class="result-title">${escapeHTML(c.title)}</h2><p>${escapeHTML(c.text)}</p>` +
       `<details class="tool-pending"><summary>${escapeHTML(c.listLabel)}</summary><ul class="result-list">${li(missingLabels(l, status.missing))}</ul>${more}</details>`;
   }
 

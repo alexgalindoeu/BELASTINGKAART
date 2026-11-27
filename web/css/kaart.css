@@ -42,11 +42,19 @@
 
 /* ---- the SVG ----------------------------------------------------------------- */
 .kaart-svg { width: 100%; height: auto; display: block; overflow: hidden; touch-action: manipulation; }
-.kaart-svg:focus { outline: none; }
+.kaart-svg:focus:not(:focus-visible) { outline: none; }
+.kaart-svg:focus-visible { outline: 3px solid var(--ring); outline-offset: 2px; }
 .kaart-svg .gem { stroke: none; cursor: pointer; transition: opacity var(--dur), fill var(--dur-slow); }
 .kaart-svg .gem:hover, .kaart-svg .gem.focus { opacity: .78; }
 .kaart-svg .gem:focus { outline: none; }
-.kaart-svg .gem:focus-visible { stroke: var(--ring); stroke-width: 3; vector-effect: non-scaling-stroke; paint-order: stroke; opacity: 1; }
+.kaart-svg .gem:focus-visible { opacity: 1; }
+/* Keyboard focus (js/kaart.js draws .gem-ring-halo and .gem-ring on top of the map): a halo in
+   the page colour and a ring in the ink colour, so one of the two always contrasts at least
+   3:1 with the municipality fill and with the background, in light and dark mode. */
+.kaart-svg .gem-ring-halo, .kaart-svg .gem-ring { fill: none; pointer-events: none; vector-effect: non-scaling-stroke; stroke-linejoin: round; }
+.kaart-svg .gem-ring-halo { stroke: var(--surface); stroke-width: 7; }
+.kaart-svg .gem-ring { stroke: var(--ink); stroke-width: 3; }
+@media (forced-colors: active) { .kaart-svg .gem-ring { stroke: Highlight; } .kaart-svg .gem-ring-halo { stroke: Canvas; } }
 .kaart-svg .gem.yours { stroke: var(--ink); stroke-width: 2; vector-effect: non-scaling-stroke; paint-order: stroke; }
 .kaart-svg .gem.yours:hover { opacity: 1; }
 .kaart-svg .b-gem { fill: none; stroke: var(--m-border); stroke-width: .6; vector-effect: non-scaling-stroke; pointer-events: none; stroke-linejoin: round; }
