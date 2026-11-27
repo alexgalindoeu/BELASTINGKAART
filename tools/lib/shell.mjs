@@ -33,7 +33,7 @@ const T = {
     updated: 'Bijgewerkt op', months: ['januari', 'februari', 'maart', 'april', 'mei', 'juni', 'juli', 'augustus', 'september', 'oktober', 'november', 'december'],
     footerIntro: '<b>Belastingkaart</b> is een onafhankelijk informatieproject. Geen officiële overheidswebsite en geen fiscaal advies.',
     footerNav: 'Meer over Belastingkaart',
-    footerSmall: 'Inkomstenjaar 2026 · aanslagjaar 2027 · Alleen officiële bronnen.'
+    footerSmall: 'Inkomstenjaar 2026 · aanslagjaar 2027 · Alleen officiële bronnen · Kaart: © NGI-IGN (CC BY 4.0).'
   },
   fr: {
     skip: 'Aller au contenu', home: 'Belastingkaart, accueil', sections: 'Sections',
@@ -42,7 +42,7 @@ const T = {
     updated: 'Mis à jour le', months: ['janvier', 'février', 'mars', 'avril', 'mai', 'juin', 'juillet', 'août', 'septembre', 'octobre', 'novembre', 'décembre'],
     footerIntro: '<b>Belastingkaart</b> est un projet d’information indépendant. Ce n’est pas un site officiel des pouvoirs publics ni un conseil fiscal.',
     footerNav: 'En savoir plus sur Belastingkaart',
-    footerSmall: 'Revenus 2026 · exercice d’imposition 2027 · Uniquement des sources officielles.'
+    footerSmall: 'Revenus 2026 · exercice d’imposition 2027 · Uniquement des sources officielles · Carte : © NGI-IGN (CC BY 4.0).'
   }
 };
 
@@ -63,17 +63,21 @@ export function navHtml(lang, route) {
 }
 
 // Footer, in the reference layout: intro, three columns of links, the dates line and the
-// legal links in a bottom row. Columns come from the drawer groups: the first five tools, the
-// last five topics (guides and glossary included) and the about group; the legal row is the
+// legal links in a bottom row. Columns come from the drawer groups: the first five tools, a fixed
+// "discover" selection (DISCOVER) and the about group; the legal row is the
 // drawer's legal group.
 const FOOTER_COLS = { nl: ['Berekenen', 'Ontdek', 'Belastingkaart'], fr: ['Calculer', 'Découvrir', 'Belastingkaart'] };
+// "Ontdek / Découvrir" is a fixed selection, as Mapafiscal's "Descubre" (map, regions, ... guides),
+// not the last items added to the drawer.
+const DISCOVER = { nl: ['kaart/', 'gewesten/', 'wonen/', 'gidsen/', 'woordenlijst/'], fr: ['carte/', 'regions/', 'logement/', 'guides/', 'lexique/'] };
+const discoverItems = (lang, groups) => DISCOVER[lang].map(h => groups.flatMap(g => g.items).find(it => it.href === h)).filter(Boolean);
 // pair: the route of the same page in the other language (language links, remembered by js/taal.js).
 export function footerHtml(lang, route, pair) {
   const t = T[lang];
   const groups = MENU.GROUPS[lang];
   const a = it => `<a href="${linkTo(lang, route, it.href)}"${isCurrent(lang, route, it.href) ? ' aria-current="page"' : ''}>${it.label}</a>`;
   const cols = FOOTER_COLS[lang].map((title, i) =>
-    `<div class="footer-col"><p class="footer-title">${title}</p><ul>${(i === 1 ? groups[i].items.slice(-5) : groups[i].items.slice(0, 5)).map(it => `<li>${a(it)}</li>`).join('')}</ul></div>`).join('');
+    `<div class="footer-col"><p class="footer-title">${title}</p><ul>${(i === 1 ? discoverItems(lang, groups) : groups[i].items.slice(0, 5)).map(it => `<li>${a(it)}</li>`).join('')}</ul></div>`).join('');
   const legal = groups[groups.length - 1].items.map(a).join(' · ');
   const [nl, fr] = lang === 'nl' ? [route, pair] : [pair, route];
   const langs = pair ? ` · <a href="${upOf(route)}${nl}" hreflang="nl-BE" lang="nl">Nederlands</a> · <a href="${upOf(route)}${fr}" hreflang="fr-BE" lang="fr">Français</a>` : '';
