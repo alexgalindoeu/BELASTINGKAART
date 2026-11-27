@@ -18,6 +18,7 @@ Last reviewed: 2026-11-25. Only official public authorities are permitted as tax
 | Brussels Fiscaliteit | https://fiscaliteit.brussels/ | Brussels regional taxes |
 | SPW Finances | https://finances.wallonie.be/ | Walloon regional taxes |
 | Region pages (NL/FR) | Fisconetplus (BFW 16.01.1989, BCFP), fin.belgium.be, vlaanderen.be, finances.wallonie.be, statbel.fgov.be | Regional competences in the personal income tax and the property tax; claim → quote → URL log and verbatim BFW art. 5/1–5/3 in [sources/gewesten_2026-11-26.md](sources/gewesten_2026-11-26.md) |
+| Pension-savings pages (NL/FR) | Fisconetplus (WIB 92 art. 34, 39, 145/1–145/16, 171 inkomsten 2026; WDRT art. 184–187/1; indexation notice AJ 2027; circ. 2018/C/72) | Pensioensparen / épargne-pension ceilings, rates, tax at 60 and early payout; langetermijnsparen; claim → quote → URL log in [sources/pensioensparen_2026-11-27.md](sources/pensioensparen_2026-11-27.md) |
 | Belgisch Staatsblad / Moniteur belge | https://www.ejustice.just.fgov.be/ | Official legislation and amendments |
 
 Additional official public bodies may be added when their legal competence is relevant (for example Statbel for official statistics). A source is not accepted merely because it is government-related: the page must support the exact parameter or rule being implemented.
